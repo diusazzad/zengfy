@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
 
 // Static Pages
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
-Route::get('/team', [PageController::class, 'team'])->name('team'); 
-Route::get('/service', [PageController::class, 'team'])->name('service'); 
+Route::get('/team', [PageController::class, 'team'])->name('team');
+Route::get('/service', [PageController::class, 'team'])->name('service');
 Route::get('/download-app', [PageController::class, 'downloadApp'])->name('download.app');
 
 Route::get('/signup', [PageController::class, 'signup'])->name('signup');
@@ -37,6 +38,3 @@ Route::get('/auth/google/callback', function () {
 
 
 Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
-
-
-
