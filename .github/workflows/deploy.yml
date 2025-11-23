@@ -1,24 +1,5 @@
-name: Auto Deploy to cPanel Server
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Deploy to cPanel via SSH
-        uses: easingthemes/ssh-deploy@v4
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_USER: ${{ secrets.SSH_USER }}
-          REMOTE_PORT: "22"
-          TARGET: ${{ secrets.DEPLOY_PATH }}
-          ARGS: "-avz --delete"
-          SOURCE: "./"
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sfxglllk/public_html/
+    - /bin/cp -R . $DEPLOYPATH
