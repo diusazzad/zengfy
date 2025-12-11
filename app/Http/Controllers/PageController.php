@@ -36,11 +36,21 @@ class PageController extends Controller
         }
     }
     public function signup(){
+        $lang = request()->get('lang');
+        if (in_array($lang, ['en', 'bn'])) {
+            app()->setLocale($lang);
+        }
+
         return view('signup');
     }
 
     public function login(){
         return view('login');
+    }
+
+    public function faq()
+    {
+        return view('faq');
     }
 
     public function dashboard()

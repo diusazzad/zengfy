@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bn">
 
 <head>
@@ -129,6 +129,7 @@
             <nav class="flex flex-wrap items-center gap-3 text-sm sm:text-base" role="navigation" aria-label="Primary navigation">
                 <a href="{{ route('welcome') }}" class="hover:text-blue-600" aria-current="page">হোম</a>
                 <a href="{{ route('team') }}" class="hover:text-blue-600">টীম</a>
+                <a href="{{ route('faq') }}" class="hover:text-blue-600">FAQ</a>
                 <a href="{{ route('download.app') }}" class="hover:text-blue-600">Download App</a>
                 <a href="{{ route('signup') }}"
                     class="bg-yellow-400 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-yellow-300 transition">সাইন আপ</a>
@@ -474,18 +475,7 @@
         });
     </script>
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Zengfy",
-            "url": "{{ url('/') }}",
-            "description": "একক প্ল্যাটফর্মে ই-কমার্স, ERP, POS, হোটেল ও AI অটোমেশন। বাংলা UI, লোকাল পেমেন্ট ও নিরাপত্তা।",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Zengfy",
-                "url": "{{ url('/') }}"
-            }
-        }
+       
     </script>
 </body>
 
