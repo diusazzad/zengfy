@@ -1,41 +1,45 @@
 <?php
 
-use App\Http\Controllers\PageController;
-use Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
+use Modules\Main\Http\Controllers\MainController;
+use Modules\Main\Http\Controllers\AccountController;
+use App\Http\Controllers\PageController;
 
-// Static Pages
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+// Language Switcher Route
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'bn'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
+// Public Page Routes
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/team', [PageController::class, 'team'])->name('team');
-Route::get('/service', [PageController::class, 'team'])->name('service');
-Route::get('/download-app', [PageController::class, 'downloadApp'])->name('download.app');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+Route::get('/download-app', [PageController::class, 'downloadApp'])->name('download.app');
+Route::post('/faq/submit', [PageController::class, 'submitQuestion'])->name('faq.submit');
 
+// Auth Routes are handled by Modules\Auth
 Route::get('/signup', [PageController::class, 'signup'])->name('signup');
-Route::get('/login', [PageController::class, 'login'])->name('login');
-Route::get('/password', [PageController::class, 'password'])->name('password.request');
 
-
-Route::get('/auth/google/redirect', function () {
-    return Socialite::driver('google')->redirect();
-})->name('auth.google.redirect');
-
-Route::get('/auth/google/callback', function () {
-    $googleUser = Socialite::driver('google')->user();
-
-    $user = App\Models\User::updateOrCreate([
-        'email' => $googleUser->getEmail(),
-    ], [
-        'name' => $googleUser->getName(),
-        'google_id' => $googleUser->getId(),
-    ]);
-
-    Auth::login($user);
-
-    // Redirect to dashboard directly
-    return redirect('https://zengfy.top/dashboard');
+// Secured Main Module Routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('mains', MainController::class)->names('main');
+    Route::get('/dashboard', [MainController::class, 'index'])->name('dashboard');
+    Route::get('/account', [AccountController::class, 'index'])->name('account');
 });
 
 
-Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+// Auth routes are loaded from Modules/Auth/Routes/web.php
