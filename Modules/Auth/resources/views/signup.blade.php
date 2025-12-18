@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সাইন আপ - Zengfy.top</title>
+    <title>{{ __('signup.meta_title') }}</title>
+    <meta name="description" content="{{ __('signup.meta_description') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -33,20 +34,30 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="{{ route('welcome') }}" class="text-2xl font-bold text-blue-600">Zengfy SAAS</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
                     <a href="{{ route('welcome') }}"
-                        class="text-gray-700 hover:text-blue-600 transition duration-300">হোম</a>
-                    <a href="{{ route('team') }}"
-                        class="text-gray-700 hover:text-blue-600 transition duration-300">টীম</a>
-                    <a href="{{ route('service') }}"
-                        class="text-gray-700 hover:text-blue-600 transition duration-300">সার্ভিস</a>
-                    <a href="{{ route('login') }}"
-                        class="text-gray-700 hover:text-blue-600 transition duration-300">লগইন</a>
-                    <a href="{{ route('signup') }}"
-                        class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">সাইন
-                        আপ</a>
+                        class="text-2xl font-bold text-blue-600">{{ __('signup.brand') }}</a>
+                </div>
+                @php
+                    $lang = request('lang', app()->getLocale());
+                    $query = fn($url) => $url . (str_contains($url, '?') ? '&' : '?') . 'lang=' . $lang;
+                    $switchTo = $lang === 'en' ? 'bn' : 'en';
+                    $switchUrl = $query(url()->current()) . '&lang=' . $switchTo;
+                @endphp
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{{ route('welcome', [], false) . '?lang=' . $lang }}"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">{{ __('signup.nav.home') }}</a>
+                    <a href="{{ route('team', [], false) . '?lang=' . $lang }}"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">{{ __('signup.nav.team') }}</a>
+                    <a href="{{ route('team', [], false) . '?lang=' . $lang }}"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">{{ __('signup.nav.service') }}</a>
+                    <a href="{{ route('login', [], false) . '?lang=' . $lang }}"
+                        class="text-gray-700 hover:text-blue-600 transition duration-300">{{ __('signup.nav.login') }}</a>
+                    <a href="{{ route('signup', [], false) . '?lang=' . $lang }}"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">{{ __('signup.nav.signup') }}</a>
+                    <a href="{{ route('lang.switch', $switchTo) }}"
+                        class="text-sm text-gray-500 hover:text-blue-600 transition duration-300">
+                        {{ strtoupper($switchTo) }}
+                    </a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
@@ -62,11 +73,18 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="{{ route('welcome')}}" class="block px-3 py-2 text-gray-700 hover:text-blue-600">হোম</a>
-                <a href="{{ route('team') }}" class="block px-3 py-2 text-gray-700 hover:text-blue-600">টীম</a>
-                <a href="{{ route('service')}}" class="block px-3 py-2 text-gray-700 hover:text-blue-600">সার্ভিস</a>
-                <a href="{{ route('login') }}" class="block px-3 py-2 text-gray-700 hover:text-blue-600">লগইন</a>
-                <a href="{{ route('signup') }}" class="block px-3 py-2 text-gray-700 hover:text-blue-600">সাইন আপ</a>
+                <a href="{{ route('welcome', [], false) . '?lang=' . $lang }}"
+                    class="block px-3 py-2 text-gray-700 hover:text-blue-600">{{ __('signup.nav.home') }}</a>
+                <a href="{{ route('team', [], false) . '?lang=' . $lang }}"
+                    class="block px-3 py-2 text-gray-700 hover:text-blue-600">{{ __('signup.nav.team') }}</a>
+                <a href="{{ route('team', [], false) . '?lang=' . $lang }}"
+                    class="block px-3 py-2 text-gray-700 hover:text-blue-600">{{ __('signup.nav.service') }}</a>
+                <a href="{{ route('login', [], false) . '?lang=' . $lang }}"
+                    class="block px-3 py-2 text-gray-700 hover:text-blue-600">{{ __('signup.nav.login') }}</a>
+                <a href="{{ route('signup', [], false) . '?lang=' . $lang }}"
+                    class="block px-3 py-2 text-gray-700 hover:text-blue-600">{{ __('signup.nav.signup') }}</a>
+                <a href="{{ route('lang.switch', $switchTo) }}"
+                    class="block px-3 py-2 text-gray-500 hover:text-blue-600">{{ strtoupper($switchTo) }}</a>
             </div>
         </div>
     </nav>
@@ -77,8 +95,8 @@
             <div class="glass-effect p-8 rounded-2xl shadow-2xl">
                 <!-- Header -->
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-white mb-2">অ্যাকাউন্ট তৈরি করুন</h2>
-                    <p class="text-blue-100">আপনার ব্যবসার যাত্রা শুরু করুন</p>
+                    <h2 class="text-3xl font-bold text-white mb-2">{{ __('signup.hero_title') }}</h2>
+                    <p class="text-blue-100">{{ __('signup.hero_subtitle') }}</p>
                 </div>
 
                 <!-- Signup Form -->
@@ -87,30 +105,35 @@
 
                     <!-- Name Input -->
                     <div>
-                        <label for="name" class="block text-sm font-medium text-white mb-2">পুরো নাম</label>
-                        <input type="text" id="name" name="name" placeholder="আপনার পুরো নাম লিখুন" required
+                        <label for="name"
+                            class="block text-sm font-medium text-white mb-2">{{ __('signup.name_label') }}</label>
+                        <input type="text" id="name" name="name" placeholder="{{ __('signup.name_placeholder') }}"
+                            required
                             class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition duration-300">
                     </div>
 
                     <!-- Email Input -->
                     <div>
-                        <label for="email" class="block text-sm font-medium text-white mb-2">ইমেইল ঠিকানা</label>
-                        <input type="email" id="email" name="email" placeholder="আপনার ইমেইল লিখুন" required
+                        <label for="email"
+                            class="block text-sm font-medium text-white mb-2">{{ __('signup.email_label') }}</label>
+                        <input type="email" id="email" name="email" placeholder="{{ __('signup.email_placeholder') }}"
+                            required
                             class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition duration-300">
                     </div>
 
                     <!-- Password Input -->
                     <div>
-                        <label for="password" class="block text-sm font-medium text-white mb-2">পাসওয়ার্ড</label>
-                        <input type="password" id="password" name="password" placeholder="শক্তিশালী পাসওয়ার্ড দিন"
-                            required
+                        <label for="password"
+                            class="block text-sm font-medium text-white mb-2">{{ __('signup.password_label') }}</label>
+                        <input type="password" id="password" name="password"
+                            placeholder="{{ __('signup.password_placeholder') }}" required
                             class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition duration-300">
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit" id="submitBtn"
                         class="w-full bg-gradient-to-r from-green-400 to-blue-500 text-white py-3 px-4 rounded-lg font-semibold hover:from-green-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-700 transition duration-300 transform hover:scale-105">
-                        <span id="buttonText">সাইন আপ করুন</span>
+                        <span id="buttonText">{{ __('signup.submit') }}</span>
                         <div id="loadingSpinner" class="hidden justify-center">
                             <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
                         </div>
@@ -119,9 +142,9 @@
                     <!-- Login Link -->
                     <div class="text-center">
                         <p class="text-blue-100">
-                            ইতিমধ্যে অ্যাকাউন্ট আছে?
-                            <a href="{{ route('login')}}" class="text-white font-semibold hover:underline">লগইন
-                                করুন</a>
+                            {{ __('signup.have_account') }}
+                            <a href="{{ route('login', [], false) . '?lang=' . $lang }}"
+                                class="text-white font-semibold hover:underline">{{ __('signup.login') }}</a>
                         </p>
                     </div>
 
@@ -131,12 +154,12 @@
                             <div class="w-full border-t border-white/30"></div>
                         </div>
                         <div class="relative flex justify-center text-sm">
-                            <span class="px-2 bg-transparent text-blue-100">অথবা</span>
+                            <span class="px-2 bg-transparent text-blue-100">{{ __('signup.divider') }}</span>
                         </div>
                     </div>
 
                     <!-- Google Sign Up Button -->
-                    <button type="button" onclick="window.location.href='https://zengfy.top/auth/google'"
+                    <a href="{{ route('auth.google', [], false) . '?lang=' . $lang }}"
                         class="w-full bg-white text-gray-700 py-3 px-4 rounded-lg font-semibold hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-300 flex items-center justify-center space-x-3">
                         <svg class="w-5 h-5" viewBox="0 0 24 24">
                             <path fill="#4285F4"
@@ -148,8 +171,8 @@
                             <path fill="#EA4335"
                                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                         </svg>
-                        <span>Google দিয়ে সাইন আপ</span>
-                    </button>
+                        <span>{{ __('signup.google') }}</span>
+                    </a>
                 </form>
             </div>
         </div>
@@ -158,11 +181,11 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <p>© ২০২৪ Zengfy.top - সকল অধিকার সংরক্ষিত</p>
+            <p>{{ __("signup.footer.copyright") }}</p>
             <div class="mt-4 flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white">প্রাইভেসি পলিসি</a>
-                <a href="#" class="text-gray-400 hover:text-white">টার্মস অফ সার্ভিস</a>
-                <a href="#" class="text-gray-400 hover:text-white">যোগাযোগ</a>
+                <a href="#" class="text-gray-400 hover:text-white">{{ __("signup.footer.privacy") }}</a>
+                <a href="#" class="text-gray-400 hover:text-white">{{ __("signup.footer.terms") }}</a>
+                <a href="#" class="text-gray-400 hover:text-white">{{ __("signup.footer.contact") }}</a>
             </div>
         </div>
     </footer>
@@ -170,36 +193,38 @@
     <!-- Fixed Bottom Navbar (Mobile Only) -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-40">
         <div class="flex justify-around">
-            <a href="{{ route('welcome') }}" class="flex flex-col items-center py-2 text-gray-600">
-                <div class="text-xl">🏠</div>
-                <div class="text-xs">হোম</div>
+            <a href="{{ route('welcome', [], false) . '?lang=' . $lang }}"
+                class="flex flex-col items-center py-2 text-gray-600">
+                <div class="text-xl">H</div>
+                <div class="text-xs">{{ __('signup.nav.home') }}</div>
             </a>
-            <a href="{{ route('team') }}" class="flex flex-col items-center py-2 text-gray-600">
-                <div class="text-xl">👥</div>
-                <div class="text-xs">টীম</div>
+            <a href="{{ route('team', [], false) . '?lang=' . $lang }}"
+                class="flex flex-col items-center py-2 text-gray-600">
+                <div class="text-xl">T</div>
+                <div class="text-xs">{{ __('signup.nav.team') }}</div>
             </a>
-            <a href="{{ route('service') }}" class="flex flex-col items-center py-2 text-gray-600">
-                <div class="text-xl">🛒</div>
-                <div class="text-xs">সার্ভিস</div>
+            <a href="{{ route('team', [], false) . '?lang=' . $lang }}"
+                class="flex flex-col items-center py-2 text-gray-600">
+                <div class="text-xl">S</div>
+                <div class="text-xs">{{ __('signup.nav.service') }}</div>
             </a>
-           <a href="{{ route('login') }}" class="flex flex-col items-center py-2 text-gray-600">
-                <div class="text-xl">🔐</div>
-                <div class="text-xs">লগইন</div>
+            <a href="{{ route('login', [], false) . '?lang=' . $lang }}"
+                class="flex flex-col items-center py-2 text-gray-600">
+                <div class="text-xl">L</div>
+                <div class="text-xs">{{ __('signup.nav.login') }}</div>
             </a>
         </div>
     </div>
 
-
-
     <script>
         // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
         // Form Submission
-        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+        document.getElementById('signupForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const submitBtn = document.getElementById('submitBtn');
@@ -228,17 +253,17 @@
 
                 if (response.ok) {
                     // Success message with sweet animation
-                    showNotification('সাইন আপ সফল! লগইন পেজে নিয়ে যাওয়া হচ্ছে...', 'success');
-                    
+                    showNotification('{{ __('signup.toast.success') }}', 'success');
+
                     // Redirect after 2 seconds
                     setTimeout(() => {
                         window.location.href = '{{ route('login') }}';
                     }, 2000);
                 } else {
-                    showNotification(data.message || 'সাইন আপ ব্যর্থ হয়েছে', 'error');
+                    showNotification(data.message || '{{ __('signup.toast.error') }}', 'error');
                 }
             } catch (err) {
-                showNotification('নেটওয়ার্ক বা সার্ভার ত্রুটি হয়েছে', 'error');
+                showNotification('{{ __('signup.toast.network') }}', 'error');
                 console.error(err);
             } finally {
                 // Reset button state
@@ -258,9 +283,8 @@
 
             // Create notification element
             const notification = document.createElement('div');
-            notification.className = `custom-notification fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg transform transition-transform duration-300 ${
-                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-            }`;
+            notification.className = `custom-notification fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg transform transition-transform duration-300 ${type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+                }`;
             notification.textContent = message;
 
             // Add to page
@@ -282,11 +306,11 @@
 
         // Input field animations
         document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('focus', function() {
+            input.addEventListener('focus', function () {
                 this.parentElement.classList.add('ring-2', 'ring-white', 'ring-opacity-50');
             });
 
-            input.addEventListener('blur', function() {
+            input.addEventListener('blur', function () {
                 this.parentElement.classList.remove('ring-2', 'ring-white', 'ring-opacity-50');
             });
         });

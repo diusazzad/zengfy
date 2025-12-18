@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bn">
 
 <head>
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zengfy | টীম</title>
     <meta name="description"
-        content="Zengfy-এর টীমে যারা SaaS, বিজনেস অপারেশন ও প্রযুক্তি নিয়ে কাজ করে। একটি স্থানীয় সহায়ক টিমের সাথে পরিচিত হোন।">
+        content="Zengfy-এর টীমে যারা SaaS, ব্যবসা ও প্রযুক্তি নিয়ে কাজ করে। স্থানীয় টীমের সাথে পরিচিত হোন।">
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        bn: ['"Noto Sans Bengali"', 'sans-serif']
-                    }
+                    fontFamily: { bn: ['"Noto Sans Bengali"', 'sans-serif'] }
                 }
             }
         }
@@ -54,7 +52,8 @@
     </style>
 </head>
 
-<body class="text-gray-800">
+<body class="text-gray-800 bg-slate-50 pb-16 md:pb-0" x-data="{ scrolled: false }"
+    @scroll.window="scrolled = (window.pageYOffset > 20)">
     @php
         $team = [
             [
@@ -66,8 +65,8 @@
                 'linkedin' => 'https://www.linkedin.com/in/mhmahbub/',
                 'twitter' => 'https://twitter.com/mhmahbub',
                 'email' => 'mahbub@zengfy.top',
-                'bio_bn' => 'Mahbub Zengfy-কে ব্যবসায়িক প্ল্যাটফর্ম হিসেবে গড়ে তুলছেন। তিনি টিমের স্ট্র্যাটেজি, অংশীদারিত্ব এবং লোকাল মার্কেট রিলেশনশিপ দেখেন। তার পর্যবেক্ষণ এবং data-driven সিদ্ধান্ত প্ল্যাটফর্মকে সতেজ রাখে।',
-                'bio_en' => 'Mahbub steers Zengfy’s business strategy, partnerships, and customer success. His focus on local relationships and data-driven decision making keeps the SaaS experience reliable and grounded in Bangladesh.',
+                'bio_bn' => 'Mahbub Zengfy-এর ব্যবসায়িক কৌশল, অংশীদারিত্ব ও কাস্টমার সাকসেস পরিচালনা করেন। স্থানীয় সম্পর্ক ও data-driven সিদ্ধান্ত প্ল্যাটফর্মকে নির্ভরযোগ্য রাখে।',
+                'bio_en' => 'Mahbub steers Zengfy\'s business strategy, partnerships, and customer success. His focus on local relationships and data-driven decision making keeps the SaaS experience reliable and grounded in Bangladesh.',
             ],
             [
                 'name' => 'Sazzad Hossain Mahim',
@@ -78,143 +77,341 @@
                 'linkedin' => 'https://www.linkedin.com/in/sazzadmahim',
                 'twitter' => 'https://twitter.com/sazzadmahim',
                 'email' => 'mahim@zengfy.top',
-                'bio_bn' => 'Sazzad Zengfy-এর SaaS আর্কিটেকচার ডিজাইন করেন। তিনি Laravel, Vue.js ও MySQL-এর উপর দীর্ঘ অভিজ্ঞতা রাখেন এবং ক্লাউড সিকিউরিটি ও স্কেল-এবল ডিজাইন প্র্যাকটিসগুলি বাস্তবায়ন করেন।',
-                'bio_en' => 'Sazzad designs Zengfy’s SaaS architecture. With deep experience in Laravel, Vue.js, and MySQL, he applies cloud security and scalable design practices that customers rely on every day.',
+                'bio_bn' => 'Sazzad Zengfy-এর SaaS আর্কিটেকচার ডিজাইন করেন। Laravel, Vue.js ও MySQL-এ অভিজ্ঞ তিনি ক্লাউড সিকিউরিটি ও স্কেলযোগ্য ডিজাইন বাস্তবায়ন করেন।',
+                'bio_en' => 'Sazzad designs Zengfy\'s SaaS architecture. With deep experience in Laravel, Vue.js, and MySQL, he applies cloud security and scalable design practices that customers rely on every day.',
             ],
         ];
     @endphp
 
-    <header class="bg-white shadow sticky top-0 z-40">
+    <!-- Sticky Header using Alpine for state -->
+    <header :class="{ 'bg-white/90 shadow-md backdrop-blur-md': scrolled, 'bg-white/50 backdrop-blur-sm': !scrolled }"
+        class="fixed top-0 w-full z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
-            <a href="{{ route('welcome') }}" class="text-2xl font-extrabold text-blue-600">Zengfy</a>
-            <nav class="flex flex-wrap items-center gap-3 text-sm sm:text-base">
-                <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-blue-600">হোম</a>
-                <a href="{{ route('team') }}" class="text-blue-600 font-semibold">টীম</a>
-                <a href="{{ route('download.app') }}" class="text-gray-600 hover:text-blue-600">অ্যাপ ডাউনলোড</a>
+            <a href="{{ route('welcome') }}"
+                class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent transform hover:scale-105 transition duration-300">Zengfy</a>
+            <nav class="flex flex-wrap items-center gap-6 text-sm font-medium">
+                <a href="{{ route('welcome') }}" class="text-gray-600 hover:text-blue-600 transition">হোম</a>
+                <a href="{{ route('team') }}"
+                    class="text-blue-600 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-blue-600">টীম</a>
+                <a href="{{ route('download.app') }}" class="text-gray-600 hover:text-blue-600 transition">অ্যাপ</a>
+                <a href="{{ route('faq') }}" class="text-gray-600 hover:text-blue-600 transition">FAQ</a>
                 <a href="{{ route('signup') }}"
-                    class="bg-yellow-400 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-yellow-300">সাইন
+                    class="bg-gray-900 text-white px-5 py-2 rounded-full shadow-lg hover:bg-gray-800 hover:shadow-xl transition transform hover:-translate-y-0.5">সাইন
                     আপ</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="bg-gradient-to-br from-blue-600 to-green-500 text-white py-16 px-4">
-            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10">
-                <div class="flex-1 space-y-6">
-                    <p class="text-sm uppercase tracking-[0.5em] text-white/80">Meet the faces behind Zengfy</p>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">বাংলাদেশের SaaS টিম, যাদের অভিজ্ঞতা আপনার ব্যবসাকে গড়ে তোলে।</h1>
-                    <p class="text-lg text-white/90">আমরা ব্যবসার উপর ভিত্তি করে সিদ্ধান্ত নেই, লোকাল দলের সাহায্যে উন্নয়ন ও সাপোর্ট চালাই, এবং নিরাপত্তার দিকটি গুরুত্ব দিয়ে API ও পেমেন্ট অটোমেশন তৈরি করি।</p>
-                    <div class="flex flex-wrap gap-3">
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-white">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-50"></div>
+            <!-- Animated Background Blobs -->
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-300/20 rounded-full blur-3xl animate-pulse">
+            </div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-green-300/20 rounded-full blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+
+            <div class="relative max-w-6xl mx-auto px-4 py-20 lg:py-28 flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 space-y-8 animate-fade-in-up">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 text-sm font-medium">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Meet the Creators
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-gray-900">
+                        SaaS for <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">Bangladesh</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed">
+                        আমরা ব্যবসার উপর ভিত্তি করে সিদ্ধান্ত নেই, লোকাল দলের সাহায্যে উন্নয়ন ও সাপোর্ট চালাই। আমরা গড়ছি
+                        আগামীর ডিজিটাল বাংলাদেশ।
+                    </p>
+                    <div class="flex flex-wrap gap-4">
                         <a href="{{ route('signup') }}"
-                            class="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition w-full sm:w-auto text-center">টীমের সাথে যোগাযোগ</a>
-                        <a href="{{ route('team') }}#team-section"
-                            class="border border-white/70 px-6 py-3 rounded-full font-semibold hover:border-white transition w-full sm:w-auto text-center">পুরো টীম দেখুন</a>
+                            class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 hover:bg-blue-700 transition transform hover:-translate-y-1">যোগাযোগ
+                            করুন</a>
+                        <a href="#team-section"
+                            class="group flex items-center gap-2 px-8 py-4 rounded-full border border-gray-300 text-gray-700 font-semibold hover:border-gray-400 hover:bg-gray-50 transition">
+                            টীম দেখুন
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 transform group-hover:translate-y-1 transition" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="flex-1">
-                    <div class="bg-white/10 border border-white/30 rounded-3xl p-6 backdrop-blur">
-                        <p class="text-sm text-white/70 mb-2">দ্রুত ফ্যাক্ট</p>
-                        <ul class="space-y-2 text-white font-medium">
-                            <li>• ৫০০+ Verified ব্যবসা</li>
-                            <li>• ২৪/৭ স্থানীয় সাপোর্ট</li>
-                            <li>• ৯৫% SLA কর্তৃক অনলাইন সময়</li>
-                        </ul>
+
+                <!-- Stats Card -->
+                <div class="flex-1 w-full max-w-md" x-data="{ shown: false }" x-intersect="shown = true">
+                    <div
+                        class="bg-white/80 backdrop-blur-xl border border-white/50 p-8 rounded-[2rem] shadow-2xl relative overflow-hidden group hover:scale-[1.02] transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-green-500/5 transition opacity-0 group-hover:opacity-100">
+                        </div>
+                        <h3 class="text-gray-500 font-medium uppercase tracking-widest text-xs mb-6">IMPACT AT A GLANCE
+                        </h3>
+
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <div class="text-5xl font-black text-gray-900 mb-1 flex items-baseline">
+                                    <span x-data="{ count: 0 }"
+                                        x-effect="if(shown) { let i = 0; const timer = setInterval(() => { count += 10; if(count >= 500) { count = 500; clearInterval(timer); } }, 20); }">
+                                        <span x-text="count"></span>
+                                    </span>+
+                                </div>
+                                <p class="text-gray-600 text-sm font-medium">Verified Businesses</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <div class="text-5xl font-black text-gray-900 mb-1 flex items-baseline">
+                                    <span x-data="{ count: 0 }"
+                                        x-effect="if(shown) { let i = 0; const timer = setInterval(() => { count += 1; if(count >= 24) { count = 24; clearInterval(timer); } }, 50); }">
+                                        <span x-text="count"></span>
+                                    </span>/7
+                                </div>
+                                <p class="text-gray-600 text-sm font-medium">Local Support</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <div class="text-5xl font-black text-gray-900 mb-1 flex items-baseline">
+                                    <span x-data="{ count: 0 }"
+                                        x-effect="if(shown) { let i = 0; const timer = setInterval(() => { count += 2; if(count >= 99) { count = 99; clearInterval(timer); } }, 30); }">
+                                        <span x-text="count"></span>
+                                    </span>%
+                                </div>
+                                <p class="text-gray-600 text-sm font-medium">SLA Uptime</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="team-section" class="max-w-6xl mx-auto px-4 py-12">
-            <div class="text-center mb-10">
-                <p class="text-sm uppercase tracking-[0.4em] text-gray-400 mb-2">Leadership</p>
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">প্রফেশনাল অভিজ্ঞতা ও বাস্তব অভিজ্ঞতা</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-3">LinkedIn থেকে প্রাপ্ত অভিজ্ঞতা ও দক্ষতা দিয়ে আমরা প্রতিদিন SaaS সলিউশন উন্নয়ন ও স্বয়ংক্রিয়তা দিকে এগিয়ে যাই।</p>
+        <!-- Tech Stack Marquee -->
+        <div class="bg-gray-900 py-10 overflow-hidden relative">
+            <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
+            <div
+                class="flex items-center gap-12 animate-marquee whitespace-nowrap opacity-50 text-white font-mono text-xl">
+                <span>LARAVEL</span> <span>•</span> <span>VUE.JS</span> <span>•</span> <span>TAILWIND CSS</span>
+                <span>•</span> <span>AWS</span> <span>•</span> <span>MYSQL</span> <span>•</span> <span>ALPINE.JS</span>
+                <span>•</span> <span>REDIS</span> <span>•</span> <span>DOCKER</span> <span>•</span>
+                <span>LARAVEL</span> <span>•</span> <span>VUE.JS</span> <span>•</span> <span>TAILWIND CSS</span>
+                <span>•</span> <span>AWS</span> <span>•</span> <span>MYSQL</span> <span>•</span> <span>ALPINE.JS</span>
+                <span>•</span> <span>REDIS</span> <span>•</span> <span>DOCKER</span>
             </div>
+        </div>
 
-            <div class="grid gap-6 md:grid-cols-2">
-                @foreach ($team as $member)
-                    <article class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col transition hover:-translate-y-1 hover:shadow-2xl fade-up">
-                        <div class="bg-gradient-to-br from-indigo-500 to-blue-600 p-6 text-white flex flex-col gap-4">
-                            <div class="flex items-center gap-4">
-                                <div class="w-16 h-16 rounded-full bg-white/30 border border-white/40 overflow-hidden">
-                                    <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}"
-                                        class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-semibold">{{ $member['name'] }}</h3>
-                                    <p class="text-sm text-white/80">{{ $member['role_bn'] }}</p>
-                                </div>
-                            </div>
-                            <p class="text-sm text-white/80 flex flex-wrap gap-2 items-center">
-                                <span class="px-3 py-1 rounded-full bg-white/20">{{ $member['location'] }}</span>
-                                <span class="border border-white/40 px-3 py-1 rounded-full text-white/70 text-xs">{{ $member['role_en'] }}</span>
-                            </p>
-                            <div class="flex gap-3 text-lg">
-                                <a href="{{ $member['linkedin'] }}" target="_blank" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M6.94 8.5H3V21h3.94V8.5zm.06-5.5A2.44 2.44 0 0 1 10.44 5a2.4 2.4 0 0 1-2.44 2.44A2.42 2.42 0 0 1 5.56 5 2.44 2.44 0 0 1 7 3zM21 21h-3.94v-5.72c0-1.37-.49-2.3-1.71-2.3a1.85 1.85 0 0 0-1.74 1.23 2.53 2.53 0 0 0-.12.84V21H9.54s.05-8.96 0-9.9H13v1.4h.05a3.86 3.86 0 0 1 3.51-1.92c2.57 0 4.5 1.69 4.5 5.32z" />
-                                    </svg>
-                                </a>
-                                <a href="{{ $member['twitter'] }}" target="_blank" aria-label="Twitter">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M21 6.5a6.27 6.27 0 0 1-1.83.5 3.17 3.17 0 0 0 1.4-1.74 6.3 6.3 0 0 1-2 .75A3.15 3.15 0 0 0 14.5 5a3.13 3.13 0 0 0-3.14 3.17 2.53 2.53 0 0 0 .08.72 8.94 8.94 0 0 1-6.5-3.34 3.08 3.08 0 0 0-.43 1.6 3.12 3.12 0 0 0 1.42 2.74 3.38 3.38 0 0 1-1.41-.39v.04a3.16 3.16 0 0 0 2.5 3.09 3.54 3.54 0 0 1-.83.1c-.2 0-.4-.01-.59-.05a3.17 3.17 0 0 0 2.96 2.18 6.33 6.33 0 0 1-4.36 1.5A5.16 5.16 0 0 1 3 18.21 8.88 8.88 0 0 0 7.17 20c6.17 0 9.55-5 9.55-9.35v-.43A6.63 6.63 0 0 0 21 6.5z" />
-                                    </svg>
-                                </a>
-                                <a href="mailto:{{ $member['email'] }}" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.51L12 11l-8-4.5V6zM4 18V8.5l8 4.5 8-4.5V18z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-3 flex-1 flex flex-col bg-white">
-                            <p class="text-gray-900 text-lg font-semibold">প্রোফেশনাল বায়ো</p>
-                            <p class="text-gray-600 text-sm leading-relaxed">{{ $member['bio_bn'] }}</p>
-                            <p class="text-gray-500 text-xs uppercase tracking-[0.4em]">English summary</p>
-                            <p class="text-gray-600 text-sm leading-relaxed">{{ $member['bio_en'] }}</p>
-                        </div>
-                    </article>
-                @endforeach
+        <!-- Values Section -->
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900">আমাদের মূল্যবোধ</h2>
+                    <p class="text-gray-600 mt-4 max-w-xl mx-auto">আমরা শুধুমাত্র সফটওয়্যার বানাই না, আমরা বিশ্বাস ও
+                        ভরসা তৈরি করি।</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Value 1 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100 group">
+                        <div
+                            class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition duration-300">
+                            🛡️</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Trust First</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">আপনার ডাটার নিরাপত্তা আমাদের সর্বোচ্চ
+                            অগ্রাধিকার। আমরা আন্তর্জাতিক মানের এনক্রিপশন ব্যবহার করি।</p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100 group">
+                        <div
+                            class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition duration-300">
+                            🚀</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">আমরা প্রতিনিয়ত শিখি এবং নতুন প্রযুক্তি ব্যবহার
+                            করি যাতে আপনার ব্যবসা থাকে সবার চেয়ে এগিয়ে।</p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100 group">
+                        <div
+                            class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition duration-300">
+                            🇧🇩</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Local at Heart</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">গ্লোবাল মানের প্রযুক্তি, কিন্তু লোকাল মার্কেটের
+                            প্রয়োজন অনুযায়ী কাস্টমাইজড। আমরা দেশী ব্যবসার ধরণ বুঝি।</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="bg-white py-12 px-4">
-            <div class="max-w-6xl mx-auto rounded-3xl border border-gray-200 p-8 text-center space-y-4">
-                <p class="text-sm uppercase tracking-[0.6em] text-gray-400">Get in touch</p>
-                <h3 class="text-3xl font-bold text-gray-900">একসাথে Zengfy-র ভবিষ্যৎ তৈরি করি</h3>
-                <p class="text-gray-600 max-w-2xl mx-auto">বাংলাদেশের যে কোন সেক্টর থেকে হোক, আপনার ব্যবসা বা প্রতিষ্ঠানকে ডিজিটাল রূপান্তরে নিয়ে যেতে আমাদের লোকাল টিম প্রস্তুত।</p>
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="{{ route('signup') }}"
-                        class="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-500 transition">সাইন আপ</a>
-                    <a href="mailto:team@zengfy.top"
-                        class="px-6 py-3 rounded-full border border-gray-300 text-gray-700 hover:border-gray-400">ইমেইল করুন</a>
+        <!-- Team Section -->
+        <section id="team-section" class="py-20 px-4 bg-white relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-blue-600 font-semibold tracking-widest text-sm uppercase mb-3">Leadership</p>
+                    <h2 class="text-4xl font-bold text-gray-900">Visionaries</h2>
+                </div>
+
+                <div class="grid gap-10 md:grid-cols-2 lg:gap-16">
+                    @foreach ($team as $member)
+                        <div class="group perspective">
+                            <article
+                                class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-500 transform hover:rotate-x-2 hover:shadow-2xl hover:-translate-y-2">
+                                <div
+                                    class="bg-gradient-to-br from-indigo-600 to-blue-500 p-8 text-white relative overflow-hidden">
+                                    <div
+                                        class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full -ml-10 -mb-10 blur-xl">
+                                    </div>
+
+                                    <div class="relative z-10 flex flex-col sm:flex-row items-center gap-6">
+                                        <div class="w-24 h-24 rounded-full p-1 bg-white/20 backdrop-blur-sm">
+                                            <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}"
+                                                class="w-full h-full rounded-full object-cover border-2 border-white/50">
+                                        </div>
+                                        <div class="text-center sm:text-left">
+                                            <h3 class="text-2xl font-bold">{{ $member['name'] }}</h3>
+                                            <p class="text-blue-100 font-medium mt-1">{{ $member['role_en'] }}</p>
+                                            <p class="text-xs text-blue-200 mt-1 uppercase tracking-wider">
+                                                {{ $member['location'] }}</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Social Links Reveal on Hover -->
+                                    <div
+                                        class="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-4 group-hover:translate-x-0">
+                                        <a href="{{ $member['linkedin'] }}" target="_blank"
+                                            class="bg-white/20 p-2 rounded-full hover:bg-white/40 transition backdrop-blur-md text-white">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                            </svg>
+                                        </a>
+                                        <a href="mailto:{{ $member['email'] }}"
+                                            class="bg-white/20 p-2 rounded-full hover:bg-white/40 transition backdrop-blur-md text-white">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-8 space-y-6">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Bangla
+                                            Bio</h4>
+                                        <p class="text-gray-700 leading-relaxed">{{ $member['bio_bn'] }}</p>
+                                    </div>
+                                    <div class="pt-6 border-t border-gray-100">
+                                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">English
+                                            Bio</h4>
+                                        <p class="text-gray-500 text-sm leading-relaxed italic">"{{ $member['bio_en'] }}"
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-12 shadow-2xl relative overflow-hidden text-white">
+                    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 space-y-6">
+                        <h2 class="text-3xl md:text-4xl font-bold">Ready to modernize your business?</h2>
+                        <p class="text-blue-100 text-lg max-w-2xl mx-auto">Join hundreds of Bangladeshi businesses using
+                            Zengfy to scale efficiently.</p>
+                        <div class="flex flex-wrap justify-center gap-4 pt-4">
+                            <a href="{{ route('signup') }}"
+                                class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">Get
+                                Started Free</a>
+                            <a href="mailto:team@zengfy.top"
+                                class="border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">Contact
+                                Sales</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-2">
-            <div>
-                <h4 class="font-semibold text-lg">Zengfy</h4>
-                <p class="text-gray-300 text-sm">বাংলাদেশের জন্য নির্মিত ইউনিফাইড SaaS প্ল্যাটফর্ম। একটা শক্তিশালী টিমের সাহায্যে ব্যবসার প্রতিদিনের কাজগুলো সহজ করি।</p>
+    <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="text-white text-xl font-bold mb-2">Zengfy</h4>
+                <p class="text-sm">Unified SaaS Platform for Bangladesh.</p>
             </div>
-            <div class="flex flex-wrap gap-4 text-sm">
-                <a href="{{ route('welcome') }}" class="hover:text-blue-300">হোম</a>
-                <a href="{{ route('team') }}" class="hover:text-blue-300">টীম</a>
-                <a href="{{ route('download.app') }}" class="hover:text-blue-300">অ্যাপ ডাউনলোড</a>
-                <a href="{{ route('signup') }}" class="hover:text-blue-300">সাইন আপ</a>
-                <a href="mailto:team@zengfy.top" class="hover:text-blue-300">team@zengfy.top</a>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="{{ route('welcome') }}" class="hover:text-white transition">Home</a>
+                <a href="{{ route('team') }}" class="hover:text-white transition">Team</a>
+                <a href="{{ route('download.app') }}" class="hover:text-white transition">Mobile App</a>
+                <a href="{{ route('faq') }}" class="hover:text-white transition">Help Center</a>
+            </div>
+            <div class="text-xs text-gray-600">
+                &copy; {{ date('Y') }} All rights reserved.
             </div>
         </div>
     </footer>
+
+    <!-- Alpine.js Intersect Plugin (Simulated for this snippet if not loaded, usually needed for scroll spy) -->
+    <!-- Ideally, users should have Alpine loaded with Intersect plugin in their layout or here -->
+    <x-mobile-nav />
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <style>
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .perspective {
+            perspective: 1000px;
+        }
+
+        .rotate-x-2 {
+            transform: rotateX(2deg);
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </body>
 
 </html>
