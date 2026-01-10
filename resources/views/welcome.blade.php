@@ -709,7 +709,7 @@
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll(); // Trigger once on load
 
-        </script>
+    </script>
 </body>
 
 </html>

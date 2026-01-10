@@ -17,7 +17,7 @@
         id="apps-dropdown">
         <div class="grid grid-cols-3 gap-4 p-4">
 
-            <a href="http://school.zengfy.top"
+            <a href="{{ zengfy_url('school') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -31,7 +31,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">School</div>
             </a>
 
-            <a href="http://ecommerce.zengfy.top"
+            <a href="{{ zengfy_url('ecommerce') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -44,7 +44,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">Shop</div>
             </a>
 
-            <a href="http://pos.zengfy.top"
+            <a href="{{ zengfy_url('pos') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -58,7 +58,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">POS</div>
             </a>
 
-            <a href="http://hotel.zengfy.top"
+            <a href="{{ zengfy_url('hotel') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -72,7 +72,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">Hotel</div>
             </a>
 
-            <a href="http://law.zengfy.top"
+            <a href="/law/dashboard"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -86,7 +86,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">Law</div>
             </a>
 
-            <a href="http://havit.zengfy.top"
+            <a href="{{ zengfy_url('havit') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -100,7 +100,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">Habit</div>
             </a>
 
-            <a href="http://samrtai.zengfy.top"
+            <a href="{{ zengfy_url('samrtai') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -113,7 +113,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">AI</div>
             </a>
 
-            <a href="http://watch.zengfy.top"
+            <a href="{{ zengfy_url('watch') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
@@ -126,7 +126,7 @@
                 <div class="text-xs font-medium text-gray-900 dark:text-white">Watch</div>
             </a>
 
-            <a href="http://civil.zengfy.top"
+            <a href="{{ zengfy_url('civil') }}"
                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                 <div
                     class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">

@@ -123,4 +123,17 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Ecosystem Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for the Zengfy Federated Service Architecture.
+    |
+    */
+
+    'base_domain' => env('APP_BASE_DOMAIN', 'zengfy.test'),
+
+    'url_scheme' => env('APP_URL_SCHEME', 'http'),
+
 ];

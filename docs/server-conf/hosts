@@ -1,0 +1,121 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+# Added by Docker Desktop
+192.168.1.10 host.docker.internal
+192.168.1.10 gateway.docker.internal
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
+# Zengfy Ecosystem Domains
+127.0.0.1 zengfy.test
+127.0.0.1 law.zengfy.test
+127.0.0.1 school.zengfy.test
+127.0.0.1 ecommerce.zengfy.test
+127.0.0.1 pos.zengfy.test
+127.0.0.1 billing.zengfy.test
+127.0.0.1 support.zengfy.test
+127.0.0.1 admin.zengfy.test
+127.0.0.1 api.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
+127.0.0.1 api.law.zengfy.test
+127.0.0.1 api.school.zengfy.test
+127.0.0.1 api.ecommerce.zengfy.test
+127.0.0.1 api.pos.zengfy.test
+127.0.0.1 api.billing.zengfy.test
+127.0.0.1 api.support.zengfy.test
+127.0.0.1 api.admin.zengfy.test
