@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ __('welcome.title') }}</title>
+    <title>zengfy.top | {{ __('welcome.title') }}</title>
     <meta name="description" content="{{ __('welcome.hero.description') }}">
     <meta name="author" content="Zengfy Team">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2563EB">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="{{ url('/') }}">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -148,10 +150,106 @@
                 background-position: 0% 50%;
             }
         }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            background: #2563eb;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-progress {
+            width: 100%;
+            height: 100%;
+            background: #2563eb;
+            position: absolute;
+            left: -100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+
+        @keyframes loading {
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
     </style>
+
 </head>
 
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-logo">Z</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <p class="mt-4 text-gray-500 font-medium tracking-widest text-xs uppercase">Loading zengfy.top</p>
+    </div>
+
 
     <!-- Desktop Header -->
     <header
@@ -161,7 +259,8 @@
                 <div
                     class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition">
                     Z</div>
-                <span class="text-2xl font-extrabold text-gray-900 tracking-tight">Zengfy</span>
+                <span class="text-2xl font-extrabold text-gray-900 tracking-tight">zengfy.top</span>
+
             </a>
             <nav class="flex items-center gap-6 font-medium text-gray-600">
                 <a href="{{ route('welcome') }}" class="hover:text-blue-600 transition"
@@ -642,7 +741,8 @@
                     <div
                         class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">
                         Z</div>
-                    <span class="font-bold text-lg text-gray-800">Zengfy</span>
+                    <span class="font-bold text-lg text-gray-800">zengfy.top</span>
+
                 </div>
                 <p class="text-gray-500 leading-relaxed">{{ __('welcome.footer.about') }}</p>
             </div>
@@ -693,7 +793,59 @@
     <!-- Mobile Bottom Nav -->
     <x-mobile-nav />
 
+    <!-- Cookies Content Banner -->
+    <div id="cookie-banner"
+        class="fixed bottom-6 right-6 max-w-sm bg-white/80 backdrop-blur-xl border border-gray-100 rounded-2xl shadow-2xl p-6 z-50 transform translate-y-20 opacity-0 transition-all duration-700">
+        <div class="flex items-start gap-4">
+            <div class="text-3xl">🍪</div>
+            <div class="flex-1">
+                <h4 class="font-bold text-gray-900">Cookies Policy</h4>
+                <p class="text-sm text-gray-600 mt-1 mb-4">We use cookies to improve your experience on zengfy.top. By
+                    browsing, you agree to our policies.</p>
+                <div class="flex gap-2">
+                    <button onclick="acceptCookies()"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition">Accept
+                        All</button>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-xs font-medium">Learn More</a>
+                </div>
+            </div>
+            <button onclick="closeCookies()" class="text-gray-400 hover:text-gray-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 800); // Small delay for smooth effect
+        });
+
+        // Cookies Banner Logic
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('cookies-accepted')) {
+                setTimeout(() => {
+                    const banner = document.getElementById('cookie-banner');
+                    banner.classList.remove('translate-y-20', 'opacity-0');
+                }, 2000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookies-accepted', 'true');
+            closeCookies();
+        }
+
+        function closeCookies() {
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.add('translate-y-20', 'opacity-0');
+        }
+
         // Reveal Animations on Scroll
         const revealElements = document.querySelectorAll('.reveal');
         const revealOnScroll = () => {
@@ -711,5 +863,6 @@
 
     </script>
 </body>
+
 
 </html>

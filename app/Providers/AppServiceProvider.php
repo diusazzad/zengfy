@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        \Illuminate\Support\Facades\View::addNamespace('main', base_path('Modules/Main/resources/views'));
     }
 }
