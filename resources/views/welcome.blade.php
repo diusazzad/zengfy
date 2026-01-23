@@ -795,25 +795,56 @@
 
     <!-- Cookies Content Banner -->
     <div id="cookie-banner"
-        class="fixed bottom-6 right-6 max-w-sm bg-white/80 backdrop-blur-xl border border-gray-100 rounded-2xl shadow-2xl p-6 z-50 transform translate-y-20 opacity-0 transition-all duration-700">
-        <div class="flex items-start gap-4">
-            <div class="text-3xl">🍪</div>
-            <div class="flex-1">
-                <h4 class="font-bold text-gray-900">Cookies Policy</h4>
-                <p class="text-sm text-gray-600 mt-1 mb-4">We use cookies to improve your experience on zengfy.top. By
-                    browsing, you agree to our policies.</p>
-                <div class="flex gap-2">
-                    <button onclick="acceptCookies()"
-                        class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition">Accept
-                        All</button>
-                    <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-xs font-medium">Learn More</a>
+        class="fixed bottom-6 right-6 max-w-sm bg-white/90 backdrop-blur-xl border border-gray-100 rounded-2xl shadow-2xl p-6 z-50 transform translate-y-20 opacity-0 transition-all duration-700">
+        <div id="cookie-main-content">
+            <div class="flex items-start gap-4">
+                <div class="text-3xl">🍪</div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-gray-900">Cookies Policy</h4>
+                    <p class="text-sm text-gray-600 mt-1 mb-4">We use cookies to improve your experience on zengfy.top.
+                        By browsing, you agree to our policies.</p>
+                    <div class="flex gap-2">
+                        <button onclick="acceptCookies()"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition">Accept
+                            All</button>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-xs font-medium">Learn
+                            More</a>
+                    </div>
+                </div>
+                <button onclick="closeCookies()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Data Info Section (Hidden by default) -->
+        <div id="cookie-data-info" class="hidden animate-in fade-in slide-in-from-bottom-2 duration-500">
+            <div class="flex items-center gap-2 mb-3 text-green-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="font-bold text-sm">Preference Saved!</span>
+            </div>
+            <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Browser Storage Summary</h5>
+            <div class="bg-gray-50 rounded-lg p-3 space-y-2">
+                <div class="flex justify-between text-xs">
+                    <span class="text-gray-500">LocalStorage Items:</span>
+                    <span id="local-storage-count" class="font-mono font-bold text-blue-600">0</span>
+                </div>
+                <div class="flex justify-between text-xs">
+                    <span class="text-gray-500">Active Cookies:</span>
+                    <span id="cookie-count" class="font-mono font-bold text-blue-600">0</span>
+                </div>
+                <div id="storage-details"
+                    class="pt-2 mt-2 border-t border-gray-200 text-[10px] text-gray-400 font-mono break-all max-h-20 overflow-y-auto">
+                    <!-- Dynamic keys will go here -->
                 </div>
             </div>
-            <button onclick="closeCookies()" class="text-gray-400 hover:text-gray-600">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+            <button onclick="closeCookies()"
+                class="w-full mt-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-bold hover:bg-gray-200 transition">Got
+                it</button>
         </div>
     </div>
 
@@ -838,7 +869,20 @@
 
         function acceptCookies() {
             localStorage.setItem('cookies-accepted', 'true');
-            closeCookies();
+
+            // Collect storage info
+            const lsCount = localStorage.length;
+            const cookieCount = document.cookie ? document.cookie.split(';').length : 0;
+            const lsKeys = Object.keys(localStorage).slice(0, 5).join(', ') + (lsCount > 5 ? '...' : '');
+
+            // Update UI
+            document.getElementById('local-storage-count').textContent = lsCount;
+            document.getElementById('cookie-count').textContent = cookieCount;
+            document.getElementById('storage-details').textContent = 'Keys: ' + (lsKeys || 'None');
+
+            // Switch sections
+            document.getElementById('cookie-main-content').classList.add('hidden');
+            document.getElementById('cookie-data-info').classList.remove('hidden');
         }
 
         function closeCookies() {
@@ -861,6 +905,30 @@
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll(); // Trigger once on load
 
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then((registration) => {
+                    console.log('SW registered:', registration);
+
+                    // Check for updates
+                    registration.onupdatefound = () => {
+                        const installingWorker = registration.installing;
+                        installingWorker.onstatechange = () => {
+                            if (installingWorker.state === 'installed') {
+                                if (navigator.serviceWorker.controller) {
+                                    console.log('New content available; please refresh.');
+                                } else {
+                                    console.log('Content is cached for offline use.');
+                                }
+                            }
+                        };
+                    };
+                }).catch((error) => {
+                    console.log('SW registration failed:', error);
+                });
+            });
+        }
     </script>
 </body>
 
