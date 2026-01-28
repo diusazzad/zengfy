@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - ZenGFY</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -86,6 +87,12 @@
                                 class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Forgot
                                 password?</a>
                         </div>
+
+                        <!-- Cloudflare Turnstile -->
+                        <div class="cf-turnstile flex justify-center mb-4"
+                            data-sitekey="{{ env('TURNSTILE_SITE_KEY', '1x00000000000000000000AA') }}"
+                            data-theme="light"></div>
+
                         <button type="submit"
                             class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50 cursor-not-allowed">Sign
                             in (Email Disabled)</button>

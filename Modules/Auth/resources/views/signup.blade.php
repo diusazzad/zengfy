@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ __('signup.meta_title') }}</title>
     <meta name="description" content="{{ __('signup.meta_description') }}">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -128,6 +129,11 @@
                         <input type="password" id="password" name="password"
                             placeholder="{{ __('signup.password_placeholder') }}" required
                             class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition duration-300">
+                    </div>
+
+                    <!-- Cloudflare Turnstile -->
+                    <div class="cf-turnstile flex justify-center"
+                        data-sitekey="{{ env('TURNSTILE_SITE_KEY', '1x00000000000000000000AA') }}" data-theme="dark">
                     </div>
 
                     <!-- Submit Button -->
