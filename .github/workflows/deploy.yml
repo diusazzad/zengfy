@@ -1,4 +1,4 @@
-name: Deploy to cPanel (SSH)
+name: Deploy to cPanel
 
 on:
   push:
@@ -7,15 +7,20 @@ on:
 
 jobs:
   deploy:
-    name: SSH Deploy
+    name: FTP Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: � Execute remote git pull
-        uses: appleboy/ssh-action@v1.0.3
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ${{ secrets.DEPLOY_PATH }}
-            git pull origin main
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
