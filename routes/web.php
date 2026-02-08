@@ -28,16 +28,17 @@ Route::get('/lang/{locale}', function ($locale) {
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+Route::post('/sos/trigger', [PageController::class, 'triggerSOS'])->name('sos.trigger');
+Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/download-app', [PageController::class, 'downloadApp'])->name('download.app');
 Route::post('/faq/submit', [PageController::class, 'submitQuestion'])->name('faq.submit');
-
-// Auth Routes are handled by Modules\Auth
-Route::get('/signup', [PageController::class, 'signup'])->name('signup');
 
 // Secured Main Module Routes
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('mains', MainController::class)->names('main');
-    Route::get('/dashboard', [MainController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        return redirect()->route('welcome');
+    })->name('dashboard');
     Route::get('/account', [AccountController::class, 'index'])->name('account');
 });
 

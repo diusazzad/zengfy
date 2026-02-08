@@ -1,90 +1,68 @@
 <div
     class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 md:hidden">
-    <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium" x-data="{ appsOpen: false }">
+    <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
+        <!-- Trending -->
+        <a href="{{ route('welcome') }}"
+            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group transition-all duration-200 {{ Route::is('welcome') ? 'bg-gray-50 dark:bg-gray-800' : '' }}">
+            <svg class="w-6 h-6 mb-1 {{ Route::is('welcome') ? 'text-blue-600' : 'text-gray-500' }} dark:{{ Route::is('welcome') ? 'text-blue-500' : 'text-gray-400' }} group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+            <span
+                class="text-[10px] {{ Route::is('welcome') ? 'text-blue-600 font-bold' : 'text-gray-500' }} dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Trending</span>
+        </a>
 
-        <!-- Home -->
-        <a href="{{ route('dashboard') }}"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500 {{ request()->routeIs('dashboard') ? 'text-blue-600 dark:text-blue-500' : '' }}"
-                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path
-                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+        <!-- Community -->
+        <a href="#"
+            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group transition-all duration-200">
+            <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
                 </path>
             </svg>
             <span
-                class="text-xs text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500 {{ request()->routeIs('dashboard') ? 'text-blue-600 dark:text-blue-500' : '' }}">Home</span>
+                class="text-[10px] text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Community</span>
         </a>
 
-        <!-- Apps (Triggers Menu) -->
-        <div class="relative flex justify-center">
-            <!-- Apps Menu Dropup -->
-            <div x-show="appsOpen" @click.outside="appsOpen = false"
-                x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2"
-                x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-2"
-                class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-2"
-                style="display: none;">
-                <div class="p-3 grid grid-cols-3 gap-3">
-                    <!-- School -->
-                    <a href="http://school.zengfy.top"
-                        class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span class="text-xl">🎓</span>
-                        <span class="text-[10px] mt-1 text-gray-900 dark:text-white">School</span>
-                    </a>
-                    <!-- Shop -->
-                    <a href="http://ecommerce.zengfy.top"
-                        class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span class="text-xl">🛒</span>
-                        <span class="text-[10px] mt-1 text-gray-900 dark:text-white">Shop</span>
-                    </a>
-                    <!-- POS -->
-                    <a href="http://pos.zengfy.top"
-                        class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span class="text-xl">💳</span>
-                        <span class="text-[10px] mt-1 text-gray-900 dark:text-white">POS</span>
-                    </a>
-                    <!-- Hotel -->
-                    <a href="http://hotel.zengfy.top"
-                        class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span class="text-xl">🏨</span>
-                        <span class="text-[10px] mt-1 text-gray-900 dark:text-white">Hotel</span>
-                    </a>
-                    <!-- AI -->
-                    <a href="#"
-                        class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span class="text-xl">🤖</span>
-                        <span class="text-[10px] mt-1 text-gray-900 dark:text-white">AI</span>
-                    </a>
-                    <!-- More -->
-                    <a href="#"
-                        class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span class="text-xl">⚡</span>
-                        <span class="text-[10px] mt-1 text-gray-900 dark:text-white">More</span>
-                    </a>
-                </div>
-            </div>
-
-            <button @click="appsOpen = !appsOpen"
-                class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group w-full">
-                <div
-                    class="p-2 bg-blue-100 dark:bg-blue-900 rounded-full group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition">
-                    <svg class="w-6 h-6 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path
-                            d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
-                        </path>
-                    </svg>
-                </div>
-            </button>
-        </div>
-
-        <!-- Account -->
-        <a href="{{ route('account') }}"
-            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <img class="w-6 h-6 rounded-full border border-gray-300 dark:border-gray-500 mb-1"
-                src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=random" alt="User">
+        <!-- Following -->
+        <a href="#"
+            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group transition-all duration-200">
+            <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+                </path>
+            </svg>
             <span
-                class="text-xs text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500 {{ request()->routeIs('account') ? 'text-blue-600 dark:text-blue-500' : '' }}">Account</span>
+                class="text-[10px] text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Following</span>
+        </a>
+
+        <!-- Fitness -->
+        <a href="#"
+            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group transition-all duration-200">
+            <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                </path>
+            </svg>
+            <span
+                class="text-[10px] text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Fitness</span>
+        </a>
+
+        <!-- Help -->
+        <a href="#"
+            class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group transition-all duration-200">
+            <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+            </svg>
+            <span
+                class="text-[10px] text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Help</span>
         </a>
     </div>
 </div>

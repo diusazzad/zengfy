@@ -19,10 +19,22 @@
         </div>
         <ul class="py-1" role="none">
             <li>
+                <a href="{{ route('profile', Auth::id()) }}"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    role="menuitem">My Profile</a>
+            </li>
+            <li>
                 <a href="{{ route('account') }}"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">Account Center</a>
             </li>
+            @if(Auth::user()->hasRole('admin'))
+                <li>
+                    <a href="{{ route('main.admin.verifications.index') }}"
+                        class="block px-4 py-2 text-sm text-blue-600 font-bold hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-600"
+                        role="menuitem">Verification Requests</a>
+                </li>
+            @endif
             <li>
                 <a href="#settings"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"

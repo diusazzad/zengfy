@@ -1,10 +1,19 @@
+@php
+    $ecosystemApps = [
+        ['name' => 'Legal', 'icon' => '⚖️', 'url' => zengfy_url('law'), 'description' => 'Cases & Schedule', 'color' => 'bg-blue-500'],
+        ['name' => 'Merchant', 'icon' => '🛍️', 'url' => zengfy_url('merchant'), 'description' => 'Orders & Store', 'color' => 'bg-pink-500'],
+        ['name' => 'School', 'icon' => '🎓', 'url' => zengfy_url('school'), 'description' => 'Attendance & ERP', 'color' => 'bg-indigo-500'],
+        ['name' => 'POS', 'icon' => '🛒', 'url' => zengfy_url('pos'), 'description' => 'Billing & Inventory', 'color' => 'bg-green-500'],
+        ['name' => 'Hotel', 'icon' => '🏨', 'url' => zengfy_url('hotel'), 'description' => 'Booking & Management', 'color' => 'bg-amber-500'],
+        ['name' => 'AI', 'icon' => '⚡', 'url' => zengfy_url('ai'), 'description' => 'Smart Assistants', 'color' => 'bg-purple-500'],
+    ];
+@endphp
+
 <div class="relative" x-data="{ open: false }">
     <button @click="open = !open" @click.outside="open = false" type="button"
-        class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-300 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-        <span class="sr-only">View notifications</span>
-        <!-- 9 dots icon -->
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
+        class="p-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-300 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition duration-200">
+        <span class="sr-only">Open apps menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
             <path
                 d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
             </path>
@@ -12,139 +21,36 @@
     </button>
 
     <!-- Dropdown menu -->
-    <div x-show="open" x-transition
-        class="absolute right-0 z-50 mt-2 my-4 w-80 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+        x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+        x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+        class="absolute right-0 z-50 mt-2 my-4 w-80 md:w-96 text-base list-none bg-white divide-y divide-gray-100 rounded-2xl shadow-2xl dark:bg-gray-800 dark:divide-gray-700 border border-gray-100 dark:border-gray-700 overflow-hidden"
         id="apps-dropdown">
-        <div class="grid grid-cols-3 gap-4 p-4">
 
-            <a href="{{ zengfy_url('school') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                        </path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">School</div>
-            </a>
-
-            <a href="{{ zengfy_url('ecommerce') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">Shop</div>
-            </a>
-
-            <a href="{{ zengfy_url('pos') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                        </path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">POS</div>
-            </a>
-
-            <a href="{{ zengfy_url('hotel') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                        </path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">Hotel</div>
-            </a>
-
-            <a href="/law/dashboard"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
-                        </path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">Law</div>
-            </a>
-
-            <a href="{{ zengfy_url('havit') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
-                        </path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">Habit</div>
-            </a>
-
-            <a href="{{ zengfy_url('samrtai') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">AI</div>
-            </a>
-
-            <a href="{{ zengfy_url('watch') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">Watch</div>
-            </a>
-
-            <a href="{{ zengfy_url('civil') }}"
-                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
-                <div
-                    class="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                        </path>
-                    </svg>
-                </div>
-                <div class="text-xs font-medium text-gray-900 dark:text-white">Civil</div>
-            </a>
-
+        <div class="p-4 grid grid-cols-2 gap-3">
+            @foreach($ecosystemApps as $app)
+                <a href="{{ $app['url'] }}"
+                    class="group flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-200">
+                    <div
+                        class="w-10 h-10 {{ $app['color'] }} rounded-lg flex items-center justify-center text-white text-xl shadow-lg shadow-opacity-20 group-hover:scale-110 transition duration-200">
+                        {{ $app['icon'] }}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-gray-900 dark:text-white text-sm truncate">{{ $app['name'] }}</h4>
+                        <p class="text-[10px] text-gray-500 dark:text-gray-400 font-medium leading-tight mt-0.5">
+                            {{ $app['description'] }}</p>
+                    </div>
+                </a>
+            @endforeach
         </div>
-        <div class="p-4 border-t border-gray-200 dark:border-gray-600">
-            <a href="#"
-                class="inline-flex items-center justify-center w-full px-5 py-2.5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                View All Services
+
+        <div class="p-4 bg-gray-50 dark:bg-gray-800/50 text-center">
+            <a href="{{ route('services') }}"
+                class="inline-flex items-center justify-center w-full px-5 py-2.5 text-sm font-bold text-center text-white rounded-xl bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 transition duration-200 shadow-lg shadow-blue-500/20">
+                Explore All Services
             </a>
         </div>
     </div>

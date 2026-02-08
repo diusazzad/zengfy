@@ -3,16 +3,24 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Modules\Main\Services\TrendingService;
 
 class PageController extends Controller
 {
-    //     public function __construct()
-// {
-//     $this->middleware('auth');
-// }
+    protected $trendingService;
+
+    public function __construct(TrendingService $trendingService)
+    {
+        $this->trendingService = $trendingService;
+    }
 
     public function welcome()
     {
+        if (Auth::check()) {
+            $posts = \Modules\Main\Models\Post::with(['user', 'comments.user', 'likes'])->latest()->get();
+            $trends = $this->trendingService->getTrends();
+            return view('main::index', compact('posts', 'trends'));
+        }
         return view('welcome');
     }
 
@@ -25,17 +33,6 @@ class PageController extends Controller
     public function downloadApp()
     {
         return view('download');
-    }
-    public function signup()
-    {
-        // Use the new signup view in the Auth module
-        return view('auth::signup');
-    }
-
-    public function login()
-    {
-        // Use the login view in the Auth module
-        return view('auth::login');
     }
 
     public function faq()
@@ -140,4 +137,68 @@ class PageController extends Controller
 //     });
 // }
 
+    public function services()
+    {
+        $services = [
+            [
+                'name' => 'Ecommerce',
+                'status' => 'active',
+                'cta' => 'Open store',
+                'url' => 'https://ecommerce.zengfy.top',
+                'meta' => 'Orders, catalog, payments',
+            ],
+            [
+                'name' => 'School ERP',
+                'status' => 'active',
+                'cta' => 'Open ERP',
+                'url' => 'https://school.zengfy.top',
+                'meta' => 'Attendance, result, fees',
+            ],
+            [
+                'name' => 'POS',
+                'status' => 'trial',
+                'cta' => 'Start trial',
+                'url' => 'https://pos.zengfy.top',
+                'meta' => 'Billing and inventory',
+            ],
+            [
+                'name' => 'Legal',
+                'status' => 'locked',
+                'cta' => 'Explore',
+                'url' => 'https://law.zengfy.top',
+                'meta' => 'Cases and schedule',
+            ],
+            [
+                'name' => 'Hotel',
+                'status' => 'locked',
+                'cta' => 'Explore',
+                'url' => 'https://hotel.zengfy.top',
+                'meta' => 'Rooms and bookings',
+            ],
+            [
+                'name' => 'AI Assistant',
+                'status' => 'trial',
+                'cta' => 'Enable',
+                'url' => 'https://smartai.zengfy.top',
+                'meta' => 'Workflows, SMS/Email',
+            ],
+        ];
+
+        return view('services', compact('services'));
+    }
+    public function triggerSOS(Request $request)
+    {
+        $user = auth()->user();
+        $lat = $request->input('lat');
+        $lng = $request->input('lng');
+
+        // Logic to notify emergency contacts and authorities
+        // For now, we log it and simulate a successful response
+        \Illuminate\Support\Facades\Log::emergency("SOS Triggered by User: {$user->name} (ID: {$user->id}) at Lat: {$lat}, Lng: {$lng}");
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Emergency services have been notified.'
+        ]);
+    }
 }

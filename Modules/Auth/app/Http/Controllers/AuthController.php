@@ -3,54 +3,124 @@
 namespace Modules\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display login form.
      */
-    public function index()
+    public function showLogin()
     {
-        return view('auth::index');
+        return view('auth::login');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display signup form.
      */
-    public function create()
+    public function showSignup()
     {
-        return view('auth::create');
+        return view('auth::signup');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Handle login request.
      */
-    public function store(Request $request) {}
-
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
+    public function login(Request $request)
     {
-        return view('auth::show');
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+            $request->session()->regenerate();
+            return redirect()->intended(route('welcome'));
+        }
+
+        return back()->withErrors([
+            'email' => __('auth.failed'),
+        ])->onlyInput('email');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Handle registration request.
      */
-    public function edit($id)
+    public function register(Request $request)
     {
-        return view('auth::edit');
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'message' => $validator->errors()->first()], 422);
+        }
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'user_type' => 'general',
+        ]);
+
+        Auth::login($user);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Registration successful!',
+            'redirect' => route('welcome')
+        ]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Redirect to Google.
      */
-    public function update(Request $request, $id) {}
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
 
     /**
-     * Remove the specified resource from storage.
+     * Handle Google callback.
      */
-    public function destroy($id) {}
+    public function handleGoogleCallback()
+    {
+        try {
+            $googleUser = Socialite::driver('google')->user();
+        } catch (\Exception $e) {
+            return redirect()->route('login')->with('error', 'Google Auth Failed');
+        }
+
+        $user = User::updateOrCreate([
+            'email' => $googleUser->email,
+        ], [
+            'name' => $googleUser->name,
+            'google_id' => $googleUser->id,
+            'avatar' => $googleUser->avatar,
+            'password' => Hash::make(uniqid()),
+            'email_verified_at' => now(),
+        ]);
+
+        Auth::login($user);
+
+        return redirect()->route('welcome');
+    }
+
+    /**
+     * Logout.
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }

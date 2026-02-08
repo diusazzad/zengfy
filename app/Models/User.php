@@ -13,6 +13,13 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
+     * The connection name for the model.
+     *
+     * @var string|null
+     */
+    protected $connection = 'main';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
@@ -22,6 +29,15 @@ class User extends Authenticatable
         'email',
         'password',
         'google_id',
+        'user_type',
+        'phone',
+        'avatar',
+        'nid_verified',
+        'school_id_verified',
+        'nid_card_path',
+        'school_id_path',
+        'provider',
+        'provider_id',
     ];
 
     /**
@@ -45,5 +61,28 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(\Modules\Main\Models\Post::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(\Modules\Main\Models\Like::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(\Modules\Main\Models\Comment::class);
+    }
+
+    /**
+     * Check if user has a specific role based on user_type.
+     */
+    public function hasRole(string $role): bool
+    {
+        return $this->user_type === $role;
     }
 }

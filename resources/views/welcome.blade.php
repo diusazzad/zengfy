@@ -266,10 +266,21 @@
                         class="px-3 py-1 rounded-full text-xs font-bold transition {{ app()->getLocale() == 'bn' ? 'bg-white shadow text-blue-600' : 'text-gray-500 hover:text-gray-700' }}">BN</a>
                 </div>
 
-                <a href="{{ route('login') }}"
-                    class="text-blue-600 hover:text-blue-700">{{ __('welcome.nav.login') }}</a>
-                <a href="{{ route('signup') }}"
-                    class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-600/20 transform hover:-translate-y-0.5">{{ __('welcome.nav.signup') }}</a>
+                @guest
+                    <a href="{{ route('login') }}"
+                        class="text-blue-600 hover:text-blue-700">{{ __('welcome.nav.login') }}</a>
+                    <a href="{{ route('signup') }}"
+                        class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-600/20 transform hover:-translate-y-0.5">{{ __('welcome.nav.signup') }}</a>
+                @else
+                    <a href="{{ route('dashboard') }}"
+                        class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-600/20 transform hover:-translate-y-0.5">{{ __('welcome.nav.dashboard') ?? 'Dashboard' }}</a>
+                    <form action="{{ route('logout') }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" class="text-gray-500 hover:text-red-500 transition ml-2">
+                            Logout
+                        </button>
+                    </form>
+                @endguest
             </nav>
         </div>
     </header>
@@ -299,9 +310,9 @@
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 animate-fade-in-up"
                         style="animation-delay: 0.3s">
-                        <a href="{{ route('signup') }}"
+                        <a href="{{ auth()->check() ? route('dashboard') : route('signup') }}"
                             class="px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg font-bold shadow-xl hover:bg-yellow-300 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                            <span>{{ __('welcome.hero.cta_start') }}</span>
+                            <span>{{ auth()->check() ? 'Go to Dashboard' : __('welcome.hero.cta_start') }}</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -341,28 +352,85 @@
                 </div>
 
                 <div class="flex-1 flex justify-center lg:justify-end animate-float">
-                    <div class="relative w-full max-w-lg">
-                        <div
-                            class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-pink-600 rounded-2xl blur opacity-30 animate-pulse">
-                        </div>
-                        <div
-                            class="relative bg-white/10 backdrop-blur-xl rounded-2xl p-2 border border-white/20 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Zengfy Dashboard Preview" class="rounded-xl shadow-inner w-full">
+                    @guest
+                        <div class="w-full max-w-md">
+                            <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl">
+                                <h3 class="text-2xl font-bold mb-6 text-white text-center">Sign in to ZenGFY</h3>
 
-                            <!-- Floating Badges -->
-                            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce"
-                                style="animation-duration: 3s">
-                                <div
-                                    class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                                    🛡️</div>
-                                <div>
-                                    <p class="text-xs text-gray-500 font-semibold">Security Verified</p>
-                                    <p class="font-bold text-gray-800">ISO 27001 Ready</p>
+                                <!-- Google Login Button -->
+                                <a href="{{ route('auth.google') }}"
+                                    class="w-full flex items-center justify-center px-4 py-3 mb-6 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg">
+                                    <svg class="h-5 w-5 mr-3" viewBox="0 0 48 48">
+                                        <path fill="#FFC107"
+                                            d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z">
+                                        </path>
+                                        <path fill="#FF3D00"
+                                            d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z">
+                                        </path>
+                                        <path fill="#4CAF50"
+                                            d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z">
+                                        </path>
+                                        <path fill="#1976D2"
+                                            d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z">
+                                        </path>
+                                    </svg>
+                                    Continue with Google
+                                </a>
+
+                                <div class="flex items-center mb-6">
+                                    <div class="flex-1 h-px bg-white/20"></div>
+                                    <div class="px-4 text-xs font-medium text-blue-200">or use email</div>
+                                    <div class="flex-1 h-px bg-white/20"></div>
+                                </div>
+
+                                <form action="{{ route('login') }}" method="POST" class="space-y-4">
+                                    @csrf
+                                    <div>
+                                        <input type="email" name="email" placeholder="Email address"
+                                            class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:border-white transition"
+                                            required>
+                                    </div>
+                                    <div>
+                                        <input type="password" name="password" placeholder="Password"
+                                            class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:border-white transition"
+                                            required>
+                                    </div>
+                                    <button type="submit"
+                                        class="w-full py-3 bg-blue-500 hover:bg-blue-400 text-white rounded-lg font-bold transition shadow-lg shadow-blue-500/20">
+                                        Sign In
+                                    </button>
+                                </form>
+
+                                <p class="mt-6 text-center text-sm text-blue-100">
+                                    Don't have an account? <a href="{{ route('signup') }}"
+                                        class="font-bold border-b border-blue-100 pb-0.5">Create new account</a>
+                                </p>
+                            </div>
+                        </div>
+                    @else
+                        <div class="relative w-full max-w-lg">
+                            <div
+                                class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-pink-600 rounded-2xl blur opacity-30 animate-pulse">
+                            </div>
+                            <div
+                                class="relative bg-white/10 backdrop-blur-xl rounded-2xl p-2 border border-white/20 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Zengfy Dashboard Preview" class="rounded-xl shadow-inner w-full">
+
+                                <!-- Floating Badges -->
+                                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce"
+                                    style="animation-duration: 3s">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                        🛡️</div>
+                                    <div>
+                                        <p class="text-xs text-gray-500 font-semibold">Security Verified</p>
+                                        <p class="font-bold text-gray-800">ISO 27001 Ready</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endguest
                 </div>
             </div>
         </section>
@@ -715,8 +783,8 @@
                 <h2 class="text-4xl font-bold mb-6">{{ __('welcome.cta_footer.title') }}</h2>
                 <p class="text-xl text-gray-300 mb-10">{{ __('welcome.cta_footer.subtitle') }}</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="{{ route('signup') }}"
-                        class="px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg font-bold hover:bg-yellow-300 transition shadow-lg w-full sm:w-auto">{{ __('welcome.cta_footer.btn_free') }}</a>
+                    <a href="{{ auth()->check() ? route('dashboard') : route('signup') }}"
+                        class="px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg font-bold hover:bg-yellow-300 transition shadow-lg w-full sm:w-auto">{{ auth()->check() ? 'Go to Dashboard' : __('welcome.cta_footer.btn_free') }}</a>
                     <a href="{{ route('team') }}"
                         class="px-8 py-4 border border-gray-600 bg-gray-800 rounded-lg font-bold hover:bg-gray-700 transition w-full sm:w-auto">{{ __('welcome.cta_footer.btn_talk') }}</a>
                 </div>

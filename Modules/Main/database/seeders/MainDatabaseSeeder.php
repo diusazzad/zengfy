@@ -11,6 +11,8 @@ class MainDatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call([]);
+        $this->call([
+            SocialFeedSeeder::class,
+        ]);
     }
 }
