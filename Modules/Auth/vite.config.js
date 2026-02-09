@@ -4,9 +4,11 @@ import { readdirSync, statSync } from 'fs';
 import { join,relative,dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+import { resolve } from 'path';
+
 export default defineConfig({
     build: {
-        outDir: '../../public/build-auth',
+        outDir: resolve(__dirname, '../../public/build-auth'),
         emptyOutDir: true,
         manifest: true,
     },
