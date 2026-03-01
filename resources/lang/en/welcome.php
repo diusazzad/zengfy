@@ -64,7 +64,7 @@ return [
             'journal_desc' => 'Subscription & Publishing',
             'civil' => 'Civil',
             'civil_desc' => 'Project & Inventory',
-            'more' => 'More Coming...',
+            // 'more' => 'More Coming...',
         ],
     ],
     'features' => [

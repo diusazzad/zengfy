@@ -26,6 +26,7 @@ Route::get('/lang/{locale}', function ($locale) {
 
 // Public Page Routes
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
+Route::get('/policy/workplace', [PageController::class, 'workplacePolicy'])->name('policy.workplace');
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 Route::post('/sos/trigger', [PageController::class, 'triggerSOS'])->name('sos.trigger');
@@ -34,6 +35,7 @@ Route::get('/download-app', [PageController::class, 'downloadApp'])->name('downl
 Route::post('/faq/submit', [PageController::class, 'submitQuestion'])->name('faq.submit');
 
 // Secured Main Module Routes
+/* Disabled for landing-only focus
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('mains', MainController::class)->names('main');
     Route::get('/dashboard', function () {
@@ -41,6 +43,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
     Route::get('/account', [AccountController::class, 'index'])->name('account');
 });
+*/
 
+// Blog Routes (Kept as stubs)
+Route::prefix('blog')->group(function () {
+    Route::get('/', function () {
+        return "Zengfy Blog - Coming Soon";
+    })->name('blog.index');
+    /* Disabled for landing-only focus
+    Route::get('/{slug}', function ($slug) {
+        return "Blog Post: " . $slug;
+    })->name('blog.show');
+    */
+});
 
 // Auth routes are loaded from Modules/Auth/Routes/web.php
