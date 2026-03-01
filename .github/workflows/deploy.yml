@@ -13,6 +13,11 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
+      - name: 🔨 Install dependencies and build
+        run: |
+            npm install
+            npm run build
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -24,3 +29,4 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
+            **/tests/**
