@@ -25,6 +25,7 @@
                 <h4 class="font-black text-gray-900 mb-6 uppercase tracking-widest text-xs">Community</h4>
                 <ul class="space-y-4 text-gray-500 font-medium">
                     <li><a href="#" class="hover:text-blue-600 transition">Business Feed</a></li>
+                    <li><a href="{{ route('team') }}" class="hover:text-blue-600 transition">Our Team</a></li>
                     <li><a href="#" class="hover:text-blue-600 transition">B2B Network</a></li>
                     <li><a href="{{ route('blog.index') }}" class="hover:text-blue-600 transition">Insights Blog</a>
                     </li>

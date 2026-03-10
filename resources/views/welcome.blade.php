@@ -1,4 +1,4 @@
-﻿<x-layouts.landing>
+<x-layouts.landing>
     <x-landing.hero />
 
     <x-landing.service-hub />

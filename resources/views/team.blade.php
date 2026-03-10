@@ -1,4 +1,4 @@
-﻿<x-layouts.landing>
+<x-layouts.landing>
     <x-slot name="title">Meet the Team | Zengfy</x-slot>
 
     <!-- Team Hero Section -->
