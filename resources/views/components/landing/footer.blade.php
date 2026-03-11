@@ -37,6 +37,7 @@
             class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 font-bold text-xs uppercase tracking-widest">
             <div>{{ __('welcome.footer.rights') }}</div>
             <div class="flex gap-8">
+                <a href="{{ route('policy.workplace') }}" class="hover:text-blue-600 transition">Workplace Policy</a>
                 <a href="#" class="hover:text-blue-600 transition">Privacy</a>
                 <a href="#" class="hover:text-blue-600 transition">Terms</a>
             </div>
