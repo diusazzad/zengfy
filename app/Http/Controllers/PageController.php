@@ -231,7 +231,58 @@ class PageController extends Controller
 
     public function workplacePolicy()
     {
-        return view('policy.workplace');
+        $header = [
+            'tag' => 'Company Policy',
+            'title_prefix' => 'Our ',
+            'title_highlight' => 'Workplace Policy',
+            'title_suffix' => ' & Team Culture',
+            'subtitle' => 'Building the world\'s first unified social business ecosystem starts with a culture of transparency, innovation, and digital sovereignty.'
+        ];
+
+        $cards = [
+            [
+                'icon' => '🏢',
+                'bg_color' => 'bg-blue-600',
+                'shadow_color' => 'shadow-blue-600/30',
+                'title' => 'Workplace Model: Hybrid',
+                'description' => 'We blend deep on-site collaboration with the freedom and flexibility of remote work. Our model is built on "Productivity over Presence".'
+            ],
+            [
+                'icon' => '🚀',
+                'bg_color' => 'bg-indigo-600',
+                'shadow_color' => 'shadow-indigo-600/30',
+                'title' => 'Core Values',
+                'description' => 'Digital Sovereignty, Transparency, Safety First, and Continuous Innovation guide every decision we make.'
+            ]
+        ];
+
+        $sections = [
+            [
+                'title' => 'Our Commitment to Flexibility',
+                'description' => 'At Zengfy, we trust our team to manage their time and environment. Whether you are working from our creative hub or your own home, the focus remains on building high-impact solutions for our unified ecosystem.'
+            ],
+            [
+                'title' => 'Digital Sovereignty & Security',
+                'description' => 'Our internal operations reflect our product vision. We use verified identities and secure communication channels to ensure that our team operates in a safe and productive digital home.'
+            ],
+            [
+                'title' => 'Mental Health & Well-being',
+                'description' => 'A healthy team builds healthy products. We encourage unplugging after work hours and provide resources for mental and physical well-being, ensuring our team is always at their best.'
+            ],
+            [
+                'title' => 'Continuous Learning & Growth',
+                'description' => 'We believe in investing in our people. From access to premium learning platforms to attending global tech conferences, we make sure our team is constantly evolving and staying ahead of the curve.'
+            ]
+        ];
+
+        $cta = [
+            'title' => 'Want to join the ecosystem?',
+            'description' => 'We are always looking for passionate innovators to help us redefine the future of social business.',
+            'button_text' => 'View Openings',
+            'button_link' => '#'
+        ];
+
+        return view('policy.workplace', compact('header', 'cards', 'sections', 'cta'));
     }
 
     public function triggerSOS(Request $request)
