@@ -22,6 +22,32 @@ return [
             'support' => '24/7 Support',
         ],
     ],
+    'prds' => [
+        'badge' => 'Bangladesh\'s First 100% Safe App',
+        'title_html' => 'Bangladesh\'s First <span class="text-blue-600">100% Safe</span> Social Ecosystem',
+        'description' => 'A fake-account-free, secure platform focused on your daily routine and health protection.',
+        'health' => [
+            'title' => 'Health & Daily Routine',
+            'desc' => 'Reduce dopamine addiction and focus on daily routine tracking and health protection.',
+        ],
+        'sos' => [
+            'title' => 'Offline SOS Alert',
+            'desc' => 'Alert your nearby community in times of danger with a button shortcut, even without a network.',
+        ],
+        'secure' => [
+            'title' => '100% Verified Community',
+            'desc' => 'Completely fake-account-free and safe environment through NID and School verification.',
+        ],
+        'login_title' => 'Log in to your account',
+        'login_subtitle' => 'Welcome back to the Zengfy Ecosystem',
+        'form' => [
+            'email' => 'Email or Phone Number',
+            'password' => 'Password',
+            'forgot' => 'Forgot Password?',
+            'remember' => 'Remember me',
+            'or' => 'OR',
+        ],
+    ],
     'social' => [
         'badge' => 'FREE FOREVER',
         'title_prefix' => 'Social Media Hub for',

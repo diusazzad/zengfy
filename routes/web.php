@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Main\Http\Controllers\MainController;
 use Modules\Main\Http\Controllers\AccountController;
 use App\Http\Controllers\PageController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,16 @@ Route::get('/lang/{locale}', function ($locale) {
     return redirect()->back();
 })->name('lang.switch');
 
+// Authentication Redirect Route
+Route::get('/login', function () {
+    return redirect()->route('team.login');
+})->name('login');
+
+Route::post('/logout', [Modules\Team\Http\Controllers\TeamLoginController::class, 'logout'])->name('logout');
+
 // Public Page Routes
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/policy/workplace', [PageController::class, 'workplacePolicy'])->name('policy.workplace');
-Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 Route::post('/sos/trigger', [PageController::class, 'triggerSOS'])->name('sos.trigger');
 Route::get('/services', [PageController::class, 'services'])->name('services');
@@ -36,14 +43,14 @@ Route::post('/faq/submit', [PageController::class, 'submitQuestion'])->name('faq
 
 // Secured Main Module Routes
 /* Disabled for landing-only focus
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('mains', MainController::class)->names('main');
-    Route::get('/dashboard', function () {
-        return redirect()->route('welcome');
-    })->name('dashboard');
     Route::get('/account', [AccountController::class, 'index'])->name('account');
 });
 */
+
+// Admin Management Routes
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    // Other admin routes...
+});
 
 // Blog Routes (Kept as stubs)
 Route::prefix('blog')->group(function () {

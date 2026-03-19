@@ -1,3 +1,4 @@
+@auth
 <div class="relative" x-data="{ open: false }">
     <button @click="open = !open" @click.outside="open = false" type="button"
         class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
@@ -56,3 +57,4 @@
         </ul>
     </div>
 </div>
+@endauth

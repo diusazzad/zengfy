@@ -17,10 +17,13 @@
                             <span class="inline-flex items-center justify-center p-3 bg-blue-600 rounded-xl shadow-lg shadow-blue-500/20 text-white text-2xl">
                                 @switch($service['name'])
                                     @case('Ecommerce') 🛒 @break
-                                    @case('School ERP') 🎓 @break
+                                    @case('School ERP') 🏫 @break
                                     @case('POS') 🛍️ @break
+                                    @case('Law') ⚖️ @break
                                     @case('Legal') ⚖️ @break
                                     @case('Hotel') 🏨 @break
+                                    @case('Skill') 🎓 @break
+                                    @case('Journal') 📓 @break
                                     @case('AI Assistant') ⚡ @break
                                     @default ⚙️
                                 @endswitch

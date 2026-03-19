@@ -1,5 +1,6 @@
 {
     "Main": true,
     "Auth": true,
-    "Law": true
+    "Law": true,
+    "Team": true
 }

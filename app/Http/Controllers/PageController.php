@@ -24,44 +24,62 @@ class PageController extends Controller
             [
                 'name' => 'Zengfy Commerce',
                 'desc' => 'Inventory, Orders & Online Store.',
-                'img' => 'images/services/cards/ecommerce.png',
+                'img' => 'images/services/webP/ecommerce.jpg',
                 'url' => 'https://ecommerce.zengfy.top'
             ],
             [
                 'name' => 'Zengfy School',
                 'desc' => 'Complete Academic Management.',
-                'img' => 'images/services/cards/school.png',
+                'img' => 'images/services/webP/school.jpg',
                 'url' => 'https://school.zengfy.top'
             ],
             [
                 'name' => 'Zengfy POS',
                 'desc' => 'Point of Sale & Billing.',
-                'img' => 'images/services/cards/pos.png',
+                'img' => 'images/services/webP/pos.jpg',
                 'url' => 'https://pos.zengfy.top'
             ],
             [
                 'name' => 'Zengfy Rent',
                 'desc' => 'Automated Rental Management.',
-                'img' => 'images/services/cards/rent.png',
+                'img' => 'images/services/webP/rent.jpg',
                 'url' => 'https://rent.zengfy.top'
             ],
             [
                 'name' => 'Zengfy Hotel',
                 'desc' => 'Booking & Stay Management.',
-                'img' => 'images/services/cards/hotel.png',
+                'img' => 'images/services/webP/hotel.jpg',
                 'url' => 'https://hotel.zengfy.top'
             ],
             [
                 'name' => 'Zengfy NGO',
                 'desc' => 'Charity & Program Tracking.',
-                'img' => 'images/services/cards/ngo.png',
+                'img' => 'images/services/webP/ngo.jpg',
                 'url' => 'https://ngo.zengfy.top'
             ],
             [
                 'name' => 'Zengfy Civil',
                 'desc' => 'Engineering & Construction.',
-                'img' => 'images/services/cards/civil.png',
+                'img' => 'images/services/webP/civil.webp',
                 'url' => 'https://civil.zengfy.top'
+            ],
+            [
+                'name' => 'Zengfy Law',
+                'desc' => 'Cases, Clients & Schedules.',
+                'img' => 'images/services/webP/law.jpg',
+                'url' => 'https://law.zengfy.top'
+            ],
+            [
+                'name' => 'Zengfy Skill',
+                'desc' => 'Courses & Learning Platform.',
+                'img' => 'images/services/webP/skill.jpg',
+                'url' => 'https://skill.zengfy.top'
+            ],
+            [
+                'name' => 'Zengfy Journal',
+                'desc' => 'Personal Diary & Notes.',
+                'img' => 'images/services/webP/journal.jpg',
+                'url' => 'https://journal.zengfy.top'
             ],
         ];
 
@@ -87,32 +105,6 @@ class PageController extends Controller
         ];
 
         return view('welcome', compact('services', 'features'));
-    }
-
-    public function team()
-    {
-        $team = [
-            [
-                'name' => 'Sazzad Hossain',
-                'role' => 'Founder & CTO',
-                'bio' => 'Visionary architect behind the Zengfy ecosystem. Passionate about digital sovereignty and building secure, unified business solutions for a better tomorrow.',
-                'image' => 'welcome/team/mahim.png',
-                'linkedin' => 'https://linkedin.com/in/sazzadhossainmahim',
-                'twitter' => '#',
-                'gradient' => 'from-blue-600 to-indigo-700'
-            ],
-            [
-                'name' => 'Mahabub Hossain',
-                'role' => 'Co-Founder',
-                'bio' => 'Technical strategist driving the innovation of our unified social business platforms. Focused on high-performance architecture and seamless user experiences.',
-                'image' => 'welcome/team/masum.png',
-                'linkedin' => 'https://linkedin.com/in/mhmahbub',
-                'twitter' => '#',
-                'gradient' => 'from-indigo-600 to-purple-700'
-            ],
-        ];
-
-        return view('team', compact('team'));
     }
 
 
@@ -225,7 +217,65 @@ class PageController extends Controller
 
     public function services()
     {
-        // ... (existing code)
+        $services = [
+            [
+                'name' => 'Ecommerce',
+                'status' => 'active',
+                'cta' => 'Open store',
+                'url' => 'https://ecommerce.zengfy.top',
+                'meta' => 'Orders, catalog, payments',
+            ],
+            [
+                'name' => 'School ERP',
+                'status' => 'active',
+                'cta' => 'Open ERP',
+                'url' => 'https://school.zengfy.top',
+                'meta' => 'Attendance, result, fees',
+            ],
+            [
+                'name' => 'POS',
+                'status' => 'active',
+                'cta' => 'Open POS',
+                'url' => 'https://pos.zengfy.top',
+                'meta' => 'Billing and inventory',
+            ],
+            [
+                'name' => 'Law',
+                'status' => 'active',
+                'cta' => 'Explore',
+                'url' => 'https://law.zengfy.top',
+                'meta' => 'Cases and schedule',
+            ],
+            [
+                'name' => 'Hotel',
+                'status' => 'active',
+                'cta' => 'Explore',
+                'url' => 'https://hotel.zengfy.top',
+                'meta' => 'Rooms and bookings',
+            ],
+            [
+                'name' => 'Skill',
+                'status' => 'active',
+                'cta' => 'Explore',
+                'url' => 'https://skill.zengfy.top',
+                'meta' => 'Courses and learning',
+            ],
+            [
+                'name' => 'Journal',
+                'status' => 'active',
+                'cta' => 'Explore',
+                'url' => 'https://journal.zengfy.top',
+                'meta' => 'Diary and notes',
+            ],
+            [
+                'name' => 'AI Assistant',
+                'status' => 'trial',
+                'cta' => 'Enable',
+                'url' => 'https://smartai.zengfy.top',
+                'meta' => 'Workflows, AI automation',
+            ],
+        ];
+
         return view('services', compact('services'));
     }
 

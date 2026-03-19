@@ -60,10 +60,10 @@
             <div class="flex-1 order-1 lg:order-2 flex justify-center w-full">
                 <div class="relative w-full max-w-sm sm:max-w-md">
                     <div
-                        class="absolute -inset-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-3xl blur-lg opacity-30 animate-pulse">
+                        class="absolute -inset-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-3xl blur-lg opacity-30">
                     </div>
                     <div
-                        class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden transform rotate-2 hover:rotate-0 transition duration-500">
+                        class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
                         <!-- Header -->
                         <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
                             <div class="flex items-center gap-2">
@@ -119,7 +119,7 @@
                     </div>
                     <!-- Floating Badge -->
                     <div
-                        class="absolute -right-4 -bottom-4 bg-white p-3 rounded-2xl shadow-xl border border-gray-100 animate-bounce">
+                        class="absolute -right-4 -bottom-4 bg-white p-3 rounded-2xl shadow-xl border border-gray-100">
                         <div class="flex items-center gap-2">
                             <div class="w-3 h-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50"></div>
                             <span class="text-xs font-black text-gray-800 tracking-tight">Active Now</span>
