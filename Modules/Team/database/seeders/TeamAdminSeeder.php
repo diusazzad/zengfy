@@ -17,6 +17,7 @@ class TeamAdminSeeder extends Seeder
             ['email' => 'admin@zengfy.top'],
             [
                 'name' => 'Team Admin',
+                'user_type' => 'admin',
                 'password' => Hash::make('password123'),
                 'email_verified_at' => now(),
             ]

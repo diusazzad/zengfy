@@ -16,27 +16,26 @@ use Modules\Team\Models\Team;
 |
 */
 
-Route::middleware('web')->group(function () {
-    // Public Team Page
-    Route::get('/team', function () {
-        $team = Team::where('status', 'active')->orderBy('order')->get();
-        return view('team::public', compact('team'));
-    })->name('team.public');
+// Public Team Page
+Route::get('/team', function () {
+    $team = Team::where('status', 'active')->orderBy('order')->get();
+    return view('team::public', compact('team'));
+})->name('team.public');
 
-    // Standalone Team Login
-    Route::prefix('team')->name('team.')->group(function () {
-        Route::get('/login', [TeamLoginController::class, 'showLoginForm'])->name('login');
-        Route::post('/login', [TeamLoginController::class, 'login'])->name('login.submit');
-        Route::post('/logout', [TeamLoginController::class, 'logout'])->name('logout');
+// Standalone Team Login
+Route::prefix('team')->name('team.')->group(function () {
+    Route::get('/login', [TeamLoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [TeamLoginController::class, 'login'])->name('login.submit');
+    Route::post('/logout', [TeamLoginController::class, 'logout'])->name('logout');
+    Route::get('/logout', [TeamLoginController::class, 'logout'])->name('logout.get');
 
-        // Protected Admin Routes
-        Route::middleware(['auth'])->prefix('admin')->group(function () {
-            Route::get('/', [TeamAdminController::class, 'index'])->name('admin.index');
-            Route::get('/create', [TeamAdminController::class, 'create'])->name('admin.create');
-            Route::post('/store', [TeamAdminController::class, 'store'])->name('admin.store');
-            Route::get('/{team}/edit', [TeamAdminController::class, 'edit'])->name('admin.edit');
-            Route::put('/{team}', [TeamAdminController::class, 'update'])->name('admin.update');
-            Route::delete('/{team}', [TeamAdminController::class, 'destroy'])->name('admin.destroy');
-        });
+    // Protected Admin Routes
+    Route::middleware(['auth', 'admin.only'])->prefix('admin')->group(function () {
+        Route::get('/', [TeamAdminController::class, 'index'])->name('admin.index');
+        Route::get('/create', [TeamAdminController::class, 'create'])->name('admin.create');
+        Route::post('/store', [TeamAdminController::class, 'store'])->name('admin.store');
+        Route::get('/{team}/edit', [TeamAdminController::class, 'edit'])->name('admin.edit');
+        Route::put('/{team}', [TeamAdminController::class, 'update'])->name('admin.update');
+        Route::delete('/{team}', [TeamAdminController::class, 'destroy'])->name('admin.destroy');
     });
 });

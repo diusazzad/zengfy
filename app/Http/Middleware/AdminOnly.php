@@ -15,12 +15,14 @@ class AdminOnly
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // For now, allow all or check role.
         if (auth()->check() && auth()->user()->hasRole('admin')) {
             return $next($request);
         }
 
-        // If not admin, just allow for now to avoid blocking development, or abort
-        return $next($request);
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+
+        abort(403, 'Unauthorized access.');
     }
 }

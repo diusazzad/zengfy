@@ -30,7 +30,7 @@ Route::get('/login', function () {
     return redirect()->route('team.login');
 })->name('login');
 
-Route::post('/logout', [Modules\Team\Http\Controllers\TeamLoginController::class, 'logout'])->name('logout');
+Route::match(['get', 'post'], '/logout', [Modules\Team\Http\Controllers\TeamLoginController::class, 'logout'])->name('logout');
 
 // Public Page Routes
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');

@@ -46,3 +46,8 @@
     ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/ttf "access plus 1 year"
 </IfModule>
+
+# Block .env and .git
+RedirectMatch 404 /\.env
+RedirectMatch 404 /\.git
+Options -Indexes

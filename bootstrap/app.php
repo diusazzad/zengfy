@@ -16,6 +16,11 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\SecurityHeadersMiddleware::class,
         ]);
 
+        $middleware->validateCsrfTokens(except: [
+            'logout',
+            'team/logout',
+        ]);
+
         $middleware->alias([
             'account.active' => \App\Http\Middleware\AccountActive::class,
             'admin.only' => \App\Http\Middleware\AdminOnly::class,

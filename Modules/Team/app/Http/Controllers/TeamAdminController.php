@@ -78,7 +78,7 @@ class TeamAdminController extends Controller
 
         $team->update($validated);
 
-        return redirect()->route('admin.team.index')->with('success', 'টিম মেম্বারের তথ্য সফলভাবে আপডেট করা হয়েছে।');
+        return redirect()->route('team.admin.index')->with('success', 'টিম মেম্বারের তথ্য সফলভাবে আপডেট করা হয়েছে।');
     }
 
     public function destroy(Team $team)
@@ -88,6 +88,6 @@ class TeamAdminController extends Controller
         }
         $team->delete();
 
-        return redirect()->route('admin.team.index')->with('success', 'টিম মেম্বার সফলভাবে ডিলিট করা হয়েছে।');
+        return redirect()->route('team.admin.index')->with('success', 'টিম মেম্বার সফলভাবে ডিলিট করা হয়েছে।');
     }
 }
