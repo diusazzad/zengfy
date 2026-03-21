@@ -19,8 +19,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->validateCsrfTokens(except: [
             'logout',
             'team/logout',
-            'team/admin/store',
-            'team/admin/*',
         ]);
 
         $middleware->alias([
