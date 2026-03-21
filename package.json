@@ -4,8 +4,8 @@
     "scripts": {
         "build": "cross-env NODE_OPTIONS=--max-old-space-size=1024 vite build",
         "build-main": "vite build --config Modules/Main/vite.config.js",
-        "build-auth": "vite build --config Modules/Auth/vite.config.js",
-        "build-all": "npm run build && npm run build-main && npm run build-auth",
+        "build-team": "vite build --config Modules/Team/vite.config.js",
+        "build-all": "npm run build && npm run build-main && npm run build-team",
         "dev": "cross-env NODE_OPTIONS=--max-old-space-size=1024 vite"
     },
     "devDependencies": {
