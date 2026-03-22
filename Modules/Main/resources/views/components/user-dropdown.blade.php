@@ -4,7 +4,7 @@
         class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
         <span class="sr-only">Open user menu</span>
         <img class="w-8 h-8 rounded-full"
-            src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=random" alt="user photo">
+            src="https://ui-avatars.com/api/?name={{ Auth::user()?->name ?? 'User' }}&background=random" alt="user photo">
     </button>
     <!-- Dropdown menu -->
     <div x-show="open" x-transition
@@ -12,10 +12,10 @@
         id="dropdown-user">
         <div class="px-4 py-3" role="none">
             <p class="text-sm text-gray-900 dark:text-white" role="none">
-                {{ Auth::user()->name }}
+                {{ Auth::user()?->name }}
             </p>
             <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                {{ Auth::user()->email }}
+                {{ Auth::user()?->email }}
             </p>
         </div>
         <ul class="py-1" role="none">
@@ -29,7 +29,7 @@
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">Account Center</a>
             </li>
-            @if(Auth::user()->hasRole('admin'))
+            @if(Auth::user()?->hasRole('admin') && Route::has('main.admin.verifications.index'))
                 <li>
                     <a href="{{ route('main.admin.verifications.index') }}"
                         class="block px-4 py-2 text-sm text-blue-600 font-bold hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-600"
