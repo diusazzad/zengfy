@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Modules\Team\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Laravel\Facades\Image;
 
 class TeamAdminController extends Controller
 {
@@ -39,7 +40,15 @@ class TeamAdminController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('team', 'public');
+            $image = $request->file('image');
+            $filename = time() . '.webp';
+            $path = 'team/' . $filename;
+            
+            // Convert to WebP using Intervention Image
+            $img = Image::read($image->getRealPath());
+            $encoded = $img->toWebp(80);
+            Storage::disk('public')->put($path, $encoded);
+            
             $validated['image_path'] = $path;
         }
 
@@ -72,7 +81,16 @@ class TeamAdminController extends Controller
             if ($team->image_path) {
                 Storage::disk('public')->delete($team->image_path);
             }
-            $path = $request->file('image')->store('team', 'public');
+            
+            $image = $request->file('image');
+            $filename = time() . '.webp';
+            $path = 'team/' . $filename;
+            
+            // Convert to WebP using Intervention Image
+            $img = Image::read($image->getRealPath());
+            $encoded = $img->toWebp(80);
+            Storage::disk('public')->put($path, $encoded);
+            
             $validated['image_path'] = $path;
         }
 
