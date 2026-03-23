@@ -5,6 +5,12 @@
 
     RewriteEngine On
 
+    # LiteSpeed Cache Bypass for Team Module
+    <IfModule LiteSpeed>
+        RewriteRule ^team/login - [E=Cache-Control:no-cache]
+        RewriteRule ^team/admin/.* - [E=Cache-Control:no-cache]
+    </IfModule>
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
