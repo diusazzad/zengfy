@@ -15,7 +15,7 @@ class TeamAdminController extends Controller
      */
     public function index()
     {
-        $teams = Team::orderBy('order')->get();
+        $teams = Team::orderBy('order')->orderBy('created_at', 'desc')->get();
         return view('team::admin.index', compact('teams'));
     }
 
@@ -36,7 +36,7 @@ class TeamAdminController extends Controller
             'github_url' => 'nullable|url',
             'facebook_url' => 'nullable|url',
             'status' => 'required|in:active,inactive',
-            'order' => 'integer',
+            'order' => 'nullable|integer',
         ]);
 
         if ($request->hasFile('image')) {
@@ -74,7 +74,7 @@ class TeamAdminController extends Controller
             'github_url' => 'nullable|url',
             'facebook_url' => 'nullable|url',
             'status' => 'required|in:active,inactive',
-            'order' => 'integer',
+            'order' => 'nullable|integer',
         ]);
 
         if ($request->hasFile('image')) {

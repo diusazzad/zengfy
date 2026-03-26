@@ -45,7 +45,7 @@
         <div class="bg-white dark:bg-gray-800 p-5 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm relative overflow-hidden group">
             <div class="flex items-start gap-4">
                 <div class="relative">
-                    <img src="{{ Storage::url($member->image_path) }}" 
+                    <img src="{{ $member->image_url }}" 
                          alt="{{ $member->name }}" 
                          class="w-20 h-20 rounded-2xl object-cover border-2 border-gray-50 dark:border-gray-700">
                     <div class="absolute -bottom-2 -right-2">
@@ -97,7 +97,7 @@
                 <tr class="group hover:bg-blue-50/30 dark:hover:bg-blue-900/10 transition-all duration-300">
                     <td class="px-8 py-6">
                         <div class="flex items-center gap-4">
-                            <img src="{{ Storage::url($member->image_path) }}" 
+                            <img src="{{ $member->image_url }}" 
                                  class="w-14 h-14 rounded-2xl object-cover ring-4 ring-gray-50 dark:ring-gray-700 group-hover:ring-blue-100 dark:group-hover:ring-blue-900 transition-all">
                             <div>
                                 <div class="text-base font-black text-gray-900 dark:text-white">{{ $member->name }}</div>
