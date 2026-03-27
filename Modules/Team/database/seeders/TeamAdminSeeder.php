@@ -13,15 +13,12 @@ class TeamAdminSeeder extends Seeder
      */
     public function run(): void
     {
-        User::updateOrCreate(
+        \Modules\Team\Models\TeamUser::updateOrCreate(
             ['email' => 'admin@zengfy.top'],
             [
                 'name' => 'Team Admin',
-                'user_type' => 'admin',
-                'password' => Hash::make('password123'),
-                'email_verified_at' => now(),
+                'password' => \Illuminate\Support\Facades\Hash::make('password123'),
             ]
         );
-        // $this->call([]);
     }
 }

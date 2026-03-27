@@ -7,24 +7,56 @@ use Modules\Team\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Laravel\Facades\Image;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
+/**
+ * Class TeamAdminController
+ * 
+ * Handles administrative CRUD operations for the Team module.
+ * Following Laravel's Resource Controller conventions.
+ * 
+ * @package Modules\Team\Http\Controllers
+ */
 class TeamAdminController extends Controller
 {
     /**
      * Display a listing of the team members.
+     * 
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
+        // Fetch all team members ordered by their display order
         $teams = Team::orderBy('order')->orderBy('created_at', 'desc')->get();
-        return view('team::admin.index', compact('teams'));
+        
+        // Calculate statistics for the dashboard cards
+        $stats = [
+            'total' => $teams->count(),
+            'active' => $teams->where('status', 'active')->count(),
+            'inactive' => $teams->where('status', 'inactive')->count(),
+        ];
+
+        return view('team::admin.index', compact('teams', 'stats'));
     }
 
-    public function create()
+    /**
+     * Show the form for creating a new team member.
+     * 
+     * @return View
+     */
+    public function create(): View
     {
         return view('team::admin.create');
     }
 
-    public function store(Request $request)
+    /**
+     * Store a newly created team member in storage.
+     * 
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -39,12 +71,13 @@ class TeamAdminController extends Controller
             'order' => 'nullable|integer',
         ]);
 
+        // Handle image upload and conversion to WebP for better performance
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '.webp';
             $path = 'team/' . $filename;
             
-            // Convert to WebP using Intervention Image
+            // Read and convert image using Intervention Image
             $img = Image::read($image->getRealPath());
             $encoded = $img->toWebp(80);
             Storage::disk('public')->put($path, $encoded);
@@ -54,15 +87,41 @@ class TeamAdminController extends Controller
 
         Team::create($validated);
 
-        return redirect()->route('team.admin.index')->with('success', 'টিম মেম্বার সফলভাবে যোগ করা হয়েছে।');
+        return redirect()->route('team.admin.index')
+            ->with('success', 'Team member created successfully.');
     }
 
-    public function edit(Team $team)
+    /**
+     * Display the specified team member.
+     * 
+     * @param Team $team
+     * @return RedirectResponse
+     */
+    public function show(Team $admin): RedirectResponse
     {
-        return view('team::admin.edit', compact('team'));
+        // We don't need a specific show page for admin, redirect back to index
+        return redirect()->route('team.admin.index');
     }
 
-    public function update(Request $request, Team $team)
+    /**
+     * Show the form for editing the specified team member.
+     * 
+     * @param Team $team
+     * @return View
+     */
+    public function edit(Team $admin): View
+    {
+        return view('team::admin.edit', ['team' => $admin]);
+    }
+
+    /**
+     * Update the specified team member in storage.
+     * 
+     * @param Request $request
+     * @param Team $team
+     * @return RedirectResponse
+     */
+    public function update(Request $request, Team $admin): RedirectResponse
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -77,16 +136,17 @@ class TeamAdminController extends Controller
             'order' => 'nullable|integer',
         ]);
 
+        // Handle image update: delete old image and upload new one
         if ($request->hasFile('image')) {
-            if ($team->image_path) {
-                Storage::disk('public')->delete($team->image_path);
+            if ($admin->image_path) {
+                Storage::disk('public')->delete($admin->image_path);
             }
             
             $image = $request->file('image');
             $filename = time() . '.webp';
             $path = 'team/' . $filename;
             
-            // Convert to WebP using Intervention Image
+            // Read and convert image
             $img = Image::read($image->getRealPath());
             $encoded = $img->toWebp(80);
             Storage::disk('public')->put($path, $encoded);
@@ -94,18 +154,28 @@ class TeamAdminController extends Controller
             $validated['image_path'] = $path;
         }
 
-        $team->update($validated);
+        $admin->update($validated);
 
-        return redirect()->route('team.admin.index')->with('success', 'টিম মেম্বারের তথ্য সফলভাবে আপডেট করা হয়েছে।');
+        return redirect()->route('team.admin.index')
+            ->with('success', 'Team member updated successfully.');
     }
 
-    public function destroy(Team $team)
+    /**
+     * Remove the specified team member from storage.
+     * 
+     * @param Team $team
+     * @return RedirectResponse
+     */
+    public function destroy(Team $admin): RedirectResponse
     {
-        if ($team->image_path) {
-            Storage::disk('public')->delete($team->image_path);
+        // Delete associated image from storage
+        if ($admin->image_path) {
+            Storage::disk('public')->delete($admin->image_path);
         }
-        $team->delete();
+        
+        $admin->delete();
 
-        return redirect()->route('team.admin.index')->with('success', 'টিম মেম্বার সফলভাবে ডিলিট করা হয়েছে।');
+        return redirect()->route('team.admin.index')
+            ->with('success', 'Team member deleted successfully.');
     }
 }

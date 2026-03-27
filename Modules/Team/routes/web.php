@@ -29,13 +29,9 @@ Route::prefix('team')->name('team.')->group(function () {
     Route::post('/logout', [TeamLoginController::class, 'logout'])->name('logout');
     Route::get('/logout', [TeamLoginController::class, 'logout'])->name('logout.get');
 
-    // Protected Admin Routes
-    Route::middleware(['auth', 'admin.only'])->prefix('admin')->group(function () {
-        Route::get('/', [TeamAdminController::class, 'index'])->name('admin.index');
-        Route::get('/create', [TeamAdminController::class, 'create'])->name('admin.create');
-        Route::post('/store', [TeamAdminController::class, 'store'])->name('admin.store');
-        Route::get('/{team}/edit', [TeamAdminController::class, 'edit'])->name('admin.edit');
-        Route::put('/{team}', [TeamAdminController::class, 'update'])->name('admin.update');
-        Route::delete('/{team}', [TeamAdminController::class, 'destroy'])->name('admin.destroy');
+    // Protected Admin Routes using dedicated 'team' guard
+    Route::middleware(['auth:team'])->group(function () {
+        // Simple resource mapping for admin operations
+        Route::resource('admin', TeamAdminController::class);
     });
 });

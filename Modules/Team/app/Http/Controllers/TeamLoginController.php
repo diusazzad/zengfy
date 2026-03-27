@@ -8,14 +8,26 @@ use Illuminate\Support\Facades\Auth;
 
 class TeamLoginController extends Controller
 {
+    /**
+     * Show the team admin login form.
+     * 
+     * @return View|\Illuminate\Http\RedirectResponse
+     */
     public function showLoginForm()
     {
-        if (Auth::check()) {
+        // Check if the user is already authenticated via the 'team' guard
+        if (Auth::guard('team')->check()) {
             return redirect()->route('team.admin.index');
         }
         return view('team::login');
     }
 
+    /**
+     * Authenticate the team admin user.
+     * 
+     * @param Request $request
+     * @return RedirectResponse
+     */
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -23,19 +35,20 @@ class TeamLoginController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        // Use the dedicated 'team' guard for authentication
+        if (Auth::guard('team')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended(route('team.admin.index'));
         }
 
         return back()->withErrors([
-            'email' => 'প্রদত্ত তথ্যগুলো আমাদের রেকর্ডের সাথে মিলছে না।',
+            'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('team')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('team.public');

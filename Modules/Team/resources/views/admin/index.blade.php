@@ -1,150 +1,132 @@
-@extends('layouts.app')
+@extends('team::layouts.admin')
 
-@section('title', 'টিম ম্যানেজমেন্ট - ZenGFY')
+@section('title', 'Team Management')
 
 @section('content')
-<style>
-    /* Custom Responsive Logic: Card on Mobile, Table on Desktop */
-    @media (max-width: 767px) {
-        .desktop-table { display: none !important; }
-        .mobile-cards { display: grid !important; }
-    }
-    @media (min-width: 768px) {
-        .mobile-cards { display: none !important; }
-        .desktop-table { display: table !important; }
-    }
-</style>
-
-<div class="space-y-6 pb-20 md:pb-0">
-    <!-- Header Section -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-8 animate-in fade-in duration-500">
+    <!-- Page Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-            <h2 class="text-2xl font-black text-gray-900 dark:text-white flex items-center gap-2">
-                <span class="w-2 h-8 bg-blue-600 rounded-full"></span>
-                টিম মেম্বার লিস্ট
-            </h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">আপনার সিস্টেমের সকল টিম মেম্বার ম্যানেজ করুন</p>
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Administration</p>
+            <h1 class="text-4xl font-black text-gray-900 tracking-tight">Team Members</h1>
         </div>
-        <a href="{{ route('team.admin.create') }}" 
-           class="w-full md:w-auto px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-black flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/20">
-            <span class="text-2xl leading-none">+</span>
-            Add New Member
-        </a>
+        
+        <div class="flex items-center gap-3">
+            <a href="{{ route('team.admin.index') }}" class="p-3 bg-white text-gray-400 border border-gray-200 rounded-2xl hover:text-blue-600 hover:border-blue-100 transition-all active:scale-95 shadow-sm" title="Refresh">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </a>
+            
+            <a href="{{ route('team.admin.create') }}" 
+               class="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-black flex items-center gap-2 transition-all shadow-lg shadow-blue-500/25 active:scale-95 text-sm uppercase tracking-wider">
+                <span class="text-xl leading-none">+</span>
+                New Member
+            </a>
+        </div>
     </div>
 
-    @if(session('success'))
-    <div class="p-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-2xl text-green-700 dark:text-green-400 text-sm font-bold flex items-center gap-3">
-        <span class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-800 flex items-center justify-center">✓</span>
-        {{ session('success') }}
-    </div>
-    @endif
-
-    <!-- Mobile View: Card Layout -->
-    <div class="mobile-cards grid grid-cols-1 gap-4 hidden">
-        @forelse($teams as $member)
-        <div class="bg-white dark:bg-gray-800 p-5 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm relative overflow-hidden group">
-            <div class="flex items-start gap-4">
-                <div class="relative">
-                    <img src="{{ $member->image_url }}" 
-                         alt="{{ $member->name }}" 
-                         class="w-20 h-20 rounded-2xl object-cover border-2 border-gray-50 dark:border-gray-700">
-                    <div class="absolute -bottom-2 -right-2">
-                        @if($member->status == 'active')
-                        <span class="w-6 h-6 rounded-full bg-green-500 border-4 border-white dark:border-gray-800 flex items-center justify-center" title="Active"></span>
-                        @else
-                        <span class="w-6 h-6 rounded-full bg-red-500 border-4 border-white dark:border-gray-800 flex items-center justify-center" title="Inactive"></span>
-                        @endif
-                    </div>
-                </div>
-                <div class="flex-1 min-w-0">
-                    <h3 class="font-black text-gray-900 dark:text-white text-lg truncate">{{ $member->name }}</h3>
-                    <p class="text-blue-600 dark:text-blue-400 text-sm font-bold">{{ $member->designation }}</p>
-                    <div class="mt-4 flex gap-2">
-                        <a href="{{ route('team.admin.edit', $member) }}" 
-                           class="flex-1 py-2.5 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-xl text-center text-sm font-bold border border-gray-200 dark:border-gray-600">
-                            Edit
-                        </a>
-                        <form action="{{ route('team.admin.destroy', $member) }}" method="POST" class="flex-1" onsubmit="return confirm('নিশ্চিত তো?')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="w-full py-2.5 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-xl text-sm font-bold border border-red-100 dark:border-red-800">
-                                Delete
-                            </button>
-                        </form>
-                    </div>
-                </div>
+    <!-- Statistics Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <div>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Total Members</p>
+                <p class="text-2xl font-black text-gray-900 leading-tight">{{ $stats['total'] }}</p>
             </div>
         </div>
-        @empty
-        <div class="bg-white dark:bg-gray-800 p-10 rounded-3xl text-center text-gray-500 dark:text-gray-400 border-2 border-dashed border-gray-200 dark:border-gray-700">
-            কোনো মেম্বার পাওয়া যায়নি।
+
+        <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-600">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Active Now</p>
+                <p class="text-2xl font-black text-gray-900 leading-tight">{{ $stats['active'] }}</p>
+            </div>
         </div>
-        @endforelse
+
+        <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+            </div>
+            <div>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Inactive</p>
+                <p class="text-2xl font-black text-gray-900 leading-tight">{{ $stats['inactive'] }}</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Desktop View: Table Layout -->
-    <div class="desktop-table bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-xl overflow-hidden hidden w-full">
-        <table class="w-full">
-            <thead>
-                <tr class="bg-gray-50/50 dark:bg-gray-700/50 text-gray-500 dark:text-gray-400 text-[10px] uppercase tracking-[0.2em] font-black italic">
-                    <th class="px-8 py-5 text-left">Member Profile</th>
-                    <th class="px-8 py-5 text-center">Status</th>
-                    <th class="px-8 py-5 text-right">Actions</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-50 dark:divide-gray-700">
-                @forelse($teams as $member)
-                <tr class="group hover:bg-blue-50/30 dark:hover:bg-blue-900/10 transition-all duration-300">
-                    <td class="px-8 py-6">
-                        <div class="flex items-center gap-4">
-                            <img src="{{ $member->image_url }}" 
-                                 class="w-14 h-14 rounded-2xl object-cover ring-4 ring-gray-50 dark:ring-gray-700 group-hover:ring-blue-100 dark:group-hover:ring-blue-900 transition-all">
-                            <div>
-                                <div class="text-base font-black text-gray-900 dark:text-white">{{ $member->name }}</div>
-                                <div class="text-sm font-bold text-blue-600 dark:text-blue-400">{{ $member->designation }}</div>
+    <!-- Data Table -->
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-50 border-b border-gray-100">
+                        <th class="px-6 py-5 text-[11px] font-black uppercase text-gray-400 tracking-widest">Team Member</th>
+                        <th class="px-6 py-5 text-[11px] font-black uppercase text-gray-400 tracking-widest">Status</th>
+                        <th class="px-6 py-5 text-[11px] font-black uppercase text-gray-400 tracking-widest text-center">Order</th>
+                        <th class="px-6 py-5 text-right text-[11px] font-black uppercase text-gray-400 tracking-widest">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                    @forelse($teams as $member)
+                    <tr class="group hover:bg-blue-50/30 transition-all">
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-4">
+                                <div class="relative">
+                                    <img src="{{ $member->image_url }}" class="w-14 h-14 rounded-2xl object-cover bg-gray-100 border border-gray-200 shadow-sm transition-transform group-hover:scale-105">
+                                    @if($member->status == 'active')
+                                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
+                                    @endif
+                                </div>
+                                <div>
+                                    <div class="text-base font-black text-gray-900 leading-none mb-1">{{ $member->name }}</div>
+                                    <div class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">{{ $member->designation }}</div>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="px-8 py-6 text-center">
-                        @if($member->status == 'active')
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black bg-green-100 text-green-700 uppercase tracking-widest">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                            Active
-                        </span>
-                        @else
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black bg-gray-100 text-gray-600 uppercase tracking-widest">
-                            Offline
-                        </span>
-                        @endif
-                    </td>
-                    <td class="px-8 py-6">
-                        <div class="flex justify-end items-center gap-3">
-                            <a href="{{ route('team.admin.edit', $member) }}" 
-                               class="p-3 bg-gray-50 dark:bg-gray-700 text-gray-500 hover:bg-blue-600 hover:text-white rounded-xl transition-all shadow-sm" title="সম্পাদনা করুন">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                            </a>
-                            <form action="{{ route('team.admin.destroy', $member) }}" method="POST" onsubmit="return confirm('আপনি কি নিশ্চিত?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 hover:bg-red-600 hover:text-white rounded-xl transition-all shadow-sm" title="মুছে ফেলুন">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                @empty
-                <tr>
-                    <td colspan="3" class="px-8 py-20 text-center">
-                        <div class="flex flex-col items-center">
-                            <div class="w-20 h-20 bg-gray-50 dark:bg-gray-700 rounded-full mb-4 flex items-center justify-center text-gray-300 italic">...</div>
-                            <p class="text-gray-500 dark:text-gray-400 font-bold">কোনো ডাটা পাওয়া যায়নি</p>
-                        </div>
-                    </td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
+                        </td>
+                        <td class="px-6 py-4">
+                            @if($member->status == 'active')
+                                <span class="inline-flex items-center px-3 py-1.5 rounded-xl text-[10px] font-black bg-green-100 text-green-700 uppercase tracking-widest">Active</span>
+                            @else
+                                <span class="inline-flex items-center px-3 py-1.5 rounded-xl text-[10px] font-black bg-gray-100 text-gray-500 uppercase tracking-widest">Inactive</span>
+                            @endif
+                        </td>
+                        <td class="px-6 py-4 text-sm font-black text-gray-900 text-center">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gray-50 text-gray-400 text-xs font-bold border border-gray-100">{{ $member->order }}</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all translate-x-2 group-hover:translate-x-0">
+                                <a href="{{ route('team.admin.edit', $member) }}" class="p-3 bg-white text-blue-600 hover:bg-blue-600 hover:text-white rounded-2xl border border-gray-100 transition-all shadow-sm group/btn" title="Edit Member">
+                                    <svg class="w-5 h-5 transition-transform group-hover/btn:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                                </a>
+                                <form action="{{ route('team.admin.destroy', $member) }}" method="POST" onsubmit="return confirm('পাকাপাকিভাবে মুছে ফেলতে চান?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="flex items-center justify-center w-10 h-10 bg-red-50 text-red-600 rounded-xl hover:bg-red-600 hover:text-white transition-all shadow-sm" title="মুছে ফেলুন">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="4" class="px-6 py-20 text-center">
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-200">
+                                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                </div>
+                                <p class="text-sm font-bold text-gray-400 italic">No team members found in the database.</p>
+                                <a href="{{ route('team.admin.create') }}" class="text-blue-600 font-bold hover:underline">Add your first member</a>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 @endsection

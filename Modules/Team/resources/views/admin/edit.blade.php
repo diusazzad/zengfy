@@ -1,98 +1,111 @@
-@extends('layouts.app')
+@extends('team::layouts.admin')
 
-@section('title', 'টিম মেম্বারের তথ্য আপডেট করুন - ZenGFY')
+@section('title', 'Edit Member - ' . $team->name)
 
 @section('content')
-<div class="max-w-4xl mx-auto">
-    <div class="mb-6 flex items-center justify-between">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">টিম মেম্বারের তথ্য আপডেট করুন</h2>
-        <a href="{{ route('team.admin.index') }}" class="text-sm font-medium text-primary-600 hover:text-primary-700 flex items-center">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-            ফিরে যান
-        </a>
+<div class="max-w-4xl mx-auto animate-in slide-in-from-bottom duration-500">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+        <div>
+            <a href="{{ route('team.admin.index') }}" class="group flex items-center text-xs font-bold text-gray-500 uppercase tracking-widest hover:text-blue-600 transition-colors mb-2">
+                <svg class="w-4 h-4 mr-1 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Back to List
+            </a>
+            <h1 class="text-3xl font-black text-gray-900 tracking-tight">Edit Member: {{ $team->name }}</h1>
+        </div>
     </div>
 
-    @if ($errors->any())
-    <div class="mb-6 p-4 bg-red-50 border border-red-100 rounded-lg text-red-700 text-sm">
-        <ul class="list-disc list-inside">
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-
-    <form action="{{ route('team.admin.update', $team) }}" method="POST" enctype="multipart/form-data" class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-8 space-y-6">
+    <!-- Form -->
+    <form action="{{ route('team.admin.update', $team) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
         @method('PUT')
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <label for="name" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">নাম <span class="text-red-500">*</span></label>
-                <input type="text" name="name" id="name" value="{{ old('name', $team->name) }}" required class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-            </div>
-            <div>
-                <label for="designation" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">পদবী <span class="text-red-500">*</span></label>
-                <input type="text" name="designation" id="designation" value="{{ old('designation', $team->designation) }}" required class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-            </div>
-        </div>
+        <div class="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden">
+            <!-- Form Section: Basic Info -->
+            <div class="p-8 border-b border-gray-50">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label for="name" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">Full Name</label>
+                        <input type="text" name="name" id="name" value="{{ old('name', $team->name) }}" required
+                               class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900 placeholder-gray-300">
+                    </div>
 
-        <div>
-            <label for="bio" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">বায়ো (ঐচ্ছিক)</label>
-            <textarea name="bio" id="bio" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">{{ old('bio', $team->bio) }}</textarea>
-        </div>
+                    <div class="space-y-2">
+                        <label for="designation" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">Designation</label>
+                        <input type="text" name="designation" id="designation" value="{{ old('designation', $team->designation) }}" required
+                               class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900 placeholder-gray-300">
+                    </div>
+                </div>
+            </div>
 
-        <div class="flex items-start gap-6">
-            @if($team->image_path)
-            <div class="shrink-0">
-                <p class="text-xs font-bold text-gray-500 mb-2 uppercase">বর্তমান ছবি:</p>
-                <img src="{{ $team->image_url }}" alt="{{ $team->name }}" class="w-24 h-24 rounded-lg object-cover border border-gray-200">
-            </div>
-            @endif
-            <div class="grow">
-                <label for="image" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">নতুন ছবি আপলোড করুন</label>
-                <input type="file" name="image" id="image" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
-                <p class="mt-2 text-xs text-gray-500 uppercase font-medium">নিচে নতুন ছবি আপলোড করলে পূর্বেরটি মুছে যাবে।</p>
-            </div>
-        </div>
+            <!-- Form Section: Bio & Image -->
+            <div class="p-8 border-b border-gray-50 bg-gray-50/30">
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label for="bio" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">Short Bio</label>
+                        <textarea name="bio" id="bio" rows="3" 
+                                  class="w-full px-5 py-4 bg-white border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900 placeholder-gray-300">{{ old('bio', $team->bio) }}</textarea>
+                    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-            <div>
-                <label for="linkedin_url" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">LinkedIn URL</label>
-                <input type="url" name="linkedin_url" id="linkedin_url" value="{{ old('linkedin_url', $team->linkedin_url) }}" placeholder="https://linkedin.com/in/..." class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-32 shrink-0">
+                            <label class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1 block mb-2">Current Image</label>
+                            <img src="{{ $team->image_url }}" class="w-32 h-32 rounded-2xl object-cover bg-gray-100 border border-gray-200 shadow-sm">
+                        </div>
+                        <div class="flex-grow space-y-2">
+                            <label class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">Change Image</label>
+                            <div class="px-6 pt-5 pb-6 border-2 border-gray-200 border-dashed rounded-3xl hover:border-blue-400 transition-colors bg-white group">
+                                <div class="space-y-1 text-center">
+                                    <div class="flex text-sm text-gray-600 justify-center">
+                                        <label for="image" class="relative cursor-pointer bg-white rounded-md font-black text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                                            <span>Upload new file</span>
+                                            <input id="image" name="image" type="file" class="sr-only">
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-500">PNG, JPG, WEBP up to 2MB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="github_url" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">GitHub URL</label>
-                <input type="url" name="github_url" id="github_url" value="{{ old('github_url', $team->github_url) }}" placeholder="https://github.com/..." class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-            </div>
-            <div>
-                <label for="twitter_url" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Twitter Profile URL</label>
-                <input type="url" name="twitter_url" id="twitter_url" value="{{ old('twitter_url', $team->twitter_url) }}" placeholder="https://twitter.com/..." class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-            </div>
-             <div>
-                <label for="facebook_url" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Facebook Profile URL</label>
-                <input type="url" name="facebook_url" id="facebook_url" value="{{ old('facebook_url', $team->facebook_url) }}" placeholder="https://facebook.com/..." class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-            </div>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-            <div>
-                <label for="status" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">স্ট্যাটাস</label>
-                <select name="status" id="status" class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-                    <option value="active" {{ old('status', $team->status) == 'active' ? 'selected' : '' }}>সক্রিয়</option>
-                    <option value="inactive" {{ old('status', $team->status) == 'inactive' ? 'selected' : '' }}>নিষ্ক্রিয়</option>
-                </select>
-            </div>
-            <div>
-                <label for="order" class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">ডিসপ্লে অর্ডার</label>
-                <input type="number" name="order" id="order" value="{{ old('order', $team->order) }}" class="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-primary-500 transition-all">
-            </div>
-        </div>
+            <!-- Form Section: Social & Settings -->
+            <div class="p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="space-y-2">
+                        <label for="linkedin_url" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">LinkedIn URL</label>
+                        <input type="url" name="linkedin_url" id="linkedin_url" value="{{ old('linkedin_url', $team->linkedin_url) }}"
+                               class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="github_url" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">GitHub URL</label>
+                        <input type="url" name="github_url" id="github_url" value="{{ old('github_url', $team->github_url) }}"
+                               class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900">
+                    </div>
+                </div>
 
-        <div class="pt-6">
-            <button type="submit" class="w-full md:w-auto px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-lg shadow-lg shadow-primary-500/20 transition-all transform hover:-translate-y-0.5">
-                তথ্য আপডেট করুন
-            </button>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label for="status" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">Display Status</label>
+                        <select name="status" id="status" class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900 appearance-none">
+                            <option value="active" {{ $team->status == 'active' ? 'selected' : '' }}>Active (Visible)</option>
+                            <option value="inactive" {{ $team->status == 'inactive' ? 'selected' : '' }}>Inactive (Hidden)</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="order" class="text-[10px] font-black uppercase text-gray-400 tracking-widest ml-1">Display Order</label>
+                        <input type="number" name="order" id="order" value="{{ old('order', $team->order) }}"
+                               class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-gray-900">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Action -->
+            <div class="p-8 bg-gray-50 border-t border-gray-100 flex justify-end gap-3">
+                <a href="{{ route('team.admin.index') }}" class="px-8 py-4 bg-white border border-gray-200 text-gray-500 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-gray-100 transition-all active:scale-95">Cancel</a>
+                <button type="submit" class="px-8 py-4 bg-green-600 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-green-700 shadow-lg shadow-green-500/25 transition-all active:scale-95">Update Member</button>
+            </div>
         </div>
     </form>
 </div>
