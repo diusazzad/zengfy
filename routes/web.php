@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use Modules\Main\Http\Controllers\MainController;
 use Modules\Main\Http\Controllers\AccountController;
@@ -29,6 +30,8 @@ Route::get('/lang/{locale}', function ($locale) {
 Route::get('/login', function () {
     return redirect()->route('team.login');
 })->name('login');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 Route::match(['get', 'post'], '/logout', [Modules\Team\Http\Controllers\TeamLoginController::class, 'logout'])->name('logout');
 
