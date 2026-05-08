@@ -82,6 +82,13 @@ return [
             ]) : [],
         ],
 
+        'stats' => [
+            'driver' => env('DB_STATS_DRIVER', 'sqlite'),
+            'database' => env('DB_STATS_DATABASE', database_path('stats.sqlite')),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+
         'mariadb' => [
             'driver' => 'mariadb',
             'url' => env('DB_URL'),
