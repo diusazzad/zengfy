@@ -2,7 +2,7 @@
 <section id="services-grid" class="bg-white border-t border-gray-100 py-16 overflow-hidden">
     <div class="max-w-7xl mx-auto px-8 relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-12">
-            <div class="flex-1 order-2 lg:order-1">
+            <div class="flex-1 order-2 lg:order-1" data-aos="fade-right">
                 <div class="inline-flex flex-col gap-1 mb-6 text-center lg:text-left w-full lg:w-auto">
                     <span class="text-blue-600 font-extrabold text-xs sm:text-sm tracking-widest uppercase mb-1">FREE
                         FOREVER</span>
@@ -16,7 +16,7 @@
                 </p>
 
                 <div class="space-y-6 mb-10 max-w-lg mx-auto lg:mx-0">
-                    <div class="flex items-center gap-5">
+                    <div class="flex items-center gap-5" data-aos="fade-up" data-aos-delay="100">
                         <div
                             class="w-12 h-12 shrink-0 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl shadow-sm">
                             📢</div>
@@ -26,7 +26,7 @@
                                 visible to everyone.</p>
                         </div>
                     </div>
-                    <div class="flex items-center gap-5">
+                    <div class="flex items-center gap-5" data-aos="fade-up" data-aos-delay="200">
                         <div
                             class="w-12 h-12 shrink-0 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl shadow-sm">
                             🤝</div>
@@ -36,7 +36,7 @@
                                 chat directly.</p>
                         </div>
                     </div>
-                    <div class="flex items-center gap-5">
+                    <div class="flex items-center gap-5" data-aos="fade-up" data-aos-delay="300">
                         <div
                             class="w-12 h-12 shrink-0 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl shadow-sm">
                             🚀</div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="flex justify-center lg:justify-start">
+                <div class="flex justify-center lg:justify-start" data-aos="zoom-in" data-aos-delay="400">
                     <a href="#"
                         class="inline-flex items-center justify-center px-8 sm:px-10 py-4 text-lg font-black text-white transition-all duration-200 bg-blue-600 rounded-xl hover:bg-blue-700 shadow-xl shadow-blue-600/20 active:scale-95">
                         Join the Community
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Social Connect Visual -->
-            <div class="flex-1 order-1 lg:order-2 flex justify-center w-full">
+            <div class="flex-1 order-1 lg:order-2 flex justify-center w-full" data-aos="fade-left">
                 <div class="relative w-full max-w-sm sm:max-w-md">
                     <div
                         class="absolute -inset-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-3xl blur-lg opacity-30">

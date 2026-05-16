@@ -22,8 +22,8 @@ it('has correct SEO meta tags', function () {
     $response = get('/');
 
     $response->assertSee('<title>', false)
-             ->assertSee('Zengfy', false)
-             ->assertSee('meta name="description"', false);
+        ->assertSee('Zengfy', false)
+        ->assertSee('meta name="description"', false);
 });
 
 it('shows the call to action buttons', function () {
@@ -35,7 +35,7 @@ it('shows the call to action buttons', function () {
 
 it('renders in the correct locale', function () {
     $response = get('/');
-    
+
     // Using case-insensitive check or matching the actual output 'utf-8'
     $contentType = $response->headers->get('Content-Type');
     expect(strtolower($contentType))->toContain('text/html; charset=utf-8');

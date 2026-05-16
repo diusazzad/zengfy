@@ -1,8 +1,8 @@
 <!-- p:\Zengfy-Ecosystem\core\resources\views\components\landing\service-grid.blade.php -->
 @props(['services' => []])
 
-<section id="services" class="max-w-7xl mx-auto px-8 sm:px-10 py-20">
-    <div class="text-center mb-16">
+<section id="services" class="max-w-7xl mx-auto px-8 sm:px-10 py-20 overflow-hidden">
+    <div class="text-center mb-16" data-aos="fade-up">
         <span
             class="text-blue-600 font-black tracking-widest uppercase text-[10px] sm:text-xs bg-blue-50 px-4 py-1.5 rounded-full">Our
             Ecosystem</span>
@@ -14,9 +14,12 @@
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         @foreach($services as $service)
-            <a href="{{ $service['url'] }}" class="block service-card group h-full">
+            <a href="{{ $service['url'] }}" 
+               class="block service-card group h-full" 
+               data-aos="fade-up" 
+               data-aos-delay="{{ ($loop->index % 4) * 100 }}">
                 <div
-                    class="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100 h-full flex flex-col items-center justify-center relative overflow-hidden hover:border-blue-200">
+                    class="bg-white rounded-2xl p-4 sm:p-8 shadow-sm border border-gray-100 h-full flex flex-col items-center justify-center relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-blue-200 hover:-translate-y-1">
                     <div class="relative mb-6">
                         <div
                             class="absolute inset-0 bg-blue-400 blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500">

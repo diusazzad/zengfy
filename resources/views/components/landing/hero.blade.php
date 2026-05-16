@@ -3,25 +3,25 @@
     <!-- Left: Vision Content -->
     <div class="flex-1 text-center md:text-left z-10 w-full">
         <!-- Badge -->
-        <div class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-[10px] sm:text-xs font-black uppercase tracking-wider mx-auto md:mx-0 mb-4 sm:mb-6 border border-blue-100 shadow-sm">
+        <div data-aos="fade-down" data-aos-delay="100" class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-[10px] sm:text-xs font-black uppercase tracking-wider mx-auto md:mx-0 mb-4 sm:mb-6 border border-blue-100 shadow-sm">
             <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             {{ __('welcome.prds.badge') }}
         </div>
 
         <!-- Main Title -->
-        <h1 class="text-2xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-[1.25] tracking-tight mb-4 sm:mb-5">
+        <h1 data-aos="fade-up" data-aos-delay="200" class="text-2xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-[1.25] tracking-tight mb-4 sm:mb-5">
             {!! __('welcome.prds.title_html') !!}
         </h1>
         
         <!-- Description -->
-        <p class="text-sm sm:text-lg md:text-lg text-gray-600 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 mb-6 sm:mb-10 md:pr-4 lg:pr-6">
+        <p data-aos="fade-up" data-aos-delay="300" class="text-sm sm:text-lg md:text-lg text-gray-600 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 mb-6 sm:mb-10 md:pr-4 lg:pr-6">
             {{ __('welcome.prds.description') }}
         </p>
 
         <!-- Vision PRD Highlights (Desktop Only) -->
         <div class="hidden md:flex flex-col gap-3 sm:gap-4 text-left mb-6 md:mb-8 max-w-lg mx-auto md:mx-0">
             <!-- PRD 1: Community & Health -->
-            <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
+            <div data-aos="fade-up" data-aos-delay="400" class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                 </div>
@@ -32,7 +32,7 @@
             </div>
 
             <!-- PRD 2: Offline SOS -->
-            <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
+            <div data-aos="fade-up" data-aos-delay="500" class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                 </div>
@@ -43,7 +43,7 @@
             </div>
 
             <!-- PRD 3: 100% Verified Community -->
-            <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
+            <div data-aos="fade-up" data-aos-delay="600" class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                 </div>
@@ -56,7 +56,7 @@
     </div>
 
     <!-- Right Side: Embedded Login Box (Fully Mobile Optimized) -->
-    <div class="w-full md:w-[340px] lg:w-[420px] shrink-0 mt-6 md:mt-0 px-0">
+    <div data-aos="fade-left" data-aos-delay="400" class="w-full md:w-[340px] lg:w-[420px] shrink-0 mt-6 md:mt-0 px-0">
         <div class="bg-white p-5 sm:p-8 rounded-2xl md:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 w-full relative">
             <div class="text-center mb-5 sm:mb-6">
                 <h2 class="text-lg sm:text-2xl font-black text-gray-900 leading-tight">{{ __('welcome.prds.login_title') }}</h2>
