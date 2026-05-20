@@ -40,6 +40,12 @@
         <form action="{{ route('register') }}" method="POST" class="space-y-5">
             @csrf
 
+            <!-- Honeypot Field (Hidden from humans, visible to bots) -->
+            <div class="opacity-0 absolute -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
+                <label for="company_website">Company Website</label>
+                <input id="company_website" name="company_website" type="text" autocomplete="off" tabindex="-1">
+            </div>
+
             <!-- Name Input -->
             <div>
                 <label for="name" class="block text-sm font-bold text-gray-700">Full Name</label>

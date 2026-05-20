@@ -40,6 +40,9 @@ class User extends Authenticatable
         'school_id_path',
         'provider',
         'provider_id',
+        'registration_ip',
+        'country_code',
+        'city',
     ];
 
     /**
