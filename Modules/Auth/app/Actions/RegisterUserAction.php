@@ -19,14 +19,14 @@ class RegisterUserAction
     {
         // 1. Capture User's IP Address
         $ip = request()->ip();
-        
+
         // Use a test IP if working on localhost
         if ($ip == '127.0.0.1' || $ip == '::1') {
             $ip = '103.155.220.1'; // An example IP (Bangladesh) for testing GeoIP locally
         }
 
         $locationData = null;
-        
+
         // 2. Fetch Geolocation from IP
         if ($ip) {
             $locationData = Location::get($ip);
@@ -38,7 +38,7 @@ class RegisterUserAction
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            
+
             // Intelligence Data
             'registration_ip' => $ip,
             'country_code' => $locationData ? $locationData->countryCode : null,

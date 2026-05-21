@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>Create Account - ZenGfy</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -22,7 +22,7 @@
 <body class="min-h-screen flex items-center justify-center bg-gray-50 text-gray-900 antialiased selection:bg-blue-200 selection:text-blue-900 px-4 sm:px-6 lg:px-8">
 
     <div class="max-w-md w-full space-y-8 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-gray-100">
-        
+
         <!-- Logo & Header -->
         <div class="text-center">
             <a href="/" class="inline-block mb-4 transition-transform hover:scale-105">
@@ -101,7 +101,7 @@
         <!-- Footer / Login Link -->
         <div class="mt-6 text-center">
             <p class="text-sm text-gray-500 font-medium">
-                Already have an account? 
+                Already have an account?
                 <a href="{{ route('login') }}" class="font-bold text-blue-600 hover:text-blue-700 hover:underline transition-colors">Log in</a>
             </p>
         </div>
