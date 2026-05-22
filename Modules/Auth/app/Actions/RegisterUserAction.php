@@ -45,6 +45,13 @@ class RegisterUserAction
             'city' => $locationData ? $locationData->cityName : null,
         ]);
 
+        // 4. Record Device Fingerprint Info
+        $user->devices()->create([
+            'device_fingerprint' => $data['device_fingerprint'] ?? null,
+            'user_agent' => request()->userAgent(),
+            'ip_address' => $ip,
+        ]);
+
         return [
             'user' => $user,
         ];

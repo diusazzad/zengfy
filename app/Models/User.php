@@ -84,6 +84,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the devices for the user.
+     */
+    public function devices()
+    {
+        return $this->hasMany(\Modules\Auth\Models\UserDevice::class);
+    }
+
+    /**
      * Check if user has a specific role based on user_type.
      */
     public function hasRole(string $role): bool

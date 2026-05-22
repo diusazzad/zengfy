@@ -7,14 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-Uses(RefreshDatabase::class);
-
-// class RegistrationTrackingTest extends TestCase
-// {
-
-// }
-
-uses(RefreshDatabase::class);
+uses(TestCase::class, RefreshDatabase::class);
 it('tracks user device fingerprint and location during registration', function () {
     // 1. we make a fake requierment for registraton
     $registrationData = [
@@ -37,7 +30,7 @@ it('tracks user device fingerprint and location during registration', function (
     $this->assertDatabaseHas('users', [
         'email' => 'sazza@zengfy.com',
         'registration_ip' => '103.155.220.1',
-        'country_code' => 'IN', // 'BD' পরিবর্তন করে 'IN' বসান
+        'country_code' => 'IN',
     ]);
     // 5. we check that the device log is created in the user_devices table
     $user = User::where('email', 'sazza@zengfy.com')->first();

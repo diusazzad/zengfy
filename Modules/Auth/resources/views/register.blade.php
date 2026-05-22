@@ -40,6 +40,9 @@
         <form action="{{ route('register') }}" method="POST" class="space-y-5">
             @csrf
 
+            <!-- Device Fingerprint Hidden Field -->
+            <input type="hidden" name="device_fingerprint" id="device_fingerprint">
+
             <!-- Honeypot Field (Hidden from humans, visible to bots) -->
             <div class="opacity-0 absolute -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
                 <label for="company_website">Company Website</label>
@@ -107,5 +110,18 @@
         </div>
     </div>
 
+    <!-- FingerprintJS SDK and Initialization -->
+    <script>
+        const fpPromise = import('https://openfpcdn.com/fingerprintjs/v4')
+            .then(FingerprintJS => FingerprintJS.load());
+
+        fpPromise
+            .then(fp => fp.get())
+            .then(result => {
+                const visitorId = result.visitorId;
+                document.getElementById('device_fingerprint').value = visitorId;
+            })
+            .catch(error => console.error('Error generating device fingerprint:', error));
+    </script>
 </body>
 </html>
