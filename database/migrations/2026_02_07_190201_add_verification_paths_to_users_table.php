@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('main')->table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->string('nid_card_path')->nullable()->after('nid_verified');
             $table->string('school_id_path')->nullable()->after('school_id_verified');
         });
