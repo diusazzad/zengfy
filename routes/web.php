@@ -6,6 +6,7 @@ use Modules\Main\Http\Controllers\MainController;
 use Modules\Main\Http\Controllers\AccountController;
 use App\Http\Controllers\PageController;
 use Illuminate\Http\Request;
+use Modules\Team\Http\Controllers\TeamLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,13 @@ Route::get('/login', function () {
     return redirect()->route('team.login');
 })->name('login');
 
+Route::get('/signup', function () {
+    return redirect()->route('register');
+})->name('signup');
+
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-Route::match(['get', 'post'], '/logout', [Modules\Team\Http\Controllers\TeamLoginController::class, 'logout'])->name('logout');
+Route::match(['get', 'post'], '/logout', [TeamLoginController::class, 'logout'])->name('logout');
 
 // Public Page Routes
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');

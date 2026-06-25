@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Modules\Team\Http\Controllers\TeamLoginController;
 use Modules\Team\Http\Controllers\TeamAdminController;
 use Modules\Team\Models\Team;
@@ -19,8 +20,12 @@ use Modules\Team\Models\Team;
 // Public Team Page
 Route::get('/team', function () {
     $team = Team::where('status', 'active')->orderBy('order')->get();
-    return view('team::public', compact('team'));
+    return View('team::public', compact('team'));
 })->name('team.public');
+
+Route::get('/team-alias', function () {
+    return redirect()->route('team.public');
+})->name('team');
 
 // Standalone Team Login
 Route::prefix('team')->name('team.')->group(function () {

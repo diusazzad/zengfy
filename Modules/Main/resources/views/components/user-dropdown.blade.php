@@ -29,9 +29,9 @@
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     role="menuitem">Account Center</a>
             </li>
-            @if(Auth::user()?->hasRole('admin') && Route::has('main.admin.verifications.index'))
+            @if(Auth::user()?->hasRole('admin') && Route::has('admin.verifications.index'))
                 <li>
-                    <a href="{{ route('main.admin.verifications.index') }}"
+                    <a href="{{ route('admin.verifications.index') }}"
                         class="block px-4 py-2 text-sm text-blue-600 font-bold hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-600"
                         role="menuitem">Verification Requests</a>
                 </li>
