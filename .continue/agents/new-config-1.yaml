@@ -1,0 +1,77 @@
+name: Free Multi-API Autocomplete
+version: 1.0.0
+schema: v1
+
+# ========== চ্যাট ও এডিটের জন্য মডেল ==========
+models:
+  - name: Gemini 1.5 Flash
+    provider: google
+    model: gemini-1.5-flash
+    apiKey: AQ.Ab8RN6IYNjCiOayQt4NQw0-owkOBxd02oNDQqYwvSELE4ny7aQ
+    roles:
+      - chat
+      - edit
+      - apply
+
+  - name: Groq Llama 3 8B
+    provider: groq
+    model: llama3-8b-8192
+    apiKey: YOUR_GROQ_API_KEY
+    roles:
+      - chat
+      - edit
+      - apply
+
+  - name: Mistral Codestral (free)
+    provider: openai
+    model: codestral-latest
+    apiBase: https://api.mistral.ai/v1
+    apiKey: YOUR_MISTRAL_API_KEY
+    roles:
+      - chat
+      - edit
+      - apply
+
+  - name: Local CodeLlama 7B
+    provider: ollama
+    model: codellama:7b
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+
+  - name: Local Qwen2.5-Coder 7B
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles:
+      - autocomplete
+      # চ্যাটে না চাইলে শুধু অটোকমপ্লিট
+
+# ========== অটোকমপ্লিটের জন্য প্রাথমিক মডেল ==========
+tabAutocompleteModel:
+  name: Gemini Flash Autocomplete
+  provider: google
+  model: gemini-1.5-flash
+  apiKey: YOUR_GEMINI_API_KEY
+
+# ========== ফ্যালব্যাক চেইন ==========
+tabAutocompleteOptions:
+  fallbackModels:
+    - name: Groq Llama 3 8B
+      provider: groq
+      model: llama3-8b-8192
+      apiKey: YOUR_GROQ_API_KEY
+    - name: Mistral Codestral
+      provider: openai
+      model: codestral-latest
+      apiBase: https://api.mistral.ai/v1
+      apiKey: YOUR_MISTRAL_API_KEY
+    - name: Local CodeLlama
+      provider: ollama
+      model: codellama:7b
+    - name: Local Qwen Coder
+      provider: ollama
+      model: qwen2.5-coder:7b
+  # কিছু মডেলে maxTokens বা contextLength দরকার হলে নিচে দেওয়া যেতে পারে
+  # maxTokens: 256

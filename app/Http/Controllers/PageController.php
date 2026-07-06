@@ -3,16 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Modules\Main\Services\TrendingService;
-
 class PageController extends Controller
 {
-    protected $trendingService;
-
-    public function __construct(TrendingService $trendingService)
-    {
-        $this->trendingService = $trendingService;
-    }
 
     public function welcome()
     {

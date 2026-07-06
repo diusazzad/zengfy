@@ -8,16 +8,7 @@ use App\Http\Controllers\PageController;
 use Illuminate\Http\Request;
 use Modules\Team\Http\Controllers\TeamLoginController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 // Language Switcher Route
 Route::get('/lang/{locale}', function ($locale) {
@@ -26,15 +17,6 @@ Route::get('/lang/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('lang.switch');
-
-// Authentication Redirect Route
-Route::get('/login', function () {
-    return redirect()->route('team.login');
-})->name('login');
-
-Route::get('/signup', function () {
-    return redirect()->route('register');
-})->name('signup');
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
@@ -49,27 +31,11 @@ Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/download-app', [PageController::class, 'downloadApp'])->name('download.app');
 Route::post('/faq/submit', [PageController::class, 'submitQuestion'])->name('faq.submit');
 
-// Secured Main Module Routes
-/* Disabled for landing-only focus
-    Route::get('/account', [AccountController::class, 'index'])->name('account');
-});
-*/
-
-// Admin Management Routes
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    // Other admin routes...
-});
-
 // Blog Routes (Kept as stubs)
 Route::prefix('blog')->group(function () {
     Route::get('/', function () {
         return "Zengfy Blog - Coming Soon";
     })->name('blog.index');
-    /* Disabled for landing-only focus
-    Route::get('/{slug}', function ($slug) {
-        return "Blog Post: " . $slug;
-    })->name('blog.show');
-    */
 });
 
-// Auth routes are loaded from Modules/Auth/Routes/web.php
+

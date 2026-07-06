@@ -6,16 +6,7 @@ use Modules\Team\Http\Controllers\TeamLoginController;
 use Modules\Team\Http\Controllers\TeamAdminController;
 use Modules\Team\Models\Team;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 // Public Team Page
 Route::get('/team', function () {
