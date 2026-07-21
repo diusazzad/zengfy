@@ -12,66 +12,70 @@ class PageController extends Controller
         // But the user said "LANDING PAGE শুধু রাখবে", so maybe we don't redirect to dashboard even if auth.
         // For now, let's keep it simple.
 
+        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
+        $scheme = env('APP_URL_SCHEME', 'https');
+        $port = env('APP_ENV') === 'local' ? ':7000' : '';
+
         $services = [
             [
                 'name' => 'Zengfy Commerce',
                 'desc' => 'Inventory, Orders & Online Store.',
                 'img' => 'images/services/webP/ecommerce.jpg',
-                'url' => 'https://ecommerce.zengfy.top'
+                'url' => "{$scheme}://ecommerce.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy School',
                 'desc' => 'Complete Academic Management.',
                 'img' => 'images/services/webP/school.jpg',
-                'url' => 'https://school.zengfy.top'
+                'url' => "{$scheme}://school.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy POS',
                 'desc' => 'Point of Sale & Billing.',
                 'img' => 'images/services/webP/pos.jpg',
-                'url' => 'https://pos.zengfy.top'
+                'url' => "{$scheme}://pos.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy Rent',
                 'desc' => 'Automated Rental Management.',
                 'img' => 'images/services/webP/rent.jpg',
-                'url' => 'https://rent.zengfy.top'
+                'url' => "{$scheme}://rent.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy Hotel',
                 'desc' => 'Booking & Stay Management.',
                 'img' => 'images/services/webP/hotel.jpg',
-                'url' => 'https://hotel.zengfy.top'
+                'url' => "{$scheme}://hotel.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy NGO',
                 'desc' => 'Charity & Program Tracking.',
                 'img' => 'images/services/webP/ngo.jpg',
-                'url' => 'https://ngo.zengfy.top'
+                'url' => "{$scheme}://ngo.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy Civil',
                 'desc' => 'Engineering & Construction.',
                 'img' => 'images/services/webP/civil.webp',
-                'url' => 'https://civil.zengfy.top'
+                'url' => "{$scheme}://civil.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy Law',
                 'desc' => 'Cases, Clients & Schedules.',
                 'img' => 'images/services/webP/law.jpg',
-                'url' => 'https://law.zengfy.top'
+                'url' => "{$scheme}://law.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy Skill',
                 'desc' => 'Courses & Learning Platform.',
                 'img' => 'images/services/webP/skill.jpg',
-                'url' => 'https://skill.zengfy.top'
+                'url' => "{$scheme}://skill.{$baseDomain}{$port}"
             ],
             [
                 'name' => 'Zengfy Journal',
                 'desc' => 'Personal Diary & Notes.',
                 'img' => 'images/services/webP/journal.jpg',
-                'url' => 'https://journal.zengfy.top'
+                'url' => "{$scheme}://journal.{$baseDomain}{$port}"
             ],
         ];
 

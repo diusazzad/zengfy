@@ -2,5 +2,6 @@
     "Main": true,
     "Auth": true,
     "Law": true,
-    "Team": true
+    "Team": true,
+    "School": true
 }

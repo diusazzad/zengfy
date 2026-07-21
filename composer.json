@@ -36,18 +36,9 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Modules\\Main\\": "Modules/Main/app/",
-            "Modules\\Main\\Database\\Factories\\": "Modules/Main/database/factories/",
-            "Modules\\Main\\Database\\Seeders\\": "Modules/Main/database/seeders/",
-            "Modules\\Auth\\": "Modules/Auth/app/",
-            "Modules\\Auth\\Database\\Factories\\": "Modules/Auth/database/factories/",
-            "Modules\\Auth\\Database\\Seeders\\": "Modules/Auth/database/seeders/",
-            "Modules\\Law\\": "Modules/Law/app/",
-            "Modules\\Law\\Database\\Factories\\": "Modules/Law/database/factories/",
-            "Modules\\Law\\Database\\Seeders\\": "Modules/Law/database/seeders/",
-            "Modules\\Team\\": "Modules/Team/app/",
-            "Modules\\Team\\Database\\Factories\\": "Modules/Team/database/factories/",
-            "Modules\\Team\\Database\\Seeders\\": "Modules/Team/database/seeders/"
+            "Modules\\School\\": "Modules/School/app/",
+            "Modules\\School\\Database\\Factories\\": "Modules/School/database/factories/",
+            "Modules\\School\\Database\\Seeders\\": "Modules/School/database/seeders/"
         },
         "files": [
             "app/Helpers/helpers.php"
