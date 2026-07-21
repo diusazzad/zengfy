@@ -3,9 +3,8 @@
     "type": "module",
     "scripts": {
         "build": "cross-env NODE_OPTIONS=--max-old-space-size=1024 vite build",
-        "build-main": "vite build --config Modules/Main/vite.config.js",
-        "build-team": "vite build --config Modules/Team/vite.config.js",
-        "build-all": "npm run build && npm run build-main && npm run build-team",
+        "build-school": "vite build --config Modules/School/vite.config.js",
+        "build-all": "npm run build && npm run build-school",
         "dev": "cross-env NODE_OPTIONS=--max-old-space-size=1024 vite"
     },
     "devDependencies": {
