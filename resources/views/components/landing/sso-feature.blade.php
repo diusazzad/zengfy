@@ -1,7 +1,7 @@
 <!-- resources/views/components/landing/sso-feature.blade.php -->
-<section id="sso" class="relative py-24 bg-[#0E1420] border-t border-white/5 overflow-hidden">
+<section id="sso" class="relative w-full max-w-full py-16 sm:py-24 bg-[#0E1420] border-t border-white/5 overflow-hidden">
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             <!-- Left Side: Content & Features -->
@@ -18,7 +18,7 @@
                     </span>
                 </h2>
 
-                <p class="text-gray-400 text-base sm:text-lg mt-4 leading-relaxed font-normal">
+                <p class="text-gray-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
                     No more managing dozens of passwords for different business software. With Zengfy Central SSO, your
                     NID-verified account grants instant, secure access across all subdomains.
                 </p>
@@ -30,8 +30,8 @@
                             class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm shrink-0 mt-1">
                             ✓</div>
                         <div>
-                            <h4 class="text-white font-bold text-base">Universal 9-Dot App Launcher</h4>
-                            <p class="text-gray-400 text-xs sm:text-sm mt-0.5">Switch from School ERP to POS or Legal
+                            <h3 class="text-white font-bold text-base">Universal 9-Dot App Launcher</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm mt-0.5">Switch from School ERP to POS or Legal
                                 suite in 1-click without leaving your workflow.</p>
                         </div>
                     </div>
@@ -41,8 +41,8 @@
                             class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0 mt-1">
                             ✓</div>
                         <div>
-                            <h4 class="text-white font-bold text-base">Cross-Subdomain Session Sync</h4>
-                            <p class="text-gray-400 text-xs sm:text-sm mt-0.5">Log in once at <code
+                            <h3 class="text-white font-bold text-base">Cross-Subdomain Session Sync</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm mt-0.5">Log in once at <code
                                     class="text-blue-300 font-mono">zengfy.top</code> and stay seamlessly authenticated
                                 everywhere.</p>
                         </div>
@@ -53,8 +53,8 @@
                             class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm shrink-0 mt-1">
                             ✓</div>
                         <div>
-                            <h4 class="text-white font-bold text-base">Centralized Audit & Security</h4>
-                            <p class="text-gray-400 text-xs sm:text-sm mt-0.5">Monitor active devices, login history,
+                            <h3 class="text-white font-bold text-base">Centralized Audit & Security</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm mt-0.5">Monitor active devices, login history,
                                 and manage permissions from one central hub.</p>
                         </div>
                     </div>
@@ -94,8 +94,8 @@
                             class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all flex items-center gap-3">
                             <span class="text-2xl">🏫</span>
                             <div>
-                                <h5 class="text-sm font-bold text-white">School ERP</h5>
-                                <span class="text-[10px] text-blue-400">school.zengfy.test</span>
+                                <p class="text-sm font-bold text-white">School ERP</p>
+                                <span class="text-[10px] text-blue-300">school.zengfy.test</span>
                             </div>
                         </div>
 
@@ -103,8 +103,8 @@
                             class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all flex items-center gap-3">
                             <span class="text-2xl">🛒</span>
                             <div>
-                                <h5 class="text-sm font-bold text-white">POS Retail</h5>
-                                <span class="text-[10px] text-indigo-400">pos.zengfy.test</span>
+                                <p class="text-sm font-bold text-white">POS Retail</p>
+                                <span class="text-[10px] text-indigo-300">pos.zengfy.test</span>
                             </div>
                         </div>
 
@@ -112,8 +112,8 @@
                             class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all flex items-center gap-3">
                             <span class="text-2xl">⚖️</span>
                             <div>
-                                <h5 class="text-sm font-bold text-white">Legal Suite</h5>
-                                <span class="text-[10px] text-cyan-400">law.zengfy.test</span>
+                                <p class="text-sm font-bold text-white">Legal Suite</p>
+                                <span class="text-[10px] text-cyan-300">law.zengfy.test</span>
                             </div>
                         </div>
 
@@ -121,7 +121,6 @@
                             class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all flex items-center gap-3">
                             <span class="text-2xl">🌐</span>
                             <div>
-                                <h5 class="text-sm font-bold text-white">Social Network</h5>
                                 <span class="text-[10px] text-emerald-400">social.zengfy.test</span>
                             </div>
                         </div>

@@ -1,27 +1,27 @@
 <!-- resources/views/components/landing/bento-grid.blade.php -->
 @props(['services' => []])
 
-<section id="ecosystem" class="relative py-28 bg-[#0B0F17] overflow-hidden">
+<section id="ecosystem" class="relative w-full max-w-full py-16 sm:py-24 lg:py-28 bg-[#0B0F17] overflow-hidden">
 
     <!-- Ambient Lighting -->
     <div class="absolute top-1/2 right-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-12 sm:mb-16">
             <span class="text-blue-400 font-extrabold tracking-widest uppercase text-xs bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full">
                 Unified Ecosystem Suite
             </span>
             <h2 class="text-3xl sm:text-5xl font-black mt-4 text-white tracking-tight">
                 One Account. Endless Operating Systems.
             </h2>
-            <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto font-normal mt-3">
+            <p class="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto font-normal mt-3">
                 Access specialized operating systems for every aspect of your life and business with one single login.
             </p>
         </div>
 
         <!-- Bento Grid Container -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
 
             @foreach($services as $index => $service)
                 @php
@@ -38,9 +38,9 @@
                         <!-- Header inside Card -->
                         <div class="flex items-center justify-between mb-6">
                             <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-300 shadow-inner">
-                                <img src="{{ asset($service['img']) }}" alt="{{ $service['name'] }}" class="h-8 w-8 object-contain">
+                                <img src="{{ asset($service['img']) }}" alt="{{ $service['name'] }} Logo" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 object-contain">
                             </div>
-                            <span class="text-[11px] font-bold px-3 py-1 bg-white/5 text-gray-400 rounded-full border border-white/5 group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-colors">
+                            <span class="text-[11px] font-bold px-3 py-1 bg-white/5 text-gray-300 rounded-full border border-white/5 group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-colors">
                                 Active Suite
                             </span>
                         </div>
@@ -49,7 +49,7 @@
                         <h3 class="text-2xl font-black text-white tracking-tight group-hover:text-blue-400 transition-colors">
                             {{ $service['name'] }}
                         </h3>
-                        <p class="text-gray-400 font-normal text-sm sm:text-base mt-2 leading-relaxed">
+                        <p class="text-gray-300 font-normal text-sm sm:text-base mt-2 leading-relaxed">
                             {{ $service['desc'] }}
                         </p>
                     </div>

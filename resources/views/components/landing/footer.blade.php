@@ -1,21 +1,21 @@
 <!-- resources/views/components/landing/footer.blade.php -->
-<footer class="bg-[#0B0F17] border-t border-white/10 pt-16 pb-12 text-sm text-gray-400">
+<footer class="bg-[#0B0F17] border-t border-white/10 pt-16 pb-12 text-sm text-gray-300">
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
 
             <!-- Column 1: Brand & Status -->
             <div class="md:col-span-1">
-                <a href="/" class="flex items-center gap-3 group mb-4">
-                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-lg text-white">
+                <a href="/" aria-label="Zengfy" class="flex items-center gap-3 group mb-4">
+                    <div aria-hidden="true" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-lg text-white">
                         Z
                     </div>
-                    <span class="text-xl font-extrabold tracking-tight text-white">
+                    <span aria-hidden="true" class="text-xl font-extrabold tracking-tight text-white">
                         zengfy<span class="text-blue-500">.</span>
                     </span>
                 </a>
 
-                <p class="text-xs text-gray-400 leading-relaxed font-normal mb-6">
+                <p class="text-xs text-gray-300 leading-relaxed font-normal mb-6">
                     Building the sovereign digital ecosystem for Bangladesh. One account for every tool in your life & business.
                 </p>
 
@@ -28,7 +28,7 @@
 
             <!-- Column 2: Ecosystem Applications -->
             <div>
-                <h4 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Operating Systems</h4>
+                <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Operating Systems</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
                     <li><a href="http://school.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">School ERP Suite</a></li>
                     <li><a href="http://pos.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">POS Retail & Inventory</a></li>
@@ -40,7 +40,7 @@
 
             <!-- Column 3: Security & Platform -->
             <div>
-                <h4 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Security & Trust</h4>
+                <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Security & Trust</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
                     <li><a href="#security" class="hover:text-white transition-colors">NID Identity Layer</a></li>
                     <li><a href="#sso" class="hover:text-white transition-colors">Central SSO Token Engine</a></li>
@@ -51,7 +51,7 @@
 
             <!-- Column 4: Corporate & Legal -->
             <div>
-                <h4 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Company</h4>
+                <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Company</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
                     <li><a href="{{ route('policy.workplace') }}" class="hover:text-white transition-colors">Workplace Policy</a></li>
                     <li><a href="{{ route('faq') }}" class="hover:text-white transition-colors">Frequently Asked Questions</a></li>
@@ -63,15 +63,15 @@
         </div>
 
         <!-- Bottom Bar -->
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-300 gap-4">
             <div>
                 © {{ date('Y') }} Zengfy Inc. All rights reserved. Built with pride for Bangladesh 🇧🇩
             </div>
 
             <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
-                <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
-                <a href="#" class="hover:text-gray-300 transition-colors">Security</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="#" class="hover:text-white transition-colors">Security</a>
             </div>
         </div>
 
