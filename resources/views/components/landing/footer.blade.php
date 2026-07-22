@@ -1,46 +1,79 @@
-<!-- p:\Zengfy-Ecosystem\core\resources\views\components\landing\footer.blade.php -->
-<footer class="bg-gray-50 border-t border-gray-100 pt-16 pb-12 text-sm">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center gap-2 mb-6">
-                    <img src="{{ asset('images/logo.png') }}" alt="Zengfy Logo" class="h-8 w-auto">
-                    <span class="text-2xl font-black text-blue-600 tracking-tighter">zengfy</span>
-                </div>
-                <p class="text-gray-500 font-medium max-w-sm leading-relaxed mb-6">
-                    Architecting a unified digital ecosystem for small businesses and communities.
+<!-- resources/views/components/landing/footer.blade.php -->
+<footer class="bg-[#0B0F17] border-t border-white/10 pt-16 pb-12 text-sm text-gray-400">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+
+            <!-- Column 1: Brand & Status -->
+            <div class="md:col-span-1">
+                <a href="/" class="flex items-center gap-3 group mb-4">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-lg text-white">
+                        Z
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">
+                        zengfy<span class="text-blue-500">.</span>
+                    </span>
+                </a>
+
+                <p class="text-xs text-gray-400 leading-relaxed font-normal mb-6">
+                    Building the sovereign digital ecosystem for Bangladesh. One account for every tool in your life & business.
                 </p>
+
+                <!-- System Operational Status Pill -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>All Systems Operational</span>
+                </div>
             </div>
 
-            <div class="col-span-1">
-                <h4 class="font-black text-gray-900 mb-6 uppercase tracking-widest text-xs">Contact Us</h4>
-                <ul class="space-y-4 text-gray-500 font-medium">
-                    <li>Dhaka, Bangladesh</li>
-                    <li><a href="mailto:info@zengfy.top" class="hover:text-blue-600 transition">info@zengfy.top</a></li>
-                    <li>+880 1953 576147</li>
+            <!-- Column 2: Ecosystem Applications -->
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Operating Systems</h4>
+                <ul class="space-y-2.5 text-xs font-medium">
+                    <li><a href="http://school.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">School ERP Suite</a></li>
+                    <li><a href="http://pos.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">POS Retail & Inventory</a></li>
+                    <li><a href="http://law.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">Legal Case Management</a></li>
+                    <li><a href="http://social.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">Social Network Feed</a></li>
+                    <li><a href="http://ecommerce.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">E-Commerce Engine</a></li>
                 </ul>
             </div>
 
-            <div class="col-span-1">
-                <h4 class="font-black text-gray-900 mb-6 uppercase tracking-widest text-xs">Community</h4>
-                <ul class="space-y-4 text-gray-500 font-medium">
-                    <li><a href="#" class="hover:text-blue-600 transition">Business Feed</a></li>
-                    <li><a href="#" class="hover:text-blue-600 transition">Our Team</a></li>
-                    <li><a href="{{ route('policy.workplace') }}" class="hover:text-blue-600 transition">Workplace Policy</a></li>
-                    <li><a href="#" class="hover:text-blue-600 transition">Insights Blog</a>
-                    </li>
+            <!-- Column 3: Security & Platform -->
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Security & Trust</h4>
+                <ul class="space-y-2.5 text-xs font-medium">
+                    <li><a href="#security" class="hover:text-white transition-colors">NID Identity Layer</a></li>
+                    <li><a href="#sso" class="hover:text-white transition-colors">Central SSO Token Engine</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">256-Bit Data Sovereignty</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Cloud Infrastructure SLA</a></li>
                 </ul>
+            </div>
+
+            <!-- Column 4: Corporate & Legal -->
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Company</h4>
+                <ul class="space-y-2.5 text-xs font-medium">
+                    <li><a href="{{ route('policy.workplace') }}" class="hover:text-white transition-colors">Workplace Policy</a></li>
+                    <li><a href="{{ route('faq') }}" class="hover:text-white transition-colors">Frequently Asked Questions</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+            <div>
+                © {{ date('Y') }} Zengfy Inc. All rights reserved. Built with pride for Bangladesh 🇧🇩
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
+                <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
+                <a href="#" class="hover:text-gray-300 transition-colors">Security</a>
             </div>
         </div>
 
-        <div
-            class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 font-bold text-xs uppercase tracking-widest">
-            <div>{{ __('welcome.footer.rights') }}</div>
-            <div class="flex gap-8">
-                <a href="{{ route('policy.workplace') }}" class="hover:text-blue-600 transition">Workplace Policy</a>
-                <a href="#" class="hover:text-blue-600 transition">Privacy</a>
-                <a href="#" class="hover:text-blue-600 transition">Terms</a>
-            </div>
-        </div>
     </div>
 </footer>
