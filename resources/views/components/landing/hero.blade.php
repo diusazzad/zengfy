@@ -1,140 +1,108 @@
-<!-- p:\Zengfy-Ecosystem\core\resources\views\components\landing\hero.blade.php -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
-    <!-- Left: Vision Content -->
-    <div class="flex-1 text-center md:text-left z-10 w-full">
-        <!-- Badge -->
-        <div data-aos="fade-down" data-aos-delay="100" class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-[10px] sm:text-xs font-black uppercase tracking-wider mx-auto md:mx-0 mb-4 sm:mb-6 border border-blue-100 shadow-sm">
-            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-            {{ __('welcome.prds.badge') }}
-        </div>
-
-        <!-- Main Title -->
-        <h1 data-aos="fade-up" data-aos-delay="200" class="text-2xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-[1.25] tracking-tight mb-4 sm:mb-5">
-            {!! __('welcome.prds.title_html') !!}
-        </h1>
-        
-        <!-- Description -->
-        <p data-aos="fade-up" data-aos-delay="300" class="text-sm sm:text-lg md:text-lg text-gray-600 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 mb-6 sm:mb-10 md:pr-4 lg:pr-6">
-            {{ __('welcome.prds.description') }}
-        </p>
-
-        <!-- Vision PRD Highlights (Desktop Only) -->
-        <div class="hidden md:flex flex-col gap-3 sm:gap-4 text-left mb-6 md:mb-8 max-w-lg mx-auto md:mx-0">
-            <!-- PRD 1: Community & Health -->
-            <div data-aos="fade-up" data-aos-delay="400" class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                </div>
-                <div>
-                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight mt-0.5 sm:mt-0">{{ __('welcome.prds.health.title') }}</h3>
-                    <p class="text-xs sm:text-sm md:text-[13px] lg:text-sm text-gray-600 mt-1 leading-snug">{{ __('welcome.prds.health.desc') }}</p>
-                </div>
-            </div>
-
-            <!-- PRD 2: Offline SOS -->
-            <div data-aos="fade-up" data-aos-delay="500" class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                </div>
-                <div>
-                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight mt-0.5 sm:mt-0">{{ __('welcome.prds.sos.title') }}</h3>
-                    <p class="text-xs sm:text-sm md:text-[13px] lg:text-sm text-gray-600 mt-1 leading-snug">{{ __('welcome.prds.sos.desc') }}</p>
-                </div>
-            </div>
-
-            <!-- PRD 3: 100% Verified Community -->
-            <div data-aos="fade-up" data-aos-delay="600" class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-100">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                </div>
-                <div>
-                    <h3 class="font-bold text-gray-900 text-sm sm:text-base leading-tight mt-0.5 sm:mt-0">{{ __('welcome.prds.secure.title') }}</h3>
-                    <p class="text-xs sm:text-sm md:text-[13px] lg:text-sm text-gray-600 mt-1 leading-snug">{{ __('welcome.prds.secure.desc') }}</p>
-                </div>
-            </div>
-        </div>
+<!-- resources/views/components/landing/hero.blade.php -->
+<section class="relative w-full max-w-full min-h-[70vh] lg:min-h-[75vh] flex items-center justify-center pt-8 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
+    <!-- Background Glow Multi-Layer Effects -->
+    <div
+        class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] bg-blue-600/20 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none">
+    </div>
+    <div
+        class="absolute top-1/3 left-1/3 w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] bg-indigo-600/15 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none">
     </div>
 
-    <!-- Right Side: Embedded Login Box (Fully Mobile Optimized) -->
-    <div data-aos="fade-left" data-aos-delay="400" class="w-full md:w-[340px] lg:w-[420px] shrink-0 mt-6 md:mt-0 px-0">
-        <div class="bg-white p-5 sm:p-8 rounded-2xl md:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 w-full relative">
-            <div class="text-center mb-5 sm:mb-6">
-                <h2 class="text-lg sm:text-2xl font-black text-gray-900 leading-tight">{{ __('welcome.prds.login_title') }}</h2>
-                <p class="text-xs sm:text-sm text-gray-500 mt-1.5 font-medium">{{ __('welcome.prds.login_subtitle') }}</p>
-            </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+        <!-- Live Pill Badge -->
+        <div
+            class="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400 text-xs sm:text-sm font-semibold mb-6 sm:mb-8 backdrop-blur-md shadow-inner shadow-blue-500/10">
+            <span class="relative flex h-2.5 w-2.5">
+                <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+            </span>
+            <span>NID-Verified Digital Ecosystem 🇧🇩</span>
+        </div>
 
-            <form method="POST" action="/login" class="flex flex-col gap-3.5 sm:gap-4">
-                @csrf
-                <div>
-                    <label for="email" class="block text-xs sm:text-sm font-bold text-gray-700 mb-1 sm:mb-1.5">{{ __('welcome.prds.form.email') }}</label>
-                    <input id="email" type="text" name="email" required autofocus class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-base transition-colors" placeholder="example@email.com">
-                </div>
+        <!-- Main Headline with Vibrant Gradient -->
+        <h1
+            class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.1] max-w-5xl mx-auto text-white">
+            The Operating System for <br class="hidden sm:block" />
+            <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
+                Modern Business & Life.
+            </span>
+        </h1>
 
-                <div>
-                    <div class="flex flex-wrap items-center justify-between gap-1 mb-1 sm:mb-1.5">
-                        <label for="password" class="block text-xs sm:text-sm font-bold text-gray-700">{{ __('welcome.prds.form.password') }}</label>
-                        <a href="/password/reset" class="text-[11px] sm:text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors">{{ __('welcome.prds.form.forgot') }}</a>
-                    </div>
-                    <input id="password" type="password" name="password" required class="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-base transition-colors" placeholder="••••••••">
-                </div>
+        <!-- Subheadline -->
+        <p class="mt-4 sm:mt-6 text-base sm:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto font-normal leading-relaxed">
+            Connect your school, legal practice, POS retail, and social community under one single, sovereign identity.
+        </p>
 
-                <div class="flex items-center mt-0.5">
-                    <input id="remember" type="checkbox" name="remember" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer">
-                    <label for="remember" class="ml-2 block text-xs sm:text-sm font-medium text-gray-700 cursor-pointer select-none">
-                        {{ __('welcome.prds.form.remember') }}
-                    </label>
-                </div>
+        <!-- CTAs Container -->
+        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <a href="#ecosystem"                class="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:scale-105 active:scale-95">
+                Explore All 10+ Apps
+            </a>
 
-                <button type="submit" class="w-full py-3 sm:py-3.5 mt-1 sm:mt-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white rounded-lg font-bold text-sm sm:text-base border border-transparent shadow-md transition-colors">
-                    {{ __('welcome.nav.login') }}
-                </button>
-            </form>
-
-            <div class="mt-5 sm:mt-6 flex items-center justify-center overflow-hidden">
-                <span class="h-px w-full bg-gray-100"></span>
-                <span class="px-3 sm:px-4 text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider shrink-0">{{ __('welcome.prds.form.or') }}</span>
-                <span class="h-px w-full bg-gray-100"></span>
-            </div>
-
-            <a href="/register" class="mt-5 sm:mt-6 w-full py-3 sm:py-3.5 flex justify-center items-center gap-2 bg-gray-900 hover:bg-gray-800 active:bg-gray-950 text-white rounded-lg font-bold text-sm sm:text-base shadow-sm transition-colors cursor-pointer">
-                {{ __('welcome.nav.signup') }}
+            <a href="#sso"                class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-sm sm:text-base backdrop-blur-md transition-all">
+                How SSO Works →
             </a>
         </div>
 
-        <!-- Vision PRD Highlights (Mobile Only - Below Login) -->
-        <div class="flex md:hidden flex-col gap-3 text-left mt-8 mx-auto w-full">
-            <!-- PRD 1: Community & Health -->
-            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
-                <div class="w-8 h-8 shrink-0 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+        <!-- Interactive Floating Ecosystem Mockup Showcase -->
+        <div
+            class="mt-12 sm:mt-16 relative max-w-5xl mx-auto rounded-3xl p-1.5 sm:p-2 bg-gradient-to-b from-white/15 to-white/0 border border-white/10 shadow-2xl backdrop-blur-2xl max-w-full overflow-hidden">
+            <div class="rounded-2xl bg-[#0F1623] p-4 sm:p-8 overflow-hidden border border-white/5 text-left">
+                <!-- Window Controls Top Bar -->
+                <div class="flex items-center justify-between pb-6 border-b border-white/10">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        <span class="ml-4 text-xs font-mono text-gray-400">my.zengfy.top — App Launcher Hub</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 text-xs font-semibold bg-blue-600/20 text-blue-400 px-3 py-1 rounded-lg border border-blue-500/30">
+                        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                        NID Verified: Safayet Hossain
+                    </div>
                 </div>
-                <div>
-                    <h3 class="font-bold text-gray-900 text-sm leading-tight mt-0.5">{{ __('welcome.prds.health.title') }}</h3>
-                    <p class="text-[13px] text-gray-600 mt-1 leading-snug">{{ __('welcome.prds.health.desc') }}</p>
-                </div>
-            </div>
 
-            <!-- PRD 2: Offline SOS -->
-            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
-                <div class="w-8 h-8 shrink-0 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                </div>
-                <div>
-                    <h3 class="font-bold text-gray-900 text-sm leading-tight mt-0.5">{{ __('welcome.prds.sos.title') }}</h3>
-                    <p class="text-[13px] text-gray-600 mt-1 leading-snug">{{ __('welcome.prds.sos.desc') }}</p>
-                </div>
-            </div>
+                <!-- Simulated Live App Dashboard Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                    <!-- App Card 1: School -->
+                    <div
+                        class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase text-blue-400 tracking-wider">School ERP</span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Active</span>
+                        </div>
+                        <p class="text-lg font-bold text-white">Dhaka Academy</p>
+                        <p class="text-xs text-gray-300 mt-1">94% Attendance Today · 1,240 Students</p>
+                    </div>
 
-            <!-- PRD 3: 100% Verified Community -->
-            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100 shadow-sm">
-                <div class="w-8 h-8 shrink-0 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <!-- App Card 2: POS -->
+                    <div
+                        class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase text-indigo-400 tracking-wider">POS & Retail</span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Active</span>
+                        </div>
+                        <p class="text-lg font-bold text-white">Zengfy Mart</p>
+                        <p class="text-xs text-gray-300 mt-1">৳42,850 Sales Today · 18 Orders</p>
+                    </div>
+
+                    <!-- App Card 3: Social -->
+                    <div
+                        class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase text-cyan-400 tracking-wider">Social Network</span>
+                            <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded">Connected</span>
+                        </div>
+                        <p class="text-lg font-bold text-white">Community Feed</p>
+                        <p class="text-xs text-gray-300 mt-1">5 New Network Notifications</p>
+                    </div>
+
                 </div>
-                <div>
-                    <h3 class="font-bold text-gray-900 text-sm leading-tight mt-0.5">{{ __('welcome.prds.secure.title') }}</h3>
-                    <p class="text-[13px] text-gray-600 mt-1 leading-snug">{{ __('welcome.prds.secure.desc') }}</p>
-                </div>
+
             </div>
         </div>
+
     </div>
 </section>

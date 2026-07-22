@@ -17,15 +17,12 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 
 // Public Page Routes
-Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->group(function () {
-    Route::get('/', [PageController::class, 'welcome'])->name('welcome');
-    Route::get('/policy/workplace', [PageController::class, 'workplacePolicy'])->name('policy.workplace');
-    Route::get('/faq', [PageController::class, 'faq'])->name('faq');
-    Route::post('/sos/trigger', [PageController::class, 'triggerSOS'])->name('sos.trigger');
-    Route::get('/services', [PageController::class, 'services'])->name('services');
-    Route::get('/download-app', [PageController::class, 'downloadApp'])->name('download.app');
-    Route::post('/faq/submit', [PageController::class, 'submitQuestion'])->name('faq.submit');
+Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::class)->group(function () {
+    Route::get('/', 'welcome')->name('welcome');
+    Route::get('/policy/workplace', 'workplacePolicy')->name('policy.workplace');
+    Route::get('/faq', 'faq')->name('faq');
+    Route::post('/sos/trigger', 'triggerSOS')->name('sos.trigger');
+    Route::get('/services', 'services')->name('services');
+    Route::get('/download-app', 'downloadApp')->name('download.app');
+    Route::post('/faq/submit', 'submitQuestion')->name('faq.submit');
 });
-
-
-
