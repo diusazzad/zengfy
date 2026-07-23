@@ -6,78 +6,182 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
 
-    public function welcome()
+    /**
+     * Master Products & Pricing Data Dictionary for Zengfy Ecosystem
+     */
+    public static function getProductsData()
     {
-        // Redirect if already logged in (optional based on user request "dashboard... আপাতত না")
-        // But the user said "LANDING PAGE শুধু রাখবে", so maybe we don't redirect to dashboard even if auth.
-        // For now, let's keep it simple.
-
         $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
         $scheme = env('APP_URL_SCHEME', 'https');
         $port = env('APP_ENV') === 'local' ? ':7000' : '';
 
-        $services = [
+        return [
             [
-                'name' => 'Zengfy Commerce',
-                'desc' => 'Inventory, Orders & Online Store.',
-                'img' => 'images/services/webP/ecommerce.jpg',
-                'url' => "{$scheme}://ecommerce.{$baseDomain}{$port}"
+                'id' => 'social',
+                'name' => 'Zengfy Social',
+                'category' => 'Community & Identity',
+                'tagline' => 'NID-Verified Social Network for Real Connections.',
+                'desc' => 'Connect, share, and build real community trust with zero fake profiles or bots.',
+                'img' => 'images/services/webP/civil.webp', // fallback/icon
+                'icon' => '🌐',
+                'url' => "{$scheme}://social.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => 'Full Free',
+                    'period' => 'per account',
+                    'badge' => '100% Free',
+                    'highlight' => 'Free Forever for all verified Bangladeshi citizens.',
+                ],
             ],
             [
+                'id' => 'school',
                 'name' => 'Zengfy School',
-                'desc' => 'Complete Academic Management.',
+                'category' => 'Education & ERP',
+                'tagline' => 'Complete Academic & Administrative Management.',
+                'desc' => 'Automate student attendance, exam report cards, tuition fee collection, and parent SMS.',
                 'img' => 'images/services/webP/school.jpg',
-                'url' => "{$scheme}://school.{$baseDomain}{$port}"
+                'icon' => '🏫',
+                'url' => "{$scheme}://school.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳3,000',
+                    'period' => '/ month',
+                    'badge' => 'Institutional',
+                    'highlight' => 'Includes unlimited students, teachers, and parent portal access.',
+                ],
             ],
             [
-                'name' => 'Zengfy POS',
-                'desc' => 'Point of Sale & Billing.',
-                'img' => 'images/services/webP/pos.jpg',
-                'url' => "{$scheme}://pos.{$baseDomain}{$port}"
-            ],
-            [
-                'name' => 'Zengfy Rent',
-                'desc' => 'Automated Rental Management.',
-                'img' => 'images/services/webP/rent.jpg',
-                'url' => "{$scheme}://rent.{$baseDomain}{$port}"
-            ],
-            [
-                'name' => 'Zengfy Hotel',
-                'desc' => 'Booking & Stay Management.',
-                'img' => 'images/services/webP/hotel.jpg',
-                'url' => "{$scheme}://hotel.{$baseDomain}{$port}"
-            ],
-            [
-                'name' => 'Zengfy NGO',
-                'desc' => 'Charity & Program Tracking.',
-                'img' => 'images/services/webP/ngo.jpg',
-                'url' => "{$scheme}://ngo.{$baseDomain}{$port}"
-            ],
-            [
-                'name' => 'Zengfy Civil',
-                'desc' => 'Engineering & Construction.',
-                'img' => 'images/services/webP/civil.webp',
-                'url' => "{$scheme}://civil.{$baseDomain}{$port}"
-            ],
-            [
+                'id' => 'law',
                 'name' => 'Zengfy Law',
-                'desc' => 'Cases, Clients & Schedules.',
+                'category' => 'Legal Practice & Vault',
+                'tagline' => 'Court Schedules, Client Records & Encrypted Vault.',
+                'desc' => 'Organize case dates, client documents, and legal billing in an encrypted vault.',
                 'img' => 'images/services/webP/law.jpg',
-                'url' => "{$scheme}://law.{$baseDomain}{$port}"
+                'icon' => '⚖️',
+                'url' => "{$scheme}://law.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳500',
+                    'period' => '/ month',
+                    'badge' => 'Legal Practice',
+                    'highlight' => 'Encrypted document vault and automated court hearing reminders.',
+                ],
             ],
             [
+                'id' => 'pos',
+                'name' => 'Zengfy POS',
+                'category' => 'Commerce & Retail',
+                'tagline' => 'Point of Sale, Stock Inventory & bKash Billing.',
+                'desc' => 'Manage multi-store inventory, barcode scanning, bKash payments, and daily profit/loss.',
+                'img' => 'images/services/webP/pos.jpg',
+                'icon' => '🛒',
+                'url' => "{$scheme}://pos.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳40,000',
+                    'period' => 'One-time (৳8,000/yr maint.)',
+                    'badge' => 'Lifetime Ownership',
+                    'highlight' => 'One-time setup with ৳8k yearly maintenance & support.',
+                ],
+            ],
+            [
+                'id' => 'rent',
+                'name' => 'Zengfy Rent',
+                'category' => 'Property & Rental',
+                'tagline' => 'Automated Rental Property & Tenant Verification.',
+                'desc' => 'Manage apartments, commercial spaces, tenant agreements, and search detailed reports.',
+                'img' => 'images/services/webP/rent.jpg',
+                'icon' => '🔑',
+                'url' => "{$scheme}://rent.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳30',
+                    'period' => 'per search detail',
+                    'badge' => 'Pay As You Go',
+                    'highlight' => 'Instant NID tenant background & property search reports.',
+                ],
+            ],
+            [
+                'id' => 'hotel',
+                'name' => 'Zengfy Hotel',
+                'category' => 'Hospitality & Booking',
+                'tagline' => 'Room Booking, Guest Check-in & Housekeeping.',
+                'desc' => 'Streamline room reservations, guest ID verification, invoice printing, and staff shifts.',
+                'img' => 'images/services/webP/hotel.jpg',
+                'icon' => '🏨',
+                'url' => "{$scheme}://hotel.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳1,200',
+                    'period' => '/ month',
+                    'badge' => 'Hospitality',
+                    'highlight' => 'Unlimited room management, guest check-ins, and POS integration.',
+                ],
+            ],
+            [
+                'id' => 'ngo',
+                'name' => 'Zengfy NGO',
+                'category' => 'Charity & Social Cause',
+                'tagline' => 'Transparent Donation & Relief Distribution System.',
+                'desc' => 'Track charity funds, relief distribution to the poor, and verified volunteer teams.',
+                'img' => 'images/services/webP/ngo.jpg',
+                'icon' => '❤️',
+                'url' => "{$scheme}://ngo.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => 'Free / Donation',
+                    'period' => 'for poor & welfare',
+                    'badge' => 'Non-Profit Support',
+                    'highlight' => '100% free software for verified non-profit organizations.',
+                ],
+            ],
+            [
+                'id' => 'civil',
+                'name' => 'Zengfy Civil',
+                'category' => 'Engineering & Construction',
+                'tagline' => 'Site Engineering, Material Expenses & Blueprint Vault.',
+                'desc' => 'Track construction project budgets, site contractor payments, and structural blueprints.',
+                'img' => 'images/services/webP/civil.webp',
+                'icon' => '🏗️',
+                'url' => "{$scheme}://civil.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳700',
+                    'period' => '/ month',
+                    'badge' => 'Engineering',
+                    'highlight' => 'Project tracking, site expense logs, and blueprint storage.',
+                ],
+            ],
+            [
+                'id' => 'skill',
                 'name' => 'Zengfy Skill',
-                'desc' => 'Courses & Learning Platform.',
+                'category' => 'LMS & Training',
+                'tagline' => 'Online Courses, Instructors & Skill Certifications.',
+                'desc' => 'Host live classes, video courses, student assignments, and verified certificates.',
                 'img' => 'images/services/webP/skill.jpg',
-                'url' => "{$scheme}://skill.{$baseDomain}{$port}"
+                'icon' => '🎓',
+                'url' => "{$scheme}://skill.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => 'Flexible Rate',
+                    'period' => 'based on teacher/course',
+                    'badge' => 'LMS Creator',
+                    'highlight' => 'Custom commission and subscription rates set by instructors.',
+                ],
             ],
             [
+                'id' => 'journal',
                 'name' => 'Zengfy Journal',
-                'desc' => 'Personal Diary & Notes.',
+                'category' => 'Personal & Productivity',
+                'tagline' => 'Encrypted Personal Diary, Notes & Thought Log.',
+                'desc' => 'Keep your daily thoughts, private notes, and personal goals protected with biometric encryption.',
                 'img' => 'images/services/webP/journal.jpg',
-                'url' => "{$scheme}://journal.{$baseDomain}{$port}"
+                'icon' => '📓',
+                'url' => "{$scheme}://journal.{$baseDomain}{$port}",
+                'pricing' => [
+                    'amount' => '৳300',
+                    'period' => '/ month',
+                    'badge' => 'Personal Vault',
+                    'highlight' => '256-bit encrypted personal diary & unlimited cloud sync.',
+                ],
             ],
         ];
+    }
+
+    public function welcome()
+    {
+        $services = self::getProductsData();
 
         $features = [
             [
@@ -101,6 +205,67 @@ class PageController extends Controller
         ];
 
         return view('welcome', compact('services', 'features'));
+    }
+
+    public function products()
+    {
+        $products = self::getProductsData();
+        return view('products', compact('products'));
+    }
+
+    public function pricing()
+    {
+        $products = self::getProductsData();
+        return view('pricing', compact('products'));
+    }
+
+    public function company()
+    {
+        $teamMembers = [
+            [
+                'name' => 'Sazzad Hossain',
+                'role' => 'Founder & Chief Systems Architect',
+                'badge' => 'Founder & CEO',
+                'initials' => 'SH',
+                'bio' => 'Visionary engineer driving Bangladesh\'s sovereign digital infrastructure, unified SSO architecture, and NID verification layer.',
+                'social' => [
+                    'linkedin' => 'https://linkedin.com/company/zengfy',
+                    'github' => 'https://github.com/diusazzad',
+                ]
+            ],
+            [
+                'name' => 'Kazi Naimur Rahman',
+                'role' => 'Head of Product & UX Engineering',
+                'badge' => 'VP of Design',
+                'initials' => 'KN',
+                'bio' => 'Master of modern UI/UX design systems, micro-interactions, and high-performance frontend web architectures.',
+                'social' => [
+                    'linkedin' => 'https://linkedin.com/company/zengfy',
+                ]
+            ],
+            [
+                'name' => 'Dr. Farhana Rahman',
+                'role' => 'Lead Security & Compliance Officer',
+                'badge' => 'Chief Security Officer',
+                'initials' => 'FR',
+                'bio' => 'Specialist in 256-bit cloud encryption, NID data privacy compliance, and high-availability server resilience.',
+                'social' => [
+                    'linkedin' => 'https://linkedin.com/company/zengfy',
+                ]
+            ],
+            [
+                'name' => 'Tariqul Islam',
+                'role' => 'Head of Enterprise Growth',
+                'badge' => 'VP of Institutional ERP',
+                'initials' => 'TI',
+                'bio' => 'Empowering 500+ educational institutions, retail merchants, and law firms with automated digital workflows.',
+                'social' => [
+                    'linkedin' => 'https://linkedin.com/company/zengfy',
+                ]
+            ],
+        ];
+
+        return view('company', compact('teamMembers'));
     }
 
 

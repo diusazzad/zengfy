@@ -19,6 +19,9 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 // Public Page Routes
 Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::class)->group(function () {
     Route::get('/', 'welcome')->name('welcome');
+    Route::get('/products', 'products')->name('products');
+    Route::get('/pricing', 'pricing')->name('pricing');
+    Route::get('/company', 'company')->name('company');
     Route::get('/policy/workplace', 'workplacePolicy')->name('policy.workplace');
     Route::get('/faq', 'faq')->name('faq');
     Route::post('/sos/trigger', 'triggerSOS')->name('sos.trigger');

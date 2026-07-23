@@ -36,67 +36,123 @@
 
         <!-- CTAs Container -->
         <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <a href="#ecosystem"                class="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:scale-105 active:scale-95">
-                Explore All 10+ Apps
+            <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" 
+               class="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                <span>Login to Social</span>
+                <span>→</span>
             </a>
 
-            <a href="#sso"                class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-sm sm:text-base backdrop-blur-md transition-all">
-                How SSO Works →
+            <a href="{{ route('products') }}" 
+               class="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-sm sm:text-base backdrop-blur-md transition-all">
+                Explore Products & Pricing
             </a>
         </div>
 
-        <!-- Interactive Floating Ecosystem Mockup Showcase -->
+        <!-- Interactive Floating Ecosystem Mockup Showcase (Google 9-Dot App Switcher Hub) -->
         <div
             class="mt-12 sm:mt-16 relative max-w-5xl mx-auto rounded-3xl p-1.5 sm:p-2 bg-gradient-to-b from-white/15 to-white/0 border border-white/10 shadow-2xl backdrop-blur-2xl max-w-full overflow-hidden">
             <div class="rounded-2xl bg-[#0F1623] p-4 sm:p-8 overflow-hidden border border-white/5 text-left">
-                <!-- Window Controls Top Bar -->
-                <div class="flex items-center justify-between pb-6 border-b border-white/10">
-                    <div class="flex items-center gap-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                        <span class="ml-4 text-xs font-mono text-gray-400">my.zengfy.top — App Launcher Hub</span>
+                
+                <!-- Top Window Controls & 9-Dot App Switcher Bar -->
+                <div class="flex items-center justify-between pb-6 border-b border-white/10 flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <span class="text-xs font-mono text-gray-400">my.zengfy.top — Universal 9-Dot App Launcher</span>
                     </div>
-                    <div
-                        class="flex items-center gap-2 text-xs font-semibold bg-blue-600/20 text-blue-400 px-3 py-1 rounded-lg border border-blue-500/30">
-                        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                        NID Verified: Safayet Hossain
+
+                    <!-- 9-Dot App Switcher (Google Waffle Menu) Badge -->
+                    <div class="flex items-center gap-2">
+                        <div class="p-2 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-2">
+                            <!-- 9-Dot SVG Icon -->
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 10a2 2 0 110-4 2 2 0 010 4zm6 0a2 2 0 110-4 2 2 0 010 4zm6 0a2 2 0 110-4 2 2 0 010 4zM6 16a2 2 0 110-4 2 2 0 010 4zm6 0a2 2 0 110-4 2 2 0 010 4zm6 0a2 2 0 110-4 2 2 0 010 4z"/>
+                            </svg>
+                            <span class="text-xs font-bold font-mono">9-Dot App Switcher</span>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-2 text-xs font-semibold bg-green-600/20 text-green-400 px-3 py-1.5 rounded-xl border border-green-500/30">
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            NID Verified
+                        </div>
                     </div>
                 </div>
 
-                <!-- Simulated Live App Dashboard Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-                    <!-- App Card 1: School -->
-                    <div
-                        class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/40 transition-all">
+                <!-- Live App Dashboard Grid (Google Workspace Style) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                    
+                    <!-- App 1: Social -->
+                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/40 transition-all">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold uppercase text-blue-400 tracking-wider">School ERP</span>
-                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Active</span>
+                            <span class="text-xs font-bold uppercase text-blue-400 tracking-wider flex items-center gap-1.5">
+                                <span>🌐</span> Zengfy Social
+                            </span>
+                            <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full font-bold">Free Forever</span>
                         </div>
-                        <p class="text-lg font-bold text-white">Dhaka Academy</p>
-                        <p class="text-xs text-gray-300 mt-1">94% Attendance Today · 1,240 Students</p>
+                        <p class="text-base font-bold text-white">NID Verified Feed</p>
+                        <p class="text-xs text-gray-300 mt-1">Real connections with 0 fake bots.</p>
                     </div>
 
-                    <!-- App Card 2: POS -->
-                    <div
-                        class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/40 transition-all">
+                    <!-- App 2: School -->
+                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/40 transition-all">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold uppercase text-indigo-400 tracking-wider">POS & Retail</span>
-                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Active</span>
+                            <span class="text-xs font-bold uppercase text-indigo-400 tracking-wider flex items-center gap-1.5">
+                                <span>🏫</span> Zengfy School
+                            </span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳3,000/mo</span>
                         </div>
-                        <p class="text-lg font-bold text-white">Zengfy Mart</p>
-                        <p class="text-xs text-gray-300 mt-1">৳42,850 Sales Today · 18 Orders</p>
+                        <p class="text-base font-bold text-white">Dhaka Model Academy</p>
+                        <p class="text-xs text-gray-300 mt-1">94% Attendance · 1,240 Students</p>
                     </div>
 
-                    <!-- App Card 3: Social -->
-                    <div
-                        class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/40 transition-all">
+                    <!-- App 3: POS -->
+                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/40 transition-all">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold uppercase text-cyan-400 tracking-wider">Social Network</span>
-                            <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded">Connected</span>
+                            <span class="text-xs font-bold uppercase text-cyan-400 tracking-wider flex items-center gap-1.5">
+                                <span>🛒</span> Zengfy POS
+                            </span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳40k One-time</span>
                         </div>
-                        <p class="text-lg font-bold text-white">Community Feed</p>
-                        <p class="text-xs text-gray-300 mt-1">5 New Network Notifications</p>
+                        <p class="text-base font-bold text-white">Zengfy Supermart</p>
+                        <p class="text-xs text-gray-300 mt-1">৳42,850 Today · 18 bKash Billing</p>
+                    </div>
+
+                    <!-- App 4: Law -->
+                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase text-amber-400 tracking-wider flex items-center gap-1.5">
+                                <span>⚖️</span> Zengfy Law
+                            </span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳500/mo</span>
+                        </div>
+                        <p class="text-base font-bold text-white">Court Schedule Vault</p>
+                        <p class="text-xs text-gray-300 mt-1">3 Hearings Scheduled Today</p>
+                    </div>
+
+                    <!-- App 5: Rent -->
+                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase text-purple-400 tracking-wider flex items-center gap-1.5">
+                                <span>🔑</span> Zengfy Rent
+                            </span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳30/search</span>
+                        </div>
+                        <p class="text-base font-bold text-white">Tenant Background</p>
+                        <p class="text-xs text-gray-300 mt-1">NID Tenant Verification Verified</p>
+                    </div>
+
+                    <!-- App 6: Hotel -->
+                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-all">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase text-emerald-400 tracking-wider flex items-center gap-1.5">
+                                <span>🏨</span> Zengfy Hotel
+                            </span>
+                            <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳1,200/mo</span>
+                        </div>
+                        <p class="text-base font-bold text-white">Grand Stay Suite</p>
+                        <p class="text-xs text-gray-300 mt-1">12 Booked Rooms · Live Check-in</p>
                     </div>
 
                 </div>
