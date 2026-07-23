@@ -20,8 +20,8 @@
         <div class="space-y-4">
 
             <!-- Question 1 -->
-            <details class="group rounded-2xl bg-[#121A29]/70 border border-white/10 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-                <summary class="flex items-center justify-between cursor-pointer text-lg font-bold text-white group-open:text-blue-400">
+            <details class="group rounded-2xl bg-[#121A29]/70 border border-white/10 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-500">
+                <summary class="flex items-center justify-between cursor-pointer text-lg font-bold text-white group-open:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1">
                     <span>What is Zengfy and how does Single Sign-On (SSO) work?</span>
                     <span class="ml-4 shrink-0 transition-transform duration-300 group-open:-rotate-180 text-blue-400 font-black">
                         ↓
