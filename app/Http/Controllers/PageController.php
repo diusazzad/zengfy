@@ -268,6 +268,34 @@ class PageController extends Controller
         return view('company', compact('teamMembers'));
     }
 
+    public function terms()
+    {
+        $termsSections = [
+            [
+                'title' => '1. NID Verification & Identity Sovereignty Policy',
+                'desc' => 'Zengfy Ecosystem uses National ID (NID) verification to ensure authentic human identities across all sub-applications. Users agree to provide genuine verification details. Impersonation, fake profiles, or identity theft will result in immediate permanent account termination and reporting to cyber authorities.'
+            ],
+            [
+                'title' => '2. Ecosystem Single Sign-On (SSO) & Multi-Tenant Access',
+                'desc' => 'Your verified Zengfy Unified Account grants access across all 15 sub-applications (School, POS, Law, Social, Rent, etc.). Users are responsible for maintaining account confidentiality and multi-factor authentication credentials.'
+            ],
+            [
+                'title' => '3. Data Privacy & 256-Bit Encryption Standards',
+                'desc' => 'All confidential documents, institutional records, and financial transaction logs uploaded to Zengfy Law, School, and POS modules are encrypted using 256-bit AES cloud security standards. Zengfy will never sell user data to third-party ad networks.'
+            ],
+            [
+                'title' => '4. Subscription Billing, Payments & Maintenance Rates',
+                'desc' => 'Module pricing (e.g. School ERP ৳3,000/mo, Law ৳500/mo, POS ৳40,000 one-time with ৳8,000/yr maintenance) is clearly stated prior to activation. Payments are processed via secure Bangladeshi gateways (bKash, Nagad, Cards). Refunds are governed by our 14-day service SLA policy.'
+            ],
+            [
+                'title' => '5. Acceptable Platform Usage & Cyber Safety Guidelines',
+                'desc' => 'Users must not use Zengfy services for fraudulent billing, spamming, illegal content distribution, or attempting unauthorized system intrusion. Violations are subject to automated rate limiting and security bans.'
+            ],
+        ];
+
+        return view('terms', compact('termsSections'));
+    }
+
 
     public function downloadApp()
     {

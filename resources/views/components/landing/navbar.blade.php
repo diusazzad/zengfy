@@ -89,9 +89,9 @@
                 Company & Team
             </a>
 
-            <!-- Security Link -->
-            <a href="/#security" class="hover:text-white transition-colors duration-200 py-1 px-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                Security & NID
+            <!-- Terms & Conditions Route Link -->
+            <a href="{{ route('terms') }}" class="hover:text-white transition-colors duration-200 py-1 px-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                Terms & Conditions
             </a>
 
             <!-- FAQ Link -->
@@ -133,7 +133,7 @@
         <a @click="mobileOpen = false" href="{{ route('products') }}" class="block text-blue-400 font-bold py-2 px-2 rounded-lg">Browse All Products →</a>
         <a @click="mobileOpen = false" href="{{ route('pricing') }}" class="block hover:text-white py-2 px-2 rounded-lg">Pricing Plans</a>
         <a @click="mobileOpen = false" href="{{ route('company') }}" class="block hover:text-white py-2 px-2 rounded-lg">Company & Team</a>
-        <a @click="mobileOpen = false" href="/#security" class="block hover:text-white py-2 px-2 rounded-lg">Security & NID</a>
+        <a @click="mobileOpen = false" href="{{ route('terms') }}" class="block hover:text-white py-2 px-2 rounded-lg">Terms & Conditions</a>
         <a @click="mobileOpen = false" href="/#faq" class="block hover:text-white py-2 px-2 rounded-lg">FAQ</a>
         <div class="pt-3 border-t border-white/10 flex items-center justify-between">
             <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 

@@ -1,86 +1,98 @@
-<x-layouts.landing>
-    <x-slot name="title">Workplace Policy | Zengfy</x-slot>
+<!-- resources/views/policy/workplace.blade.php -->
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workplace Policy & Team Culture | Zengfy Inc.</title>
+    <meta name="description" content="Our hybrid workplace model, culture of transparency, innovation, and digital sovereignty at Zengfy.">
+    <link rel="canonical" href="{{ url()->current() }}">
 
-    <!-- Policy Header -->
-    <section class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-8 sm:px-10">
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/50 rounded-full text-blue-700 font-bold text-xs mb-8 uppercase tracking-widest animate-fade-in">
-                <span class="relative flex h-2 w-2">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        [x-cloak] { display: none !important; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0B0F17] text-white antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navigation -->
+    <x-landing.navbar />
+
+    <!-- Main Container -->
+    <main class="pt-28 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex-grow">
+        
+        <!-- Hero Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-blue-400 font-extrabold tracking-widest uppercase text-xs bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
                 {{ $header['tag'] }}
-            </div>
-            <h1
-                class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 leading-tight mb-6 font-sans max-w-3xl">
-                {{ $header['title_prefix'] }}<span class="text-blue-600">{{ $header['title_highlight'] }}</span>{{ $header['title_suffix'] }}
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black mt-4 text-white tracking-tight leading-tight">
+                {{ $header['title_prefix'] }}<span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">{{ $header['title_highlight'] }}</span>{{ $header['title_suffix'] }}
             </h1>
-            <p class="text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+            <p class="mt-4 text-gray-300 text-base sm:text-lg leading-relaxed">
                 {{ $header['subtitle'] }}
             </p>
         </div>
-    </section>
 
-    <!-- Policy Content -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-8 sm:px-10">
-            <div class="prose prose-lg prose-blue max-w-none">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                    @foreach($cards as $card)
-                    <div
-                        class="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-500 group">
-                        <div
-                            class="w-14 h-14 {{ $card['bg_color'] }} rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg {{ $card['shadow_color'] }} group-hover:scale-110 transition-transform">
-                            {{ $card['icon'] }}</div>
-                        <h3 class="text-2xl font-black text-gray-900 mb-4">{{ $card['title'] }}</h3>
-                        <p class="text-gray-600 font-medium leading-relaxed">
-                            {{ $card['description'] }}
-                        </p>
+        <!-- Workplace Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            @foreach($cards as $card)
+                <div class="p-8 bg-[#121A29]/80 rounded-3xl border border-white/10 backdrop-blur-xl hover:border-blue-500/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        {{ $card['icon'] }}
                     </div>
-                    @endforeach
+                    <h3 class="text-xl sm:text-2xl font-black text-white mb-3">{{ $card['title'] }}</h3>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+                        {{ $card['description'] }}
+                    </p>
                 </div>
-
-                <div class="space-y-12 text-gray-700">
-                    @foreach($sections as $section)
-                    <div>
-                        <h2 class="text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                            <span class="w-1 h-10 bg-blue-600 rounded-full"></span>
-                            {{ $section['title'] }}
-                        </h2>
-                        <p class="font-medium leading-relaxed">
-                            {{ $section['description'] }}
-                        </p>
-                    </div>
-                    @endforeach
-
-                    <div
-                        class="bg-blue-900 rounded-[3rem] p-10 sm:p-16 text-white relative overflow-hidden group shadow-2xl shadow-blue-900/40">
-                        <div class="relative z-10 text-center">
-                            <h2 class="text-3xl sm:text-4xl font-black mb-6">{{ $cta['title'] }}</h2>
-                            <p class="text-blue-100 text-lg sm:text-xl font-medium mb-10 max-w-2xl mx-auto">
-                                {{ $cta['description'] }}
-                            </p>
-                            <a href="{{ $cta['button_link'] }}"
-                                class="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-900 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all transform hover:scale-105 active:scale-95 shadow-xl">
-                                {{ $cta['button_text'] }}
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                                </svg>
-                            </a>
-                        </div>
-                        <div
-                            class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-    </section>
 
-</x-layouts.landing>
+        <!-- Policy Content Sections -->
+        <div class="space-y-8 mb-16">
+            @foreach($sections as $section)
+                <div class="p-8 rounded-3xl bg-[#121A29]/50 border border-white/5 backdrop-blur-sm">
+                    <h2 class="text-xl sm:text-2xl font-black text-white mb-3 flex items-center gap-3">
+                        <span class="w-1.5 h-6 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></span>
+                        {{ $section['title'] }}
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+                        {{ $section['description'] }}
+                    </p>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- Hybrid Work & Careers CTA Card -->
+        <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-600/20 border border-blue-500/30 backdrop-blur-xl text-center relative overflow-hidden">
+            <h2 class="text-2xl sm:text-3xl font-black text-white mb-3">{{ $cta['title'] }}</h2>
+            <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto mb-6">
+                {{ $cta['description'] }}
+            </p>
+            <a href="{{ route('company') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm shadow-xl shadow-blue-600/30 transition-all hover:scale-105 active:scale-95">
+                {{ $cta['button_text'] }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <x-landing.footer />
+
+</body>
+</html>
