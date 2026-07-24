@@ -16,7 +16,7 @@ This document tracks all official Laravel documentation concepts, system design 
 - [x] **Rate Limiting & Throttling (`throttle:60,1`)**: Protecting API endpoints from DDoS and scraping.
 - [x] **Environment Configuration (`env()` & `config()`)**: Isolating domain schemes for local (`:7000`) & production (`https`).
 - [x] **WCAG 2.1 Accessibility & Focus Rings**: Touch targets (44px+) and focus rings (`focus-visible:ring-2`).
-- [x] **Robots.txt & Sitemap Integration**: Allowing crawlers and linking `sitemap.xml`.
+- [x] **Robots.txt & Sitemap Integration**: Dynamic XML Sitemap Engine (`SitemapController`) indexing main pages & all 15 subdomains.
 
 ### 3. Architecture & Service Layer
 - [x] **Service Pattern (`ModuleDataService`)**: Single Responsibility Principle (SRP) isolating business data logic from controllers.
