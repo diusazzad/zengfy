@@ -12,11 +12,14 @@ This document tracks all official Laravel documentation concepts, system design 
 - [x] **Controller Grouping (`Route::controller`)**: Grouping resource actions under controllers.
 - [x] **Route Naming (`->name()`)**: Named route generation for URL helpers.
 
-### 2. Security & Middleware
+### 2. Security & SEO Optimization
 - [x] **Rate Limiting & Throttling (`throttle:60,1`)**: Protecting API endpoints from DDoS and scraping.
 - [x] **Environment Configuration (`env()` & `config()`)**: Isolating domain schemes for local (`:7000`) & production (`https`).
 - [x] **WCAG 2.1 Accessibility & Focus Rings**: Touch targets (44px+) and focus rings (`focus-visible:ring-2`).
 - [x] **Robots.txt & Sitemap Integration**: Dynamic XML Sitemap Engine (`SitemapController`) indexing main pages & all 15 subdomains.
+- [x] **Font Display Swap (`&display=swap`)**: Zero Flash of Invisible Text (FOIT) font performance optimization.
+- [x] **FAQPage JSON-LD Schema**: Schema.org FAQPage rich search snippet markup.
+- [x] **Dynamic `hreflang` Regional Tags**: Multi-lingual & regional SEO targeting (`bn`, `en`, `x-default`).
 
 ### 3. Architecture & Service Layer
 - [x] **Service Pattern (`ModuleDataService`)**: Single Responsibility Principle (SRP) isolating business data logic from controllers.

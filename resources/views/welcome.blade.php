@@ -65,6 +65,28 @@
             "priceCurrency": "BDT"
           },
           "description": "Zengfy is Bangladesh's first NID-verified digital ecosystem for School ERP, POS, and Legal Suite."
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "{{ url('/') }}/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does Zengfy NID verification work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Zengfy integrates with National ID verification to ensure authentic identities and eliminate fake profiles or fraud."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Zengfy Unified Single Sign-On (SSO)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Zengfy Unified SSO allows users to access all 15 ecosystem sub-applications with one account and one login."
+              }
+            }
+          ]
         }
       ]
     }
@@ -77,6 +99,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO Multi-Lingual & Regional hreflang Tags -->
+    <link rel="alternate" hreflang="bn" href="{{ url()->current() }}?lang=bn" />
+    <link rel="alternate" hreflang="en" href="{{ url()->current() }}?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 

@@ -5,13 +5,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $module['name'] }} | Zengfy Ecosystem</title>
-    <meta name="description" content="{{ $module['desc'] }}">
-    <link rel="canonical" href="{{ url()->current() }}">
-
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO Multi-Lingual & Regional hreflang Tags -->
+    <link rel="alternate" hreflang="bn" href="{{ url()->current() }}?lang=bn" />
+    <link rel="alternate" hreflang="en" href="{{ url()->current() }}?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}" />
+
+    <!-- JSON-LD FAQPage Schema for Google Search Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the pricing for {{ $module['name'] }}?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ $module['name'] }} is {{ $module['pricing']['amount'] }} {{ $module['pricing']['period'] }}. {{ $module['pricing']['highlight'] }}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I launch {{ $module['name'] }}?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply sign in with your NID-verified Zengfy Unified SSO account to access {{ $module['name'] }} instantly."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
