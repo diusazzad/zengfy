@@ -150,16 +150,25 @@
                             </p>
                         </div>
 
-                        <!-- Social Link -->
-                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-                            @if(isset($member['social']['linkedin']))
-                                <a href="{{ $member['social']['linkedin'] }}" target="_blank" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
-                                    <span>LinkedIn</span> →
-                                </a>
-                            @endif
-                            @if(isset($member['social']['github']))
-                                <a href="{{ $member['social']['github'] }}" target="_blank" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
-                                    <span>GitHub</span> →
+                        <!-- Social Link & Founder Portfolio CTA -->
+                        <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex items-center gap-3">
+                                @if(isset($member['social']['linkedin']))
+                                    <a href="{{ $member['social']['linkedin'] }}" target="_blank" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
+                                        <span>LinkedIn</span> →
+                                    </a>
+                                @endif
+                                @if(isset($member['social']['github']))
+                                    <a href="{{ $member['social']['github'] }}" target="_blank" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
+                                        <span>GitHub</span> →
+                                    </a>
+                                @endif
+                            </div>
+
+                            @if(str_contains($member['name'], 'Sazzad'))
+                                <a href="{{ env('APP_ENV') === 'local' ? 'http://founder.zengfy.test:7000' : 'https://founder.zengfy.top' }}" 
+                                   class="text-[11px] font-extrabold text-blue-400 hover:text-blue-300 bg-blue-500/10 border border-blue-500/30 px-3 py-1 rounded-full transition-all hover:scale-105">
+                                    Founder Portfolio 🚀
                                 </a>
                             @endif
                         </div>

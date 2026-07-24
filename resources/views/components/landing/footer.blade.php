@@ -53,10 +53,10 @@
             <div>
                 <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Company</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
+                    <li><a href="{{ route('company') }}" class="hover:text-white transition-colors">Company & Team</a></li>
                     <li><a href="{{ route('policy.workplace') }}" class="hover:text-white transition-colors">Workplace Policy</a></li>
                     <li><a href="{{ route('faq') }}" class="hover:text-white transition-colors">Frequently Asked Questions</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="{{ route('terms') }}" class="hover:text-white transition-colors">Terms of Service & Privacy</a></li>
                 </ul>
             </div>
 
@@ -69,9 +69,8 @@
             </div>
 
             <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms</a>
-                <a href="#" class="hover:text-white transition-colors">Security</a>
+                <a href="{{ route('terms') }}" class="hover:text-white transition-colors">Privacy & Terms</a>
+                <a href="{{ route('terms') }}" class="hover:text-white transition-colors">NID Security Policy</a>
             </div>
         </div>
 

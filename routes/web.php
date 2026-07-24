@@ -22,12 +22,9 @@ Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::
     Route::get('/products', 'products')->name('products');
     Route::get('/pricing', 'pricing')->name('pricing');
     Route::get('/company', 'company')->name('company');
+    Route::get('/terms', 'terms')->name('terms');
     Route::get('/policy/workplace', 'workplacePolicy')->name('policy.workplace');
     Route::get('/faq', 'faq')->name('faq');
-    Route::post('/sos/trigger', 'triggerSOS')->name('sos.trigger');
-    Route::get('/services', 'services')->name('services');
-    Route::get('/download-app', 'downloadApp')->name('download.app');
-    Route::post('/faq/submit', 'submitQuestion')->name('faq.submit');
 });
 
 

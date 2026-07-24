@@ -408,6 +408,34 @@ class ModuleDataService
                 ],
                 'url' => "{$scheme}://laranexus.{$baseDomain}{$port}",
             ],
+
+            'founder' => [
+                'id' => 'founder',
+                'name' => 'Sazzad Hossain | Founder & Systems Architect',
+                'category' => 'Founder & Systems Engineering',
+                'badge' => 'Founder & Chief Architect',
+                'tagline' => 'Full-Stack Engineer & Visionary Behind Zengfy Sovereign Ecosystem',
+                'desc' => 'Explore the architectural vision, open-source projects, and systems engineering journey of Sazzad Hossain.',
+                'theme' => [
+                    'primary' => 'from-blue-600 via-indigo-600 to-cyan-400',
+                    'accent_text' => 'text-blue-400',
+                    'bg_glow' => 'bg-blue-600/10',
+                    'border_glow' => 'hover:border-blue-500/50',
+                ],
+                'pricing' => [
+                    'amount' => 'Open Vision',
+                    'period' => 'Public Portfolio',
+                    'badge' => 'Systems Architect',
+                    'highlight' => 'Building Bangladesh\'s first NID-verified digital ecosystem.',
+                ],
+                'features' => [
+                    ['icon' => '🏛️', 'title' => 'Unified SSO Architecture', 'desc' => 'Multi-tenant authentication across 15+ subdomains.'],
+                    ['icon' => '⚡', 'title' => 'High Performance Systems', 'desc' => 'Core Web Vitals 100/100 Lighthouse performance.'],
+                    ['icon' => '🔐', 'title' => 'Sovereign NID Security', 'desc' => 'National ID verified identity and data encryption.'],
+                    ['icon' => '💻', 'title' => 'Open Source & Mentorship', 'desc' => 'Empowering developers with clean code & architecture.'],
+                ],
+                'url' => "{$scheme}://founder.{$baseDomain}{$port}",
+            ],
         ];
     }
 
