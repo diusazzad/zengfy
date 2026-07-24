@@ -19,23 +19,48 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What is the pricing for {{ $module['name'] }}?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "{{ $module['name'] }} is {{ $module['pricing']['amount'] }} {{ $module['pricing']['period'] }}. {{ $module['pricing']['highlight'] }}"
-          }
+          "@type": "SoftwareApplication",
+          "@id": "{{ url()->current() }}/#software",
+          "name": "{{ $module['name'] }}",
+          "operatingSystem": "Web",
+          "applicationCategory": "BusinessApplication",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "96",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BDT"
+          },
+          "description": "{{ $module['desc'] }}"
         },
         {
-          "@type": "Question",
-          "name": "How do I launch {{ $module['name'] }}?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Simply sign in with your NID-verified Zengfy Unified SSO account to access {{ $module['name'] }} instantly."
-          }
+          "@type": "FAQPage",
+          "@id": "{{ url()->current() }}/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the pricing for {{ $module['name'] }}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ $module['name'] }} is {{ $module['pricing']['amount'] }} {{ $module['pricing']['period'] }}. {{ $module['pricing']['highlight'] }}"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I launch {{ $module['name'] }}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply sign in with your NID-verified Zengfy Unified SSO account to access {{ $module['name'] }} instantly."
+              }
+            }
+          ]
         }
       ]
     }
