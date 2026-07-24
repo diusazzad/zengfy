@@ -3,7 +3,7 @@
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\SubdomainLandingController;
 
 // Language Switcher Route
 Route::get('/lang/{locale}', function ($locale) {
@@ -28,4 +28,10 @@ Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::
     Route::get('/services', 'services')->name('services');
     Route::get('/download-app', 'downloadApp')->name('download.app');
     Route::post('/faq/submit', 'submitQuestion')->name('faq.submit');
+});
+
+
+// Wildcard Subdomain Landing Engine
+Route::domain('{subdomain}.' . env('APP_BASE_DOMAIN', 'zengfy.top'))->group(function () {
+    Route::get('/', [SubdomainLandingController::class, 'show'])->name('subdomain.landing');
 });

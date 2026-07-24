@@ -496,19 +496,19 @@ class PageController extends Controller
         return view('policy.workplace', compact('header', 'cards', 'sections', 'cta'));
     }
 
-    public function triggerSOS(Request $request)
-    {
-        $user = auth()->user();
-        $lat = $request->input('lat');
-        $lng = $request->input('lng');
+    // public function triggerSOS(Request $request)
+    // {
+    //     $user = auth()->user();
+    //     $lat = $request->input('lat');
+    //     $lng = $request->input('lng');
 
-        // Logic to notify emergency contacts and authorities
-        // For now, we log it and simulate a successful response
-        \Illuminate\Support\Facades\Log::emergency("SOS Triggered by User: {$user->name} (ID: {$user->id}) at Lat: {$lat}, Lng: {$lng}");
+    //     // Logic to notify emergency contacts and authorities
+    //     // For now, we log it and simulate a successful response
+    //     \Illuminate\Support\Facades\Log::emergency("SOS Triggered by User: {$user->name} (ID: {$user->id}) at Lat: {$lat}, Lng: {$lng}");
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Emergency services have been notified.'
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => 'success',
+    //         'message' => 'Emergency services have been notified.'
+    //     ]);
+    // }
 }
