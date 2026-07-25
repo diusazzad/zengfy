@@ -15,7 +15,7 @@
                 <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 text-2xl">
                     🛡️
                 </div>
-                <h3 class="text-lg font-bold text-white">NID Verified Users</h3>
+                <h3 class="text-lg font-bold text-white">Verified User Identity</h3>
                 <p class="text-xs text-gray-300 mt-2 leading-relaxed">
                     Integrated identity layer ensuring real, accountable users across all applications.
                 </p>

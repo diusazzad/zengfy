@@ -35,7 +35,7 @@
                     </div>
                     <p class="text-gray-300 text-sm sm:text-base leading-relaxed italic">
                         "Zengfy School ERP completely transformed our administrative workflow. Attendance tracking and
-                        tuition fee collection are now automated, and parents love the NID-verified safety features."
+                        tuition fee collection are now automated, and parents love the verified identity safety features."
                     </p>
                 </div>
 
@@ -85,7 +85,7 @@
                     </div>
                     <p class="text-gray-300 text-sm sm:text-base leading-relaxed italic">
                         "Case schedules and confidential client files are finally organized in an encrypted,
-                        NID-verified vault. Zengfy Legal Suite gives our law firm complete peace of mind."
+                        256-bit encrypted vault. Zengfy Legal Suite gives our law firm complete peace of mind."
                     </p>
                 </div>
 

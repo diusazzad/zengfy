@@ -42,7 +42,7 @@
             <div>
                 <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Security & Trust</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
-                    <li><a href="#security" class="hover:text-white transition-colors">NID Identity Layer</a></li>
+                    <li><a href="#security" class="hover:text-white transition-colors">Verified Identity Layer</a></li>
                     <li><a href="#sso" class="hover:text-white transition-colors">Central SSO Token Engine</a></li>
                     <li><a href="#" class="hover:text-white transition-colors">256-Bit Data Sovereignty</a></li>
                     <li><a href="#" class="hover:text-white transition-colors">Cloud Infrastructure SLA</a></li>
@@ -70,7 +70,7 @@
 
             <div class="flex items-center gap-6">
                 <a href="{{ route('terms') }}" class="hover:text-white transition-colors">Privacy & Terms</a>
-                <a href="{{ route('terms') }}" class="hover:text-white transition-colors">NID Security Policy</a>
+                <a href="{{ route('terms') }}" class="hover:text-white transition-colors">Identity & Security Policy</a>
             </div>
         </div>
 

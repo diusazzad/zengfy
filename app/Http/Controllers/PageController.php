@@ -20,7 +20,7 @@ class PageController extends Controller
                 'id' => 'social',
                 'name' => 'Zengfy Social',
                 'category' => 'Community & Identity',
-                'tagline' => 'NID-Verified Social Network for Real Connections.',
+                'tagline' => 'Verified Social Network for Real Connections.',
                 'desc' => 'Connect, share, and build real community trust with zero fake profiles or bots.',
                 'img' => 'images/services/webP/civil.webp', // fallback/icon
                 'icon' => '🌐',
@@ -93,7 +93,7 @@ class PageController extends Controller
                     'amount' => '৳30',
                     'period' => 'per search detail',
                     'badge' => 'Pay As You Go',
-                    'highlight' => 'Instant NID tenant background & property search reports.',
+                    'highlight' => 'Instant tenant background & property search reports.',
                 ],
             ],
             [
@@ -227,7 +227,7 @@ class PageController extends Controller
                 'role' => 'Founder & Chief Systems Architect',
                 'badge' => 'Founder & CEO',
                 'initials' => 'SH',
-                'bio' => 'Visionary engineer driving Bangladesh\'s sovereign digital infrastructure, unified SSO architecture, and NID verification layer.',
+                'bio' => 'Visionary engineer driving Bangladesh\'s sovereign digital infrastructure, unified SSO architecture, and enterprise identity layer.',
                 'social' => [
                     'linkedin' => 'https://linkedin.com/company/zengfy',
                     'github' => 'https://github.com/diusazzad',
@@ -248,7 +248,7 @@ class PageController extends Controller
                 'role' => 'Lead Security & Compliance Officer',
                 'badge' => 'Chief Security Officer',
                 'initials' => 'FR',
-                'bio' => 'Specialist in 256-bit cloud encryption, NID data privacy compliance, and high-availability server resilience.',
+                'bio' => 'Specialist in 256-bit cloud encryption, data privacy compliance, and high-availability server resilience.',
                 'social' => [
                     'linkedin' => 'https://linkedin.com/company/zengfy',
                 ]
@@ -272,8 +272,8 @@ class PageController extends Controller
     {
         $termsSections = [
             [
-                'title' => '1. NID Verification & Identity Sovereignty Policy',
-                'desc' => 'Zengfy Ecosystem uses National ID (NID) verification to ensure authentic human identities across all sub-applications. Users agree to provide genuine verification details. Impersonation, fake profiles, or identity theft will result in immediate permanent account termination and reporting to cyber authorities.'
+                'title' => '1. Enterprise Identity Verification & User Integrity Policy',
+                'desc' => 'Zengfy Ecosystem uses multi-factor identity verification to ensure authentic human identities across all sub-applications. Users agree to provide genuine verification details. Impersonation, fake profiles, or identity theft will result in immediate permanent account termination and reporting to cyber authorities.'
             ],
             [
                 'title' => '2. Ecosystem Single Sign-On (SSO) & Multi-Tenant Access',

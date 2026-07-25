@@ -73,7 +73,7 @@
                         <span class="text-xl">🌐</span>
                         <div>
                             <p class="text-xs font-bold text-white">Zengfy Social</p>
-                            <p class="text-[10px] text-gray-300">NID-Verified Network</p>
+                            <p class="text-[10px] text-gray-300">Verified Human Network</p>
                         </div>
                     </a>
                 </div>

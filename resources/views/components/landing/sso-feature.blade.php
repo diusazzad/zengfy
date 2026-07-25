@@ -20,7 +20,7 @@
 
                 <p class="text-gray-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
                     No more managing dozens of passwords for different business software. With Zengfy Central SSO, your
-                    NID-verified account grants instant, secure access across all subdomains.
+                    Verified account grants instant, secure access across all subdomains.
                 </p>
 
                 <!-- Feature Bullets -->

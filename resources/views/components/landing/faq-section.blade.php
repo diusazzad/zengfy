@@ -22,28 +22,15 @@
             <!-- Question 1 -->
             <details class="group rounded-2xl bg-[#121A29]/70 border border-white/10 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-500">
                 <summary class="flex items-center justify-between cursor-pointer text-lg font-bold text-white group-open:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1">
-                    <span>What is Zengfy and how does Single Sign-On (SSO) work?</span>
-                    <span class="ml-4 shrink-0 transition-transform duration-300 group-open:-rotate-180 text-blue-400 font-black">
-                        ↓
-                    </span>
-                </summary>
-                <p class="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed border-t border-white/5 pt-4">
-                    Zengfy is a unified digital operating system for Bangladesh. Once you create a single account, you can access School ERP, POS Retail, Legal Suite, and Social Network using our 9-Dot App Switcher without ever re-entering passwords.
-                </p>
-            </details>
-
-            <!-- Question 2 -->
-            <details class="group rounded-2xl bg-[#121A29]/70 border border-white/10 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-                <summary class="flex items-center justify-between cursor-pointer text-lg font-bold text-white group-open:text-blue-400">
-                    <span>How is NID Verification handled and is my data secure?</span>
-                    <span class="ml-4 shrink-0 transition-transform duration-300 group-open:-rotate-180 text-blue-400 font-black">
-                        ↓
-                    </span>
-                </summary>
-                <p class="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed border-t border-white/5 pt-4">
-                    NID verification ensures real, accountable identities across our ecosystem to prevent fraud and spam. All institutional and financial data is stored using enterprise-grade 256-bit SSL encryption.
-                </p>
-            </details>
+            <div class="rounded-2xl bg-[#121A29]/70 border border-white/10 p-6 transition-all" x-data="{ open: false }">
+                <button @click="open = !open" class="w-full flex items-center justify-between text-left font-bold text-base sm:text-lg text-white">
+                    <span>How is Identity Verification handled and is my data secure?</span>
+                    <span class="text-blue-400 font-extrabold text-xl" x-text="open ? '-' : '+'"></span>
+                </button>
+                <div x-show="open" x-cloak class="mt-4 text-xs sm:text-sm text-gray-300 leading-relaxed pt-3 border-t border-white/10">
+                    Identity verification ensures real, accountable identities across our ecosystem to prevent fraud and spam. All institutional and financial data is stored using enterprise-grade 256-bit SSL encryption.
+                </div>
+            </div>
 
             <!-- Question 3 -->
             <details class="group rounded-2xl bg-[#121A29]/70 border border-white/10 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>All Products & Operating Systems | Zengfy</title>
-    <meta name="description" content="Explore all 10+ specialized operating systems powered by Zengfy Unified SSO and NID Verification.">
+    <meta name="description" content="Explore all 10+ specialized operating systems powered by Zengfy Unified SSO and Verified Identity Layer.">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Google Fonts: Plus Jakarta Sans -->

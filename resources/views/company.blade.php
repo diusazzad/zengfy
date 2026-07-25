@@ -47,7 +47,7 @@
             </h1>
 
             <p class="mt-6 text-gray-300 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal relative z-10">
-                Zengfy Inc. is a next-generation technology company building Bangladesh’s unified digital infrastructure — seamlessly connecting schools, retail businesses, legal firms, and social communities under one secure NID-verified identity.
+                Zengfy Inc. is a next-generation technology company building Bangladesh’s unified digital infrastructure — seamlessly connecting schools, retail businesses, legal firms, and social communities under one secure verified identity.
             </p>
         </section>
 
@@ -58,7 +58,7 @@
                     <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Our Mission</span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white mt-2 tracking-tight">Empowering 170M+ Lives with One Sovereign Identity</h2>
                     <p class="text-gray-300 text-sm sm:text-base mt-4 leading-relaxed">
-                        We believe individuals and institutions deserve software that works together effortlessly. By integrating National ID verification with Single Sign-On (SSO), Zengfy eliminates digital fraud, password fatigue, and disconnected software silos.
+                        We believe individuals and institutions deserve software that works together effortlessly. By integrating multi-tenant identity verification with Single Sign-On (SSO), Zengfy eliminates digital fraud, password fatigue, and disconnected software silos.
                     </p>
                 </div>
 
@@ -77,7 +77,7 @@
                     <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-4">
                         🛡️
                     </div>
-                    <h3 class="text-lg font-bold text-white">NID Accountability</h3>
+                    <h3 class="text-lg font-bold text-white">Verified Accountability</h3>
                     <p class="text-xs text-gray-300 mt-2 leading-relaxed">Zero fake profiles or spam. Real verified identities build authentic trust across our ecosystem.</p>
                 </div>
 

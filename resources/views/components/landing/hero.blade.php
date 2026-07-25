@@ -9,15 +9,10 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-        <!-- Live Pill Badge -->
-        <div
-            class="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400 text-xs sm:text-sm font-semibold mb-6 sm:mb-8 backdrop-blur-md shadow-inner shadow-blue-500/10">
-            <span class="relative flex h-2.5 w-2.5">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-            </span>
-            <span>NID-Verified Digital Ecosystem 🇧🇩</span>
+        <!-- Top Pill Badge (Sovereign Ecosystem Focus) -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs sm:text-sm font-semibold mb-6 animate-fade-in shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+            <span>Verified Enterprise Digital Ecosystem 🇧🇩</span>
         </div>
 
         <!-- Main Headline with Vibrant Gradient -->
@@ -114,20 +109,43 @@
                                 <span>🛒</span> Zengfy POS
                             </span>
                             <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳40k One-time</span>
+                               <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                            Verified User
                         </div>
-                        <p class="text-base font-bold text-white">Zengfy Supermart</p>
-                        <p class="text-xs text-gray-300 mt-1">৳42,850 Today · 18 bKash Billing</p>
                     </div>
 
-                    <!-- App 4: Law -->
-                    <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/40 transition-all">
-                        <div class="flex items-center justify-between mb-3">
+                    <!-- App Grid Mockup Cards (Google 9-Dot Switcher Style) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all text-left group">
+                            <span class="text-2xl mb-2 block">🌐</span>
+                            <p class="text-base font-bold text-white">Verified Social Feed</p>
+                            <p class="text-xs text-gray-300 mt-1">Real Community Feed</p>
+                        </a>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all text-left group">
+                            <span class="text-2xl mb-2 block">🏫</span>
+                            <p class="text-base font-bold text-white">School ERP</p>
+                            <p class="text-xs text-gray-300 mt-1">Result & Attendance</p>
+                        </a>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all text-left group">
+                            <span class="text-2xl mb-2 block">🛒</span>
+                            <p class="text-base font-bold text-white">POS Retail</p>
+                            <p class="text-xs text-gray-300 mt-1">Inventory & bKash Billing</p>
+                        </a>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all text-left group">
+                            <span class="text-2xl mb-2 block">🔑</span>
+                            <p class="text-base font-bold text-white">Rent & Tenant</p>
+                            <p class="text-xs text-gray-300 mt-1">Tenant Background Search</p>
+                        </a>
+                    </div>           <div class="flex items-center justify-between mb-3">
                             <span class="text-xs font-bold uppercase text-amber-400 tracking-wider flex items-center gap-1.5">
                                 <span>⚖️</span> Zengfy Law
                             </span>
                             <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full font-bold">৳500/mo</span>
                         </div>
-                        <p class="text-base font-bold text-white">Court Schedule Vault</p>
                         <p class="text-xs text-gray-300 mt-1">3 Hearings Scheduled Today</p>
                     </div>
 

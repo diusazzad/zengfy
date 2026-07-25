@@ -5,24 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Zengfy | One Account. Infinite Ecosystem.</title>
-    <meta name="description" content="Zengfy is Bangladesh's first NID-verified digital ecosystem. Manage your school, business POS, and legal practice with one secure unified account.">
-    <meta name="keywords" content="Zengfy, Ecosystem, School ERP, POS Bangladesh, Legal Management, NID Verification, Unified SaaS">
+    <meta name="description" content="Zengfy is Bangladesh's first verified enterprise digital ecosystem. Manage your school, business POS, and legal practice with one secure unified account.">
+    <meta name="keywords" content="Zengfy, Ecosystem, School ERP, POS Bangladesh, Legal Management, Enterprise Identity, Unified SaaS">
     <meta name="author" content="Zengfy Inc.">
 
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="Zengfy | One Account. Infinite Ecosystem.">
-    <meta property="og:description" content="Manage your school, business POS, and legal practice with one secure NID-verified account.">
-    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="Zengfy | Bangladesh's Sovereign Digital Operating Ecosystem">
+    <meta property="og:description" content="Manage your school, business POS, and legal practice with one secure verified enterprise account.">
+    <meta property="og:image" content="{{ asset('images/hero/dashboard.png') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="Zengfy | One Account. Infinite Ecosystem.">
-    <meta property="twitter:description" content="Manage your school, business POS, and legal practice with one secure NID-verified account.">
+    <meta property="twitter:url" content="{{ url('/') }}">
+    <meta property="twitter:title" content="Zengfy | Bangladesh's Sovereign Digital Operating Ecosystem">
+    <meta property="twitter:description" content="Manage your school, business POS, and legal practice with one secure verified enterprise account.">
     <meta property="twitter:image" content="{{ asset('images/logo.png') }}">
 
     <!-- Google Tag Manager (GTM) / GA4 Placeholder -->
@@ -71,7 +71,7 @@
             "price": "0",
             "priceCurrency": "BDT"
           },
-          "description": "Zengfy is Bangladesh's first NID-verified digital ecosystem for School ERP, POS, and Legal Suite."
+          "description": "Zengfy is Bangladesh's first verified enterprise digital ecosystem for School ERP, POS, and Legal Suite."
         },
         {
           "@type": "FAQPage",
@@ -79,10 +79,10 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "How does Zengfy NID verification work?",
+              "name": "How does Zengfy Enterprise Identity verification work?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Zengfy integrates with National ID verification to ensure authentic identities and eliminate fake profiles or fraud."
+                "text": "Zengfy integrates multi-factor identity verification to ensure authentic identities and eliminate fake profiles or fraud."
               }
             },
             {

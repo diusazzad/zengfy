@@ -29,7 +29,7 @@
                 </h2>
 
                 <p class="mt-4 text-gray-300 text-base sm:text-xl font-normal leading-relaxed">
-                    Create your NID-verified account and manage your school, retail POS, legal practice, and social
+                    Create your verified enterprise account and manage your school, retail POS, legal practice, and social
                     network from a single, secure identity.
                 </p>
 

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Terms & Conditions & NID Compliance | Zengfy Inc.</title>
-    <meta name="description" content="Platform Terms of Service, NID Identity Verification Rules, Data Privacy, and User Agreements for Zengfy Ecosystem.">
+    <title>Terms & Conditions & Enterprise Compliance | Zengfy Inc.</title>
+    <meta name="description" content="Platform Terms of Service, Enterprise Identity Verification Rules, Data Privacy, and User Agreements for Zengfy Ecosystem.">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -39,7 +39,7 @@
             <h1 class="text-3xl sm:text-5xl font-black mt-4 text-white tracking-tight leading-tight">
                 Terms of Service & <br class="hidden sm:block"/>
                 <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
-                    NID Safety Compliance.
+                    Enterprise Compliance.
                 </span>
             </h1>
             <p class="mt-4 text-gray-300 text-base sm:text-lg leading-relaxed">
