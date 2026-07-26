@@ -68,6 +68,14 @@
                 © {{ date('Y') }} Zengfy Inc. All rights reserved. Built with pride for Bangladesh 🇧🇩
             </div>
 
+            <!-- Footer Exclusive Language Switcher -->
+            <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                <span class="text-gray-400 font-semibold">🌐 ভাষা / Language:</span>
+                <a href="{{ route('lang.switch', 'bn') }}" class="px-2 py-0.5 rounded-md transition-all {{ session('locale', 'bn') === 'bn' ? 'bg-blue-600 text-white font-bold shadow-sm' : 'hover:text-white text-gray-400' }}">🇧🇩 বাংলা</a>
+                <span class="text-gray-600">|</span>
+                <a href="{{ route('lang.switch', 'en') }}" class="px-2 py-0.5 rounded-md transition-all {{ session('locale') === 'en' ? 'bg-blue-600 text-white font-bold shadow-sm' : 'hover:text-white text-gray-400' }}">🇬🇧 English</a>
+            </div>
+
             <div class="flex items-center gap-6">
                 <a href="{{ route('terms') }}" class="hover:text-white transition-colors">Privacy & Terms</a>
                 <a href="{{ route('terms') }}" class="hover:text-white transition-colors">NID Security Policy</a>
