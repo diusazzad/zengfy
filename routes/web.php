@@ -25,6 +25,10 @@ Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::
     Route::get('/terms', 'terms')->name('terms');
     Route::get('/policy/workplace', 'workplacePolicy')->name('policy.workplace');
     Route::get('/faq', 'faq')->name('faq');
+
+    // Traffic Safeguard & Error Waiting Room Preview Routes
+    Route::get('/429', fn() => response()->view('errors.429', [], 429));
+    Route::get('/503', fn() => response()->view('errors.503', [], 503));
 });
 
 
