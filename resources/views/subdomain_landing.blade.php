@@ -1,14 +1,15 @@
 <!-- resources/views/subdomain_landing.blade.php -->
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', session('locale', 'bn')) }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $module['name'] }} | Zengfy Ecosystem</title>
-    <!-- Google Fonts: Plus Jakarta Sans -->
+
+    <!-- Google Fonts: Plus Jakarta Sans & Hind Siliguri for Bengali -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- SEO Multi-Lingual & Regional hreflang Tags -->
     <link rel="alternate" hreflang="bn" href="{{ url()->current() }}?lang=bn" />
@@ -38,29 +39,7 @@
             "price": "0",
             "priceCurrency": "BDT"
           },
-          "description": "{{ $module['desc'] }}"
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "{{ url()->current() }}/#faqpage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is the pricing for {{ $module['name'] }}?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "{{ $module['name'] }} is {{ $module['pricing']['amount'] }} {{ $module['pricing']['period'] }}. {{ $module['pricing']['highlight'] }}"
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I launch {{ $module['name'] }}?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Simply sign in with your NID-verified Zengfy Unified SSO account to access {{ $module['name'] }} instantly."
-              }
-            }
-          ]
+          "description": "{{ $module['desc_bn'] ?? $module['desc'] }}"
         }
       ]
     }
@@ -73,21 +52,30 @@
 
     <style>
         [x-cloak] { display: none !important; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif; }
+        .scroll-reveal {
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
     </style>
 </head>
-<body class="bg-[#0B0F17] text-white antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
+<body class="bg-[#0B0F17] text-white antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between"
+      x-data="{ 
+          instituteType: 'school',
+          sandboxAction: null,
+          sandboxMessage: '',
+          studentCount: 500
+      }">
 
     <!-- Shared Header Navigation -->
     <x-landing.navbar />
 
     <!-- Main Body -->
-    <main class="pt-28 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex-grow">
+    <main class="pt-24 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex-grow">
 
-        <!-- Dynamic Hero Section -->
         @if($module['id'] === 'founder')
             <!-- World-Class Founder & Systems Architect Dedicated Portfolio Layout -->
-            <div class="max-w-5xl mx-auto mb-20 relative">
+            <div class="max-w-5xl mx-auto mb-20 relative scroll-reveal opacity-0 translate-y-10">
                 <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none"></div>
 
                 <!-- Profile Card Header -->
@@ -177,10 +165,636 @@
                     </div>
                 </div>
 
+                <!-- Featured Projects Showcase Section -->
+                <div class="mb-20">
+                    <div class="text-center mb-12">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3.5 py-1 rounded-full">
+                            Portfolio Highlights
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">Featured Core Projects</h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl mx-auto">Production SaaS systems, API gateways, and enterprise data analytics platforms built from scratch.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Project 1: ZenGfy -->
+                        <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-6 text-blue-400">
+                                    🌐
+                                </div>
+                                <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-full border border-blue-500/20">
+                                    Sovereign Ecosystem
+                                </span>
+                                <h3 class="text-xl font-black text-white mt-3 group-hover:text-blue-400 transition-colors">ZenGfy Ecosystem</h3>
+                                <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+                                    Multi-tenant SaaS ecosystem featuring School ERP, POS Retail, Legal Vault, and NID-verified identity layer across 15+ subdomains.
+                                </p>
+                            </div>
+                            <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000' : 'https://zengfy.top' }}" target="_blank" class="mt-6 text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                <span>Explore ZenGfy</span> →
+                            </a>
+                        </div>
+
+                        <!-- Project 2: LaraNexus -->
+                        <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-orange-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-6 text-orange-400">
+                                    ⚡
+                                </div>
+                                <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-orange-500/10 text-orange-300 rounded-full border border-orange-500/20">
+                                    API Gateway & Open Source
+                                </span>
+                                <h3 class="text-xl font-black text-white mt-3 group-hover:text-orange-400 transition-colors">LaraNexus Gateway</h3>
+                                <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+                                    Unified API gateway, real-time webhook dispatcher, and OAuth developer authentication framework for high-throughput Laravel apps.
+                                </p>
+                            </div>
+                            <a href="https://github.com/diusazzad/LaraNexus" target="_blank" class="mt-6 text-xs font-bold text-orange-400 hover:text-orange-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                <span>GitHub (@LaraNexus)</span> →
+                            </a>
+                        </div>
+
+                        <!-- Project 3: Confidens Analytics -->
+                        <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
+                            <div>
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-6 text-indigo-400">
+                                    📊
+                                </div>
+                                <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-indigo-500/10 text-indigo-300 rounded-full border border-indigo-500/20">
+                                    Enterprise Analytics
+                                </span>
+                                <h3 class="text-xl font-black text-white mt-3 group-hover:text-indigo-400 transition-colors">Confidens Analytics</h3>
+                                <p class="text-xs text-gray-300 mt-3 leading-relaxed">
+                                    High-performance metrics, data pipeline visualizations, and real-time business analytics platform for modern web teams.
+                                </p>
+                            </div>
+                            <a href="https://confidensanalytics.com/" target="_blank" class="mt-6 text-xs font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                <span>Visit Confidens Analytics</span> →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Work Experience Timeline -->
+                <div class="mb-20 max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                            Career Journey
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">Professional Experience</h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">Proven track record of architecting scalable systems and leading technical teams.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Exp 1: Raw Axiom -->
+                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/30 backdrop-blur-xl transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                <div>
+                                    <h3 class="text-lg font-black text-white">Full-Stack Developer (Remote)</h3>
+                                    <p class="text-xs text-emerald-400 font-bold">Raw Axiom</p>
+                                </div>
+                                <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
+                                    Nov 2025 – Present
+                                </span>
+                            </div>
+                            <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
+                                <li>Engineered robust, data-driven backends using Laravel and scalable RESTful APIs.</li>
+                                <li>Integrated AI-assisted features and optimized API performance for international clients.</li>
+                                <li>Developed highly interactive and responsive UIs with modern frameworks.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Exp 2: ZenGfy -->
+                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/30 backdrop-blur-xl transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                <div>
+                                    <h3 class="text-lg font-black text-white">Founder & Full-Stack Developer</h3>
+                                    <p class="text-xs text-blue-400 font-bold">ZenGfy Ecosystem</p>
+                                </div>
+                                <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
+                                    2023 – Present
+                                </span>
+                            </div>
+                            <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
+                                <li>Architected and launched an ambitious multi-tenant SaaS ecosystem including E-commerce, School ERP, POS, and AI tools.</li>
+                                <li>Utilized specialized AI logic alongside Laravel backend services and NID identity verification layer.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Exp 3: APPHS -->
+                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/30 backdrop-blur-xl transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                <div>
+                                    <h3 class="text-lg font-black text-white">IT Support Engineer</h3>
+                                    <p class="text-xs text-indigo-400 font-bold">APPHS | Gazipur, Bangladesh</p>
+                                </div>
+                                <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
+                                    Jan 2022 – Oct 2025
+                                </span>
+                            </div>
+                            <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
+                                <li>Resolved technical issues and maintained software infrastructure for 400+ students.</li>
+                                <li>Instructed students on ICT concepts, system security, and programming fundamentals.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Exp 4: SSL Wireless -->
+                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/30 backdrop-blur-xl transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                <div>
+                                    <h3 class="text-lg font-black text-white">Web Intern</h3>
+                                    <p class="text-xs text-cyan-400 font-bold">SSL Wireless | Dhaka, Bangladesh</p>
+                                </div>
+                                <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
+                                    Jun 2021 – Sep 2021
+                                </span>
+                            </div>
+                            <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
+                                <li>Built a Learning Management System (LMS) with Laravel/MySQL, improving query performance by 20%.</li>
+                                <li>Collaborated in an agile team to develop and test core registration features.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @elseif($module['id'] === 'school')
+            <!-- Dynamic Institution Switcher Filter (Top Bar Sub-Nav) -->
+            <div class="mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 rounded-2xl bg-[#121A29]/90 border border-white/10 max-w-2xl mx-auto backdrop-blur-xl shadow-xl scroll-reveal opacity-0 translate-y-10">
+                <span class="text-xs font-bold text-gray-400 px-3 hidden sm:inline">প্রতিষ্ঠানের ধরন:</span>
+                
+                <button @click="instituteType = 'school'" 
+                        :class="instituteType === 'school' ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30' : 'bg-white/5 text-gray-300 hover:bg-white/10'"
+                        class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>🏫</span> <span>হাই স্কুল</span>
+                </button>
+
+                <button @click="instituteType = 'college'" 
+                        :class="instituteType === 'college' ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30' : 'bg-white/5 text-gray-300 hover:bg-white/10'"
+                        class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>🏛️</span> <span>কলেজ</span>
+                </button>
+
+                <button @click="instituteType = 'madrasah'" 
+                        :class="instituteType === 'madrasah' ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30' : 'bg-white/5 text-gray-300 hover:bg-white/10'"
+                        class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>🕌</span> <span>মাদ্রাসা</span>
+                </button>
+
+                <button @click="instituteType = 'coaching'" 
+                        :class="instituteType === 'coaching' ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30' : 'bg-white/5 text-gray-300 hover:bg-white/10'"
+                        class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>🎓</span> <span>কোচিং সেন্টার</span>
+                </button>
+            </div>
+
+            <!-- 10x School / College Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-blue-400 bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                        🇧🇩 স্মার্ট প্রাতিষ্ঠানিক ডিজিটাল ইআরপি
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        <template x-if="instituteType === 'school'">
+                            <span>আপনার স্কুলের প্রশাসনিক জটিলতা শূন্যে আনুন 🏫</span>
+                        </template>
+                        <template x-if="instituteType === 'college'">
+                            <span>আপনার কলেজের একাদশ-দ্বাদশ শ্রেণি ও সেমিস্টার ফি ডিজিটাইজড 🏛️</span>
+                        </template>
+                        <template x-if="instituteType === 'madrasah'">
+                            <span>মাদ্রাসার রেজাল্ট, লিল্লাহ বোর্ডিং ও অনলাইন ফি সমাধান 🕌</span>
+                        </template>
+                        <template x-if="instituteType === 'coaching'">
+                            <span>কোচিং সেন্টারের ব্যাচ শিডিউল ও অনলাইন ফি ম্যানেজমেন্ট 🎓</span>
+                        </template>
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        বিকাশ/নগদে অটো-ফি কালেকশন, জিপিএ ৫.০০ রেজাল্ট শিট জেনারেটর এবং অভিভাবক নোটিফিকেশন—সবকিছু এখন একটিমাত্র পোর্টাল থেকে।
+                    </p>
+
+                    <!-- Hero Action Buttons (Sandbox First - No Free Trial Signup Abuse) -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-blue-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো টেস্ট করুন</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            প্রাইসিং দেখুন (৳২,৫০০/মাস)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
+                        <!-- Top School Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-xl text-blue-400">
+                                    🏫
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white" x-text="instituteType === 'college' ? 'ঢাকা মডেল কলেজ (EIIN: 10842)' : 'ঢাকা মডেল একাডেমি (EIIN: 10842)'">ঢাকা মডেল একাডেমি</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● লাইভ অনলাইন সিস্টেম সক্রিয়</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                জিপিএ ৫.০০
+                            </span>
+                        </div>
+
+                        <!-- Live GPA 5.00 Report Card Card -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">শিক্ষার্থী: <strong class="text-white">তাহমিদ হাসান (রোল #১)</strong></span>
+                                <span class="text-blue-400 font-bold">শ্রেণি ১০ম (বিজ্ঞান)</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 text-center pt-2">
+                                <div class="p-2 rounded-xl bg-white/5 border border-white/5">
+                                    <p class="text-[10px] text-gray-400">পদার্থবিজ্ঞান</p>
+                                    <p class="text-xs font-bold text-emerald-400">A+ (৯৫)</p>
+                                </div>
+                                <div class="p-2 rounded-xl bg-white/5 border border-white/5">
+                                    <p class="text-[10px] text-gray-400">উচ্চতর গণিত</p>
+                                    <p class="text-xs font-bold text-emerald-400">A+ (৯৮)</p>
+                                </div>
+                                <div class="p-2 rounded-xl bg-white/5 border border-white/5">
+                                    <p class="text-[10px] text-gray-400">ইংরেজি</p>
+                                    <p class="text-xs font-bold text-emerald-400">A+ (৯১)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live bKash Payment Status Badge -->
+                        <div class="p-4 rounded-2xl bg-pink-950/30 border border-pink-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-pink-600/20 border border-pink-500/40 flex items-center justify-center font-black text-pink-400 text-lg">
+                                    bKash
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ৳৩,৫০৮ টিউশন ফি পরিশোধিত</p>
+                                    <p class="text-[10px] text-pink-300">TrxID: BK98X2L8901 (অটো লেজার বুকিং)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Marketing Video Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3.5 py-1 rounded-full">
+                        ভিডিও টিউটোরিয়াল
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটে দেখুন কীভাবে Zengfy আপনার প্রতিষ্ঠানের সময় ও খরচ বাঁচায়
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-[#121A29] border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <iframe class="w-full h-full" 
+                                src="https://www.youtube-nocookie.com/embed/{{ $module['youtube_id'] ?? 'dQw4w9WgXcQ' }}?rel=0" 
+                                title="Zengfy School ERP Marketing Video" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Owner Sandbox Simulator (Hero/Video-এর ঠিক নিচে) -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-blue-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 কেনার আগেই ওনার প্যানেলের ক্ষমতা স্যান্ডবক্সে টেস্ট করুন (সাইনআপ ছাড়া)
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ওনার প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'admin'; sandboxMessage = '✓ সহকারী প্রধান শিক্ষক (মো: রফিকুল ইসলাম)-কে পেমেন্ট ও রিপোর্ট কার্ড জেনারেটর পারমিশন প্রদান করা হয়েছে।'" 
+                                :class="sandboxAction === 'admin' ? 'bg-blue-600 border-blue-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🔑</span>
+                            <h3 class="text-sm font-bold">১. শিক্ষককে অ্যাডমিন রোল দিন</h3>
+                            <p class="text-xs text-gray-400 mt-1">কার হাতে কতটুকু ক্ষমতা থাকবে ১-ক্লিকে ঠিক করুন।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'mark'; sandboxMessage = '✓ বিজ্ঞান বিভাগ ক্লাস ১০-এর জিপিএ ৫.০০ অটো রেজাল্ট শিট জেনারেট সম্পন্ন (রোল #১, #২, #৩)।'" 
+                                :class="sandboxAction === 'mark' ? 'bg-blue-600 border-blue-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📜</span>
+                            <h3 class="text-sm font-bold">২. জিপিএ ৫.০০ অটো মার্কশিট বানান</h3>
+                            <p class="text-xs text-gray-400 mt-1">৩ সপ্তাহের ম্যানুয়াল কাজ ১০ সেকেন্ডে জেনারেট করুন।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'bkash'; sandboxMessage = '✓ শিক্ষার্থী রোল #১০-এর ৳৩,৫০৮ বিকাশ ফি কালেকশন ভেরিফাইড এবং স্বয়ংক্রিয় ডিজিটাল SMS রসিদ প্রেরিত।'" 
+                                :class="sandboxAction === 'bkash' ? 'bg-blue-600 border-blue-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">💳</span>
+                            <h3 class="text-sm font-bold">৩. বিকাশ ফি কালেকশন মিলান</h3>
+                            <p class="text-xs text-gray-400 mt-1">ব্যাংকের লাইন ছাড়া অটোমেটিক লেজার বুকিং দেখুন।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-blue-950/40 border border-blue-500/40 text-blue-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Owner & Principal Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        ওনার কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        👑 প্রতিষ্ঠানের মালিক ও প্রিন্সিপাল হিসেবে আপনার হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Power 1 -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 text-blue-400">
+                            👑
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">১-ক্লিক রোল পারমিশন কন্ট্রোল</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কে কোন ডেটা দেখতে পারবে তার সম্পূর্ণ নিয়ন্ত্রণ আপনার হাতে। একাউন্টেন্ট বা টিচারকে পছন্দ অনুযায়ী পারমিশন দিন।
+                        </p>
+                    </div>
+
+                    <!-- Power 2 -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            💰
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">লাইভ ডিজিটাল সিন্দুক (Vault)</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            বিকাশ, নগদ ও ক্যাশ কাউন্টারে আজ কত টাকা আদায় হলো—১ সেকেন্ডে মালিকের মোবাইলে লাইভ হিসাব।
+                        </p>
+                    </div>
+
+                    <!-- Power 3 -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-rose-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-2xl mb-4 text-rose-400">
+                            🔒
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">জরুরি এক্সেস লক (Kill-Switch)</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কোনো কর্মী বা শিক্ষক চাকরি ছাড়লে বা অনিয়ম করলে ১-ক্লিকে তার পুরো সিস্টেম এক্সেস বন্ধ করুন।
+                        </p>
+                    </div>
+
+                    <!-- Power 4 -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-2xl mb-4 text-cyan-400">
+                            📊
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">টিচার পারফরম্যান্স ট্র্যাকার</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কোন শিক্ষক কটি ক্লাস নিয়েছেন এবং নির্ধারিত সময়ে মার্কশিট জমা দিয়েছেন কি না তার গ্রাফ দেখুন।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Savings & ROI Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        খরচ বাঁচানোর লাইভ হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন Zengfy ব্যবহার করলে আপনার বছরে কত টাকা ও সময় সাশ্রয় হবে
+                    </h2>
+
+                    <!-- Student Count Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার প্রতিষ্ঠানে শিক্ষার্থী কতজন? <strong class="text-blue-400 text-lg" x-text="studentCount"></strong> জন
+                        </label>
+                        <input type="range" min="100" max="5000" step="50" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-blue-500">
+                    </div>
+
+                    <!-- Calculated Savings Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">💵 কাগজ ও মেমো খরচ সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 90).toLocaleString() + '/বছর'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ ম্যানুয়াল কাজের সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-blue-400 mt-1" x-text="(studentCount / 12.5).toFixed(0) + ' ঘণ্টা/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy সাশ্রয়ী খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">৳২,৫০০/মাস</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Legal Vault & Cases</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">NID Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Transparent & Flexible Pricing Tiers -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কোনো গোপন দাম নেই — স্পষ্ট ও সাশ্রয়ী সাবস্ক্রিপশন প্যাকেজ
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Starter Plan (৳2,500/mo) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
+                                {{ $module['pricing_tiers']['starter']['badge'] ?? 'ছোট-মাঝারি প্রতিষ্ঠানের জন্য' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['starter']['name'] ?? 'স্টার্টার প্যাক (Starter Plan)' }}</h3>
+                            
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['starter']['amount'] ?? '৳২,৫০০' }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['starter']['period'] ?? '/ মাস' }}</span>
+                            </div>
+
+                            <p class="text-xs text-blue-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['starter']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['starter']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            স্টার্টার প্যাক শুরু করুন →
+                        </a>
+                    </div>
+
+                    <!-- Smart Institutional Plan (৳3,500/mo) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#162033] to-[#121A29] border border-blue-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-blue-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় প্রাতিষ্ঠানিক প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['institutional']['badge'] ?? 'জনপ্রিয় প্রাতিষ্ঠানিক চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['institutional']['name'] ?? 'স্মার্ট প্রাতিষ্ঠানিক প্যাক (Smart Institutional)' }}</h3>
+                            
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['institutional']['amount'] ?? '৳৩,৫০০' }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['institutional']['period'] ?? '/ মাস' }}</span>
+                            </div>
+
+                            <p class="text-xs text-emerald-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['institutional']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['institutional']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center shadow-lg shadow-blue-600/30 transition-all">
+                            স্মার্ট প্যাক নির্বাচন করুন →
+                        </a>
+                    </div>
+                </div>
+
+                <p class="text-center text-xs text-gray-400 mt-6">
+                    💡 <strong>স্বচ্ছ নোট:</strong> SMS পাঠানো সম্পূর্ণ আপনার ঐচ্ছিক। আপনি চাইলে ১০০% ফ্রিতে অ্যাপ ও ইমেইল নোটিফিকেশন ব্যবহার করতে পারেন।
+                </p>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. SMS কেনা কি বাধ্যতামূলক?</h3>
+                        <p class="text-gray-300 leading-relaxed">না, আপনি চাইলে কোনো অতিরিক্ত খরচ ছাড়াই ১০০% ফ্রিতে ইমেইল ও অভিভাবক অ্যাপ নোটিফিকেশন ব্যবহার করতে পারেন।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. আমাদের প্রতিষ্ঠানের তথ্যের নিরাপত্তা কতটা সুরক্ষিত?</h3>
+                        <p class="text-gray-300 leading-relaxed">Enterprise-grade 256-bit AES এনক্রিপশন এবং BDIX হাই-স্পিড সার্ভারে প্রতিদিনের অটোমেটিক ব্যাকআপের মাধ্যমে সম্পূর্ণ তথ্য সুরক্ষিত থাকে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. কলেজ বা মাদ্রাসার জন্য কি এটি ব্যবহার করা যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">হ্যাঁ, পেজের ওপরের সুইচ থেকে এক ক্লিকেই কলেজ, মাদ্রাসা বা কোচিং সেন্টারের নির্দিষ্ট মোড সিলেক্ট করা যায়।</p>
+                    </div>
+                </div>
             </div>
         @else
-            <!-- Standard Module Hero Section -->
-            <div class="text-center max-w-4xl mx-auto mb-16 relative">
+            <!-- Default Module View for other subdomains (pos, law, rent, hotel, ngo, civil, etc.) -->
+            <div class="text-center max-w-4xl mx-auto mb-16 relative scroll-reveal opacity-0 translate-y-10">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] {{ $module['theme']['bg_glow'] }} rounded-full blur-[140px] pointer-events-none"></div>
 
                 <span class="text-xs font-extrabold tracking-widest uppercase {{ $module['theme']['accent_text'] }} bg-white/5 border border-white/10 px-4 py-1.5 rounded-full relative z-10">
@@ -190,184 +804,25 @@
                 <h1 class="text-3xl sm:text-6xl font-black mt-6 text-white tracking-tight leading-tight relative z-10">
                     {{ $module['name'] }} <br class="hidden sm:block"/>
                     <span class="bg-gradient-to-r {{ $module['theme']['primary'] }} bg-clip-text text-transparent">
-                        {{ $module['tagline'] }}
+                        {{ $module['tagline_bn'] ?? $module['tagline'] }}
                     </span>
                 </h1>
 
                 <p class="mt-6 text-gray-300 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal relative z-10">
-                    {{ $module['desc'] }}
+                    {{ $module['desc_bn'] ?? $module['desc'] }}
                 </p>
 
-                <!-- Action CTAs -->
                 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}"
                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                         <span>Launch {{ $module['name'] }} Portal</span>
                         <span>→</span>
                     </a>
-                    <a href="#pricing"
-                       class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-sm sm:text-base backdrop-blur-md transition-all">
-                        View Pricing ({{ $module['pricing']['amount'] }})
-                    </a>
-                </div>
-            </div>
-        @endif
-
-        @if($module['id'] === 'founder')
-            <!-- Featured Projects Showcase Section -->
-            <div class="mb-20">
-                <div class="text-center mb-12">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3.5 py-1 rounded-full">
-                        Portfolio Highlights
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">Featured Core Projects</h2>
-                    <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl mx-auto">Production SaaS systems, API gateways, and enterprise data analytics platforms built from scratch.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Project 1: ZenGfy -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-6 text-blue-400">
-                                🌐
-                            </div>
-                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-full border border-blue-500/20">
-                                Sovereign Ecosystem
-                            </span>
-                            <h3 class="text-xl font-black text-white mt-3 group-hover:text-blue-400 transition-colors">ZenGfy Ecosystem</h3>
-                            <p class="text-xs text-gray-300 mt-3 leading-relaxed">
-                                Multi-tenant SaaS ecosystem featuring School ERP, POS Retail, Legal Vault, and NID-verified identity layer across 15+ subdomains.
-                            </p>
-                        </div>
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000' : 'https://zengfy.top' }}" target="_blank" class="mt-6 text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            <span>Explore ZenGfy</span> →
-                        </a>
-                    </div>
-
-                    <!-- Project 2: LaraNexus -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-orange-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-6 text-orange-400">
-                                ⚡
-                            </div>
-                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-orange-500/10 text-orange-300 rounded-full border border-orange-500/20">
-                                API Gateway & Open Source
-                            </span>
-                            <h3 class="text-xl font-black text-white mt-3 group-hover:text-orange-400 transition-colors">LaraNexus Gateway</h3>
-                            <p class="text-xs text-gray-300 mt-3 leading-relaxed">
-                                Unified API gateway, real-time webhook dispatcher, and OAuth developer authentication framework for high-throughput Laravel apps.
-                            </p>
-                        </div>
-                        <a href="https://github.com/diusazzad/LaraNexus" target="_blank" class="mt-6 text-xs font-bold text-orange-400 hover:text-orange-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            <span>GitHub (@LaraNexus)</span> →
-                        </a>
-                    </div>
-
-                    <!-- Project 3: Confidens Analytics -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-6 text-indigo-400">
-                                📊
-                            </div>
-                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-indigo-500/10 text-indigo-300 rounded-full border border-indigo-500/20">
-                                Enterprise Analytics
-                            </span>
-                            <h3 class="text-xl font-black text-white mt-3 group-hover:text-indigo-400 transition-colors">Confidens Analytics</h3>
-                            <p class="text-xs text-gray-300 mt-3 leading-relaxed">
-                                High-performance metrics, data pipeline visualizations, and real-time business analytics platform for modern web teams.
-                            </p>
-                        </div>
-                        <a href="https://confidensanalytics.com/" target="_blank" class="mt-6 text-xs font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            <span>Visit Confidens Analytics</span> →
-                        </a>
-                    </div>
                 </div>
             </div>
 
-            <!-- Career Work Experience Timeline -->
-            <div class="mb-20 max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-                        Career Journey
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">Professional Experience</h2>
-                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Proven track record of architecting scalable systems and leading technical teams.</p>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Exp 1: Raw Axiom -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/30 backdrop-blur-xl transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                            <div>
-                                <h3 class="text-lg font-black text-white">Full-Stack Developer (Remote)</h3>
-                                <p class="text-xs text-emerald-400 font-bold">Raw Axiom</p>
-                            </div>
-                            <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
-                                Nov 2025 – Present
-                            </span>
-                        </div>
-                        <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
-                            <li>Engineered robust, data-driven backends using Laravel and scalable RESTful APIs.</li>
-                            <li>Integrated AI-assisted features and optimized API performance for international clients.</li>
-                            <li>Developed highly interactive and responsive UIs with modern frameworks.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Exp 2: ZenGfy -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/30 backdrop-blur-xl transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                            <div>
-                                <h3 class="text-lg font-black text-white">Founder & Full-Stack Developer</h3>
-                                <p class="text-xs text-blue-400 font-bold">ZenGfy Ecosystem</p>
-                            </div>
-                            <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
-                                2023 – Present
-                            </span>
-                        </div>
-                        <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
-                            <li>Architected and launched an ambitious multi-tenant SaaS ecosystem including E-commerce, School ERP, POS, and AI tools.</li>
-                            <li>Utilized specialized AI logic alongside Laravel backend services and NID identity verification layer.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Exp 3: APPHS -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/30 backdrop-blur-xl transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                            <div>
-                                <h3 class="text-lg font-black text-white">IT Support Engineer</h3>
-                                <p class="text-xs text-indigo-400 font-bold">APPHS | Gazipur, Bangladesh</p>
-                            </div>
-                            <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
-                                Jan 2022 – Oct 2025
-                            </span>
-                        </div>
-                        <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
-                            <li>Resolved technical issues and maintained software infrastructure for 400+ students.</li>
-                            <li>Instructed students on ICT concepts, system security, and programming fundamentals.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Exp 4: SSL Wireless -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/30 backdrop-blur-xl transition-all">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                            <div>
-                                <h3 class="text-lg font-black text-white">Web Intern</h3>
-                                <p class="text-xs text-cyan-400 font-bold">SSL Wireless | Dhaka, Bangladesh</p>
-                            </div>
-                            <span class="text-[11px] font-semibold text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full shrink-0 w-fit">
-                                Jun 2021 – Sep 2021
-                            </span>
-                        </div>
-                        <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed font-normal list-disc list-inside">
-                            <li>Built a Learning Management System (LMS) with Laravel/MySQL, improving query performance by 20%.</li>
-                            <li>Collaborated in an agile team to develop and test core registration features.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        @else
-            <!-- Dynamic Features Grid -->
-            <div class="mb-20">
+            <!-- Dynamic Features Grid for General Subdomains -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center mb-12">
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">Core Module Features</h2>
                     <p class="text-xs sm:text-sm text-gray-400 mt-2">Everything you need to automate your operations seamlessly.</p>
@@ -377,15 +832,15 @@
                     @foreach($module['features'] as $feature)
                         <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 {{ $module['theme']['border_glow'] }} backdrop-blur-xl transition-all duration-300">
                             <div class="text-3xl mb-4">{{ $feature['icon'] }}</div>
-                            <h3 class="text-lg font-bold text-white mb-2">{{ $feature['title'] }}</h3>
-                            <p class="text-xs text-gray-300 leading-relaxed">{{ $feature['desc'] }}</p>
+                            <h3 class="text-lg font-bold text-white mb-2">{{ $feature['title_bn'] ?? $feature['title'] }}</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">{{ $feature['desc_bn'] ?? $feature['desc'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- Dynamic Pricing Card Section -->
-            <div id="pricing" class="max-w-xl mx-auto mb-20 p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 backdrop-blur-xl text-center">
+            <!-- Dynamic Pricing Card Section for General Subdomains -->
+            <div id="pricing" class="max-w-xl mx-auto mb-20 p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 backdrop-blur-xl text-center scroll-reveal opacity-0 translate-y-10">
                 <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Transparent Pricing</span>
                 <h2 class="text-3xl font-black text-white mt-2">{{ $module['name'] }} Rate</h2>
 
@@ -407,8 +862,38 @@
 
     </main>
 
+    <!-- Floating Direct WhatsApp Customer Support Widget -->
+    @if($module['id'] === 'school')
+        <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20School%20ERP%20Information" 
+           target="_blank"
+           rel="noopener"
+           aria-label="Direct WhatsApp Customer Support"
+           class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl shadow-emerald-600/50 border border-emerald-400/40 transition-all hover:scale-110 flex items-center gap-2 group">
+            <span class="text-xl">💬</span>
+            <span class="hidden group-hover:inline text-xs font-bold pr-1">হোয়াটসঅ্যাপ সাহায্য</span>
+        </a>
+    @endif
+
     <!-- Shared Footer -->
     <x-landing.footer />
+
+    <!-- Lightweight Interactive Scroll Animation JS (IntersectionObserver) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(function (el) {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>

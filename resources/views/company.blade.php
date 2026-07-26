@@ -124,10 +124,17 @@
             <!-- Team Members Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 @foreach($teamMembers as $member)
-                    <div class="group p-6 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 hover:bg-[#121A29] backdrop-blur-xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="group p-6 rounded-3xl bg-[#121A29]/70 border {{ str_contains($member['name'], 'Sazzad') ? 'border-blue-500/40 bg-gradient-to-b from-[#162238] to-[#121A29] shadow-xl shadow-blue-600/10' : 'border-white/10 hover:border-blue-500/50' }} hover:bg-[#121A29] backdrop-blur-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                        
+                        @if(str_contains($member['name'], 'Sazzad'))
+                            <div class="absolute -top-3 -right-3 px-3.5 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[9px] font-black uppercase tracking-wider rounded-bl-xl shadow-md">
+                                Founder & CEO
+                            </div>
+                        @endif
+
                         <div>
                             <!-- Avatar / Initials Badge -->
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-black text-2xl mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-black text-2xl mb-6 shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform">
                                 {{ $member['initials'] }}
                             </div>
 
@@ -140,7 +147,7 @@
                             <h3 class="text-xl font-black text-white mt-3 tracking-tight group-hover:text-blue-400 transition-colors">
                                 {{ $member['name'] }}
                             </h3>
-                            <p class="text-xs font-semibold text-gray-300 mt-1">
+                            <p class="text-xs font-semibold text-blue-300 mt-1">
                                 {{ $member['role'] }}
                             </p>
 
@@ -154,12 +161,12 @@
                         <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
                             <div class="flex items-center gap-3">
                                 @if(isset($member['social']['linkedin']))
-                                    <a href="{{ $member['social']['linkedin'] }}" target="_blank" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
+                                    <a href="{{ $member['social']['linkedin'] }}" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
                                         <span>LinkedIn</span> →
                                     </a>
                                 @endif
                                 @if(isset($member['social']['github']))
-                                    <a href="{{ $member['social']['github'] }}" target="_blank" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
+                                    <a href="{{ $member['social']['github'] }}" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
                                         <span>GitHub</span> →
                                     </a>
                                 @endif
@@ -167,8 +174,9 @@
 
                             @if(str_contains($member['name'], 'Sazzad'))
                                 <a href="{{ env('APP_ENV') === 'local' ? 'http://founder.zengfy.test:7000' : 'https://founder.zengfy.top' }}" 
-                                   class="text-[11px] font-extrabold text-blue-400 hover:text-blue-300 bg-blue-500/10 border border-blue-500/30 px-3 py-1 rounded-full transition-all hover:scale-105">
-                                    Founder Portfolio 🚀
+                                   target="_blank"
+                                   class="text-[11px] font-extrabold text-white bg-blue-600 hover:bg-blue-500 border border-blue-400/40 px-3.5 py-1.5 rounded-full transition-all hover:scale-105 shadow-md shadow-blue-600/30 flex items-center gap-1">
+                                    <span>Founder Portfolio</span> 🚀
                                 </a>
                             @endif
                         </div>
