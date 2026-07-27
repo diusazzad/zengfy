@@ -2,10 +2,10 @@
 <footer class="bg-[#0B0F17] border-t border-white/10 pt-16 pb-12 text-sm text-gray-300">
     <div class="max-w-7xl mx-auto px-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 pb-12 border-b border-white/5">
 
-            <!-- Column 1: Brand & Status -->
-            <div class="md:col-span-1">
+            <!-- Column 1: Brand & Status (Full width on mobile grid-cols-2) -->
+            <div class="col-span-2 md:col-span-1">
                 <a href="/" aria-label="Zengfy" class="flex items-center gap-3 group mb-4">
                     <div aria-hidden="true" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-lg text-white">
                         Z
@@ -15,7 +15,7 @@
                     </span>
                 </a>
 
-                <p class="text-xs text-gray-300 leading-relaxed font-normal mb-6">
+                <p class="text-xs text-gray-300 leading-relaxed font-normal mb-6 max-w-sm">
                     Building the sovereign digital ecosystem for Bangladesh. One account for every tool in your life & business.
                 </p>
 
@@ -28,7 +28,7 @@
 
             <!-- Column 2: Ecosystem Applications -->
             <div>
-                <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Operating Systems</h3>
+                <h3 class="text-white font-bold text-xs sm:text-sm mb-4 tracking-wider uppercase">Operating Systems</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
                     <li><a href="http://school.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">School ERP Suite</a></li>
                     <li><a href="http://pos.zengfy.test:7000" target="_blank" class="hover:text-white transition-colors">POS Retail & Inventory</a></li>
@@ -40,7 +40,7 @@
 
             <!-- Column 3: Security & Platform -->
             <div>
-                <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Security & Trust</h3>
+                <h3 class="text-white font-bold text-xs sm:text-sm mb-4 tracking-wider uppercase">Security & Trust</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
                     <li><a href="#security" class="hover:text-white transition-colors">NID Identity Layer</a></li>
                     <li><a href="#sso" class="hover:text-white transition-colors">Central SSO Token Engine</a></li>
@@ -50,9 +50,9 @@
             </div>
 
             <!-- Column 4: Corporate & Legal -->
-            <div>
-                <h3 class="text-white font-bold text-sm mb-4 tracking-wider uppercase">Company</h3>
-                <ul class="space-y-2.5 text-xs font-medium">
+            <div class="col-span-2 md:col-span-1 border-t border-white/5 md:border-none pt-4 md:pt-0">
+                <h3 class="text-white font-bold text-xs sm:text-sm mb-3 md:mb-4 tracking-wider uppercase">Company</h3>
+                <ul class="grid grid-cols-2 md:block gap-2.5 md:space-y-2.5 text-xs font-medium">
                     <li><a href="{{ route('company') }}" class="hover:text-white transition-colors">Company & Team</a></li>
                     <li><a href="{{ route('policy.workplace') }}" class="hover:text-white transition-colors">Workplace Policy</a></li>
                     <li><a href="{{ route('faq') }}" class="hover:text-white transition-colors">Frequently Asked Questions</a></li>

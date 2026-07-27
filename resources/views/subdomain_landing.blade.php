@@ -769,6 +769,8 @@
                 </p>
             </div>
 
+            </div>
+
             <!-- FAQs Section -->
             <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center mb-8">
@@ -789,6 +791,423 @@
                     <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কলেজ বা মাদ্রাসার জন্য কি এটি ব্যবহার করা যাবে?</h3>
                         <p class="text-gray-300 leading-relaxed">হ্যাঁ, পেজের ওপরের সুইচ থেকে এক ক্লিকেই কলেজ, মাদ্রাসা বা কোচিং সেন্টারের নির্দিষ্ট মোড সিলেক্ট করা যায়।</p>
+                    </div>
+                </div>
+            </div>
+        @elseif($module['id'] === 'law')
+            <!-- 10x Law Suite & VakilChamber Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        ⚖️ {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        যাচাইকৃত অভিজ্ঞ আইনজীবীর সাথে কথা বলুন, অথবা আইনি চেম্বার ডিজিটাইজ করুন ⚖️
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        সোশ্যাল ইকোসিস্টেমের কোটি কোটি বিচারপ্রার্থী গ্রাহকের কাছে পৌঁছান। হাইকোর্ট ও জেলা জজ কোর্টের অটো কজ লিস্ট রিমাইন্ডার, ২৫৬-বিট ক্লায়েন্ট ফাইল ভল্ট এবং বিকাশ ফি কালেকশন—সবকিছু এখন একটি পোর্টালে।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-base shadow-xl shadow-amber-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🔍  যাচাইকৃত উকিল খুঁজুন (৳২০০)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
+                        <!-- Top Chamber Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-xl text-amber-400">
+                                    ⚖️
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">রহমান & অ্যাসোসিয়েটস ল চেম্বার</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● সুপ্রিম কোর্ট ও জেলা জজ কোর্ট</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                ভকিল চেম্বার
+                            </span>
+                        </div>
+
+                        <!-- Live Cause List / Case Card -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">মামলা নং: <strong class="text-white">সিভিল রিভিশন-৪৮২/২০২৬</strong></span>
+                                <span class="text-amber-400 font-bold">হাইকোর্ট বিভাগ</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300"><strong>বাদী:</strong> মো: সিরাজুল ইসলাম | <strong>বিবাদী:</strong> সোনালী ব্যাংক লি:</p>
+                                <p class="text-xs font-bold text-emerald-400">পরবর্তী শুনানির তারিখ: আগামীকাল সকাল ১০:৩০</p>
+                            </div>
+                        </div>
+
+                        <!-- Live bKash Payment Status Badge -->
+                        <div class="p-4 rounded-2xl bg-pink-950/30 border border-pink-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-pink-600/20 border border-pink-500/40 flex items-center justify-center font-black text-pink-400 text-lg">
+                                    bKash
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ৳২০০ আইনি পরামর্শ ও মামলা ট্র্যাকিং পরিশোধিত</p>
+                                    <p class="text-[10px] text-pink-300">TrxID: LAW99X3L120 (অটো ডিজিটাল রসিদ)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Marketing Video Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        ভিডিও টিউটোরিয়াল
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটে দেখুন কীভাবে Zengfy Law সোশ্যাল ইউজার ও আইনজীবীদের যুক্ত করে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-[#121A29] border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <iframe class="w-full h-full" 
+                                src="https://www.youtube-nocookie.com/embed/{{ $module['youtube_id'] ?? 'dQw4w9WgXcQ' }}?rel=0" 
+                                title="Zengfy Law Suite Video Showcase" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই ভকিল চেম্বার প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ল প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'cause_list'; sandboxMessage = '✓ সিভিল রিভিশন-৪৮২/২০২৬ মামলার কজ লিস্ট শুনানির তারিখ (আগামীকাল ১০:৩০) সেট এবং অ্যাডভোকেট ও ক্লায়েন্টের মোবাইলে অটো SMS রিমাইন্ডার প্রেরিত।'" 
+                                :class="sandboxAction === 'cause_list' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">⚖️</span>
+                            <h3 class="text-sm font-bold">১. কজ লিস্ট শুনানির তারিখ সেট করুন</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে কজ লিস্ট ক্যালেন্ডারে কেস যোগ ও অটো SMS নোটিফিকেশন।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'vault'; sandboxMessage = '✓ গোপনীয় আইনি চুক্তিপত্র ও এফিডেভিট ফাইলটি ২৫৬-বিট AES ক্লাউড ভল্টে নিরাপদে এনক্রিপ্টেড আকারে আপলোড সম্পন্ন।'" 
+                                :class="sandboxAction === 'vault' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🔐</span>
+                            <h3 class="text-sm font-bold">২. ২৫৬-বিট ফাইল ভল্ট আপলোড</h3>
+                            <p class="text-xs text-gray-400 mt-1">নথিপত্র চুরির ভয় ছাড়া এনক্রিপ্টেড ডিজিটাল সিকিউরিটি মকআপ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'receipt'; sandboxMessage = '✓ ক্লায়েন্ট পরামর্শ ফি ৳২০০ এবং কেস ট্র্যাকিং সার্ভিস বিকাশ কালেকশন ভেরিফাইড (অটো ডিজিটাল রসিদ জেনারেটেড)।'" 
+                                :class="sandboxAction === 'receipt' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">💳</span>
+                            <h3 class="text-sm font-bold">৩. ক্লায়েন্ট ফি বিকাশ রসিদ মেলান</h3>
+                            <p class="text-xs text-gray-400 mt-1">রিয়েল-টাইম অ্যাডভোকেট ফি কালেকশন ও ডিজিটাল রসিদ।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dual Pricing Tiers Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কোনো গোপন দাম নেই — বিচারপ্রার্থী ও আইনজীবীদের স্পষ্ট সাবস্ক্রিপশন
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Client Plan (৳200/connect) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                {{ $module['pricing_tiers']['client']['badge'] ?? 'স্মার্ট বিচারপ্রার্থী চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['client']['name'] }}</h3>
+                            
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['client']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['client']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['client']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['client']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            যাচাইকৃত উকিল খুঁজুন →
+                        </a>
+                    </div>
+
+                    <!-- Advocate Chamber Plan (৳500/mo) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#241A10] to-[#121A29] border border-amber-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-amber-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় চেম্বার প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['chamber']['badge'] ?? 'জনপ্রিয় চেম্বার চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['chamber']['name'] }}</h3>
+                            
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['chamber']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['chamber']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-emerald-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['chamber']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['chamber']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs text-center shadow-lg shadow-amber-600/30 transition-all">
+                            চেম্বার প্যাক চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advocate Chamber Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        চেম্বার কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        👑 অ্যাডভোকেট ও চেম্বার প্রধানের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
+                            ⚖️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">অটো কজ লিস্ট & তারিখ রিমাইন্ডার</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            হাইকোর্ট ও জজ কোর্টের মামলার তারিখ মেলাতে আর কাগজ খুঁজতে হবে না। শুনানির আগে অটো SMS নোটিফিকেশন।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            🔐
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">২৫৬-বিট এনক্রিপ্টেড ফাইল ভল্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            গোপনীয় নথিপত্র, চুক্তিপত্র ও এফিডেভিট চুরির ভয় ছাড়া ক্লাউড ভল্টে নিরাপদে সংরক্ষিত থাকবে।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            📱
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">স্মার্ট ভেরিফাইড ক্লায়েন্ট পোর্টাল</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            ক্লায়েন্ট ফোন না দিয়ে মামলায় নিজের বাদী/বিবাদী তথ্য, শুনানি তারিখ ও ডিজিটাল ফি রসিদ নিজেই দেখতে পাবে।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            💳
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বিকাশ/নগদ অটো-ফি কালেকশন</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            অনলাইনে ক্লায়েন্ট ফি জমা দিলে রিয়েল-টাইম সিন্দুক ব্যালেন্স আপডেট এবং স্বয়ংক্রিয় ডিজিটাল রসিদ জেনারেট।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Savings & ROI Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        সময় ও ফোন কল বাঁচানোর লাইভ হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন Zengfy Law ব্যবহার করলে আপনার মাসে কত সময় ও কল সাশ্রয় হবে
+                    </h2>
+
+                    <!-- Case Count Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার চেম্বারে চলমান মামলা কতটি? <strong class="text-amber-400 text-lg" x-text="studentCount"></strong> টি
+                        </label>
+                        <input type="range" min="10" max="1000" step="10" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                    </div>
+
+                    <!-- Calculated Savings Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ কজ লিস্ট মেলাতে সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="(studentCount * 0.15).toFixed(0) + ' ঘণ্টা/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📞 ক্লায়েন্টের অতিরিক্ত ফোন কল হ্রাস</p>
+                            <p class="text-xl sm:text-2xl font-black text-amber-400 mt-1">৮০% কল কমবে</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy চেম্বার খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">৳৫০০/মাস</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-amber-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. বিচারপ্রার্থীরা কীভাবে আইনজীবী খুঁজে পাবেন?</h3>
+                        <p class="text-gray-300 leading-relaxed">Zengfy Social ও Law ডিরেক্টরি থেকে বিচারপ্রার্থীরা সরাসরি যাচাইকৃত প্রফেশনাল আইনজীবী নির্বাচন করে ৳২০০ পেমেন্ট করে আইনি পরামর্শ ও মামলা ডায়রি লিংক দেখতে পারেন।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. চেম্বারের গোপন নথিপত্র কতটা সুরক্ষিত?</h3>
+                        <p class="text-gray-300 leading-relaxed">Enterprise-grade 256-bit AES এনক্রিপশনে আপনার ফাইলের সমস্ত সিকিউরিটি সংরক্ষিত থাকে যা তৃতীয় কারও দেখার সুযোগ নেই।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. জুনিয়র ও সহকারীদের আলাদা রোল দেওয়া যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">হ্যাঁ, অ্যাডভোকেট চেম্বার প্রধান ইচ্ছেমত জুনিয়র আইনজীবীদের কজ লিস্ট এন্ট্রি ও নির্দিষ্ট কেস ফাইলের এক্সেস রোল পারমিশন দিতে পারেন।</p>
                     </div>
                 </div>
             </div>
@@ -863,8 +1282,8 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
-    @if($module['id'] === 'school')
-        <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20School%20ERP%20Information" 
+    @if(in_array($module['id'], ['school', 'law']))
+        <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Law%20Information" 
            target="_blank"
            rel="noopener"
            aria-label="Direct WhatsApp Customer Support"
