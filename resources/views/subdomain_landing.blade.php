@@ -887,26 +887,43 @@
                 </div>
             </div>
 
-            <!-- YouTube Marketing Video Showcase Section -->
+            <!-- Video Showcase Section (Upcoming Banner) -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-8">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1 rounded-full">
-                        ভিডিও টিউটোরিয়াল
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🎬 ২ মিনিটে দেখুন কীভাবে Zengfy POS আপনার মেমো, স্টক ও সোশ্যাল বিক্রি নিয়ন্ত্রণ করে
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-[#121A29] border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center">
-                        <iframe class="w-full h-full" 
-                                src="https://www.youtube-nocookie.com/embed/{{ $module['youtube_id'] ?? 'dQw4w9WgXcQ' }}?rel=0" 
-                                title="Zengfy POS Retail Video Showcase" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-cyan-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-4xl shadow-xl shadow-cyan-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 font-extrabold text-xs tracking-wider border border-cyan-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy POS-এর রিয়েল-টাইম টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট ও মিডিয়া টিম রিয়েল-টাইম বারকোড বিলিং, কাস্টমার বাকি খাতা ও সোশ্যাল শপ উইন্ডোর হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-600/30 hover:bg-cyan-600/50 border border-cyan-500/40 text-xs font-bold text-cyan-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে পজ ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
