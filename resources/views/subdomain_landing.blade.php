@@ -1623,6 +1623,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         @elseif($module['id'] === 'civil')
             <!-- 10x Civil Engineering, Site ERP & AI Structural Analysis Hero Section -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
@@ -1641,19 +1642,78 @@
 
                     <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
                         রড, সিমেন্ট ও বালি কাঁচামাল লেজার, সাইট কন্ট্রাক্টর বেতন ইআরপি, AI ম্যাপ এনালাইসিস এবং ভেরিফাইড সিভিল ইঞ্জিনিয়ার ও কন্ট্রাক্টর পেইড সার্চ ডিরেক্টরি।
+=======
+<<<<<<< HEAD
+        @elseif($module['id'] === 'hotel')
+            <!-- 10x Hotel, Restaurant ERP & AI Growth Supervision Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        🏨 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টার ডিজিটাইজ করুন, AI দিয়ে ব্যবসা বাড়ান 🏨
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        দৈনিক কাঁচামাল বাজার খরচ, কর্মচারীদের বেতনের খাতা, AI বিজনেস তদারকি এবং রেস্টুরেন্টে ডাইনিং কাস্টমারদের সরাসরি ZengPay Coin দিয়ে ক্যাশলেস বিল পেমেন্ট নেওয়ার অল-ইন-ওয়ান অপারেটিং সিস্টেম।
+=======
+        @elseif($module['id'] === 'rent')
+            <!-- 10x Radius Rental Property & Verified Tenant Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-purple-400 bg-purple-500/10 border border-purple-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                        🔑 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        আপনার এলাকার ৫-১০ কিমি রেডিয়াসে সরাসরি বাড়িওয়ালার ফাঁকা বাসা খুঁজুন 🔑
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        সোশ্যাল ইকোসিস্টেমের কোটি কোটি ব্যবহারকারীর জন্য দালাল বা ব্রোকার ফি ছাড়া ৫-১০ কিমি ম্যাপ রেডিয়াসে ফাঁকা বাসা খোঁজা ও সরাসরি বাড়িওয়ালার সাথে যোগাযোগের অল-ইন-ওয়ান স্মার্ট সমাধান।
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </p>
 
                     <!-- Dual Action Buttons -->
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                         <a href="#pricing"
+<<<<<<< HEAD
                            class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold text-base shadow-xl shadow-amber-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                             <span>🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)</span>
+=======
+<<<<<<< HEAD
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🏨 হোটেল ও রেস্টুরেন্ট প্যানেল চালু করুন (৳৭০০/মাস)</span>
+=======
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-purple-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🔍 ৫-১০ কিমি রেডিয়াসে বাসা খুঁজুন (৳৫০)</span>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                             <span>→</span>
                         </a>
 
                         <a href="#sandbox"
                            class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+<<<<<<< HEAD
                             🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+=======
+<<<<<<< HEAD
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+=======
+                            🎮 ১-ক্লিকে স্যান্ডবক্স রেডিয়াস
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </a>
                     </div>
                 </div>
@@ -1662,6 +1722,7 @@
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
+<<<<<<< HEAD
                         <!-- Top Site Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
                             <div class="flex items-center gap-3">
@@ -1701,6 +1762,87 @@
                                 </div>
                             </div>
                             <span class="w-3 h-3 rounded-full bg-amber-400 animate-ping"></span>
+=======
+<<<<<<< HEAD
+                        <!-- Top Merchant Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-xl text-emerald-400">
+                                    🏨
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">গ্র্যান্ড ইন হোটেল & রেস্টুরেন্ট</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● রুম রিজার্ভেশন & ক্যাফে ডাইনিং ইআরপি</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                AI লাইভ তদারকি
+                            </span>
+                        </div>
+
+                        <!-- Live Order & Expense Ledger Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">দৈনিক খরচ ও বেতন: <strong class="text-white">৳১২,৪৫০</strong></span>
+                                <span class="text-emerald-400 font-bold">আজকের প্রফিট মার্জিন: +২৮%</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300">🤖 AI পরামর্শ: <strong class="text-emerald-300">"সন্ধ্যা ৭-৯ টায় ক্যাফে চিকেন বিরিয়ানি সেটে ২০% ডিসকাউন্ট দিলে বিক্রি ৪০% বাড়বে।"</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Live ZengPay Coin Payment Badge -->
+                        <div class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center font-black text-emerald-400 text-lg">
+                                    🪙
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ৳৮৫০ রেস্টুরেন্ট বিল (ZengPay Coin)</p>
+                                    <p class="text-[10px] text-emerald-300">Coin TrxID: ZP99824X (ক্যাশলেস অটো লেজার)</p>
+=======
+                        <!-- Top Location Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-xl text-purple-400">
+                                    📍
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">মিরপুর ১০ (৫ কিমি ম্যাপ রেডিয়াস)</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● ৪টি ভেরিফাইড ফ্ল্যাট ফাঁকা লাইভ</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold border border-purple-500/20">
+                                ব্রোকারমুক্ত
+                            </span>
+                        </div>
+
+                        <!-- Live Flat Vacancy Card Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">প্রপার্টি আইডি: <strong class="text-white">#RENT-8842</strong></span>
+                                <span class="text-purple-400 font-bold">৩ বিএইচকে (১৫০০ বর্গফুট)</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300">ঠিকানা: <strong class="text-white">রোড-৪, ব্লক-বি, মিরপুর ১০</strong> | ভাড়া: <strong class="text-white">৳২৪,০০০/মাস</strong></p>
+                                <p class="text-[11px] text-emerald-400 font-semibold">বাড়ির মালিক: ভেরিফাইড মো: রফিকুল ইসলাম (সরাসরি নম্বর উন্মুক্ত)</p>
+                            </div>
+                        </div>
+
+                        <!-- Live Fee Badge -->
+                        <div class="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/40 flex items-center justify-center font-black text-purple-400 text-lg">
+                                    bKash
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ৳৫০ সার্চ কানেক্ট ফি পরিশোধিত</p>
+                                    <p class="text-[10px] text-purple-300">TrxID: RENT77X992 (বাড়ির মালিকের সরাসরি নম্বর রিলিজড)</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </div>
 
                     </div>
@@ -1710,7 +1852,15 @@
             <!-- Video Showcase Section (Upcoming Banner) -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-8">
+<<<<<<< HEAD
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+=======
+<<<<<<< HEAD
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+=======
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
@@ -1718,6 +1868,7 @@
                     </h2>
                 </div>
 
+<<<<<<< HEAD
                 <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -1727,10 +1878,34 @@
                         </div>
 
                         <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/20 text-amber-300 font-extrabold text-xs tracking-wider border border-amber-400/30 uppercase">
+=======
+<<<<<<< HEAD
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs tracking-wider border border-emerald-400/30 uppercase">
+=======
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-purple-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-4xl shadow-xl shadow-purple-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 font-extrabold text-xs tracking-wider border border-purple-400/30 uppercase">
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                             Video Tutorial Upcoming
                         </span>
 
                         <h3 class="text-xl sm:text-2xl font-black text-white">
+<<<<<<< HEAD
                             Zengfy Civil-এর সাইট ইআরপি ও AI ম্যাপ এনালাইসিস টিউটোরিয়াল তৈরি হচ্ছে!
                         </h3>
 
@@ -1742,6 +1917,33 @@
                             <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-xs font-bold text-amber-200 transition-all">
                                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
                                 <span>স্যান্ডবক্সে সিভিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+=======
+<<<<<<< HEAD
+                            Zengfy Hotel-এর AI তদারকি ও ZengPay কুইন টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম হোটেল ইআরপি, দৈনিক বাজার খরচ লেজার, AI গ্রোথ এডভাইজর এবং ZengPay Coin কুইন পেমেন্ট এক্সেপ্ট্যান্সের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-xs font-bold text-emerald-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে হোটেল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+=======
+                            Zengfy Rent-এর ৫-১০ কিমি ম্যাপ ও লিস্টিং টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম ৫-১০ কিমি লাইভ রেডিয়াস ম্যাপ সার্চ, বাড়িওয়ালার ভেরিফাইড প্রপার্টি আইডি ও কন্টাক্ট টোকেন রিলিজের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-xs font-bold text-purple-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে রেডিয়াস ম্যাপ ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                             </a>
                         </div>
                     </div>
@@ -1750,6 +1952,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+<<<<<<< HEAD
                 <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
@@ -1759,10 +1962,34 @@
                             🎮 সাইনআপ ছাড়া এখনই সিভিল ইআরপি প্যানেল স্যান্ডবক্সে টেস্ট করুন
                         </h2>
                         <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে সিভিল প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+=======
+<<<<<<< HEAD
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই হোটেল ও রেস্টুরেন্ট প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ইআরপি প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+=======
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-purple-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই বাসা ভাড়া প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে রেন্ট প্যানেলের রিয়েল-টাইম ক্লিclickable ক্ষমতা পরীক্ষা করুন:</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </div>
 
                     <!-- 3 Clickable Dry-Run Action Buttons -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+<<<<<<< HEAD
                         <button @click="sandboxAction = 'material'; sandboxMessage = '✓ সাইট মেটেরিয়াল এন্ট্রি (৫ টন রড + ২০০ ব্যাগ সিমেন্ট) ও লেবার মজুরি (৳১২,৫০০) ইআরপি লেজারে সফলভাবে এন্টি এবং প্রজেক্ট ফাইল আপডেট।'" 
                                 :class="sandboxAction === 'material' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
                                 class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
@@ -1785,13 +2012,71 @@
                             <span class="text-2xl mb-2 block">🔍</span>
                             <h3 class="text-sm font-bold">৩. ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ অনলক</h3>
                             <p class="text-xs text-gray-400 mt-1">বাড়ি বানাতে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।</p>
+=======
+<<<<<<< HEAD
+                        <button @click="sandboxAction = 'expense'; sandboxMessage = '✓ দৈনিক বাজার খরচ (৳৪,৫০০) এবং কর্মচারীদের বেতন লেজারে সফলভাবে এন্টি সম্পন্ন এবং ক্যাশ ব্যালেন্স আপডেট।'" 
+                                :class="sandboxAction === 'expense' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📊</span>
+                            <h3 class="text-sm font-bold">১. দৈনিক বাজার খরচ ও বেতন হিসাব</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে কিসেন বাজার, স্টাফ বেতন ও অন্যান্য ওভারহেড এন্ট্রি।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI তদারকি রিপোর্ট: আগামী সপ্তাহে রেস্টুরেন্টে পিক কাস্টমার ভিড় সামলাতে চিকেন প্রিপারেশন ২৫% বৃদ্ধির ও অটো ডিসকাউন্ট সেট করার পরামর্শ।'" 
+                                :class="sandboxAction === 'ai' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🤖</span>
+                            <h3 class="text-sm font-bold">২. AI বিজনেস গ্রোথ পরামর্শ নিন</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিক্রি ও মুনাফা বাড়াতে AI স্বয়ংক্রিয় এনালাইসিস রিপোর্ট।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'coin'; sandboxMessage = '✓ কাস্টমার মো: রফিকুল ইসলাম-এর ৳৮৫০ রেস্টুরেন্ট বিল ZengPay Coin QR পেমেন্টে গৃহীত ও ডিজিটাল রসিদ ইস্যু সম্পন্ন।'" 
+                                :class="sandboxAction === 'coin' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🪙</span>
+                            <h3 class="text-sm font-bold">৩. ZengPay Coin কুইন পেমেন্ট কালেকশন</h3>
+                            <p class="text-xs text-gray-400 mt-1">কাস্টমারদের কাছে সরাসরি ZengPay কুইনে রেস্টুরেন্ট বিল জমা।</p>
+=======
+                        <button @click="sandboxAction = 'radius'; sandboxMessage = '✓ ৫ কিমি রেডিয়াস সিলেক্টেড: মিরপুর ১০ জোনে ৩টি ভেরিফাইড ফ্ল্যাট ফাঁকা পাওয়া গেছে এবং সরাসরি ম্যাপে পিন দৃশ্যমান।'" 
+                                :class="sandboxAction === 'radius' ? 'bg-purple-600 border-purple-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📍</span>
+                            <h3 class="text-sm font-bold">১. ৫-১০ কিমি রেডিয়াসে ফাঁকা বাসা ফিল্টার</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে নিজের এলাকার ৫ বা ১০ কিমি ব্যাসার্ধের বাসা সার্চ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'owner'; sandboxMessage = '✓ ৳৫০ ফি পরিশোধের মাধ্যমে বাড়িওয়ালা মো: রফিকুল ইসলাম-এর সাথে সরাসরি কল ও চ্যাট অপশন উন্মুক্ত হয়েছে।'" 
+                                :class="sandboxAction === 'owner' ? 'bg-purple-600 border-purple-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📞</span>
+                            <h3 class="text-sm font-bold">২. সরাসরি বাড়িওয়ালা নম্বর আনলক</h3>
+                            <p class="text-xs text-gray-400 mt-1">কোনো ব্রোকার ছাড়াই সরাসরি বাড়িওয়ালার কন্টাক্ট টোকেন রিলিজ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'ad'; sandboxMessage = '✓ বাড়িওয়ালা হিসেবে ৳১৫০ ফি পেমেন্টে মিরপুর ১০-এর ৩-বিএইচকে ফ্ল্যাটের বাসা ফাঁকা লাইভ বিজ্ঞাপন সোশ্যাল ফিডে পোস্ট সম্পন্ন।'" 
+                                :class="sandboxAction === 'ad' ? 'bg-purple-600 border-purple-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🏠</span>
+                            <h3 class="text-sm font-bold">৩. বাড়িওয়ালার বাসা ফাঁকা বিজ্ঞাপন এন্ট্রি</h3>
+                            <p class="text-xs text-gray-400 mt-1">স্মার্ট প্রপার্টি আইডি সত্যায়ন সহ সোশ্যাল ফিডে লাইভ বিজ্ঞাপন।</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </button>
                     </div>
 
                     <!-- Sandbox Output Notification Window -->
                     <div x-show="sandboxMessage" x-cloak x-transition
+<<<<<<< HEAD
                          class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
                         <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
+=======
+<<<<<<< HEAD
+                         class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+=======
+                         class="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/40 text-purple-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         <span x-text="sandboxMessage"></span>
                     </div>
                 </div>
@@ -1800,15 +2085,55 @@
             <!-- Transparent Pricing Tier Section -->
             <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
+<<<<<<< HEAD
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
                         স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
                         🏷️ কাস্টমারদের জন্য ৳১০০ — ইঞ্জিনিয়ারিং ফার্মের জন্য সাশ্রয়ী ইআরপি প্যাক
+=======
+<<<<<<< HEAD
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কোনো গোপন ফি নেই — সব হোটেল ও রেস্টুরেন্টের জন্য সাশ্রয়ী অল-ইন-ওয়ান প্যাক
+                    </h2>
+                </div>
+
+                <div class="max-w-xl mx-auto">
+                    <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#102923] to-[#121A29] border border-emerald-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden text-center">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় মার্চেন্ট প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['erp']['badge'] ?? 'জনপ্রিয় মার্চেন্ট চয়েস' }}
+                            </span>
+                            <h3 class="text-2xl font-black text-white mt-3">{{ $module['pricing_tiers']['erp']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['erp']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['erp']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-emerald-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['erp']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300 text-left max-w-md mx-auto">
+                                @foreach($module['pricing_tiers']['erp']['features'] as $feat)
+=======
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ বাসা সন্ধানকারী ও বাড়িওয়ালা উভয়ের জন্য সাশ্রয়ী প্ল্যান
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<<<<<<< HEAD
                     <!-- Client Verified Search Connect (৳100/search) -->
                     <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
@@ -1828,6 +2153,28 @@
                                 @foreach($module['pricing_tiers']['client']['features'] as $feat)
                                     <li class="flex items-center gap-2">
                                         <span class="text-amber-400 font-bold">✓</span>
+=======
+                    <!-- Tenant Search Connect Pack (৳50/search) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-purple-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold border border-purple-500/20">
+                                {{ $module['pricing_tiers']['tenant']['badge'] ?? 'বাসা সন্ধানকারী চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['tenant']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['tenant']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['tenant']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-purple-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['tenant']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['tenant']['features'] as $feat)
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                                         <span>{{ $feat }}</span>
                                     </li>
                                 @endforeach
@@ -1835,6 +2182,7 @@
                         </div>
 
                         <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+<<<<<<< HEAD
                            class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                             ইঞ্জিনিয়ার সার্চ করুন →
                         </a>
@@ -1863,6 +2211,40 @@
                                 @foreach($module['pricing_tiers']['firm']['features'] as $feat)
                                     <li class="flex items-center gap-2">
                                         <span class="text-amber-400 font-bold">✓</span>
+=======
+<<<<<<< HEAD
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center shadow-lg shadow-emerald-600/30 transition-all">
+                            হোটেল & রেস্টুরেন্ট প্যাক চালু করুন →
+=======
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            বাসা সার্চ চালু করুন →
+                        </a>
+                    </div>
+
+                    <!-- Landlord Listing Pack (৳150/listing) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#251033] to-[#121A29] border border-purple-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় বাড়িওয়ালা প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['landlord']['badge'] ?? 'জনপ্রিয় বাড়িওয়ালা চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['landlord']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['landlord']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['landlord']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-purple-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['landlord']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['landlord']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                                         <span>{{ $feat }}</span>
                                     </li>
                                 @endforeach
@@ -1870,13 +2252,20 @@
                         </div>
 
                         <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+<<<<<<< HEAD
                            class="mt-8 w-full py-4 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm text-center shadow-lg shadow-amber-600/30 transition-all">
                             সাইট ইআরপি চালু করুন →
+=======
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm text-center shadow-lg shadow-purple-600/30 transition-all">
+                            বাসা ফাঁকা বিজ্ঞাপন দিন →
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </a>
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD
             <!-- Civil & Construction Power Matrix (4 Control Levers) -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
@@ -1885,10 +2274,32 @@
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
                         🏗️ ইঞ্জিনিয়ার, কন্ট্রাক্টর ও বাড়ি নির্মাণকারীদের হাতে যে ৪টি ক্ষমতা থাকবে
+=======
+<<<<<<< HEAD
+            <!-- Hotel & Merchant Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        মার্চেন্ট কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏨 হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টারের হাতে যে ৪টি ক্ষমতা থাকবে
+=======
+            <!-- Landlord Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
+                        স্মার্ট রেন্টাল কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🔑 বাসা সন্ধানকারী ও বাড়িওয়ালাদের হাতে যে ৪টি ক্ষমতা থাকবে
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<<<<<<< HEAD
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
                             🏗️
@@ -1916,21 +2327,95 @@
                         <h3 class="text-lg font-bold text-white mb-2">পেইড ইঞ্জিনিয়ার & কন্ট্রাক্টর সার্চ</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             সাধারণ বাড়ি বানাতে ইচ্ছুক কাস্টমারদের জন্য ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।
+=======
+<<<<<<< HEAD
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            📊
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">দৈনিক খরচ & বেতন হিসাব</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, ইউটিলিটি বিল ও কর্মচারীদের বেতন হিসাব লেজার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-teal-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-600/20 border border-teal-500/30 flex items-center justify-center text-2xl mb-4 text-teal-400">
+                            🤖
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI দিয়ে ব্যবসা তদারকি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কাস্টমার পিক ট্রাফিক, খাবার অপচয় ও বিক্রির ওপর ভিত্তি করে AI এর লাইভ গ্রোথ গাইডেন্স।
+=======
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
+                            📍
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">৫-১০ কিমি সুনির্দিষ্ট রেডিয়াস ম্যাপ</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            নিজের লাইভ কাস্টম লোকেশন ধরে ৫ বা ১০ কিমি ব্যাসার্ধের সব ফাঁকা বাসা ১-ক্লিকে ফিল্টার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            🚫
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">দালালমুক্ত সরাসরি বাড়িওয়ালা কানেক্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কোনো তৃতীয় ব্যক্তির অতিরিক্ত কমিশন ছাড়া সরাসরি ভেরিফাইড বাড়ির মালিকের সাথে কথা।
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+<<<<<<< HEAD
+                            🪙
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ZengPay কুইন পেমেন্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কাস্টমারদের রেস্টুরেন্ট বিল সরাসরি ZengPay Coin দিয়ে ক্যাশলেস কিউআরে গ্রহণ।
+=======
+                            🔐
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">স্মার্ট ভেরিফাইড প্রপার্টি ভল্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            ভূয়া পোস্ট রোধ করতে ভেরিফাইড এনআইডি প্রপার্টি আইডি ও সিকিউরিটি চেকিং।
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+<<<<<<< HEAD
                             📐
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">বিল্ডিং ম্যাপ & প্রজেক্ট ভল্ট</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             আর্কিটেকচারাল ব্লুপ্রিন্ট, ক্যাড ফাইল ও প্রজেক্ট মাইলস্টোন ক্লাউড সিকিউরিটি।
+=======
+<<<<<<< HEAD
+                            🏨
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">গেস্ট বুকিং & হল সূচি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            হোটেল রুম রিজার্ভেশন, গেস্ট সিকিউরিটি স্ক্যান ও কমিউনিটি সেন্টার হল বুকিং ক্যালেন্ডার।
+=======
+                            📜
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বিকাশ অটো-ভাড়া কালেকশন & রসিদ</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            বিকাশ/নগদে মাসিক ভাড়া কালেকশন ও স্বয়ংক্রিয় প্রপার্টি ডিজিটাল ভাড়া রসিদ প্রদান।
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </p>
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD
             <!-- Dynamic Construction Cost & Material Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
@@ -1965,6 +2450,77 @@
                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
                             <p class="text-xs text-gray-400 font-medium">🏷️ সিভিল ইআরপি খরচ</p>
                             <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৬/দিন</p>
+=======
+<<<<<<< HEAD
+            <!-- Dynamic AI ROI & Revenue Growth Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        AI তদারকি ও লাভ বৃদ্ধির হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন Zengfy Hotel ইআরপি ব্যবহার করলে আপনার মাসে কত টাকা লাভ বৃদ্ধি পাবে
+                    </h2>
+
+                    <!-- Monthly Revenue Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার হোটেল/রেস্টুরেন্টের মাসিক বিক্রি কত? <strong class="text-emerald-400 text-lg" x-text="'৳' + (studentCount * 500).toLocaleString()"></strong>
+                        </label>
+                        <input type="range" min="100" max="2000" step="50" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+=======
+            <!-- Dynamic Broker Savings & ROI Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        দালাল ফি ও সময় বাঁচানোর লাইভ হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন Zengfy Rent ব্যবহার করলে বাসা বদলানোর সময়ে আপনার কত টাকা ব্রোকার ফি সাশ্রয় হবে
+                    </h2>
+
+                    <!-- Rent Amount Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার কাঙ্ক্ষিত বাসাবাড়ির মাসিক ভাড়া কত? <strong class="text-purple-400 text-lg" x-text="'৳' + (studentCount * 100).toLocaleString()"></strong>
+                        </label>
+                        <input type="range" min="50" max="1000" step="50" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-purple-500">
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+                    </div>
+
+                    <!-- Calculated Savings Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+<<<<<<< HEAD
+                            <p class="text-xs text-gray-400 font-medium">📈 AI তদারকিতে লাভ বৃদ্ধি</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 75).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ হিসাব সংক্রান্ত সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-teal-400 mt-1">৮৫% সময় বাঁচবে</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy Hotel খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৩/দিন</p>
+=======
+                            <p class="text-xs text-gray-400 font-medium">💰 ব্রোকার/দালাল ফি সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 50).toLocaleString() + ' বেঁচে যাবে'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ বাসা খোঁজার সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-purple-400 mt-1">৮০% সময় বাঁচবে</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy Rent ফি</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳৫০/সার্চ</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         </div>
                     </div>
                 </div>
@@ -1973,7 +2529,15 @@
             <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
+<<<<<<< HEAD
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+=======
+<<<<<<< HEAD
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+=======
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                         Zengfy Ecosystem
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
@@ -1983,10 +2547,24 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<<<<<<< HEAD
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Civil</h3>
                         <p class="text-[10px] text-amber-400 mt-1">Engineering ERP</p>
+=======
+<<<<<<< HEAD
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-emerald-400 mt-1">ERP & ZengPay Coin</p>
+=======
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-purple-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-purple-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-purple-400 mt-1">Tenant & Radius Map</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
@@ -1995,28 +2573,50 @@
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+<<<<<<< HEAD
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+=======
+=======
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
@@ -2030,6 +2630,24 @@
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
+                    </a>
+
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
+                    </a>
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                 </div>
             </div>
 
@@ -2041,6 +2659,7 @@
 
                 <div class="space-y-4 text-xs sm:text-sm">
                     <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+<<<<<<< HEAD
                         <h3 class="font-bold text-white mb-1">১. সিভিল সাইটের রড, সিমেন্ট ও মজুরি হিসাব কীভাবে রাখা যায়?</h3>
                         <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি প্যানেল থেকে ১-ক্লিকে প্রতিটি চালানের রড, সিমেন্ট, বালির পরিমাণ এবং সাইট শ্রমিকদের দৈনিক হাজিরা ও মজুরি লেজারে সেভ করা যায়।</p>
                     </div>
@@ -2053,6 +2672,35 @@
                     <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কাস্টমারদের জন্য ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ কীভাবে কাজ করে?</h3>
                         <p class="text-gray-300 leading-relaxed">বাড়ি নির্মাণকারী ব্যক্তিরা ৳১০০ পেমেন্ট করে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার, কন্ট্রাক্টরদের লাইভ ফাইল এক্সেস এবং আর্কিটেকচারাল ম্যাপ নকশা ডাউনলোড করতে পারবেন।</p>
+=======
+<<<<<<< HEAD
+                        <h3 class="font-bold text-white mb-1">১. দৈনিক খরচ ও স্টাফ বেতন কীভাবে ট্র্যাকিং করা যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি থেকে ১-ক্লিকে প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, বিদ্যুৎ বিল ও স্টাফ বেতন এন্ট্রি দিলে স্বয়ংক্রিয়ভাবে ক্যাশ ব্যালেন্স ও লেজার জেনারেট হয়।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে ব্যবসা তদারকি কীভাবে সাহায্য করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">AI সিস্টেম আপনার প্রতিদিনের বিক্রি, পিক কাস্টমার ট্রাফিক ও খাবার অপচয় বিশ্লেষণ করে বিক্রি ও মুনাফা বাড়ানোর নির্দিষ্ট পরামর্শ প্রদান করে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ZengPay Coin কীভাবে কাস্টমারদের থেকে গ্রহণ করব?</h3>
+                        <p class="text-gray-300 leading-relaxed">কাস্টমাররা রেস্টুরেন্টে খেয়ে কাউন্টারের ZengPay QR স্ক্যান করে সরাসরি ZengPay Coin টোকেনে বিল পরিশোধ করতে পারবে, যা সাথে সাথে আপনার প্যানেলে ক্যাশলেস হিসেবে জমা হবে।</p>
+=======
+                        <h3 class="font-bold text-white mb-1">১. ৫-১০ কিমি রেডিয়াস ফিল্টার কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">আপনার বর্তমান জিও-লোকেশন অথবা সিলেক্ট করা ম্যানুয়াল লোকেশন ধরে ৫ বা ১০ কিমি বৃত্তাকার ব্যাসার্ধের ভেতরের সব ভেরিফাইড খালি বাসার তথ্য রিয়েল-টাইম ম্যাপে দেখায়।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. বাসা ভাড়ায় ভূয়া পোস্ট রোধে কী সিকিউরিটি আছে?</h3>
+                        <p class="text-gray-300 leading-relaxed">বাড়িওয়ালা হিসেবে বিজ্ঞাপন পোস্ট দিতে হলে স্মার্ট ভেরিফাইড প্রপার্টি আইডি ও ডিজিটাল এনআইডি ভেরিফিকেশন সম্পন্ন করা বাধ্যতামূলক, ফলে কোনো ভূয়া দালাল চক্রান্ত তৈরি হতে পারবে না।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. কন্টাক্ট নম্বর পেতে কত টাকা লাগে?</h3>
+                        <p class="text-gray-300 leading-relaxed">বাসা সন্ধানকারী হিসেবে মাত্র ৳৫০ ফি দিয়ে সরাসরি বাড়িতে যেয়ে বাসা পছন্দ করার জন্য ভেরিফাইড বাড়ির মালিকের সঙ্গে কল ও সরাসরি কন্টাক্ট টোকেন রিলিজ করা যায়।</p>
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </div>
                 </div>
             </div>
@@ -2127,7 +2775,15 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
+<<<<<<< HEAD
     @if(in_array($module['id'], ['school', 'law', 'pos', 'civil']))
+=======
+<<<<<<< HEAD
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'hotel']))
+=======
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'rent']))
+>>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
