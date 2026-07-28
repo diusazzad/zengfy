@@ -1623,6 +1623,442 @@
                     </div>
                 </div>
             </div>
+        @elseif($module['id'] === 'journal')
+            <!-- 10x Independent Journalism & Columnist Publishing Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                        📰 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        স্বাধীন সাংবাদিকতা ও ভেরিফাইড কলাম পড়ুন, প্রিয় লেখককে সাপোর্ট করুন 📰
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        পাঠকদের জন্য মাত্র ৳৫০ টাকায় প্রিমিয়াম কলাম ও রিডার পাস এবং সাংবাদিক ও লেখকদের জন্য ৳২০০ টাকায় অল-ইন-ওয়ান পাবলিশিং ইআরপি প্ল্যাটফর্ম।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-400 hover:to-blue-500 text-white font-bold text-base shadow-xl shadow-indigo-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>📰 প্রিমিয়াম কলাম পড়ুন (৳৫০/মাস)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
+                        <!-- Top Journalist Profile Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-xl text-indigo-400">
+                                    ✍️
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white flex items-center gap-1">
+                                        <span>আরিফুল ইসলাম</span>
+                                        <span class="text-xs text-blue-400">✓ NID ভেরিফাইড সাংবাদিক</span>
+                                    </h3>
+                                    <p class="text-[11px] text-gray-400 font-semibold">কলামিস্ট & ইনভেস্টিগেটিভ রিপোর্টার</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">
+                                প্রিমিয়াম নিবন্ধ
+                            </span>
+                        </div>
+
+                        <!-- Live Published Column Snippet Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">শিরোনাম: <strong class="text-white">"বাংলাদেশের ইকোসিস্টেম বিপ্লব"</strong></span>
+                                <span class="text-indigo-400 font-bold">১০ মিনিট রিড</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300">"একটি ভেরিফাইড ডিজিটাল আইডি যেভাবে দেশের কোটি মানুষের কাজ সহজ করছে..."</p>
+                            </div>
+                        </div>
+
+                        <!-- Live Reader Tip Jar & Subscription Payout Badge -->
+                        <div class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center font-black text-indigo-400 text-lg">
+                                    💸
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ মাসিক রিডার পেআউট লেজার</p>
+                                    <p class="text-[10px] text-indigo-300">১৫০ জন সাবস্ক্রাইবার (৳৭,৫০০ জমা)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-4xl shadow-xl shadow-indigo-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 font-extrabold text-xs tracking-wider border border-indigo-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Journal-এর প্রিমিয়াম কলাম ও সাংবাদিক ইআরপি টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম ভেরিফাইড সাংবাদিক প্রোফাইল, প্রিমিয়াম কলাম পাবলিশিং এবং রিডার সাবক্রিপশন পেআউটের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-xs font-bold text-indigo-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে জার্নাল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই জার্নাল & রিডার প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে জার্নাল প্যানেলের রিয়েল-টাইম ক্লিclickable ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'reader'; sandboxMessage = '✓ ৳৫০ রিডার সাবস্ক্রিপশন পাস অ্যাক্টিভেটেড: প্রিমিয়াম ইনভেস্টিগেটিভ কলাম ও নিবন্ধ আনলকড।'" 
+                                :class="sandboxAction === 'reader' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📰</span>
+                            <h3 class="text-sm font-bold">১. ৳৫০ রিডার সাবস্ক্রিপশন পাস</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিজ্ঞাপনমুক্ত প্রিমিয়াম কলাম ও ব্লগ এক্সেস।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'verify'; sandboxMessage = '✓ NID সাংবাদিক ভেরিফিকেশন ড্রাই-রান সম্পন্ন: নীল ভেরিফাইড জুরনালিস্ট ব্যাজ প্রকাশিত।'" 
+                                :class="sandboxAction === 'verify' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🛡️</span>
+                            <h3 class="text-sm font-bold">২. NID ভেরিফাইড সাংবাদিক প্রোফাইল</h3>
+                            <p class="text-xs text-gray-400 mt-1">ভুয়া সংবাদ মুক্ত প্রফেশনাল ট্রাস্ট ব্যাজ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'writer_erp'; sandboxMessage = '✓ ৳২০০ সাংবাদিক পাবলিশিং ইআরপি অ্যাক্টিভ: ১৫০ জন রিডার সাবস্ক্রিপশন থেকে ৳৭,৫০০ পেআউট ওয়ালেটে জমা।'" 
+                                :class="sandboxAction === 'writer_erp' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">✍️</span>
+                            <h3 class="text-sm font-bold">৩. ৳২০০ সাংবাদিক পাবলিশিং ইআরপি</h3>
+                            <p class="text-xs text-gray-400 mt-1">কলাম ড্রাফট, নিউজলেটার ও রিডার পেআউট।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/40 text-indigo-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ পাঠকদের জন্য ৳৫০/মাস — সাংবাদিকদের জন্য ৳২০০/মাস অল-ইন-ওয়ান ইআরপি
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Reader Subscription Pass (৳50/mo) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">
+                                {{ $module['pricing_tiers']['reader']['badge'] ?? 'পাঠক চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['reader']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['reader']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['reader']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-indigo-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['reader']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['reader']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            রিডার পাস নিন →
+                        </a>
+                    </div>
+
+                    <!-- Journalist ERP Pack (৳200/mo) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#101433] to-[#121A29] border border-indigo-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-indigo-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            সাংবাদিক প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['writer']['badge'] ?? 'সাংবাদিক চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['writer']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['writer']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['writer']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-indigo-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['writer']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['writer']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm text-center shadow-lg shadow-indigo-600/30 transition-all">
+                            সাংবাদিক ইআরপি চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal & Media Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        জার্নাল ও মিডিয়া কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        📰 পাঠক ও সাংবাদিকদের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            🛡️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ভেরিফাইড সাংবাদিক আইডি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            ভুয়া সংবাদ প্রতিরোধে NID এনক্রিপ্টেড সত্যতা ব্যাজ ও প্রফেশনাল বায়ো।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 text-blue-400">
+                            💸
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">পাঠক সাবস্ক্রিপশন & টিপস</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            পাঠকদের থেকে সরাসরি মাসিক সাবস্ক্রিপশন ফি ও টিপস সংগ্রহের ব্যবস্থা।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
+                            ✍️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">কলাম পাবলিশিং ইআরপি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সমৃদ্ধ আর্টিকেল ড্রাফট এডিটর, কপিরাইট নিরাপত্তা ও পাঠক এনালিটিক্স।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            📰
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বিজ্ঞাপন মুক্ত রিডার মোড</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            পাঠকদের জন্য কোনো বিরক্তিকর বিজ্ঞাপন ছাড়াই পরিচ্ছন্ন পড়ার অভিজ্ঞতা।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Writer Revenue & Audience Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        লেখক আয় & পাঠক সংখ্যা হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন স্বাধীন সাংবাদিকদের কলাম থেকে আনুমানিক মাসিক আয়
+                    </h2>
+
+                    <!-- Reader Count Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার পেয়িং পাঠক সংখ্যা: <strong class="text-indigo-400 text-lg" x-text="studentCount * 10 + ' জন সাবস্ক্রাইবার'"></strong>
+                        </label>
+                        <input type="range" min="10" max="100" step="5" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                    </div>
+
+                    <!-- Calculated Writer Revenue Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📈 আনুমানিক মাসিক আয় (৮৫% পেআউট)</p>
+                            <p class="text-xl sm:text-2xl font-black text-indigo-400 mt-1" x-text="'৳' + (studentCount * 10 * 50 * 0.85).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🛡️ কপিরাইট নিরাপত্তা</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">১০০% ভেরিফাইড</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ সাংবাদিক ইআরপি ফি</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২০০ / মাস</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-indigo-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-indigo-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
+                        <p class="text-[10px] text-indigo-400 mt-1">Journalism & Reader ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Bootcamps & LMS</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. সাধারণ পাঠকরা কত টাকায় প্রিমিয়াম কলাম পড়তে পারবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">পাঠকরা মাত্র ৳৫০/মাস সাবস্ক্রিপশন ফিতে সব ভেরিফাইড কলামিস্টদের এক্সক্লুসিভ নিবন্ধ ও ইনভেস্টিগেটিভ রিপোর্ট পড়তে পারবে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. সাংবাদিক ও কলামিস্টরা কীভাবে আয়ের অংশ পাবেন?</h3>
+                        <p class="text-gray-300 leading-relaxed">সাংবাদিকদের কলাম যতজন সাবস্ক্রাইবার পড়বে এবং যা টিপস দেবে, তার সিংহভাগ সরাসরি তাদের ওয়ালেটে পেআউট করা হবে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ভুয়া কলাম বা ভুয়া আইডি কিভাবে রোখা হয়?</h3>
+                        <p class="text-gray-300 leading-relaxed">প্রতিটি সাংবাদিক ও কলামিস্টের NID ও সত্যতা ভেরিফিকেশনের পর নীল ভেরিফাইড জুরনালিস্ট ব্যাজ দেওয়া হয়।</p>
+                    </div>
+                </div>
+            </div>
         @else
             <!-- Default Module View for other subdomains (pos, law, rent, hotel, ngo, civil, etc.) -->
             <div class="text-center max-w-4xl mx-auto mb-16 relative scroll-reveal opacity-0 translate-y-10">
@@ -1694,7 +2130,7 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
-    @if(in_array($module['id'], ['school', 'law', 'pos']))
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'journal']))
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
