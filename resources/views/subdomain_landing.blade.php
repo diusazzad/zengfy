@@ -1624,6 +1624,26 @@
                 </div>
             </div>
 <<<<<<< HEAD
+        @elseif($module['id'] === 'skill')
+            <!-- 10x Real-World Skill Bootcamps & Instructor LMS ERP Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-violet-400 bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+                        🎓 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        ভুয়া কোর্স নয়, স্বল্প খরচে বাস্তবমুখী প্রজেক্ট শিখুন, ক্যারিয়ার গড়ুন 🎓
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        এসএসসি/এইচএসসি পরবর্তী শিক্ষার্থীদের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Projects শিক্ষা মাত্র ৳১২০০ থেকে শুরু। সাথে মেন্টর ও একাডেমির জন্য অল-ইন-ওয়ান LMS ERP পোর্টাল।
+=======
+<<<<<<< HEAD
         @elseif($module['id'] === 'civil')
             <!-- 10x Civil Engineering, Site ERP & AI Structural Analysis Hero Section -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
@@ -1683,11 +1703,16 @@
                         সোশ্যাল ইকোসিস্টেমের কোটি কোটি ব্যবহারকারীর জন্য দালাল বা ব্রোকার ফি ছাড়া ৫-১০ কিমি ম্যাপ রেডিয়াসে ফাঁকা বাসা খোঁজা ও সরাসরি বাড়িওয়ালার সাথে যোগাযোগের অল-ইন-ওয়ান স্মার্ট সমাধান।
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </p>
 
                     <!-- Dual Action Buttons -->
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                         <a href="#pricing"
+<<<<<<< HEAD
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-400 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-violet-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🎓 বাস্তবমুখী স্কিল কোর্স দেখুন (৳১২০০ থেকে শুরু)</span>
+=======
 <<<<<<< HEAD
                            class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold text-base shadow-xl shadow-amber-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                             <span>🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)</span>
@@ -1700,6 +1725,7 @@
                             <span>🔍 ৫-১০ কিমি রেডিয়াসে বাসা খুঁজুন (৳৫০)</span>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                             <span>→</span>
                         </a>
 
@@ -1711,9 +1737,13 @@
 <<<<<<< HEAD
                             🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
 =======
+<<<<<<< HEAD
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+=======
                             🎮 ১-ক্লিকে স্যান্ডবক্স রেডিয়াস
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </a>
                     </div>
                 </div>
@@ -1722,6 +1752,47 @@
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
+<<<<<<< HEAD
+                        <!-- Top Bootcamp Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-xl text-violet-400">
+                                    🎓
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">এসএসসি স্পেশাল স্পোকেন & আইটি বুটক্যাম্প</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● বাস্তবমুখী প্রজেক্ট & মেন্টরশিপ</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-bold border border-violet-500/20">
+                                লাইভ ব্যাচ
+                            </span>
+                        </div>
+
+                        <!-- Live Project Assignment Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">প্রজেক্ট প্রোগ্রেস: <strong class="text-white">৮৫% প্র্যাকটিক্যাল সম্পন্ন</strong></span>
+                                <span class="text-violet-400 font-bold">ফিডব্যাক: গ্রেড A+</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300">💬 মেন্টর কমেন্ট: <strong class="text-violet-300">"আপনার স্পোকেন অডিও প্রেজেন্টেশন ও ইমেইল রাইটিং প্রজেক্ট চমৎকার হয়েছে!"</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Live Skill Certificate Badge -->
+                        <div class="p-4 rounded-2xl bg-violet-950/40 border border-violet-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-violet-600/20 border border-violet-500/40 flex items-center justify-center font-black text-violet-400 text-lg">
+                                    📜
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ভেরিফাইড প্রফেশনাল সার্টিফিকেট</p>
+                                    <p class="text-[10px] text-violet-300">QR TrxID: SK88901X (NID এনক্রিপ্টেড রসিদ)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+=======
 <<<<<<< HEAD
                         <!-- Top Site Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -1843,6 +1914,7 @@
                             </div>
                             <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </div>
 
                     </div>
@@ -1853,6 +1925,9 @@
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-8">
 <<<<<<< HEAD
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+=======
+<<<<<<< HEAD
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
 =======
 <<<<<<< HEAD
@@ -1861,6 +1936,7 @@
                     <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
@@ -1868,6 +1944,17 @@
                     </h2>
                 </div>
 
+<<<<<<< HEAD
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-violet-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-4xl shadow-xl shadow-violet-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-violet-500/20 text-violet-300 font-extrabold text-xs tracking-wider border border-violet-400/30 uppercase">
+=======
 <<<<<<< HEAD
                 <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -1901,10 +1988,24 @@
                         <span class="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 font-extrabold text-xs tracking-wider border border-purple-400/30 uppercase">
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                             Video Tutorial Upcoming
                         </span>
 
                         <h3 class="text-xl sm:text-2xl font-black text-white">
+<<<<<<< HEAD
+                            Zengfy Skill-এর বাস্তবমুখী প্রজেক্ট ও ইনস্ট্রাক্টর LMS ERP টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম বাস্তবমুখী স্কিল প্রজেক্ট, লাইভ অ্যাসাইনমেন্ট সাবমিশন, মেন্টরশিপ সাপোর্ট এবং ইনস্ট্রাক্টর LMS ERP সেলস পেআউটের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-violet-600/30 hover:bg-violet-600/50 border border-violet-500/40 text-xs font-bold text-violet-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে স্কিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+=======
 <<<<<<< HEAD
                             Zengfy Civil-এর সাইট ইআরপি ও AI ম্যাপ এনালাইসিস টিউটোরিয়াল তৈরি হচ্ছে!
                         </h3>
@@ -1944,6 +2045,7 @@
                                 <span>স্যান্ডবক্সে রেডিয়াস ম্যাপ ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                             </a>
                         </div>
                     </div>
@@ -1952,6 +2054,17 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+<<<<<<< HEAD
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই স্কিল & LMS প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে লার্নিং প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+=======
 <<<<<<< HEAD
                 <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
@@ -1985,10 +2098,35 @@
                         <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে রেন্ট প্যানেলের রিয়েল-টাইম ক্লিclickable ক্ষমতা পরীক্ষা করুন:</p>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </div>
 
                     <!-- 3 Clickable Dry-Run Action Buttons -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+<<<<<<< HEAD
+                        <button @click="sandboxAction = 'bootcamp'; sandboxMessage = '✓ ৳১২০০ স্পোকেন ইংলিশ & কম্পিউটার আইটি বুটক্যাম্প কারিকুলাম সফলভাবে আনলকড: লাইভ ব্যাচ সিডিউল ও রিয়েল প্রজেক্ট ভল্ট এক্সেস সম্পন্ন।'" 
+                                :class="sandboxAction === 'bootcamp' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🎓</span>
+                            <h3 class="text-sm font-bold">১. ৳১২০০ বুটক্যাম্প কারিকুলাম</h3>
+                            <p class="text-xs text-gray-400 mt-1">Spoken English & IT বাস্তবমুখী প্রজেক্ট কোর্স আনলক।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'assignment'; sandboxMessage = '✓ স্টুডেন্ট প্র্যাকটিক্যাল অ্যাসাইনমেন্ট ফাইল সাবমিট করা হয়েছে: মেন্টর রিভিউ সম্পন্ন এবং ডিজিটাল ভেরিফাইড স্কিল সার্টিফিকেট জেনারেটেড।'" 
+                                :class="sandboxAction === 'assignment' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📝</span>
+                            <h3 class="text-sm font-bold">২. প্র্যাকটিক্যাল অ্যাসাইনমেন্ট & মেন্টর ফিডব্যাক</h3>
+                            <p class="text-xs text-gray-400 mt-1">সরাসরি মেন্টরদের কাছ থেকে কোশ্চেন-আনসার ও প্রজেক্ট রিভিউ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'lms'; sandboxMessage = '✓ ইনস্ট্রাক্টর LMS ERP প্যানেল অ্যাক্টিভ: ২৫ জন স্টুডেন্ট এনরোলমেন্ট সেলস থেকে ৮৫% রেভিনিউ শেয়ার ওয়ালেটে পেআউট সম্পন্ন।'" 
+                                :class="sandboxAction === 'lms' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">👨‍🏫</span>
+                            <h3 class="text-sm font-bold">৩. ইনস্ট্রাক্টর LMS ERP & সেলস পেআউট</h3>
+                            <p class="text-xs text-gray-400 mt-1">লাইভ ব্যাচ ম্যানেজমেন্ট ও কোর্স শেয়ার উইথড্রয়াল।</p>
+=======
 <<<<<<< HEAD
                         <button @click="sandboxAction = 'material'; sandboxMessage = '✓ সাইট মেটেরিয়াল এন্ট্রি (৫ টন রড + ২০০ ব্যাগ সিমেন্ট) ও লেবার মজুরি (৳১২,৫০০) ইআরপি লেজারে সফলভাবে এন্টি এবং প্রজেক্ট ফাইল আপডেট।'" 
                                 :class="sandboxAction === 'material' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
@@ -2061,11 +2199,16 @@
                             <p class="text-xs text-gray-400 mt-1">স্মার্ট প্রপার্টি আইডি সত্যায়ন সহ সোশ্যাল ফিডে লাইভ বিজ্ঞাপন।</p>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </button>
                     </div>
 
                     <!-- Sandbox Output Notification Window -->
                     <div x-show="sandboxMessage" x-cloak x-transition
+<<<<<<< HEAD
+                         class="p-4 rounded-2xl bg-violet-950/40 border border-violet-500/40 text-violet-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+=======
 <<<<<<< HEAD
                          class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
                         <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
@@ -2077,6 +2220,7 @@
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
                         <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         <span x-text="sandboxMessage"></span>
                     </div>
                 </div>
@@ -2085,6 +2229,52 @@
             <!-- Transparent Pricing Tier Section -->
             <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
+<<<<<<< HEAD
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ শিক্ষার্থীদের জন্য ৳১২০০ থেকে শুরু — ইনস্ট্রাক্টরদের জন্য সাশ্রয়ী LMS ERP
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Student Real-World Bootcamp Pack (৳1200+) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-violet-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-bold border border-violet-500/20">
+                                {{ $module['pricing_tiers']['learner']['badge'] ?? 'শিক্ষার্থী চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['learner']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['learner']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['learner']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-violet-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['learner']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['learner']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            কোর্স বুক করুন →
+                        </a>
+                    </div>
+
+                    <!-- Instructor LMS ERP Pack (৳500/mo + rev share) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#241033] to-[#121A29] border border-violet-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-violet-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় মেন্টর প্যাক
+=======
 <<<<<<< HEAD
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
                         স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
@@ -2105,10 +2295,28 @@
                     <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#102923] to-[#121A29] border border-emerald-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden text-center">
                         <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
                             জনপ্রিয় মার্চেন্ট প্যাক
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </div>
 
                         <div>
                             <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+<<<<<<< HEAD
+                                {{ $module['pricing_tiers']['instructor']['badge'] ?? 'জনপ্রিয় মেন্টর চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['instructor']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['instructor']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['instructor']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-violet-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['instructor']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['instructor']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+=======
                                 {{ $module['pricing_tiers']['erp']['badge'] ?? 'জনপ্রিয় মার্চেন্ট চয়েস' }}
                             </span>
                             <h3 class="text-2xl font-black text-white mt-3">{{ $module['pricing_tiers']['erp']['name'] }}</h3>
@@ -2175,6 +2383,7 @@
                                     <li class="flex items-center gap-2">
                                         <span class="text-emerald-400 font-bold">✓</span>
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                                         <span>{{ $feat }}</span>
                                     </li>
                                 @endforeach
@@ -2182,6 +2391,10 @@
                         </div>
 
                         <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+<<<<<<< HEAD
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm text-center shadow-lg shadow-violet-600/30 transition-all">
+                            ইন্সট্রাক্টর ইআরপি চালু করুন →
+=======
 <<<<<<< HEAD
                            class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                             ইঞ্জিনিয়ার সার্চ করুন →
@@ -2260,11 +2473,22 @@
                             বাসা ফাঁকা বিজ্ঞাপন দিন →
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </a>
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD
+            <!-- Skill & Learning Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        স্কিল লার্নিং কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎓 শিক্ষার্থী ও মেন্টরদের হাতে যে ৪টি ক্ষমতা থাকবে
+=======
 <<<<<<< HEAD
             <!-- Civil & Construction Power Matrix (4 Control Levers) -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
@@ -2295,10 +2519,30 @@
                         🔑 বাসা সন্ধানকারী ও বাড়িওয়ালাদের হাতে যে ৪টি ক্ষমতা থাকবে
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<<<<<<< HEAD
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-2xl mb-4 text-violet-400">
+                            🎓
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বাস্তবমুখী প্রজেক্ট কারিকুলাম</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            থিওরি নির্ভরতা মুক্ত সরাসরি বাস্তব কাজের প্রয়োগ যেমন Spoken English ও Web Projects।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
+                            👨‍🏫
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ইনস্ট্রাক্টর LMS ERP</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            লাইভ ব্যাচ সিডিউলিং, স্টুডেন্ট অ্যাসাইনমেন্ট এবং অটোমেটেড পেআউট লেজার।
+=======
 <<<<<<< HEAD
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
@@ -2365,11 +2609,19 @@
                         <p class="text-xs text-gray-300 leading-relaxed">
                             কোনো তৃতীয় ব্যক্তির অতিরিক্ত কমিশন ছাড়া সরাসরি ভেরিফাইড বাড়ির মালিকের সাথে কথা।
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+<<<<<<< HEAD
+                            💬
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">লাইভ মেন্টরশিপ সাপোর্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সরাসরি অভিজ্ঞ মেন্টরদের কাছ থেকে নিয়মিত ডাউট ক্লিয়ারিং ও প্রজেক্ট রিভিউ।
+=======
 <<<<<<< HEAD
                             🪙
                         </div>
@@ -2384,11 +2636,19 @@
                             ভূয়া পোস্ট রোধ করতে ভেরিফাইড এনআইডি প্রপার্টি আইডি ও সিকিউরিটি চেকিং।
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+<<<<<<< HEAD
+                            📜
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ভেরিফাইড স্কিল সার্টিফিকেট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            এনআইডি এনক্রিপ্টেড কিউআর ভেরিফাইড প্রফেশনাল ডিজিটাল স্কিল সার্টিফিকেট।
+=======
 <<<<<<< HEAD
                             📐
                         </div>
@@ -2410,11 +2670,48 @@
                             বিকাশ/নগদে মাসিক ভাড়া কালেকশন ও স্বয়ংক্রিয় প্রপার্টি ডিজিটাল ভাড়া রসিদ প্রদান।
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </p>
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD
+            <!-- Dynamic Career & Salary Boost Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        স্কিল & কেরিয়ার বৃদ্ধির হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন বাস্তবমুখী স্কিল প্রজেক্ট শিখলে আপনার আনুমানিক বেতন বৃদ্ধি
+                    </h2>
+
+                    <!-- Skill Level Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার বর্তমান স্কিল প্রজেক্ট সংখ্যা: <strong class="text-violet-400 text-lg" x-text="(studentCount / 10).toFixed(0) + ' টি বাস্তব প্রজেক্ট'"></strong>
+                        </label>
+                        <input type="range" min="10" max="100" step="10" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-violet-500">
+                    </div>
+
+                    <!-- Calculated Career Growth Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📈 আনুমানিক শুরুর বেতন</p>
+                            <p class="text-xl sm:text-2xl font-black text-violet-400 mt-1" x-text="'৳' + (studentCount * 400).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ জব পাওয়ার সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">৭৫% দ্রুত চাকরি</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ কোর্স ফি</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳১২০০ থেকে শুরু</p>
+=======
 <<<<<<< HEAD
             <!-- Dynamic Construction Cost & Material Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
@@ -2521,6 +2818,7 @@
                             <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳৫০/সার্চ</p>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </div>
                     </div>
                 </div>
@@ -2530,6 +2828,9 @@
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
 <<<<<<< HEAD
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+=======
+<<<<<<< HEAD
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
 =======
 <<<<<<< HEAD
@@ -2538,6 +2839,7 @@
                     <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         Zengfy Ecosystem
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
@@ -2547,6 +2849,12 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<<<<<<< HEAD
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-violet-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-violet-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-violet-400 mt-1">Bootcamps & LMS ERP</p>
+=======
 <<<<<<< HEAD
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
@@ -2565,6 +2873,7 @@
                         <p class="text-[10px] text-purple-400 mt-1">Tenant & Radius Map</p>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
@@ -2576,7 +2885,10 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
@@ -2585,9 +2897,12 @@
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
@@ -2597,18 +2912,26 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+<<<<<<< HEAD
+=======
 =======
 =======
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
@@ -2617,6 +2940,7 @@
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
@@ -2630,6 +2954,8 @@
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 
@@ -2648,6 +2974,7 @@
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
                     </a>
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                 </div>
             </div>
 
@@ -2659,6 +2986,20 @@
 
                 <div class="space-y-4 text-xs sm:text-sm">
                     <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+<<<<<<< HEAD
+                        <h3 class="font-bold text-white mb-1">১. এসএসসি বা এইচএসসির পর কোন্ কোর্সগুলো দিয়ে শুরু করা উচিত?</h3>
+                        <p class="text-gray-300 leading-relaxed">বাস্তবমুখী কেরিয়ারের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Coding প্রজেক্ট কোর্সগুলোর দিয়ে শুরু করা উচিত।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. মেন্টরদের কাছ থেকে কীভাবে লাইভ হেল্প পাওয়া যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">প্রতিটি ব্যাচে সাপ্তাহিক লাইভ Q&A সেশন এবং অ্যাসাইনমেন্ট রিভিউতে মেন্টররা সরাসরি প্রজেক্টের ভুলভ্রান্তি শুধরে দেন।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ইনস্ট্রাক্টর LMS ERP কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">ইন্সট্রাক্টররা মাত্র ৳৫০০/মাস ও স্বল্প পার্সেন্টেজ শেয়ারে নিজের লার্নিং পোর্টাল চালু করতে পারেন, যেখানে লাইভ ব্যাচ ও অটোমেটেড পেআউট লেজার সংযুক্ত থাকে।</p>
+=======
 <<<<<<< HEAD
                         <h3 class="font-bold text-white mb-1">১. সিভিল সাইটের রড, সিমেন্ট ও মজুরি হিসাব কীভাবে রাখা যায়?</h3>
                         <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি প্যানেল থেকে ১-ক্লিকে প্রতিটি চালানের রড, সিমেন্ট, বালির পরিমাণ এবং সাইট শ্রমিকদের দৈনিক হাজিরা ও মজুরি লেজারে সেভ করা যায়।</p>
@@ -2701,6 +3042,7 @@
                         <p class="text-gray-300 leading-relaxed">বাসা সন্ধানকারী হিসেবে মাত্র ৳৫০ ফি দিয়ে সরাসরি বাড়িতে যেয়ে বাসা পছন্দ করার জন্য ভেরিফাইড বাড়ির মালিকের সঙ্গে কল ও সরাসরি কন্টাক্ট টোকেন রিলিজ করা যায়।</p>
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                     </div>
                 </div>
             </div>
@@ -2776,6 +3118,9 @@
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
 <<<<<<< HEAD
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'skill']))
+=======
+<<<<<<< HEAD
     @if(in_array($module['id'], ['school', 'law', 'pos', 'civil']))
 =======
 <<<<<<< HEAD
@@ -2784,6 +3129,7 @@
     @if(in_array($module['id'], ['school', 'law', 'pos', 'rent']))
 >>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
 >>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
+>>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
