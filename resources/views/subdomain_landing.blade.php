@@ -1623,6 +1623,439 @@
                     </div>
                 </div>
             </div>
+        @elseif($module['id'] === 'civil')
+            <!-- 10x Civil Engineering, Site ERP & AI Structural Analysis Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        🏗️ {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        সিভিল সাইট ম্যানেজমেন্ট ডিজিটাইজ করুন, AI দিয়ে ম্যাপ ও খরচ এনালাইসিস করুন 🏗️
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        রড, সিমেন্ট ও বালি কাঁচামাল লেজার, সাইট কন্ট্রাক্টর বেতন ইআরপি, AI ম্যাপ এনালাইসিস এবং ভেরিফাইড সিভিল ইঞ্জিনিয়ার ও কন্ট্রাক্টর পেইড সার্চ ডিরেক্টরি।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold text-base shadow-xl shadow-amber-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
+                        <!-- Top Site Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-xl text-amber-400">
+                                    🏗️
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">উত্তরা ১০-তলা আবাসিক ভবন সাইট</h3>
+                                    <p class="text-[11px] text-amber-400 font-semibold">● সাইট ইআরপি & সয়েল টেস্ট এনালাইসিস</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                লাইভ সাইট
+                            </span>
+                        </div>
+
+                        <!-- Live Material Ledger Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">রড-সিমেন্ট সাইট স্টক: <strong class="text-white">১২.৫ টন রড / ৩৫০ ব্যাগ সিমেন্ট</strong></span>
+                                <span class="text-amber-400 font-bold">লেবার বেতন: ৳১৮,৫০০</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300">🤖 AI ম্যাপ এনালাইসিস: <strong class="text-amber-300">"৫ম তলার ঢালাইয়ের জন্য ৬০-গ্রেড রড ব্যবহার করলে ১২% মেটেরিয়াল খরচ সাশ্রয় হবে।"</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Live Engineer Verification Search Badge -->
+                        <div class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/40 flex items-center justify-center font-black text-amber-400 text-lg">
+                                    🔍
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ইঞ্জিনিয়ার আব্দুর রহমান (BUET Civil)</p>
+                                    <p class="text-[10px] text-amber-300">কাস্টমার ফাইল এক্সেস (৳১০০ সার্চ পেমেন্ট ভেরিফাইড)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-amber-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-4xl shadow-xl shadow-amber-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/20 text-amber-300 font-extrabold text-xs tracking-wider border border-amber-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Civil-এর সাইট ইআরপি ও AI ম্যাপ এনালাইসিস টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম সিভিল সাইট রড-সিমেন্ট হিসাব, রাজমিস্ত্রি মজুরি লেজার, AI সয়েল ম্যাপ এনালাইসিস এবং ভেরিফাইড ইঞ্জিনিয়ার সার্চের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-xs font-bold text-amber-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে সিভিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই সিভিল ইআরপি প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে সিভিল প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'material'; sandboxMessage = '✓ সাইট মেটেরিয়াল এন্ট্রি (৫ টন রড + ২০০ ব্যাগ সিমেন্ট) ও লেবার মজুরি (৳১২,৫০০) ইআরপি লেজারে সফলভাবে এন্টি এবং প্রজেক্ট ফাইল আপডেট।'" 
+                                :class="sandboxAction === 'material' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🏗️</span>
+                            <h3 class="text-sm font-bold">১. রড, সিমেন্ট ও লেবার মজুরি এন্ট্রি</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে সাইট মেটেরিয়াল কেনাকাটা ও রাজমিস্ত্রি বেতন হিসাব।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI ম্যাপ এনালাইসিস রিপোর্ট: সাইট সয়েল টেস্ট অনুযায়ী পাইলিং গভীরতা ৩৫ ফিট এবং কলাম সাইজ ১৮x২৪ ইঞ্চি রাখার সুপারিশ।'" 
+                                :class="sandboxAction === 'ai' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🤖</span>
+                            <h3 class="text-sm font-bold">২. AI সয়েল টেস্ট & ম্যাপ এনালাইসিস</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিল্ডিং ফ্লোর প্ল্যান ও লোড ক্যালকুলেশনে AI দিকনির্দেশনা।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'search'; sandboxMessage = '✓ ৳১০০ পেমেন্টে বুয়েট গ্র্যাজুয়েট সিভিল ইঞ্জিনিয়ার এবং অভিজ্ঞ কন্ট্রাক্টরের স্বচক্ষ ভেরিফাইড কন্টাক্ট ফাইল অনলক সম্পন্ন।'" 
+                                :class="sandboxAction === 'search' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🔍</span>
+                            <h3 class="text-sm font-bold">৩. ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ অনলক</h3>
+                            <p class="text-xs text-gray-400 mt-1">বাড়ি বানাতে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কাস্টমারদের জন্য ৳১০০ — ইঞ্জিনিয়ারিং ফার্মের জন্য সাশ্রয়ী ইআরপি প্যাক
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Client Verified Search Connect (৳100/search) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                {{ $module['pricing_tiers']['client']['badge'] ?? 'বাড়ি নির্মাণকারী চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['client']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['client']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['client']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['client']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['client']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-amber-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            ইঞ্জিনিয়ার সার্চ করুন →
+                        </a>
+                    </div>
+
+                    <!-- Engineering Firm ERP (৳800/month) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#332610] to-[#121A29] border border-amber-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-amber-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় ফার্ম প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                {{ $module['pricing_tiers']['firm']['badge'] ?? 'জনপ্রিয় ফার্ম চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['firm']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['firm']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['firm']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['firm']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['firm']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-amber-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm text-center shadow-lg shadow-amber-600/30 transition-all">
+                            সাইট ইআরপি চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Civil & Construction Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        সিভিল সাইট কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏗️ ইঞ্জিনিয়ার, কন্ট্রাক্টর ও বাড়ি নির্মাণকারীদের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
+                            🏗️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">সাইট ইআরপি & কাঁচামাল লেজার</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            রড, সিমেন্ট, বালি বাজার খরচ ও শ্রমিকদের দৈনন্দিন মজুরি হিসাব অটো লেজার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-yellow-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center text-2xl mb-4 text-yellow-400">
+                            🤖
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI সাইট & ম্যাপ এনালাইসিস</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            মেটেরিয়াল এস্টিমেশন, সয়েল টেস্ট রিপোর্ট ও ম্যাপ এনালাইসিসে AI এর স্মার্ট গাইড।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-orange-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-4 text-orange-400">
+                            🔍
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">পেইড ইঞ্জিনিয়ার & কন্ট্রাক্টর সার্চ</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সাধারণ বাড়ি বানাতে ইচ্ছুক কাস্টমারদের জন্য ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            📐
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বিল্ডিং ম্যাপ & প্রজেক্ট ভল্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            আর্কিটেকচারাল ব্লুপ্রিন্ট, ক্যাড ফাইল ও প্রজেক্ট মাইলস্টোন ক্লাউড সিকিউরিটি।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Construction Cost & Material Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        নির্মাণ খরচ & AI সাশ্রয়ের হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন আপনার প্রস্তাবিত ভবনের স্কয়ার ফিট অনুযায়ী নির্মাণ খরচ ও AI সাশ্রয়
+                    </h2>
+
+                    <!-- Sqft Building Size Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার ভবনের মোট আয়তন (স্কয়ার ফিট): <strong class="text-amber-400 text-lg" x-text="(studentCount * 10).toLocaleString() + ' sqft'"></strong>
+                        </label>
+                        <input type="range" min="100" max="1000" step="25" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                    </div>
+
+                    <!-- Calculated Material Costs Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🧱 আনুমানিক রড-সিমেন্ট খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-amber-400 mt-1" x-text="'৳' + (studentCount * 18000).toLocaleString()"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">💡 AI ম্যাপ এনালাইসিসে সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 2200).toLocaleString()"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ সিভিল ইআরপি খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৬/দিন</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Civil</h3>
+                        <p class="text-[10px] text-amber-400 mt-1">Engineering ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. সিভিল সাইটের রড, সিমেন্ট ও মজুরি হিসাব কীভাবে রাখা যায়?</h3>
+                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি প্যানেল থেকে ১-ক্লিকে প্রতিটি চালানের রড, সিমেন্ট, বালির পরিমাণ এবং সাইট শ্রমিকদের দৈনিক হাজিরা ও মজুরি লেজারে সেভ করা যায়।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে সাইট ও ম্যাপ এনালাইসিস কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">AI সয়েল টেস্ট রিপোর্ট, স্ট্রাকচারাল ম্যাপ ও লোড ক্যালকুলেশন বিশ্লেষণ করে মেটেরিয়াল ওয়েস্টেজ কমানো এবং টেকসই ভবনের জন্য অটোমেটিক পরামর্শ প্রদান করে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. কাস্টমারদের জন্য ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">বাড়ি নির্মাণকারী ব্যক্তিরা ৳১০০ পেমেন্ট করে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার, কন্ট্রাক্টরদের লাইভ ফাইল এক্সেস এবং আর্কিটেকচারাল ম্যাপ নকশা ডাউনলোড করতে পারবেন।</p>
+                    </div>
+                </div>
+            </div>
         @else
             <!-- Default Module View for other subdomains (pos, law, rent, hotel, ngo, civil, etc.) -->
             <div class="text-center max-w-4xl mx-auto mb-16 relative scroll-reveal opacity-0 translate-y-10">
@@ -1694,7 +2127,7 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
-    @if(in_array($module['id'], ['school', 'law', 'pos']))
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'civil']))
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
