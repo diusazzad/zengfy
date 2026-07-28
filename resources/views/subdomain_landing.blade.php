@@ -1642,138 +1642,19 @@
 
                     <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
                         পাঠকদের জন্য মাত্র ৳৫০ টাকায় প্রিমিয়াম কলাম ও রিডার পাস এবং সাংবাদিক ও লেখকদের জন্য ৳২০০ টাকায় অল-ইন-ওয়ান পাবলিশিং ইআরপি প্ল্যাটফর্ম।
-=======
-<<<<<<< HEAD
-        @elseif($module['id'] === 'skill')
-            <!-- 10x Real-World Skill Bootcamps & Instructor LMS ERP Hero Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
-                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-                <!-- Hero Left Copy -->
-                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
-                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-violet-400 bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 rounded-full mb-6">
-                        <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-                        🎓 {{ $module['badge'] }}
-                    </span>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-                        ভুয়া কোর্স নয়, স্বল্প খরচে বাস্তবমুখী প্রজেক্ট শিখুন, ক্যারিয়ার গড়ুন 🎓
-                    </h1>
-
-                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
-                        এসএসসি/এইচএসসি পরবর্তী শিক্ষার্থীদের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Projects শিক্ষা মাত্র ৳১২০০ থেকে শুরু। সাথে মেন্টর ও একাডেমির জন্য অল-ইন-ওয়ান LMS ERP পোর্টাল।
-=======
-<<<<<<< HEAD
-        @elseif($module['id'] === 'civil')
-            <!-- 10x Civil Engineering, Site ERP & AI Structural Analysis Hero Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
-                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-                <!-- Hero Left Copy -->
-                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
-                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 rounded-full mb-6">
-                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                        🏗️ {{ $module['badge'] }}
-                    </span>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-                        সিভিল সাইট ম্যানেজমেন্ট ডিজিটাইজ করুন, AI দিয়ে ম্যাপ ও খরচ এনালাইসিস করুন 🏗️
-                    </h1>
-
-                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
-                        রড, সিমেন্ট ও বালি কাঁচামাল লেজার, সাইট কন্ট্রাক্টর বেতন ইআরপি, AI ম্যাপ এনালাইসিস এবং ভেরিফাইড সিভিল ইঞ্জিনিয়ার ও কন্ট্রাক্টর পেইড সার্চ ডিরেক্টরি।
-=======
-<<<<<<< HEAD
-        @elseif($module['id'] === 'hotel')
-            <!-- 10x Hotel, Restaurant ERP & AI Growth Supervision Hero Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
-                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-                <!-- Hero Left Copy -->
-                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
-                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mb-6">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        🏨 {{ $module['badge'] }}
-                    </span>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-                        হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টার ডিজিটাইজ করুন, AI দিয়ে ব্যবসা বাড়ান 🏨
-                    </h1>
-
-                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
-                        দৈনিক কাঁচামাল বাজার খরচ, কর্মচারীদের বেতনের খাতা, AI বিজনেস তদারকি এবং রেস্টুরেন্টে ডাইনিং কাস্টমারদের সরাসরি ZengPay Coin দিয়ে ক্যাশলেস বিল পেমেন্ট নেওয়ার অল-ইন-ওয়ান অপারেটিং সিস্টেম।
-=======
-        @elseif($module['id'] === 'rent')
-            <!-- 10x Radius Rental Property & Verified Tenant Hero Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
-                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-                <!-- Hero Left Copy -->
-                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
-                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-purple-400 bg-purple-500/10 border border-purple-500/20 px-4 py-1.5 rounded-full mb-6">
-                        <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
-                        🔑 {{ $module['badge'] }}
-                    </span>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-                        আপনার এলাকার ৫-১০ কিমি রেডিয়াসে সরাসরি বাড়িওয়ালার ফাঁকা বাসা খুঁজুন 🔑
-                    </h1>
-
-                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
-                        সোশ্যাল ইকোসিস্টেমের কোটি কোটি ব্যবহারকারীর জন্য দালাল বা ব্রোকার ফি ছাড়া ৫-১০ কিমি ম্যাপ রেডিয়াসে ফাঁকা বাসা খোঁজা ও সরাসরি বাড়িওয়ালার সাথে যোগাযোগের অল-ইন-ওয়ান স্মার্ট সমাধান।
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     </p>
 
                     <!-- Dual Action Buttons -->
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                         <a href="#pricing"
-<<<<<<< HEAD
                            class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-400 hover:to-blue-500 text-white font-bold text-base shadow-xl shadow-indigo-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                             <span>📰 প্রিমিয়াম কলাম পড়ুন (৳৫০/মাস)</span>
-=======
-<<<<<<< HEAD
-                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-400 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-violet-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
-                            <span>🎓 বাস্তবমুখী স্কিল কোর্স দেখুন (৳১২০০ থেকে শুরু)</span>
-=======
-<<<<<<< HEAD
-                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold text-base shadow-xl shadow-amber-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
-                            <span>🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)</span>
-=======
-<<<<<<< HEAD
-                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
-                            <span>🏨 হোটেল ও রেস্টুরেন্ট প্যানেল চালু করুন (৳৭০০/মাস)</span>
-=======
-                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-purple-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
-                            <span>🔍 ৫-১০ কিমি রেডিয়াসে বাসা খুঁজুন (৳৫০)</span>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                             <span>→</span>
                         </a>
 
                         <a href="#sandbox"
                            class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
-<<<<<<< HEAD
                             🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
-=======
-<<<<<<< HEAD
-                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
-=======
-<<<<<<< HEAD
-                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
-=======
-<<<<<<< HEAD
-                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
-=======
-                            🎮 ১-ক্লিকে স্যান্ডবক্স রেডিয়াস
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </a>
                     </div>
                 </div>
@@ -1782,7 +1663,6 @@
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
-<<<<<<< HEAD
                         <!-- Top Journalist Profile Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
                             <div class="flex items-center gap-3">
@@ -1825,8 +1705,400 @@
                                 </div>
                             </div>
                             <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
-=======
-<<<<<<< HEAD
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-4xl shadow-xl shadow-indigo-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 font-extrabold text-xs tracking-wider border border-indigo-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Journal-এর প্রিমিয়াম কলাম ও সাংবাদিক ইআরপি টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম ভেরিফাইড সাংবাদিক প্রোফাইল, প্রিমিয়াম কলাম পাবলিশিং এবং রিডার সাবক্রিপশন পেআউটের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-xs font-bold text-indigo-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে জার্নাল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই জার্নাল & রিডার প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে জার্নাল প্যানেলের রিয়েল-টাইম ক্লিclickable ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'reader'; sandboxMessage = '✓ ৳৫০ রিডার সাবস্ক্রিপশন পাস অ্যাক্টিভেটেড: প্রিমিয়াম ইনভেস্টিগেটিভ কলাম ও নিবন্ধ আনলকড।'" 
+                                :class="sandboxAction === 'reader' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📰</span>
+                            <h3 class="text-sm font-bold">১. ৳৫০ রিডার সাবস্ক্রিপশন পাস</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিজ্ঞাপনমুক্ত প্রিমিয়াম কলাম ও ব্লগ এক্সেস।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'verify'; sandboxMessage = '✓ NID সাংবাদিক ভেরিফিকেশন ড্রাই-রান সম্পন্ন: নীল ভেরিফাইড জুরনালিস্ট ব্যাজ প্রকাশিত।'" 
+                                :class="sandboxAction === 'verify' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🛡️</span>
+                            <h3 class="text-sm font-bold">২. NID ভেরিফাইড সাংবাদিক প্রোফাইল</h3>
+                            <p class="text-xs text-gray-400 mt-1">ভুয়া সংবাদ মুক্ত প্রফেশনাল ট্রাস্ট ব্যাজ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'writer_erp'; sandboxMessage = '✓ ৳২০০ সাংবাদিক পাবলিশিং ইআরপি অ্যাক্টিভ: ১৫০ জন রিডার সাবস্ক্রিপশন থেকে ৳৭,৫০০ পেআউট ওয়ালেটে জমা।'" 
+                                :class="sandboxAction === 'writer_erp' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">✍️</span>
+                            <h3 class="text-sm font-bold">৩. ৳২০০ সাংবাদিক পাবলিশিং ইআরপি</h3>
+                            <p class="text-xs text-gray-400 mt-1">কলাম ড্রাফট, নিউজলেটার ও রিডার পেআউট।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/40 text-indigo-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ পাঠকদের জন্য ৳৫০/মাস — সাংবাদিকদের জন্য ৳২০০/মাস অল-ইন-ওয়ান ইআরপি
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Reader Subscription Pass (৳50/mo) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">
+                                {{ $module['pricing_tiers']['reader']['badge'] ?? 'পাঠক চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['reader']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['reader']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['reader']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-indigo-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['reader']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['reader']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            রিডার পাস নিন →
+                        </a>
+                    </div>
+
+                    <!-- Journalist ERP Pack (৳200/mo) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#101433] to-[#121A29] border border-indigo-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-indigo-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            সাংবাদিক প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['writer']['badge'] ?? 'সাংবাদিক চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['writer']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['writer']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['writer']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-indigo-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['writer']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['writer']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm text-center shadow-lg shadow-indigo-600/30 transition-all">
+                            সাংবাদিক ইআরপি চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal & Media Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        জার্নাল ও মিডিয়া কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        📰 পাঠক ও সাংবাদিকদের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            🛡️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ভেরিফাইড সাংবাদিক আইডি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            ভুয়া সংবাদ প্রতিরোধে NID এনক্রিপ্টেড সত্যতা ব্যাজ ও প্রফেশনাল বায়ো।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 text-blue-400">
+                            💸
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">পাঠক সাবস্ক্রিপশন & টিপস</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            পাঠকদের থেকে সরাসরি মাসিক সাবস্ক্রিপশন ফি ও টিপস সংগ্রহের ব্যবস্থা।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
+                            ✍️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">কলাম পাবলিশিং ইআরপি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সমৃদ্ধ আর্টিকেল ড্রাফট এডিটর, কপিরাইট নিরাপত্তা ও পাঠক এনালিটিক্স।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            📰
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বিজ্ঞাপন মুক্ত রিডার মোড</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            পাঠকদের জন্য কোনো বিরক্তিকর বিজ্ঞাপন ছাড়াই পরিচ্ছন্ন পড়ার অভিজ্ঞতা।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Writer Revenue & Audience Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        লেখক আয় & পাঠক সংখ্যা হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন স্বাধীন সাংবাদিকদের কলাম থেকে আনুমানিক মাসিক আয়
+                    </h2>
+
+                    <!-- Reader Count Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার পেয়িং পাঠক সংখ্যা: <strong class="text-indigo-400 text-lg" x-text="studentCount * 10 + ' জন সাবস্ক্রাইবার'"></strong>
+                        </label>
+                        <input type="range" min="10" max="100" step="5" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+                    </div>
+
+                    <!-- Calculated Writer Revenue Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📈 আনুমানিক মাসিক আয় (৮৫% পেআউট)</p>
+                            <p class="text-xl sm:text-2xl font-black text-indigo-400 mt-1" x-text="'৳' + (studentCount * 10 * 50 * 0.85).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🛡️ কপিরাইট নিরাপত্তা</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">১০০% ভেরিফাইড</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ সাংবাদিক ইআরপি ফি</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২০০ / মাস</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-indigo-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-indigo-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
+                        <p class="text-[10px] text-indigo-400 mt-1">Journalism & Reader ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Bootcamps & LMS</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. সাধারণ পাঠকরা কত টাকায় প্রিমিয়াম কলাম পড়তে পারবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">পাঠকরা মাত্র ৳৫০/মাস সাবস্ক্রিপশন ফিতে সব ভেরিফাইড কলামিস্টদের এক্সক্লুসিভ নিবন্ধ ও ইনভেস্টিগেটিভ রিপোর্ট পড়তে পারবে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. সাংবাদিক ও কলামিস্টরা কীভাবে আয়ের অংশ পাবেন?</h3>
+                        <p class="text-gray-300 leading-relaxed">সাংবাদিকদের কলাম যতজন সাবস্ক্রাইবার পড়বে এবং যা টিপস দেবে, তার সিংহভাগ সরাসরি তাদের ওয়ালেটে পেআউট করা হবে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ভুয়া কলাম বা ভুয়া আইডি কিভাবে রোখা হয়?</h3>
+                        <p class="text-gray-300 leading-relaxed">প্রতিটি সাংবাদিক ও কলামিস্টের NID ও সত্যতা ভেরিফিকেশনের পর নীল ভেরিফাইড জুরনালিস্ট ব্যাজ দেওয়া হয়।</p>
+                    </div>
+                </div>
+            </div>
+        @elseif($module['id'] === 'skill')
+            <!-- 10x Real-World Skill Bootcamps & Instructor LMS ERP Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-violet-400 bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+                        🎓 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        ভুয়া কোর্স নয়, স্বল্প খরচে বাস্তবমুখী প্রজেক্ট শিখুন, ক্যারিয়ার গড়ুন 🎓
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        এসএসসি/এইচএসসি পরবর্তী শিক্ষার্থীদের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Projects শিক্ষা মাত্র ৳১২০০ থেকে শুরু। সাথে মেন্টর ও একাডেমির জন্য অল-ইন-ওয়ান LMS ERP পোর্টাল।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-400 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-violet-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🎓 বাস্তবমুখী স্কিল কোর্স দেখুন (৳১২০০ থেকে শুরু)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
                         <!-- Top Bootcamp Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
                             <div class="flex items-center gap-3">
@@ -1866,8 +2138,400 @@
                                 </div>
                             </div>
                             <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
-=======
-<<<<<<< HEAD
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-violet-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-4xl shadow-xl shadow-violet-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-violet-500/20 text-violet-300 font-extrabold text-xs tracking-wider border border-violet-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Skill-এর বাস্তবমুখী প্রজেক্ট ও ইনস্ট্রাক্টর LMS ERP টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম বাস্তবমুখী স্কিল প্রজেক্ট, লাইভ অ্যাসাইনমেন্ট সাবমিশন, মেন্টরশিপ সাপোর্ট এবং ইনস্ট্রাক্টর LMS ERP সেলস পেআউটের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-violet-600/30 hover:bg-violet-600/50 border border-violet-500/40 text-xs font-bold text-violet-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে স্কিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই স্কিল & LMS প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে লার্নিং প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'bootcamp'; sandboxMessage = '✓ ৳১২০০ স্পোকেন ইংলিশ & কম্পিউটার আইটি বুটক্যাম্প কারিকুলাম সফলভাবে আনলকড: লাইভ ব্যাচ সিডিউল ও রিয়েল প্রজেক্ট ভল্ট এক্সেস সম্পন্ন।'" 
+                                :class="sandboxAction === 'bootcamp' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🎓</span>
+                            <h3 class="text-sm font-bold">১. ৳১২০০ বুটক্যাম্প কারিকুলাম</h3>
+                            <p class="text-xs text-gray-400 mt-1">Spoken English & IT বাস্তবমুখী প্রজেক্ট কোর্স আনলক।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'assignment'; sandboxMessage = '✓ স্টুডেন্ট প্র্যাকটিক্যাল অ্যাসাইনমেন্ট ফাইল সাবমিট করা হয়েছে: মেন্টর রিভিউ সম্পন্ন এবং ডিজিটাল ভেরিফাইড স্কিল সার্টিফিকেট জেনারেটেড।'" 
+                                :class="sandboxAction === 'assignment' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📝</span>
+                            <h3 class="text-sm font-bold">২. প্র্যাকটিক্যাল অ্যাসাইনমেন্ট & মেন্টর ফিডব্যাক</h3>
+                            <p class="text-xs text-gray-400 mt-1">সরাসরি মেন্টরদের কাছ থেকে কোশ্চেন-আনসার ও প্রজেক্ট রিভিউ।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'lms'; sandboxMessage = '✓ ইনস্ট্রাক্টর LMS ERP প্যানেল অ্যাক্টিভ: ২৫ জন স্টুডেন্ট এনরোলমেন্ট সেলস থেকে ৮৫% রেভিনিউ শেয়ার ওয়ালেটে পেআউট সম্পন্ন।'" 
+                                :class="sandboxAction === 'lms' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">👨‍🏫</span>
+                            <h3 class="text-sm font-bold">৩. ইনস্ট্রাক্টর LMS ERP & সেলস পেআউট</h3>
+                            <p class="text-xs text-gray-400 mt-1">লাইভ ব্যাচ ম্যানেজমেন্ট ও কোর্স শেয়ার উইথড্রয়াল।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-violet-950/40 border border-violet-500/40 text-violet-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ শিক্ষার্থীদের জন্য ৳১২০০ থেকে শুরু — ইনস্ট্রাক্টরদের জন্য সাশ্রয়ী LMS ERP
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Student Real-World Bootcamp Pack (৳1200+) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-violet-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-bold border border-violet-500/20">
+                                {{ $module['pricing_tiers']['learner']['badge'] ?? 'শিক্ষার্থী চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['learner']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['learner']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['learner']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-violet-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['learner']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['learner']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            কোর্স বুক করুন →
+                        </a>
+                    </div>
+
+                    <!-- Instructor LMS ERP Pack (৳500/mo + rev share) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#241033] to-[#121A29] border border-violet-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-violet-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় মেন্টর প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['instructor']['badge'] ?? 'জনপ্রিয় মেন্টর চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['instructor']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['instructor']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['instructor']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-violet-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['instructor']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['instructor']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm text-center shadow-lg shadow-violet-600/30 transition-all">
+                            ইন্সট্রাক্টর ইআরপি চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill & Learning Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        স্কিল লার্নিং কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎓 শিক্ষার্থী ও মেন্টরদের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-2xl mb-4 text-violet-400">
+                            🎓
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বাস্তবমুখী প্রজেক্ট কারিকুলাম</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            থিওরি নির্ভরতা মুক্ত সরাসরি বাস্তব কাজের প্রয়োগ যেমন Spoken English ও Web Projects।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
+                            👨‍🏫
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ইনস্ট্রাক্টর LMS ERP</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            লাইভ ব্যাচ সিডিউলিং, স্টুডেন্ট অ্যাসাইনমেন্ট এবং অটোমেটেড পেআউট লেজার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            💬
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">লাইভ মেন্টরশিপ সাপোর্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সরাসরি অভিজ্ঞ মেন্টরদের কাছ থেকে নিয়মিত ডাউট ক্লিয়ারিং ও প্রজেক্ট রিভিউ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            📜
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ভেরিফাইড স্কিল সার্টিফিকেট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            এনআইডি এনক্রিপ্টেড কিউআর ভেরিফাইড প্রফেশনাল ডিজিটাল স্কিল সার্টিফিকেট।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Career & Salary Boost Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        স্কিল & কেরিয়ার বৃদ্ধির হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন বাস্তবমুখী স্কিল প্রজেক্ট শিখলে আপনার আনুমানিক বেতন বৃদ্ধি
+                    </h2>
+
+                    <!-- Skill Level Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার বর্তমান স্কিল প্রজেক্ট সংখ্যা: <strong class="text-violet-400 text-lg" x-text="(studentCount / 10).toFixed(0) + ' টি বাস্তব প্রজেক্ট'"></strong>
+                        </label>
+                        <input type="range" min="10" max="100" step="10" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-violet-500">
+                    </div>
+
+                    <!-- Calculated Career Growth Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📈 আনুমানিক শুরুর বেতন</p>
+                            <p class="text-xl sm:text-2xl font-black text-violet-400 mt-1" x-text="'৳' + (studentCount * 400).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ জব পাওয়ার সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">৭৫% দ্রুত চাকরি</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ কোর্স ফি</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳১২০০ থেকে শুরু</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-violet-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-violet-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-violet-400 mt-1">Bootcamps & LMS ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. এসএসসি বা এইচএসসির পর কোন্ কোর্সগুলো দিয়ে শুরু করা উচিত?</h3>
+                        <p class="text-gray-300 leading-relaxed">বাস্তবমুখী কেরিয়ারের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Coding প্রজেক্ট কোর্সগুলোর দিয়ে শুরু করা উচিত।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. মেন্টরদের কাছ থেকে কীভাবে লাইভ হেল্প পাওয়া যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">প্রতিটি ব্যাচে সাপ্তাহিক লাইভ Q&A সেশন এবং অ্যাসাইনমেন্ট রিভিউতে মেন্টররা সরাসরি প্রজেক্টের ভুলভ্রান্তি শুধরে দেন।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ইনস্ট্রাক্টর LMS ERP কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">ইন্সট্রাক্টররা মাত্র ৳৫০০/মাস ও স্বল্প পার্সেন্টেজ শেয়ারে নিজের লার্নিং পোর্টাল চালু করতে পারেন, যেখানে লাইভ ব্যাচ ও অটোমেটেড পেআউট লেজার সংযুক্ত থাকে।</p>
+                    </div>
+                </div>
+            </div>
+        @elseif($module['id'] === 'civil')
+            <!-- 10x Civil Engineering, Site ERP & AI Structural Analysis Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        🏗️ {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        সিভিল সাইট ম্যানেজমেন্ট ডিজিটাইজ করুন, AI দিয়ে ম্যাপ ও খরচ এনালাইসিস করুন 🏗️
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        রড, সিমেন্ট ও বালি কাঁচামাল লেজার, সাইট কন্ট্রাক্টর বেতন ইআরপি, AI ম্যাপ এনালাইসিস এবং ভেরিফাইড সিভিল ইঞ্জিনিয়ার ও কন্ট্রাক্টর পেইড সার্চ ডিরেক্টরি।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white font-bold text-base shadow-xl shadow-amber-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
                         <!-- Top Site Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
                             <div class="flex items-center gap-3">
@@ -1907,8 +2571,400 @@
                                 </div>
                             </div>
                             <span class="w-3 h-3 rounded-full bg-amber-400 animate-ping"></span>
-=======
-<<<<<<< HEAD
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-4xl shadow-xl shadow-amber-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/20 text-amber-300 font-extrabold text-xs tracking-wider border border-amber-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Civil-এর সাইট ইআরপি ও AI ম্যাপ এনালাইসিস টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম সিভিল সাইট রড-সিমেন্ট হিসাব, রাজমিস্ত্রি মজুরি লেজার, AI সয়েল ম্যাপ এনালাইসিস এবং ভেরিফাইড ইঞ্জিনিয়ার সার্চের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-xs font-bold text-amber-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে সিভিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই সিভিল ইআরপি প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে সিভিল প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'material'; sandboxMessage = '✓ সাইট মেটেরিয়াল এন্ট্রি (৫ টন রড + ২০০ ব্যাগ সিমেন্ট) ও লেবার মজুরি (৳১২,৫০০) ইআরপি লেজারে সফলভাবে এন্টি এবং প্রজেক্ট ফাইল আপডেট।'" 
+                                :class="sandboxAction === 'material' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🏗️</span>
+                            <h3 class="text-sm font-bold">১. রড, সিমেন্ট ও লেবার মজুরি এন্ট্রি</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে সাইট মেটেরিয়াল কেনাকাটা ও রাজমিস্ত্রি বেতন হিসাব।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI ম্যাপ এনালাইসিস রিপোর্ট: সাইট সয়েল টেস্ট অনুযায়ী পাইলিং গভীরতা ৩৫ ফিট এবং কলাম সাইজ ১৮x২৪ ইঞ্চি রাখার সুপারিশ।'" 
+                                :class="sandboxAction === 'ai' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🤖</span>
+                            <h3 class="text-sm font-bold">২. AI সয়েল টেস্ট & ম্যাপ এনালাইসিস</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিল্ডিং ফ্লোর প্ল্যান ও লোড ক্যালকুলেশনে AI দিকনির্দেশনা।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'search'; sandboxMessage = '✓ ৳১০০ পেমেন্টে বুয়েট গ্র্যাজুয়েট সিভিল ইঞ্জিনিয়ার এবং অভিজ্ঞ কন্ট্রাক্টরের স্বচক্ষ ভেরিফাইড কন্টাক্ট ফাইল অনলক সম্পন্ন।'" 
+                                :class="sandboxAction === 'search' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🔍</span>
+                            <h3 class="text-sm font-bold">৩. ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ অনলক</h3>
+                            <p class="text-xs text-gray-400 mt-1">বাড়ি বানাতে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কাস্টমারদের জন্য ৳১০০ — ইঞ্জিনিয়ারিং ফার্মের জন্য সাশ্রয়ী ইআরপি প্যাক
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Client Verified Search Connect (৳100/search) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                {{ $module['pricing_tiers']['client']['badge'] ?? 'বাড়ি নির্মাণকারী চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['client']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['client']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['client']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['client']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['client']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-amber-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            ইঞ্জিনিয়ার সার্চ করুন →
+                        </a>
+                    </div>
+
+                    <!-- Engineering Firm ERP (৳800/month) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#332610] to-[#121A29] border border-amber-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-amber-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় ফার্ম প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
+                                {{ $module['pricing_tiers']['firm']['badge'] ?? 'জনপ্রিয় ফার্ম চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['firm']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['firm']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['firm']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['firm']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['firm']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-amber-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm text-center shadow-lg shadow-amber-600/30 transition-all">
+                            সাইট ইআরপি চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Civil & Construction Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        সিভিল সাইট কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏗️ ইঞ্জিনিয়ার, কন্ট্রাক্টর ও বাড়ি নির্মাণকারীদের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
+                            🏗️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">সাইট ইআরপি & কাঁচামাল লেজার</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            রড, সিমেন্ট, বালি বাজার খরচ ও শ্রমিকদের দৈনন্দিন মজুরি হিসাব অটো লেজার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-yellow-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center text-2xl mb-4 text-yellow-400">
+                            🤖
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI সাইট & ম্যাপ এনালাইসিস</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            মেটেরিয়াল এস্টিমেশন, সয়েল টেস্ট রিপোর্ট ও ম্যাপ এনালাইসিসে AI এর স্মার্ট গাইড।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-orange-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-4 text-orange-400">
+                            🔍
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">পেইড ইঞ্জিনিয়ার & কন্ট্রাক্টর সার্চ</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সাধারণ বাড়ি বানাতে ইচ্ছুক কাস্টমারদের জন্য ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            📐
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">বিল্ডিং ম্যাপ & প্রজেক্ট ভল্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            আর্কিটেকচারাল ব্লুপ্রিন্ট, ক্যাড ফাইল ও প্রজেক্ট মাইলস্টোন ক্লাউড সিকিউরিটি।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Construction Cost & Material Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        নির্মাণ খরচ & AI সাশ্রয়ের হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন আপনার প্রস্তাবিত ভবনের স্কয়ার ফিট অনুযায়ী নির্মাণ খরচ ও AI সাশ্রয়
+                    </h2>
+
+                    <!-- Sqft Building Size Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার ভবনের মোট আয়তন (স্কয়ার ফিট): <strong class="text-amber-400 text-lg" x-text="(studentCount * 10).toLocaleString() + ' sqft'"></strong>
+                        </label>
+                        <input type="range" min="100" max="1000" step="25" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                    </div>
+
+                    <!-- Calculated Material Costs Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🧱 আনুমানিক রড-সিমেন্ট খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-amber-400 mt-1" x-text="'৳' + (studentCount * 18000).toLocaleString()"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">💡 AI ম্যাপ এনালাইসিসে সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 2200).toLocaleString()"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ সিভিল ইআরপি খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৬/দিন</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Civil</h3>
+                        <p class="text-[10px] text-amber-400 mt-1">Engineering ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. সিভিল সাইটের রড, সিমেন্ট ও মজুরি হিসাব কীভাবে রাখা যায়?</h3>
+                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি প্যানেল থেকে ১-ক্লিকে প্রতিটি চালানের রড, সিমেন্ট, বালির পরিমাণ এবং সাইট শ্রমিকদের দৈনিক হাজিরা ও মজুরি লেজারে সেভ করা যায়।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে সাইট ও ম্যাপ এনালাইসিস কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">AI সয়েল টেস্ট রিপোর্ট, স্ট্রাকচারাল ম্যাপ ও লোড ক্যালকুলেশন বিশ্লেষণ করে মেটেরিয়াল ওয়েস্টেজ কমানো এবং টেকসই ভবনের জন্য অটোমেটিক পরামর্শ প্রদান করে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. কাস্টমারদের জন্য ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">বাড়ি নির্মাণকারী ব্যক্তিরা ৳১০০ পেমেন্ট করে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার, কন্ট্রাক্টরদের লাইভ ফাইল এক্সেস এবং আর্কিটেকচারাল ম্যাপ নকশা ডাউনলোড করতে পারবেন।</p>
+                    </div>
+                </div>
+            </div>
+        @elseif($module['id'] === 'hotel')
+            <!-- 10x Hotel, Restaurant ERP & AI Growth Supervision Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        🏨 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টার ডিজিটাইজ করুন, AI দিয়ে ব্যবসা বাড়ান 🏨
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        দৈনিক কাঁচামাল বাজার খরচ, কর্মচারীদের বেতনের খাতা, AI বিজনেস তদারকি এবং রেস্টুরেন্টে ডাইনিং কাস্টমারদের সরাসরি ZengPay Coin দিয়ে ক্যাশলেস বিল পেমেন্ট নেওয়ার অল-ইন-ওয়ান অপারেটিং সিস্টেম।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🏨 হোটেল ও রেস্টুরেন্ট প্যানেল চালু করুন (৳৭০০/মাস)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
                         <!-- Top Merchant Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
                             <div class="flex items-center gap-3">
@@ -1945,7 +3001,371 @@
                                 <div>
                                     <p class="text-xs font-bold text-white">✓ ৳৮৫০ রেস্টুরেন্ট বিল (ZengPay Coin)</p>
                                     <p class="text-[10px] text-emerald-300">Coin TrxID: ZP99824X (ক্যাশলেস অটো লেজার)</p>
-=======
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs tracking-wider border border-emerald-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Hotel-এর AI তদারকি ও ZengPay কুইন টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম হোটেল ইআরপি, দৈনিক বাজার খরচ লেজার, AI গ্রোথ এডভাইজর এবং ZengPay Coin কুইন পেমেন্ট এক্সেপ্ট্যান্সের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-xs font-bold text-emerald-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে হোটেল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই হোটেল ও রেস্টুরেন্ট প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ইআরপি প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'expense'; sandboxMessage = '✓ দৈনিক বাজার খরচ (৳৪,৫০০) এবং কর্মচারীদের বেতন লেজারে সফলভাবে এন্টি সম্পন্ন এবং ক্যাশ ব্যালেন্স আপডেট।'" 
+                                :class="sandboxAction === 'expense' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📊</span>
+                            <h3 class="text-sm font-bold">১. দৈনিক বাজার খরচ ও বেতন হিসাব</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে কিসেন বাজার, স্টাফ বেতন ও অন্যান্য ওভারহেড এন্ট্রি।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI তদারকি রিপোর্ট: আগামী সপ্তাহে রেস্টুরেন্টে পিক কাস্টমার ভিড় সামলাতে চিকেন প্রিপারেশন ২৫% বৃদ্ধির ও অটো ডিসকাউন্ট সেট করার পরামর্শ।'" 
+                                :class="sandboxAction === 'ai' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🤖</span>
+                            <h3 class="text-sm font-bold">২. AI বিজনেস গ্রোথ পরামর্শ নিন</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিক্রি ও মুনাফা বাড়াতে AI স্বয়ংক্রিয় এনালাইসিস রিপোর্ট।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'coin'; sandboxMessage = '✓ কাস্টমার মো: রফিকুল ইসলাম-এর ৳৮৫০ রেস্টুরেন্ট বিল ZengPay Coin QR পেমেন্টে গৃহীত ও ডিজিটাল রসিদ ইস্যু সম্পন্ন।'" 
+                                :class="sandboxAction === 'coin' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🪙</span>
+                            <h3 class="text-sm font-bold">৩. ZengPay Coin কুইন পেমেন্ট কালেকশন</h3>
+                            <p class="text-xs text-gray-400 mt-1">কাস্টমারদের কাছে সরাসরি ZengPay কুইনে রেস্টুরেন্ট বিল জমা।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কোনো গোপন ফি নেই — সব হোটেল ও রেস্টুরেন্টের জন্য সাশ্রয়ী অল-ইন-ওয়ান প্যাক
+                    </h2>
+                </div>
+
+                <div class="max-w-xl mx-auto">
+                    <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#102923] to-[#121A29] border border-emerald-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden text-center">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় মার্চেন্ট প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['erp']['badge'] ?? 'জনপ্রিয় মার্চেন্ট চয়েস' }}
+                            </span>
+                            <h3 class="text-2xl font-black text-white mt-3">{{ $module['pricing_tiers']['erp']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['erp']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['erp']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-emerald-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['erp']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300 text-left max-w-md mx-auto">
+                                @foreach($module['pricing_tiers']['erp']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center shadow-lg shadow-emerald-600/30 transition-all">
+                            হোটেল & রেস্টুরেন্ট প্যাক চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel & Merchant Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        মার্চেন্ট কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏨 হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টারের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            📊
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">দৈনিক খরচ & বেতন হিসাব</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, ইউটিলিটি বিল ও কর্মচারীদের বেতন হিসাব লেজার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-teal-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-600/20 border border-teal-500/30 flex items-center justify-center text-2xl mb-4 text-teal-400">
+                            🤖
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI দিয়ে ব্যবসা তদারকি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কাস্টমার পিক ট্রাফিক, খাবার অপচয় ও বিক্রির ওপর ভিত্তি করে AI এর লাইভ গ্রোথ গাইডেন্স।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            🪙
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ZengPay কুইন পেমেন্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কাস্টমারদের রেস্টুরেন্ট বিল সরাসরি ZengPay Coin দিয়ে ক্যাশলেস কিউআরে গ্রহণ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            🏨
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">গেস্ট বুকিং & হল সূচি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            হোটেল রুম রিজার্ভেশন, গেস্ট সিকিউরিটি স্ক্যান ও কমিউনিটি সেন্টার হল বুকিং ক্যালেন্ডার।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic AI ROI & Revenue Growth Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        AI তদারকি ও লাভ বৃদ্ধির হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন Zengfy Hotel ইআরপি ব্যবহার করলে আপনার মাসে কত টাকা লাভ বৃদ্ধি পাবে
+                    </h2>
+
+                    <!-- Monthly Revenue Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার হোটেল/রেস্টুরেন্টের মাসিক বিক্রি কত? <strong class="text-emerald-400 text-lg" x-text="'৳' + (studentCount * 500).toLocaleString()"></strong>
+                        </label>
+                        <input type="range" min="100" max="2000" step="50" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                    </div>
+
+                    <!-- Calculated Savings Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📈 AI তদারকিতে লাভ বৃদ্ধি</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 75).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ হিসাব সংক্রান্ত সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-teal-400 mt-1">৮৫% সময় বাঁচবে</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy Hotel খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৩/দিন</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-emerald-400 mt-1">ERP & ZengPay Coin</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. দৈনিক খরচ ও স্টাফ বেতন কীভাবে ট্র্যাকিং করা যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি থেকে ১-ক্লিকে প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, বিদ্যুৎ বিল ও স্টাফ বেতন এন্ট্রি দিলে স্বয়ংক্রিয়ভাবে ক্যাশ ব্যালেন্স ও লেজার জেনারেট হয়।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে ব্যবসা তদারকি কীভাবে সাহায্য করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">AI সিস্টেম আপনার প্রতিদিনের বিক্রি, পিক কাস্টমার ট্রাফিক ও খাবার অপচয় বিশ্লেষণ করে বিক্রি ও মুনাফা বাড়ানোর নির্দিষ্ট পরামর্শ প্রদান করে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ZengPay Coin কীভাবে কাস্টমারদের থেকে গ্রহণ করব?</h3>
+                        <p class="text-gray-300 leading-relaxed">কাস্টমাররা রেস্টুরেন্টে খেয়ে কাউন্টারের ZengPay QR স্ক্যান করে সরাসরি ZengPay Coin টোকেনে বিল পরিশোধ করতে পারবে, যা সাথে সাথে আপনার প্যানেলে ক্যাশলেস হিসেবে জমা হবে।</p>
+                    </div>
+                </div>
+            </div>
+        @elseif($module['id'] === 'rent')
+            <!-- 10x Radius Rental Property & Verified Tenant Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-purple-400 bg-purple-500/10 border border-purple-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                        🔑 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        আপনার এলাকার ৫-১০ কিমি রেডিয়াসে সরাসরি বাড়িওয়ালার ফাঁকা বাসা খুঁজুন 🔑
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        সোশ্যাল ইকোসিস্টেমের কোটি কোটি ব্যবহারকারীর জন্য দালাল বা ব্রোকার ফি ছাড়া ৫-১০ কিমি ম্যাপ রেডিয়াসে ফাঁকা বাসা খোঁজা ও সরাসরি বাড়িওয়ালার সাথে যোগাযোগের অল-ইন-ওয়ান স্মার্ট সমাধান।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-purple-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🔍 ৫-১০ কিমি রেডিয়াসে বাসা খুঁজুন (৳৫০)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স রেডিয়াস
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
                         <!-- Top Location Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
                             <div class="flex items-center gap-3">
@@ -1983,13 +3403,9 @@
                                 <div>
                                     <p class="text-xs font-bold text-white">✓ ৳৫০ সার্চ কানেক্ট ফি পরিশোধিত</p>
                                     <p class="text-[10px] text-purple-300">TrxID: RENT77X992 (বাড়ির মালিকের সরাসরি নম্বর রিলিজড)</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
                                 </div>
                             </div>
                             <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </div>
 
                     </div>
@@ -1999,23 +3415,7 @@
             <!-- Video Showcase Section (Upcoming Banner) -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-8">
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-=======
                     <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
@@ -2023,50 +3423,6 @@
                     </h2>
                 </div>
 
-<<<<<<< HEAD
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                    <div class="relative z-10 space-y-4">
-                        <div class="w-20 h-20 mx-auto rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-4xl shadow-xl shadow-indigo-500/10 animate-pulse">
-                            🎬
-                        </div>
-
-                        <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 font-extrabold text-xs tracking-wider border border-indigo-400/30 uppercase">
-=======
-<<<<<<< HEAD
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-violet-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                    <div class="relative z-10 space-y-4">
-                        <div class="w-20 h-20 mx-auto rounded-full bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-4xl shadow-xl shadow-violet-500/10 animate-pulse">
-                            🎬
-                        </div>
-
-                        <span class="inline-block px-4 py-1.5 rounded-full bg-violet-500/20 text-violet-300 font-extrabold text-xs tracking-wider border border-violet-400/30 uppercase">
-=======
-<<<<<<< HEAD
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                    <div class="relative z-10 space-y-4">
-                        <div class="w-20 h-20 mx-auto rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-4xl shadow-xl shadow-amber-500/10 animate-pulse">
-                            🎬
-                        </div>
-
-                        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/20 text-amber-300 font-extrabold text-xs tracking-wider border border-amber-400/30 uppercase">
-=======
-<<<<<<< HEAD
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                    <div class="relative z-10 space-y-4">
-                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/10 animate-pulse">
-                            🎬
-                        </div>
-
-                        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs tracking-wider border border-emerald-400/30 uppercase">
-=======
                 <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-purple-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -2076,66 +3432,10 @@
                         </div>
 
                         <span class="inline-block px-4 py-1.5 rounded-full bg-purple-500/20 text-purple-300 font-extrabold text-xs tracking-wider border border-purple-400/30 uppercase">
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                             Video Tutorial Upcoming
                         </span>
 
                         <h3 class="text-xl sm:text-2xl font-black text-white">
-<<<<<<< HEAD
-                            Zengfy Journal-এর প্রিমিয়াম কলাম ও সাংবাদিক ইআরপি টিউটোরিয়াল তৈরি হচ্ছে!
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
-                            আমাদের প্রোডাক্ট টিম ভেরিফাইড সাংবাদিক প্রোফাইল, প্রিমিয়াম কলাম পাবলিশিং এবং রিডার সাবক্রিপশন পেআউটের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
-                        </p>
-
-                        <div class="pt-2">
-                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-xs font-bold text-indigo-200 transition-all">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                <span>স্যান্ডবক্সে জার্নাল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
-=======
-<<<<<<< HEAD
-                            Zengfy Skill-এর বাস্তবমুখী প্রজেক্ট ও ইনস্ট্রাক্টর LMS ERP টিউটোরিয়াল তৈরি হচ্ছে!
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
-                            আমাদের প্রোডাক্ট টিম বাস্তবমুখী স্কিল প্রজেক্ট, লাইভ অ্যাসাইনমেন্ট সাবমিশন, মেন্টরশিপ সাপোর্ট এবং ইনস্ট্রাক্টর LMS ERP সেলস পেআউটের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
-                        </p>
-
-                        <div class="pt-2">
-                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-violet-600/30 hover:bg-violet-600/50 border border-violet-500/40 text-xs font-bold text-violet-200 transition-all">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                <span>স্যান্ডবক্সে স্কিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
-=======
-<<<<<<< HEAD
-                            Zengfy Civil-এর সাইট ইআরপি ও AI ম্যাপ এনালাইসিস টিউটোরিয়াল তৈরি হচ্ছে!
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
-                            আমাদের প্রোডাক্ট টিম সিভিল সাইট রড-সিমেন্ট হিসাব, রাজমিস্ত্রি মজুরি লেজার, AI সয়েল ম্যাপ এনালাইসিস এবং ভেরিফাইড ইঞ্জিনিয়ার সার্চের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
-                        </p>
-
-                        <div class="pt-2">
-                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-xs font-bold text-amber-200 transition-all">
-                                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                                <span>স্যান্ডবক্সে সিভিল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
-=======
-<<<<<<< HEAD
-                            Zengfy Hotel-এর AI তদারকি ও ZengPay কুইন টিউটোরিয়াল তৈরি হচ্ছে!
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
-                            আমাদের প্রোডাক্ট টিম হোটেল ইআরপি, দৈনিক বাজার খরচ লেজার, AI গ্রোথ এডভাইজর এবং ZengPay Coin কুইন পেমেন্ট এক্সেপ্ট্যান্সের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
-                        </p>
-
-                        <div class="pt-2">
-                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-xs font-bold text-emerald-200 transition-all">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                <span>স্যান্ডবক্সে হোটেল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
-=======
                             Zengfy Rent-এর ৫-১০ কিমি ম্যাপ ও লিস্টিং টিউটোরিয়াল তৈরি হচ্ছে!
                         </h3>
 
@@ -2147,10 +3447,6 @@
                             <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-xs font-bold text-purple-200 transition-all">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                                 <span>স্যান্ডবক্সে রেডিয়াস ম্যাপ ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                             </a>
                         </div>
                     </div>
@@ -2159,50 +3455,6 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-<<<<<<< HEAD
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 shadow-2xl backdrop-blur-2xl">
-                    <div class="text-center max-w-2xl mx-auto mb-8">
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
-                            স্যান্ডবক্স ড্রাই-রান
-                        </span>
-                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                            🎮 সাইনআপ ছাড়া এখনই জার্নাল & রিডার প্যানেল স্যান্ডবক্সে টেস্ট করুন
-                        </h2>
-                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে জার্নাল প্যানেলের রিয়েল-টাইম ক্লিclickable ক্ষমতা পরীক্ষা করুন:</p>
-=======
-<<<<<<< HEAD
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 shadow-2xl backdrop-blur-2xl">
-                    <div class="text-center max-w-2xl mx-auto mb-8">
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
-                            স্যান্ডবক্স ড্রাই-রান
-                        </span>
-                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                            🎮 সাইনআপ ছাড়া এখনই স্কিল & LMS প্যানেল স্যান্ডবক্সে টেস্ট করুন
-                        </h2>
-                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে লার্নিং প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
-=======
-<<<<<<< HEAD
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
-                    <div class="text-center max-w-2xl mx-auto mb-8">
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
-                            স্যান্ডবক্স ড্রাই-রান
-                        </span>
-                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                            🎮 সাইনআপ ছাড়া এখনই সিভিল ইআরপি প্যানেল স্যান্ডবক্সে টেস্ট করুন
-                        </h2>
-                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে সিভিল প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
-=======
-<<<<<<< HEAD
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 shadow-2xl backdrop-blur-2xl">
-                    <div class="text-center max-w-2xl mx-auto mb-8">
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-                            স্যান্ডবক্স ড্রাই-রান
-                        </span>
-                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                            🎮 সাইনআপ ছাড়া এখনই হোটেল ও রেস্টুরেন্ট প্যানেল স্যান্ডবক্সে টেস্ট করুন
-                        </h2>
-                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ইআরপি প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
-=======
                 <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-purple-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
@@ -2212,110 +3464,10 @@
                             🎮 সাইনআপ ছাড়া এখনই বাসা ভাড়া প্যানেল স্যান্ডবক্সে টেস্ট করুন
                         </h2>
                         <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে রেন্ট প্যানেলের রিয়েল-টাইম ক্লিclickable ক্ষমতা পরীক্ষা করুন:</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     </div>
 
                     <!-- 3 Clickable Dry-Run Action Buttons -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-<<<<<<< HEAD
-                        <button @click="sandboxAction = 'reader'; sandboxMessage = '✓ ৳৫০ রিডার সাবস্ক্রিপশন পাস অ্যাক্টিভেটেড: প্রিমিয়াম ইনভেস্টিগেটিভ কলাম ও নিবন্ধ আনলকড।'" 
-                                :class="sandboxAction === 'reader' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">📰</span>
-                            <h3 class="text-sm font-bold">১. ৳৫০ রিডার সাবস্ক্রিপশন পাস</h3>
-                            <p class="text-xs text-gray-400 mt-1">বিজ্ঞাপনমুক্ত প্রিমিয়াম কলাম ও ব্লগ এক্সেস।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'verify'; sandboxMessage = '✓ NID সাংবাদিক ভেরিফিকেশন ড্রাই-রান সম্পন্ন: নীল ভেরিফাইড জুরনালিস্ট ব্যাজ প্রকাশিত।'" 
-                                :class="sandboxAction === 'verify' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🛡️</span>
-                            <h3 class="text-sm font-bold">২. NID ভেরিফাইড সাংবাদিক প্রোফাইল</h3>
-                            <p class="text-xs text-gray-400 mt-1">ভুয়া সংবাদ মুক্ত প্রফেশনাল ট্রাস্ট ব্যাজ।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'writer_erp'; sandboxMessage = '✓ ৳২০০ সাংবাদিক পাবলিশিং ইআরপি অ্যাক্টিভ: ১৫০ জন রিডার সাবস্ক্রিপশন থেকে ৳৭,৫০০ পেআউট ওয়ালেটে জমা।'" 
-                                :class="sandboxAction === 'writer_erp' ? 'bg-indigo-600 border-indigo-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">✍️</span>
-                            <h3 class="text-sm font-bold">৩. ৳২০০ সাংবাদিক পাবলিশিং ইআরপি</h3>
-                            <p class="text-xs text-gray-400 mt-1">কলাম ড্রাফট, নিউজলেটার ও রিডার পেআউট।</p>
-=======
-<<<<<<< HEAD
-                        <button @click="sandboxAction = 'bootcamp'; sandboxMessage = '✓ ৳১২০০ স্পোকেন ইংলিশ & কম্পিউটার আইটি বুটক্যাম্প কারিকুলাম সফলভাবে আনলকড: লাইভ ব্যাচ সিডিউল ও রিয়েল প্রজেক্ট ভল্ট এক্সেস সম্পন্ন।'" 
-                                :class="sandboxAction === 'bootcamp' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🎓</span>
-                            <h3 class="text-sm font-bold">১. ৳১২০০ বুটক্যাম্প কারিকুলাম</h3>
-                            <p class="text-xs text-gray-400 mt-1">Spoken English & IT বাস্তবমুখী প্রজেক্ট কোর্স আনলক।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'assignment'; sandboxMessage = '✓ স্টুডেন্ট প্র্যাকটিক্যাল অ্যাসাইনমেন্ট ফাইল সাবমিট করা হয়েছে: মেন্টর রিভিউ সম্পন্ন এবং ডিজিটাল ভেরিফাইড স্কিল সার্টিফিকেট জেনারেটেড।'" 
-                                :class="sandboxAction === 'assignment' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">📝</span>
-                            <h3 class="text-sm font-bold">২. প্র্যাকটিক্যাল অ্যাসাইনমেন্ট & মেন্টর ফিডব্যাক</h3>
-                            <p class="text-xs text-gray-400 mt-1">সরাসরি মেন্টরদের কাছ থেকে কোশ্চেন-আনসার ও প্রজেক্ট রিভিউ।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'lms'; sandboxMessage = '✓ ইনস্ট্রাক্টর LMS ERP প্যানেল অ্যাক্টিভ: ২৫ জন স্টুডেন্ট এনরোলমেন্ট সেলস থেকে ৮৫% রেভিনিউ শেয়ার ওয়ালেটে পেআউট সম্পন্ন।'" 
-                                :class="sandboxAction === 'lms' ? 'bg-violet-600 border-violet-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">👨‍🏫</span>
-                            <h3 class="text-sm font-bold">৩. ইনস্ট্রাক্টর LMS ERP & সেলস পেআউট</h3>
-                            <p class="text-xs text-gray-400 mt-1">লাইভ ব্যাচ ম্যানেজমেন্ট ও কোর্স শেয়ার উইথড্রয়াল।</p>
-=======
-<<<<<<< HEAD
-                        <button @click="sandboxAction = 'material'; sandboxMessage = '✓ সাইট মেটেরিয়াল এন্ট্রি (৫ টন রড + ২০০ ব্যাগ সিমেন্ট) ও লেবার মজুরি (৳১২,৫০০) ইআরপি লেজারে সফলভাবে এন্টি এবং প্রজেক্ট ফাইল আপডেট।'" 
-                                :class="sandboxAction === 'material' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🏗️</span>
-                            <h3 class="text-sm font-bold">১. রড, সিমেন্ট ও লেবার মজুরি এন্ট্রি</h3>
-                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে সাইট মেটেরিয়াল কেনাকাটা ও রাজমিস্ত্রি বেতন হিসাব।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI ম্যাপ এনালাইসিস রিপোর্ট: সাইট সয়েল টেস্ট অনুযায়ী পাইলিং গভীরতা ৩৫ ফিট এবং কলাম সাইজ ১৮x২৪ ইঞ্চি রাখার সুপারিশ।'" 
-                                :class="sandboxAction === 'ai' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🤖</span>
-                            <h3 class="text-sm font-bold">২. AI সয়েল টেস্ট & ম্যাপ এনালাইসিস</h3>
-                            <p class="text-xs text-gray-400 mt-1">বিল্ডিং ফ্লোর প্ল্যান ও লোড ক্যালকুলেশনে AI দিকনির্দেশনা।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'search'; sandboxMessage = '✓ ৳১০০ পেমেন্টে বুয়েট গ্র্যাজুয়েট সিভিল ইঞ্জিনিয়ার এবং অভিজ্ঞ কন্ট্রাক্টরের স্বচক্ষ ভেরিফাইড কন্টাক্ট ফাইল অনলক সম্পন্ন।'" 
-                                :class="sandboxAction === 'search' ? 'bg-amber-600 border-amber-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🔍</span>
-                            <h3 class="text-sm font-bold">৩. ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ অনলক</h3>
-                            <p class="text-xs text-gray-400 mt-1">বাড়ি বানাতে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।</p>
-=======
-<<<<<<< HEAD
-                        <button @click="sandboxAction = 'expense'; sandboxMessage = '✓ দৈনিক বাজার খরচ (৳৪,৫০০) এবং কর্মচারীদের বেতন লেজারে সফলভাবে এন্টি সম্পন্ন এবং ক্যাশ ব্যালেন্স আপডেট।'" 
-                                :class="sandboxAction === 'expense' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">📊</span>
-                            <h3 class="text-sm font-bold">১. দৈনিক বাজার খরচ ও বেতন হিসাব</h3>
-                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে কিসেন বাজার, স্টাফ বেতন ও অন্যান্য ওভারহেড এন্ট্রি।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI তদারকি রিপোর্ট: আগামী সপ্তাহে রেস্টুরেন্টে পিক কাস্টমার ভিড় সামলাতে চিকেন প্রিপারেশন ২৫% বৃদ্ধির ও অটো ডিসকাউন্ট সেট করার পরামর্শ।'" 
-                                :class="sandboxAction === 'ai' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🤖</span>
-                            <h3 class="text-sm font-bold">২. AI বিজনেস গ্রোথ পরামর্শ নিন</h3>
-                            <p class="text-xs text-gray-400 mt-1">বিক্রি ও মুনাফা বাড়াতে AI স্বয়ংক্রিয় এনালাইসিস রিপোর্ট।</p>
-                        </button>
-
-                        <button @click="sandboxAction = 'coin'; sandboxMessage = '✓ কাস্টমার মো: রফিকুল ইসলাম-এর ৳৮৫০ রেস্টুরেন্ট বিল ZengPay Coin QR পেমেন্টে গৃহীত ও ডিজিটাল রসিদ ইস্যু সম্পন্ন।'" 
-                                :class="sandboxAction === 'coin' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
-                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
-                            <span class="text-2xl mb-2 block">🪙</span>
-                            <h3 class="text-sm font-bold">৩. ZengPay Coin কুইন পেমেন্ট কালেকশন</h3>
-                            <p class="text-xs text-gray-400 mt-1">কাস্টমারদের কাছে সরাসরি ZengPay কুইনে রেস্টুরেন্ট বিল জমা।</p>
-=======
                         <button @click="sandboxAction = 'radius'; sandboxMessage = '✓ ৫ কিমি রেডিয়াস সিলেক্টেড: মিরপুর ১০ জোনে ৩টি ভেরিফাইড ফ্ল্যাট ফাঁকা পাওয়া গেছে এবং সরাসরি ম্যাপে পিন দৃশ্যমান।'" 
                                 :class="sandboxAction === 'radius' ? 'bg-purple-600 border-purple-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
                                 class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
@@ -2338,36 +3490,13 @@
                             <span class="text-2xl mb-2 block">🏠</span>
                             <h3 class="text-sm font-bold">৩. বাড়িওয়ালার বাসা ফাঁকা বিজ্ঞাপন এন্ট্রি</h3>
                             <p class="text-xs text-gray-400 mt-1">স্মার্ট প্রপার্টি আইডি সত্যায়ন সহ সোশ্যাল ফিডে লাইভ বিজ্ঞাপন।</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </button>
                     </div>
 
                     <!-- Sandbox Output Notification Window -->
                     <div x-show="sandboxMessage" x-cloak x-transition
-<<<<<<< HEAD
-                         class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/40 text-indigo-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
-                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-=======
-<<<<<<< HEAD
-                         class="p-4 rounded-2xl bg-violet-950/40 border border-violet-500/40 text-violet-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
-                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-=======
-<<<<<<< HEAD
-                         class="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
-                        <span class="w-3 h-3 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
-=======
-<<<<<<< HEAD
-                         class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
-=======
                          class="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/40 text-purple-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
                         <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         <span x-text="sandboxMessage"></span>
                     </div>
                 </div>
@@ -2376,195 +3505,15 @@
             <!-- Transparent Pricing Tier Section -->
             <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
-                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🏷️ পাঠকদের জন্য ৳৫০/মাস — সাংবাদিকদের জন্য ৳২০০/মাস অল-ইন-ওয়ান ইআরপি
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
-                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🏷️ শিক্ষার্থীদের জন্য ৳১২০০ থেকে শুরু — ইনস্ট্রাক্টরদের জন্য সাশ্রয়ী LMS ERP
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-<<<<<<< HEAD
-                    <!-- Reader Subscription Pass (৳50/mo) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
-                        <div>
-                            <span class="px-3.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">
-                                {{ $module['pricing_tiers']['reader']['badge'] ?? 'পাঠক চয়েস' }}
-                            </span>
-                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['reader']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['reader']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['reader']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-indigo-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['reader']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300">
-                                @foreach($module['pricing_tiers']['reader']['features'] as $feat)
-=======
-                    <!-- Student Real-World Bootcamp Pack (৳1200+) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-violet-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
-                        <div>
-                            <span class="px-3.5 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-bold border border-violet-500/20">
-                                {{ $module['pricing_tiers']['learner']['badge'] ?? 'শিক্ষার্থী চয়েস' }}
-                            </span>
-                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['learner']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['learner']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['learner']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-violet-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['learner']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300">
-                                @foreach($module['pricing_tiers']['learner']['features'] as $feat)
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                                    <li class="flex items-center gap-2">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <span>{{ $feat }}</span>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
-                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
-<<<<<<< HEAD
-                            রিডার পাস নিন →
-                        </a>
-                    </div>
-
-                    <!-- Journalist ERP Pack (৳200/mo) -->
-                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#101433] to-[#121A29] border border-indigo-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-indigo-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
-                            সাংবাদিক প্যাক
-=======
-                            কোর্স বুক করুন →
-                        </a>
-                    </div>
-
-                    <!-- Instructor LMS ERP Pack (৳500/mo + rev share) -->
-                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#241033] to-[#121A29] border border-violet-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-violet-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
-                            জনপ্রিয় মেন্টর প্যাক
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
-                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🏷️ কাস্টমারদের জন্য ৳১০০ — ইঞ্জিনিয়ারিং ফার্মের জন্য সাশ্রয়ী ইআরপি প্যাক
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🏷️ কোনো গোপন ফি নেই — সব হোটেল ও রেস্টুরেন্টের জন্য সাশ্রয়ী অল-ইন-ওয়ান প্যাক
-                    </h2>
-                </div>
-
-                <div class="max-w-xl mx-auto">
-                    <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#102923] to-[#121A29] border border-emerald-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden text-center">
-                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
-                            জনপ্রিয় মার্চেন্ট প্যাক
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                        </div>
-
-                        <div>
-                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
-<<<<<<< HEAD
-                                {{ $module['pricing_tiers']['writer']['badge'] ?? 'সাংবাদিক চয়েস' }}
-                            </span>
-                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['writer']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['writer']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['writer']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-indigo-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['writer']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300">
-                                @foreach($module['pricing_tiers']['writer']['features'] as $feat)
-                                    <li class="flex items-center gap-2">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-=======
-<<<<<<< HEAD
-                                {{ $module['pricing_tiers']['instructor']['badge'] ?? 'জনপ্রিয় মেন্টর চয়েস' }}
-                            </span>
-                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['instructor']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['instructor']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['instructor']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-violet-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['instructor']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300">
-                                @foreach($module['pricing_tiers']['instructor']['features'] as $feat)
-                                    <li class="flex items-center gap-2">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-=======
-                                {{ $module['pricing_tiers']['erp']['badge'] ?? 'জনপ্রিয় মার্চেন্ট চয়েস' }}
-                            </span>
-                            <h3 class="text-2xl font-black text-white mt-3">{{ $module['pricing_tiers']['erp']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['erp']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['erp']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-emerald-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['erp']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300 text-left max-w-md mx-auto">
-                                @foreach($module['pricing_tiers']['erp']['features'] as $feat)
-=======
                     <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
                         স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
                         🏷️ বাসা সন্ধানকারী ও বাড়িওয়ালা উভয়ের জন্য সাশ্রয়ী প্ল্যান
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                     </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-<<<<<<< HEAD
-                    <!-- Client Verified Search Connect (৳100/search) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
-                        <div>
-                            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
-                                {{ $module['pricing_tiers']['client']['badge'] ?? 'বাড়ি নির্মাণকারী চয়েস' }}
-                            </span>
-                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['client']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['client']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['client']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['client']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300">
-                                @foreach($module['pricing_tiers']['client']['features'] as $feat)
-                                    <li class="flex items-center gap-2">
-                                        <span class="text-amber-400 font-bold">✓</span>
-=======
                     <!-- Tenant Search Connect Pack (৳50/search) -->
                     <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-purple-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
@@ -2582,12 +3531,8 @@
 
                             <ul class="space-y-3 text-xs text-gray-300">
                                 @foreach($module['pricing_tiers']['tenant']['features'] as $feat)
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
                                     <li class="flex items-center gap-2">
                                         <span class="text-emerald-400 font-bold">✓</span>
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                                         <span>{{ $feat }}</span>
                                     </li>
                                 @endforeach
@@ -2595,48 +3540,6 @@
                         </div>
 
                         <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
-<<<<<<< HEAD
-                           class="mt-8 w-full py-4 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm text-center shadow-lg shadow-indigo-600/30 transition-all">
-                            সাংবাদিক ইআরপি চালু করুন →
-=======
-<<<<<<< HEAD
-                           class="mt-8 w-full py-4 px-6 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm text-center shadow-lg shadow-violet-600/30 transition-all">
-                            ইন্সট্রাক্টর ইআরপি চালু করুন →
-=======
-<<<<<<< HEAD
-                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
-                            ইঞ্জিনিয়ার সার্চ করুন →
-                        </a>
-                    </div>
-
-                    <!-- Engineering Firm ERP (৳800/month) -->
-                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#332610] to-[#121A29] border border-amber-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-amber-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
-                            জনপ্রিয় ফার্ম প্যাক
-                        </div>
-
-                        <div>
-                            <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
-                                {{ $module['pricing_tiers']['firm']['badge'] ?? 'জনপ্রিয় ফার্ম চয়েস' }}
-                            </span>
-                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['firm']['name'] }}</h3>
-
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['firm']['amount'] }}</span>
-                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['firm']['period'] }}</span>
-                            </div>
-
-                            <p class="text-xs text-amber-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['firm']['highlight'] }}</p>
-
-                            <ul class="space-y-3 text-xs text-gray-300">
-                                @foreach($module['pricing_tiers']['firm']['features'] as $feat)
-                                    <li class="flex items-center gap-2">
-                                        <span class="text-amber-400 font-bold">✓</span>
-=======
-<<<<<<< HEAD
-                           class="mt-8 w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center shadow-lg shadow-emerald-600/30 transition-all">
-                            হোটেল & রেস্টুরেন্ট প্যাক চালু করুন →
-=======
                            class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                             বাসা সার্চ চালু করুন →
                         </a>
@@ -2665,7 +3568,6 @@
                                 @foreach($module['pricing_tiers']['landlord']['features'] as $feat)
                                     <li class="flex items-center gap-2">
                                         <span class="text-emerald-400 font-bold">✓</span>
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
                                         <span>{{ $feat }}</span>
                                     </li>
                                 @endforeach
@@ -2673,61 +3575,13 @@
                         </div>
 
                         <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
-<<<<<<< HEAD
-                           class="mt-8 w-full py-4 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm text-center shadow-lg shadow-amber-600/30 transition-all">
-                            সাইট ইআরপি চালু করুন →
-=======
                            class="mt-8 w-full py-4 px-6 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm text-center shadow-lg shadow-purple-600/30 transition-all">
                             বাসা ফাঁকা বিজ্ঞাপন দিন →
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </a>
                     </div>
                 </div>
             </div>
 
-<<<<<<< HEAD
-            <!-- Journal & Media Power Matrix (4 Control Levers) -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
-                        জার্নাল ও মিডিয়া কন্ট্রোল সেন্টার
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        📰 পাঠক ও সাংবাদিকদের হাতে যে ৪টি ক্ষমতা থাকবে
-=======
-<<<<<<< HEAD
-            <!-- Skill & Learning Power Matrix (4 Control Levers) -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
-                        স্কিল লার্নিং কন্ট্রোল সেন্টার
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🎓 শিক্ষার্থী ও মেন্টরদের হাতে যে ৪টি ক্ষমতা থাকবে
-=======
-<<<<<<< HEAD
-            <!-- Civil & Construction Power Matrix (4 Control Levers) -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
-                        সিভিল সাইট কন্ট্রোল সেন্টার
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🏗️ ইঞ্জিনিয়ার, কন্ট্রাক্টর ও বাড়ি নির্মাণকারীদের হাতে যে ৪টি ক্ষমতা থাকবে
-=======
-<<<<<<< HEAD
-            <!-- Hotel & Merchant Power Matrix (4 Control Levers) -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-                        মার্চেন্ট কন্ট্রোল সেন্টার
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        🏨 হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টারের হাতে যে ৪টি ক্ষমতা থাকবে
-=======
             <!-- Landlord Power Matrix (4 Control Levers) -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
@@ -2736,108 +3590,10 @@
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
                         🔑 বাসা সন্ধানকারী ও বাড়িওয়ালাদের হাতে যে ৪টি ক্ষমতা থাকবে
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<<<<<<< HEAD
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
-                            🛡️
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">ভেরিফাইড সাংবাদিক আইডি</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            ভুয়া সংবাদ প্রতিরোধে NID এনক্রিপ্টেড সত্যতা ব্যাজ ও প্রফেশনাল বায়ো।
-                        </p>
-                    </div>
-
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 text-blue-400">
-                            💸
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">পাঠক সাবস্ক্রিপশন & টিপস</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            পাঠকদের থেকে সরাসরি মাসিক সাবস্ক্রিপশন ফি ও টিপস সংগ্রহের ব্যবস্থা।
-=======
-<<<<<<< HEAD
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-2xl mb-4 text-violet-400">
-                            🎓
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">বাস্তবমুখী প্রজেক্ট কারিকুলাম</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            থিওরি নির্ভরতা মুক্ত সরাসরি বাস্তব কাজের প্রয়োগ যেমন Spoken English ও Web Projects।
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                        </p>
-                    </div>
-
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
-<<<<<<< HEAD
-                            ✍️
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">কলাম পাবলিশিং ইআরপি</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            সমৃদ্ধ আর্টিকেল ড্রাফট এডিটর, কপিরাইট নিরাপত্তা ও পাঠক এনালিটিক্স।
-=======
-                            👨‍🏫
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">ইনস্ট্রাক্টর LMS ERP</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            লাইভ ব্যাচ সিডিউলিং, স্টুডেন্ট অ্যাসাইনমেন্ট এবং অটোমেটেড পেআউট লেজার।
-=======
-<<<<<<< HEAD
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
-                            🏗️
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">সাইট ইআরপি & কাঁচামাল লেজার</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            রড, সিমেন্ট, বালি বাজার খরচ ও শ্রমিকদের দৈনন্দিন মজুরি হিসাব অটো লেজার।
-                        </p>
-                    </div>
-
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-yellow-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center text-2xl mb-4 text-yellow-400">
-                            🤖
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">AI সাইট & ম্যাপ এনালাইসিস</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            মেটেরিয়াল এস্টিমেশন, সয়েল টেস্ট রিপোর্ট ও ম্যাপ এনালাইসিসে AI এর স্মার্ট গাইড।
-                        </p>
-                    </div>
-
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-orange-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-4 text-orange-400">
-                            🔍
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">পেইড ইঞ্জিনিয়ার & কন্ট্রাক্টর সার্চ</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            সাধারণ বাড়ি বানাতে ইচ্ছুক কাস্টমারদের জন্য ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ ফাইল সার্চ।
-=======
-<<<<<<< HEAD
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
-                            📊
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">দৈনিক খরচ & বেতন হিসাব</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, ইউটিলিটি বিল ও কর্মচারীদের বেতন হিসাব লেজার।
-                        </p>
-                    </div>
-
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-teal-500/40 backdrop-blur-xl transition-all">
-                        <div class="w-12 h-12 rounded-2xl bg-teal-600/20 border border-teal-500/30 flex items-center justify-center text-2xl mb-4 text-teal-400">
-                            🤖
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">AI দিয়ে ব্যবসা তদারকি</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            কাস্টমার পিক ট্রাফিক, খাবার অপচয় ও বিক্রির ওপর ভিত্তি করে AI এর লাইভ গ্রোথ গাইডেন্স।
-=======
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
                             📍
@@ -2855,210 +3611,31 @@
                         <h3 class="text-lg font-bold text-white mb-2">দালালমুক্ত সরাসরি বাড়িওয়ালা কানেক্ট</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             কোনো তৃতীয় ব্যক্তির অতিরিক্ত কমিশন ছাড়া সরাসরি ভেরিফাইড বাড়ির মালিকের সাথে কথা।
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
-<<<<<<< HEAD
-                            💬
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">লাইভ মেন্টরশিপ সাপোর্ট</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            সরাসরি অভিজ্ঞ মেন্টরদের কাছ থেকে নিয়মিত ডাউট ক্লিয়ারিং ও প্রজেক্ট রিভিউ।
-=======
-<<<<<<< HEAD
-                            🪙
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">ZengPay কুইন পেমেন্ট</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            কাস্টমারদের রেস্টুরেন্ট বিল সরাসরি ZengPay Coin দিয়ে ক্যাশলেস কিউআরে গ্রহণ।
-=======
                             🔐
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">স্মার্ট ভেরিফাইড প্রপার্টি ভল্ট</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             ভূয়া পোস্ট রোধ করতে ভেরিফাইড এনআইডি প্রপার্টি আইডি ও সিকিউরিটি চেকিং।
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </p>
                     </div>
 
                     <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
-<<<<<<< HEAD
-                            📰
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">বিজ্ঞাপন মুক্ত রিডার মোড</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            পাঠকদের জন্য কোনো বিরক্তিকর বিজ্ঞাপন ছাড়াই পরিচ্ছন্ন পড়ার অভিজ্ঞতা।
-=======
-<<<<<<< HEAD
-                            📜
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">ভেরিফাইড স্কিল সার্টিফিকেট</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            এনআইডি এনক্রিপ্টেড কিউআর ভেরিফাইড প্রফেশনাল ডিজিটাল স্কিল সার্টিফিকেট।
-=======
-<<<<<<< HEAD
-                            📐
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">বিল্ডিং ম্যাপ & প্রজেক্ট ভল্ট</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            আর্কিটেকচারাল ব্লুপ্রিন্ট, ক্যাড ফাইল ও প্রজেক্ট মাইলস্টোন ক্লাউড সিকিউরিটি।
-=======
-<<<<<<< HEAD
-                            🏨
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">গেস্ট বুকিং & হল সূচি</h3>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            হোটেল রুম রিজার্ভেশন, গেস্ট সিকিউরিটি স্ক্যান ও কমিউনিটি সেন্টার হল বুকিং ক্যালেন্ডার।
-=======
                             📜
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">বিকাশ অটো-ভাড়া কালেকশন & রসিদ</h3>
                         <p class="text-xs text-gray-300 leading-relaxed">
                             বিকাশ/নগদে মাসিক ভাড়া কালেকশন ও স্বয়ংক্রিয় প্রপার্টি ডিজিটাল ভাড়া রসিদ প্রদান।
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </p>
                     </div>
                 </div>
             </div>
 
-<<<<<<< HEAD
-            <!-- Dynamic Writer Revenue & Audience Calculator -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
-                        লেখক আয় & পাঠক সংখ্যা হিসেব
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        💡 দেখুন স্বাধীন সাংবাদিকদের কলাম থেকে আনুমানিক মাসিক আয়
-                    </h2>
-
-                    <!-- Reader Count Slider -->
-                    <div class="my-8 max-w-xl mx-auto">
-                        <label class="text-sm font-semibold text-gray-300 block mb-2">
-                            আপনার পেয়িং পাঠক সংখ্যা: <strong class="text-indigo-400 text-lg" x-text="studentCount * 10 + ' জন সাবস্ক্রাইবার'"></strong>
-                        </label>
-                        <input type="range" min="10" max="100" step="5" x-model="studentCount" 
-                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-indigo-500">
-                    </div>
-
-                    <!-- Calculated Writer Revenue Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">📈 আনুমানিক মাসিক আয় (৮৫% পেআউট)</p>
-                            <p class="text-xl sm:text-2xl font-black text-indigo-400 mt-1" x-text="'৳' + (studentCount * 10 * 50 * 0.85).toLocaleString() + '/মাস'"></p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">🛡️ কপিরাইট নিরাপত্তা</p>
-                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">১০০% ভেরিফাইড</p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">🏷️ সাংবাদিক ইআরপি ফি</p>
-                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২০০ / মাস</p>
-=======
-<<<<<<< HEAD
-            <!-- Dynamic Career & Salary Boost Calculator -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
-                        স্কিল & কেরিয়ার বৃদ্ধির হিসেব
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        💡 দেখুন বাস্তবমুখী স্কিল প্রজেক্ট শিখলে আপনার আনুমানিক বেতন বৃদ্ধি
-                    </h2>
-
-                    <!-- Skill Level Slider -->
-                    <div class="my-8 max-w-xl mx-auto">
-                        <label class="text-sm font-semibold text-gray-300 block mb-2">
-                            আপনার বর্তমান স্কিল প্রজেক্ট সংখ্যা: <strong class="text-violet-400 text-lg" x-text="(studentCount / 10).toFixed(0) + ' টি বাস্তব প্রজেক্ট'"></strong>
-                        </label>
-                        <input type="range" min="10" max="100" step="10" x-model="studentCount" 
-                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-violet-500">
-                    </div>
-
-                    <!-- Calculated Career Growth Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">📈 আনুমানিক শুরুর বেতন</p>
-                            <p class="text-xl sm:text-2xl font-black text-violet-400 mt-1" x-text="'৳' + (studentCount * 400).toLocaleString() + '/মাস'"></p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">⏱️ জব পাওয়ার সময় সাশ্রয়</p>
-                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">৭৫% দ্রুত চাকরি</p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">🏷️ কোর্স ফি</p>
-                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳১২০০ থেকে শুরু</p>
-=======
-<<<<<<< HEAD
-            <!-- Dynamic Construction Cost & Material Calculator -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
-                        নির্মাণ খরচ & AI সাশ্রয়ের হিসেব
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        💡 দেখুন আপনার প্রস্তাবিত ভবনের স্কয়ার ফিট অনুযায়ী নির্মাণ খরচ ও AI সাশ্রয়
-                    </h2>
-
-                    <!-- Sqft Building Size Slider -->
-                    <div class="my-8 max-w-xl mx-auto">
-                        <label class="text-sm font-semibold text-gray-300 block mb-2">
-                            আপনার ভবনের মোট আয়তন (স্কয়ার ফিট): <strong class="text-amber-400 text-lg" x-text="(studentCount * 10).toLocaleString() + ' sqft'"></strong>
-                        </label>
-                        <input type="range" min="100" max="1000" step="25" x-model="studentCount" 
-                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-amber-500">
-                    </div>
-
-                    <!-- Calculated Material Costs Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">🧱 আনুমানিক রড-সিমেন্ট খরচ</p>
-                            <p class="text-xl sm:text-2xl font-black text-amber-400 mt-1" x-text="'৳' + (studentCount * 18000).toLocaleString()"></p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">💡 AI ম্যাপ এনালাইসিসে সাশ্রয়</p>
-                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 2200).toLocaleString()"></p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">🏷️ সিভিল ইআরপি খরচ</p>
-                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৬/দিন</p>
-=======
-<<<<<<< HEAD
-            <!-- Dynamic AI ROI & Revenue Growth Calculator -->
-            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-                        AI তদারকি ও লাভ বৃদ্ধির হিসেব
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
-                        💡 দেখুন Zengfy Hotel ইআরপি ব্যবহার করলে আপনার মাসে কত টাকা লাভ বৃদ্ধি পাবে
-                    </h2>
-
-                    <!-- Monthly Revenue Slider -->
-                    <div class="my-8 max-w-xl mx-auto">
-                        <label class="text-sm font-semibold text-gray-300 block mb-2">
-                            আপনার হোটেল/রেস্টুরেন্টের মাসিক বিক্রি কত? <strong class="text-emerald-400 text-lg" x-text="'৳' + (studentCount * 500).toLocaleString()"></strong>
-                        </label>
-                        <input type="range" min="100" max="2000" step="50" x-model="studentCount" 
-                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500">
-=======
             <!-- Dynamic Broker Savings & ROI Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
@@ -3076,26 +3653,11 @@
                         </label>
                         <input type="range" min="50" max="1000" step="50" x-model="studentCount" 
                                class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-purple-500">
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
                     </div>
 
                     <!-- Calculated Savings Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-<<<<<<< HEAD
-                            <p class="text-xs text-gray-400 font-medium">📈 AI তদারকিতে লাভ বৃদ্ধি</p>
-                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 75).toLocaleString() + '/মাস'"></p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">⏱️ হিসাব সংক্রান্ত সময় সাশ্রয়</p>
-                            <p class="text-xl sm:text-2xl font-black text-teal-400 mt-1">৮৫% সময় বাঁচবে</p>
-                        </div>
-
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
-                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy Hotel খরচ</p>
-                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৩/দিন</p>
-=======
                             <p class="text-xs text-gray-400 font-medium">💰 ব্রোকার/দালাল ফি সাশ্রয়</p>
                             <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 50).toLocaleString() + ' বেঁচে যাবে'"></p>
                         </div>
@@ -3108,10 +3670,6 @@
                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
                             <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy Rent ফি</p>
                             <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳৫০/সার্চ</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         </div>
                     </div>
                 </div>
@@ -3120,23 +3678,7 @@
             <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
-=======
-<<<<<<< HEAD
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
-=======
                     <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                         Zengfy Ecosystem
                     </span>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
@@ -3146,38 +3688,10 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-<<<<<<< HEAD
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-indigo-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-indigo-500/10">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
-                        <p class="text-[10px] text-indigo-400 mt-1">Journalism & Reader ERP</p>
-=======
-<<<<<<< HEAD
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-violet-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-violet-500/10">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
-                        <p class="text-[10px] text-violet-400 mt-1">Bootcamps & LMS ERP</p>
-=======
-<<<<<<< HEAD
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Civil</h3>
-                        <p class="text-[10px] text-amber-400 mt-1">Engineering ERP</p>
-=======
-<<<<<<< HEAD
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
-                        <p class="text-[10px] text-emerald-400 mt-1">ERP & ZengPay Coin</p>
-=======
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-purple-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-purple-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-purple-400 mt-1">Tenant & Radius Map</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
@@ -3186,80 +3700,16 @@
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
-                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
-                    </a>
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
-                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
-                    </a>
-
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
-                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-=======
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     </a>
 
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
@@ -3268,40 +3718,23 @@
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-<<<<<<< HEAD
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
-                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
-                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
-                        <p class="text-[10px] text-gray-400 mt-1">Bootcamps & LMS</p>
-                    </a>
-=======
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-=======
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
                     <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
                     </a>
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                 </div>
             </div>
 
@@ -3313,62 +3746,6 @@
 
                 <div class="space-y-4 text-xs sm:text-sm">
                     <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-<<<<<<< HEAD
-                        <h3 class="font-bold text-white mb-1">১. সাধারণ পাঠকরা কত টাকায় প্রিমিয়াম কলাম পড়তে পারবে?</h3>
-                        <p class="text-gray-300 leading-relaxed">পাঠকরা মাত্র ৳৫০/মাস সাবস্ক্রিপশন ফিতে সব ভেরিফাইড কলামিস্টদের এক্সক্লুসিভ নিবন্ধ ও ইনভেস্টিগেটিভ রিপোর্ট পড়তে পারবে।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">২. সাংবাদিক ও কলামিস্টরা কীভাবে আয়ের অংশ পাবেন?</h3>
-                        <p class="text-gray-300 leading-relaxed">সাংবাদিকদের কলাম যতজন সাবস্ক্রাইবার পড়বে এবং যা টিপস দেবে, তার সিংহভাগ সরাসরি তাদের ওয়ালেটে পেআউট করা হবে।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">৩. ভুয়া কলাম বা ভুয়া আইডি কিভাবে রোখা হয়?</h3>
-                        <p class="text-gray-300 leading-relaxed">প্রতিটি সাংবাদিক ও কলামিস্টের NID ও সত্যতা ভেরিফিকেশনের পর নীল ভেরিফাইড জুরনালিস্ট ব্যাজ দেওয়া হয়।</p>
-=======
-<<<<<<< HEAD
-                        <h3 class="font-bold text-white mb-1">১. এসএসসি বা এইচএসসির পর কোন্ কোর্সগুলো দিয়ে শুরু করা উচিত?</h3>
-                        <p class="text-gray-300 leading-relaxed">বাস্তবমুখী কেরিয়ারের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Coding প্রজেক্ট কোর্সগুলোর দিয়ে শুরু করা উচিত।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">২. মেন্টরদের কাছ থেকে কীভাবে লাইভ হেল্প পাওয়া যাবে?</h3>
-                        <p class="text-gray-300 leading-relaxed">প্রতিটি ব্যাচে সাপ্তাহিক লাইভ Q&A সেশন এবং অ্যাসাইনমেন্ট রিভিউতে মেন্টররা সরাসরি প্রজেক্টের ভুলভ্রান্তি শুধরে দেন।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">৩. ইনস্ট্রাক্টর LMS ERP কীভাবে কাজ করে?</h3>
-                        <p class="text-gray-300 leading-relaxed">ইন্সট্রাক্টররা মাত্র ৳৫০০/মাস ও স্বল্প পার্সেন্টেজ শেয়ারে নিজের লার্নিং পোর্টাল চালু করতে পারেন, যেখানে লাইভ ব্যাচ ও অটোমেটেড পেআউট লেজার সংযুক্ত থাকে।</p>
-=======
-<<<<<<< HEAD
-                        <h3 class="font-bold text-white mb-1">১. সিভিল সাইটের রড, সিমেন্ট ও মজুরি হিসাব কীভাবে রাখা যায়?</h3>
-                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি প্যানেল থেকে ১-ক্লিকে প্রতিটি চালানের রড, সিমেন্ট, বালির পরিমাণ এবং সাইট শ্রমিকদের দৈনিক হাজিরা ও মজুরি লেজারে সেভ করা যায়।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে সাইট ও ম্যাপ এনালাইসিস কীভাবে কাজ করে?</h3>
-                        <p class="text-gray-300 leading-relaxed">AI সয়েল টেস্ট রিপোর্ট, স্ট্রাকচারাল ম্যাপ ও লোড ক্যালকুলেশন বিশ্লেষণ করে মেটেরিয়াল ওয়েস্টেজ কমানো এবং টেকসই ভবনের জন্য অটোমেটিক পরামর্শ প্রদান করে।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">৩. কাস্টমারদের জন্য ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ কীভাবে কাজ করে?</h3>
-                        <p class="text-gray-300 leading-relaxed">বাড়ি নির্মাণকারী ব্যক্তিরা ৳১০০ পেমেন্ট করে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার, কন্ট্রাক্টরদের লাইভ ফাইল এক্সেস এবং আর্কিটেকচারাল ম্যাপ নকশা ডাউনলোড করতে পারবেন।</p>
-=======
-<<<<<<< HEAD
-                        <h3 class="font-bold text-white mb-1">১. দৈনিক খরচ ও স্টাফ বেতন কীভাবে ট্র্যাকিং করা যাবে?</h3>
-                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি থেকে ১-ক্লিকে প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, বিদ্যুৎ বিল ও স্টাফ বেতন এন্ট্রি দিলে স্বয়ংক্রিয়ভাবে ক্যাশ ব্যালেন্স ও লেজার জেনারেট হয়।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে ব্যবসা তদারকি কীভাবে সাহায্য করে?</h3>
-                        <p class="text-gray-300 leading-relaxed">AI সিস্টেম আপনার প্রতিদিনের বিক্রি, পিক কাস্টমার ট্রাফিক ও খাবার অপচয় বিশ্লেষণ করে বিক্রি ও মুনাফা বাড়ানোর নির্দিষ্ট পরামর্শ প্রদান করে।</p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
-                        <h3 class="font-bold text-white mb-1">৩. ZengPay Coin কীভাবে কাস্টমারদের থেকে গ্রহণ করব?</h3>
-                        <p class="text-gray-300 leading-relaxed">কাস্টমাররা রেস্টুরেন্টে খেয়ে কাউন্টারের ZengPay QR স্ক্যান করে সরাসরি ZengPay Coin টোকেনে বিল পরিশোধ করতে পারবে, যা সাথে সাথে আপনার প্যানেলে ক্যাশলেস হিসেবে জমা হবে।</p>
-=======
                         <h3 class="font-bold text-white mb-1">১. ৫-১০ কিমি রেডিয়াস ফিল্টার কীভাবে কাজ করে?</h3>
                         <p class="text-gray-300 leading-relaxed">আপনার বর্তমান জিও-লোকেশন অথবা সিলেক্ট করা ম্যানুয়াল লোকেশন ধরে ৫ বা ১০ কিমি বৃত্তাকার ব্যাসার্ধের ভেতরের সব ভেরিফাইড খালি বাসার তথ্য রিয়েল-টাইম ম্যাপে দেখায়।</p>
                     </div>
@@ -3381,10 +3758,6 @@
                     <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কন্টাক্ট নম্বর পেতে কত টাকা লাগে?</h3>
                         <p class="text-gray-300 leading-relaxed">বাসা সন্ধানকারী হিসেবে মাত্র ৳৫০ ফি দিয়ে সরাসরি বাড়িতে যেয়ে বাসা পছন্দ করার জন্য ভেরিফাইড বাড়ির মালিকের সঙ্গে কল ও সরাসরি কন্টাক্ট টোকেন রিলিজ করা যায়।</p>
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
                     </div>
                 </div>
             </div>
@@ -3459,23 +3832,7 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
-<<<<<<< HEAD
     @if(in_array($module['id'], ['school', 'law', 'pos', 'journal']))
-=======
-<<<<<<< HEAD
-    @if(in_array($module['id'], ['school', 'law', 'pos', 'skill']))
-=======
-<<<<<<< HEAD
-    @if(in_array($module['id'], ['school', 'law', 'pos', 'civil']))
-=======
-<<<<<<< HEAD
-    @if(in_array($module['id'], ['school', 'law', 'pos', 'hotel']))
-=======
-    @if(in_array($module['id'], ['school', 'law', 'pos', 'rent']))
->>>>>>> 6f3056afa31fd15aed11b2b8f8cba0df489f44f0
->>>>>>> b5b137631efec7cab528d4012f8ce778dec85c62
->>>>>>> 70959a9cac124c1f23952cf5fff31861b5aaae14
->>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
