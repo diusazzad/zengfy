@@ -49,7 +49,7 @@
                 </ul>
             </div>
 
-            <!-- Column 4: Corporate & Legal -->
+            <!-- Column 4: Corporate & Legal (2-Column Grid on Mobile) -->
             <div class="col-span-2 md:col-span-1 border-t border-white/5 md:border-none pt-4 md:pt-0">
                 <h3 class="text-white font-bold text-xs sm:text-sm mb-3 md:mb-4 tracking-wider uppercase">Company</h3>
                 <ul class="grid grid-cols-2 md:block gap-2.5 md:space-y-2.5 text-xs font-medium">
