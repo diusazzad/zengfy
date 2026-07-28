@@ -1623,6 +1623,440 @@
                     </div>
                 </div>
             </div>
+        @elseif($module['id'] === 'ngo')
+            <!-- 10x Transparent Donation & Relief Platform Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-rose-400 bg-rose-500/10 border border-rose-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
+                        ❤️ {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        ১00% স্বচ্ছ ডোনেশন পোর্টাল, সরাসরি সোশ্যাল কাস্টমারদের সহায়তায় দাঁড়ান ❤️
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        ভূয়া ফান্ডরাইজিং মুক্ত ভেরিফাইড প্রুফ ভেরিফিকেশন, রিয়েল-টাইম লাইভ ডোনেশন টিকার এবং সোশ্যাল ইকোসিস্টেমে লাইভ সেশন ব্রডকাস্টের মাধ্যমে সরাসরি সাধারণ মানুষের পাশে দাঁড়ান।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-white font-bold text-base shadow-xl shadow-rose-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>❤️ ডোনেশন লাইভ কন্ট্রিবিউট করুন (১০০% ফ্রি)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
+                        <!-- Top Relief Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-xl text-rose-400">
+                                    ❤️
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">সিলেট বন্যাকবলিত জরুরি ত্রাণ ফান্ড</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● ১০০% ভেরিফাইড প্রুফ ও সরাসরি এনজিও</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold border border-rose-500/20">
+                                লাইভ সেশন
+                            </span>
+                        </div>
+
+                        <!-- Live Fund Progress Bar Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">সংগৃহীত তহবিল: <strong class="text-white">৳৪,৫০,০০০</strong> / ৳৫,০০,০০০</span>
+                                <span class="text-rose-400 font-bold">৯০% অর্জিত</span>
+                            </div>
+                            <div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-rose-500 to-pink-500 w-[90%] rounded-full animate-pulse"></div>
+                            </div>
+                            <p class="text-[11px] text-emerald-400 font-semibold pt-1">✓ সরাসরি ১৫০০ পরিবারে শুকনো খাবার বিতরণ সম্পন্ন</p>
+                        </div>
+
+                        <!-- Live Donation Badge -->
+                        <div class="p-4 rounded-2xl bg-rose-950/40 border border-rose-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-rose-600/20 border border-rose-500/40 flex items-center justify-center font-black text-rose-400 text-lg">
+                                    bKash
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ৳১,০০০ ডোনেশন রিসিভড (১০০% ফ্রি)</p>
+                                    <p class="text-[10px] text-rose-300">TrxID: NGO88X99A (অটো ডোনার রসিদ জেনারেটেড)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-rose-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-rose-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-4xl shadow-xl shadow-rose-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-rose-500/20 text-rose-300 font-extrabold text-xs tracking-wider border border-rose-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy NGO-এর লাইভ ডোনেশন ও প্রুফ ভেরিফিকেশন টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম লাইভ ডোনেশন কাউন্টার, এনআইডি ও হাসপাতাল প্রুফ সত্যায়ন এবং সোশ্যাল ফিডে লাইভ সেশন প্রচারের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600/30 hover:bg-rose-600/50 border border-rose-500/40 text-xs font-bold text-rose-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে ডোনেশন প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-rose-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই ডোনেশন ও ত্রাণ প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ডোনেশন প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'donor'; sandboxMessage = '✓ ডোনার হিসেবে ৳১,০০০ কন্ট্রিবিউট সম্পন্ন (১০০% ফ্রি): সিলেট ত্রাণ ফান্ড টিকার রিয়েল-টাইমে আপডেট হয়েছে এবং ডিজিটাল রসিদ ইস্যু সম্পন্ন।'" 
+                                :class="sandboxAction === 'donor' ? 'bg-rose-600 border-rose-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">❤️</span>
+                            <h3 class="text-sm font-bold">১. লাইভ ডোনেশন ১০০% ফ্রিতে সাহায্য পাঠান</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে ১০০% ভেরিফাইড ত্রাণ তহবিলে বিকাশ/নগদে সাহায্য।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'proof'; sandboxMessage = '✓ এনআইডি & হাসপাতাল চিকিৎসার প্রুফ ডকুমেন্টস আপলোড করা হয়েছে: অটোমেটিক প্রুফ ভেরিফিকেশন স্ট্যাটাস পাসড।'" 
+                                :class="sandboxAction === 'proof' ? 'bg-rose-600 border-rose-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🔐</span>
+                            <h3 class="text-sm font-bold">২. প্রুফ ডকুমেন্টস সত্যায়ন চেক</h3>
+                            <p class="text-xs text-gray-400 mt-1">ভূয়া ফান্ডরাইজিং রোধে এনআইডি ও মেডিকেল প্রুফ আপলোড।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'live'; sandboxMessage = '✓ ৳৩০০ ফি পেমেন্টে সিলেট জরুরি ত্রাণ ফান্ডের লাইভ ব্রডকাস্ট সেশন Zengfy Social-এর লাখ লাখ ফিডে লাইভ পিন করা হয়েছে।'" 
+                                :class="sandboxAction === 'live' ? 'bg-rose-600 border-rose-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📢</span>
+                            <h3 class="text-sm font-bold">৩. ৳৩০০ প্রমোট সহ সোশ্যাল লাইভ সেশন</h3>
+                            <p class="text-xs text-gray-400 mt-1">সোশ্যাল ফিডে লাইভ ব্রডকাস্ট সেশন চালিয়ে ডোনেশন সংগ্রহ।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40 text-rose-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ ডোনারদের জন্য ১০০% ফ্রি — আয়োজকদের জন্য সাশ্রয়ী ভেরিফাইড প্রমোট প্যাক
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Donor Access Pack (100% Free) -->
+                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-rose-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold border border-rose-500/20">
+                                {{ $module['pricing_tiers']['donor']['badge'] ?? 'ডোনার চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['donor']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['donor']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['donor']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-rose-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['donor']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['donor']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
+                            ডোনেশন পোর্টাল খুলুন →
+                        </a>
+                    </div>
+
+                    <!-- Organizer Verified Campaign Pack (৳300/campaign) -->
+                    <div class="p-8 rounded-3xl bg-gradient-to-b from-[#33101e] to-[#121A29] border border-rose-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় আয়োজক প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['organizer']['badge'] ?? 'জনপ্রিয় আয়োজক চয়েস' }}
+                            </span>
+                            <h3 class="text-xl font-bold text-white mt-3">{{ $module['pricing_tiers']['organizer']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['organizer']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['organizer']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-rose-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['organizer']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300">
+                                @foreach($module['pricing_tiers']['organizer']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm text-center shadow-lg shadow-rose-600/30 transition-all">
+                            ক্যাম্পেইন ভেরিফাইড প্রমোট করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NGO & Relief Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3.5 py-1 rounded-full">
+                        ত্রাণ ও ডোনেশন কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        ❤️ ডোনার ও এনজিও আয়োজকদের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-rose-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-2xl mb-4 text-rose-400">
+                            ❤️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">রিয়েল-টাইম ডোনেশন হিসাব</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            সংগৃহীত মোট অর্থের লাইভ অগ্রগতি টিকার এবং স্বচ্ছ ডিজিটাল ডোনার রসিদ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            🔐
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">১০০% সত্যায়িত প্রুফ ভেরিফিকেশন</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            ভূয়া পোস্ট রোধ করতে এনআইডি, হাসপাতাল ও মেডিকেল প্রুফ আপলোড এবং যাচাইকরণ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            📢
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">সোশ্যাল লাইভ সেশন ব্রডকাস্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Zengfy Social-এর কোটি কোটি ইউজারের কাছে সরাসরি লাইভ এসে ডোনেশন আহ্বান।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            📜
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">স্বচ্ছ ত্রাণ বিতরণ লেজার</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কোথায় ত্রাণ বিতরণ করা হলো তার ছবি, ভাউচার ও স্বচ্ছ বিতরণ তালিকা লেজার।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Relief Impact Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3.5 py-1 rounded-full">
+                        মানবিক সহায়তার লাইভ হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন আপনার সামান্য ডোনেশনে বন্যাকবলিত বা অসুস্থ কতজন মানুষ সাহায্য পাবে
+                    </h2>
+
+                    <!-- Contribution Amount Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার সহায়তার পরিমাণ কত? <strong class="text-rose-400 text-lg" x-text="'৳' + (studentCount * 100).toLocaleString()"></strong>
+                        </label>
+                        <input type="range" min="10" max="500" step="10" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-rose-500">
+                    </div>
+
+                    <!-- Calculated Impact Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🍱 খাবার প্যাক নিশ্চিত হবে</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="(studentCount * 0.5).toFixed(0) + ' টি পরিবার'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">💊 জরুরি ঔষধ সাহায্য</p>
+                            <p class="text-xl sm:text-2xl font-black text-rose-400 mt-1">১০০% স্বচ্ছ বিতরণ</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ প্ল্যাটফর্ম ফি</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">০% (সম্পূর্ণ ফ্রি)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ngo.zengfy.test:7000' : 'https://ngo.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-rose-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-rose-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">❤️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy NGO</h3>
+                        <p class="text-[10px] text-rose-400 mt-1">Donation & Relief</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. ডোনেশন করার পর কি কোনো অতিরিক্ত চার্জ কাটা হবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">না, ডোনারদের জন্য ১০০% ফ্রি। আপনার পেমেন্ট করা সম্পূর্ণ টাকা সরাসরি ভেরিফাইড ত্রাণ তহবিলে জমা হবে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. ভূয়া কজ বা ভুয়া সাহায্য রিকোয়েস্ট রোধে কী করা হয়?</h3>
+                        <p class="text-gray-300 leading-relaxed">যেকোনো ত্রাণ বা মেডিকেল ফান্ড চালু করতে এনআইডি সত্যায়ন ও প্রুফ ডকুমেন্টস আপলোড বাধ্যতামূলক, ফলে ভুয়া ফান্ডের কোনো সুযোগ নেই।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. সোশ্যাল লাইভ সেশন ফান্ডরাইজিং কীভাবে কাজ করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">ভেরিফাইড আয়োজকরা ৳৩০০ ফি পেমেন্ট করে সরাসরি Zengfy Social-এর লাখ লাখ ইউজারের সামনে লাইভ সেশন ব্রডকাস্ট করতে পারেন এবং লাইভ ১-ক্লিক ডোনেশন বাটন পরিচালনা করতে পারেন।</p>
+                    </div>
+                </div>
+            </div>
         @else
             <!-- Default Module View for other subdomains (pos, law, rent, hotel, ngo, civil, etc.) -->
             <div class="text-center max-w-4xl mx-auto mb-16 relative scroll-reveal opacity-0 translate-y-10">
@@ -1694,7 +2128,7 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
-    @if(in_array($module['id'], ['school', 'law', 'pos']))
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'ngo']))
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
