@@ -39,9 +39,7 @@
 
 <body class="bg-gray-100/50 text-gray-800 antialiased selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden">
 
-    <x-landing.preloader />
-
-    <x-landing.header />
+    <x-landing.navbar />
 
     <main>
         {{ $slot }}
@@ -54,7 +52,7 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             AOS.init({
                 duration: 800,
                 once: true,
