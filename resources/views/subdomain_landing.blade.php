@@ -1623,6 +1623,407 @@
                     </div>
                 </div>
             </div>
+        @elseif($module['id'] === 'hotel')
+            <!-- 10x Hotel, Restaurant ERP & AI Growth Supervision Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 relative">
+                <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+                <!-- Hero Left Copy -->
+                <div class="lg:col-span-7 text-center lg:text-left scroll-reveal opacity-0 translate-y-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-extrabold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        🏨 {{ $module['badge'] }}
+                    </span>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টার ডিজিটাইজ করুন, AI দিয়ে ব্যবসা বাড়ান 🏨
+                    </h1>
+
+                    <p class="mt-6 text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
+                        দৈনিক কাঁচামাল বাজার খরচ, কর্মচারীদের বেতনের খাতা, AI বিজনেস তদারকি এবং রেস্টুরেন্টে ডাইনিং কাস্টমারদের সরাসরি ZengPay Coin দিয়ে ক্যাশলেস বিল পেমেন্ট নেওয়ার অল-ইন-ওয়ান অপারেটিং সিস্টেম।
+                    </p>
+
+                    <!-- Dual Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                            <span>🏨 হোটেল ও রেস্টুরেন্ট প্যানেল চালু করুন (৳৭০০/মাস)</span>
+                            <span>→</span>
+                        </a>
+
+                        <a href="#sandbox"
+                           class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-gray-200 border border-white/10 font-semibold text-base backdrop-blur-md transition-all text-center">
+                            🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Live Visual Showcase Mockup -->
+                <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                        
+                        <!-- Top Merchant Badge -->
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-xl text-emerald-400">
+                                    🏨
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">গ্র্যান্ড ইন হোটেল & রেস্টুরেন্ট</h3>
+                                    <p class="text-[11px] text-emerald-400 font-semibold">● রুম রিজার্ভেশন & ক্যাফে ডাইনিং ইআরপি</p>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                AI লাইভ তদারকি
+                            </span>
+                        </div>
+
+                        <!-- Live Order & Expense Ledger Mockup -->
+                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">দৈনিক খরচ ও বেতন: <strong class="text-white">৳১২,৪৫০</strong></span>
+                                <span class="text-emerald-400 font-bold">আজকের প্রফিট মার্জিন: +২৮%</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                                <p class="text-[11px] text-gray-300">🤖 AI পরামর্শ: <strong class="text-emerald-300">"সন্ধ্যা ৭-৯ টায় ক্যাফে চিকেন বিরিয়ানি সেটে ২০% ডিসকাউন্ট দিলে বিক্রি ৪০% বাড়বে।"</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Live ZengPay Coin Payment Badge -->
+                        <div class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center font-black text-emerald-400 text-lg">
+                                    🪙
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">✓ ৳৮৫০ রেস্টুরেন্ট বিল (ZengPay Coin)</p>
+                                    <p class="text-[10px] text-emerald-300">Coin TrxID: ZP99824X (ক্যাশলেস অটো লেজার)</p>
+                                </div>
+                            </div>
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Showcase Section (Upcoming Banner) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        ⏳ অফিশিয়াল ভিডিও টিউটোরিয়াল (Upcoming)
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🎬 ২ মিনিটের অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে
+                    </h2>
+                </div>
+
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/10 animate-pulse">
+                            🎬
+                        </div>
+
+                        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-xs tracking-wider border border-emerald-400/30 uppercase">
+                            Video Tutorial Upcoming
+                        </span>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Zengfy Hotel-এর AI তদারকি ও ZengPay কুইন টিউটোরিয়াল তৈরি হচ্ছে!
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+                            আমাদের প্রোডাক্ট টিম হোটেল ইআরপি, দৈনিক বাজার খরচ লেজার, AI গ্রোথ এডভাইজর এবং ZengPay Coin কুইন পেমেন্ট এক্সেপ্ট্যান্সের হাই-কোয়ালিটি টিউটোরিয়াল ভিডিও শুট করছে।
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#sandbox" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-xs font-bold text-emerald-200 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>স্যান্ডবক্সে হোটেল প্যানেল ড্রাই-রান টেস্ট করতে নিচে ক্লিক করুন →</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Sandbox Simulator -->
+            <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 shadow-2xl backdrop-blur-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                            স্যান্ডবক্স ড্রাই-রান
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                            🎮 সাইনআপ ছাড়া এখনই হোটেল ও রেস্টুরেন্ট প্যানেল স্যান্ডবক্সে টেস্ট করুন
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2">নিচের বাটনগুলোতে ক্লিক করে ইআরপি প্যানেলের রিয়েল-টাইম ক্লিকেবল ক্ষমতা পরীক্ষা করুন:</p>
+                    </div>
+
+                    <!-- 3 Clickable Dry-Run Action Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button @click="sandboxAction = 'expense'; sandboxMessage = '✓ দৈনিক বাজার খরচ (৳৪,৫০০) এবং কর্মচারীদের বেতন লেজারে সফলভাবে এন্টি সম্পন্ন এবং ক্যাশ ব্যালেন্স আপডেট।'" 
+                                :class="sandboxAction === 'expense' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">📊</span>
+                            <h3 class="text-sm font-bold">১. দৈনিক বাজার খরচ ও বেতন হিসাব</h3>
+                            <p class="text-xs text-gray-400 mt-1">১-ক্লিকে কিসেন বাজার, স্টাফ বেতন ও অন্যান্য ওভারহেড এন্ট্রি।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'ai'; sandboxMessage = '🤖 AI তদারকি রিপোর্ট: আগামী সপ্তাহে রেস্টুরেন্টে পিক কাস্টমার ভিড় সামলাতে চিকেন প্রিপারেশন ২৫% বৃদ্ধির ও অটো ডিসকাউন্ট সেট করার পরামর্শ।'" 
+                                :class="sandboxAction === 'ai' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🤖</span>
+                            <h3 class="text-sm font-bold">২. AI বিজনেস গ্রোথ পরামর্শ নিন</h3>
+                            <p class="text-xs text-gray-400 mt-1">বিক্রি ও মুনাফা বাড়াতে AI স্বয়ংক্রিয় এনালাইসিস রিপোর্ট।</p>
+                        </button>
+
+                        <button @click="sandboxAction = 'coin'; sandboxMessage = '✓ কাস্টমার মো: রফিকুল ইসলাম-এর ৳৮৫০ রেস্টুরেন্ট বিল ZengPay Coin QR পেমেন্টে গৃহীত ও ডিজিটাল রসিদ ইস্যু সম্পন্ন।'" 
+                                :class="sandboxAction === 'coin' ? 'bg-emerald-600 border-emerald-400 text-white' : 'bg-white/5 hover:bg-white/10 border-white/10 text-gray-300'"
+                                class="p-5 rounded-2xl border text-left transition-all cursor-pointer">
+                            <span class="text-2xl mb-2 block">🪙</span>
+                            <h3 class="text-sm font-bold">৩. ZengPay Coin কুইন পেমেন্ট কালেকশন</h3>
+                            <p class="text-xs text-gray-400 mt-1">কাস্টমারদের কাছে সরাসরি ZengPay কুইনে রেস্টুরেন্ট বিল জমা।</p>
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Output Notification Window -->
+                    <div x-show="sandboxMessage" x-cloak x-transition
+                         class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 text-xs sm:text-sm font-semibold flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                        <span x-text="sandboxMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparent Pricing Tier Section -->
+            <div id="pricing" class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        স্বচ্ছ ও সাশ্রয়ী প্রাইসিং
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏷️ কোনো গোপন ফি নেই — সব হোটেল ও রেস্টুরেন্টের জন্য সাশ্রয়ী অল-ইন-ওয়ান প্যাক
+                    </h2>
+                </div>
+
+                <div class="max-w-xl mx-auto">
+                    <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#102923] to-[#121A29] border border-emerald-500/40 shadow-2xl backdrop-blur-xl transition-all flex flex-col justify-between relative overflow-hidden text-center">
+                        <div class="absolute -top-3 -right-3 px-4 py-1.5 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider rounded-bl-xl shadow-lg">
+                            জনপ্রিয় মার্চেন্ট প্যাক
+                        </div>
+
+                        <div>
+                            <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                                {{ $module['pricing_tiers']['erp']['badge'] ?? 'জনপ্রিয় মার্চেন্ট চয়েস' }}
+                            </span>
+                            <h3 class="text-2xl font-black text-white mt-3">{{ $module['pricing_tiers']['erp']['name'] }}</h3>
+
+                            <div class="my-6">
+                                <span class="text-4xl font-black text-white">{{ $module['pricing_tiers']['erp']['amount'] }}</span>
+                                <span class="text-xs text-gray-400">{{ $module['pricing_tiers']['erp']['period'] }}</span>
+                            </div>
+
+                            <p class="text-xs text-emerald-300 font-semibold mb-6">✓ {{ $module['pricing_tiers']['erp']['highlight'] }}</p>
+
+                            <ul class="space-y-3 text-xs text-gray-300 text-left max-w-md mx-auto">
+                                @foreach($module['pricing_tiers']['erp']['features'] as $feat)
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400 font-bold">✓</span>
+                                        <span>{{ $feat }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}" 
+                           class="mt-8 w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center shadow-lg shadow-emerald-600/30 transition-all">
+                            হোটেল & রেস্টুরেন্ট প্যাক চালু করুন →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel & Merchant Power Matrix (4 Control Levers) -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        মার্চেন্ট কন্ট্রোল সেন্টার
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🏨 হোটেল, রেস্টুরেন্ট ও কমিউনিটি সেন্টারের হাতে যে ৪টি ক্ষমতা থাকবে
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
+                            📊
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">দৈনিক খরচ & বেতন হিসাব</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, ইউটিলিটি বিল ও কর্মচারীদের বেতন হিসাব লেজার।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-teal-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-600/20 border border-teal-500/30 flex items-center justify-center text-2xl mb-4 text-teal-400">
+                            🤖
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI দিয়ে ব্যবসা তদারকি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কাস্টমার পিক ট্রাফিক, খাবার অপচয় ও বিক্রির ওপর ভিত্তি করে AI এর লাইভ গ্রোথ গাইডেন্স।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
+                            🪙
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">ZengPay কুইন পেমেন্ট</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            কাস্টমারদের রেস্টুরেন্ট বিল সরাসরি ZengPay Coin দিয়ে ক্যাশলেস কিউআরে গ্রহণ।
+                        </p>
+                    </div>
+
+                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
+                            🏨
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">গেস্ট বুকিং & হল সূচি</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            হোটেল রুম রিজার্ভেশন, গেস্ট সিকিউরিটি স্ক্যান ও কমিউনিটি সেন্টার হল বুকিং ক্যালেন্ডার।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic AI ROI & Revenue Growth Calculator -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        AI তদারকি ও লাভ বৃদ্ধির হিসেব
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        💡 দেখুন Zengfy Hotel ইআরপি ব্যবহার করলে আপনার মাসে কত টাকা লাভ বৃদ্ধি পাবে
+                    </h2>
+
+                    <!-- Monthly Revenue Slider -->
+                    <div class="my-8 max-w-xl mx-auto">
+                        <label class="text-sm font-semibold text-gray-300 block mb-2">
+                            আপনার হোটেল/রেস্টুরেন্টের মাসিক বিক্রি কত? <strong class="text-emerald-400 text-lg" x-text="'৳' + (studentCount * 500).toLocaleString()"></strong>
+                        </label>
+                        <input type="range" min="100" max="2000" step="50" x-model="studentCount" 
+                               class="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                    </div>
+
+                    <!-- Calculated Savings Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">📈 AI তদারকিতে লাভ বৃদ্ধি</p>
+                            <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-1" x-text="'৳' + (studentCount * 75).toLocaleString() + '/মাস'"></p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">⏱️ হিসাব সংক্রান্ত সময় সাশ্রয়</p>
+                            <p class="text-xl sm:text-2xl font-black text-teal-400 mt-1">৮৫% সময় বাঁচবে</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/5">
+                            <p class="text-xs text-gray-400 font-medium">🏷️ Zengfy Hotel খরচ</p>
+                            <p class="text-xl sm:text-2xl font-black text-white mt-1">মাত্র ৳২৩/দিন</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dedicated Zengfy Ecosystem Apps Showcase Section -->
+            <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
+                        Zengfy Ecosystem
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-3">
+                        🌐 Zengfy একাউন্ট দিয়ে এক জায়গায় পান ১৫টি নিস প্রফেশনাল অ্যাপ
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">একটিমাত্র একাউন্ট দিয়ে আপনার জীবন ও ব্যবসার সমস্ত অপারেটিং সিস্টেম নিয়ন্ত্রণ করুন।</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
+                        <p class="text-[10px] text-emerald-400 mt-1">ERP & ZengPay Coin</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy School</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
+                    </a>
+
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                        <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
+                        <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
+                        <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div id="faq" class="mb-20 max-w-3xl mx-auto scroll-reveal opacity-0 translate-y-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">❓ সচরাচর জিজ্ঞাসিত প্রশ্নাবলী</h2>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">১. দৈনিক খরচ ও স্টাফ বেতন কীভাবে ট্র্যাকিং করা যাবে?</h3>
+                        <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি থেকে ১-ক্লিকে প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, বিদ্যুৎ বিল ও স্টাফ বেতন এন্ট্রি দিলে স্বয়ংক্রিয়ভাবে ক্যাশ ব্যালেন্স ও লেজার জেনারেট হয়।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">২. AI দিয়ে ব্যবসা তদারকি কীভাবে সাহায্য করে?</h3>
+                        <p class="text-gray-300 leading-relaxed">AI সিস্টেম আপনার প্রতিদিনের বিক্রি, পিক কাস্টমার ট্রাফিক ও খাবার অপচয় বিশ্লেষণ করে বিক্রি ও মুনাফা বাড়ানোর নির্দিষ্ট পরামর্শ প্রদান করে।</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                        <h3 class="font-bold text-white mb-1">৩. ZengPay Coin কীভাবে কাস্টমারদের থেকে গ্রহণ করব?</h3>
+                        <p class="text-gray-300 leading-relaxed">কাস্টমাররা রেস্টুরেন্টে খেয়ে কাউন্টারের ZengPay QR স্ক্যান করে সরাসরি ZengPay Coin টোকেনে বিল পরিশোধ করতে পারবে, যা সাথে সাথে আপনার প্যানেলে ক্যাশলেস হিসেবে জমা হবে।</p>
+                    </div>
+                </div>
+            </div>
         @else
             <!-- Default Module View for other subdomains (pos, law, rent, hotel, ngo, civil, etc.) -->
             <div class="text-center max-w-4xl mx-auto mb-16 relative scroll-reveal opacity-0 translate-y-10">
@@ -1694,7 +2095,7 @@
     </main>
 
     <!-- Floating Direct WhatsApp Customer Support Widget -->
-    @if(in_array($module['id'], ['school', 'law', 'pos']))
+    @if(in_array($module['id'], ['school', 'law', 'pos', 'hotel']))
         <a href="https://wa.me/8801700000000?text=Assalamu%20Alaikum,%20Zengfy%20Information"
            target="_blank"
            rel="noopener"
