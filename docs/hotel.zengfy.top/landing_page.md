@@ -51,6 +51,7 @@
 - **Dual CTAs**:
   - `🏨 হোটেল ও রেস্টুরেন্ট প্যানেল চালু করুন (৳৭০০/মাস)`
   - `🎮 ১-ক্লিকে স্যান্ডবক্স ডেমো`
+<<<<<<< HEAD
 
 ### Interactive 3-Step Sandbox Simulator (`#sandbox`)
 - Step 1: Record daily kitchen purchases & staff salary payroll entries.
@@ -62,3 +63,28 @@
 
 ### Dynamic AI ROI & Revenue Growth Calculator
 - Interactive monthly revenue slider showing potential profit increase with AI audit & ZengPay Coin adoption.
+=======
+- **Hero Visual Mockup**: Live Visual Mockup of Room Reservations / Restaurant Table Bills, Daily Expense Ledger, AI Growth Recommendations, and ZengPay Coin QR payment badge.
+
+### Video Showcase Section
+- **Card**: "Video Tutorial Upcoming (অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে)" banner card.
+
+### Interactive 3-Step Sandbox Simulator (`#sandbox`)
+- **Step 1**: Record daily kitchen purchases & staff salary payroll entries.
+- **Step 2**: Run AI Business Growth Advisor for profit optimization recommendations.
+- **Step 3**: Receive customer restaurant payment via ZengPay Coin QR code mockup.
+
+### Transparent Pricing Tier
+- **Hotel & Restaurant All-in-One ERP Pack**: **৳৭০০ / মাস** (ফ্ল্যাট সাবস্ক্রিপশন).
+
+### Hotel & Merchant Power Matrix (4 Control Levers)
+1. **দৈনিক খরচ & বেতন অটো-হিসাব**: প্রতিদিনের বাজার খরচ, বিদ্যুৎ বিল ও কর্মচারীদের বেতনের অটো লেজার।
+2. **AI দিয়ে ব্যবসা তদারকি & গ্রোথ গাইড**: কাস্টমার ট্রাফিক, মেনু প্রফিট ও ফুড ওয়েস্টেজের উপর AI এর পরামর্শ।
+3. **ZengPay কুইন ক্যাশলেস পেমেন্ট**: কাস্টমারদের রেস্টুরেন্টে খাওয়া-দাওয়ার বিল সরাসরি ZengPay কুইনে নেওয়ার সুযোগ।
+4. **গেস্ট বুকিং & কমিউনিটি সেন্টার সূচি**: রুম রিজার্ভেশন, গেস্ট সিকিউরিটি ভেরিফিকেশন ও হল বুকিং ক্যালেন্ডার।
+
+### Dynamic AI ROI & Revenue Growth Calculator
+- Interactive monthly revenue slider showing potential profit increase with AI audit & ZengPay Coin adoption.
+
+### Zengfy Ecosystem Showcase & Bengali FAQs
+>>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320

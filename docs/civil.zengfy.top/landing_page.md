@@ -51,6 +51,7 @@
 - **Dual CTAs**:
   - `🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)`
   - `🏗️ সাইট ইআরপি প্যানেল চালু করুন (৳৮০০/মাস)`
+<<<<<<< HEAD
 
 ### Interactive 3-Step Sandbox Simulator (`#sandbox`)
 - Step 1: Record site raw material purchases (rod, cement) & worker daily wages.
@@ -63,3 +64,29 @@
 
 ### Dynamic Construction Cost & Material Calculator
 - Interactive building size slider showing estimated construction material costs and AI savings.
+=======
+- **Hero Visual Mockup**: Site Material Ledger (Rod/Cement/Sand), AI Blueprint Analysis Card, and Verified Contractor Badge.
+
+### Video Showcase Section
+- **Card**: "Video Tutorial Upcoming (অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে)" banner card.
+
+### Interactive 3-Step Sandbox Simulator (`#sandbox`)
+- **Step 1**: Record site raw material purchases (rod, cement) & worker daily wages.
+- **Step 2**: Run AI Structural Advisor for building floor plan & soil test analysis.
+- **Step 3**: Search verified civil engineer profile & architectural blueprint (৳100 search connect).
+
+### Transparent Pricing Tiers
+- **Client Search Connect**: **৳১০০ / সার্চ**
+- **Engineering Firm & Contractor ERP**: **৳৮০০ / মাস**
+
+### Civil & Construction Power Matrix (4 Control Levers)
+1. **সাইট ইআরপি & কাঁচামাল লেজার**: রড, সিমেন্ট, বালি ও শ্রমিকদের দৈনন্দিন মজুরি লেজার।
+2. **AI সাইট & ম্যাপ এনালাইসিস**: মেটেরিয়াল এস্টিমেশন, সয়েল টেস্ট ও ম্যাপ এনালাইসিসে AI গাইড।
+3. **পেইড ইঞ্জিনিয়ার & কন্ট্রাক্টর সার্চ**: সাধারণ বাড়ি নির্মাণকারীদের জন্য ভেরিফাইড সিভিল ইঞ্জিনিয়ার ফাইল এক্সেস।
+4. **বিল্ডিং ম্যাপ & প্রজেক্ট ভল্ট**: আর্কিটেকচারাল ব্লুপ্রিন্ট, প্রজেক্ট ফাইল ও স্ট্রাকচারাল রিভিশন ভল্ট।
+
+### Dynamic Construction Cost & Material Calculator
+- Interactive building size slider showing estimated construction material costs and AI savings.
+
+### Zengfy Ecosystem Showcase & Bengali FAQs
+>>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320

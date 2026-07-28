@@ -49,6 +49,7 @@
 - **Dual CTAs**:
   - `❤️ ডোনেশন লাইভ কন্ট্রিবিউট করুন (১০০% ফ্রি)`
   - `📢 ভেরিফাইড ক্যাম্পেইন চালু করুন (৳৩০০)`
+<<<<<<< HEAD
 
 ### Interactive 3-Step Sandbox Simulator (`#sandbox`)
 - Step 1: Track live real-time donation progress ticker for emergency flood relief.
@@ -61,3 +62,29 @@
 
 ### Dynamic Relief Impact Calculator
 - Interactive donor contribution slider showing real-world impact (e.g. meals/relief kits provided).
+=======
+- **Hero Visual Mockup**: Real-Time Raised Ticker, Verified Relief Badge, and Instant bKash 1-Click Donation status.
+
+### Video Showcase Section
+- **Card**: "Video Tutorial Upcoming (অফিশিয়াল ভিডিও টিউটোরিয়াল খুব শীঘ্রই আসছে)" banner card.
+
+### Interactive 3-Step Sandbox Simulator (`#sandbox`)
+- **Step 1**: Track live real-time donation progress ticker for emergency flood relief.
+- **Step 2**: Upload NID & medical/disaster proof document for campaign authentication.
+- **Step 3**: Test ৳300 campaign launch & Zengfy Social live stream broadcast mockup.
+
+### Transparent Pricing Tiers
+- **Donor Access**: **100% Free**
+- **Verified Campaign Promotion Pack**: **৳৩০০ / ক্যাম্পেইন**
+
+### NGO & Relief Power Matrix (4 Control Levers)
+1. **রিয়েল-টাইম লাইভ ডোনেশন হিসাব**: ১-ক্লিকে মোট সংগৃহীত অর্থ ও লাইভ ট্র্যাকিং।
+2. **১০০% সত্যায়িত প্রুফ ভেরিফিকেশন**: এনআইডি ও মেডিকেল প্রুফ আপলোড ছাড়া কোনো পোস্ট লাইভ নয়।
+3. **সোশ্যাল লাইভ সেশন ব্রডকাস্ট**: সোশ্যাল ফিডে সরাসরি লাইভ এসে ডোনেশন আহ্বান।
+4. **স্বচ্ছ ত্রাণ বিতরণ লেজার**: ছবি ও ভাউচার সহ স্বচ্ছ রসিদ পোর্টাল।
+
+### Dynamic Relief Impact Calculator
+- Interactive donor contribution slider showing real-world impact (e.g. meals/relief kits provided).
+
+### Zengfy Ecosystem Showcase & Bengali FAQs
+>>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
