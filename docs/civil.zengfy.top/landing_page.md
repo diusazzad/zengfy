@@ -51,6 +51,20 @@
 - **Dual CTAs**:
   - `🔍 ভেরিফাইড ইঞ্জিনিয়ার ও ম্যাপ খুঁজুন (৳১০০)`
   - `🏗️ সাইট ইআরপি প্যানেল চালু করুন (৳৮০০/মাস)`
+<<<<<<< HEAD
+
+### Interactive 3-Step Sandbox Simulator (`#sandbox`)
+- Step 1: Record site raw material purchases (rod, cement) & worker daily wages.
+- Step 2: Run AI Structural Advisor for building floor plan & soil test analysis.
+- Step 3: Search verified civil engineer profile & architectural blueprint (৳100 search connect).
+
+### Transparent Pricing Tiers
+- Client Search Connect: **৳১০০ / সার্চ**
+- Engineering Firm & Contractor ERP: **৳৮০০ / মাস**
+
+### Dynamic Construction Cost & Material Calculator
+- Interactive building size slider showing estimated construction material costs and AI savings.
+=======
 - **Hero Visual Mockup**: Site Material Ledger (Rod/Cement/Sand), AI Blueprint Analysis Card, and Verified Contractor Badge.
 
 ### Video Showcase Section
@@ -75,3 +89,4 @@
 - Interactive building size slider showing estimated construction material costs and AI savings.
 
 ### Zengfy Ecosystem Showcase & Bengali FAQs
+>>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320

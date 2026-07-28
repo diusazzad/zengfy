@@ -50,6 +50,24 @@
 
 ### Hero Section
 - **Headline**: ভুয়া কোর্স নয়, স্বল্প খরচে বাস্তবমুখী প্রজেক্ট শিখুন, ক্যারিয়ার গড়ুন 🎓
+<<<<<<< HEAD
+- **Sub-headline**: এসএসসি/এইচএসসি পরবর্তী শিক্ষার্থীদের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Projects শিক্ষা মাত্র ৳১২০০ থেকে শুরু।
+- **Dual CTAs**:
+  - `🎓 বাস্তবমুখী স্কিল কোর্স দেখুন (৳১২০০ থেকে শুরু)`
+  - `👨‍🏫 মেন্টর/ইন্সট্রাক্টর প্যানেল চালু করুন (৳৫০০/মাস)`
+
+### Interactive 3-Step Sandbox Simulator (`#sandbox`)
+- Step 1: Browse ৳1200 Spoken English & Computer IT Bootcamp curriculum.
+- Step 2: Test live student assignment submission & mentor feedback dry-run.
+- Step 3: Run Instructor LMS ERP dashboard for automated course revenue share payout.
+
+### Transparent Pricing Tiers
+- Learner Bootcamp Access: **৳১২০০ থেকে শুরু**
+- Instructor LMS ERP Pack: **৳৫০০ / মাস + পার্সেন্টেজ শেয়ার**
+
+### Dynamic Career & Salary Boost Calculator
+- Interactive skill level slider showing potential salary growth after completing real-world projects.
+=======
 - **Sub-headline**: এসএসসি/এইচএসসি শিক্ষার্থীদের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Projects শিক্ষা মাত্র ৳১২০০ থেকে শুরু।
 - **Dual CTAs**:
   - `🎓 বাস্তবমুখী স্কিল কোর্স দেখুন (৳১২০০ থেকে শুরু)`
@@ -78,3 +96,4 @@
 - Interactive skill level slider showing potential salary growth after completing real-world projects.
 
 ### Zengfy Ecosystem Showcase & Bengali FAQs
+>>>>>>> b768128a23312dbd33a0d7566d8e8f1f4e2e0320
