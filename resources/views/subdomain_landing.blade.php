@@ -66,6 +66,13 @@
           sandboxMessage: '',
           studentCount: 500
       }">
+    <!-- Glassmorphism Background Blobs -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] bg-cyan-600/20 rounded-full blur-[150px] animate-pulse"></div>
+        <div class="absolute top-[30%] left-[50%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[130px]"></div>
+    </div>
+
 
     <!-- Shared Header Navigation -->
     <x-landing.navbar />
@@ -79,7 +86,7 @@
                 <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none"></div>
 
                 <!-- Profile Card Header -->
-                <div class="flex flex-col md:flex-row items-center gap-8 mb-12 p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 backdrop-blur-2xl shadow-2xl relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-12 p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 backdrop-blur-2xl shadow-2xl relative z-10">
                     <!-- Photo Container -->
                     <div class="relative shrink-0 group">
                         <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-3xl overflow-hidden border-2 border-blue-500/40 shadow-2xl shadow-blue-500/20 group-hover:border-blue-400 transition-all duration-300">
@@ -129,8 +136,8 @@
                 </div>
 
                 <!-- Interactive Terminal Code Component -->
-                <div class="rounded-3xl bg-[#090D14] border border-white/10 overflow-hidden shadow-2xl mb-16 relative z-10 text-left font-mono text-xs">
-                    <div class="px-4 py-3 bg-[#111723] border-b border-white/10 flex items-center justify-between">
+                <div class="rounded-3xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 overflow-hidden shadow-2xl mb-16 relative z-10 text-left font-mono text-xs">
+                    <div class="px-4 py-3 bg-white/[0.08] backdrop-blur-md border-b border-white/10 flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span class="w-3 h-3 rounded-full bg-rose-500"></span>
                             <span class="w-3 h-3 rounded-full bg-amber-500"></span>
@@ -177,7 +184,7 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Project 1: ZenGfy -->
-                        <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
                             <div>
                                 <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-6 text-blue-400">
                                     🌐
@@ -196,7 +203,7 @@
                         </div>
 
                         <!-- Project 2: LaraNexus -->
-                        <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-orange-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-orange-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
                             <div>
                                 <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-6 text-orange-400">
                                     ⚡
@@ -215,7 +222,7 @@
                         </div>
 
                         <!-- Project 3: Confidens Analytics -->
-                        <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group">
                             <div>
                                 <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-6 text-indigo-400">
                                     📊
@@ -247,7 +254,7 @@
 
                     <div class="space-y-6">
                         <!-- Exp 1: Raw Axiom -->
-                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/30 backdrop-blur-xl transition-all">
+                        <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/30 backdrop-blur-xl transition-all">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                                 <div>
                                     <h3 class="text-lg font-black text-white">Full-Stack Developer (Remote)</h3>
@@ -265,7 +272,7 @@
                         </div>
 
                         <!-- Exp 2: ZenGfy -->
-                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/30 backdrop-blur-xl transition-all">
+                        <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/30 backdrop-blur-xl transition-all">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                                 <div>
                                     <h3 class="text-lg font-black text-white">Founder & Full-Stack Developer</h3>
@@ -282,7 +289,7 @@
                         </div>
 
                         <!-- Exp 3: APPHS -->
-                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/30 backdrop-blur-xl transition-all">
+                        <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/30 backdrop-blur-xl transition-all">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                                 <div>
                                     <h3 class="text-lg font-black text-white">IT Support Engineer</h3>
@@ -299,7 +306,7 @@
                         </div>
 
                         <!-- Exp 4: SSL Wireless -->
-                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/30 backdrop-blur-xl transition-all">
+                        <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/30 backdrop-blur-xl transition-all">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                                 <div>
                                     <h3 class="text-lg font-black text-white">Web Intern</h3>
@@ -319,7 +326,7 @@
             </div>
         @elseif($module['id'] === 'school')
             <!-- Dynamic Institution Switcher Filter (Top Bar Sub-Nav) -->
-            <div class="mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 rounded-2xl bg-[#121A29]/90 border border-white/10 max-w-2xl mx-auto backdrop-blur-xl shadow-xl scroll-reveal opacity-0 translate-y-10">
+            <div class="mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 rounded-2xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 max-w-2xl mx-auto backdrop-blur-xl shadow-xl scroll-reveal opacity-0 translate-y-10">
                 <span class="text-xs font-bold text-gray-400 px-3 hidden sm:inline">প্রতিষ্ঠানের ধরন:</span>
 
                 <button @click="instituteType = 'school'"
@@ -394,7 +401,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
 
                         <!-- Top School Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -413,7 +420,7 @@
                         </div>
 
                         <!-- Live GPA 5.00 Report Card Card -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">শিক্ষার্থী: <strong class="text-white">তাহমিদ হাসান (রোল #১)</strong></span>
                                 <span class="text-blue-400 font-bold">শ্রেণি ১০ম (বিজ্ঞান)</span>
@@ -463,7 +470,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-[#121A29] border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center">
                         <iframe class="w-full h-full"
                                 src="https://www.youtube-nocookie.com/embed/{{ $module['youtube_id'] ?? 'dQw4w9WgXcQ' }}?rel=0"
@@ -478,7 +485,7 @@
 
             <!-- Interactive Owner Sandbox Simulator (Hero/Video-এর ঠিক নিচে) -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-blue-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-blue-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -538,7 +545,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Power 1 -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 text-blue-400">
                             👑
                         </div>
@@ -549,7 +556,7 @@
                     </div>
 
                     <!-- Power 2 -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
                             💰
                         </div>
@@ -560,7 +567,7 @@
                     </div>
 
                     <!-- Power 3 -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-rose-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-rose-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-2xl mb-4 text-rose-400">
                             🔒
                         </div>
@@ -571,7 +578,7 @@
                     </div>
 
                     <!-- Power 4 -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-2xl mb-4 text-cyan-400">
                             📊
                         </div>
@@ -585,7 +592,7 @@
 
             <!-- Dynamic Savings & ROI Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
                         খরচ বাঁচানোর লাইভ হিসেব
                     </span>
@@ -635,49 +642,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Legal Vault & Cases</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">NID Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
@@ -698,7 +705,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Starter Plan (৳2,500/mo) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                    <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-blue-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
                                 {{ $module['pricing_tiers']['starter']['badge'] ?? 'ছোট-মাঝারি প্রতিষ্ঠানের জন্য' }}
@@ -778,17 +785,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. SMS কেনা কি বাধ্যতামূলক?</h3>
                         <p class="text-gray-300 leading-relaxed">না, আপনি চাইলে কোনো অতিরিক্ত খরচ ছাড়াই ১০০% ফ্রিতে ইমেইল ও অভিভাবক অ্যাপ নোটিফিকেশন ব্যবহার করতে পারেন।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. আমাদের প্রতিষ্ঠানের তথ্যের নিরাপত্তা কতটা সুরক্ষিত?</h3>
                         <p class="text-gray-300 leading-relaxed">Enterprise-grade 256-bit AES এনক্রিপশন এবং BDIX হাই-স্পিড সার্ভারে প্রতিদিনের অটোমেটিক ব্যাকআপের মাধ্যমে সম্পূর্ণ তথ্য সুরক্ষিত থাকে।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কলেজ বা মাদ্রাসার জন্য কি এটি ব্যবহার করা যাবে?</h3>
                         <p class="text-gray-300 leading-relaxed">হ্যাঁ, পেজের ওপরের সুইচ থেকে এক ক্লিকেই কলেজ, মাদ্রাসা বা কোচিং সেন্টারের নির্দিষ্ট মোড সিলেক্ট করা যায়।</p>
                     </div>
@@ -831,7 +838,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Court Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -850,7 +857,7 @@
                         </div>
 
                         <!-- Live Case Entry Card Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">মামলা নং: <strong class="text-white">সিভিল রিভিশন-৪৮২/২০২৬</strong></span>
                                 <span class="text-amber-400 font-bold">হাইকোর্ট বিভাগ</span>
@@ -890,7 +897,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-[#121A29] border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center">
                         <iframe class="w-full h-full" 
                                 src="https://www.youtube-nocookie.com/embed/{{ $module['youtube_id'] ?? 'dQw4w9WgXcQ' }}?rel=0" 
@@ -905,7 +912,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -965,7 +972,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Client Connect Pack (৳200/connect) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                    <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
                                 {{ $module['pricing_tiers']['client']['badge'] ?? 'বিচারপ্রার্থী / ক্লায়েন্ট চয়েস' }}
@@ -1044,7 +1051,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
                             📅
                         </div>
@@ -1054,7 +1061,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
                             🔐
                         </div>
@@ -1064,7 +1071,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
                             📱
                         </div>
@@ -1074,7 +1081,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             💳
                         </div>
@@ -1088,7 +1095,7 @@
 
             <!-- Dynamic Savings & ROI Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
                         সময় ও কল সাশ্রয়ের হিসেব
                     </span>
@@ -1138,49 +1145,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-amber-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
@@ -1195,17 +1202,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. বিচারপ্রার্থীরা কীভাবে আইনজীবী খুঁজে পাবেন?</h3>
                         <p class="text-gray-300 leading-relaxed">Zengfy Social ও Law ডিরেক্টরি থেকে বিচারপ্রার্থীরা সরাসরি যাচাইকৃত প্রফেশনাল আইনজীবী নির্বাচন করে ৳২০০ পেমেন্ট করে আইনি পরামর্শ ও মামলা ডায়রি লিংক দেখতে পারেন।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. চেম্বারের গোপন নথিপত্র কতটা সুরক্ষিত?</h3>
                         <p class="text-gray-300 leading-relaxed">Enterprise-grade 256-bit AES এনক্রিপশনে আপনার ফাইলের সমস্ত সিকিউরিটি সংরক্ষিত থাকে যা তৃতীয় কারও দেখার সুযোগ নেই।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. জুনিয়র ও সহকারীদের আলাদা রোল দেওয়া যাবে?</h3>
                         <p class="text-gray-300 leading-relaxed">হ্যাঁ, অ্যাডভোকেট চেম্বার প্রধান ইচ্ছেমত জুনিয়র আইনজীবীদের কজ লিস্ট এন্ট্রি ও নির্দিষ্ট কেস ফাইলের এক্সেস রোল পারমিশন দিতে পারেন।</p>
                     </div>
@@ -1248,7 +1255,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Store Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -1267,7 +1274,7 @@
                         </div>
 
                         <!-- Live Counter Checkout Memo Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">মেমো নং: <strong class="text-white">#১০৯২</strong></span>
                                 <span class="text-cyan-400 font-bold">৩টি আইটেম (মেমো স্ক্যানড)</span>
@@ -1317,7 +1324,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-cyan-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-cyan-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
                     <div class="relative z-10 space-y-4">
@@ -1349,7 +1356,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-cyan-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-cyan-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -1456,7 +1463,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-2xl mb-4 text-cyan-400">
                             🛒
                         </div>
@@ -1466,7 +1473,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
                             📖
                         </div>
@@ -1476,7 +1483,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
                             📦
                         </div>
@@ -1486,7 +1493,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             🌐
                         </div>
@@ -1500,7 +1507,7 @@
 
             <!-- Dynamic Savings & ROI Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
                         সময় ও টাকা বাঁচানোর লাইভ হিসেব
                     </span>
@@ -1550,49 +1557,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-cyan-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-cyan-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-cyan-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-cyan-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-cyan-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
@@ -1607,17 +1614,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. দামি বারকোড মেসিন বা কম্পিউটার কেনা কি বাধ্যতামূলক?</h3>
                         <p class="text-gray-300 leading-relaxed">না, আপনি চাইলে যেকোনো অ্যান্ড্রয়েড স্মার্টফোন বা ট্যাবলেটের ক্যামেরা দিয়ে মেমো স্ক্যান করতে পারেন এবং থার্মাল মেমো প্রিন্ট করতে পারেন।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. সোশ্যাল ক্রেতারা কীভাবে আমার দোকানের মালামাল দেখবে?</h3>
                         <p class="text-gray-300 leading-relaxed">Zengfy POS-এ পণ্য এন্ট্রি করলেই ১-ক্লিকে দোকানটি Zengfy Social-এর কোটি কোটি ক্রেতার এলাকার ক্যাটেগরিতে লাইভ হয়ে যাবে।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কাস্টমার বাকি খাতা কতটা সুরক্ষিত?</h3>
                         <p class="text-gray-300 leading-relaxed">কাগজের খাতা হারিয়ে যাওয়ার ভয় নেই, ক্লাউডে এনক্রিপ্টেড ব্যাকআপ থাকবে এবং ১-ক্লিকে বিকাশ/নগদে বাকি তাগাদা SMS পাঠানো যাবে।</p>
                     </div>
@@ -1661,7 +1668,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Journalist Profile Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -1683,7 +1690,7 @@
                         </div>
 
                         <!-- Live Published Column Snippet Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">শিরোনাম: <strong class="text-white">"বাংলাদেশের ইকোসিস্টেম বিপ্লব"</strong></span>
                                 <span class="text-indigo-400 font-bold">১০ মিনিট রিড</span>
@@ -1722,7 +1729,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-indigo-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
                     <div class="relative z-10 space-y-4">
@@ -1754,7 +1761,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-indigo-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-indigo-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -1814,7 +1821,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Reader Subscription Pass (৳50/mo) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                    <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-indigo-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">
                                 {{ $module['pricing_tiers']['reader']['badge'] ?? 'পাঠক চয়েস' }}
@@ -1893,7 +1900,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
                             🛡️
                         </div>
@@ -1903,7 +1910,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl mb-4 text-blue-400">
                             💸
                         </div>
@@ -1913,7 +1920,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
                             ✍️
                         </div>
@@ -1923,7 +1930,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             📰
                         </div>
@@ -1937,7 +1944,7 @@
 
             <!-- Dynamic Writer Revenue & Audience Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full">
                         লেখক আয় & পাঠক সংখ্যা হিসেব
                     </span>
@@ -1987,49 +1994,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-indigo-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-indigo-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-indigo-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-indigo-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-indigo-400 mt-1">Journalism & Reader ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Bootcamps & LMS</p>
@@ -2044,17 +2051,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. সাধারণ পাঠকরা কত টাকায় প্রিমিয়াম কলাম পড়তে পারবে?</h3>
                         <p class="text-gray-300 leading-relaxed">পাঠকরা মাত্র ৳৫০/মাস সাবস্ক্রিপশন ফিতে সব ভেরিফাইড কলামিস্টদের এক্সক্লুসিভ নিবন্ধ ও ইনভেস্টিগেটিভ রিপোর্ট পড়তে পারবে।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. সাংবাদিক ও কলামিস্টরা কীভাবে আয়ের অংশ পাবেন?</h3>
                         <p class="text-gray-300 leading-relaxed">সাংবাদিকদের কলাম যতজন সাবস্ক্রাইবার পড়বে এবং যা টিপস দেবে, তার সিংহভাগ সরাসরি তাদের ওয়ালেটে পেআউট করা হবে।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. ভুয়া কলাম বা ভুয়া আইডি কিভাবে রোখা হয়?</h3>
                         <p class="text-gray-300 leading-relaxed">প্রতিটি সাংবাদিক ও কলামিস্টের NID ও সত্যতা ভেরিফিকেশনের পর নীল ভেরিফাইড জুরনালিস্ট ব্যাজ দেওয়া হয়।</p>
                     </div>
@@ -2097,7 +2104,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Bootcamp Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -2116,7 +2123,7 @@
                         </div>
 
                         <!-- Live Project Assignment Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">প্রজেক্ট প্রোগ্রেস: <strong class="text-white">৮৫% প্র্যাকটিক্যাল সম্পন্ন</strong></span>
                                 <span class="text-violet-400 font-bold">ফিডব্যাক: গ্রেড A+</span>
@@ -2155,7 +2162,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-violet-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-violet-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
                     <div class="relative z-10 space-y-4">
@@ -2187,7 +2194,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-violet-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-violet-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -2247,7 +2254,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Student Real-World Bootcamp Pack (৳1200+) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-violet-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                    <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-violet-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3.5 py-1 rounded-full bg-violet-500/10 text-violet-400 text-xs font-bold border border-violet-500/20">
                                 {{ $module['pricing_tiers']['learner']['badge'] ?? 'শিক্ষার্থী চয়েস' }}
@@ -2326,7 +2333,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-2xl mb-4 text-violet-400">
                             🎓
                         </div>
@@ -2336,7 +2343,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
                             👨‍🏫
                         </div>
@@ -2346,7 +2353,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
                             💬
                         </div>
@@ -2356,7 +2363,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             📜
                         </div>
@@ -2370,7 +2377,7 @@
 
             <!-- Dynamic Career & Salary Boost Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 bg-violet-500/10 border border-violet-500/20 px-3.5 py-1 rounded-full">
                         স্কিল & কেরিয়ার বৃদ্ধির হিসেব
                     </span>
@@ -2420,49 +2427,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-violet-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-violet-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-violet-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-violet-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-violet-400 mt-1">Bootcamps & LMS ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
@@ -2477,17 +2484,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. এসএসসি বা এইচএসসির পর কোন্ কোর্সগুলো দিয়ে শুরু করা উচিত?</h3>
                         <p class="text-gray-300 leading-relaxed">বাস্তবমুখী কেরিয়ারের জন্য Spoken English, Practical Computer & IT এবং Real-World Web Coding প্রজেক্ট কোর্সগুলোর দিয়ে শুরু করা উচিত।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. মেন্টরদের কাছ থেকে কীভাবে লাইভ হেল্প পাওয়া যাবে?</h3>
                         <p class="text-gray-300 leading-relaxed">প্রতিটি ব্যাচে সাপ্তাহিক লাইভ Q&A সেশন এবং অ্যাসাইনমেন্ট রিভিউতে মেন্টররা সরাসরি প্রজেক্টের ভুলভ্রান্তি শুধরে দেন।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. ইনস্ট্রাক্টর LMS ERP কীভাবে কাজ করে?</h3>
                         <p class="text-gray-300 leading-relaxed">ইন্সট্রাক্টররা মাত্র ৳৫০০/মাস ও স্বল্প পার্সেন্টেজ শেয়ারে নিজের লার্নিং পোর্টাল চালু করতে পারেন, যেখানে লাইভ ব্যাচ ও অটোমেটেড পেআউট লেজার সংযুক্ত থাকে।</p>
                     </div>
@@ -2530,7 +2537,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Site Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -2549,7 +2556,7 @@
                         </div>
 
                         <!-- Live Material Ledger Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">রড-সিমেন্ট সাইট স্টক: <strong class="text-white">১২.৫ টন রড / ৩৫০ ব্যাগ সিমেন্ট</strong></span>
                                 <span class="text-amber-400 font-bold">লেবার বেতন: ৳১৮,৫০০</span>
@@ -2588,7 +2595,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-amber-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
                     <div class="relative z-10 space-y-4">
@@ -2620,7 +2627,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-amber-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -2680,7 +2687,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Client Verified Search Connect (৳100/search) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                    <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-amber-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20">
                                 {{ $module['pricing_tiers']['client']['badge'] ?? 'বাড়ি নির্মাণকারী চয়েস' }}
@@ -2759,7 +2766,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl mb-4 text-amber-400">
                             🏗️
                         </div>
@@ -2769,7 +2776,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-yellow-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-yellow-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center text-2xl mb-4 text-yellow-400">
                             🤖
                         </div>
@@ -2779,7 +2786,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-orange-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-orange-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center text-2xl mb-4 text-orange-400">
                             🔍
                         </div>
@@ -2789,7 +2796,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             📐
                         </div>
@@ -2803,7 +2810,7 @@
 
             <!-- Dynamic Construction Cost & Material Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
                         নির্মাণ খরচ & AI সাশ্রয়ের হিসেব
                     </span>
@@ -2853,49 +2860,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Civil</h3>
                         <p class="text-[10px] text-amber-400 mt-1">Engineering ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
@@ -2910,17 +2917,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. সিভিল সাইটের রড, সিমেন্ট ও মজুরি হিসাব কীভাবে রাখা যায়?</h3>
                         <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি প্যানেল থেকে ১-ক্লিকে প্রতিটি চালানের রড, সিমেন্ট, বালির পরিমাণ এবং সাইট শ্রমিকদের দৈনিক হাজিরা ও মজুরি লেজারে সেভ করা যায়।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. AI দিয়ে সাইট ও ম্যাপ এনালাইসিস কীভাবে কাজ করে?</h3>
                         <p class="text-gray-300 leading-relaxed">AI সয়েল টেস্ট রিপোর্ট, স্ট্রাকচারাল ম্যাপ ও লোড ক্যালকুলেশন বিশ্লেষণ করে মেটেরিয়াল ওয়েস্টেজ কমানো এবং টেকসই ভবনের জন্য অটোমেটিক পরামর্শ প্রদান করে।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কাস্টমারদের জন্য ৳১০০ পেইড ইঞ্জিনিয়ার সার্চ কীভাবে কাজ করে?</h3>
                         <p class="text-gray-300 leading-relaxed">বাড়ি নির্মাণকারী ব্যক্তিরা ৳১০০ পেমেন্ট করে অভিজ্ঞ সিভিল ইঞ্জিনিয়ার, কন্ট্রাক্টরদের লাইভ ফাইল এক্সেস এবং আর্কিটেকচারাল ম্যাপ নকশা ডাউনলোড করতে পারবেন।</p>
                     </div>
@@ -2963,7 +2970,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Merchant Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -2982,7 +2989,7 @@
                         </div>
 
                         <!-- Live Order & Expense Ledger Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">দৈনিক খরচ ও বেতন: <strong class="text-white">৳১২,৪৫০</strong></span>
                                 <span class="text-emerald-400 font-bold">আজকের প্রফিট মার্জিন: +২৮%</span>
@@ -3021,7 +3028,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-emerald-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
                     <div class="relative z-10 space-y-4">
@@ -3053,7 +3060,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-emerald-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-emerald-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -3160,7 +3167,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
                             📊
                         </div>
@@ -3170,7 +3177,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-teal-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-teal-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-teal-600/20 border border-teal-500/30 flex items-center justify-center text-2xl mb-4 text-teal-400">
                             🤖
                         </div>
@@ -3180,7 +3187,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
                             🪙
                         </div>
@@ -3190,7 +3197,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             🏨
                         </div>
@@ -3204,7 +3211,7 @@
 
             <!-- Dynamic AI ROI & Revenue Growth Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
                         AI তদারকি ও লাভ বৃদ্ধির হিসেব
                     </span>
@@ -3254,49 +3261,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-emerald-400 mt-1">ERP & ZengPay Coin</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
@@ -3311,17 +3318,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. দৈনিক খরচ ও স্টাফ বেতন কীভাবে ট্র্যাকিং করা যাবে?</h3>
                         <p class="text-gray-300 leading-relaxed">মোবাইল বা পিসি থেকে ১-ক্লিকে প্রতিদিনের বাজার কাঁচামাল কেনাকাটা, বিদ্যুৎ বিল ও স্টাফ বেতন এন্ট্রি দিলে স্বয়ংক্রিয়ভাবে ক্যাশ ব্যালেন্স ও লেজার জেনারেট হয়।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. AI দিয়ে ব্যবসা তদারকি কীভাবে সাহায্য করে?</h3>
                         <p class="text-gray-300 leading-relaxed">AI সিস্টেম আপনার প্রতিদিনের বিক্রি, পিক কাস্টমার ট্রাফিক ও খাবার অপচয় বিশ্লেষণ করে বিক্রি ও মুনাফা বাড়ানোর নির্দিষ্ট পরামর্শ প্রদান করে।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. ZengPay Coin কীভাবে কাস্টমারদের থেকে গ্রহণ করব?</h3>
                         <p class="text-gray-300 leading-relaxed">কাস্টমাররা রেস্টুরেন্টে খেয়ে কাউন্টারের ZengPay QR স্ক্যান করে সরাসরি ZengPay Coin টোকেনে বিল পরিশোধ করতে পারবে, যা সাথে সাথে আপনার প্যানেলে ক্যাশলেস হিসেবে জমা হবে।</p>
                     </div>
@@ -3364,7 +3371,7 @@
 
                 <!-- Hero Right Live Visual Showcase Mockup -->
                 <div class="lg:col-span-5 relative scroll-reveal opacity-0 translate-y-10">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/90 border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.06] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-2xl relative z-10 space-y-6">
                         
                         <!-- Top Location Badge -->
                         <div class="flex items-center justify-between border-b border-white/10 pb-4">
@@ -3383,7 +3390,7 @@
                         </div>
 
                         <!-- Live Flat Vacancy Card Mockup -->
-                        <div class="p-4 rounded-2xl bg-[#090D14] border border-white/10 space-y-2">
+                        <div class="p-4 rounded-2xl bg-black/40 shadow-inner backdrop-blur-md border border-white/10 space-y-2">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="text-gray-400">প্রপার্টি আইডি: <strong class="text-white">#RENT-8842</strong></span>
                                 <span class="text-purple-400 font-bold">৩ বিএইচকে (১৫০০ বর্গফুট)</span>
@@ -3423,7 +3430,7 @@
                     </h2>
                 </div>
 
-                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-purple-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
+                <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-purple-500/30 overflow-hidden shadow-2xl p-8 sm:p-14 text-center relative group">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
                     <div class="relative z-10 space-y-4">
@@ -3455,7 +3462,7 @@
 
             <!-- Interactive Sandbox Simulator -->
             <div id="sandbox" class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#121A29] to-[#0A0E17] border border-purple-500/30 shadow-2xl backdrop-blur-2xl">
+                <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-purple-500/30 shadow-2xl backdrop-blur-2xl">
                     <div class="text-center max-w-2xl mx-auto mb-8">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1 rounded-full">
                             স্যান্ডবক্স ড্রাই-রান
@@ -3515,7 +3522,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Tenant Search Connect Pack (৳50/search) -->
-                    <div class="p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 hover:border-purple-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
+                    <div class="p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 hover:border-purple-500/50 backdrop-blur-xl transition-all flex flex-col justify-between">
                         <div>
                             <span class="px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold border border-purple-500/20">
                                 {{ $module['pricing_tiers']['tenant']['badge'] ?? 'বাসা সন্ধানকারী চয়েস' }}
@@ -3594,7 +3601,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-purple-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl mb-4 text-purple-400">
                             📍
                         </div>
@@ -3604,7 +3611,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-emerald-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4 text-emerald-400">
                             🚫
                         </div>
@@ -3614,7 +3621,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-indigo-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-2xl mb-4 text-indigo-400">
                             🔐
                         </div>
@@ -3624,7 +3631,7 @@
                         </p>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-pink-500/40 backdrop-blur-xl transition-all">
                         <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-2xl mb-4 text-pink-400">
                             📜
                         </div>
@@ -3638,7 +3645,7 @@
 
             <!-- Dynamic Broker Savings & ROI Calculator -->
             <div class="mb-20 scroll-reveal opacity-0 translate-y-10">
-                <div class="p-8 sm:p-12 rounded-3xl bg-[#121A29]/80 border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 shadow-2xl backdrop-blur-xl text-center max-w-4xl mx-auto">
                     <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1 rounded-full">
                         দালাল ফি ও সময় বাঁচানোর লাইভ হিসেব
                     </span>
@@ -3688,49 +3695,49 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-purple-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-purple-500/10">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-purple-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-purple-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-purple-400 mt-1">Tenant & Radius Map</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}" class="p-5 rounded-2xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
                         <p class="text-[10px] text-gray-400 mt-1">LMS Platform</p>
@@ -3745,17 +3752,17 @@
                 </div>
 
                 <div class="space-y-4 text-xs sm:text-sm">
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">১. ৫-১০ কিমি রেডিয়াস ফিল্টার কীভাবে কাজ করে?</h3>
                         <p class="text-gray-300 leading-relaxed">আপনার বর্তমান জিও-লোকেশন অথবা সিলেক্ট করা ম্যানুয়াল লোকেশন ধরে ৫ বা ১০ কিমি বৃত্তাকার ব্যাসার্ধের ভেতরের সব ভেরিফাইড খালি বাসার তথ্য রিয়েল-টাইম ম্যাপে দেখায়।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">২. বাসা ভাড়ায় ভূয়া পোস্ট রোধে কী সিকিউরিটি আছে?</h3>
                         <p class="text-gray-300 leading-relaxed">বাড়িওয়ালা হিসেবে বিজ্ঞাপন পোস্ট দিতে হলে স্মার্ট ভেরিফাইড প্রপার্টি আইডি ও ডিজিটাল এনআইডি ভেরিফিকেশন সম্পন্ন করা বাধ্যতামূলক, ফলে কোনো ভূয়া দালাল চক্রান্ত তৈরি হতে পারবে না।</p>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-[#121A29]/80 border border-white/10">
+                    <div class="p-5 rounded-2xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10">
                         <h3 class="font-bold text-white mb-1">৩. কন্টাক্ট নম্বর পেতে কত টাকা লাগে?</h3>
                         <p class="text-gray-300 leading-relaxed">বাসা সন্ধানকারী হিসেবে মাত্র ৳৫০ ফি দিয়ে সরাসরি বাড়িতে যেয়ে বাসা পছন্দ করার জন্য ভেরিফাইড বাড়ির মালিকের সঙ্গে কল ও সরাসরি কন্টাক্ট টোকেন রিলিজ করা যায়।</p>
                     </div>
@@ -3799,7 +3806,7 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach($module['features'] as $feature)
-                        <div class="p-6 sm:p-8 rounded-3xl bg-[#121A29]/70 border border-white/10 {{ $module['theme']['border_glow'] }} backdrop-blur-xl transition-all duration-300">
+                        <div class="p-6 sm:p-8 rounded-3xl bg-white/[0.03] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-2xl border border-white/10 {{ $module['theme']['border_glow'] }} backdrop-blur-xl transition-all duration-300">
                             <div class="text-3xl mb-4">{{ $feature['icon'] }}</div>
                             <h3 class="text-lg font-bold text-white mb-2">{{ $feature['title_bn'] ?? $feature['title'] }}</h3>
                             <p class="text-xs text-gray-300 leading-relaxed">{{ $feature['desc_bn'] ?? $feature['desc'] }}</p>
@@ -3809,7 +3816,7 @@
             </div>
 
             <!-- Dynamic Pricing Card Section for General Subdomains -->
-            <div id="pricing" class="max-w-xl mx-auto mb-20 p-8 rounded-3xl bg-[#121A29]/80 border border-white/10 backdrop-blur-xl text-center scroll-reveal opacity-0 translate-y-10">
+            <div id="pricing" class="max-w-xl mx-auto mb-20 p-8 rounded-3xl bg-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-3xl border border-white/10 backdrop-blur-xl text-center scroll-reveal opacity-0 translate-y-10">
                 <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Transparent Pricing</span>
                 <h2 class="text-3xl font-black text-white mt-2">{{ $module['name'] }} Rate</h2>
 
