@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\FounderZengfyTop\MusicStreamInterface;
 use App\Services\FounderZengfyTop\GithubActivityService;
 use App\Services\ModuleDataService;
 use Illuminate\Http\Request;
@@ -10,12 +11,16 @@ use Illuminate\Support\Facades\Http;
 class SubdomainLandingController extends Controller
 {
     protected $github;
-    public function __construct(GithubActivityService $github)
+    protected $music;
+    public function __construct(GithubActivityService $github, MusicStreamInterface $musicStreamInterface)
     {
         $this->github = $github;
+        $this->music = $musicStreamInterface;
     }
     public function show(Request $request, string $subdomain = null)
     {
+        $githubState = null;
+        $musicState = null;
         if (!$subdomain) {
             $host = $request->getHost();
             $parts = explode('.', $host);
@@ -30,6 +35,12 @@ class SubdomainLandingController extends Controller
         if ($subdomain === 'founder') {
             $githubState = $this->github->getLatestActivity('diusazzad');
         }
-        return view('subdomain_landing', compact('module', 'githubState'));
+        if ($subdomain === 'founder') {
+            $githubState = $this->github->getLatestActivity('diusazzad');
+            $musicState = $this->music->getCurrentPlaying();
+        }
+
+
+        return view('subdomain_landing', compact('module', 'githubState', 'musicState'));
     }
 }

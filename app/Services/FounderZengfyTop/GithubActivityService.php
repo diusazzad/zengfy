@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class GithubActivityService
 {
+
     public function getLatestActivity(string $username): array
     {
         return Cache::remember("github_activity_{$username}", 900, function () use ($username) {
@@ -44,4 +45,6 @@ class GithubActivityService
             ];
         });
     }
+
+
 }
