@@ -13,10 +13,11 @@
         "intervention/image": "^3.11",
         "intervention/image-laravel": "^1.5",
         "laravel/framework": "^11.31",
+        "laravel/pulse": "^1.8",
         "laravel/sanctum": "^4.0",
         "laravel/socialite": "^5.24",
         "laravel/tinker": "^2.9",
-        "nwidart/laravel-modules": "^12.0",
+        "nwidart/laravel-modules": "^13.0",
         "spatie/laravel-sitemap": "^7.0",
         "stevebauman/location": "^7.6"
     },
@@ -38,7 +39,10 @@
             "Database\\Seeders\\": "database/seeders/",
             "Modules\\School\\": "Modules/School/app/",
             "Modules\\School\\Database\\Factories\\": "Modules/School/database/factories/",
-            "Modules\\School\\Database\\Seeders\\": "Modules/School/database/seeders/"
+            "Modules\\School\\Database\\Seeders\\": "Modules/School/database/seeders/",
+            "Modules\\Auth\\": "Modules/Auth/app/",
+            "Modules\\Auth\\Database\\Factories\\": "Modules/Auth/database/factories/",
+            "Modules\\Auth\\Database\\Seeders\\": "Modules/Auth/database/seeders/"
         },
         "files": [
             "app/Helpers/helpers.php"
