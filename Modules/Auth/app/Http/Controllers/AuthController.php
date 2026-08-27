@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cache;
+use App\Events\UserRegistered;
 
 class AuthController extends Controller
 {
@@ -18,7 +19,13 @@ class AuthController extends Controller
      */
     public function register(Request $request): JsonResponse
     {
-        // 1. Strict Validation
+        // 1. Idempotency Check (Return cached response immediately if already processed)
+        $idempotencyKey = $request->header('X-Idempotency-Key');
+        if ($idempotencyKey && Cache::has("idempotency:{$idempotencyKey}")) {
+            return response()->json(Cache::get("idempotency:{$idempotencyKey}"), 200);
+        }
+
+        // 2. Strict Validation
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -32,12 +39,6 @@ class AuthController extends Controller
             ], 422);
         }
 
-        // 2. Idempotency Check (Prevent duplicate submissions on network lag)
-        $idempotencyKey = $request->header('X-Idempotency-Key');
-        if ($idempotencyKey && Cache::has("idempotency:{$idempotencyKey}")) {
-            return response()->json(Cache::get("idempotency:{$idempotencyKey}"), 200);
-        }
-
         try {
             // 3. Database Transaction (Atomic Operation)
             $responsePayload = DB::transaction(function () use ($request) {
@@ -46,6 +47,9 @@ class AuthController extends Controller
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
                 ]);
+
+                // Dispatch background event without blocking the user response
+                UserRegistered::dispatch($user);
 
                 // Create Sanctum API Token
                 $token = $user->createToken('auth_token')->plainTextToken;

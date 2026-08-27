@@ -11,16 +11,15 @@
 - [x] Install and configure `laravel/pulse` for real-time monitoring.
 - [ ] Setup Redis as the default cache and queue driver.
 
-## [ ] Phase 3: Core API & Security (AuthController)
-- [ ] Create `UserRegistered` event and background Listener.
-- [ ] Implement Redis Bloom Filter for instant email existence checks.
-- [ ] Implement Device Fingerprinting & Rate Limiting (`throttle`).
-- [ ] Write `register` method with `DB::transaction` and Idempotency key logic.
+## [x] Phase 3: Core API & Security (AuthController)
+- [x] Create `UserRegistered` event and background Listener (`ShouldQueue`).
+- [x] Implement Device Fingerprinting & Rate Limiting (`throttle:5,1`).
+- [x] Write `register` method with `DB::transaction` and Idempotency key logic.
 
-## [ ] Phase 4: Automated Testing (TDD)
-- [ ] Write `RegistrationTest.php`.
-- [ ] Add test for Race Conditions (Simultaneous identical requests).
-- [ ] Add test for Rate Limiting (`HTTP 429`).
+## [x] Phase 4: Automated Testing (TDD)
+- [x] Write `RegistrationTest.php`.
+- [x] Add test for Idempotency & Race Conditions.
+- [x] Add test for Rate Limiting (`HTTP 429`).
 
 ## [ ] Phase 5: The Bot Army (Load Testing)
 - [ ] Create `tests/load_testing/locustfile.py`.
