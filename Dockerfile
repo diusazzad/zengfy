@@ -1,5 +1,5 @@
-# Use the official PHP image based on Alpine Linux (very lightweight)
-FROM php:8.2-fpm-alpine
+# Use the official PHP image based on Alpine Linux (PHP 8.4 matching composer platform)
+FROM php:8.4-fpm-alpine
 
 # Install PDO and MySQL extensions so Laravel can talk to the database
 RUN docker-php-ext-install pdo pdo_mysql

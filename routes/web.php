@@ -16,8 +16,8 @@ Route::get('/lang/{locale}', function ($locale) {
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 
-// Public Page Routes
-Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::class)->group(function () {
+// Public Page Routes (Works for localhost:7000, zengfy.test, and production domains)
+Route::controller(PageController::class)->group(function () {
     Route::get('/', 'welcome')->name('welcome');
     Route::get('/products', 'products')->name('products');
     Route::get('/pricing', 'pricing')->name('pricing');
