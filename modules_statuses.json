@@ -3,5 +3,7 @@
     "Auth": true,
     "Law": true,
     "Team": true,
-    "School": true
+    "School": true,
+    "Organization": true,
+    "Social": true
 }

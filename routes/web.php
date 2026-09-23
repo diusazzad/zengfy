@@ -22,9 +22,12 @@ Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::
     Route::get('/products', 'products')->name('products');
     Route::get('/pricing', 'pricing')->name('pricing');
     Route::get('/company', 'company')->name('company');
+    Route::get('/team', fn() => redirect()->route('company'))->name('team');
+    Route::get('/download', 'downloadApp')->name('download.app');
     Route::get('/terms', 'terms')->name('terms');
     Route::get('/policy/workplace', 'workplacePolicy')->name('policy.workplace');
     Route::get('/faq', 'faq')->name('faq');
+    Route::post('/faq', 'submitQuestion')->name('faq.submit');
 
     // Traffic Safeguard & Error Waiting Room Preview Routes
     Route::get('/429', fn() => response()->view('errors.429', [], 429));

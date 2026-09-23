@@ -27,6 +27,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'account.active' => \App\Http\Middleware\AccountActive::class,
             'admin.only' => \App\Http\Middleware\AdminOnly::class,
+            'tenant.resolve' => \Modules\Organization\Http\Middleware\ResolveTenantContext::class,
+            'tenant.permission' => \Modules\Organization\Http\Middleware\RequireTenantPermission::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

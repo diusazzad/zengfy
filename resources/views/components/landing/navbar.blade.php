@@ -12,7 +12,7 @@
             </div>
             <span aria-hidden="true"
                 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
-                zengfy<span class="text-blue-500 font-black">.</span>
+                Zengfy<span class="text-blue-500 font-black">.</span>
             </span>
         </a>
 
@@ -125,7 +125,7 @@
                     class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:opacity-90 transition-opacity"></span>
                 <span
                     class="relative block px-3 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#0B0F17]/40 backdrop-blur-sm text-white group-hover:bg-transparent transition-colors whitespace-nowrap min-h-[40px] sm:min-h-[44px] flex items-center justify-center">
-                    Get Started
+                    Sign Up Free
                 </span>
             </a>
 
@@ -155,7 +155,9 @@
         <a @click="mobileOpen = false" href="/#faq" class="block hover:text-white py-2 px-2 rounded-lg">FAQ</a>
         <div class="pt-3 border-t border-white/10 flex items-center justify-between">
             <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}"
-                class="text-blue-400 font-bold hover:underline py-2 px-2 rounded-lg">Sign In to Dashboard →</a>
+                class="text-gray-300 font-semibold hover:text-white py-2 px-2 rounded-lg">Sign In</a>
+            <a href="/#cta"
+                class="text-blue-400 font-bold hover:underline py-2 px-2 rounded-lg">Sign Up Free →</a>
         </div>
     </div>
 </nav>

@@ -11,7 +11,7 @@
                         Z
                     </div>
                     <span aria-hidden="true" class="text-xl font-extrabold tracking-tight text-white">
-                        zengfy<span class="text-blue-500">.</span>
+                        Zengfy<span class="text-blue-500">.</span>
                     </span>
                 </a>
 

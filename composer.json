@@ -35,10 +35,18 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
             "Modules\\School\\": "Modules/School/app/",
             "Modules\\School\\Database\\Factories\\": "Modules/School/database/factories/",
-            "Modules\\School\\Database\\Seeders\\": "Modules/School/database/seeders/"
+            "Modules\\School\\Database\\Seeders\\": "Modules/School/database/seeders/",
+            "Modules\\Auth\\": "Modules/Auth/app/",
+            "Modules\\Auth\\Database\\Factories\\": "Modules/Auth/database/factories/",
+            "Modules\\Auth\\Database\\Seeders\\": "Modules/Auth/database/seeders/",
+            "Modules\\Organization\\": "Modules/Organization/app/",
+            "Modules\\Organization\\Database\\Factories\\": "Modules/Organization/database/factories/",
+            "Modules\\Organization\\Database\\Seeders\\": "Modules/Organization/database/seeders/",
+            "Modules\\Social\\": "Modules/Social/app/",
+            "Modules\\Social\\Database\\Factories\\": "Modules/Social/database/factories/",
+            "Modules\\Social\\Database\\Seeders\\": "Modules/Social/database/seeders/"
         },
         "files": [
             "app/Helpers/helpers.php"
