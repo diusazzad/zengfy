@@ -111,6 +111,22 @@ class User extends Authenticatable
         return hash_hmac('sha256', trim($nidNumber), config('app.key'));
     }
 
+    /**
+     * Get the resolved public URL of the avatar image.
+     */
+    public function getAvatarUrlAttribute(): ?string
+    {
+        if (empty($this->avatar)) {
+            return null;
+        }
+
+        if (str_starts_with($this->avatar, 'http://') || str_starts_with($this->avatar, 'https://')) {
+            return $this->avatar;
+        }
+
+        return asset('storage/' . ltrim($this->avatar, '/'));
+    }
+
     public function posts()
     {
         return $this->hasMany(\Modules\Social\Models\Post::class, 'user_id');
@@ -118,12 +134,12 @@ class User extends Authenticatable
 
     public function likes()
     {
-        return $this->hasMany(\Modules\Main\Models\Like::class);
+        return $this->hasMany(\Modules\Social\Models\Like::class, 'user_id');
     }
 
     public function comments()
     {
-        return $this->hasMany(\Modules\Main\Models\Comment::class);
+        return $this->hasMany(\Modules\Social\Models\Comment::class, 'user_id');
     }
 
     /**

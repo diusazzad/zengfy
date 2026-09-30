@@ -16,9 +16,13 @@ Route::controller(ModuleApiController::class)->prefix('v1')->group(function () {
 });
 
 // Central Identity & Authentication Routes (v1)
-Route::prefix('v1/auth')->group(function () {
+Route::prefix('v1/auth')->middleware([
+    \Illuminate\Cookie\Middleware\EncryptCookies::class,
+    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+    \Illuminate\Session\Middleware\StartSession::class,
+])->group(function () {
     Route::post('/register', [\Modules\Auth\Http\Controllers\AuthController::class, 'register'])
-        ->middleware(['throttle:5,1'])
+        ->middleware(['throttle:registration'])
         ->name('api.v1.auth.register');
 
     Route::post('/login', [\Modules\Auth\Http\Controllers\AuthController::class, 'login'])
@@ -207,6 +211,9 @@ Route::prefix('v1')->group(function () {
 
         Route::delete('/posts/{id}', [\Modules\Social\Http\Controllers\PostController::class, 'destroy'])
             ->name('api.v1.posts.destroy');
+
+        Route::post('/posts/{id}/like', [\Modules\Social\Http\Controllers\PostController::class, 'toggleLike'])
+            ->name('api.v1.posts.like');
 
         // Real-Time Conversations & Messaging endpoints (Authenticated)
         Route::post('/conversations/direct', [\Modules\Social\Http\Controllers\ConversationController::class, 'startDirect'])

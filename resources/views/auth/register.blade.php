@@ -24,8 +24,11 @@
             <p class="text-sm text-gray-400 mt-1.5">Join Bangladesh's premier verified digital network</p>
         </div>
 
-        <!-- Error Notification Banner -->
+        <!-- Error Notification Banner (with aria-live for immediate screen reader announcement) -->
         <div x-show="errorMessage" x-cloak
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -38,6 +41,9 @@
 
         <!-- Success Notification Banner -->
         <div x-show="successMessage" x-cloak
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -72,7 +78,7 @@
                         autofocus
                         autocomplete="name"
                         placeholder="e.g. Sazzad Hossain"
-                        class="w-full pl-11 pr-4 py-2.5 sm:py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                        class="w-full pl-11 pr-4 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                     />
                 </div>
             </div>
@@ -96,7 +102,7 @@
                         required 
                         autocomplete="email"
                         placeholder="sazzad@example.com"
-                        class="w-full pl-11 pr-4 py-2.5 sm:py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                        class="w-full pl-11 pr-4 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                     />
                 </div>
             </div>
@@ -121,13 +127,13 @@
                         required 
                         autocomplete="new-password"
                         placeholder="At least 8 characters"
-                        class="w-full pl-11 pr-11 py-2.5 sm:py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                        class="w-full pl-11 pr-12 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                     />
                     <button 
                         type="button" 
                         @click="showPassword = !showPassword" 
                         aria-label="Toggle password visibility"
-                        class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        class="absolute inset-y-0 right-0 pr-3.5 pl-2 flex items-center justify-center min-w-[44px] min-h-[44px] text-gray-400 hover:text-white transition-colors cursor-pointer rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                         <svg x-show="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -172,7 +178,7 @@
                         required 
                         autocomplete="new-password"
                         placeholder="Re-enter password"
-                        class="w-full pl-11 pr-4 py-2.5 sm:py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                        class="w-full pl-11 pr-4 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                     />
                 </div>
                 <!-- Realtime Match Indicator -->
@@ -210,7 +216,7 @@
                         x-model="nid" 
                         maxlength="17"
                         placeholder="10-digit Smart Card or 17-digit NID"
-                        class="w-full pl-11 pr-4 py-2.5 sm:py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
+                        class="w-full pl-11 pr-4 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
                     />
                 </div>
                 <p class="text-[11px] text-gray-400 mt-1.5 flex items-center gap-1.5">
@@ -230,16 +236,16 @@
                     required
                     class="mt-1 w-4 h-4 rounded bg-[#0B0F17] border-white/20 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer"
                 />
-                <label for="reg-terms" class="text-xs text-gray-400 leading-relaxed cursor-pointer">
+                <label for="reg-terms" class="text-xs text-gray-400 leading-relaxed cursor-pointer py-1">
                     I agree to the <a href="{{ route('terms') }}" target="_blank" class="text-blue-400 hover:underline">Terms of Service</a>, NID Data Protection Charter, and Sovereign Privacy Policy.
                 </label>
             </div>
 
-            <!-- Submit Button -->
+            <!-- Submit Button (Accessible 48px touch target) -->
             <button 
                 type="submit" 
                 :disabled="loading || !agreeTerms" 
-                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:via-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 text-sm shadow-xl shadow-blue-600/30 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 mt-3">
+                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:via-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-xl shadow-blue-600/30 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 mt-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 
                 <span x-show="!loading" class="flex items-center gap-2">
                     <span>Create My Sovereign Account</span>
@@ -250,7 +256,7 @@
 
                 <span x-show="loading" x-cloak class="flex items-center gap-2">
                     <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
                     </svg>
                     <span>Issuing Sovereign Identity...</span>
@@ -268,9 +274,9 @@
             </div>
         </div>
 
-        <!-- Login Link -->
+        <!-- Login Link (Accessible 48px touch target) -->
         <a href="{{ route('login') }}" 
-           class="w-full block text-center py-3 px-4 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/30 text-white font-semibold text-sm transition-all duration-200">
+           class="w-full flex items-center justify-center py-3.5 px-4 min-h-[48px] rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/30 text-white font-semibold text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
             Sign In with Existing Account
         </a>
 
@@ -293,37 +299,36 @@
             errorMessage: '',
             successMessage: '',
 
-            // Strength Meter Properties
             strengthScore: 0,
             strengthText: 'Too Weak',
+            strengthTextColor: 'text-gray-500',
             strengthColor: 'bg-rose-500',
-            strengthTextColor: 'text-rose-400',
 
             evaluatePasswordStrength() {
                 const pwd = this.password;
                 let score = 0;
                 if (pwd.length >= 8) score++;
-                if (/[A-Z]/.test(pwd)) score++;
-                if (/[0-9]/.test(pwd)) score++;
-                if (/[^A-Za-z0-9]/.test(pwd)) score++;
+                if (pwd.length >= 12) score++;
+                if (/[A-Z]/.test(pwd) && /[a-z]/.test(pwd)) score++;
+                if (/[0-9]/.test(pwd) || /[^A-Za-z0-9]/.test(pwd)) score++;
 
                 this.strengthScore = score;
-                if (score === 0 || pwd.length < 6) {
-                    this.strengthText = 'Very Weak';
-                    this.strengthColor = 'bg-rose-600';
-                    this.strengthTextColor = 'text-rose-400';
-                } else if (score === 1) {
+                if (score <= 1) {
                     this.strengthText = 'Weak';
-                    this.strengthColor = 'bg-amber-500';
+                    this.strengthTextColor = 'text-rose-400';
+                    this.strengthColor = 'bg-rose-500';
+                } else if (score === 2) {
+                    this.strengthText = 'Fair';
                     this.strengthTextColor = 'text-amber-400';
-                } else if (score === 2 || score === 3) {
+                    this.strengthColor = 'bg-amber-500';
+                } else if (score === 3) {
                     this.strengthText = 'Good';
-                    this.strengthColor = 'bg-blue-500';
                     this.strengthTextColor = 'text-blue-400';
-                } else if (score >= 4) {
-                    this.strengthText = 'Sovereign 256-Bit';
-                    this.strengthColor = 'bg-emerald-400';
+                    this.strengthColor = 'bg-blue-500';
+                } else {
+                    this.strengthText = 'Very Strong';
                     this.strengthTextColor = 'text-emerald-400';
+                    this.strengthColor = 'bg-emerald-500';
                 }
             },
 
@@ -332,70 +337,63 @@
                 this.successMessage = '';
 
                 if (this.password !== this.passwordConfirmation) {
-                    this.errorMessage = 'Passwords do not match. Please verify both fields.';
+                    this.errorMessage = 'Passwords do not match. Please verify.';
                     return;
                 }
 
-                if (!this.agreeTerms) {
-                    this.errorMessage = 'You must accept the Terms of Service to create an account.';
+                if (this.password.length < 8) {
+                    this.errorMessage = 'Password must be at least 8 characters long.';
                     return;
                 }
 
                 this.loading = true;
 
                 try {
-                    // Generate idempotency key for network resilience
-                    const idempotencyKey = (crypto && crypto.randomUUID) ? crypto.randomUUID() : 'idemp_' + Date.now();
-
                     const response = await fetch('/api/v1/auth/register', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json',
-                            'X-Idempotency-Key': idempotencyKey,
-                            'X-CSRF-TOKEN': document.querySelector('meta[name=\"csrf-token\"]').getAttribute('content'),
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                         },
                         body: JSON.stringify({
                             name: this.name,
                             email: this.email,
                             password: this.password,
                             password_confirmation: this.passwordConfirmation,
-                            device_name: navigator.userAgent.substring(0, 100),
+                            nid: this.nid || null,
                         })
                     });
 
                     const data = await response.json();
 
                     if (!response.ok) {
-                        if (response.status === 422 && data.errors) {
-                            const firstErrorKey = Object.keys(data.errors)[0];
-                            this.errorMessage = data.errors[firstErrorKey][0];
-                        } else if (response.status === 429) {
-                            this.errorMessage = data.message || 'Rate limit exceeded. Please wait a few moments before trying again.';
+                        if (data.errors) {
+                            const firstKey = Object.keys(data.errors)[0];
+                            this.errorMessage = data.errors[firstKey][0];
                         } else {
-                            this.errorMessage = data.message || 'Registration could not be completed. Please try again.';
+                            this.errorMessage = data.message || 'Registration failed. Please check your details.';
                         }
                         this.loading = false;
                         return;
                     }
 
-                    // Save token if provided
                     if (data.token) {
                         localStorage.setItem('zengfy_token', data.token);
                     }
 
-                    this.successMessage = 'Sovereign Account created successfully! Preparing your sovereign dashboard...';
+                    this.successMessage = 'Sovereign Account created successfully! Redirecting to setup...';
 
                     setTimeout(() => {
-                        window.location.href = '{{ route("account") }}?welcome=1';
-                    }, 1000);
+                        window.location.href = '/account';
+                    }, 800);
 
-                } catch (err) {
-                    this.errorMessage = 'Network connection failed. Please check your connectivity and try again.';
+                } catch (error) {
+                    this.errorMessage = 'Network error: Unable to contact Zengfy Auth Gateway.';
                     this.loading = false;
                 }
             }
-        }
+        };
     }
 </script>
 @endpush

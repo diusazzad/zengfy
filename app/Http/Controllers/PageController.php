@@ -552,7 +552,84 @@ class PageController extends Controller
 
     public function showFeed()
     {
-        return view('social.feed');
+        $currentUser = Auth::user();
+
+        $posts = \Modules\Social\Models\Post::with([
+            'user:id,name,handle,avatar,verified_badge,nid_verified,ward_code',
+            'media'
+        ])
+            ->visibleTo($currentUser)
+            ->orderByDesc('created_at')
+            ->orderByDesc('id')
+            ->take(50)
+            ->get();
+
+        if ($posts->isEmpty()) {
+            $firstUser = \App\Models\User::first();
+            if ($firstUser) {
+                \Modules\Social\Models\Post::create([
+                    'user_id' => $firstUser->id,
+                    'content' => "Welcome to Zengfy Social Sovereign Network! Verified citizen accounts, hyperlocal neighborhood security, and civic alerts all unified.",
+                    'post_type' => 'announcement',
+                    'visibility' => 'public',
+                    'ward_code' => $firstUser->ward_code ?: 'WARD-DHAKA-19',
+                    'likes_count' => 12,
+                    'comments_count' => 3,
+                ]);
+
+                $posts = \Modules\Social\Models\Post::with([
+                    'user:id,name,handle,avatar,verified_badge,nid_verified,ward_code',
+                    'media'
+                ])
+                    ->visibleTo($currentUser)
+                    ->orderByDesc('created_at')
+                    ->orderByDesc('id')
+                    ->take(50)
+                    ->get();
+            }
+        }
+
+        $userLikes = [];
+        if ($currentUser) {
+            $userLikes = \Modules\Social\Models\Like::where('user_id', $currentUser->id)
+                ->whereIn('post_id', $posts->pluck('id'))
+                ->pluck('post_id')
+                ->flip()
+                ->toArray();
+        }
+
+        $formattedPosts = $posts->map(function ($post) use ($userLikes) {
+            $firstMedia = $post->media->first();
+            $author = $post->user;
+
+            $name = $author?->name ?? 'Zengfy Citizen';
+            $nameParts = explode(' ', trim($name));
+            $initials = count($nameParts) > 1 
+                ? strtoupper(substr($nameParts[0], 0, 1) . substr(end($nameParts), 0, 1))
+                : strtoupper(substr($nameParts[0], 0, 2));
+
+            return [
+                'id' => (string) $post->id,
+                'authorName' => $name,
+                'authorHandle' => '@' . ($author?->handle ?? 'citizen'),
+                'authorInitials' => $initials,
+                'authorAvatar' => $author?->avatar_url,
+                'verified' => (bool) ($author?->verified_badge || $author?->nid_verified),
+                'timeAgo' => $post->created_at ? $post->created_at->diffForHumans() : 'Just now',
+                'wardCode' => $post->ward_code ?? 'WARD-DHAKA-19',
+                'type' => ucfirst($post->post_type ?? 'Standard'),
+                'content' => $post->content ?? '',
+                'image' => $firstMedia ? $firstMedia->url : null,
+                'likesCount' => (int) ($post->likes_count ?? 0),
+                'commentsCount' => (int) ($post->comments_count ?? 0),
+                'liked' => isset($userLikes[$post->id]),
+            ];
+        })->values()->toArray();
+
+        return view('social.feed', [
+            'currentUser' => $currentUser,
+            'initialPosts' => $formattedPosts,
+        ]);
     }
 
     public function showProfile(string $handle)

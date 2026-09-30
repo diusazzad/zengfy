@@ -38,5 +38,10 @@ class AppServiceProvider extends ServiceProvider
                 $this->loadMigrationsFrom($migrationDir);
             }
         }
+
+        // Dedicated IP-based rate limiting for user registrations
+        \Illuminate\Support\Facades\RateLimiter::for('registration', function (\Illuminate\Http\Request $request) {
+            return \Illuminate\Cache\RateLimiting\Limit::perMinute(5)->by($request->ip());
+        });
     }
 }

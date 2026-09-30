@@ -86,17 +86,17 @@
 
     <!-- Header / Brand Logo & Navigation -->
     <header class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300">
+        <a href="/" aria-label="Zengfy Home" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-2 min-h-[44px]">
+            <div aria-hidden="true" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300">
                 Z
             </div>
-            <span class="text-2xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
+            <span aria-hidden="true" class="text-2xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
                 Zengfy<span class="text-blue-500 font-black">.</span>
             </span>
         </a>
 
         <div class="flex items-center gap-3">
-            <a href="/" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-400 hover:text-white transition-colors bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-3.5 py-1.5 sm:py-2 rounded-xl backdrop-blur-md">
+            <a href="/" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-400 hover:text-white transition-colors bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-4 py-2.5 min-h-[44px] rounded-xl backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
@@ -105,8 +105,8 @@
         </div>
     </header>
 
-    <!-- Main Content Injection -->
-    <main class="relative z-10 flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
+    <!-- Main Content Landmark -->
+    <main id="main-content" role="main" class="relative z-10 flex-grow flex items-center justify-center px-4 py-8 sm:py-12">
         <div class="w-full max-w-md">
             @yield('content')
         </div>
@@ -122,9 +122,9 @@
                 <span class="font-medium text-gray-300">Protected by 256-Bit Cloud Encryption & Anti-Bot Shield</span>
             </div>
             <div class="flex items-center gap-4 text-gray-400">
-                <a href="{{ route('terms') }}" class="hover:text-gray-200 transition-colors">Terms of Service</a>
+                <a href="{{ route('terms') }}" class="hover:text-gray-200 transition-colors py-2 px-2 min-h-[44px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">Terms of Service</a>
                 <span>&bull;</span>
-                <a href="{{ route('faq') }}" class="hover:text-gray-200 transition-colors">Help & FAQ</a>
+                <a href="{{ route('faq') }}" class="hover:text-gray-200 transition-colors py-2 px-2 min-h-[44px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">Help & FAQ</a>
                 <span>&bull;</span>
                 <span class="text-gray-400">&copy; {{ date('Y') }} Zengfy Inc.</span>
             </div>

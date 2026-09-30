@@ -25,16 +25,12 @@
     <meta property="twitter:description" content="Manage your school, business POS, and legal practice with one secure NID-verified account.">
     <meta property="twitter:image" content="{{ asset('images/logo.png') }}">
 
-    <!-- Google Tag Manager (GTM) / GA4 Placeholder -->
-    @if(env('GTM_ID'))
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{{ env("GTM_ID") }}');</script>
-    @endif
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- JSON-LD Structured Data for Google Knowledge Graph -->
+    <!-- Structured Data (JSON-LD) for Google Rich Snippets -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,49 +44,75 @@
             "@type": "ImageObject",
             "url": "{{ asset('images/logo.png') }}"
           },
+          "description": "Bangladesh's First NID-Verified Sovereign Digital Ecosystem.",
           "sameAs": [
+            "https://twitter.com/zengfy",
             "https://facebook.com/zengfy",
             "https://linkedin.com/company/zengfy"
           ]
         },
         {
+          "@type": "WebSite",
+          "@id": "{{ url('/') }}/#website",
+          "url": "{{ url('/') }}",
+          "name": "Zengfy",
+          "publisher": {
+            "@id": "{{ url('/') }}/#organization"
+          }
+        },
+        {
           "@type": "SoftwareApplication",
           "@id": "{{ url('/') }}/#software",
-          "name": "Zengfy Ecosystem",
-          "operatingSystem": "Web",
+          "name": "Zengfy Unified Ecosystem",
+          "operatingSystem": "Web, Android",
           "applicationCategory": "BusinessApplication",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "128",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "BDT"
           },
-          "description": "Zengfy is Bangladesh's first NID-verified digital ecosystem for School ERP, POS, and Legal Suite."
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         },
         {
           "@type": "FAQPage",
-          "@id": "{{ url('/') }}/#faqpage",
+          "@id": "{{ url('/') }}/#faq",
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "How does Zengfy NID verification work?",
+              "name": "What is Zengfy and how does Single Sign-On (SSO) work?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Zengfy integrates with National ID verification to ensure authentic identities and eliminate fake profiles or fraud."
+                "text": "Zengfy is a unified digital operating system for Bangladesh. Once you create a single account, you can access School ERP, POS Retail, Legal Suite, and Social Network using our 9-Dot App Switcher without ever re-entering passwords."
               }
             },
             {
               "@type": "Question",
-              "name": "What is Zengfy Unified Single Sign-On (SSO)?",
+              "name": "How is NID Verification handled and is my data secure?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Zengfy Unified SSO allows users to access all 15 ecosystem sub-applications with one account and one login."
+                "text": "NID verification ensures real, accountable identities across our ecosystem to prevent fraud and spam. All institutional and financial data is stored using enterprise-grade 256-bit SSL encryption."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does pricing and local payment work in Bangladesh?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Zengfy accounts are free forever for personal use. Specialized business modules have dedicated pricing tiers with native support for bKash, Nagad, Rocket, and local debit/credit cards."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I migrate my existing school or shop data to Zengfy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Our onboarding team provides automated CSV and Excel import tools so you can effortlessly import students, inventory items, and historical customer data into Zengfy."
               }
             }
           ]
@@ -98,14 +120,6 @@
       ]
     }
     </script>
-
-    <!-- Alpine.js for Interactive Components & Mobile Menu -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- SEO Multi-Lingual & Regional hreflang Tags -->
     <link rel="alternate" hreflang="bn" href="{{ url()->current() }}?lang=bn" />
@@ -124,8 +138,8 @@
     <!-- 1. Header Navigation -->
     <x-landing.navbar />
 
-    <!-- Main Content Body -->
-    <main class="pt-20">
+    <!-- Main Landmark Content Body -->
+    <main id="main-content" role="main" class="pt-20">
         <!-- 2. Hero Section -->
         <x-landing.hero />
 

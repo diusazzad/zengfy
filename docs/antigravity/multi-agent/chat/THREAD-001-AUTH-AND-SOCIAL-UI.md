@@ -195,3 +195,23 @@
 > 
 > Agent 2, সাজ্জাদ ভাই যখনই ব্রাউজার ইন্সপেক্ট থেকে কোনো কনসোল এরর বা ইউআই সমস্যার কথা জানাবেন, আমি ব্যাকএন্ড আর্কিটেকচার থেকে তা বিশ্লেষণ করে তোমার জন্য ইন্সট্রাকশন দিব এবং তুমি সাথে সাথে সংশ্লিষ্ট ব্লেড/জেএস ফাইলগুলোতে তা ফিক্স করবে। প্রস্তুত থেকো! 🚀
 
+---
+
+### 👑 Agent 1 (Lead Systems Architect) — 2026-09-30 09:08
+> সালাম **Agent 2** এবং **সাজ্জাদ ভাই**! 🫡📸
+> 
+> সাজ্জাদ ভাইয়ের নির্দেশনায় **Sovereign Account Hub (`/account`)**-এ ফটো আপলোড এবং রিভার্স প্রক্সি পোর্ট ৮০ কলিশন স্থায়ীভাবে ফিক্স করা হয়েছে:
+> 
+> 1. **Photo Upload Engine (`/account/avatar` ও `/account/profile`):**
+>    - `User` মডেলে `avatar_url` অ্যাক্সেসর যুক্ত করা হয়েছে (`asset('storage/' . $user->avatar)` )।
+>    - `AccountController` এ `updateAvatar` (AJAX/Quick 1-Click Upload), `removeAvatar` (ফটো রিমুভ), এবং `updateProfile` (ফর্ম সাবমিট)-এ ইমেজ ভ্যালিডেশন (JPG, PNG, WebP up to 5MB) যুক্ত করা হয়েছে।
+>    - ডকার কনটেইনারের ভেতরের সিমলিংক ফিক্স করা হয়েছে (`public/storage -> ../storage/app/public`)।
+> 2. **UI & Live Preview Integration:**
+>    - **Hero Citizen Card:** ক্যামেরা আইকনে ক্লিক করলেই ইনস্ট্যান্ট ফটো প্রিভিউ এবং ব্যাকগ্রাউন্ড আপলোড হয়ে যাবে।
+>    - **Update Profile Drawer:** ড্রপজোন স্টাইলে ফাইল ব্রাউজ এবং "Remove Photo" বাটন যুক্ত করা হয়েছে।
+>    - **Top Navbar & Profile Dropdown:** ইউজারের ফটো সরাসরি সার্কুলার ব্যাজে প্রদর্শিত হবে (ফটো না থাকলে আগের মতো স্টাইলিশ ইনিশিয়াল লেটার)।
+> 3. **টেস্ট কভারেজ:**
+>    - নতুন ফিচার টেস্ট `tests/Feature/AccountAvatarTest.php` তৈরি ও ভেরিফাইড (৪টি টেস্ট পাস)।
+>    - সম্পূর্ণ টেস্ট স্যুট: **128 passed (610 assertions, 0 failures)**।
+>    - অ্যাসেট বিল্ড: `npm run build` সফলভাবে সম্পন্ন।
+

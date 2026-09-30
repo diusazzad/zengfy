@@ -16,6 +16,7 @@ Route::get('/lang/{locale}', function ($locale) {
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
+
 // Core Application & Public Web Routes
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'welcome')->name('welcome');
@@ -49,9 +50,18 @@ Route::controller(AccountController::class)->middleware(['auth'])->group(functio
     Route::get('/account', 'dashboard')->name('account');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/account/profile', 'updateProfile')->name('account.profile');
+    Route::post('/account/avatar', 'updateAvatar')->name('account.avatar');
+    Route::delete('/account/avatar', 'removeAvatar')->name('account.avatar.remove');
     Route::post('/account/password', 'changePassword')->name('account.password');
     Route::post('/account/device/{id}/revoke', 'revokeDevice')->name('account.device.revoke');
     Route::post('/account/devices/revoke-all', 'revokeAllOtherDevices')->name('account.devices.revoke-all');
+});
+
+// Authenticated Social Post Operations
+Route::controller(\Modules\Social\Http\Controllers\PostController::class)->middleware(['auth'])->group(function () {
+    Route::post('/posts', 'store')->name('web.posts.store');
+    Route::delete('/posts/{id}', 'destroy')->name('web.posts.destroy');
+    Route::post('/posts/{id}/like', 'toggleLike')->name('web.posts.like');
 });
 
 // Web Logout (POST preferred, GET supported for user convenience)

@@ -27,30 +27,77 @@
         <div class="px-6 pb-6 pt-0 relative">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 -mt-16 sm:-mt-20 mb-5">
                 
-                <!-- Avatar with Blue Verified Badge -->
-                <div class="relative">
-                    <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 p-1 shadow-2xl border-4 border-[#121A29]">
-                        <div class="w-full h-full rounded-[20px] bg-[#0B0F17] flex items-center justify-center text-3xl font-black text-white">
-                            {{ strtoupper(substr($user->name ?? 'SH', 0, 2)) }}
-                        </div>
+                <!-- Avatar with Blue Verified Badge & Upload Hover -->
+                <div class="relative group/avatar">
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 p-1 shadow-2xl border-4 border-[#121A29] overflow-hidden">
+                        <template x-if="avatarPreview">
+                            <img :src="avatarPreview" alt="{{ $user->name ?? 'Citizen' }}" class="w-full h-full object-cover rounded-[20px]">
+                        </template>
+                        <template x-if="!avatarPreview">
+                            <div class="w-full h-full rounded-[20px] bg-[#0B0F17] flex items-center justify-center text-3xl font-black text-white">
+                                {{ strtoupper(substr($user->name ?? 'SH', 0, 2)) }}
+                            </div>
+                        </template>
                     </div>
+
+                    @auth
+                    @if(Auth::id() === ($user->id ?? null) || Auth::user()?->handle === ($user->handle ?? null) || !isset($user->id))
+                    <!-- Camera Quick Upload Overlay -->
+                    <label for="profile-avatar-input" 
+                           title="ছবি আপলোড করুন"
+                           class="absolute inset-0 rounded-3xl bg-black/60 opacity-0 group-hover/avatar:opacity-100 transition-all flex flex-col items-center justify-center text-white cursor-pointer backdrop-blur-[2px]">
+                        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-[10px] font-bold text-gray-200 mt-1" x-text="avatarUploading ? 'আপলোড হচ্ছে...' : 'ছবি পরিবর্তন'"></span>
+                    </label>
+                    <input type="file" id="profile-avatar-input" accept="image/jpeg,image/png,image/webp,image/gif" class="hidden" @change="uploadAvatar($event)">
+                    @endif
+                    @endauth
                     
                     <!-- Blue Citizen Badge -->
-                    <div class="absolute bottom-1 right-1 w-8 h-8 rounded-full bg-blue-500 border-4 border-[#121A29] flex items-center justify-center text-white shadow-lg" title="Smart NID Verified Sovereign Citizen">
+                    <div class="absolute bottom-1 right-1 w-8 h-8 rounded-full bg-blue-500 border-4 border-[#121A29] flex items-center justify-center text-white shadow-lg pointer-events-none" title="Smart NID Verified Sovereign Citizen">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                         </svg>
                     </div>
                 </div>
 
-                <!-- Action Buttons: Follow / Friend / Message -->
+                <!-- Action Buttons: Follow / Friend / Message OR Owner Controls -->
                 <div class="flex items-center gap-2.5 flex-wrap">
+                    @auth
+                    @if(Auth::id() === ($user->id ?? null) || Auth::user()?->handle === ($user->handle ?? null) || !isset($user->id))
+                        <label for="profile-avatar-input" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2 cursor-pointer">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                            </svg>
+                            <span>ছবি আপলোড করুন</span>
+                        </label>
+                        <template x-if="avatarPreview">
+                            <button type="button" @click="removeAvatar()" class="px-3.5 py-2.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-semibold transition cursor-pointer">
+                                মুছে ফেলুন
+                            </button>
+                        </template>
+                        <a href="{{ route('account') }}" class="px-4 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 text-white text-xs font-semibold transition-all flex items-center gap-2">
+                            <span>⚙️ একাউন্ট হাব</span>
+                        </a>
+                    @else
                     <button 
                         @click="toggleFollow()" 
                         :class="isFollowing ? 'bg-white/10 hover:bg-white/15 text-white border-white/20' : 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 border-transparent'"
                         class="px-5 py-2.5 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 cursor-pointer">
                         <span x-text="isFollowing ? '✓ Following' : '+ Follow'"></span>
                     </button>
+                    @endif
+                    @else
+                    <button 
+                        @click="toggleFollow()" 
+                        :class="isFollowing ? 'bg-white/10 hover:bg-white/15 text-white border-white/20' : 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 border-transparent'"
+                        class="px-5 py-2.5 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 cursor-pointer">
+                        <span x-text="isFollowing ? '✓ Following' : '+ Follow'"></span>
+                    </button>
+                    @endauth
 
                     <button 
                         @click="toggleFriendRequest()" 
@@ -157,8 +204,13 @@
             <article class="bg-[#121A29]/90 border border-white/10 rounded-2xl p-5 shadow-xl backdrop-blur-xl transition-all">
                 <div class="flex items-center justify-between mb-3">
                     <div class="flex items-center gap-2.5">
-                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-white text-xs">
-                            {{ strtoupper(substr($user->name ?? 'SH', 0, 2)) }}
+                        <div class="w-9 h-9 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-white text-xs shrink-0">
+                            <template x-if="avatarPreview">
+                                <img :src="avatarPreview" alt="Avatar" class="w-full h-full object-cover">
+                            </template>
+                            <template x-if="!avatarPreview">
+                                <span>{{ strtoupper(substr($user->name ?? 'SH', 0, 2)) }}</span>
+                            </template>
                         </div>
                         <div>
                             <div class="text-xs font-bold text-white flex items-center gap-1">
@@ -220,6 +272,68 @@ function citizenProfile() {
         followersCount: {{ $user->followers_count ?? 348 }},
         followingCount: {{ $user->following_count ?? 192 }},
         friendsCount: {{ $user->friends_count ?? 84 }},
+
+        avatarPreview: '{{ $user->avatar_url ?? "" }}',
+        avatarUploading: false,
+
+        async uploadAvatar(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            this.avatarPreview = URL.createObjectURL(file);
+            this.avatarUploading = true;
+
+            const formData = new FormData();
+            formData.append('avatar', file);
+            formData.append('_token', '{{ csrf_token() }}');
+
+            try {
+                const res = await fetch('{{ route("account.avatar") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                    body: formData
+                });
+
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    this.avatarPreview = data.avatar_url;
+                    setTimeout(() => window.location.reload(), 500);
+                } else {
+                    alert(data.message || 'Failed to upload photo.');
+                }
+            } catch (err) {
+                alert('Network error while uploading photo.');
+            } finally {
+                this.avatarUploading = false;
+            }
+        },
+
+        async removeAvatar() {
+            if (!confirm('Are you sure you want to remove your profile photo?')) return;
+            this.avatarUploading = true;
+            try {
+                const res = await fetch('{{ route("account.avatar.remove") }}', {
+                    method: 'DELETE',
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    this.avatarPreview = null;
+                    setTimeout(() => window.location.reload(), 400);
+                } else {
+                    alert('Failed to remove photo.');
+                }
+            } catch (err) {
+                alert('Network error while removing photo.');
+            } finally {
+                this.avatarUploading = false;
+            }
+        },
 
         citizenPosts: [
             {

@@ -26,8 +26,11 @@
             <p class="text-sm text-gray-400 mt-1.5" x-text="step === 1 ? 'Enter your account email to receive a 6-digit verification code.' : 'Enter your 6-digit code and choose a new secure password.'"></p>
         </div>
 
-        <!-- Error Banner -->
+        <!-- Error Banner (with aria-live for immediate screen reader announcement) -->
         <div x-show="errorMessage" x-cloak
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -40,6 +43,9 @@
 
         <!-- Success Banner -->
         <div x-show="successMessage" x-cloak
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -53,7 +59,7 @@
         <!-- Local Development Hint -->
         <div x-show="devCode" x-cloak class="mb-5 p-3 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs flex items-center justify-between">
             <span>Development OTP Code: <strong class="font-mono text-white text-sm" x-text="devCode"></strong></span>
-            <button type="button" @click="code = devCode" class="text-[11px] underline text-cyan-300 hover:text-white">Auto-fill</button>
+            <button type="button" @click="code = devCode" class="text-[11px] underline text-cyan-300 hover:text-white py-1 px-2 min-h-[36px] flex items-center">Auto-fill</button>
         </div>
 
         <!-- STEP 1: Enter Email -->
@@ -74,16 +80,18 @@
                         x-model="email" 
                         required 
                         autofocus
+                        autocomplete="email"
                         placeholder="you@domain.com"
                         class="w-full pl-11 pr-4 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
                     />
                 </div>
             </div>
 
+            <!-- Submit Button (Accessible 48px touch target) -->
             <button 
                 type="submit" 
                 :disabled="loading" 
-                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 text-sm shadow-xl shadow-cyan-500/20 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2">
+                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-xl shadow-cyan-500/20 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500">
                 <span x-show="!loading" class="flex items-center gap-2">
                     <span>Send Verification Code</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +100,7 @@
                 </span>
                 <span x-show="loading" x-cloak class="flex items-center gap-2">
                     <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
                     </svg>
                     <span>Generating Secure OTP...</span>
@@ -108,7 +116,7 @@
                     <label for="recovery-code" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">
                         6-Digit Verification Code
                     </label>
-                    <button type="button" @click="requestOtp" class="text-xs text-cyan-400 hover:text-cyan-300">Resend Code</button>
+                    <button type="button" @click="requestOtp" class="text-xs text-cyan-400 hover:text-cyan-300 py-1.5 px-2 min-h-[36px] inline-flex items-center">Resend Code</button>
                 </div>
                 <input 
                     type="text" 
@@ -116,6 +124,7 @@
                     x-model="code" 
                     maxlength="6"
                     required 
+                    autocomplete="one-time-code"
                     placeholder="123456"
                     class="w-full tracking-[0.5em] text-center font-mono font-bold text-lg py-2.5 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
                 />
@@ -133,13 +142,15 @@
                         x-model="password" 
                         @input="evaluatePasswordStrength"
                         required 
+                        autocomplete="new-password"
                         placeholder="••••••••••••"
-                        class="w-full pl-4 pr-11 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                        class="w-full pl-4 pr-12 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                     />
                     <button 
                         type="button" 
                         @click="showPassword = !showPassword" 
-                        class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        aria-label="Toggle password visibility"
+                        class="absolute inset-y-0 right-0 pr-3.5 pl-2 flex items-center justify-center min-w-[44px] min-h-[44px] text-gray-400 hover:text-white transition-colors cursor-pointer rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                         <svg x-show="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -179,15 +190,17 @@
                     id="recovery-confirm"
                     x-model="passwordConfirmation" 
                     required 
+                    autocomplete="new-password"
                     placeholder="••••••••••••"
                     class="w-full pl-4 pr-4 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                 />
             </div>
 
+            <!-- Submit Button (Accessible 48px touch target) -->
             <button 
                 type="submit" 
                 :disabled="loading" 
-                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 via-blue-600 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold py-3.5 px-4 text-sm shadow-xl shadow-blue-600/30 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2">
+                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 via-blue-600 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-xl shadow-blue-600/30 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 <span x-show="!loading" class="flex items-center gap-2">
                     <span>Save Password & Launch Dashboard</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +209,7 @@
                 </span>
                 <span x-show="loading" x-cloak class="flex items-center gap-2">
                     <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
                     </svg>
                     <span>Updating Password Credentials...</span>
@@ -204,9 +217,9 @@
             </button>
         </form>
 
-        <!-- Back to Sign In Link -->
+        <!-- Back to Sign In Link (Accessible touch target min-h-[44px]) -->
         <div class="mt-6 pt-5 border-t border-white/[0.06] text-center">
-            <a href="{{ route('login') }}" class="text-xs text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <a href="{{ route('login') }}" class="text-xs text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5 py-2 px-3 min-h-[44px] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
@@ -234,41 +247,21 @@
             devCode: null,
             strengthLevel: 0,
             strengthLabel: 'Too Short',
-            strengthTextColor: 'text-gray-400',
+            strengthTextColor: 'text-gray-500',
 
             evaluatePasswordStrength() {
                 const p = this.password;
-                if (p.length === 0) {
-                    this.strengthLevel = 0;
-                    this.strengthLabel = 'Too Short';
-                    this.strengthTextColor = 'text-gray-400';
-                    return;
-                }
                 let score = 0;
                 if (p.length >= 8) score++;
-                if (/[A-Z]/.test(p) && /[a-z]/.test(p)) score++;
-                if (/[0-9]/.test(p)) score++;
+                if (p.length >= 12) score++;
+                if (/[A-Z]/.test(p) && /[0-9]/.test(p)) score++;
                 if (/[^A-Za-z0-9]/.test(p)) score++;
 
                 this.strengthLevel = score;
-                switch (score) {
-                    case 1:
-                        this.strengthLabel = 'Weak';
-                        this.strengthTextColor = 'text-rose-400';
-                        break;
-                    case 2:
-                        this.strengthLabel = 'Fair';
-                        this.strengthTextColor = 'text-amber-400';
-                        break;
-                    case 3:
-                        this.strengthLabel = 'Good';
-                        this.strengthTextColor = 'text-blue-400';
-                        break;
-                    case 4:
-                        this.strengthLabel = 'Strong';
-                        this.strengthTextColor = 'text-emerald-400';
-                        break;
-                }
+                const labels = ['Too Short', 'Weak', 'Fair', 'Good', 'Strong'];
+                const colors = ['text-gray-500', 'text-rose-400', 'text-amber-400', 'text-blue-400', 'text-emerald-400'];
+                this.strengthLabel = labels[score];
+                this.strengthTextColor = colors[score];
             },
 
             async requestOtp() {
@@ -277,7 +270,7 @@
                 this.loading = true;
 
                 try {
-                    const response = await fetch('/api/v1/auth/password/forgot', {
+                    const response = await fetch('/api/v1/auth/forgot-password', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -290,21 +283,20 @@
                     const data = await response.json();
 
                     if (!response.ok) {
-                        this.errorMessage = data.message || 'Unable to process recovery request. Please check email address.';
+                        this.errorMessage = data.message || 'Failed to send recovery code. Ensure email is registered.';
                         this.loading = false;
                         return;
                     }
 
-                    this.successMessage = 'Verification code dispatched! Please check your code below.';
-                    if (data.data && data.data.dev_code) {
-                        this.devCode = data.data.dev_code;
-                        this.code = data.data.dev_code;
+                    this.successMessage = 'A 6-digit code has been dispatched to your email address.';
+                    if (data.dev_code) {
+                        this.devCode = data.dev_code;
                     }
                     this.step = 2;
                     this.loading = false;
 
-                } catch (err) {
-                    this.errorMessage = 'Network connection error. Please try again.';
+                } catch (error) {
+                    this.errorMessage = 'Network error: Unable to contact Zengfy Auth Gateway.';
                     this.loading = false;
                 }
             },
@@ -314,19 +306,19 @@
                 this.successMessage = '';
 
                 if (this.password !== this.passwordConfirmation) {
-                    this.errorMessage = 'New password and confirmation do not match.';
+                    this.errorMessage = 'Passwords do not match. Please re-enter.';
                     return;
                 }
 
                 if (this.password.length < 8) {
-                    this.errorMessage = 'Password must be at least 8 characters in length.';
+                    this.errorMessage = 'Password must be at least 8 characters long.';
                     return;
                 }
 
                 this.loading = true;
 
                 try {
-                    const response = await fetch('/api/v1/auth/password/reset', {
+                    const response = await fetch('/api/v1/auth/reset-password', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -344,32 +336,27 @@
                     const data = await response.json();
 
                     if (!response.ok) {
-                        if (response.status === 422 && data.errors) {
-                            const firstKey = Object.keys(data.errors)[0];
-                            this.errorMessage = data.errors[firstKey][0];
-                        } else {
-                            this.errorMessage = data.message || 'Password reset could not be completed.';
-                        }
+                        this.errorMessage = data.message || 'Invalid or expired verification code. Try again.';
                         this.loading = false;
                         return;
                     }
 
-                    if (data.data && data.data.token) {
-                        localStorage.setItem('zengfy_token', data.data.token);
+                    if (data.token) {
+                        localStorage.setItem('zengfy_token', data.token);
                     }
 
-                    this.successMessage = 'Password updated successfully! Redirecting to sovereign dashboard...';
+                    this.successMessage = 'Password updated successfully! Launching your Sovereign Hub...';
 
                     setTimeout(() => {
-                        window.location.href = '{{ route("account") }}?reset=1';
-                    }, 1200);
+                        window.location.href = '/account';
+                    }, 800);
 
-                } catch (err) {
-                    this.errorMessage = 'Network connection error. Please try again.';
+                } catch (error) {
+                    this.errorMessage = 'Network error: Unable to contact Zengfy Auth Gateway.';
                     this.loading = false;
                 }
             }
-        }
+        };
     }
 </script>
 @endpush

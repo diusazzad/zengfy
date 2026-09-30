@@ -24,8 +24,11 @@
             <p class="text-sm text-gray-400 mt-1.5">Sign in to access your unified digital ecosystem</p>
         </div>
 
-        <!-- Error Notification Banner -->
+        <!-- Error Notification Banner (with aria-live for immediate screen reader announcement) -->
         <div x-show="errorMessage" x-cloak
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -38,6 +41,9 @@
 
         <!-- Success Notification Banner -->
         <div x-show="successMessage" x-cloak
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -83,7 +89,7 @@
                     <label for="login-password" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">
                         Password
                     </label>
-                    <a href="{{ route('password.request') }}" class="text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors">
+                    <a href="{{ route('password.request') }}" class="text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors py-1.5 px-2 -mr-2 min-h-[36px] inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                         Forgot Password?
                     </a>
                 </div>
@@ -101,14 +107,14 @@
                         required 
                         autocomplete="current-password"
                         placeholder="••••••••••••"
-                        class="w-full pl-11 pr-11 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+                        class="w-full pl-11 pr-12 py-3 bg-[#0B0F17]/70 border border-white/10 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
                     />
-                    <!-- Toggle Password Visibility Icon -->
+                    <!-- Toggle Password Visibility Icon (Accessible 44px touch target) -->
                     <button 
                         type="button" 
                         @click="showPassword = !showPassword" 
                         aria-label="Toggle password visibility"
-                        class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        class="absolute inset-y-0 right-0 pr-3.5 pl-2 flex items-center justify-center min-w-[44px] min-h-[44px] text-gray-400 hover:text-white transition-colors cursor-pointer rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                         <svg x-show="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -122,7 +128,7 @@
 
             <!-- Remember Me -->
             <div class="flex items-center justify-between pt-1">
-                <label class="flex items-center gap-2 cursor-pointer">
+                <label class="flex items-center gap-2.5 cursor-pointer py-1.5 min-h-[36px]">
                     <input 
                         type="checkbox" 
                         x-model="remember"
@@ -132,11 +138,11 @@
                 </label>
             </div>
 
-            <!-- Submit Button with Loading State -->
+            <!-- Submit Button with Loading State (Accessible 48px touch target) -->
             <button 
                 type="submit" 
                 :disabled="loading" 
-                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-bold py-3.5 px-4 text-sm shadow-xl shadow-blue-600/30 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 mt-2">
+                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-xl shadow-blue-600/30 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 
                 <span x-show="!loading" class="flex items-center gap-2">
                     <span>Sign In to Zengfy</span>
@@ -147,7 +153,7 @@
 
                 <span x-show="loading" x-cloak class="flex items-center gap-2">
                     <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
                     </svg>
                     <span>Authenticating Sovereign ID...</span>
@@ -165,9 +171,9 @@
             </div>
         </div>
 
-        <!-- Registration Link -->
+        <!-- Registration Link (Accessible 48px touch target) -->
         <a href="{{ route('register') }}" 
-           class="w-full block text-center py-3 px-4 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/30 text-white font-semibold text-sm transition-all duration-200">
+           class="w-full flex items-center justify-center py-3.5 px-4 min-h-[48px] rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/30 text-white font-semibold text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
             Create Sovereign Account
         </a>
 
@@ -214,7 +220,7 @@
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name=\"csrf-token\"]').getAttribute('content'),
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                         },
                         body: JSON.stringify({
                             email: this.email,
@@ -246,33 +252,25 @@
                     
                     setTimeout(() => {
                         const urlParams = new URLSearchParams(window.location.search);
-                        const redirectUrl = urlParams.get('redirect_uri') || '{{ route("account") }}';
-                        window.location.href = redirectUrl;
-                    }, 800);
+                        let redirectUrl = urlParams.get('redirect_uri') || '/account';
+                        try {
+                            const parsed = new URL(redirectUrl, window.location.origin);
+                            if (parsed.hostname.endsWith('zengfy.test') || parsed.hostname.endsWith('zengfy.top') || parsed.origin === window.location.origin) {
+                                window.location.href = redirectUrl;
+                            } else {
+                                window.location.href = '/account';
+                            }
+                        } catch (e) {
+                            window.location.href = '/account';
+                        }
+                    }, 600);
 
-                } catch (err) {
-                    this.errorMessage = 'Network connection failure. Please check your connectivity and try again.';
+                } catch (error) {
+                    this.errorMessage = 'Network error: Unable to connect to Zengfy Auth Gateway.';
                     this.loading = false;
                 }
-            },
-
-            init() {
-                const urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.get('registered') === '1') {
-                    this.successMessage = 'Account created successfully! Please sign in to verify your identity.';
-                } else if (urlParams.get('reset') === '1') {
-                    this.successMessage = 'Password updated securely! Sign in with your new password.';
-                } else if (urlParams.get('logout') === '1') {
-                    this.successMessage = 'You have safely signed out of your sovereign session.';
-                }
-                @if(session('success'))
-                    this.successMessage = "{{ session('success') }}";
-                @endif
-                @if(session('error'))
-                    this.errorMessage = "{{ session('error') }}";
-                @endif
             }
-        }
+        };
     }
 </script>
 @endpush

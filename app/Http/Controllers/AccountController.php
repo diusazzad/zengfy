@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Modules\Auth\Models\AuthDevice;
 
 class AccountController extends Controller
@@ -107,7 +108,16 @@ class AccountController extends Controller
             'bio' => 'nullable|string|max:500',
             'ward_code' => 'nullable|string|max:50',
             'phone' => 'nullable|string|max:20',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
         ]);
+
+        if ($request->hasFile('avatar')) {
+            if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+                Storage::disk('public')->delete($user->avatar);
+            }
+            $path = $request->file('avatar')->store('avatars', 'public');
+            $validated['avatar'] = $path;
+        }
 
         $user->update($validated);
 
@@ -115,11 +125,64 @@ class AccountController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Profile updated successfully.',
+                'avatar_url' => $user->avatar_url,
                 'user' => $user->fresh(),
             ]);
         }
 
         return redirect()->back()->with('success', 'Profile updated successfully.');
+    }
+
+    /**
+     * Direct AJAX/Quick Upload for Profile Avatar Photo.
+     */
+    public function updateAvatar(Request $request)
+    {
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,webp,gif|max:5120',
+        ]);
+
+        $user = Auth::user();
+
+        if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+            Storage::disk('public')->delete($user->avatar);
+        }
+
+        $path = $request->file('avatar')->store('avatars', 'public');
+        $user->update(['avatar' => $path]);
+
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Profile photo updated successfully!',
+                'avatar_url' => $user->avatar_url,
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Profile photo updated successfully!');
+    }
+
+    /**
+     * Remove Profile Avatar Photo.
+     */
+    public function removeAvatar(Request $request)
+    {
+        $user = Auth::user();
+
+        if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+            Storage::disk('public')->delete($user->avatar);
+        }
+
+        $user->update(['avatar' => null]);
+
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Profile photo removed.',
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Profile photo removed.');
     }
 
     /**

@@ -47,6 +47,16 @@ class Post extends Model
         return $this->hasMany(PostMedia::class, 'post_id')->orderBy('order_column', 'asc');
     }
 
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class, 'post_id');
+    }
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class, 'post_id');
+    }
+
     /**
      * Scope to public posts.
      */
