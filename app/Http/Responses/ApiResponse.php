@@ -59,6 +59,7 @@ class ApiResponse
         return response()->json([
             'success' => false,
             'message' => $message,
+            'error_code' => $errorCode,
             'errors' => $errors,
             'meta' => $meta,
         ], $statusCode);

@@ -113,7 +113,7 @@ class User extends Authenticatable
 
     public function posts()
     {
-        return $this->hasMany(\Modules\Main\Models\Post::class);
+        return $this->hasMany(\Modules\Social\Models\Post::class, 'user_id');
     }
 
     public function likes()

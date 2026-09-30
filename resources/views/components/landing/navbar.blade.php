@@ -105,6 +105,13 @@
                 Terms & Conditions
             </a>
 
+            <!-- Android App Download Route Link -->
+            <a href="{{ route('download.app') }}"
+                class="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors duration-200 py-1 px-2 rounded-lg font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                <span>📱 Android App</span>
+                <span class="text-[9px] px-1.5 py-0.2 rounded-full bg-cyan-500/20 text-cyan-300 font-bold">APK</span>
+            </a>
+
             <!-- FAQ Link -->
             <a href="/#faq"
                 class="hover:text-white transition-colors duration-200 py-1 px-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
@@ -114,12 +121,12 @@
 
         <!-- Right Action Buttons + Hamburger Menu Toggle -->
         <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
-            <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}"
+            <a href="{{ route('login') }}"
                 class="hidden sm:inline-flex items-center text-sm font-semibold text-gray-300 hover:text-white transition-colors px-3 py-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 Sign In
             </a>
 
-            <a href="/#cta"
+            <a href="{{ route('register') }}"
                 class="relative group overflow-hidden rounded-full p-px font-semibold text-[11px] sm:text-sm shadow-xl shadow-blue-600/20 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 <span
                     class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:opacity-90 transition-opacity"></span>
@@ -144,6 +151,8 @@
     <!-- Mobile Navigation Drawer -->
     <div x-show="mobileOpen" x-cloak id="mobile-menu-drawer"
         class="hidden md:hidden bg-[#0B0F17] border-b border-white/10 px-4 sm:px-6 py-5 space-y-4 text-sm font-semibold text-gray-300 transition-all">
+        <a @click="mobileOpen = false" href="{{ route('download.app') }}"
+            class="block text-cyan-400 font-bold py-2 px-2 rounded-lg">📱 Download Android APK →</a>
         <a @click="mobileOpen = false" href="{{ route('products') }}"
             class="block text-blue-400 font-bold py-2 px-2 rounded-lg">Browse All Products →</a>
         <a @click="mobileOpen = false" href="{{ route('pricing') }}"
@@ -154,9 +163,9 @@
             class="block hover:text-white py-2 px-2 rounded-lg">Terms & Conditions</a>
         <a @click="mobileOpen = false" href="/#faq" class="block hover:text-white py-2 px-2 rounded-lg">FAQ</a>
         <div class="pt-3 border-t border-white/10 flex items-center justify-between">
-            <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login' }}"
+            <a href="{{ route('login') }}"
                 class="text-gray-300 font-semibold hover:text-white py-2 px-2 rounded-lg">Sign In</a>
-            <a href="/#cta"
+            <a href="{{ route('register') }}"
                 class="text-blue-400 font-bold hover:underline py-2 px-2 rounded-lg">Sign Up Free →</a>
         </div>
     </div>

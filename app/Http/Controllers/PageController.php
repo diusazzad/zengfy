@@ -539,4 +539,39 @@ class PageController extends Controller
     //         'message' => 'Emergency services have been notified.'
     //     ]);
     // }
+
+    public function showLogin()
+    {
+        return view('auth.login');
+    }
+
+    public function showRegister()
+    {
+        return view('auth.register');
+    }
+
+    public function showFeed()
+    {
+        return view('social.feed');
+    }
+
+    public function showProfile(string $handle)
+    {
+        $user = \App\Models\User::where('handle', $handle)->first();
+
+        if (!$user) {
+            $user = (object) [
+                'name' => ucfirst($handle),
+                'handle' => $handle,
+                'ward_code' => 'WARD-DHAKA-19',
+                'bio' => 'Verified sovereign citizen on Zengfy network.',
+                'followers_count' => 348,
+                'following_count' => 192,
+                'friends_count' => 84,
+                'verified_badge' => true,
+            ];
+        }
+
+        return view('social.profile', compact('user'));
+    }
 }

@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            \Modules\Main\Database\Seeders\SocialFeedSeeder::class,
+            \Modules\Organization\Database\Seeders\OrganizationRbacSeeder::class,
         ]);
     }
 }

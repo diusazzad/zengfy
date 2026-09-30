@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\SitemapController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SubdomainLandingController;
+use Illuminate\Support\Facades\Route;
 
 // Language Switcher Route
 Route::get('/lang/{locale}', function ($locale) {
@@ -15,10 +16,19 @@ Route::get('/lang/{locale}', function ($locale) {
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-
-// Public Page Routes
-Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::class)->group(function () {
+// Core Application & Public Web Routes
+Route::controller(PageController::class)->group(function () {
     Route::get('/', 'welcome')->name('welcome');
+    Route::get('/login', 'showLogin')->name('login');
+    Route::get('/register', 'showRegister')->name('register');
+    Route::get('/forgot-password', fn() => view('auth.forgot-password'))->name('password.request');
+    Route::get('/reset-password/{token?}', fn() => view('auth.forgot-password'))->name('password.reset');
+
+    // Social & Profile Hub
+    Route::get('/feed', 'showFeed')->name('social.feed');
+    Route::get('/u/{handle}', 'showProfile')->name('social.profile');
+
+    // Ecosystem Informational Pages
     Route::get('/products', 'products')->name('products');
     Route::get('/pricing', 'pricing')->name('pricing');
     Route::get('/company', 'company')->name('company');
@@ -34,8 +44,20 @@ Route::domain(env('APP_BASE_DOMAIN', 'zengfy.top'))->controller(PageController::
     Route::get('/503', fn() => response()->view('errors.503', [], 503));
 });
 
+// Authenticated Sovereign Account Hub & Device Management
+Route::controller(AccountController::class)->middleware(['auth'])->group(function () {
+    Route::get('/account', 'dashboard')->name('account');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::post('/account/profile', 'updateProfile')->name('account.profile');
+    Route::post('/account/password', 'changePassword')->name('account.password');
+    Route::post('/account/device/{id}/revoke', 'revokeDevice')->name('account.device.revoke');
+    Route::post('/account/devices/revoke-all', 'revokeAllOtherDevices')->name('account.devices.revoke-all');
+});
 
-// Wildcard Subdomain Landing Engine
-Route::domain('{subdomain}.' . env('APP_BASE_DOMAIN', 'zengfy.top'))->group(function () {
+// Web Logout (POST preferred, GET supported for user convenience)
+Route::match(['GET', 'POST'], '/logout', [AccountController::class, 'logout'])->name('logout');
+
+// Wildcard Subdomain Landing Engine (e.g. school.zengfy.test, pos.zengfy.test)
+Route::domain('{subdomain}.' . env('APP_BASE_DOMAIN', 'zengfy.test'))->group(function () {
     Route::get('/', [SubdomainLandingController::class, 'show'])->name('subdomain.landing');
 });

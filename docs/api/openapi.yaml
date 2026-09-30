@@ -901,6 +901,796 @@ paths:
         '200':
           description: Friend removed successfully
 
+  /media/presign:
+    post:
+      summary: Generate direct presigned S3/MinIO upload URL
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - file_name
+                - mime_type
+                - file_size_bytes
+              properties:
+                file_name:
+                  type: string
+                  example: "beach_photo.jpg"
+                mime_type:
+                  type: string
+                  example: "image/jpeg"
+                file_size_bytes:
+                  type: integer
+                  example: 524288
+      responses:
+        '200':
+          description: Presigned upload URL generated
+
+  /posts:
+    post:
+      summary: Create a new social post with optional media attachments
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: "Sunset at Cox's Bazar beach!"
+                visibility:
+                  type: string
+                  enum: [public, friends_only, private]
+                  default: public
+                post_type:
+                  type: string
+                  enum: [standard, announcement, poll, hyperlocal_notice]
+                  default: standard
+                ward_code:
+                  type: string
+                  example: "WARD-DHAKA-19"
+                media:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - url
+                    properties:
+                      url:
+                        type: string
+                        format: uri
+                      storage_path:
+                        type: string
+                      media_type:
+                        type: string
+                        enum: [image, video, document]
+                      mime_type:
+                        type: string
+                      file_size_bytes:
+                        type: integer
+      responses:
+        '201':
+          description: Post created successfully
+
+  /posts/{id}:
+    get:
+      summary: Retrieve a single post if accessible to viewer
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Post retrieved successfully
+        '404':
+          description: Post not found or unauthorized
+    delete:
+      summary: Delete post (owner only)
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Post deleted successfully
+
+  /feed:
+    get:
+      summary: Keyset cursor-paginated timeline feed
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Encoded keyset cursor string from previous response
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 15
+      responses:
+        '200':
+          description: Paginated feed with next_cursor metadata
+
+  /feed/hyperlocal/{wardCode}:
+    get:
+      summary: Hyperlocal community feed geofenced by ward code
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: wardCode
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "WARD-DHAKA-19"
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Hyperlocal posts for designated ward
+
+  /users/{identifier}/posts:
+    get:
+      summary: Retrieve public/friends posts of a specific user with cursor pagination
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          schema:
+            type: string
+            description: User UUID or unique @handle
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User posts list
+
+  /conversations/direct:
+    post:
+      summary: Open or initialize 1-on-1 direct conversation with a citizen
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - target_user_id
+              properties:
+                target_user_id:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Conversation opened
+
+  /conversations:
+    get:
+      summary: List user conversations with unread badge counters and latest message preview
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Conversation threads list
+
+  /conversations/{id}/messages:
+    get:
+      summary: Retrieve conversation messages with keyset cursor pagination
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated chat message history
+    post:
+      summary: Send a real-time message and broadcast via WebSocket (Laravel Reverb)
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - body
+              properties:
+                body:
+                  type: string
+                  example: "Assalamu Alaikum! Are you coming?"
+                message_type:
+                  type: string
+                  enum: [text, image, sos_alert, system]
+                  default: text
+      responses:
+        '201':
+          description: Message created and broadcasted
+
+  /conversations/{id}/typing:
+    post:
+      summary: Broadcast live typing indicator to conversation channel
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - is_typing
+              properties:
+                is_typing:
+                  type: boolean
+      responses:
+        '200':
+          description: Typing indicator dispatched
+
+  /conversations/{id}/read:
+    post:
+      summary: Mark conversation messages as read and clear unread counter
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Conversation marked as read
+
+  /emergency/sos:
+    post:
+      summary: Trigger Emergency SOS distress signal (<500ms SLA broadcast)
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - latitude
+                - longitude
+              properties:
+                latitude:
+                  type: number
+                  format: float
+                  example: 23.7925
+                longitude:
+                  type: number
+                  format: float
+                  example: 90.4078
+                accuracy:
+                  type: number
+                  format: float
+                  example: 12.5
+                ward_code:
+                  type: string
+                  example: "WARD-DHAKA-19"
+                distress_type:
+                  type: string
+                  enum: [general, medical, harassment, accident, fire]
+                  default: general
+                battery_level:
+                  type: integer
+                  example: 85
+                notes:
+                  type: string
+                  example: "Need immediate medical help at Gulshan-2 circle"
+      responses:
+        '201':
+          description: Distress signal triggered and broadcasted to ward & radius channels
+
+  /emergency/sos/{id}/resolve:
+    post:
+      summary: Resolve or cancel an active emergency distress signal
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [resolved, cancelled, false_alarm]
+                  default: resolved
+                resolution_notes:
+                  type: string
+      responses:
+        '200':
+          description: Distress signal resolved
+
+  /emergency/active:
+    get:
+      summary: Get active emergency distress signals (with optional ward filter)
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: ward_code
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Active emergency alerts list
+
+  /emergency/contacts:
+    get:
+      summary: List citizen trusted emergency contacts
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Emergency contacts list
+    post:
+      summary: Add a new trusted emergency contact
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - contact_name
+                - contact_phone
+              properties:
+                contact_name:
+                  type: string
+                  example: "Fahim Ahmed"
+                contact_phone:
+                  type: string
+                  example: "+8801711223344"
+                relationship:
+                  type: string
+                  example: "Brother"
+                is_trusted:
+                  type: boolean
+                  default: true
+      responses:
+        '201':
+          description: Emergency contact added
+
+  /organizations/{organization}/school/academic-years:
+    get:
+      summary: List all academic years for the school workspace
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Academic years list
+    post:
+      summary: Create a new academic year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - start_date
+                - end_date
+              properties:
+                name:
+                  type: string
+                  example: "Academic Year 2026-2027"
+                code:
+                  type: string
+                  example: "AY-2026"
+                start_date:
+                  type: string
+                  format: date
+                  example: "2026-01-01"
+                end_date:
+                  type: string
+                  format: date
+                  example: "2026-12-31"
+                is_current:
+                  type: boolean
+                  default: false
+      responses:
+        '201':
+          description: Academic year created successfully
+
+  /organizations/{organization}/school/academic-years/{academicYear}/set-current:
+    post:
+      summary: Atomically designate an academic year as the current active year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academicYear
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Academic year set as current
+
+  /organizations/{organization}/school/academic-years/{academicYear}/rollover:
+    post:
+      summary: Rollover academic year, archive old term, and clone classes/sections/subjects
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academicYear
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - start_date
+                - end_date
+              properties:
+                name:
+                  type: string
+                  example: "Academic Year 2027"
+                code:
+                  type: string
+                  example: "AY-2027"
+                start_date:
+                  type: string
+                  format: date
+                  example: "2027-01-01"
+                end_date:
+                  type: string
+                  format: date
+                  example: "2027-12-31"
+                clone_structure:
+                  type: boolean
+                  default: true
+      responses:
+        '201':
+          description: Academic year rollover completed
+
+  /organizations/{organization}/school/classes:
+    get:
+      summary: List classes (optionally filtered by academic year)
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academic_year_id
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Classes list
+    post:
+      summary: Create a class under an academic year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - academic_year_id
+                - name
+              properties:
+                academic_year_id:
+                  type: string
+                  format: uuid
+                name:
+                  type: string
+                  example: "Class 10"
+                numeric_grade:
+                  type: integer
+                  example: 10
+                code:
+                  type: string
+                  example: "CLS-10"
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Class created successfully
+
+  /organizations/{organization}/school/classes/{class}:
+    get:
+      summary: Retrieve class details with its sections and subjects
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: class
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Class details
+
+  /organizations/{organization}/school/classes/{class}/sections:
+    post:
+      summary: Add a section to a class
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: class
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: "Section Padma"
+                capacity:
+                  type: integer
+                  default: 40
+                  example: 45
+                room_number:
+                  type: string
+                  example: "Room 304"
+      responses:
+        '201':
+          description: Section created successfully
+
+  /organizations/{organization}/school/classes/{class}/subjects:
+    post:
+      summary: Add a subject to a class
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: class
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: "Higher Mathematics"
+                code:
+                  type: string
+                  example: "HMATH-101"
+                type:
+                  type: string
+                  enum: [core, elective, optional]
+                  default: core
+                credits:
+                  type: number
+                  format: float
+                  default: 3.0
+                pass_marks:
+                  type: integer
+                  default: 33
+                total_marks:
+                  type: integer
+                  default: 100
+      responses:
+        '201':
+          description: Subject created successfully
+
+  /organizations/{organization}/school/structure:
+    get:
+      summary: Get complete academic hierarchy tree for current or specified year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academic_year_id
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Complete academic structure tree
+
 components:
   securitySchemes:
     BearerAuth:

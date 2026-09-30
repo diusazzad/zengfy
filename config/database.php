@@ -45,8 +45,8 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DB_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
+            'host' => (file_exists('/.dockerenv') || env('IS_DOCKER', false)) ? 'mysql' : env('DB_HOST', '127.0.0.1'),
+            'port' => (file_exists('/.dockerenv') || env('IS_DOCKER', false)) ? '3306' : env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'laravel'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),

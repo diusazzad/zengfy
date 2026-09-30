@@ -34,10 +34,14 @@ class ResolveTenantContext
             return $next($request);
         }
 
-        // Resolve organization by UUID or slug
-        $organization = Organization::where('id', $tenantIdentifier)
-            ->orWhere('slug', $tenantIdentifier)
-            ->first();
+        // Resolve organization by UUID, slug, or bound instance
+        if ($tenantIdentifier instanceof Organization) {
+            $organization = $tenantIdentifier;
+        } else {
+            $organization = Organization::where('id', $tenantIdentifier)
+                ->orWhere('slug', $tenantIdentifier)
+                ->first();
+        }
 
         if (!$organization) {
             return ApiResponse::error(

@@ -138,6 +138,9 @@
         <!-- 5. Single Sign-On (SSO) Feature Showcase -->
         <x-landing.sso-feature />
 
+        <!-- 5.5 Mobile Android APK & Multi-Device Access Showcase -->
+        <x-landing.mobile-app-section />
+
         <!-- 6. Testimonials Section -->
         <x-landing.testimonials />
 

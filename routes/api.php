@@ -29,6 +29,19 @@ Route::prefix('v1/auth')->group(function () {
         ->middleware(['throttle:30,1'])
         ->name('api.v1.auth.sso.exchange');
 
+    // Password Reset & Recovery
+    Route::post('/password/forgot', [\Modules\Auth\Http\Controllers\PasswordResetController::class, 'forgotPassword'])
+        ->middleware(['throttle:6,1'])
+        ->name('api.v1.auth.password.forgot');
+
+    Route::post('/password/verify-code', [\Modules\Auth\Http\Controllers\PasswordResetController::class, 'verifyCode'])
+        ->middleware(['throttle:10,1'])
+        ->name('api.v1.auth.password.verify');
+
+    Route::post('/password/reset', [\Modules\Auth\Http\Controllers\PasswordResetController::class, 'resetPassword'])
+        ->middleware(['throttle:6,1'])
+        ->name('api.v1.auth.password.reset');
+
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('/me', [\Modules\Auth\Http\Controllers\AuthController::class, 'me'])
             ->name('api.v1.auth.me');
@@ -101,6 +114,45 @@ Route::prefix('v1/organizations')->middleware(['auth:sanctum'])->group(function 
     Route::delete('/{organization}/members/{membership}/roles/{role}', [\Modules\Organization\Http\Controllers\RoleController::class, 'removeRoleFromMember'])
         ->middleware(['tenant.resolve', 'tenant.permission:roles.manage'])
         ->name('api.v1.organizations.members.roles.remove');
+
+    // School Academic Architecture (TASK-018)
+    Route::prefix('{organization}/school')->middleware(['tenant.resolve'])->group(function () {
+        Route::get('/academic-years', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'indexAcademicYears'])
+            ->name('api.v1.organizations.school.academic-years.index');
+
+        Route::post('/academic-years', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'storeAcademicYear'])
+            ->middleware(['tenant.permission:academic.manage'])
+            ->name('api.v1.organizations.school.academic-years.store');
+
+        Route::post('/academic-years/{academicYear}/set-current', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'setCurrentAcademicYear'])
+            ->middleware(['tenant.permission:academic.manage'])
+            ->name('api.v1.organizations.school.academic-years.set-current');
+
+        Route::post('/academic-years/{academicYear}/rollover', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'rolloverAcademicYear'])
+            ->middleware(['tenant.permission:academic.manage'])
+            ->name('api.v1.organizations.school.academic-years.rollover');
+
+        Route::get('/classes', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'indexClasses'])
+            ->name('api.v1.organizations.school.classes.index');
+
+        Route::post('/classes', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'storeClass'])
+            ->middleware(['tenant.permission:academic.manage'])
+            ->name('api.v1.organizations.school.classes.store');
+
+        Route::get('/classes/{class}', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'showClass'])
+            ->name('api.v1.organizations.school.classes.show');
+
+        Route::post('/classes/{class}/sections', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'storeSection'])
+            ->middleware(['tenant.permission:academic.manage'])
+            ->name('api.v1.organizations.school.classes.sections.store');
+
+        Route::post('/classes/{class}/subjects', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'storeSubject'])
+            ->middleware(['tenant.permission:academic.manage'])
+            ->name('api.v1.organizations.school.classes.subjects.store');
+
+        Route::get('/structure', [\Modules\School\Http\Controllers\AcademicStructureController::class, 'structure'])
+            ->name('api.v1.organizations.school.structure');
+    });
 });
 
 Route::get('v1/permissions', [\Modules\Organization\Http\Controllers\RoleController::class, 'listPermissions'])
@@ -145,7 +197,79 @@ Route::prefix('v1')->group(function () {
 
         Route::delete('/users/{id}/friends', [\Modules\Social\Http\Controllers\FriendshipController::class, 'removeFriend'])
             ->name('api.v1.users.friends.remove');
+
+        // Post & Media endpoints (Authenticated)
+        Route::post('/media/presign', [\Modules\Social\Http\Controllers\MediaController::class, 'presign'])
+            ->name('api.v1.media.presign');
+
+        Route::post('/posts', [\Modules\Social\Http\Controllers\PostController::class, 'store'])
+            ->name('api.v1.posts.store');
+
+        Route::delete('/posts/{id}', [\Modules\Social\Http\Controllers\PostController::class, 'destroy'])
+            ->name('api.v1.posts.destroy');
+
+        // Real-Time Conversations & Messaging endpoints (Authenticated)
+        Route::post('/conversations/direct', [\Modules\Social\Http\Controllers\ConversationController::class, 'startDirect'])
+            ->name('api.v1.conversations.direct');
+
+        Route::get('/conversations', [\Modules\Social\Http\Controllers\ConversationController::class, 'index'])
+            ->name('api.v1.conversations.index');
+
+        Route::get('/conversations/{id}/messages', [\Modules\Social\Http\Controllers\ConversationController::class, 'messages'])
+            ->name('api.v1.conversations.messages');
+
+        Route::post('/conversations/{id}/messages', [\Modules\Social\Http\Controllers\ConversationController::class, 'sendMessage'])
+            ->name('api.v1.conversations.messages.send');
+
+        Route::post('/conversations/{id}/typing', [\Modules\Social\Http\Controllers\ConversationController::class, 'typing'])
+            ->name('api.v1.conversations.typing');
+
+        Route::post('/conversations/{id}/read', [\Modules\Social\Http\Controllers\ConversationController::class, 'markRead'])
+            ->name('api.v1.conversations.read');
+
+        // Emergency SOS Distress & Responders (Authenticated)
+        Route::post('/emergency/sos', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'trigger'])
+            ->name('api.v1.emergency.sos.trigger');
+
+        Route::post('/emergency/sos/{id}/resolve', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'resolve'])
+            ->name('api.v1.emergency.sos.resolve');
+
+        Route::get('/emergency/active', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'active'])
+            ->name('api.v1.emergency.active');
+
+        Route::get('/emergency/history', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'history'])
+            ->name('api.v1.emergency.history');
+
+        Route::get('/emergency/contacts', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'getContacts'])
+            ->name('api.v1.emergency.contacts.index');
+
+        Route::post('/emergency/contacts', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'addContact'])
+            ->name('api.v1.emergency.contacts.store');
+
+        Route::delete('/emergency/contacts/{id}', [\Modules\Social\Http\Controllers\EmergencySosController::class, 'deleteContact'])
+            ->name('api.v1.emergency.contacts.destroy');
     });
+
+    // Public / Hybrid Feeds and Posts (Optional Sanctum Auth handled in controller)
+    Route::get('/feed', [\Modules\Social\Http\Controllers\PostController::class, 'feed'])
+        ->name('api.v1.feed');
+
+    Route::get('/feed/hyperlocal/{wardCode}', [\Modules\Social\Http\Controllers\HyperlocalController::class, 'feed'])
+        ->name('api.v1.feed.hyperlocal');
+
+    Route::get('/feed/hyperlocal/{wardCode}/notices', [\Modules\Social\Http\Controllers\HyperlocalController::class, 'notices'])
+        ->name('api.v1.feed.hyperlocal.notices');
+
+    Route::get('/feed/hyperlocal/{wardCode}/stats', [\Modules\Social\Http\Controllers\HyperlocalController::class, 'stats'])
+        ->name('api.v1.feed.hyperlocal.stats');
+
+    Route::get('/users/{identifier}/posts', [\Modules\Social\Http\Controllers\PostController::class, 'userPosts'])
+        ->name('api.v1.users.posts');
+
+    Route::get('/posts/{id}', [\Modules\Social\Http\Controllers\PostController::class, 'show'])
+        ->name('api.v1.posts.show');
+
+    // Signed route for local/dev direct media upload
+    Route::post('/media/direct-upload', [\Modules\Social\Http\Controllers\MediaController::class, 'directUpload'])
+        ->name('api.v1.media.direct-upload');
 });
-
-

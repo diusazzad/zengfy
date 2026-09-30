@@ -19,6 +19,8 @@ class OrganizationRbacSeeder extends Seeder
             ['name' => 'View Audit Logs', 'slug' => 'audit_logs.view', 'module' => 'core'],
 
             // School domain permissions
+            ['name' => 'Manage Academic Structure', 'slug' => 'academic.manage', 'module' => 'school'],
+            ['name' => 'View Academic Structure', 'slug' => 'academic.view', 'module' => 'school'],
             ['name' => 'Mark Student Attendance', 'slug' => 'attendance.mark', 'module' => 'school'],
             ['name' => 'Publish Examination', 'slug' => 'exam.publish', 'module' => 'school'],
             ['name' => 'Grade Examination', 'slug' => 'exam.grade', 'module' => 'school'],
@@ -41,6 +43,8 @@ class OrganizationRbacSeeder extends Seeder
             'roles.manage',
             'departments.manage',
             'audit_logs.view',
+            'academic.manage',
+            'academic.view',
         ])->pluck('id');
         $adminRole->permissions()->sync($adminPermissions);
 

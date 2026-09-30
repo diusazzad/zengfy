@@ -42,6 +42,7 @@
             <div>
                 <h3 class="text-white font-bold text-xs sm:text-sm mb-4 tracking-wider uppercase">Security & Trust</h3>
                 <ul class="space-y-2.5 text-xs font-medium">
+                    <li><a href="{{ route('download.app') }}" class="hover:text-cyan-300 text-cyan-400 font-semibold flex items-center gap-1.5"><span>📱</span> Download Android APK</a></li>
                     <li><a href="#security" class="hover:text-white transition-colors">NID Identity Layer</a></li>
                     <li><a href="#sso" class="hover:text-white transition-colors">Central SSO Token Engine</a></li>
                     <li><a href="#" class="hover:text-white transition-colors">256-Bit Data Sovereignty</a></li>
