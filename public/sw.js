@@ -1,65 +1,162 @@
-const CACHE_NAME = 'zengfy-cache-v2';
-const ASSETS_TO_CACHE = [
+/*
+ * Zengfy Sovereign PWA Service Worker (v4.0.0)
+ * Purges old caches and serves clean white glassmorphic app shell.
+ */
+
+const CACHE_VERSION = 'v4';
+const STATIC_CACHE = `zengfy-static-${CACHE_VERSION}`;
+const ASSETS_CACHE = `zengfy-assets-${CACHE_VERSION}`;
+const FONTS_CACHE = `zengfy-fonts-${CACHE_VERSION}`;
+const IMAGES_CACHE = `zengfy-images-${CACHE_VERSION}`;
+
+// Core App Shell Assets for Pre-caching
+const PRECACHE_ASSETS = [
     '/',
     '/favicon.ico',
-    '/robots.txt'
-    // Note: Do NOT hardcode volatile image paths here. A single 404 will fail the ENTIRE install process.
+    '/robots.txt',
+    '/images/logo.png',
+    '/build/assets/app-PzI-Dzae.css',
+    '/build/assets/app-DbTTI37r.js'
 ];
 
-// Install Event - Cache critical offline assets
+// 1. Install Event: Purge old cache immediately & cache new shell
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            console.log('[Service Worker] Caching critical app shell');
-            return cache.addAll(ASSETS_TO_CACHE);
+        caches.keys().then((keys) => {
+            return Promise.all(keys.map((k) => caches.delete(k)));
+        }).then(() => {
+            return caches.open(STATIC_CACHE).then((cache) => {
+                console.log('[Zengfy SW v4] Caching fresh white glassmorphic app shell');
+                return cache.addAll(PRECACHE_ASSETS).catch((err) => {
+                    console.warn('[Zengfy SW v4] Pre-cache partial warning:', err);
+                });
+            });
         })
     );
     self.skipWaiting();
 });
 
-// Activate Event - Clean up old caches
+// 2. Activate Event: Claim all clients immediately so new version takes effect without reload
 self.addEventListener('activate', (event) => {
+    const activeCaches = [STATIC_CACHE, ASSETS_CACHE, FONTS_CACHE, IMAGES_CACHE];
     event.waitUntil(
-        caches.keys().then((keyList) => {
-            return Promise.all(keyList.map((key) => {
-                if (key !== CACHE_NAME) {
-                    console.log('[Service Worker] Removing old cache:', key);
-                    return caches.delete(key);
-                }
-            }));
-        })
+        caches.keys().then((keys) => {
+            return Promise.all(
+                keys.map((key) => {
+                    if (!activeCaches.includes(key)) {
+                        console.log('[Zengfy SW v4] Removing stale cache:', key);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        }).then(() => self.clients.claim())
     );
-    self.clients.claim();
 });
 
-// Fetch Event - Stale-While-Revalidate with strict offline fallback
+// 3. Fetch Event: Multi-tiered smart caching strategies
 self.addEventListener('fetch', (event) => {
-    if (event.request.method !== 'GET') return;
-    
-    // Ignore API requests and browser extension requests
-    if (event.request.url.includes('/api/') || event.request.url.startsWith('chrome-extension')) {
+    const request = event.request;
+
+    // Only handle GET requests
+    if (request.method !== 'GET') return;
+
+    const url = new URL(request.url);
+
+    // Bypass API calls, WebSocket, and chrome extensions
+    if (url.pathname.startsWith('/api/') || url.protocol === 'chrome-extension:' || url.protocol === 'ws:' || url.protocol === 'wss:') {
         return;
     }
 
+    // Bypass authentication & sensitive routes
+    if (url.pathname.startsWith('/account') || url.pathname.startsWith('/dashboard') || url.pathname.startsWith('/login') || url.pathname.startsWith('/register')) {
+        return;
+    }
+
+    // A. HTML NAVIGATION / LANDING PAGE (Network-First ALWAYS for fresh UI)
+    if (request.mode === 'navigate') {
+        event.respondWith(
+            fetch(request)
+                .then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        const copy = networkResponse.clone();
+                        caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
+                    }
+                    return networkResponse;
+                })
+                .catch(async () => {
+                    const cached = await caches.match(request);
+                    return cached || caches.match('/');
+                })
+        );
+        return;
+    }
+
+    // B. GOOGLE FONTS STRATEGY (Cache-First)
+    if (url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com') {
+        event.respondWith(
+            caches.open(FONTS_CACHE).then(async (cache) => {
+                const cached = await cache.match(request);
+                if (cached) return cached;
+
+                try {
+                    const response = await fetch(request);
+                    if (response && response.status === 200) {
+                        cache.put(request, response.clone());
+                    }
+                    return response;
+                } catch (e) {
+                    return cached;
+                }
+            })
+        );
+        return;
+    }
+
+    // C. VERSIONED STATIC ASSETS STRATEGY (Cache-First)
+    if (url.pathname.startsWith('/build/assets/')) {
+        event.respondWith(
+            caches.open(ASSETS_CACHE).then(async (cache) => {
+                const cached = await cache.match(request);
+                if (cached) return cached;
+
+                const response = await fetch(request);
+                if (response && response.status === 200) {
+                    cache.put(request, response.clone());
+                }
+                return response;
+            })
+        );
+        return;
+    }
+
+    // D. IMAGES & MEDIA STRATEGY (Stale-While-Revalidate)
+    if (url.pathname.startsWith('/images/') || url.pathname.endsWith('.png') || url.pathname.endsWith('.webp') || url.pathname.endsWith('.jpg')) {
+        event.respondWith(
+            caches.open(IMAGES_CACHE).then(async (cache) => {
+                const cached = await cache.match(request);
+                const fetchPromise = fetch(request).then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        cache.put(request, networkResponse.clone());
+                    }
+                    return networkResponse;
+                }).catch(() => cached);
+
+                return cached || fetchPromise;
+            })
+        );
+        return;
+    }
+
+    // Default: Network First
     event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            const networkFetch = fetch(event.request).then((networkResponse) => {
-                // Only cache valid OK responses
-                if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-                    const responseToCache = networkResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, responseToCache);
-                    });
+        fetch(request)
+            .then((networkResponse) => {
+                if (networkResponse && networkResponse.status === 200) {
+                    const copy = networkResponse.clone();
+                    caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
                 }
                 return networkResponse;
-            }).catch((error) => {
-                console.log('[Service Worker] Network request failed / Offline', error);
-                // Return a custom offline HTML here if needed, or bubble up undefined
-            });
-
-            // Return cached response instantly if available, otherwise wait for network
-            // If BOTH fail (e.g., offline & not cached), this returns a generic Response to prevent crash
-            return cachedResponse || networkFetch.then(res => res || new Response("Offline Mode", { status: 503, statusText: "Offline" }));
-        })
+            })
+            .catch(() => caches.match(request))
     );
 });

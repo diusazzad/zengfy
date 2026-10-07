@@ -161,12 +161,12 @@
                         <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
                             <div class="flex items-center gap-3">
                                 @if(isset($member['social']['linkedin']))
-                                    <a href="{{ $member['social']['linkedin'] }}" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
+                                    <a href="{{ $member['social']['linkedin'] }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
                                         <span>LinkedIn</span> →
                                     </a>
                                 @endif
                                 @if(isset($member['social']['github']))
-                                    <a href="{{ $member['social']['github'] }}" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
+                                    <a href="{{ $member['social']['github'] }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 text-xs font-semibold flex items-center gap-1 transition-colors">
                                         <span>GitHub</span> →
                                     </a>
                                 @endif
@@ -174,7 +174,7 @@
 
                             @if(str_contains($member['name'], 'Sazzad'))
                                 <a href="{{ env('APP_ENV') === 'local' ? 'http://founder.zengfy.test:7000' : 'https://founder.zengfy.top' }}" 
-                                   target="_blank"
+                                   target="_blank" rel="noopener noreferrer"
                                    class="text-[11px] font-extrabold text-white bg-blue-600 hover:bg-blue-500 border border-blue-400/40 px-3.5 py-1.5 rounded-full transition-all hover:scale-105 shadow-md shadow-blue-600/30 flex items-center gap-1">
                                     <span>Founder Portfolio</span> 🚀
                                 </a>

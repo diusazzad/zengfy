@@ -1,13 +1,29 @@
 {
+  "_AccountHub-DsDZJUJP.js": {
+    "file": "assets/AccountHub-DsDZJUJP.js",
+    "name": "AccountHub"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-I7jOvttH.css",
+    "file": "assets/app-kK7uwl0g.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DbTTI37r.js",
+    "file": "assets/app-BycL-Sij.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_AccountHub-DsDZJUJP.js"
+    ]
+  },
+  "resources/js/react/main.jsx": {
+    "file": "assets/main-DzONJxjx.js",
+    "name": "main",
+    "src": "resources/js/react/main.jsx",
+    "isEntry": true,
+    "imports": [
+      "_AccountHub-DsDZJUJP.js"
+    ]
   }
 }

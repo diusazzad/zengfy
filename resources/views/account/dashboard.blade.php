@@ -43,7 +43,12 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0B0F17; }
         ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 9999px; }
+        #react-account-root:not(:empty) + #blade-account-fallback {
+            display: none !important;
+        }
     </style>
+
+    @vite(['resources/js/react/main.jsx'])
 </head>
 
 <body class="bg-[#0B0F17] text-gray-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white antialiased relative"
@@ -153,10 +158,16 @@
           }
       }">
 
-    <!-- Ambient Glowing Orbs -->
+    <!-- Ambient Glowing Background Grid & Orbs (Rich Glassmorphism Mesh) -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-        <div class="absolute -top-40 left-1/3 w-[600px] h-[500px] bg-gradient-to-b from-blue-600/15 via-indigo-600/10 to-transparent blur-3xl opacity-60"></div>
-        <div class="absolute -bottom-40 right-10 w-[500px] h-[500px] bg-gradient-to-t from-cyan-500/15 via-blue-700/10 to-transparent blur-3xl opacity-50"></div>
+        <!-- Top Radiant Cyan/Blue Spotlight -->
+        <div class="absolute -top-40 left-1/3 -translate-x-1/2 w-[750px] h-[550px] bg-gradient-to-b from-blue-600/25 via-cyan-500/15 to-transparent blur-3xl opacity-80 animate-pulse-slow"></div>
+        <!-- Right Bottom Neon Cyan Flare -->
+        <div class="absolute top-1/4 -right-32 w-[600px] h-[600px] bg-gradient-to-t from-cyan-500/20 via-blue-700/15 to-transparent blur-3xl opacity-60"></div>
+        <!-- Left Bottom Deep Violet Orb -->
+        <div class="absolute -bottom-40 left-10 w-[550px] h-[550px] bg-gradient-to-tr from-indigo-600/20 via-purple-700/15 to-transparent blur-3xl opacity-50"></div>
+        <!-- Subtle Precision Grid Pattern with Vignette Fade -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff07_1px,transparent_1px),linear-gradient(to_bottom,#ffffff07_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,#000_70%,transparent_100%)]"></div>
     </div>
 
     <!-- 1. Top Navbar (Google Workspace Style) -->
@@ -165,12 +176,12 @@
             
             <!-- Left: Logo & Hub Title -->
             <div class="flex items-center gap-3">
-                <a href="{{ route('welcome') }}" aria-label="Zengfy Home" class="flex items-center gap-2.5 group p-1.5 min-h-[44px] rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                <a href="{{ $homeUrl ?? route('welcome') }}" aria-label="Zengfy" class="flex items-center gap-2.5 group p-1.5 min-h-[44px] rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                     <div aria-hidden="true" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center font-black text-lg text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform">
                         Z
                     </div>
-                    <span aria-hidden="true" class="text-xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
-                        Zengfy<span class="text-blue-500 font-black">.</span>
+                    <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
+                        Zengfy<span class="text-blue-500 font-black" aria-hidden="true">.</span>
                     </span>
                 </a>
                 <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold hidden sm:inline-block">
@@ -180,22 +191,22 @@
 
             <!-- Middle Navigation Links -->
             <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
-                <button @click="activeTab = 'overview'" 
+                <button @click="activeTab = 'overview'; window.dispatchEvent(new CustomEvent('zengfy-tab-change', { detail: { tab: 'overview' } }))" 
                         :class="activeTab === 'overview' ? 'text-white bg-white/[0.08] border-white/20' : 'text-gray-400 hover:text-white hover:bg-white/[0.04] border-transparent'"
                         class="px-3.5 py-2 min-h-[40px] rounded-xl border text-xs sm:text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                     Overview
                 </button>
-                <button @click="activeTab = 'security'" 
+                <button @click="activeTab = 'security'; window.dispatchEvent(new CustomEvent('zengfy-tab-change', { detail: { tab: 'security' } }))" 
                         :class="activeTab === 'security' ? 'text-white bg-white/[0.08] border-white/20' : 'text-gray-400 hover:text-white hover:bg-white/[0.04] border-transparent'"
                         class="px-3.5 py-2 min-h-[40px] rounded-xl border text-xs sm:text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                     Security & Devices
                 </button>
-                <button @click="activeTab = 'apps'" 
+                <button @click="activeTab = 'apps'; window.dispatchEvent(new CustomEvent('zengfy-tab-change', { detail: { tab: 'apps' } }))" 
                         :class="activeTab === 'apps' ? 'text-white bg-white/[0.08] border-white/20' : 'text-gray-400 hover:text-white hover:bg-white/[0.04] border-transparent'"
                         class="px-3.5 py-2 min-h-[40px] rounded-xl border text-xs sm:text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                     Ecosystem Apps
                 </button>
-                <a href="{{ route('social.feed') }}" 
+                <a href="{{ $socialUrl ?? route('social.feed') }}" 
                    class="px-3.5 py-2 min-h-[40px] rounded-xl text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 hover:bg-cyan-500/10 transition-all flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                     <span>Social Feed</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -314,14 +325,14 @@
                                 <p class="text-[10px] text-cyan-400 font-mono mt-0.5">@{{ $user->handle ?? 'citizen' }}</p>
                             </div>
                         </div>
-                        <a href="{{ route('social.feed') }}" class="flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-xs font-medium text-gray-300 hover:text-white hover:bg-white/[0.06] rounded-xl transition">
+                        <a href="{{ $socialUrl ?? route('social.feed') }}" class="flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-xs font-medium text-gray-300 hover:text-white hover:bg-white/[0.06] rounded-xl transition">
                             <span>🌐 Zengfy Social Feed</span>
                         </a>
                         <button @click="activeTab = 'security'; profileMenuOpen = false;" class="w-full text-left flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-xs font-medium text-gray-300 hover:text-white hover:bg-white/[0.06] rounded-xl transition cursor-pointer">
                             <span>🔒 Security & Sessions</span>
                         </button>
                         <hr class="my-1.5 border-white/10">
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST" @submit="localStorage.removeItem('zengfy_token')">
                             @csrf
                             <button type="submit" class="w-full text-left flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-xs font-bold text-rose-400 hover:bg-rose-500/10 rounded-xl transition cursor-pointer">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -373,6 +384,15 @@
             </ul>
         </div>
         @endif
+
+        <!-- React 19 Sovereign Account Hub Root -->
+        <div id="react-account-root" 
+             data-user="{{ json_encode($user) }}" 
+             data-devices="{{ json_encode($activeDevices) }}" 
+             data-apps="{{ json_encode($ecosystemApps) }}"></div>
+
+        <!-- Blade/Progressive Fallback Container (Hidden when React mounts) -->
+        <div id="blade-account-fallback" class="space-y-6">
 
         <!-- TAB 1: OVERVIEW & PROFILE HUB -->
         <div x-show="activeTab === 'overview'" class="space-y-6">
@@ -455,7 +475,7 @@
                             <span>Edit Profile</span>
                         </button>
 
-                        <a href="{{ route('social.feed') }}" 
+                        <a href="{{ $socialUrl ?? route('social.feed') }}" 
                            class="px-5 py-2.5 min-h-[44px] rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                             <span>Open Social Feed</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -533,7 +553,7 @@
                             💡 Ready to publish your first verified update or connect with friends?
                         </div>
                     </div>
-                    <a href="{{ route('social.feed') }}" class="mt-6 w-full py-2.5 px-4 min-h-[44px] rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs font-bold text-white shadow-lg shadow-blue-600/20 transition text-center flex items-center justify-center">
+                    <a href="{{ $socialUrl ?? route('social.feed') }}" class="mt-6 w-full py-2.5 px-4 min-h-[44px] rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs font-bold text-white shadow-lg shadow-blue-600/20 transition text-center flex items-center justify-center">
                         Launch Social Community →
                     </a>
                 </div>
@@ -765,6 +785,7 @@
                 </div>
             </div>
         </div>
+        </div> <!-- /#blade-account-fallback -->
 
     </main>
 
@@ -903,5 +924,18 @@
 
     </div>
 
+    <!-- Back-Forward Cache (bfcache) Buster -->
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            const navEntries = (window.performance && window.performance.getEntriesByType) ? window.performance.getEntriesByType('navigation') : [];
+            const isBackForward = event.persisted || 
+                (window.performance && window.performance.navigation && window.performance.navigation.type === 2) ||
+                (navEntries.length > 0 && navEntries[0].type === 'back_forward');
+
+            if (isBackForward) {
+                window.location.reload();
+            }
+        });
+    </script>
 </body>
 </html>

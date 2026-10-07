@@ -56,7 +56,7 @@
 
                     <!-- Action Link -->
                     <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <a href="{{ $service['url'] }}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-gray-300 group-hover:text-blue-400 transition-colors">
+                        <a href="{{ $service['url'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-gray-300 group-hover:text-blue-400 transition-colors">
                             <span>Launch {{ $service['name'] }}</span>
                             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

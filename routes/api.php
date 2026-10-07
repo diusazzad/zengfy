@@ -16,58 +16,8 @@ Route::controller(ModuleApiController::class)->prefix('v1')->group(function () {
 });
 
 // Central Identity & Authentication Routes (v1)
-Route::prefix('v1/auth')->middleware([
-    \Illuminate\Cookie\Middleware\EncryptCookies::class,
-    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-    \Illuminate\Session\Middleware\StartSession::class,
-])->group(function () {
-    Route::post('/register', [\Modules\Auth\Http\Controllers\AuthController::class, 'register'])
-        ->middleware(['throttle:registration'])
-        ->name('api.v1.auth.register');
+require base_path('Modules/Auth/routes/api.php');
 
-    Route::post('/login', [\Modules\Auth\Http\Controllers\AuthController::class, 'login'])
-        ->middleware(['throttle:60,1'])
-        ->name('api.v1.auth.login');
-
-    Route::post('/sso/exchange', [\Modules\Auth\Http\Controllers\SsoController::class, 'exchangeTicket'])
-        ->middleware(['throttle:30,1'])
-        ->name('api.v1.auth.sso.exchange');
-
-    // Password Reset & Recovery
-    Route::post('/password/forgot', [\Modules\Auth\Http\Controllers\PasswordResetController::class, 'forgotPassword'])
-        ->middleware(['throttle:6,1'])
-        ->name('api.v1.auth.password.forgot');
-
-    Route::post('/password/verify-code', [\Modules\Auth\Http\Controllers\PasswordResetController::class, 'verifyCode'])
-        ->middleware(['throttle:10,1'])
-        ->name('api.v1.auth.password.verify');
-
-    Route::post('/password/reset', [\Modules\Auth\Http\Controllers\PasswordResetController::class, 'resetPassword'])
-        ->middleware(['throttle:6,1'])
-        ->name('api.v1.auth.password.reset');
-
-    Route::middleware('auth:sanctum')->group(function () {
-        Route::get('/me', [\Modules\Auth\Http\Controllers\AuthController::class, 'me'])
-            ->name('api.v1.auth.me');
-
-        Route::post('/logout', [\Modules\Auth\Http\Controllers\AuthController::class, 'logout'])
-            ->name('api.v1.auth.logout');
-
-        Route::post('/logout-all', [\Modules\Auth\Http\Controllers\AuthController::class, 'logoutAll'])
-            ->name('api.v1.auth.logout-all');
-
-        Route::post('/sso/ticket', [\Modules\Auth\Http\Controllers\SsoController::class, 'generateTicket'])
-            ->middleware(['throttle:15,1'])
-            ->name('api.v1.auth.sso.ticket');
-
-        Route::post('/nid/verify', [\Modules\Auth\Http\Controllers\NidVerificationController::class, 'verify'])
-            ->middleware(['throttle:10,1'])
-            ->name('api.v1.auth.nid.verify');
-
-        Route::get('/nid/status', [\Modules\Auth\Http\Controllers\NidVerificationController::class, 'status'])
-            ->name('api.v1.auth.nid.status');
-    });
-});
 
 // Multi-Tenant Organization & Granular Scoping Routes (v1)
 Route::prefix('v1/organizations')->middleware(['auth:sanctum'])->group(function () {

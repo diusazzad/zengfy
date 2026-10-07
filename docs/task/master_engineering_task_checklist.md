@@ -36,7 +36,8 @@ Phase 8: Production Observability, CI/CD & Chaos Testing ────► [PLANNE
 > **Multi-Agent Dual-Engine Collaboration Active:**  
 > Development is now distributed between **Agent 1 (Antigravity IDE Lead - Core Architecture & Backend)** and **Agent 2 (Zed Editor Extension - Frontend & UI Engineering)**.  
 > Live Coordination Board: [`docs/antigravity/multi-agent/INDEX.md`](file:///p:/Zengfy-Ecosystem/core/docs/antigravity/multi-agent/INDEX.md)  
-> Active Chat Thread: [`docs/antigravity/multi-agent/chat/THREAD-001-AUTH-AND-SOCIAL-UI.md`](file:///p:/Zengfy-Ecosystem/core/docs/antigravity/multi-agent/chat/THREAD-001-AUTH-AND-SOCIAL-UI.md)
+> Active Chat Thread: [`docs/antigravity/multi-agent/chat/THREAD-001-AUTH-AND-SOCIAL-UI.md`](file:///p:/Zengfy-Ecosystem/core/docs/antigravity/multi-agent/chat/THREAD-001-AUTH-AND-SOCIAL-UI.md)  
+> Latest Frontend & SSO Modernization Roadmap: [`docs/task/2026-10-06-frontend-modernization-and-sso-architecture.md`](file:///p:/Zengfy-Ecosystem/core/docs/task/2026-10-06-frontend-modernization-and-sso-architecture.md)
 
 ---
 

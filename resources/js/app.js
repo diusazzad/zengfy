@@ -1,4 +1,6 @@
 import './bootstrap';
+import './echo';
+import './react/index.jsx';
 
 // Preloader Logic
 (function () {

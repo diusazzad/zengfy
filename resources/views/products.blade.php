@@ -127,7 +127,7 @@
 
                     <!-- Bottom Action Link -->
                     <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
-                        <a href="{{ $product['url'] }}" target="_blank" 
+                        <a href="{{ $product['url'] }}" target="_blank" rel="noopener noreferrer" 
                            class="w-full inline-flex items-center justify-between text-sm font-bold text-white group-hover:text-blue-400 transition-colors py-1">
                             <span>Launch Application</span>
                             <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

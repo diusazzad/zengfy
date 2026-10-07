@@ -9,14 +9,24 @@
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.11",
+        "@vitejs/plugin-react": "^4.7.0",
         "axios": "^1.8.2",
+        "clsx": "^2.1.1",
         "concurrently": "^9.0.1",
         "cross-env": "^7.0.3",
         "laravel-echo": "^2.5.0",
         "laravel-vite-plugin": "^1.2.0",
         "pusher-js": "^8.6.0",
         "sass": "^1.56.1",
+        "tailwind-merge": "^3.7.0",
         "tailwindcss": "^4.1.11",
         "vite": "^6.2.4"
+    },
+    "dependencies": {
+        "@tanstack/react-query": "^5.104.1",
+        "lucide-react": "^1.52.0",
+        "react": "^19.3.0",
+        "react-dom": "^19.3.0",
+        "zustand": "^5.0.15"
     }
 }

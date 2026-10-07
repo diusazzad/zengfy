@@ -156,7 +156,12 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'domain' => env('SESSION_DOMAIN', (function () {
+        $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+        if (str_contains($host, 'zengfy.top')) return '.zengfy.top';
+        if (str_contains($host, 'zengfy.test')) return '.zengfy.test';
+        return null;
+    })()),
 
     /*
     |--------------------------------------------------------------------------

@@ -30,6 +30,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         \Illuminate\Support\Facades\View::addNamespace('main', base_path('Modules/Main/resources/views'));
+        if (is_dir(base_path('Modules/Auth/resources/views'))) {
+            \Illuminate\Support\Facades\View::addNamespace('auth', base_path('Modules/Auth/resources/views'));
+        }
+        if (is_dir(base_path('Modules/Social/resources/views'))) {
+            \Illuminate\Support\Facades\View::addNamespace('social', base_path('Modules/Social/resources/views'));
+        }
 
         // Automatically discover and load migrations from all domain Modules
         $modulesPath = base_path('Modules');
@@ -42,6 +48,26 @@ class AppServiceProvider extends ServiceProvider
         // Dedicated IP-based rate limiting for user registrations
         \Illuminate\Support\Facades\RateLimiter::for('registration', function (\Illuminate\Http\Request $request) {
             return \Illuminate\Cache\RateLimiting\Limit::perMinute(5)->by($request->ip());
+        });
+
+        // =========================================================================
+        // Google-style Central SSO: Universal Guest Redirect to Central Identity Gateway
+        // Whenever any unauthenticated user accesses an auth-protected route on any
+        // subdomain or module (e.g. social.*, school.*, pos.*, law.*), seamlessly
+        // redirect them to the Central Sovereign Login Portal with their destination continue URL.
+        // =========================================================================
+        \Illuminate\Auth\Middleware\Authenticate::redirectUsing(function (\Illuminate\Http\Request $request) {
+            if (! $request->expectsJson()) {
+                $scheme = $request->getScheme();
+                $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+                $port = $request->getPort();
+                $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
+
+                $centralLogin = "{$scheme}://{$baseDomain}{$portSuffix}/login";
+                $target = $request->fullUrl();
+
+                return "{$centralLogin}?continue=" . urlencode($target);
+            }
         });
     }
 }

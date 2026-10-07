@@ -48,7 +48,9 @@
             "Modules\\Organization\\Database\\Seeders\\": "Modules/Organization/database/seeders/",
             "Modules\\Social\\": "Modules/Social/app/",
             "Modules\\Social\\Database\\Factories\\": "Modules/Social/database/factories/",
-            "Modules\\Social\\Database\\Seeders\\": "Modules/Social/database/seeders/"
+            "Modules\\Social\\Database\\Seeders\\": "Modules/Social/database/seeders/",
+            "Modules\\Landing\\": "Modules/Landing/app/",
+            "Modules\\Landing\\Database\\Seeders\\": "Modules/Landing/database/seeders/"
         },
         "files": [
             "app/Helpers/helpers.php"

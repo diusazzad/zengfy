@@ -94,7 +94,7 @@
 
                     <!-- CTA Button -->
                     <div class="mt-8 pt-5 border-t border-white/10">
-                        <a href="{{ $product['url'] }}" target="_blank" 
+                        <a href="{{ $product['url'] }}" target="_blank" rel="noopener noreferrer" 
                            class="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/20 transition-all active:scale-95">
                             <span>Get Started with {{ $product['name'] }}</span>
                             <span>→</span>

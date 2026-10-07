@@ -29,6 +29,10 @@ class AccountController extends Controller
         $scheme = env('APP_URL_SCHEME', 'http');
         $port = env('APP_ENV') === 'local' ? ':7000' : '';
 
+        $homeUrl = "{$scheme}://{$baseDomain}{$port}/";
+        $socialUrl = "{$scheme}://social.{$baseDomain}{$port}/";
+        $accountUrl = "{$scheme}://{$baseDomain}{$port}/account";
+
         $ecosystemApps = [
             [
                 'id' => 'social',
@@ -36,7 +40,7 @@ class AccountController extends Controller
                 'category' => 'Community & Feed',
                 'desc' => 'NID-verified sovereign community feed, posts, and messaging.',
                 'icon' => '🌐',
-                'url' => route('social.feed'),
+                'url' => $socialUrl,
                 'badge' => 'Active',
                 'badge_color' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
             ],
@@ -46,7 +50,7 @@ class AccountController extends Controller
                 'category' => 'Identity & Security',
                 'desc' => 'Unified SSO credentials, 256-bit vault, and NID citizen badge.',
                 'icon' => '🇧🇩',
-                'url' => route('account'),
+                'url' => $accountUrl,
                 'badge' => 'Primary',
                 'badge_color' => 'bg-blue-500/10 text-blue-400 border-blue-500/20',
             ],
@@ -56,43 +60,52 @@ class AccountController extends Controller
                 'category' => 'Mobile APK',
                 'desc' => 'Native biometric scanner, ward SOS distress beacon, push alerts.',
                 'icon' => '📱',
-                'url' => route('download.app'),
+                'url' => "{$scheme}://{$baseDomain}{$port}/download",
                 'badge' => 'Alpha v1.0',
                 'badge_color' => 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
             ],
             [
                 'id' => 'school',
                 'name' => 'School ERP',
-                'category' => 'Education (Deferred)',
+                'category' => 'Education',
                 'desc' => 'Student records, exam grading, automated SMS notifications.',
                 'icon' => '🏫',
-                'url' => '#',
-                'badge' => 'Roadmap',
-                'badge_color' => 'bg-gray-500/10 text-gray-400 border-gray-500/20',
+                'url' => "{$scheme}://school.{$baseDomain}{$port}/",
+                'badge' => 'Live Demo',
+                'badge_color' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',
             ],
             [
                 'id' => 'law',
                 'name' => 'Legal Practice',
-                'category' => 'Law Vault (Deferred)',
+                'category' => 'Law Vault',
                 'desc' => 'Court hearing schedules, case diary, encrypted document vault.',
                 'icon' => '⚖️',
-                'url' => '#',
-                'badge' => 'Roadmap',
-                'badge_color' => 'bg-gray-500/10 text-gray-400 border-gray-500/20',
+                'url' => "{$scheme}://law.{$baseDomain}{$port}/",
+                'badge' => 'Live Demo',
+                'badge_color' => 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
             ],
             [
                 'id' => 'pos',
                 'name' => 'Retail POS',
-                'category' => 'Commerce (Deferred)',
+                'category' => 'Commerce',
                 'desc' => 'Multi-location inventory, barcode billing, bKash integration.',
                 'icon' => '🛒',
-                'url' => '#',
-                'badge' => 'Roadmap',
-                'badge_color' => 'bg-gray-500/10 text-gray-400 border-gray-500/20',
+                'url' => "{$scheme}://pos.{$baseDomain}{$port}/",
+                'badge' => 'Live Demo',
+                'badge_color' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
             ],
         ];
 
-        return view('account.dashboard', compact('user', 'activeDevices', 'ecosystemApps'));
+        if ($request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'user' => $user,
+                'devices' => $activeDevices,
+                'ecosystem_apps' => $ecosystemApps,
+            ]);
+        }
+
+        return view('account.dashboard', compact('user', 'activeDevices', 'ecosystemApps', 'homeUrl', 'socialUrl', 'accountUrl'));
     }
 
     /**
@@ -121,7 +134,7 @@ class AccountController extends Controller
 
         $user->update($validated);
 
-        if ($request->wantsJson()) {
+        if ($request->wantsJson() || $request->ajax()) {
             return response()->json([
                 'success' => true,
                 'message' => 'Profile updated successfully.',
@@ -151,7 +164,7 @@ class AccountController extends Controller
         $path = $request->file('avatar')->store('avatars', 'public');
         $user->update(['avatar' => $path]);
 
-        if ($request->wantsJson()) {
+        if ($request->wantsJson() || $request->ajax()) {
             return response()->json([
                 'success' => true,
                 'message' => 'Profile photo updated successfully!',
@@ -175,7 +188,7 @@ class AccountController extends Controller
 
         $user->update(['avatar' => null]);
 
-        if ($request->wantsJson()) {
+        if ($request->wantsJson() || $request->ajax()) {
             return response()->json([
                 'success' => true,
                 'message' => 'Profile photo removed.',
@@ -198,7 +211,7 @@ class AccountController extends Controller
         ]);
 
         if (! Hash::check($validated['current_password'], $user->password)) {
-            if ($request->wantsJson()) {
+            if ($request->wantsJson() || $request->ajax()) {
                 return response()->json([
                     'success' => false,
                     'message' => 'The provided current password does not match our records.',
@@ -211,7 +224,7 @@ class AccountController extends Controller
             'password' => Hash::make($validated['new_password']),
         ]);
 
-        if ($request->wantsJson()) {
+        if ($request->wantsJson() || $request->ajax()) {
             return response()->json([
                 'success' => true,
                 'message' => 'Password changed successfully.',
@@ -232,6 +245,14 @@ class AccountController extends Controller
             ->where('user_id', $user->id)
             ->delete();
 
+        if (request()->wantsJson() || request()->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Device session has been revoked.',
+                'device_id' => $deviceId,
+            ]);
+        }
+
         return redirect()->back()->with('success', 'Device session has been revoked.');
     }
 
@@ -250,25 +271,22 @@ class AccountController extends Controller
         // Delete all Sanctum personal access tokens
         $user->tokens()->delete();
 
+        if ($request->wantsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'All other active sessions have been terminated.',
+            ]);
+        }
+
         return redirect()->back()->with('success', 'All other active sessions have been terminated.');
     }
 
     /**
      * Web-based logout.
+     * @deprecated Use Modules\Auth\Http\Controllers\AuthController::webLogout instead.
      */
     public function logout(Request $request)
     {
-        $user = Auth::user();
-
-        if ($user) {
-            $user->tokens()->delete();
-        }
-
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect()->route('login')->with('success', 'You have been safely signed out.');
+        return app(\Modules\Auth\Http\Controllers\AuthController::class)->webLogout($request);
     }
 }

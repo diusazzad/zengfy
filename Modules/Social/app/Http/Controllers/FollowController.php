@@ -22,7 +22,11 @@ class FollowController extends Controller
      */
     public function follow(Request $request, string $id): JsonResponse
     {
-        $follower = $request->user();
+        $follower = $request->user() ?: \Illuminate\Support\Facades\Auth::user();
+        if (!$follower) {
+            return ApiResponse::unauthorized('You must be logged in to follow users.');
+        }
+
         $target = User::find($id);
 
         if (!$target) {
@@ -38,6 +42,7 @@ class FollowController extends Controller
         return ApiResponse::success([
             'following' => true,
             'target_id' => $target->id,
+            'followers_count' => (int) $target->fresh()->followers_count,
         ], 'You are now following ' . ($target->handle ? '@' . $target->handle : $target->name));
     }
 
@@ -46,7 +51,11 @@ class FollowController extends Controller
      */
     public function unfollow(Request $request, string $id): JsonResponse
     {
-        $follower = $request->user();
+        $follower = $request->user() ?: \Illuminate\Support\Facades\Auth::user();
+        if (!$follower) {
+            return ApiResponse::unauthorized('You must be logged in to unfollow users.');
+        }
+
         $target = User::find($id);
 
         if (!$target) {
@@ -58,6 +67,7 @@ class FollowController extends Controller
         return ApiResponse::success([
             'following' => false,
             'target_id' => $target->id,
+            'followers_count' => (int) $target->fresh()->followers_count,
         ], 'You unfollowed ' . ($target->handle ? '@' . $target->handle : $target->name));
     }
 

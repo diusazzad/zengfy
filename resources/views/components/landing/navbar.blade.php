@@ -1,18 +1,35 @@
 <!-- resources/views/components/landing/navbar.blade.php -->
+@php
+    $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+    $scheme = request()->getScheme();
+    $port = request()->getPort();
+    $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
+    $centralBaseUrl = "{$scheme}://{$baseDomain}{$portSuffix}";
+    $currentHost = request()->getHost();
+    $isSubdomain = ($currentHost !== $baseDomain && $currentHost !== 'localhost' && $currentHost !== '127.0.0.1');
+
+    $currentUrl = request()->fullUrl();
+    $centralLoginUrl = $isSubdomain 
+        ? "{$centralBaseUrl}/login?continue=" . urlencode($currentUrl) 
+        : "{$centralBaseUrl}/login";
+    $centralRegisterUrl = $isSubdomain 
+        ? "{$centralBaseUrl}/register?continue=" . urlencode($currentUrl) 
+        : "{$centralBaseUrl}/register";
+    $ecosystemHomeUrl = "{$centralBaseUrl}/";
+@endphp
 <nav x-data="{ mobileOpen: false, productsOpen: false, solutionsOpen: false }" id="main-navbar"
     class="fixed top-0 left-0 right-0 z-50 bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
 
         <!-- Brand Logo (Optimized for Accessible Name & 44px Touch Target) -->
-        <a href="{{ route('welcome') }}" aria-label="Zengfy Home"
+        <a href="{{ $ecosystemHomeUrl }}" aria-label="Zengfy"
             class="flex items-center gap-2 sm:gap-3 group shrink-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 p-1.5 min-h-[44px]">
             <div aria-hidden="true"
                 class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center font-black text-base sm:text-xl text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300">
                 Z
             </div>
-            <span aria-hidden="true"
-                class="text-xl sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
-                Zengfy<span class="text-blue-500 font-black">.</span>
+            <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-gray-200 transition-colors">
+                Zengfy<span class="text-blue-500 font-black" aria-hidden="true">.</span>
             </span>
         </a>
 
@@ -121,14 +138,14 @@
 
         <!-- Right Action Buttons + Hamburger Menu Toggle -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-            <!-- Sign Up Link -->
-            <a href="/register"
+            <!-- Sign Up Link (Google-style Central SSO) -->
+            <a href="{{ $centralRegisterUrl }}"
                 class="hidden sm:inline-flex items-center text-xs sm:text-sm font-semibold text-gray-300 hover:text-white px-3 py-2 min-h-[44px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl">
                 Sign Up
             </a>
 
-            <!-- Sovereign Sign In Button (Sign up is accessible inside login view) -->
-            <a href="/login"
+            <!-- Sovereign Sign In Button (Google-style Central SSO) -->
+            <a href="{{ $centralLoginUrl }}"
                 class="relative group overflow-hidden rounded-full p-px font-semibold text-xs sm:text-sm shadow-xl shadow-blue-600/20 active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 <span
                     class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:opacity-90 transition-opacity"></span>
@@ -169,7 +186,7 @@
         <a @click="mobileOpen = false" href="{{ route('faq') }}" 
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">FAQ</a>
         <div class="pt-3 border-t border-white/10">
-            <a href="/login"
+            <a href="{{ $centralLoginUrl }}"
                 class="w-full flex items-center justify-center py-3.5 px-4 min-h-[48px] rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm shadow-lg shadow-blue-600/30">
                 Sign In to Sovereign Hub →
             </a>

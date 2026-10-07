@@ -204,7 +204,7 @@ class PageController extends Controller
             ],
         ];
 
-        return view('welcome', compact('services', 'features'));
+        return app(\Modules\Landing\Http\Controllers\LandingController::class)->index();
     }
 
     public function products()
@@ -540,15 +540,22 @@ class PageController extends Controller
     //     ]);
     // }
 
-    public function showLogin()
+    /**
+     * @deprecated Use Modules\Auth\Http\Controllers\AuthController::showLogin instead.
+     */
+    public function showLogin(?Request $request = null)
     {
-        return view('auth.login');
+        return app(\Modules\Auth\Http\Controllers\AuthController::class)->showLogin($request ?? request());
     }
 
-    public function showRegister()
+    /**
+     * @deprecated Use Modules\Auth\Http\Controllers\AuthController::showRegister instead.
+     */
+    public function showRegister(?Request $request = null)
     {
-        return view('auth.register');
+        return app(\Modules\Auth\Http\Controllers\AuthController::class)->showRegister($request ?? request());
     }
+
 
     public function showFeed()
     {
@@ -634,21 +641,98 @@ class PageController extends Controller
 
     public function showProfile(string $handle)
     {
-        $user = \App\Models\User::where('handle', $handle)->first();
+        $viewer = Auth::user();
+        $cleanHandle = ltrim($handle, '@');
 
-        if (!$user) {
+        $user = \App\Models\User::where('handle', $cleanHandle)
+            ->orWhere('id', $cleanHandle)
+            ->first();
+
+        $userPosts = collect();
+
+        if ($user) {
+            $userPosts = \Modules\Social\Models\Post::with(['user', 'media'])
+                ->where('user_id', $user->id)
+                ->visibleTo($viewer)
+                ->orderByDesc('created_at')
+                ->take(30)
+                ->get();
+        } else {
             $user = (object) [
-                'name' => ucfirst($handle),
-                'handle' => $handle,
+                'id' => null,
+                'name' => ucfirst($cleanHandle),
+                'handle' => $cleanHandle,
                 'ward_code' => 'WARD-DHAKA-19',
                 'bio' => 'Verified sovereign citizen on Zengfy network.',
                 'followers_count' => 348,
                 'following_count' => 192,
                 'friends_count' => 84,
                 'verified_badge' => true,
+                'avatar_url' => null,
             ];
         }
 
-        return view('social.profile', compact('user'));
+        $userLikes = [];
+        if ($viewer && $userPosts->isNotEmpty()) {
+            $userLikes = \Modules\Social\Models\Like::where('user_id', $viewer->id)
+                ->whereIn('post_id', $userPosts->pluck('id'))
+                ->pluck('post_id')
+                ->flip()
+                ->toArray();
+        }
+
+        $formattedPosts = $userPosts->map(function ($post) use ($userLikes, $user) {
+            $author = $post->user ?: $user;
+            $name = $author?->name ?? 'Citizen';
+            $nameParts = explode(' ', trim($name));
+            $initials = count($nameParts) > 1 
+                ? strtoupper(substr($nameParts[0], 0, 1) . substr(end($nameParts), 0, 1))
+                : strtoupper(substr($nameParts[0], 0, 2));
+
+            $mediaList = $post->media ? $post->media->map(fn($m) => [
+                'id' => (string) $m->id,
+                'url' => $m->url,
+                'media_type' => $m->media_type ?? 'image',
+            ])->values()->toArray() : [];
+
+            return [
+                'id' => (string) $post->id,
+                'authorName' => $name,
+                'authorHandle' => '@' . ($author?->handle ?? 'citizen'),
+                'authorInitials' => $initials,
+                'authorAvatar' => $author?->avatar_url,
+                'verified' => (bool) ($author?->verified_badge || $author?->nid_verified),
+                'timeAgo' => $post->created_at ? $post->created_at->diffForHumans() : 'Just now',
+                'wardCode' => $post->ward_code ?? 'WARD-DHAKA-19',
+                'type' => ucfirst($post->post_type ?? 'Standard'),
+                'content' => $post->content ?? '',
+                'media' => $mediaList,
+                'likesCount' => (int) ($post->likes_count ?? 0),
+                'commentsCount' => (int) ($post->comments_count ?? 0),
+                'liked' => isset($userLikes[$post->id]),
+            ];
+        })->values()->toArray();
+
+        $userMedia = [];
+        foreach ($formattedPosts as $p) {
+            foreach ($p['media'] as $m) {
+                $userMedia[] = [
+                    'postId' => $p['id'],
+                    'url' => $m['url'],
+                    'type' => $m['media_type'] ?? 'image',
+                    'caption' => \Illuminate\Support\Str::limit($p['content'], 80),
+                    'timeAgo' => $p['timeAgo'],
+                ];
+            }
+        }
+
+        $isFollowing = false;
+        if ($viewer && $user instanceof \App\Models\User && $viewer->id !== $user->id) {
+            $isFollowing = \Modules\Social\Models\Follow::where('follower_id', $viewer->id)
+                ->where('following_id', $user->id)
+                ->exists();
+        }
+
+        return view('social.profile', compact('user', 'userPosts', 'formattedPosts', 'userMedia', 'isFollowing', 'viewer'));
     }
 }
