@@ -3,99 +3,136 @@
 namespace Modules\Social\Services;
 
 use App\Models\User;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Pagination\CursorPaginator;
+use Illuminate\Contracts\Pagination\CursorPaginator;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
-use InvalidArgumentException;
+use Illuminate\Support\Facades\Storage;
+use Modules\Social\Models\Follow;
+use Modules\Social\Models\Friendship;
 use Modules\Social\Models\Post;
 use Modules\Social\Models\PostMedia;
 
 class PostService
 {
     /**
-     * Create a new social post with optional media attachments.
+     * Create a new post along with media.
      */
-    public function createPost(User $user, array $data): Post
+    public function createPost(User $author, array $data, array $uploadedFiles = []): Post
     {
-        $content = isset($data['content']) ? trim((string) $data['content']) : null;
-        $mediaItems = $data['media'] ?? [];
-
-        if (empty($content) && empty($mediaItems)) {
-            throw new InvalidArgumentException('Post must contain text content or at least one media item.');
-        }
-
-        return DB::transaction(function () use ($user, $data, $content, $mediaItems) {
+        return DB::transaction(function () use ($author, $data, $uploadedFiles) {
             $post = Post::create([
-                'user_id' => $user->id,
-                'content' => $content,
+                'user_id' => $author->id,
+                'content' => $data['content'] ?? null,
                 'post_type' => $data['post_type'] ?? 'standard',
                 'visibility' => $data['visibility'] ?? 'public',
-                'ward_code' => $data['ward_code'] ?? $user->ward_code,
-                'thana_code' => $data['thana_code'] ?? $user->thana_code,
-                'district_code' => $data['district_code'] ?? $user->district_code,
-                'is_pinned' => (bool) ($data['is_pinned'] ?? false),
+                'ward_code' => $data['ward_code'] ?? $author->ward_code,
+                'thana_code' => $data['thana_code'] ?? null,
+                'district_code' => $data['district_code'] ?? null,
+                'is_pinned' => $data['is_pinned'] ?? false,
             ]);
 
-            if (!empty($mediaItems)) {
-                $mediaRecords = [];
-                foreach ($mediaItems as $index => $item) {
-                    $mediaRecords[] = [
-                        'id' => (string) \Illuminate\Support\Str::uuid(),
-                        'post_id' => $post->id,
-                        'media_type' => $item['media_type'] ?? 'image',
-                        'url' => $item['url'],
-                        'storage_path' => $item['storage_path'] ?? $item['url'],
-                        'mime_type' => $item['mime_type'] ?? 'image/jpeg',
-                        'file_size_bytes' => (int) ($item['file_size_bytes'] ?? 0),
-                        'width' => isset($item['width']) ? (int) $item['width'] : null,
-                        'height' => isset($item['height']) ? (int) $item['height'] : null,
-                        'order_column' => $item['order_column'] ?? $index,
-                        'created_at' => now(),
-                        'updated_at' => now(),
-                    ];
+            // Handle direct file uploads (multipart)
+            if (!empty($uploadedFiles)) {
+                $order = 0;
+                foreach ($uploadedFiles as $file) {
+                    if ($file instanceof UploadedFile && $file->isValid()) {
+                        $path = $file->store("social/posts/{$post->id}", 'public');
+                        PostMedia::create([
+                            'post_id' => $post->id,
+                            'url' => Storage::disk('public')->url($path),
+                            'storage_path' => $path,
+                            'media_type' => str_starts_with($file->getMimeType(), 'video/') ? 'video' : 'image',
+                            'mime_type' => $file->getMimeType(),
+                            'file_size_bytes' => $file->getSize(),
+                            'order_column' => $order++,
+                        ]);
+                    }
                 }
-                PostMedia::insert($mediaRecords);
             }
 
-            return $post->load([
-                'user:id,name,handle,avatar,verified_badge,ward_code',
-                'media',
-            ]);
+            // Handle pre-signed/already uploaded media descriptors
+            if (!empty($data['media']) && is_array($data['media'])) {
+                foreach ($data['media'] as $mediaItem) {
+                    PostMedia::create([
+                        'post_id' => $post->id,
+                        'url' => $mediaItem['url'],
+                        'storage_path' => $mediaItem['storage_path'] ?? null,
+                        'media_type' => $mediaItem['media_type'] ?? 'image',
+                        'mime_type' => $mediaItem['mime_type'] ?? null,
+                        'file_size_bytes' => $mediaItem['file_size_bytes'] ?? null,
+                        'width' => $mediaItem['width'] ?? null,
+                        'height' => $mediaItem['height'] ?? null,
+                        'order_column' => $mediaItem['order_column'] ?? 0,
+                    ]);
+                }
+            }
+
+            return $post->load(['user', 'media']);
         });
     }
 
     /**
-     * Delete a post.
+     * Delete a post and its associated media files from storage.
      */
     public function deletePost(User $user, Post $post): bool
     {
-        if ($post->user_id !== $user->id && !$user->hasRole('admin')) {
-            throw new AuthorizationException('You are not authorized to delete this post.');
+        if ($post->user_id !== $user->id) {
+            throw new \Illuminate\Auth\Access\AuthorizationException('Unauthorized to delete this post.');
         }
 
-        return (bool) $post->delete();
+        return DB::transaction(function () use ($post) {
+            foreach ($post->media as $media) {
+                if ($media->storage_path && Storage::disk('public')->exists($media->storage_path)) {
+                    Storage::disk('public')->delete($media->storage_path);
+                }
+            }
+
+            return (bool) $post->delete();
+        });
     }
 
     /**
-     * Get a single post by ID if visible to viewer.
+     * Get a single post by ID if viewer has permission.
      */
     public function getPostById(string $id, ?User $viewer = null): ?Post
     {
         return Post::with(['user:id,name,handle,avatar,verified_badge,ward_code', 'media'])
             ->visibleTo($viewer)
-            ->where('id', $id)
-            ->first();
+            ->find($id);
     }
 
     /**
      * Fetch timeline feed using keyset/cursor pagination for $O(1)$ infinite scroll.
+     * Supports 4 dynamic streams: 'world' (default), 'friends', 'community', and 'nearby'.
      */
-    public function getPublicFeed(?User $viewer = null, int $perPage = 15, ?string $cursor = null): CursorPaginator
+    public function getPublicFeed(?User $viewer = null, int $perPage = 15, ?string $cursor = null, ?string $filter = null, ?string $wardCode = null): CursorPaginator
     {
         $perPage = min(max($perPage, 1), 50);
 
-        return Post::with(['user:id,name,handle,avatar,verified_badge,ward_code', 'media'])
-            ->visibleTo($viewer)
+        $query = Post::with(['user:id,name,handle,avatar,verified_badge,ward_code', 'media'])
+            ->visibleTo($viewer);
+
+        if ($filter === 'community') {
+            $query->whereIn('post_type', ['civic_notice', 'announcement', 'community', 'hyperlocal_notice']);
+        } elseif ($filter === 'friends') {
+            if ($viewer) {
+                $followingIds = Follow::where('follower_id', $viewer->id)->pluck('followed_id')->toArray();
+                $friendIds = Friendship::where(function ($q) use ($viewer) {
+                    $q->where('user_id', $viewer->id)->orWhere('friend_id', $viewer->id);
+                })->where('status', 'accepted')->get()->map(function ($f) use ($viewer) {
+                    return $f->user_id == $viewer->id ? $f->friend_id : $f->user_id;
+                })->toArray();
+                $allowedUserIds = array_unique(array_merge([$viewer->id], $followingIds, $friendIds));
+                $query->whereIn('user_id', $allowedUserIds);
+            } else {
+                $query->whereRaw('0 = 1');
+            }
+        } elseif ($filter === 'nearby') {
+            $ward = $wardCode ?: (request()->query('ward_code') ?: ($viewer?->ward_code ?: 'WARD-DHAKA-19'));
+            $query->where('ward_code', $ward);
+        }
+
+        return $query
             ->orderByDesc('created_at')
             ->orderByDesc('id')
             ->cursorPaginate($perPage, ['*'], 'cursor', $cursor);

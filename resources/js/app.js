@@ -1,6 +1,9 @@
 import './bootstrap';
 import './echo';
-import './react/index.jsx';
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+Alpine.start();
 
 // Preloader Logic
 (function () {
@@ -58,50 +61,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.acceptCookies = function() {
     localStorage.setItem('cookies-accepted', 'true');
-    const lsCount = localStorage.length;
-    const cookieCount = document.cookie ? document.cookie.split(';').length : 0;
-    const lsKeys = Object.keys(localStorage).slice(0, 5).join(', ') + (lsCount > 5 ? '...' : '');
-
-    let totalBytes = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i);
-        totalBytes += key.length + localStorage.getItem(key).length;
-    }
-    totalBytes += document.cookie.length;
-    const memoryMB = (totalBytes / 1024 + 0.42).toFixed(2);
-
-    const lsCountEl = document.getElementById('local-storage-count');
-    const cookieCountEl = document.getElementById('cookie-count');
-    const memorySavedEl = document.getElementById('memory-saved');
-    const storageDetailsEl = document.getElementById('storage-details');
-    const cookieMainContent = document.getElementById('cookie-main-content');
-    const cookieDataInfo = document.getElementById('cookie-data-info');
-
-    if (lsCountEl) lsCountEl.textContent = lsCount;
-    if (cookieCountEl) cookieCountEl.textContent = cookieCount;
-    if (memorySavedEl) memorySavedEl.textContent = memoryMB + ' KB';
-    if (storageDetailsEl) storageDetailsEl.textContent = 'Keys: ' + (lsKeys || 'None');
-    if (cookieMainContent) cookieMainContent.classList.add('hidden');
-    if (cookieDataInfo) cookieDataInfo.classList.remove('hidden');
-};
-
-window.closeCookies = function() {
     const banner = document.getElementById('cookie-banner');
-    if (banner) banner.classList.add('translate-y-20', 'opacity-0');
+    if (banner) {
+        banner.classList.add('translate-y-20', 'opacity-0');
+        setTimeout(() => banner.remove(), 300);
+    }
 };
-
-// Service Worker Registration
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then((registration) => {
-            registration.onupdatefound = () => {
-                const installingWorker = registration.installing;
-                installingWorker.onstatechange = () => {
-                    if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                        console.log('New content available; please refresh.');
-                    }
-                };
-            };
-        }).catch((error) => console.log('SW registration failed:', error));
-    });
-}

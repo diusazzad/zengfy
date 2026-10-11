@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { PlusCircle, RefreshCw, Filter, AlertCircle, Loader2, Sparkles, X } from 'lucide-react';
+import { PlusCircle, RefreshCw, AlertCircle, Loader2, Sparkles, X } from 'lucide-react';
 import PostCard from './PostCard';
 import CreatePostModal from './CreatePostModal';
 import { useSocialStore } from '../../store/useSocialStore';
@@ -10,12 +10,61 @@ import { cn } from '../../utils/cn';
 export default function FeedStream({ initialWard = null }) {
     const { filterWard, setFilterWard, openCreateModal } = useSocialStore();
     const [selectedLightboxImage, setSelectedLightboxImage] = useState(null);
-    const [activeFilter, setActiveFilter] = useState('all'); // 'all', 'ward', 'notices'
 
+    // Read initial filter from URL (?filter=world|friends|community|nearby)
+    const getInitialFilter = () => {
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const f = params.get('filter');
+            if (f === 'friends' || f === 'community' || f === 'nearby') return f;
+            if (f === 'ward') return 'nearby';
+            return 'world';
+        } catch {
+            return 'world';
+        }
+    };
+
+    const [activeFilter, setActiveFilter] = useState(getInitialFilter);
     const currentWard = filterWard || initialWard || 'WARD-DHAKA-19';
     const loadMoreTriggerRef = useRef(null);
 
-    // Infinite Query for Posts
+    // Sync filter change to URL and broadcast to navigation shells
+    const handleFilterChange = (filter) => {
+        setActiveFilter(filter);
+        try {
+            const url = new URL(window.location.href);
+            url.searchParams.set('filter', filter);
+            window.history.replaceState({}, '', url.toString());
+            window.dispatchEvent(new CustomEvent('zengfy:filter-changed', { detail: { filter } }));
+        } catch {}
+    };
+
+    // Listen to popstate (e.g. browser back/forward) & external custom filter event
+    useEffect(() => {
+        const onPopState = () => {
+            const params = new URLSearchParams(window.location.search);
+            const f = params.get('filter');
+            if (f === 'friends' || f === 'community' || f === 'nearby') setActiveFilter(f);
+            else if (f === 'ward') setActiveFilter('nearby');
+            else setActiveFilter('world');
+        };
+
+        const onExternalFilter = (e) => {
+            const f = e.detail?.filter;
+            if (f && (f === 'world' || f === 'friends' || f === 'community' || f === 'nearby')) {
+                handleFilterChange(f);
+            }
+        };
+
+        window.addEventListener('popstate', onPopState);
+        window.addEventListener('zengfy:switch-filter', onExternalFilter);
+        return () => {
+            window.removeEventListener('popstate', onPopState);
+            window.removeEventListener('zengfy:switch-filter', onExternalFilter);
+        };
+    }, []);
+
+    // Infinite Query for 4 Dynamic Streams
     const {
         data,
         fetchNextPage,
@@ -29,11 +78,9 @@ export default function FeedStream({ initialWard = null }) {
     } = useInfiniteQuery({
         queryKey: ['feed', activeFilter, currentWard],
         queryFn: async ({ pageParam = null }) => {
-            let endpoint = '/api/v1/feed?per_page=15';
-            if (activeFilter === 'ward' && currentWard) {
-                endpoint = `/api/v1/feed/hyperlocal/${encodeURIComponent(currentWard)}?per_page=15`;
-            } else if (activeFilter === 'notices' && currentWard) {
-                endpoint = `/api/v1/feed/hyperlocal/${encodeURIComponent(currentWard)}/notices?per_page=15`;
+            let endpoint = `/api/v1/feed?filter=${encodeURIComponent(activeFilter)}&per_page=15`;
+            if (activeFilter === 'nearby' && currentWard) {
+                endpoint = `/api/v1/feed?filter=nearby&ward_code=${encodeURIComponent(currentWard)}&per_page=15`;
             }
 
             if (pageParam) {
@@ -71,46 +118,89 @@ export default function FeedStream({ initialWard = null }) {
 
     const posts = data?.pages?.flatMap((page) => page?.data || []) || [];
 
+    const getEmptyStateMessage = () => {
+        switch (activeFilter) {
+            case 'friends':
+                return {
+                    title: 'No friends updates yet',
+                    desc: 'Follow verified citizens or connect with friends to see their personal updates and photos here.',
+                    icon: '👥',
+                };
+            case 'community':
+                return {
+                    title: 'No civic community posts yet',
+                    desc: 'Be the first to post a neighborhood notice, civic forum update, or community announcement.',
+                    icon: '🏛️',
+                };
+            case 'nearby':
+                return {
+                    title: `No updates in ${currentWard} yet`,
+                    desc: 'Share what is happening right now in your ward or hyperlocal vicinity!',
+                    icon: '📍',
+                };
+            default:
+                return {
+                    title: 'No citizen posts found in this feed',
+                    desc: 'Be the first verified citizen to post an announcement or update to the timeline!',
+                    icon: '🌱',
+                };
+        }
+    };
+
+    const emptyInfo = getEmptyStateMessage();
+
     return (
         <div className="space-y-6">
-            {/* Control Bar */}
-            <div className="bg-[#121A29] border border-white/10 rounded-2xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-1.5 p-1 bg-[#0B0F17]/80 rounded-xl border border-white/5 w-full sm:w-auto">
+            {/* Control Bar: 4 Dynamic Stream Switcher Pills */}
+            <div className="bg-[#121A29] border border-white/[0.08] hover:border-white/[0.18] transition-colors rounded-2xl p-3 sm:p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                <div className="flex items-center gap-1 sm:gap-1.5 p-1 bg-[#0B0F17]/85 rounded-xl border border-white/[0.06] w-full sm:w-auto overflow-x-auto no-scrollbar">
                     <button
                         type="button"
-                        onClick={() => setActiveFilter('all')}
+                        onClick={() => handleFilterChange('world')}
                         className={cn(
-                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer',
-                            activeFilter === 'all'
-                                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap active:scale-95',
+                            activeFilter === 'world'
+                                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20'
+                                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.05] border border-transparent'
                         )}
                     >
-                        🌐 All Feeds
+                        🌍 World
                     </button>
                     <button
                         type="button"
-                        onClick={() => setActiveFilter('ward')}
+                        onClick={() => handleFilterChange('friends')}
                         className={cn(
-                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer',
-                            activeFilter === 'ward'
-                                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap active:scale-95',
+                            activeFilter === 'friends'
+                                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20'
+                                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.05] border border-transparent'
                         )}
                     >
-                        📍 My Ward
+                        👥 Friends
                     </button>
                     <button
                         type="button"
-                        onClick={() => setActiveFilter('notices')}
+                        onClick={() => handleFilterChange('community')}
                         className={cn(
-                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer',
-                            activeFilter === 'notices'
-                                ? 'bg-amber-600 text-white shadow-md shadow-amber-600/30'
-                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap active:scale-95',
+                            activeFilter === 'community'
+                                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20'
+                                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.05] border border-transparent'
                         )}
                     >
-                        🛡️ Civic Notices
+                        🏛️ Community
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => handleFilterChange('nearby')}
+                        className={cn(
+                            'flex-1 sm:flex-initial px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap active:scale-95',
+                            activeFilter === 'nearby'
+                                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20'
+                                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.05] border border-transparent'
+                        )}
+                    >
+                        📍 Nearby
                     </button>
                 </div>
 
@@ -119,7 +209,7 @@ export default function FeedStream({ initialWard = null }) {
                         type="button"
                         onClick={() => refetch()}
                         disabled={isRefetching}
-                        className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-colors cursor-pointer"
+                        className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-gray-300 hover:text-white transition-all active:scale-95 cursor-pointer"
                         title="Refresh feed"
                     >
                         <RefreshCw className={cn('w-4 h-4', isRefetching && 'animate-spin text-blue-400')} />
@@ -128,7 +218,7 @@ export default function FeedStream({ initialWard = null }) {
                     <button
                         type="button"
                         onClick={openCreateModal}
-                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 shadow-lg shadow-blue-600/25 transition-all cursor-pointer"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/20 active:scale-95 transition-all cursor-pointer"
                     >
                         <PlusCircle className="w-4 h-4" />
                         <span>Create Post</span>
@@ -136,20 +226,20 @@ export default function FeedStream({ initialWard = null }) {
                 </div>
             </div>
 
-            {/* Quick Share Trigger */}
+            {/* Quick Share Trigger (Linear Obsidian Surface) */}
             <div
                 onClick={openCreateModal}
-                className="bg-[#121A29]/90 border border-white/10 rounded-2xl p-4 shadow-xl cursor-pointer hover:border-blue-500/40 transition-all group flex items-center gap-3.5"
+                className="bg-[#121A29] border border-white/[0.08] hover:border-white/[0.18] transition-colors rounded-2xl p-4 shadow-xl cursor-pointer group flex items-center gap-3.5 active:scale-[0.99]"
             >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-500/20">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-500/20 shrink-0">
                     ✍️
                 </div>
-                <div className="flex-1 bg-[#0B0F17]/60 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-gray-400 group-hover:text-gray-300 group-hover:border-white/20 transition-all">
+                <div className="flex-1 bg-[#0B0F17] border border-white/[0.08] rounded-xl px-4 py-2.5 text-xs text-gray-400 group-hover:text-gray-300 group-hover:border-white/[0.18] transition-colors">
                     What's happening in your ward or area today? Click to share...
                 </div>
                 <button
                     type="button"
-                    className="px-3.5 py-2 rounded-xl bg-blue-600/20 text-blue-400 group-hover:bg-blue-600 group-hover:text-white text-xs font-bold transition-all hidden sm:inline-flex items-center gap-1.5"
+                    className="px-3.5 py-2 rounded-xl bg-blue-600/20 text-blue-400 group-hover:bg-blue-600 group-hover:text-white text-xs font-bold transition-all hidden sm:inline-flex items-center gap-1.5 active:scale-95"
                 >
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Post</span>
@@ -160,7 +250,7 @@ export default function FeedStream({ initialWard = null }) {
             {isLoading && (
                 <div className="space-y-4">
                     {[1, 2, 3].map((n) => (
-                        <div key={n} className="bg-[#121A29] border border-white/10 rounded-2xl p-5 shadow-xl relative overflow-hidden space-y-4">
+                        <div key={n} className="bg-[#121A29] border border-white/[0.08] rounded-2xl p-5 shadow-xl relative overflow-hidden space-y-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-11 h-11 bg-white/10 rounded-xl animate-pulse" />
                                 <div className="space-y-2 flex-1">
@@ -182,12 +272,12 @@ export default function FeedStream({ initialWard = null }) {
             {isError && !isLoading && (
                 <div className="bg-[#121A29] border border-rose-500/20 rounded-2xl p-6 text-center shadow-xl space-y-3">
                     <AlertCircle className="w-8 h-8 text-rose-400 mx-auto" />
-                    <h3 className="text-sm font-bold text-white">Unable to load timeline stream</h3>
+                    <h3 className="text-sm font-bold text-gray-100">Unable to load timeline stream</h3>
                     <p className="text-xs text-gray-400">{error?.message || 'A network error occurred while connecting to the feed.'}</p>
                     <button
                         type="button"
                         onClick={() => refetch()}
-                        className="px-4 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/15 text-white transition-colors cursor-pointer"
+                        className="px-4 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/15 text-white active:scale-95 transition-all cursor-pointer"
                     >
                         Try Again
                     </button>
@@ -196,18 +286,18 @@ export default function FeedStream({ initialWard = null }) {
 
             {/* Empty State */}
             {!isLoading && !isError && posts.length === 0 && (
-                <div className="bg-[#121A29] border border-white/10 rounded-2xl p-10 text-center shadow-xl space-y-3">
+                <div className="bg-[#121A29] border border-white/[0.08] rounded-2xl p-10 text-center shadow-xl space-y-3">
                     <div className="w-12 h-12 rounded-2xl bg-white/5 text-gray-400 mx-auto flex items-center justify-center text-xl">
-                        🌱
+                        {emptyInfo.icon}
                     </div>
-                    <h3 className="text-base font-bold text-white">No citizen posts found in this feed</h3>
+                    <h3 className="text-base font-bold text-gray-100">{emptyInfo.title}</h3>
                     <p className="text-xs text-gray-400 max-w-sm mx-auto">
-                        Be the first verified citizen to post an announcement or update for this area!
+                        {emptyInfo.desc}
                     </p>
                     <button
                         type="button"
                         onClick={openCreateModal}
-                        className="px-5 py-2.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition-all cursor-pointer inline-flex items-center gap-2"
+                        className="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-500/20 active:scale-95 transition-all cursor-pointer inline-flex items-center gap-2"
                     >
                         <PlusCircle className="w-4 h-4" />
                         <span>Publish First Post</span>
@@ -229,15 +319,15 @@ export default function FeedStream({ initialWard = null }) {
                     {/* Infinite Scroll Trigger & Loader */}
                     <div ref={loadMoreTriggerRef} className="py-4 text-center">
                         {isFetchingNextPage ? (
-                            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#121A29] border border-white/10 shadow-lg text-xs font-bold text-white">
-                                <Loader2 className="w-4 h-4 animate-spin text-cyan-400" />
-                                <span>Loading more hyperlocal updates...</span>
+                            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#121A29] border border-white/[0.08] shadow-lg text-xs font-bold text-gray-100">
+                                <Loader2 className="w-4 h-4 animate-spin text-blue-400" />
+                                <span>Loading more updates...</span>
                             </div>
                         ) : hasNextPage ? (
                             <button
                                 type="button"
                                 onClick={() => fetchNextPage()}
-                                className="px-5 py-2.5 rounded-xl text-xs font-bold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all cursor-pointer"
+                                className="px-5 py-2.5 rounded-xl text-xs font-bold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/[0.08] active:scale-95 transition-all cursor-pointer"
                             >
                                 Load More Posts
                             </button>
@@ -254,18 +344,18 @@ export default function FeedStream({ initialWard = null }) {
             {selectedLightboxImage && (
                 <div
                     onClick={() => setSelectedLightboxImage(null)}
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-lg animate-in fade-in cursor-zoom-out"
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in cursor-zoom-out"
                 >
                     <div className="relative max-w-4xl max-h-[90vh]">
                         <img
                             src={selectedLightboxImage}
                             alt="Full preview"
-                            className="w-full h-full object-contain rounded-xl shadow-2xl"
+                            className="w-full h-full object-contain rounded-2xl shadow-2xl border border-white/[0.08]"
                         />
                         <button
                             type="button"
                             onClick={() => setSelectedLightboxImage(null)}
-                            className="absolute top-3 right-3 p-2 rounded-full bg-black/60 text-white hover:bg-rose-600 transition-colors cursor-pointer"
+                            className="absolute top-3 right-3 p-2 rounded-full bg-black/60 text-white hover:bg-rose-600 active:scale-95 transition-all cursor-pointer"
                         >
                             <X className="w-5 h-5" />
                         </button>

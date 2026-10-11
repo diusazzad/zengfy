@@ -2,17 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Auth\Http\Controllers\AuthController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
-| Auth Module Web Routes
+| Auth & Sovereign Identity Module Web Routes
 |--------------------------------------------------------------------------
-|
-| Handles authentication views, user onboarding, password recovery,
-| and sovereign session termination for web browser clients.
-|
 */
 
+// 1. Guest Authentication & Session Management
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLogin')->name('login');
     Route::get('/register', 'showRegister')->name('register');
@@ -21,4 +19,16 @@ Route::controller(AuthController::class)->group(function () {
 
     // Web Logout (POST preferred, GET supported for browser convenience)
     Route::match(['GET', 'POST'], '/logout', 'webLogout')->name('logout');
+});
+
+// 2. Authenticated Sovereign Account Hub & Device Management
+Route::controller(AccountController::class)->middleware(['auth'])->group(function () {
+    Route::get('/account', 'dashboard')->name('account');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::post('/account/profile', 'updateProfile')->name('account.profile');
+    Route::post('/account/avatar', 'updateAvatar')->name('account.avatar');
+    Route::delete('/account/avatar', 'removeAvatar')->name('account.avatar.remove');
+    Route::post('/account/password', 'changePassword')->name('account.password');
+    Route::post('/account/device/{id}/revoke', 'revokeDevice')->name('account.device.revoke');
+    Route::post('/account/devices/revoke-all', 'revokeAllOtherDevices')->name('account.devices.revoke-all');
 });

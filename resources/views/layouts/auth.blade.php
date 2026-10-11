@@ -9,10 +9,14 @@
     <title>@yield('title', 'Zengfy Unified Auth | Sovereign Identity Portal')</title>
     <meta name="description" content="@yield('meta_description', 'Secure Single Sign-On (SSO) identity gateway for Zengfy Ecosystem.')">
 
-    <!-- Fonts -->
+    <!-- Fonts (Non-blocking Font Load to improve FCP & LCP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    </noscript>
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -23,7 +27,8 @@
     <style>
         [x-cloak] { display: none !important; }
         body {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-display: swap;
             background-color: #ffffff;
             color: #0f172a;
         }
@@ -84,9 +89,9 @@
         <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:28px_28px] opacity-60"></div>
     </div>
 
-    <!-- Header / Brand Logo & Navigation -->
+    <!-- Header / Brand Logo & Navigation (WCAG Label-in-Name Compliant) -->
     <header class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 flex items-center justify-between">
-        <a href="/" aria-label="Zengfy" class="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1.5 min-h-[44px]">
+        <a href="/" class="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1.5 min-w-[44px] min-h-[44px]">
             <div aria-hidden="true" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-black text-lg sm:text-xl text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
                 Z
             </div>
@@ -97,7 +102,7 @@
 
         <div class="flex items-center gap-3">
             <a href="/" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors bg-white/80 hover:bg-white border border-slate-200/80 px-4 py-2 min-h-[44px] rounded-xl shadow-xs backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-slate-500" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
                 <span>Back to Home</span>
@@ -112,11 +117,11 @@
         </div>
     </main>
 
-    <!-- Sovereign Security & Trust Footer -->
+    <!-- Sovereign Security & Trust Footer (WCAG Touch Target: min 44px) -->
     <footer class="relative z-10 w-full max-w-7xl mx-auto px-4 py-6 text-center text-xs text-slate-500 border-t border-slate-200/70">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div class="flex items-center gap-2 text-slate-600">
-                <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-emerald-600 shrink-0" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 <span class="font-medium">Protected by 256-Bit SSL Encryption & Sovereign Vault</span>

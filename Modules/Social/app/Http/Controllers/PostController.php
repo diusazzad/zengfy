@@ -195,14 +195,17 @@ class PostController extends Controller
 
     /**
      * Fetch timeline feed with keyset/cursor-based pagination.
+     * Supports 4 dynamic streams: 'world', 'friends', 'community', and 'nearby'.
      */
     public function feed(Request $request): JsonResponse
     {
         $perPage = (int) $request->query('per_page', 15);
         $cursor = $request->query('cursor');
-        $viewer = $request->user('sanctum');
+        $filter = $request->query('filter', 'world');
+        $wardCode = $request->query('ward_code');
+        $viewer = $request->user('sanctum') ?: \Illuminate\Support\Facades\Auth::user();
 
-        $paginator = $this->postService->getPublicFeed($viewer, $perPage, $cursor);
+        $paginator = $this->postService->getPublicFeed($viewer, $perPage, $cursor, $filter, $wardCode);
 
         return ApiResponse::success(
             data: $paginator->items(),
@@ -212,6 +215,7 @@ class PostController extends Controller
                 'prev_cursor' => $paginator->previousCursor()?->encode(),
                 'has_more' => $paginator->hasMorePages(),
                 'per_page' => $paginator->perPage(),
+                'filter' => $filter,
             ]
         );
     }

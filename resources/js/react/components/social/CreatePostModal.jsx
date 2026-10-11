@@ -105,16 +105,16 @@ export default function CreatePostModal() {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="bg-[#121A29] border border-white/10 w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-                {/* Header */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0B0F17]/50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-in fade-in duration-200">
+            <div className="bg-[#121A29] border border-white/[0.08] w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+                {/* Header (Glassmorphic Shell) */}
+                <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-[#0B0F17]/85 backdrop-blur-xl">
                     <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center">
                             <Sparkles className="w-4 h-4" />
                         </div>
                         <div>
-                            <h2 className="text-sm font-bold text-white">Create Citizen Post</h2>
+                            <h2 className="text-sm font-bold text-gray-100">Create Citizen Post</h2>
                             <p className="text-[10px] text-gray-400">Post directly to your hyperlocal feed</p>
                         </div>
                     </div>
@@ -122,7 +122,7 @@ export default function CreatePostModal() {
                         type="button"
                         onClick={closeCreateModal}
                         disabled={isSubmitting}
-                        className="text-gray-400 hover:text-white p-1 rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+                        className="text-gray-400 hover:text-white p-1 rounded-lg hover:bg-white/5 active:scale-95 transition-all cursor-pointer"
                     >
                         <X className="w-5 h-5" />
                     </button>
@@ -143,7 +143,7 @@ export default function CreatePostModal() {
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             placeholder="Share an update, civic issue, or question with your ward community..."
-                            className="w-full bg-[#0B0F17]/60 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
+                            className="w-full bg-[#0B0F17] border border-white/[0.08] focus:border-white/[0.18] rounded-xl p-4 text-sm text-gray-100 placeholder-gray-500 focus:outline-none transition-all resize-none"
                             autoFocus
                         />
                     </div>
@@ -158,12 +158,12 @@ export default function CreatePostModal() {
                             'border-2 border-dashed rounded-xl p-4 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2',
                             isDragging
                                 ? 'border-cyan-400 bg-cyan-950/20 text-cyan-300'
-                                : 'border-white/10 hover:border-blue-500/50 bg-[#0B0F17]/40 text-gray-400 hover:text-gray-300'
+                                : 'border-white/[0.08] hover:border-blue-500/50 bg-[#0B0F17]/60 text-gray-400 hover:text-gray-300'
                         )}
                     >
                         <UploadCloud className="w-6 h-6 text-cyan-400 animate-pulse" />
                         <div className="text-xs">
-                            <span className="font-bold text-white">Drag & drop photos</span> or <span className="text-blue-400 underline">browse</span>
+                            <span className="font-bold text-gray-100">Drag & drop photos</span> or <span className="text-blue-400 underline">browse</span>
                         </div>
                         <p className="text-[10px] text-gray-500">Supports JPG, PNG, WebP up to 4 images (Max 15MB)</p>
                     </div>
@@ -172,7 +172,7 @@ export default function CreatePostModal() {
                     {filePreviews.length > 0 && (
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                             {filePreviews.map((src, idx) => (
-                                <div key={idx} className="relative aspect-square rounded-xl overflow-hidden border border-white/10 group bg-black/40">
+                                <div key={idx} className="relative aspect-square rounded-xl overflow-hidden border border-white/[0.08] group bg-black/40">
                                     <img src={src} alt="Upload preview" className="w-full h-full object-cover" />
                                     <button
                                         type="button"
@@ -180,7 +180,7 @@ export default function CreatePostModal() {
                                             e.stopPropagation();
                                             handleRemoveFile(idx);
                                         }}
-                                        className="absolute top-1 right-1 p-1 bg-black/70 hover:bg-rose-600 text-white rounded-md transition-colors cursor-pointer"
+                                        className="absolute top-1 right-1 p-1 bg-black/70 hover:bg-rose-600 text-white rounded-md active:scale-95 transition-all cursor-pointer"
                                     >
                                         <X className="w-3.5 h-3.5" />
                                     </button>
@@ -196,7 +196,7 @@ export default function CreatePostModal() {
                             <select
                                 value={postType}
                                 onChange={(e) => setPostType(e.target.value)}
-                                className="w-full bg-[#0B0F17] border border-white/10 rounded-lg px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
+                                className="w-full bg-[#0B0F17] border border-white/[0.08] rounded-xl px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
                             >
                                 <option value="standard">Standard Post</option>
                                 <option value="hyperlocal_notice">Civic Emergency Notice</option>
@@ -213,7 +213,7 @@ export default function CreatePostModal() {
                                     value={wardCode}
                                     onChange={(e) => setWardCode(e.target.value)}
                                     placeholder="WARD-DHAKA-19"
-                                    className="w-full bg-[#0B0F17] border border-white/10 rounded-lg pl-8 pr-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
+                                    className="w-full bg-[#0B0F17] border border-white/[0.08] rounded-xl pl-8 pr-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
                                 />
                             </div>
                         </div>
@@ -223,7 +223,7 @@ export default function CreatePostModal() {
                             <select
                                 value={visibility}
                                 onChange={(e) => setVisibility(e.target.value)}
-                                className="w-full bg-[#0B0F17] border border-white/10 rounded-lg px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
+                                className="w-full bg-[#0B0F17] border border-white/[0.08] rounded-xl px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
                             >
                                 <option value="public">Public (All Citizens)</option>
                                 <option value="friends_only">Verified Friends Only</option>
@@ -241,11 +241,11 @@ export default function CreatePostModal() {
                     />
 
                     {/* Submit Bar with Submit Animation */}
-                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between pt-4 border-t border-white/[0.08]">
                         <button
                             type="button"
                             onClick={() => fileInputRef.current?.click()}
-                            className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
+                            className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/[0.08] active:scale-95 transition-all cursor-pointer"
                         >
                             <ImageIcon className="w-4 h-4 text-cyan-400" />
                             <span>Add Photo ({selectedFiles.length}/4)</span>
@@ -256,14 +256,14 @@ export default function CreatePostModal() {
                                 type="button"
                                 onClick={closeCreateModal}
                                 disabled={isSubmitting}
-                                className="px-4 py-2 rounded-xl text-xs font-semibold text-gray-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+                                className="px-4 py-2 rounded-xl text-xs font-semibold text-gray-400 hover:text-white hover:bg-white/5 active:scale-95 transition-all cursor-pointer"
                             >
                                 Cancel
                             </button>
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-600/30 transition-all disabled:opacity-50 cursor-pointer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-600/30 active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
                             >
                                 {isSubmitting ? (
                                     <>

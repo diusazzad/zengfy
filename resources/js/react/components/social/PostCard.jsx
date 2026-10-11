@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, MessageCircle, Share2, MapPin, CheckCircle2, ShieldCheck, Image as ImageIcon, Send, CornerDownRight, X } from 'lucide-react';
+import { Heart, MessageCircle, Share2, MapPin, CheckCircle2, ShieldCheck, Image as ImageIcon, Send } from 'lucide-react';
 import { apiRequest } from '../../lib/api';
 import { useSocialStore } from '../../store/useSocialStore';
 import { cn } from '../../utils/cn';
@@ -106,7 +106,7 @@ export default function PostCard({ post, onImageClick }) {
     const authorName = post.user?.name || post.author?.name || 'Zengfy Citizen';
     const authorHandle = post.user?.handle || post.author?.handle || 'citizen';
     const authorAvatar = post.user?.avatar_url || post.user?.avatar || post.author?.avatar_url || null;
-    const isVerified = Boolean(post.user?.verified_badge || post.user?.nid_verified || post.author?.verified_badge);
+    const isVerified = Boolean(post.user?.verified_badge || post.author?.verified_badge);
 
     const nameParts = authorName.trim().split(' ');
     const initials = nameParts.length > 1
@@ -131,7 +131,7 @@ export default function PostCard({ post, onImageClick }) {
     };
 
     return (
-        <article className="bg-[#121A29] border border-white/10 rounded-2xl p-5 shadow-xl transition-all duration-300 hover:border-white/20 relative overflow-hidden">
+        <article className="bg-[#121A29] border border-white/[0.08] hover:border-white/[0.18] transition-colors rounded-2xl p-5 shadow-xl relative overflow-hidden">
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-3.5">
                 <div className="flex items-center gap-3 min-w-0">
@@ -150,7 +150,7 @@ export default function PostCard({ post, onImageClick }) {
                         {isVerified && (
                             <span
                                 className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-blue-500 border-2 border-[#121A29] flex items-center justify-center text-[9px] text-white font-bold"
-                                title="Smart NID Verified Citizen"
+                                title="Verified Citizen"
                             >
                                 <CheckCircle2 className="w-3 h-3 fill-blue-500 text-white" />
                             </span>
@@ -159,7 +159,7 @@ export default function PostCard({ post, onImageClick }) {
 
                     <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-1.5 flex-wrap">
-                            <h3 className="text-sm font-bold text-white truncate hover:text-blue-400 transition-colors">
+                            <h3 className="text-sm font-bold text-gray-100 truncate hover:text-blue-400 transition-colors">
                                 {authorName}
                             </h3>
                             {isVerified && (
@@ -171,7 +171,7 @@ export default function PostCard({ post, onImageClick }) {
                         <div className="flex items-center gap-2 text-xs text-gray-400">
                             <span className="truncate">@{authorHandle}</span>
                             <span>•</span>
-                            <span className="shrink-0">{formatTime(post.created_at)}</span>
+                            <span className="shrink-0 text-gray-500">{formatTime(post.created_at)}</span>
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,7 @@ export default function PostCard({ post, onImageClick }) {
 
             {/* Post Content */}
             {post.content && (
-                <div className="text-sm text-gray-200 whitespace-pre-line leading-relaxed mb-4 selection:bg-blue-600 selection:text-white">
+                <div className="text-sm text-gray-300 whitespace-pre-line leading-relaxed mb-4 selection:bg-blue-600 selection:text-white">
                     {post.content}
                 </div>
             )}
@@ -242,7 +242,7 @@ export default function PostCard({ post, onImageClick }) {
                     disabled={isLikePending}
                     aria-label={isLiked ? 'Unlike post' : 'Like post'}
                     className={cn(
-                        'relative flex items-center gap-2 px-3 py-1.5 rounded-lg font-semibold transition-all duration-200 select-none cursor-pointer',
+                        'relative flex items-center gap-2 px-3 py-1.5 rounded-lg font-semibold transition-all duration-200 select-none cursor-pointer active:scale-95',
                         isLiked
                             ? 'text-rose-400 bg-rose-500/10 border border-rose-500/20 shadow-sm shadow-rose-500/20'
                             : 'text-gray-400 hover:text-rose-400 hover:bg-white/5'
@@ -263,7 +263,7 @@ export default function PostCard({ post, onImageClick }) {
                     type="button"
                     onClick={() => setShowComments(!showComments)}
                     className={cn(
-                        'flex items-center gap-2 px-3 py-1.5 rounded-lg font-semibold transition-colors cursor-pointer',
+                        'flex items-center gap-2 px-3 py-1.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer active:scale-95',
                         showComments
                             ? 'text-blue-400 bg-blue-500/10 border border-blue-500/20'
                             : 'text-gray-400 hover:text-blue-400 hover:bg-white/5'
@@ -278,7 +278,7 @@ export default function PostCard({ post, onImageClick }) {
                     <button
                         type="button"
                         onClick={handleShare}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold text-gray-400 hover:text-cyan-400 hover:bg-white/5 transition-colors cursor-pointer"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold text-gray-400 hover:text-cyan-400 hover:bg-white/5 transition-all duration-200 active:scale-95 cursor-pointer"
                         title="Copy post link"
                     >
                         <Share2 className="w-4 h-4" />
@@ -305,12 +305,12 @@ export default function PostCard({ post, onImageClick }) {
                             value={commentText}
                             onChange={(e) => setCommentText(e.target.value)}
                             placeholder="Write a citizen comment..."
-                            className="flex-1 bg-[#0B0F17] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all"
+                            className="flex-1 bg-[#0B0F17] border border-white/[0.08] rounded-xl px-3.5 py-2 text-xs text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all"
                         />
                         <button
                             type="submit"
                             disabled={!commentText.trim()}
-                            className="p-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-40 transition-colors shadow-md shadow-blue-600/20 cursor-pointer"
+                            className="p-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-40 transition-all shadow-md shadow-blue-600/20 active:scale-95 cursor-pointer"
                             title="Submit comment"
                         >
                             <Send className="w-3.5 h-3.5" />
@@ -320,14 +320,14 @@ export default function PostCard({ post, onImageClick }) {
                     {/* Comments List */}
                     <div className="space-y-2.5 pl-2">
                         {localComments.map((cmt) => (
-                            <div key={cmt.id} className="flex items-start gap-2.5 bg-[#0B0F17]/50 rounded-xl p-3 border border-white/5">
+                            <div key={cmt.id} className="flex items-start gap-2.5 bg-[#0B0F17] rounded-xl p-3 border border-white/[0.06]">
                                 <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">
                                     {cmt.author.substring(0, 2).toUpperCase()}
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center justify-between mb-0.5">
                                         <div className="flex items-center gap-1.5">
-                                            <span className="text-xs font-bold text-white truncate">{cmt.author}</span>
+                                            <span className="text-xs font-bold text-gray-100 truncate">{cmt.author}</span>
                                             {cmt.verified && (
                                                 <CheckCircle2 className="w-3 h-3 text-blue-400 shrink-0" />
                                             )}

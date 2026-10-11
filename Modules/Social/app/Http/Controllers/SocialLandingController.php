@@ -12,7 +12,7 @@ class SocialLandingController extends Controller
 {
     /**
      * Display the Zengfy Social product landing page.
-     * Benchmarked against modern social networks (Threads, X, Bluesky, Discord).
+     * Benchmarked against modern social networks (Threads, X, Bluesky, Google Material 3).
      * If already authenticated, redirect straight to the interactive feed.
      */
     public function index(Request $request)
@@ -22,15 +22,16 @@ class SocialLandingController extends Controller
         }
 
         $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
-        $scheme = env('APP_URL_SCHEME', 'http');
-        $port = env('APP_ENV') === 'local' ? ':7000' : '';
+        $scheme = request()->getScheme();
+        $port = request()->getPort();
+        $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
 
-        $feedUrl = "{$scheme}://social.{$baseDomain}{$port}/feed";
-        $homeUrl = "{$scheme}://{$baseDomain}{$port}/";
-        $loginUrl = "{$scheme}://{$baseDomain}{$port}/login";
-        $registerUrl = "{$scheme}://{$baseDomain}{$port}/register";
-        $accountUrl = "{$scheme}://{$baseDomain}{$port}/account";
-        $downloadUrl = "{$scheme}://{$baseDomain}{$port}/download";
+        $feedUrl = "{$scheme}://social.{$baseDomain}{$portSuffix}/feed";
+        $homeUrl = "{$scheme}://{$baseDomain}{$portSuffix}/";
+        $loginUrl = "{$scheme}://{$baseDomain}{$portSuffix}/login";
+        $registerUrl = "{$scheme}://{$baseDomain}{$portSuffix}/register";
+        $accountUrl = "{$scheme}://{$baseDomain}{$portSuffix}/account";
+        $downloadUrl = "{$scheme}://{$baseDomain}{$portSuffix}/download";
 
         // Dynamic Statistics
         $totalCitizens = User::count();
@@ -42,7 +43,7 @@ class SocialLandingController extends Controller
         $samplePosts = Post::with(['user', 'media'])
             ->where('visibility', 'public')
             ->orderByDesc('likes_count')
-            ->take(3)
+            ->take(6)
             ->get();
 
         return view('social::landing', compact(

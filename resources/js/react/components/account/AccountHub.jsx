@@ -11,7 +11,7 @@ export default function AccountHub({
     homeUrl = '/',
     socialUrl = '/feed',
 }) {
-    const [activeTab, setActiveTab] = useState('profile'); // 'profile', 'nid', 'security', 'apps'
+    const [activeTab, setActiveTab] = useState('profile'); // 'profile', 'trust', 'security', 'apps'
     const [currentUser, setCurrentUser] = useState(initialUser || {});
     
     // Profile Edit State
@@ -233,7 +233,7 @@ export default function AccountHub({
         },
     ];
 
-    const isVerifiedCitizen = Boolean(currentUser?.verified_badge || currentUser?.nid_verified);
+    const isVerifiedCitizen = Boolean(currentUser?.verified_badge);
     const activeAvatar = avatarPreview || avatarUrl;
 
     return (
@@ -341,16 +341,16 @@ export default function AccountHub({
 
                 <button
                     type="button"
-                    onClick={() => setActiveTab('nid')}
+                    onClick={() => setActiveTab('trust')}
                     className={cn(
                         'flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer backdrop-blur-md border',
-                        activeTab === 'nid'
+                        activeTab === 'trust'
                             ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/25 border-white/15'
                             : 'text-gray-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border-white/5'
                     )}
                 >
                     <Shield className="w-4 h-4" />
-                    <span>NID Sovereign Status</span>
+                    <span>Community Trust & Badges</span>
                 </button>
 
                 <button
@@ -534,14 +534,14 @@ export default function AccountHub({
                 </div>
             )}
 
-            {/* TAB 2: NID Sovereign Status */}
-            {activeTab === 'nid' && (
+            {/* TAB 2: Community Trust & Badges */}
+            {activeTab === 'trust' && (
                 <div className="backdrop-blur-2xl bg-[#0E1626]/80 border border-white/[0.14] rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-6 relative overflow-hidden transition-all duration-300 hover:border-cyan-500/25">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 shadow-sm shadow-cyan-400/30" />
                     <div>
-                        <h3 className="text-base font-bold text-white">National ID & Citizen Verification</h3>
+                        <h3 className="text-base font-bold text-white">Community Trust & Badges</h3>
                         <p className="text-xs text-gray-400">
-                            Zengfy Sovereign Identity provides cryptographically secure anti-bot verification.
+                            Zengfy Sovereign Identity provides cryptographically secure anti-bot verification and community reputation.
                         </p>
                     </div>
 
@@ -549,33 +549,31 @@ export default function AccountHub({
                         {/* Status Card */}
                         <div className="backdrop-blur-md bg-white/[0.03] border border-white/10 hover:border-cyan-500/30 rounded-2xl p-6 space-y-4 shadow-lg transition-all">
                             <div className="flex items-center justify-between">
-                                <span className="text-xs font-semibold text-gray-400">Verification Status</span>
+                                <span className="text-xs font-semibold text-gray-400">Citizen Verification</span>
                                 {isVerifiedCitizen ? (
                                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 shadow-sm shadow-cyan-500/10">
                                         <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                                        <span>Verified Sovereign Citizen</span>
+                                        <span>Verified Citizen</span>
                                     </span>
                                 ) : (
                                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                                        <span>Pending Optional Verification</span>
+                                        <span>Standard Citizen</span>
                                     </span>
                                 )}
                             </div>
 
                             <div className="border-t border-white/5 pt-4 space-y-3">
                                 <div className="flex items-center justify-between text-xs">
-                                    <span className="text-gray-400">Smart NID Hash:</span>
-                                    <span className="font-mono text-cyan-300/90">
-                                        {currentUser?.nid_hash ? `${currentUser.nid_hash.substring(0, 16)}...` : 'AES-256 HMAC Protected'}
-                                    </span>
+                                    <span className="text-gray-400">Trust Level:</span>
+                                    <span className="font-semibold text-emerald-400">Tier 1 Sovereign Citizen</span>
                                 </div>
                                 <div className="flex items-center justify-between text-xs">
                                     <span className="text-gray-400">Anti-Bot Shield:</span>
                                     <span className="text-emerald-400 font-bold">Active & Shielded</span>
                                 </div>
                                 <div className="flex items-center justify-between text-xs">
-                                    <span className="text-gray-400">Voting & Civic Access:</span>
-                                    <span className="text-cyan-400 font-bold">Ward 19 Enabled</span>
+                                    <span className="text-gray-400">Ward Access:</span>
+                                    <span className="text-cyan-400 font-bold">{currentUser?.ward_code || 'Ward 19 Enabled'}</span>
                                 </div>
                             </div>
                         </div>
@@ -584,10 +582,10 @@ export default function AccountHub({
                         <div className="backdrop-blur-md bg-gradient-to-br from-blue-950/40 via-cyan-950/20 to-[#0E1626]/60 border border-cyan-500/20 rounded-2xl p-6 space-y-3 shadow-lg">
                             <div className="flex items-center gap-2 text-cyan-400 font-bold text-xs">
                                 <ShieldCheck className="w-4 h-4 text-cyan-300" />
-                                <span>Zero Knowledge & AES-256 Protection</span>
+                                <span>Zero-Knowledge Privacy</span>
                             </div>
                             <p className="text-xs text-gray-300 leading-relaxed">
-                                In accordance with privacy and sovereign regulations, Zengfy never stores raw national identity numbers or unencrypted personal identification data. All verification is handled via one-way cryptographic SHA-256 HMAC hashes with rotating platform master keys.
+                                In accordance with privacy and sovereign regulations, Zengfy never requests or stores government identity documents or raw numbers. Citizen verification is maintained exclusively through decentralized community reputation and secure cryptographic keypairs.
                             </p>
                         </div>
                     </div>
