@@ -6,5 +6,9 @@
     "School": true,
     "Organization": true,
     "Social": true,
-    "Landing": true
+    "Landing": true,
+    "POS": true,
+    "Civil": true,
+    "NGO": true,
+    "Rent": true
 }

@@ -1,0 +1,11 @@
+{
+    "name": "NGO",
+    "alias": "ngo",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\NGO\\Providers\\NGOServiceProvider"
+    ],
+    "files": []
+}

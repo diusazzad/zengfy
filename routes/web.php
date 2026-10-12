@@ -1,19 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SitemapController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes (Master Modular Registry)
+| Web Routes (Single-Module Isolation: Master, Social, School, POS, Law, Civil, NGO & Rent)
 |--------------------------------------------------------------------------
 |
-| This file serves as the clean master registry orchestrating domain modules.
-| Specific route implementations are encapsulated inside their respective Modules.
+| Retain ONLY the verified active Landing modules.
+| All legacy incomplete application routes remain detached.
 |
 */
 
-// 1. Global Language Switcher & SEO Sitemap
+// Multilingual Locale Switcher (Shared Utility)
 Route::get('/lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'bn'])) {
         session(['locale' => $locale]);
@@ -21,14 +20,26 @@ Route::get('/lang/{locale}', function ($locale) {
     return redirect()->back();
 })->name('lang.switch');
 
-Route::get('/sitemap.xml', [SitemapController::class, 'index']);
-
-// 2. Subdomain Domain Modules (Registered First!)
+// 1. Social Subdomain Landing Module (social.zengfy.test:8000)
 require base_path('Modules/Social/routes/web.php');
+
+// 2. School Subdomain Landing Module (school.zengfy.test:8000)
 require base_path('Modules/School/routes/web.php');
 
-// 3. Central Identity & Sovereign Account Hub
-require base_path('Modules/Auth/routes/web.php');
+// 3. POS Subdomain Landing Module (pos.zengfy.test:8000)
+require base_path('Modules/POS/routes/web.php');
 
-// 4. Root Landing, Marketing Pages & Wildcard Subdomain Engine
+// 4. Law Subdomain Landing Module (law.zengfy.test:8000)
+require base_path('Modules/Law/routes/web.php');
+
+// 5. Civil Subdomain Landing Module (civil.zengfy.test:8000)
+require base_path('Modules/Civil/routes/web.php');
+
+// 6. NGO Subdomain Landing Module (ngo.zengfy.test:8000)
+require base_path('Modules/NGO/routes/web.php');
+
+// 7. Rent Subdomain Landing Module (rent.zengfy.test:8000)
+require base_path('Modules/Rent/routes/web.php');
+
+// 8. Ecosystem Master Landing Module (zengfy.test:8000)
 require base_path('Modules/Landing/routes/web.php');

@@ -50,7 +50,22 @@
             "Modules\\Social\\Database\\Factories\\": "Modules/Social/database/factories/",
             "Modules\\Social\\Database\\Seeders\\": "Modules/Social/database/seeders/",
             "Modules\\Landing\\": "Modules/Landing/app/",
-            "Modules\\Landing\\Database\\Seeders\\": "Modules/Landing/database/seeders/"
+            "Modules\\Landing\\Database\\Seeders\\": "Modules/Landing/database/seeders/",
+            "Modules\\POS\\": "Modules/POS/app/",
+            "Modules\\POS\\Database\\Factories\\": "Modules/POS/database/factories/",
+            "Modules\\POS\\Database\\Seeders\\": "Modules/POS/database/seeders/",
+            "Modules\\Law\\": "Modules/Law/app/",
+            "Modules\\Law\\Database\\Factories\\": "Modules/Law/database/factories/",
+            "Modules\\Law\\Database\\Seeders\\": "Modules/Law/database/seeders/",
+            "Modules\\Civil\\": "Modules/Civil/app/",
+            "Modules\\Civil\\Database\\Factories\\": "Modules/Civil/database/factories/",
+            "Modules\\Civil\\Database\\Seeders\\": "Modules/Civil/database/seeders/",
+            "Modules\\NGO\\": "Modules/NGO/app/",
+            "Modules\\NGO\\Database\\Factories\\": "Modules/NGO/database/factories/",
+            "Modules\\NGO\\Database\\Seeders\\": "Modules/NGO/database/seeders/",
+            "Modules\\Rent\\": "Modules/Rent/app/",
+            "Modules\\Rent\\Database\\Factories\\": "Modules/Rent/database/factories/",
+            "Modules\\Rent\\Database\\Seeders\\": "Modules/Rent/database/seeders/"
         },
         "files": [
             "app/Helpers/helpers.php"
@@ -93,12 +108,7 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true,
-            "wikimedia/composer-merge-plugin": true
-        },
-        "cache-dir": "/home/sfxglllk/public_html/cache",
-        "platform": {
-            "php": "8.4.17"
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "stable",

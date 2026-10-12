@@ -1,0 +1,11 @@
+{
+    "name": "Law",
+    "alias": "law",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Law\\Providers\\LawServiceProvider"
+    ],
+    "files": []
+}

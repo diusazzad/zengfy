@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/ngo",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\NGO\\": "app/",
+            "Modules\\NGO\\Database\\Factories\\": "database/factories/",
+            "Modules\\NGO\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\NGO\\Tests\\": "tests/"
+        }
+    }
+}
