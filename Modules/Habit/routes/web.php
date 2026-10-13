@@ -5,17 +5,17 @@ use Modules\Habit\Http\Controllers\HabitLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Habit Module Web Routes (Subdomain Architecture: habit.zengfy.test)
+| Habit Module Web Routes (Subdomain Architecture: habit.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Habit Landing Page at habit.zengfy.test.
+| Handles the dedicated Zengfy Habit Landing Page at habit.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: habit.zengfy.test:8000
+// 1. Dedicated Subdomain: habit.zengfy.top:8000
 Route::domain('habit.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Vitality Emerald & Sunrise Amber Habit Landing Page
     Route::get('/', [HabitLandingController::class, 'index'])->name('habit.landing');
@@ -43,7 +43,7 @@ Route::domain('habit.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('habit.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/habit -> http://habit.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/habit -> http://habit.zengfy.top:8000/)
 Route::get('/habit', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

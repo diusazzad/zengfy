@@ -8,7 +8,7 @@ use Modules\Landing\Http\Controllers\LandingController;
 | Ecosystem Master Landing Web Routes
 |--------------------------------------------------------------------------
 |
-| Entry point for Zengfy Ecosystem Landing (http://zengfy.test:8000/).
+| Entry point for Zengfy Ecosystem Landing (http://zengfy.top:8000/).
 |
 */
 

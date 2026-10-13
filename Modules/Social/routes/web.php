@@ -5,18 +5,18 @@ use Modules\Social\Http\Controllers\SocialLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Social Module Web Routes (Subdomain Architecture: social.zengfy.test)
+| Social Module Web Routes (Subdomain Architecture: social.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Social Landing Page at social.zengfy.test.
+| Handles the dedicated Zengfy Social Landing Page at social.zengfy.top.
 | All complex unauthenticated sub-routes have been cleanly pruned
 | in accordance with the single-module clean landing plan.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: social.zengfy.test:8000
+// 1. Dedicated Subdomain: social.zengfy.top:8000
 Route::domain('social.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 White Glassmorphic Social Landing Page
     Route::get('/', [SocialLandingController::class, 'index'])->name('social.landing');
@@ -44,7 +44,7 @@ Route::domain('social.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('social.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/social -> http://social.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/social -> http://social.zengfy.top:8000/)
 Route::get('/social', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

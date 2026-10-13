@@ -5,15 +5,15 @@ use Modules\Ecommerce\Http\Controllers\EcommerceMarketplaceController;
 
 /*
 |--------------------------------------------------------------------------
-| Ecommerce Module Web Routes (ecommerce.zengfy.test)
+| Ecommerce Module Web Routes (ecommerce.zengfy.top)
 |--------------------------------------------------------------------------
 |
 | Handles the dedicated Zengfy Multi-Vendor Marketplace Home Feed
-| strictly on ecommerce.zengfy.test.
+| strictly on ecommerce.zengfy.top.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
 Route::domain('ecommerce.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Daraz-style Simple & Clean Marketplace Home Feed

@@ -5,17 +5,17 @@ use Modules\Civil\Http\Controllers\CivilLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Civil Module Web Routes (Subdomain Architecture: civil.zengfy.test)
+| Civil Module Web Routes (Subdomain Architecture: civil.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Civil Landing Page at civil.zengfy.test.
+| Handles the dedicated Zengfy Civil Landing Page at civil.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: civil.zengfy.test:8000
+// 1. Dedicated Subdomain: civil.zengfy.top:8000
 Route::domain('civil.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Blueprint Cyan Civil Landing Page
     Route::get('/', [CivilLandingController::class, 'index'])->name('civil.landing');
@@ -43,7 +43,7 @@ Route::domain('civil.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('civil.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/civil -> http://civil.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/civil -> http://civil.zengfy.top:8000/)
 Route::get('/civil', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

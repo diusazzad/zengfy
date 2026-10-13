@@ -5,17 +5,17 @@ use Modules\Rent\Http\Controllers\RentLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Rent Module Web Routes (Subdomain Architecture: rent.zengfy.test)
+| Rent Module Web Routes (Subdomain Architecture: rent.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Rent Landing Page at rent.zengfy.test.
+| Handles the dedicated Zengfy Rent Landing Page at rent.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: rent.zengfy.test:8000
+// 1. Dedicated Subdomain: rent.zengfy.top:8000
 Route::domain('rent.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Hyperlocal Indigo & GPS Emerald Rent Landing Page
     Route::get('/', [RentLandingController::class, 'index'])->name('rent.landing');
@@ -43,7 +43,7 @@ Route::domain('rent.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('rent.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/rent -> http://rent.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/rent -> http://rent.zengfy.top:8000/)
 Route::get('/rent', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

@@ -5,18 +5,18 @@ use Modules\POS\Http\Controllers\POSLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| POS Module Web Routes (Subdomain Architecture: pos.zengfy.test)
+| POS Module Web Routes (Subdomain Architecture: pos.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy POS & Retail ERP Landing Page at pos.zengfy.test.
+| Handles the dedicated Zengfy POS & Retail ERP Landing Page at pos.zengfy.top.
 | All legacy incomplete sub-routes have been cleanly pruned
 | in accordance with the single-module clean landing plan.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: pos.zengfy.test:8000
+// 1. Dedicated Subdomain: pos.zengfy.top:8000
 Route::domain('pos.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 White Glassmorphic POS Landing Page
     Route::get('/', [POSLandingController::class, 'index'])->name('pos.landing');
@@ -44,7 +44,7 @@ Route::domain('pos.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('pos.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/pos -> http://pos.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/pos -> http://pos.zengfy.top:8000/)
 Route::get('/pos', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

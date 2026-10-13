@@ -5,17 +5,17 @@ use Modules\Journal\Http\Controllers\JournalLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Journal Module Web Routes (Subdomain Architecture: journal.zengfy.test)
+| Journal Module Web Routes (Subdomain Architecture: journal.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Journal Landing Page at journal.zengfy.test.
+| Handles the dedicated Zengfy Journal Landing Page at journal.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: journal.zengfy.test:8000
+// 1. Dedicated Subdomain: journal.zengfy.top:8000
 Route::domain('journal.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Electric Cobalt Blue & Neon Cyan Journal Landing Page
     Route::get('/', [JournalLandingController::class, 'index'])->name('journal.landing');
@@ -43,7 +43,7 @@ Route::domain('journal.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('journal.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/journal -> http://journal.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/journal -> http://journal.zengfy.top:8000/)
 Route::get('/journal', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

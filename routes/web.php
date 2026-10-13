@@ -20,46 +20,46 @@ Route::get('/lang/{locale}', function ($locale) {
     return redirect()->back();
 })->name('lang.switch');
 
-// 1. Social Subdomain Landing Module (social.zengfy.test:8000)
+// 1. Social Subdomain Landing Module (social.zengfy.top:8000)
 require base_path('Modules/Social/routes/web.php');
 
-// 2. School Subdomain Landing Module (school.zengfy.test:8000)
+// 2. School Subdomain Landing Module (school.zengfy.top:8000)
 require base_path('Modules/School/routes/web.php');
 
-// 3. POS Subdomain Landing Module (pos.zengfy.test:8000)
+// 3. POS Subdomain Landing Module (pos.zengfy.top:8000)
 require base_path('Modules/POS/routes/web.php');
 
-// 4. Law Subdomain Landing Module (law.zengfy.test:8000)
+// 4. Law Subdomain Landing Module (law.zengfy.top:8000)
 require base_path('Modules/Law/routes/web.php');
 
-// 5. Civil Subdomain Landing Module (civil.zengfy.test:8000)
+// 5. Civil Subdomain Landing Module (civil.zengfy.top:8000)
 require base_path('Modules/Civil/routes/web.php');
 
-// 6. NGO Subdomain Landing Module (ngo.zengfy.test:8000)
+// 6. NGO Subdomain Landing Module (ngo.zengfy.top:8000)
 require base_path('Modules/NGO/routes/web.php');
 
-// 7. Rent Subdomain Landing Module (rent.zengfy.test:8000)
+// 7. Rent Subdomain Landing Module (rent.zengfy.top:8000)
 require base_path('Modules/Rent/routes/web.php');
 
-// 8. Hotel Subdomain Landing Module (hotel.zengfy.test:8000)
+// 8. Hotel Subdomain Landing Module (hotel.zengfy.top:8000)
 require base_path('Modules/Hotel/routes/web.php');
 
-// 9. Shop Subdomain Landing Module (shop.zengfy.test:8000)
+// 9. Shop Subdomain Landing Module (shop.zengfy.top:8000)
 require base_path('Modules/Shop/routes/web.php');
 
-// 10. Skill Subdomain Landing Module (skill.zengfy.test:8000)
+// 10. Skill Subdomain Landing Module (skill.zengfy.top:8000)
 require base_path('Modules/Skill/routes/web.php');
 
-// 11. Ecosystem Master Landing Module (zengfy.test:8000)
+// 11. Ecosystem Master Landing Module (zengfy.top:8000)
 require base_path('Modules/Journal/routes/web.php');
 
-// 12. Habit Subdomain Landing Module (habit.zengfy.test:8000)
+// 12. Habit Subdomain Landing Module (habit.zengfy.top:8000)
 require base_path('Modules/Habit/routes/web.php');
 
-// 13. Schedule Subdomain Landing Module (schedule.zengfy.test:8000)
+// 13. Schedule Subdomain Landing Module (schedule.zengfy.top:8000)
 require base_path('Modules/Schedule/routes/web.php');
 
-// 14. Ecommerce Subdomain Landing Module (ecommerce.zengfy.test:8000)
+// 14. Ecommerce Subdomain Landing Module (ecommerce.zengfy.top:8000)
 require base_path('Modules/Ecommerce/routes/web.php');
 
 require base_path('Modules/Landing/routes/web.php');

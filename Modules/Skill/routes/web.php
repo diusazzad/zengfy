@@ -5,17 +5,17 @@ use Modules\Skill\Http\Controllers\SkillLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Skill Module Web Routes (Subdomain Architecture: skill.zengfy.test)
+| Skill Module Web Routes (Subdomain Architecture: skill.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Skill Landing Page at skill.zengfy.test.
+| Handles the dedicated Zengfy Skill Landing Page at skill.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: skill.zengfy.test:8000
+// 1. Dedicated Subdomain: skill.zengfy.top:8000
 Route::domain('skill.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Electric Cobalt Blue & Neon Cyan Skill Landing Page
     Route::get('/', [SkillLandingController::class, 'index'])->name('skill.landing');
@@ -43,7 +43,7 @@ Route::domain('skill.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('skill.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/skill -> http://skill.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/skill -> http://skill.zengfy.top:8000/)
 Route::get('/skill', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

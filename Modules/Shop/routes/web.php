@@ -5,15 +5,15 @@ use Modules\Shop\Http\Controllers\ShopLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Shop Module Web Routes (shop.zengfy.test)
+| Shop Module Web Routes (shop.zengfy.top)
 |--------------------------------------------------------------------------
 |
 | Handles the dedicated Zengfy Atelier / Clothing Brand Storefront
-| strictly on shop.zengfy.test.
+| strictly on shop.zengfy.top.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
 Route::domain('shop.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Fashion D2C Clothing Brand Storefront

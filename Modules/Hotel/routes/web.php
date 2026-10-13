@@ -5,17 +5,17 @@ use Modules\Hotel\Http\Controllers\HotelLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Hotel Module Web Routes (Subdomain Architecture: hotel.zengfy.test)
+| Hotel Module Web Routes (Subdomain Architecture: hotel.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Hotel Landing Page at hotel.zengfy.test.
+| Handles the dedicated Zengfy Hotel Landing Page at hotel.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: hotel.zengfy.test:8000
+// 1. Dedicated Subdomain: hotel.zengfy.top:8000
 Route::domain('hotel.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Luxury Champagne Gold Hotel Landing Page
     Route::get('/', [HotelLandingController::class, 'index'])->name('hotel.landing');
@@ -43,7 +43,7 @@ Route::domain('hotel.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('hotel.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/hotel -> http://hotel.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/hotel -> http://hotel.zengfy.top:8000/)
 Route::get('/hotel', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();
