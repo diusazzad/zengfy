@@ -1,0 +1,175 @@
+{
+  "brand": {
+    "name": "Zengfy Atelier",
+    "sub_label": "SOVEREIGN APPAREL • DHAKA",
+    "announcement": "সারা বাংলাদেশে ফ্রি এক্সপ্রেস ডেলিভারি • ২৪০ GSM কম্বড কটন ও ৩৮০ GSM ফ্রেঞ্চ টেরি • ৭ দিনের ফ্রি সাইজ সোয়াপ",
+    "subdomain": "shop.{{BASE_DOMAIN}}:8000",
+    "helpline": "০৯৬৭৮-১১২২৩৩",
+    "studio_address": "হাউজ ১৪, রোড ১১, বনানী, ঢাকা-১২১৩"
+  },
+  "lookbook_hero": {
+    "drop_tag": "DROP 01: SOVEREIGN CORE",
+    "season": "AUTUMN / WINTER 2026",
+    "headline": "CRAFTED IN DHAKA. WORN BY CREATORS.",
+    "subtitle": "হেভিওয়েট ফ্রেঞ্চ টেরি হুডি, ২৪০ GSM বক্সি টি-শার্ট ও ট্যাকটিক্যাল স্ট্রিটওয়্যার। ফ্যাব্রিকের ঘনত্ব এবং ড্রপ-শোল্ডার সিলুয়েটের অনন্য মিশ্রণ।",
+    "specs_ticker": [
+      "380 GSM Heavyweight French Terry",
+      "240 GSM Combed Ring-Spun Cotton",
+      "Zero Shrinkage Pre-Washed Guarantee",
+      "Reinforced Double-Needle Seams",
+      "7-Day Free Size Exchange"
+    ],
+    "hero_image": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=1200&auto=format&fit=crop&q=80",
+    "secondary_image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80"
+  },
+  "collections": [
+    { "id": "all", "name": "সব কালেকশন", "slug": "all" },
+    { "id": "hoodies", "name": "হেভিওয়েট হুডি ও সোয়েট", "slug": "hoodies" },
+    { "id": "tees", "name": "বক্সি ওভারসাইজড টি-শার্ট", "slug": "tees" },
+    { "id": "bottoms", "name": "ট্যাকটিক্যাল কার্গো ও প্যান্ট", "slug": "bottoms" },
+    { "id": "accessories", "name": "ক্যাপ ও অ্যাক্সেসরিজ", "slug": "accessories" }
+  ],
+  "products": [
+    {
+      "id": "za-01",
+      "title": "Boxy Heavyweight Tee (Pitch Black)",
+      "category": "বক্সি ওভারসাইজড টি-শার্ট",
+      "collection_id": "tees",
+      "price": 1150,
+      "original_price": 1650,
+      "gsm": "240 GSM",
+      "fabric": "100% Combed Ring-Spun Cotton",
+      "fit": "Boxy Drop-Shoulder Relaxed Fit",
+      "badge": "আইকনিক ড্রপ",
+      "colors": ["Pitch Black", "Washed Slate", "Chalk White"],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "description": "২৪০ জিএসএম প্রিমিয়াম চিরুনি-সুতির (Combed Cotton) হেভিওয়েট টি-শার্ট। প্রিশ্রাঙ্ক ট্রিটমেন্ট থাকায় ধোয়ার পর সাইজ ছোট হয় না। মজবুত ১-ইঞ্চি রিবড কলার ও ড্রপ-শোল্ডার কাটিং।",
+      "image_front": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=700&auto=format&fit=crop&q=80",
+      "image_back": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=700&auto=format&fit=crop&q=80",
+      "in_stock": true
+    },
+    {
+      "id": "za-02",
+      "title": "Acid Wash Oversized Hoodie (Charcoal Grey)",
+      "category": "হেভিওয়েট হুডি ও সোয়েট",
+      "collection_id": "hoodies",
+      "price": 2450,
+      "original_price": 3400,
+      "gsm": "380 GSM",
+      "fabric": "100% French Terry Cotton",
+      "fit": "Oversized Streetwear Silhouette",
+      "badge": "উইন্টার ড্রপ",
+      "colors": ["Charcoal Grey", "Midnight Navy", "Washed Olive"],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "description": "৩৮০ জিএসএম আল্ট্রা-হেভি ফ্রেঞ্চ টেরি কটন। ডাবল-লেয়ার হুড যা সবসময় শক্ত ও শেপে থাকে। ক্যাঙ্গারু পকেটের ভেতরে হিডেন জিপার ক্যাশ/ফোন স্লট। অনন্য অ্যাসিড ওয়াশ টেক্সচার।",
+      "image_front": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=700&auto=format&fit=crop&q=80",
+      "image_back": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=700&auto=format&fit=crop&q=80",
+      "in_stock": true
+    },
+    {
+      "id": "za-03",
+      "title": "Tactical Utility Cargo Pants (Deep Olive)",
+      "category": "ট্যাকটিক্যাল কার্গো ও প্যান্ট",
+      "collection_id": "bottoms",
+      "price": 1950,
+      "original_price": 2800,
+      "gsm": "280 GSM",
+      "fabric": "Water-Resistant Ripstop Cotton",
+      "fit": "Tapered Relaxed Cargo Fit",
+      "badge": "ট্যাকটিক্যাল কোর",
+      "colors": ["Deep Olive", "Stealth Black", "Desert Sand"],
+      "sizes": ["30", "32", "34", "36", "38"],
+      "description": "পানি-প্রতিরোধী টেফলন কোটিংযুক্ত রিপস্টপ কটন। ৬টি গভীর ইউটিলিটি পকেট, বগি ড্রস্ট্রিং হেম এবং টেকসই YKK মেটাল জিপার। ক্যাজুয়াল মুভমেন্টের জন্য আর্টিকুলেটেড নি-প্যানেল।",
+      "image_front": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=700&auto=format&fit=crop&q=80",
+      "image_back": "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=700&auto=format&fit=crop&q=80",
+      "in_stock": true
+    },
+    {
+      "id": "za-04",
+      "title": "Developer Core Bomber Jacket (Midnight Black)",
+      "category": "হেভিওয়েট হুডি ও সোয়েট",
+      "collection_id": "hoodies",
+      "price": 3200,
+      "original_price": 4500,
+      "gsm": "320 GSM",
+      "fabric": "Matte Windbreaker Shell with Satin Quilted Lining",
+      "fit": "Structured Classic Bomber Fit",
+      "badge": "লিমিটেড ড্রপ",
+      "colors": ["Midnight Black", "Sage Green"],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "description": "ম্যাট উইন্ডপ্রুফ আউটার শেল ও ডায়মন্ড কুইল্টেড সাটিন থার্মাল লাইনিং। বাঁ-হাতে মেটাল রিং টেক-পকেট, ভারী ব্রাস জিপার এবং আরামদায়ক রিবড কলার ও কাফ।",
+      "image_front": "https://images.unsplash.com/photo-1544441893-675973e31985?w=700&auto=format&fit=crop&q=80",
+      "image_back": "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=700&auto=format&fit=crop&q=80",
+      "in_stock": true
+    },
+    {
+      "id": "za-05",
+      "title": "Minimalist Sovereign Corduroy Cap (Vintage Khaki)",
+      "category": "ক্যাপ ও অ্যাক্সেসরিজ",
+      "collection_id": "accessories",
+      "price": 650,
+      "original_price": 950,
+      "gsm": "300 GSM",
+      "fabric": "100% Cotton 8-Wale Vintage Corduroy",
+      "fit": "Unstructured 6-Panel Low Profile",
+      "badge": "অফিশিয়াল অ্যাক্সেসরিজ",
+      "colors": ["Vintage Khaki", "Forest Green", "Dark Chocolate"],
+      "sizes": ["One Size (Adjustable)"],
+      "description": "ভিন্টেজ ৮-ওয়েল খাঁটি সুতি কর্ডরয় ফ্যাব্রিক। আনস্ট্রাকচার্ড লো-প্রোফাইল ক্রাউন, অ্যান্টিক ব্রাস বাকল এবং এমবসড চামড়ার স্ট্র্যাপ অ্যাডজাস্টার।",
+      "image_front": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=700&auto=format&fit=crop&q=80",
+      "image_back": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=700&auto=format&fit=crop&q=80",
+      "in_stock": true
+    },
+    {
+      "id": "za-06",
+      "title": "Distressed Graphic Boxy Tee (Raw Chalk White)",
+      "category": "বক্সি ওভারসাইজড টি-শার্ট",
+      "collection_id": "tees",
+      "price": 1250,
+      "original_price": 1750,
+      "gsm": "240 GSM",
+      "fabric": "100% Combed Cotton",
+      "fit": "Oversized Drop-Shoulder Fit",
+      "badge": "আর্ট কালেকশন",
+      "colors": ["Raw Chalk White", "Washed Ash"],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "description": "২৪০ জিএসএম প্রিমিয়াম সুতি কাপড়ে তৈরি। কলার ও হেমে হালকা ডিসট্রেসড ফিনিশ। পরিবেশবান্ধব নরম ডিসচার্জ স্ক্রিন প্রিন্টে খোদাইকৃত 'SOVEREIGN MESH' সিগনেচার আর্টওয়ার্ক।",
+      "image_front": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=700&auto=format&fit=crop&q=80",
+      "image_back": "https://images.unsplash.com/photo-1503342394128-c104d54dba01?w=700&auto=format&fit=crop&q=80",
+      "in_stock": true
+    }
+  ],
+  "size_guide": {
+    "title": "Zengfy Atelier সঠিক সাইজ গাইড (ইঞ্চি মেজারমেন্ট)",
+    "note": "বক্সি ও ড্রপ-শোল্ডার ফিটের জন্য আপনার রেগুলার সাইজ নির্বাচন করুন। এক্সট্রা ব্যাগি চাইলে ১ সাইজ বড় নিন।",
+    "chart": [
+      { "size": "S", "chest": "40 ইঞ্চি", "length": "28 ইঞ্চি", "shoulder": "20 ইঞ্চি" },
+      { "size": "M", "chest": "42 ইঞ্চি", "length": "29 ইঞ্চি", "shoulder": "21 ইঞ্চি" },
+      { "size": "L", "chest": "44 ইঞ্চি", "length": "30 ইঞ্চি", "shoulder": "22 ইঞ্চি" },
+      { "size": "XL", "chest": "46 ইঞ্চি", "length": "31 ইঞ্চি", "shoulder": "23 ইঞ্চি" },
+      { "size": "XXL", "chest": "48 ইঞ্চি", "length": "32 ইঞ্চি", "shoulder": "24 ইঞ্চি" }
+    ]
+  },
+  "craftsmanship_pillars": [
+    {
+      "title": "৩৮০ GSM ফ্রেঞ্চ টেরি ও ২৪০ GSM কটন",
+      "desc": "বাজারে সাধারণ টি-শার্ট যেখানে ১৫০-১৬০ জিএসএম হয়, জেনগফাই ব্যবহারে দিচ্ছে সর্বোচ্চ ঘনত্বের খাঁটি সুতা যা সহজে শেপ হারায় না।",
+      "icon": "Layers"
+    },
+    {
+      "title": "প্রিশ্রাঙ্ক নো-শ্রিংক গ্যারান্টি",
+      "desc": "প্রতিটি পোশাক কাটার আগে ইন্ডাস্ট্রিয়াল ওয়াশ ও হিট-সেটিং করা হয়, ফলে শতবার ধোয়ার পরেও কাপড়ের সাইজ ঠিক থাকে।",
+      "icon": "ShieldCheck"
+    },
+    {
+      "title": "ডাবল-নিডল রিইনফোর্সড স্টিচিং",
+      "desc": "কলার, আর্মহোল ও হেমে ডাবল সিম স্টিচিং। রাফ ও ডেইলি ইউজের জন্য সর্বোচ্চ স্থায়িত্ব নিশ্চিত।",
+      "icon": "Scissors"
+    },
+    {
+      "title": "৭ দিনের ফ্রি সাইজ সোয়াপ",
+      "desc": "সাইজ নিয়ে সামান্যতম দ্বিধা থাকলে কোনো অতিরিক্ত খরচ ছাড়া কুরিয়ারে মাত্র ৪৮ ঘণ্টার মধ্যে সাইজ এক্সচেঞ্জ সুবিধা।",
+      "icon": "RotateCcw"
+    }
+  ]
+}

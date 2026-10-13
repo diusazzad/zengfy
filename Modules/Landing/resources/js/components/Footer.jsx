@@ -17,7 +17,7 @@ export default function Footer({ links = {} }) {
                                 Zengfy Sovereign Digital Infrastructure
                             </div>
                             <div className="text-[11px] text-slate-400">
-                                Privacy-first communication & 13 micro-SaaS platforms for Bangladesh.
+                                Privacy-first communication & 14 micro-SaaS platforms for Bangladesh.
                             </div>
                         </div>
                     </div>
@@ -33,6 +33,9 @@ export default function Footer({ links = {} }) {
                         </a>
                         <a href={links.school || "http://school.zengfy.test:8000"} className="hover:text-blue-600 transition">
                             Zengfy School
+                        </a>
+                        <a href={links.shop || "http://shop.zengfy.test:8000"} className="hover:text-blue-600 transition">
+                            Zengfy Shop
                         </a>
                         <a
                             href={links.api_docs || "/api/v1/ecosystem/landing"}
@@ -52,7 +55,7 @@ export default function Footer({ links = {} }) {
                     </div>
                     <div className="flex items-center gap-2">
                         <span aria-hidden="true" className="w-2 h-2 rounded-full bg-emerald-500" />
-                        <span>All 13 Subdomain Services Operational</span>
+                        <span>All 14 Subdomain Services Operational</span>
                     </div>
                 </div>
             </div>

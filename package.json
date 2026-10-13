@@ -2,10 +2,13 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "cross-env NODE_OPTIONS=--max-old-space-size=1024 vite build",
-        "build-school": "vite build --config Modules/School/vite.config.js",
-        "build-all": "npm run build && npm run build-school",
-        "dev": "cross-env NODE_OPTIONS=--max-old-space-size=1024 vite"
+        "dev": "cross-env NODE_OPTIONS=--max-old-space-size=2048 vite",
+        "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=2048 vite build",
+        "build-all": "npm run build",
+        "build:prod": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=2048 vite build",
+        "build:clean": "node -e \"const fs=require('fs'); fs.rmSync('public/build', {recursive: true, force: true});\" && npm run build",
+        "prod:optimize": "php artisan optimize:clear && php artisan optimize",
+        "prod:deploy": "npm run build && php artisan optimize"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.11",

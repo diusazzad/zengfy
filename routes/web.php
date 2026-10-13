@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes (Single-Module Isolation: Master, Social, School, POS, Law, Civil, NGO & Rent)
+| Web Routes (Single-Module Isolation: Master, Social, School, POS, Law, Civil, NGO, Rent, Hotel, Shop & Skill)
 |--------------------------------------------------------------------------
 |
 | Retain ONLY the verified active Landing modules.
@@ -41,5 +41,25 @@ require base_path('Modules/NGO/routes/web.php');
 // 7. Rent Subdomain Landing Module (rent.zengfy.test:8000)
 require base_path('Modules/Rent/routes/web.php');
 
-// 8. Ecosystem Master Landing Module (zengfy.test:8000)
+// 8. Hotel Subdomain Landing Module (hotel.zengfy.test:8000)
+require base_path('Modules/Hotel/routes/web.php');
+
+// 9. Shop Subdomain Landing Module (shop.zengfy.test:8000)
+require base_path('Modules/Shop/routes/web.php');
+
+// 10. Skill Subdomain Landing Module (skill.zengfy.test:8000)
+require base_path('Modules/Skill/routes/web.php');
+
+// 11. Ecosystem Master Landing Module (zengfy.test:8000)
+require base_path('Modules/Journal/routes/web.php');
+
+// 12. Habit Subdomain Landing Module (habit.zengfy.test:8000)
+require base_path('Modules/Habit/routes/web.php');
+
+// 13. Schedule Subdomain Landing Module (schedule.zengfy.test:8000)
+require base_path('Modules/Schedule/routes/web.php');
+
+// 14. Ecommerce Subdomain Landing Module (ecommerce.zengfy.test:8000)
+require base_path('Modules/Ecommerce/routes/web.php');
+
 require base_path('Modules/Landing/routes/web.php');

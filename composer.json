@@ -65,7 +65,22 @@
             "Modules\\NGO\\Database\\Seeders\\": "Modules/NGO/database/seeders/",
             "Modules\\Rent\\": "Modules/Rent/app/",
             "Modules\\Rent\\Database\\Factories\\": "Modules/Rent/database/factories/",
-            "Modules\\Rent\\Database\\Seeders\\": "Modules/Rent/database/seeders/"
+            "Modules\\Rent\\Database\\Seeders\\": "Modules/Rent/database/seeders/",
+            "Modules\\Hotel\\": "Modules/Hotel/app/",
+            "Modules\\Hotel\\Database\\Factories\\": "Modules/Hotel/database/factories/",
+            "Modules\\Hotel\\Database\\Seeders\\": "Modules/Hotel/database/seeders/",
+            "Modules\\Shop\\": "Modules/Shop/app/",
+            "Modules\\Shop\\Database\\Factories\\": "Modules/Shop/database/factories/",
+            "Modules\\Shop\\Database\\Seeders\\": "Modules/Shop/database/seeders/",
+            "Modules\\Ecommerce\\": "Modules/Ecommerce/app/",
+            "Modules\\Skill\\": "Modules/Skill/app/",
+            "Modules\\Skill\\Database\\Factories\\": "Modules/Skill/database/factories/",
+            "Modules\\Skill\\Database\\Seeders\\": "Modules/Skill/database/seeders/",
+            "Modules\\Journal\\": "Modules/Journal/app/",
+            "Modules\\Journal\\Database\\Factories\\": "Modules/Journal/database/factories/",
+            "Modules\\Journal\\Database\\Seeders\\": "Modules/Journal/database/seeders/",
+            "Modules\\Habit\\": "Modules/Habit/app/",
+            "Modules\\Schedule\\": "Modules/Schedule/app/"
         },
         "files": [
             "app/Helpers/helpers.php"

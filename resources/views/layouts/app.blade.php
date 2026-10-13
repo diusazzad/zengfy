@@ -56,14 +56,9 @@
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-900 font-sans antialiased">
-
-    <x-main::navbar />
-
     <div class="p-4 sm:ml-0 pt-20 max-w-7xl mx-auto">
         @yield('content')
     </div>
-
-    <x-main::bottom-navbar />
 </body>
 
 </html>

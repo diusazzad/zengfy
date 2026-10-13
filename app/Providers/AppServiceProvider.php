@@ -29,7 +29,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        \Illuminate\Support\Facades\View::addNamespace('main', base_path('Modules/Main/resources/views'));
+        if (is_dir(base_path('Modules/Landing/resources/views'))) {
+            \Illuminate\Support\Facades\View::addNamespace('landing', base_path('Modules/Landing/resources/views'));
+        }
+        if (is_dir(base_path('Modules/Main/resources/views'))) {
+            \Illuminate\Support\Facades\View::addNamespace('main', base_path('Modules/Main/resources/views'));
+        }
         if (is_dir(base_path('Modules/Auth/resources/views'))) {
             \Illuminate\Support\Facades\View::addNamespace('auth', base_path('Modules/Auth/resources/views'));
         }

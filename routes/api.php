@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes (Active: Master, Social, School, POS, Law, Civil, NGO & Rent)
+| API Routes (Active: Master, Social, School, POS, Law, Civil, NGO, Rent, Hotel, Shop & Skill)
 |--------------------------------------------------------------------------
 |
 | Public REST API endpoints consumed by React 19 Web Apps and Flutter Mobile App.
@@ -34,3 +34,24 @@ require base_path('Modules/NGO/routes/api.php');
 
 // 8. Rent Subdomain Landing API (v1)
 require base_path('Modules/Rent/routes/api.php');
+
+// 9. Hotel Subdomain Landing API (v1)
+require base_path('Modules/Hotel/routes/api.php');
+
+// 10. Shop Subdomain Landing API (v1)
+require base_path('Modules/Shop/routes/api.php');
+
+// 11. Skill Subdomain Landing API (v1)
+require base_path('Modules/Skill/routes/api.php');
+
+// 12. Journal Subdomain Landing API (v1)
+require base_path('Modules/Journal/routes/api.php');
+
+// 13. Habit Subdomain Landing API (v1)
+require base_path('Modules/Habit/routes/api.php');
+
+// 14. Schedule Subdomain Landing API (v1)
+require base_path('Modules/Schedule/routes/api.php');
+
+// 15. Ecommerce Subdomain Landing API (v1)
+require base_path('Modules/Ecommerce/routes/api.php');

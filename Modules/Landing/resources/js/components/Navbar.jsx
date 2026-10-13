@@ -90,13 +90,13 @@ export default function Navbar({ links = {}, modules = [], onNavigateSection }) 
                                         Zengfy Cloud Suite
                                     </span>
                                     <span className="text-[11px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">
-                                        13 Micro-SaaS
+                                        14 Micro-SaaS
                                     </span>
                                 </div>
 
-                                {/* 3x3 Grid of 9 Primary Apps */}
+                                {/* Grid of All Connected Apps */}
                                 <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
-                                    {top9Modules.map((item) => (
+                                    {(modules.length > 0 ? modules : top9Modules).map((item) => (
                                         <a
                                             key={item.id}
                                             href={item.url}
@@ -124,7 +124,7 @@ export default function Navbar({ links = {}, modules = [], onNavigateSection }) 
                                         }}
                                         className="text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1.5 py-1 cursor-pointer"
                                     >
-                                        <span>View all 13 platforms</span>
+                                        <span>View all 14 platforms</span>
                                         <ChevronRight className="w-3.5 h-3.5" />
                                     </button>
                                 </div>

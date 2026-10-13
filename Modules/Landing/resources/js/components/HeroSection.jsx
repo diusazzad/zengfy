@@ -104,7 +104,7 @@ export default function HeroSection({ ecosystem = {}, links = {}, onExploreApps 
                     </p>
 
                     <p className="text-sm sm:text-base text-slate-500 font-medium leading-relaxed max-w-xl">
-                        কোনো বাণিজ্যিক নজরদারি বা ট্র্যাকিং নেই — সার্বভৌম নাগরিক পরিচয়ে সম্পূর্ণ নিরাপদ, দ্রুত ও স্বাধীন সোশ্যাল নেটওয়ার্ক এবং ১৩টি ক্লাউড সেবা।
+                        কোনো বাণিজ্যিক নজরদারি বা ট্র্যাকিং নেই — সার্বভৌম নাগরিক পরিচয়ে সম্পূর্ণ নিরাপদ, দ্রুত ও স্বাধীন সোশ্যাল নেটওয়ার্ক এবং ১৪টি ক্লাউড সেবা।
                     </p>
 
                     {/* Action CTAs */}

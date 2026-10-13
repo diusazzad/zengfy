@@ -1,8 +1,6 @@
 {
-    "Main": true,
     "Auth": true,
     "Law": true,
-    "Team": true,
     "School": true,
     "Organization": true,
     "Social": true,
@@ -10,5 +8,12 @@
     "POS": true,
     "Civil": true,
     "NGO": true,
-    "Rent": true
+    "Rent": true,
+    "Hotel": true,
+    "Shop": true,
+    "Ecommerce": true,
+    "Skill": true,
+    "Journal": true,
+    "Habit": true,
+    "Schedule": true
 }

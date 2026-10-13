@@ -191,3 +191,99 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
   5. `NGOPillarsSection.jsx`: 4 Sovereign pillars (Tamper-Proof Ledger, Strict Shariah Zakat Rulebook, GPS-Tagged Field Verification, Sovereign Donor Privacy Vault).
   6. `PricingOffersSection.jsx`: 3 Commercial tiers (৳1,500/mo Charity Cloud, Lifetime Trust License, International NGO Suite) + FAQ accordion.
   7. `NGOFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+---
+
+### 12. Zengfy Rent Design System (`rent.zengfy.test:8000`)
+- **Palette:** Hyperlocal Indigo (`#4338CA`), GPS Emerald (`#10B981`), Clean Frost Slate (`#FAFAFA`).
+- **Components:**
+  1. `RentNavbar.jsx`: Hyperlocal Indigo badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
+  2. `RentHeroSection.jsx`: Emotive headline, telemetry ribbon (২৪,৫০০+ ভেরিফায়েড বাসা, ১ কিমি নির্ভুল রেডিয়াস, ৳০ দালাল কমিশন, ৯৯.২% হ্যাপি টেন্যান্ট).
+  3. `RadiusRentalMeshSimulator.jsx`: Location dropdown (Mirpur, Dhanmondi, Shantinagar, Uttara, GEC, Zindabazar), 1 km vs 3 km radius selector, interactive GPS pin map view, ৳50 micro-payment modal, and unmasked owner phone number with direct call/navigation actions.
+  4. `RoleJourneyTabs.jsx`: 4 Stakeholder perspectives (Corporate Tenant, Bachelor Student, Flat Owner, Building Caretaker).
+  5. `RentPillarsSection.jsx`: 4 Sovereign pillars (Zero Broker Network, Precision GPS Geofencing, Micro-Payment Unlock, Legally-Vetted Rental Agreement Vault).
+  6. `PricingOffersSection.jsx`: 3 Commercial tiers (Tenant Micro-Unlock ৳50/৳250, Landlord Flat Listing ৳250, Landlord ERP Cloud ৳500/mo) + FAQ accordion.
+  7. `RentFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+---
+
+### 13. Zengfy Hotel Design System (`hotel.zengfy.test:8000`)
+- **Palette:** Luxury Champagne Gold (`#B45309` / `#D97706`), Midnight Navy (`#0A192F` / `#0F172A`), Crisp Pearl White (`#FAFAFA`).
+- **Components:**
+  1. `HotelNavbar.jsx`: Champagne Gold badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
+  2. `HotelHeroSection.jsx`: Emotive resort headline, telemetry ribbon (৪২০+ রিসোর্ট ও হোটেল, ৳০ ওটিএ কমিশন, ১৮,০০০+ সরাসরি গেস্ট বুকিং, ৯৯.৪% পজিটিভ রিভিউ).
+  3. `KitchenBazarBookingSimulator.jsx`: Dual-tab interface:
+     - Tab 1: Daily kitchen raw bazar itemized ledger, chef cash memo validator, and 18-member staff duty roster & daily wage calculator.
+     - Tab 2: Zero-commission direct guest booking engine with room tier selector, dynamic OTA 15% commission savings tracker, and instant booking voucher modal with QR room pass.
+  4. `RoleJourneyTabs.jsx`: 4 Stakeholder perspectives (Resort Owner, Front Desk Receptionist, Head Chef, Vacationing Guest).
+  5. `HotelPillarsSection.jsx`: 4 Sovereign pillars (Kitchen Bazar & Wastage Ledger, Zero OTA Commission Direct Engine, Staff Roster & Daily Wage Payroll, Sovereign Guest Privacy Vault).
+  6. `PricingOffersSection.jsx`: 3 Commercial tiers (Mid-Tier Hotel Cloud ৳2,500/mo, Lifetime Resort Ownership, Luxury Hotel & Chain Enterprise) + FAQ accordion.
+  7. `HotelFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+---
+
+### 14. Zengfy Shop Design System (`shop.zengfy.test:8000`)
+- **Palette:** Sunset Orange (`#EA580C` / `#F97316`), Cyber Violet (`#7C3AED` / `#8B5CF6`), Crisp Canvas (`#FAFAFA`).
+- **Components:** `ShopNavbar`, `ShopHeroSection`, `AntiFraudCodReturnSimulator` (Customer risk presets, courier score analysis, green pass vs red COD advance alert, live shipping label generator), `RoleJourneyTabs`, `ShopPillarsSection`, `PricingOffersSection`, `ShopFooter`.
+
+---
+
+### 15. Zengfy Skill Design System (`skill.zengfy.test:8000`)
+- **Palette:** Electric Cobalt Blue (`#2563EB` / `#1D4ED8`), Neon Cyan (`#06B6D4` / `#0891B2`), Deep Obsidian Slate (`#0F172A`).
+- **Components:**
+  1. `SkillNavbar.jsx`: Electric Cobalt badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
+  2. `SkillHeroSection.jsx`: Emotive headline, telemetry ribbon (১,৮৫০+ ভেরিফাইড ট্রেইনার, ৪২,০০০+ সফল শিক্ষার্থী, ৯৮.৬% কোর্স কমপ্লিশন, ১০০% এনআইডি ভেরিফাইড সার্টিফিকেট).
+  3. `PostSscSkillCareerSimulator.jsx`: 3-question guidance quiz, AI recommended career track, verified mentor profile, 1-minute demo video player, and tamper-proof NID digital certificate modal.
+  4. `RoleJourneyTabs.jsx`: 4 Stakeholder perspectives (Fresh Graduate Student, Conscious Parents, Verified Skill Trainer, Tech Employers).
+  5. `SkillPillarsSection.jsx`: 4 Sovereign pillars (Zengfy Verified Mentor Network, Structured 90-Day Curriculum, Verifiable Digital Credentials, Student Project Showcase Vault).
+  6. `PricingOffersSection.jsx`: 3 Commercial tiers (Verified Trainer Cloud ৳1,500/mo, Academy Lifetime Ownership, Enterprise Educator Suite) + FAQ accordion.
+  7. `SkillFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+---
+
+### 16. Zengfy Journal Design System (`journal.zengfy.test:8000`)
+- **Palette:** Editorial Obsidian (`#0F172A`), Deep Crimson Accent (`#BE123C` / `#E11D48`), Warm Newsprint Paper (`#F8FAFC` / `#FAFAFA`).
+- **Components:**
+  1. `JournalNavbar.jsx`: Editorial Obsidian & Crimson badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
+  2. `JournalHeroSection.jsx`: Emotive headline, telemetry ribbon (৮৫০+ স্বাধীন কলামিস্ট, ৳১.৮ কোটি+ রিডার পে-ওয়াল আয়, ৩,৪০,০০০+ সচেতন পাঠক, ১০০% সেন্সরশিপ-মুক্ত).
+  3. `UncensoredOpEdPaywallSimulator.jsx`: Op-ed article reader, frosted glass paywall blur, bKash 1-tap unlock demo modal, encrypted whistleblower tip-box modal.
+  4. `RoleJourneyTabs.jsx`: 4 Stakeholder perspectives (Independent Columnist, Discerning Reader, Protected Whistleblower, Independent Media Syndicate).
+  5. `JournalPillarsSection.jsx`: 4 Sovereign pillars (100% Censorship-Resistant Publishing, Direct Reader Micro-Subscriptions, Zero-Knowledge Source Protection, Custom Domain Substack Engine).
+  6. `PricingOffersSection.jsx`: 3 Commercial tiers (৳৮০০/মাস Journalist Pro SaaS, ৳৫,০০০ Lifetime Journal License, Media Syndicate Suite Contact Sales) + FAQ accordion.
+  7. `JournalFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+---
+
+### 17. Zengfy Habit Design System (`habit.zengfy.test:8000`)
+- **Palette:** Vitality Emerald (`#10B981` / `#059669`), Sunrise Amber (`#F59E0B` / `#D97706`), Deep Charcoal Slate (`#0F172A`).
+- **Components:**
+  1. `HabitNavbar.jsx`: Vitality Emerald badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
+  2. `HabitHeroSection.jsx`: Emotive headline on spiritual & personal discipline, telemetry ribbon (৫,২০০+ নিয়মিত মুসল্লি ও ইউজার, ৯৪% সালাত কনসিস্টেন্সি, ৪,৫০,০০০+ কমপ্লিটেড স্ট্রিক, ১০০% নো-অ্যাড নো-ট্র্যাকিং).
+  3. `SalahHabitStreakSimulator.jsx`: Interactive daily tracker:
+     - 5 Daily Prayers (ফজর, যোহর, আসর, মাগরিব, ইশা) + Quran & Water tracker checkboxes.
+     - Dynamic flame streak counter (🔥) with animated progress ring.
+     - Bengali Hadith / motivational popup card upon completing prayers.
+     - Family / Circle streak leaderboard preview.
+  4. `RoleJourneyTabs.jsx`: 4 Stakeholder perspectives (Practicing Muslim & Student, Busy Professional, Parents Guiding Children, Circle / Halaqah Leader).
+  5. `HabitPillarsSection.jsx`: 4 Sovereign pillars (Strict Privacy Zero-Ad Architecture, 5 Daily Prayers Waqt Precision, Family & Circle Accountability Rings, Offline-First Local Data Storage).
+  6. `PricingOffersSection.jsx`: 3 Commercial tiers (Individual Free Forever ৳0, Family & Circle Cloud ৳500 Lifetime, Institutional Halaqah Suite ৳1,200/yr) + FAQ accordion.
+  7. `HabitFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+---
+
+### 18. Zengfy Schedule Design System (`schedule.zengfy.test:8000`)
+- **Palette:** Royal Indigo (`#4F46E5` / `#6366F1`), Electric Cyan (`#06B6D4` / `#0EA5E9`), Midnight Slate (`#0F172A`), Crisp Pearl Canvas (`#FAFAFA`).
+- **Components:**
+  1. `ScheduleNavbar.jsx`: Royal Indigo badge, 14-app 9-dot Waffle launcher popover, and SSO authentication triggers.
+  2. `ScheduleHeroSection.jsx`: Emotive booking headline, telemetry ribbon (৩,৮০০+ পেশাজীবী ও চেম্বার, ৯২% নো-শো রিডাকশন, ১,২০,০০০+ সাকসেসফুল অ্যাপয়েন্টমেন্ট, ১০০% বিকাশ নো-ফি ইন্টিগ্রেশন).
+  3. `ConsultationBookingCalendarSimulator.jsx`: Interactive Appointment Booking & bKash Deposit Sandbox:
+     - 3 Professional Services (Medical Chamber Doctor, High Court Lawyer, Tech & Business Mentor).
+     - Live interactive calendar dates (Today, Tomorrow, Day After) and time slots (Morning, Afternoon, Evening) with available vs booked indicators.
+     - Advance booking deposit toggle (100% full fee or ৳200 token fee).
+     - Simulated booking confirmation modal with instant Google Meet link, .ics calendar download, and SMS reminder draft voucher.
+  4. `RoleJourneyTabs.jsx`: 4 Stakeholder perspectives (Doctors & Chamber Specialists, Lawyers & Legal Advisors, Freelance Mentors & Coaches, Clients & Patients).
+  5. `SchedulePillarsSection.jsx`: 4 Sovereign pillars (Native bKash/Nagad Consultation Fees, Automated SMS & WhatsApp No-Show Prevention, Two-Way Google Calendar Sync, Zero Per-Booking Platform Commission).
+  6. `PricingOffersSection.jsx`: 3 Commercial tiers (Solo Pro SaaS ৳৬০০/মাস, Chamber Lifetime License ৳৪,৫০০ এককালীন, Enterprise Clinic & Firm Suite Contact Sales) + FAQ accordion.
+  7. `ScheduleFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
+
+

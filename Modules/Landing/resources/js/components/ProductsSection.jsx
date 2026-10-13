@@ -24,7 +24,7 @@ export default function ProductsSection({ modules = [], stats = {} }) {
 
             if (selectedCategory === 'all') return true;
             if (selectedCategory === 'civic') return ['social', 'ngo', 'civil'].includes(mod.id);
-            if (selectedCategory === 'business') return ['pos', 'ecommerce', 'rent', 'hotel'].includes(mod.id);
+            if (selectedCategory === 'business') return ['pos', 'ecommerce', 'shop', 'rent', 'hotel'].includes(mod.id);
             if (selectedCategory === 'institutional') return ['school', 'law'].includes(mod.id);
             if (selectedCategory === 'personal') return ['journal', 'habit', 'schedule', 'skill'].includes(mod.id);
 
@@ -33,14 +33,14 @@ export default function ProductsSection({ modules = [], stats = {} }) {
     }, [modules, searchQuery, selectedCategory]);
 
     return (
-        <section id="modules-section" aria-label="13 Micro-SaaS Operating Platforms" className="pt-16 sm:pt-24 pb-20 sm:pb-28 border-t border-slate-200/70">
+        <section id="modules-section" aria-label="14 Micro-SaaS Operating Platforms" className="pt-16 sm:pt-24 pb-20 sm:pb-28 border-t border-slate-200/70">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Section Header */}
                 <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-subtle text-slate-700 text-xs sm:text-sm font-semibold mb-4 shadow-xs">
                         <span aria-hidden="true" className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>Single Sign-On • 13 Connected Operating Platforms</span>
+                        <span>Single Sign-On • 14 Connected Operating Platforms</span>
                     </div>
 
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 leading-[1.1]">

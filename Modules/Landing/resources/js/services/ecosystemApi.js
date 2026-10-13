@@ -4,7 +4,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
         name: "Zengfy Ecosystem",
         brand: "Zengfy",
         tagline: "Speak Freely. One Unified Sovereign Account.",
-        description: "Bangladesh's next-generation sovereign digital infrastructure. Connect to 13 unified micro-SaaS platforms—from hyperlocal social feeds and institutional school ERP to legal vaults and retail POS—all powered by single-sign-on NID verification.",
+        description: "Bangladesh's next-generation sovereign digital infrastructure. Connect to 14 unified micro-SaaS platforms—from hyperlocal social feeds and institutional school ERP to legal vaults and retail POS—all powered by single-sign-on NID verification.",
         version: "1.0.0",
         base_domain: "zengfy.test",
     },
@@ -13,7 +13,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
         total_wards: 4554,
         active_institutions: 540,
         system_uptime: "99.98%",
-        total_modules: 13,
+        total_modules: 14,
     },
     modules: [
         {
@@ -97,13 +97,23 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             badge: "Hospitality",
         },
         {
+            id: "shop",
+            name: "Zengfy Shop",
+            category: "Fashion & D2C Retail",
+            tagline: "Curated D2C Apparel, Luxury Streetwear & Lookbook.",
+            desc: "Exclusive apparel collections with 3D lookbook preview, authentic size guides, instant bKash checkout, and doorstep courier tracking.",
+            icon: "👗",
+            url: "http://shop.zengfy.test:8000",
+            badge: "D2C Fashion",
+        },
+        {
             id: "ecommerce",
             name: "Zengfy Commerce",
             category: "E-Commerce & Retail",
             tagline: "Fast Online Storefront with Courier & Payment Gateway.",
             desc: "Launch your branded digital shop in minutes with Steadfast/Pathao courier tracking, bKash/Nagad checkout, and inventory sync.",
             icon: "🛍️",
-            url: "http://shop.zengfy.test:8000",
+            url: "http://ecommerce.zengfy.test:8000",
             badge: "Online Store",
         },
         {

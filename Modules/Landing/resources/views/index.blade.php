@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Zengfy | Speak Freely. One Unified Sovereign Account.</title>
-    <meta name="description" content="Sovereign communication and modular digital infrastructure for Bangladesh. Connect to 13 micro-SaaS platforms with single-sign-on NID verification.">
+    <meta name="description" content="Sovereign communication and modular digital infrastructure for Bangladesh. Connect to 14 micro-SaaS platforms with single-sign-on NID verification.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <!-- Fonts: Plus Jakarta Sans -->

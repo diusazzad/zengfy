@@ -138,4 +138,82 @@ Dedicated transparent crowdfunding, live donation campaigns, and Shariah-complia
 - **Core Simulator:** Interactive Live Donation & Zakat Allocation Sandbox featuring campaign switcher (Sylhet/Feni flood relief, Kurigram winter blanket drive, Orphanage educational zakat fund), dynamic preset donation buttons (৳১,০০০, ৳২,৫০০, ৳৫,০০০, ৳১০,০০০), bKash/Nagad/Expatriate USD gateways, instant progress bar animation, downloadable official tax money receipt, and allocated relief goods card with GPS tracking tag.
 - **3 Commercial Tiers:** Charity Cloud (৳1,500/mo), Lifetime Trust License (One-time, own domain), International NGO Custom Software (Contact Sales).
 
+### 12. Rent Module Dedicated Landing (`rent.zengfy.test:8000/`)
+
+#### 12.1 Vision & Disruptive Rental Mesh
+Dedicated broker-free hyperlocal rental mesh and property management ERP for Bangladesh tenants, students, bachelors, flat owners, and building caretakers:
+- **Pain Points Solved:** Broker exploitation (1 month rent commission) and exhausting street searches eliminated with Pay-Per-Km micro-payments (৳50 for 1 km / ৳250 for 3 km) to unlock direct verified owner phone numbers and addresses.
+- **Core Simulator:** Interactive Radius Rental Mesh Sandbox featuring location selection (Dhaka, Chittagong, Sylhet), 1 km vs 3 km radius toggle, interactive GPS pins (Family Flats, Bachelor Sublets, Deluxe Studios), ৳50 micro-payment unlock simulation, and unmasked owner phone number with direct call/navigation triggers.
+- **3 Commercial Tiers:** Tenant Pay-Per-Radius (৳50 1km / ৳250 3km micro-unlock), Landlord Flat Listing (৳250 one-time per flat till rented), Building Owner Landlord Cloud (৳500/mo ERP).
+
+### 13. Hotel Module Dedicated Landing (`hotel.zengfy.test:8000/`)
+
+#### 13.1 Vision & Hospitality ERP
+Dedicated resort, boutique hotel, and eco-cottage management ERP for Bangladesh hospitality business owners:
+- **Pain Points Solved:** Kitchen raw material theft (bazar churi) eliminated via daily itemized ledger and wastage audit, staff rosters & biometric payroll, and zero-commission direct guest booking engine to escape 15-20% OTA (Booking.com/Agoda) commission cuts.
+- **Core Simulator:** Interactive Kitchen Bazar & Zero-Commission Booking Sandbox with dual tabs:
+  - Tab 1: Daily kitchen bazar ledger (fish, meat, rice, spices: ৳7,400), chef cash memo validator, and 18-member staff attendance & wage tracker.
+  - Tab 2: Zero-commission direct guest booking engine with cottage/suite selector, dynamic OTA fee comparison (-15% loss vs ৳0 Zengfy cut), and 1-tap bKash/Card direct guest booking confirmation voucher with QR room pass.
+- **3 Commercial Tiers:** Mid-Tier Hotel Cloud Suite (৳2,500/mo SaaS), Lifetime Resort Ownership License (one-time, own domain), Luxury Hotel & Chain Enterprise (Contact Sales).
+
+### 14. Shop Module Dedicated Landing (`shop.zengfy.test:8000/`)
+
+#### 14.1 Vision & Anti-Fraud D2C Social Commerce
+Dedicated anti-fraud e-commerce & courier integration ERP for Bangladesh F-Commerce and D2C brands:
+- **Pain Points Solved:** High RTO courier return loss eliminated with automated delivery success rate scoring, Steadfast/Pathao 1-click booking, and advance delivery fee bKash payment link trigger for high-risk customers.
+- **Core Simulator:** Interactive Anti-Fraud COD Return Simulator with customer risk presets (Safe regular buyer vs high-risk fake buyer), courier selection, green COD approved vs red alert advance fee notice, and live courier shipping label generation.
+- **3 Commercial Tiers:** Ready Cloud Shop (৳1,200/mo SaaS), Lifetime Store Ownership License (one-time, own domain), Enterprise D2C Brand (Contact Sales).
+
 ---
+
+### 15. Skill Module Dedicated Landing (`skill.zengfy.test:8000/`)
+
+#### 15.1 Vision & Verified Post-SSC Career Launchpad
+Dedicated verified skills platform and 90-day practical roadmap for Bangladesh SSC & HSC graduates and verified IT mentors:
+- **Pain Points Solved:** Fraudulent and low-quality coaching centers replaced with 100% Zengfy-verified industry mentors, zero-to-hero 90-day roadmaps, and tamper-proof NID-verified digital credentials.
+- **Core Simulator:** Interactive Post-SSC Career Guidance Quiz & Verified Demo Player with 3-question guidance quiz, instant AI recommended track matching (Web Dev, UI/UX, English, Freelancing), 1-minute demo video player, and verifiable digital certificate modal.
+- **3 Commercial Tiers:** Verified Trainer Cloud (৳1,500/mo SaaS), Academy Lifetime Ownership License (one-time, own domain), Enterprise Educator Suite (Contact Sales).
+
+---
+
+### 16. Journal Module Dedicated Landing (`journal.zengfy.test:8000/`)
+
+#### 16.1 Vision & Censorship-Resistant Independent Journalism
+Dedicated sovereign editorial portal and paywall reader monetization suite for Bangladesh independent journalists, investigative reporters, and op-ed columnists:
+- **Pain Points Solved:** Corporate media censorship, algorithmic de-platforming, and financial vulnerability of fearless writers eliminated through direct reader monetization, zero intermediary interference, and zero-knowledge encrypted whistleblower leak vaults.
+- **Core Simulator:** Interactive Uncensored Op-Ed & bKash Paywall Simulator featuring:
+  - Investigative op-ed reader with blurred/frosted glass paywall gate after the first paragraph.
+  - 1-tap bKash/Nagad micro-payment unlock simulation (৳20 per investigative report / ৳150 monthly subscription).
+  - Encrypted Whistleblower DropBox modal demo demonstrating 256-bit client-side zero-knowledge source encryption without server-side IP logging.
+- **3 Commercial Tiers:** Journalist Pro SaaS (৳800/mo), Lifetime Journal License (৳5,000 one-time, own domain), Media Syndicate Suite (Contact Sales).
+
+---
+
+### 17. Habit Module Dedicated Landing (`habit.zengfy.test:8000/`)
+
+#### 17.1 Vision & 5 Daily Prayers & Habit Streak Platform
+Dedicated spiritual and lifestyle discipline tracking platform for Muslims and conscious achievers across Bangladesh:
+- **Pain Points Solved:** Broken routines, missed prayers (ওয়াক্ত ছুটে যাওয়া), and intrusive ad-filled habit apps replaced with clean, zero-ad 5 Daily Prayers (৫ ওয়াক্ত সালাত) tracking, custom daily micro-habits, and family/circle accountability rings.
+- **Core Simulator:** Interactive Salah & Daily Micro-Habit Streak Sandbox featuring:
+  - Fajr, Dhuhr, Asr, Maghrib, Isha interactive checkboxes + daily Quran reading and water intake.
+  - Live streak flame counter (🔥) that increments dynamically with animated encouraging Bengali Hadith/motivational insights.
+  - Circle accountability view comparing streaks with family or study circle members.
+- **3 Commercial Tiers:** Sovereign Individual Free Forever (৳0, 100% privacy, zero ads), Family & Circle Cloud (৳500 one-time lifetime license), Community & Institution Tier (৳1,200/yr).
+
+---
+
+### 18. Schedule Module Dedicated Landing (`schedule.zengfy.test:8000/`)
+
+#### 18.1 Vision & Client Appointment Booking & Consultation Calendar
+Dedicated client appointment booking, paid consultation scheduling, and automated SMS reminder calendar for Bangladesh professionals (doctors, lawyers, consultants, tutors, and coaches):
+- **Pain Points Solved:** Back-and-forth messaging ("কখন ফ্রি আছেন?") and client no-show loss eliminated through automated time slot booking, advance bKash/Nagad appointment fee collection, and two-way Google Calendar / Google Meet sync without expensive USD Calendly subscriptions.
+- **Core Simulator:** Interactive Consultation Booking & bKash Deposit Sandbox featuring:
+  - Professional/Service selector (Doctor chamber, Legal advisory, Tech consultation).
+  - Real-time date & time slot picker with live availability status.
+  - Advance booking deposit toggle (100% full fee or ৳200 serial confirmation token).
+  - Instant booking voucher modal with downloadable Google Calendar / .ics invite, Google Meet link, and automated SMS reminder preview.
+- **3 Commercial Tiers:** Solo Professional Cloud (৳600/mo SaaS), Chamber Lifetime License (৳4,500 one-time, own domain), Enterprise Clinic & Consultancy Suite (Contact Sales).
+
+---
+
+

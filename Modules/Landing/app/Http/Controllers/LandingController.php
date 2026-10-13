@@ -58,7 +58,7 @@ class LandingController extends Controller
                     'name' => 'Zengfy Ecosystem',
                     'brand' => 'Zengfy',
                     'tagline' => 'Speak Freely. One Unified Sovereign Account.',
-                    'description' => "Bangladesh's next-generation sovereign digital infrastructure. Connect to 13 unified micro-SaaS platforms—from hyperlocal social feeds and institutional school ERP to legal vaults and retail POS—all powered by single-sign-on NID verification.",
+                    'description' => "Bangladesh's next-generation sovereign digital infrastructure. Connect to 14 unified micro-SaaS platforms—from hyperlocal social feeds and institutional school ERP to legal vaults and retail POS—all powered by single-sign-on NID verification.",
                     'version' => '1.0.0',
                     'base_domain' => $baseDomain,
                 ],
@@ -75,7 +75,7 @@ class LandingController extends Controller
                         'key' => 'central_sso',
                         'title' => 'Unified Citizen Single Sign-On',
                         'tag' => 'One Account',
-                        'description' => 'Log in once with verified NID credentials and seamlessly access all 13 Zengfy ecosystem subdomains without re-authenticating.',
+                        'description' => 'Log in once with verified NID credentials and seamlessly access all 14 Zengfy ecosystem subdomains without re-authenticating.',
                         'icon' => 'key',
                     ],
                     [
@@ -153,6 +153,8 @@ class LandingController extends Controller
                     'download' => "{$scheme}://{$baseDomain}{$portSuffix}/download",
                     'social' => "{$scheme}://social.{$baseDomain}{$portSuffix}/",
                     'school' => "{$scheme}://school.{$baseDomain}{$portSuffix}/",
+                    'shop' => "{$scheme}://shop.{$baseDomain}{$portSuffix}/",
+                    'ecommerce' => "{$scheme}://ecommerce.{$baseDomain}{$portSuffix}/",
                     'api_docs' => "{$scheme}://{$baseDomain}{$portSuffix}/api/v1/ecosystem/landing",
                 ],
             ],
@@ -160,7 +162,7 @@ class LandingController extends Controller
     }
 
     /**
-     * Master registry for all 13 micro-SaaS platforms (Zero pricing clutter).
+     * Master registry for all 14 micro-SaaS platforms (Zero pricing clutter).
      */
     private function getProductsData(): array
     {
@@ -255,13 +257,23 @@ class LandingController extends Controller
                 'badge' => 'Hospitality',
             ],
             [
+                'id' => 'shop',
+                'name' => 'Zengfy Shop',
+                'category' => 'Fashion & D2C Retail',
+                'tagline' => 'Curated D2C Apparel, Luxury Streetwear & Lookbook.',
+                'desc' => 'Exclusive apparel collections with 3D lookbook preview, authentic size guides, instant bKash checkout, and doorstep courier tracking.',
+                'icon' => '👗',
+                'url' => $buildUrl('shop'),
+                'badge' => 'D2C Fashion',
+            ],
+            [
                 'id' => 'ecommerce',
                 'name' => 'Zengfy Commerce',
                 'category' => 'E-Commerce & Retail',
                 'tagline' => 'Fast Online Storefront with Courier & Payment Gateway.',
                 'desc' => 'Launch your branded digital shop in minutes with Steadfast/Pathao courier tracking, bKash/Nagad checkout, and inventory sync.',
                 'icon' => '🛍️',
-                'url' => $buildUrl('shop'),
+                'url' => $buildUrl('ecommerce'),
                 'badge' => 'Online Store',
             ],
             [
