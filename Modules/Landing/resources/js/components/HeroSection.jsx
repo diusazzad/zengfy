@@ -81,10 +81,10 @@ export default function HeroSection({ ecosystem = {}, links = {}, onExploreApps 
     return (
         <section id="hero-section" aria-label="Hero Overview" className="relative pt-6 sm:pt-14 pb-16 sm:pb-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
+
                 {/* Left Column: Bold Headline & CTAs */}
                 <div className="lg:col-span-7 text-left space-y-6 sm:space-y-7">
-                    
+
                     {/* Privacy Badge */}
                     <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel-subtle text-slate-700 text-xs sm:text-sm font-semibold shadow-xs">
                         <span aria-hidden="true" className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
@@ -110,7 +110,7 @@ export default function HeroSection({ ecosystem = {}, links = {}, onExploreApps 
                     {/* Action CTAs */}
                     <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 max-w-lg">
                         <a
-                            href={links.social || "http://social.zengfy.test:8000"}
+                            href={links.social || "http://social.zengfy.top:8000"}
                             className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-base sm:text-lg shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/35 active:scale-95 transition-all inline-flex items-center justify-center gap-2.5 min-h-[54px]"
                         >
                             <span>Get Started</span>
@@ -146,7 +146,7 @@ export default function HeroSection({ ecosystem = {}, links = {}, onExploreApps 
 
                 {/* Right Column: Signal-Style White Glassmorphic Live Chat Preview */}
                 <div className="lg:col-span-5 relative" aria-label="Interactive Social Chat Preview">
-                    
+
                     {/* Ambient Glow Behind Mockup Frame */}
                     <div aria-hidden="true" className="absolute -inset-4 bg-gradient-to-tr from-blue-300/30 via-indigo-200/25 to-cyan-200/30 rounded-3xl blur-2xl opacity-80" />
 
@@ -164,7 +164,7 @@ export default function HeroSection({ ecosystem = {}, links = {}, onExploreApps 
 
                     {/* Glass Device Preview Box */}
                     <div className="bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-6 border border-white/90 shadow-2xl ring-1 ring-slate-900/5 relative z-10 overflow-hidden">
-                        
+
                         {/* Chat Header */}
                         <div className="flex items-center justify-between pb-4 border-b border-slate-200/70 mb-5">
                             <div className="flex items-center gap-3">

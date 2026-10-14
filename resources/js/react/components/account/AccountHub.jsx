@@ -13,7 +13,7 @@ export default function AccountHub({
 }) {
     const [activeTab, setActiveTab] = useState('profile'); // 'profile', 'trust', 'security', 'apps'
     const [currentUser, setCurrentUser] = useState(initialUser || {});
-    
+
     // Profile Edit State
     const [name, setName] = useState(initialUser?.name || '');
     const [handle, setHandle] = useState(initialUser?.handle || '');
@@ -207,7 +207,7 @@ export default function AccountHub({
             category: 'Education',
             desc: 'Student records, exam grading, and automated SMS notifications.',
             icon: '🏫',
-            url: 'http://school.zengfy.test:7000/',
+            url: 'http://school.zengfy.top:7000/',
             badge: 'Live Demo',
             badge_color: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
         },
@@ -217,7 +217,7 @@ export default function AccountHub({
             category: 'Law Vault',
             desc: 'Court hearing schedules, case diary, encrypted document vault.',
             icon: '⚖️',
-            url: 'http://law.zengfy.test:7000/',
+            url: 'http://law.zengfy.top:7000/',
             badge: 'Live Demo',
             badge_color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
         },
@@ -227,7 +227,7 @@ export default function AccountHub({
             category: 'Commerce',
             desc: 'Multi-location inventory, barcode billing, bKash integration.',
             icon: '🛒',
-            url: 'http://pos.zengfy.test:7000/',
+            url: 'http://pos.zengfy.top:7000/',
             badge: 'Live Demo',
             badge_color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
         },
@@ -242,7 +242,7 @@ export default function AccountHub({
             <div className="backdrop-blur-2xl bg-[#0E1626]/75 border border-white/15 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative overflow-hidden transition-all duration-300 hover:border-cyan-500/30">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 shadow-sm shadow-cyan-400/40" />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
-                
+
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
                     <div className="flex items-center gap-5">
                         {/* Avatar with Camera Trigger */}

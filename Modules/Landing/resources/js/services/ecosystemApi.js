@@ -23,7 +23,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Hyperlocal Feed, Neighborhood Groups & Civic Beacons.",
             desc: "Verified citizen discussions, ward-level emergency SOS alerts, and end-to-end encrypted community messaging without algorithms.",
             icon: "💬",
-            url: "http://social.zengfy.test:8000",
+            url: "http://social.zengfy.top:8000",
             badge: "Active Module",
         },
         {
@@ -33,7 +33,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Complete School, College & Madrasha ERP.",
             desc: "Manage automated student admissions, RFID attendance, online report cards, teacher payroll, and SMS notifications.",
             icon: "🏫",
-            url: "http://school.zengfy.test:8000",
+            url: "http://school.zengfy.top:8000",
             badge: "Enterprise Ready",
         },
         {
@@ -43,7 +43,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Fast Barcode Billing, Stock Management & Profit Analytics.",
             desc: "Modern touch POS with multi-counter billing, thermal receipt printing, low-stock alerts, and daily sales SMS for shop owners.",
             icon: "🛒",
-            url: "http://pos.zengfy.test:8000",
+            url: "http://pos.zengfy.top:8000",
             badge: "Retail SaaS",
         },
         {
@@ -53,7 +53,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Case Management, Court Dates & Client File Vault.",
             desc: "Built specifically for lawyers & law firms: track hearing schedules, client payments, court precedents, and confidential legal documents.",
             icon: "⚖️",
-            url: "http://law.zengfy.test:8000",
+            url: "http://law.zengfy.top:8000",
             badge: "Specialized",
         },
         {
@@ -63,7 +63,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Site Engineering, Material Expenses & Blueprint Vault.",
             desc: "Track construction project budgets, site contractor payments, material wastage, and structural blueprints.",
             icon: "🏗️",
-            url: "http://civil.zengfy.test:8000",
+            url: "http://civil.zengfy.top:8000",
             badge: "Engineering",
         },
         {
@@ -73,7 +73,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Transparent Donation & Relief Distribution System.",
             desc: "Track charity donations, relief distribution to verified citizens, and manage volunteer deployment.",
             icon: "❤️",
-            url: "http://ngo.zengfy.test:8000",
+            url: "http://ngo.zengfy.top:8000",
             badge: "Non-Profit",
         },
         {
@@ -83,7 +83,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Tenant NID Verification, Rent Receipt & Property Lease.",
             desc: "Instant tenant background check, automated digital rent receipts, utility billing, and vacant flat listings.",
             icon: "🏠",
-            url: "http://rent.zengfy.test:8000",
+            url: "http://rent.zengfy.top:8000",
             badge: "Real Estate",
         },
         {
@@ -93,7 +93,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Room Booking, Guest Check-in & Housekeeping.",
             desc: "Streamline room reservations, guest ID verification, invoice printing, and housekeeping shifts.",
             icon: "🏨",
-            url: "http://hotel.zengfy.test:8000",
+            url: "http://hotel.zengfy.top:8000",
             badge: "Hospitality",
         },
         {
@@ -103,7 +103,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Curated D2C Apparel, Luxury Streetwear & Lookbook.",
             desc: "Exclusive apparel collections with 3D lookbook preview, authentic size guides, instant bKash checkout, and doorstep courier tracking.",
             icon: "👗",
-            url: "http://shop.zengfy.test:8000",
+            url: "http://shop.zengfy.top:8000",
             badge: "D2C Fashion",
         },
         {
@@ -197,8 +197,8 @@ export const FALLBACK_ECOSYSTEM_DATA = {
         register: "http://zengfy.test:8000/register",
         account: "http://zengfy.test:8000/account",
         download: "http://zengfy.test:8000/download",
-        social: "http://social.zengfy.test:8000/",
-        school: "http://school.zengfy.test:8000/",
+        social: "http://social.zengfy.top:8000/",
+        school: "http://school.zengfy.top:8000/",
         api_docs: "http://zengfy.test:8000/api/v1/ecosystem/landing",
     },
 };

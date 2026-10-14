@@ -26,7 +26,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
                                 ▼                             ▼                             ▼
        ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐
        │     Central Identity Hub (SSO)   │ │      Hyperlocal Social Hub       │ │       Native Mobile Platform   │
-       │     account.zengfy.test:7000     │ │      social.zengfy.test:7000     │ │       Flutter 3.47 / Dart 3.13 │
+       │     account.zengfy.test:7000     │ │      social.zengfy.top:7000     │ │       Flutter 3.47 / Dart 3.13 │
        ├──────────────────────────────────┤ ├──────────────────────────────────┤ ├──────────────────────────────────┤
        │ Engine: Nuxt 3 (SSR Pre-rendered)│ │ Engine: Nuxt 3 (SSR + Hydration) │ │ Engine: Cross-Platform Native    │
        │ • Instant <100ms Form Rendering  │ │ • 60 FPS Infinite Virtual Scroll │ │ • 120 FPS Mobile Performance     │
@@ -49,11 +49,11 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
   - **Domains:**
     - `zengfy.test:7000` ➔ Main Portal & AI Agentic Searchbar
     - `account.zengfy.test:7000` ➔ Central SSO & Account Hub
-    - `social.zengfy.test:7000` ➔ Hyperlocal Social Network
+    - `social.zengfy.top:7000` ➔ Hyperlocal Social Network
   - **Deliverable:** Verified wildcard proxy pass routing and explicit `social.{domain}` route dispatching with seamless 302 redirects.
 
 - [x] **TASK-INFRA-002: Wildcard Session Cookie & Cross-Origin Security**
-  - **Objective:** Configure centralized session sharing so logging in once at `account.zengfy.test` automatically authenticates `social.zengfy.test` and other ecosystem apps.
+  - **Objective:** Configure centralized session sharing so logging in once at `account.zengfy.test` automatically authenticates `social.zengfy.top` and other ecosystem apps.
   - **Settings:**
     - Dynamic wildcard `SESSION_DOMAIN` (.zengfy.test / .zengfy.top) in `config/session.php`.
     - No-cache headers (`Cache-Control: no-cache, no-store, max-age=0, must-revalidate`) preventing Back-Forward Cache (bfcache) leakage.
@@ -85,7 +85,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
   - **Specification:**
     - Fast SSR rendering (< 100ms first paint).
     - Brute-force lockout visual banner (`HTTP 423`) and rate-limiting notice (`HTTP 429`).
-    - Smart redirect: Supports `redirect_uri` (e.g. user redirected from `social.zengfy.test/feed` returns there immediately after login).
+    - Smart redirect: Supports `redirect_uri` (e.g. user redirected from `social.zengfy.top/feed` returns there immediately after login).
   - **Deliverable:** High-conversion, zero-lag login portal with auto device naming.
 
 - [x] **TASK-AUTH-003: 3-Step Password Recovery Engine**
@@ -115,7 +115,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
 
 ---
 
-### 🌐 PHASE 3: Hyperlocal Social Media Portal (`social.zengfy.test`)
+### 🌐 PHASE 3: Hyperlocal Social Media Portal (`social.zengfy.top`)
 
 - [x] **TASK-SOC-001: Eye-Comfort "Night Yellow" Theme System**
   - **Specification:**
@@ -155,7 +155,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
 
 - [ ] **TASK-SOC-005: OpenGraph Dynamic Meta Tags for Social Sharing**
   - **Specification:**
-    - When a user shares a Zengfy link (`social.zengfy.test/u/{handle}` or `/posts/{id}`) on WhatsApp, Facebook, or Twitter, dynamic OpenGraph meta tags render:
+    - When a user shares a Zengfy link (`social.zengfy.top/u/{handle}` or `/posts/{id}`) on WhatsApp, Facebook, or Twitter, dynamic OpenGraph meta tags render:
       - `og:title`, `og:description`, `og:image`, `twitter:card`.
   - **Deliverable:** SSR-generated rich link previews for all public pages.
 

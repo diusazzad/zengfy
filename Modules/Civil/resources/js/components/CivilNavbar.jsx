@@ -2,13 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.test:8000', icon: '🌐' },
-  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.test:8000', icon: '👥' },
-  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.test:8000', icon: '🎓' },
-  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.test:8000', icon: '🛍️' },
-  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.test:8000', icon: '⚖️' },
-  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.test:8000', icon: '📐', current: true },
-  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.test:8000', icon: '🏢' },
-  { name: 'Zengfy Hotel', tag: 'Resort & PMS', url: 'http://hotel.zengfy.test:8000', icon: '🏨' },
+  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
+  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
+  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
+  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
+  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐', current: true },
+  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🏢' },
+  { name: 'Zengfy Hotel', tag: 'Resort & PMS', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
   { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.test:8000', icon: '💊' },
   { name: 'Zengfy Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.test:8000', icon: '🏥' },
   { name: 'Zengfy Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.test:8000', icon: '🌾' },
@@ -37,7 +37,7 @@ export default function CivilNavbar({ brand = {} }) {
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Tag */}
           <div className="flex items-center gap-3">
-            <a href="http://civil.zengfy.test:8000" className="flex items-center gap-2.5 group">
+            <a href="http://civil.zengfy.top:8000" className="flex items-center gap-2.5 group">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-cyan-700 to-slate-800 flex items-center justify-center text-white shadow-md shadow-cyan-900/15 group-hover:scale-105 transition-transform">
                 <span className="text-xl">📐</span>
               </div>
@@ -127,7 +127,7 @@ export default function CivilNavbar({ brand = {} }) {
 
             {/* Central SSO Login Button */}
             <a
-              href="http://civil.zengfy.test:8000/login"
+              href="http://civil.zengfy.top:8000/login"
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 transition-colors"
             >
               <span>লগইন</span>
@@ -195,7 +195,7 @@ export default function CivilNavbar({ brand = {} }) {
             </a>
             <div className="pt-2 border-t border-slate-100 flex gap-2">
               <a
-                href="http://civil.zengfy.test:8000/login"
+                href="http://civil.zengfy.top:8000/login"
                 className="flex-1 text-center py-2 rounded-lg bg-slate-100 text-slate-800 text-xs font-bold"
               >
                 লগইন

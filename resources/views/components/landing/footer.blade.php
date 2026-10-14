@@ -30,10 +30,10 @@
             <div>
                 <h3 class="text-white font-bold text-xs sm:text-sm mb-4 tracking-wider uppercase">Operating Systems</h3>
                 <ul class="space-y-1.5 text-xs font-medium">
-                    <li><a href="http://school.zengfy.test:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">School ERP Suite</a></li>
-                    <li><a href="http://pos.zengfy.test:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">POS Retail & Inventory</a></li>
-                    <li><a href="http://law.zengfy.test:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Legal Case Management</a></li>
-                    <li><a href="http://social.zengfy.test:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Social Network Feed</a></li>
+                    <li><a href="http://school.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">School ERP Suite</a></li>
+                    <li><a href="http://pos.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">POS Retail & Inventory</a></li>
+                    <li><a href="http://law.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Legal Case Management</a></li>
+                    <li><a href="http://social.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Social Network Feed</a></li>
                     <li><a href="http://ecommerce.zengfy.test:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">E-Commerce Engine</a></li>
                 </ul>
             </div>

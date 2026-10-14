@@ -85,7 +85,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 6. Zengfy Social Landing UI/UX & Component Suite (`social.zengfy.test:8000`)
+### 6. Zengfy Social Landing UI/UX & Component Suite (`social.zengfy.top:8000`)
 
 #### 6.1 Visual Aesthetics & Glassmorphism
 - **Base Canvas:** `#F8FAFC` slate canvas with multi-layered ambient blur orbs:
@@ -117,7 +117,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 7. Zengfy School Design System & Component Library (`school.zengfy.test:8000`)
+### 7. Zengfy School Design System & Component Library (`school.zengfy.top:8000`)
 
 #### 7.1 Palette & Aesthetic
 - **Canvas:** `#F8FAFC` Slate canvas with subtle radial dot matrix.
@@ -156,19 +156,19 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 8. Zengfy POS Design System (`pos.zengfy.test:8000`)
+### 8. Zengfy POS Design System (`pos.zengfy.top:8000`)
 - **Palette:** Amber Gold (`#F59E0B`), Deep Slate Navy (`#0F172A`), Crisp White (`#FFFFFF`).
 - **Components:** `POSNavbar`, `POSHeroSection`, `BoutiquePosSimulator` (Matrix barcode scan, live thermal print slip, bKash Baki Khata collection SMS), `RoleJourneyTabs`, `POSPillarsSection`, `PricingOffersSection`, `POSFooter`.
 
 ---
 
-### 9. Zengfy Law Design System (`law.zengfy.test:8000`)
+### 9. Zengfy Law Design System (`law.zengfy.top:8000`)
 - **Palette:** Royal Heritage Burgundy (`#881337`), Antique Gold (`#D97706`), Parchment Ivory (`#FAFAF9`).
 - **Components:** `LawNavbar`, `LawHeroSection`, `CauseListSimulator` (Case cause list search, bench tracking, Vakalatnama preview, client SMS dispatch), `RoleJourneyTabs`, `LawPillarsSection`, `PricingOffersSection`, `LawFooter`.
 
 ---
 
-### 10. Zengfy Civil Design System (`civil.zengfy.test:8000`)
+### 10. Zengfy Civil Design System (`civil.zengfy.top:8000`)
 - **Palette:** Blueprint Cyan (`#0891B2`), Steel Slate (`#1E293B`), Crisp Graph White (`#FAFAFA`).
 - **Components:**
   1. `CivilNavbar.jsx`: Blueprint Cyan badge and ecosystem Waffle launcher modal.
@@ -181,7 +181,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 11. Zengfy NGO Design System (`ngo.zengfy.test:8000`)
+### 11. Zengfy NGO Design System (`ngo.zengfy.top:8000`)
 - **Palette:** Humanitarian Teal (`#0D9488`), Hope Coral Rose (`#F43F5E`), Clean Slate (`#FAFAFA`).
 - **Components:**
   1. `NGONavbar.jsx`: Humanitarian Teal badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
@@ -194,7 +194,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 12. Zengfy Rent Design System (`rent.zengfy.test:8000`)
+### 12. Zengfy Rent Design System (`rent.zengfy.top:8000`)
 - **Palette:** Hyperlocal Indigo (`#4338CA`), GPS Emerald (`#10B981`), Clean Frost Slate (`#FAFAFA`).
 - **Components:**
   1. `RentNavbar.jsx`: Hyperlocal Indigo badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
@@ -207,7 +207,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 13. Zengfy Hotel Design System (`hotel.zengfy.test:8000`)
+### 13. Zengfy Hotel Design System (`hotel.zengfy.top:8000`)
 - **Palette:** Luxury Champagne Gold (`#B45309` / `#D97706`), Midnight Navy (`#0A192F` / `#0F172A`), Crisp Pearl White (`#FAFAFA`).
 - **Components:**
   1. `HotelNavbar.jsx`: Champagne Gold badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
@@ -222,7 +222,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 14. Zengfy Shop Design System (`shop.zengfy.test:8000`)
+### 14. Zengfy Shop Design System (`shop.zengfy.top:8000`)
 - **Palette:** Sunset Orange (`#EA580C` / `#F97316`), Cyber Violet (`#7C3AED` / `#8B5CF6`), Crisp Canvas (`#FAFAFA`).
 - **Components:** `ShopNavbar`, `ShopHeroSection`, `AntiFraudCodReturnSimulator` (Customer risk presets, courier score analysis, green pass vs red COD advance alert, live shipping label generator), `RoleJourneyTabs`, `ShopPillarsSection`, `PricingOffersSection`, `ShopFooter`.
 
@@ -285,5 +285,3 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
   5. `SchedulePillarsSection.jsx`: 4 Sovereign pillars (Native bKash/Nagad Consultation Fees, Automated SMS & WhatsApp No-Show Prevention, Two-Way Google Calendar Sync, Zero Per-Booking Platform Commission).
   6. `PricingOffersSection.jsx`: 3 Commercial tiers (Solo Pro SaaS ৳৬০০/মাস, Chamber Lifetime License ৳৪,৫০০ এককালীন, Enterprise Clinic & Firm Suite Contact Sales) + FAQ accordion.
   7. `ScheduleFooter.jsx`: WCAG 2.1 AA compliant footer with language switcher `[ 🇧🇩 বাংলা | 🇬🇧 English ]` and sovereign directory.
-
-

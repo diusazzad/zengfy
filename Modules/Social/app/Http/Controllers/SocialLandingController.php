@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class SocialLandingController extends Controller
 {
     /**
-     * Web Entrypoint for Zengfy Social Product Landing (http://social.zengfy.test:8000/).
+     * Web Entrypoint for Zengfy Social Product Landing (http://social.zengfy.top:8000/).
      * Returns the reactive White Glassmorphic React 19 app shell with initialData for SSR,
      * or returns the pure JSON payload for API requests.
      */

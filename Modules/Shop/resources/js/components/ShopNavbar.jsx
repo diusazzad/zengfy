@@ -2,15 +2,15 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.test:8000', icon: '🌐' },
-  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.test:8000', icon: '👥' },
-  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.test:8000', icon: '🎓' },
-  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.test:8000', icon: '🛍️' },
-  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.test:8000', icon: '⚖️' },
-  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.test:8000', icon: '📐' },
-  { name: 'Zengfy NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.test:8000', icon: '🤝' },
-  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.test:8000', icon: '🔑' },
-  { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.test:8000', icon: '🏨' },
-  { name: 'Zengfy Commerce', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.test:8000', icon: '🛒', current: true },
+  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
+  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
+  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
+  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
+  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
+  { name: 'Zengfy NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝' },
+  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
+  { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
+  { name: 'Zengfy Commerce', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒', current: true },
   { name: 'Zengfy Skill', tag: 'Career & Certs', url: 'http://skill.zengfy.test:8000', icon: '🚀' },
   { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.test:8000', icon: '✍️' },
   { name: 'Zengfy Habit', tag: '5 Daily Prayers', url: 'http://habit.zengfy.test:8000', icon: '⚡' },
@@ -38,7 +38,7 @@ export default function ShopNavbar({ brand = {} }) {
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Badge */}
           <div className="flex items-center gap-3">
-            <a href="http://shop.zengfy.test:8000" className="flex items-center gap-2.5 group">
+            <a href="http://shop.zengfy.top:8000" className="flex items-center gap-2.5 group">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-600 via-orange-500 to-violet-600 flex items-center justify-center text-white shadow-md shadow-orange-600/20 group-hover:scale-105 transition-all">
                 <span className="text-xl">🛒</span>
               </div>
@@ -137,7 +137,7 @@ export default function ShopNavbar({ brand = {} }) {
 
             {/* Central SSO Login Button */}
             <a
-              href="http://zengfy.test:8000/login?continue=http%3A%2F%2Fshop.zengfy.test%3A8000%2F"
+              href="http://zengfy.test:8000/login?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
               className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-orange-700 hover:bg-orange-50/80 border border-slate-200/80 transition-all"
             >
               লগইন / SSO
@@ -145,7 +145,7 @@ export default function ShopNavbar({ brand = {} }) {
 
             {/* Main CTA */}
             <a
-              href="http://zengfy.test:8000/register?continue=http%3A%2F%2Fshop.zengfy.test%3A8000%2F"
+              href="http://zengfy.test:8000/register?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
               className="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-orange-600 via-orange-500 to-violet-600 hover:from-orange-700 hover:to-violet-700 shadow-md shadow-orange-600/25 hover:shadow-lg hover:shadow-orange-600/35 transition-all transform active:scale-95"
             >
               ফ্রি ট্রায়াল শুরু করুন

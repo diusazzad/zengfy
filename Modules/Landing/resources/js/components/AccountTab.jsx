@@ -44,7 +44,7 @@ export default function AccountTab({ auth = {}, links = {} }) {
                             </a>
 
                             <a
-                                href={links.social || "http://social.zengfy.test:8000"}
+                                href={links.social || "http://social.zengfy.top:8000"}
                                 className="w-full py-3 px-5 rounded-xl bg-white/[0.05] hover:bg-white/[0.08] border border-white/10 text-gray-200 font-bold text-xs flex items-center justify-center gap-2 transition"
                             >
                                 <span>Go to Zengfy Social Hyperlocal Feed</span>

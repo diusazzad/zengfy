@@ -6,7 +6,7 @@ export default function Footer({ links = {} }) {
         <footer role="contentinfo" className="mt-12 pt-12 pb-16 border-t border-slate-200/70 text-xs text-slate-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-200/50">
-                    
+
                     {/* Brand Info */}
                     <div className="flex items-center gap-3">
                         <div aria-hidden="true" className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-black text-lg text-white shadow-xs">
@@ -28,13 +28,13 @@ export default function Footer({ links = {} }) {
                             <Smartphone aria-hidden="true" className="w-3.5 h-3.5 text-emerald-600" />
                             <span>Android APK</span>
                         </a>
-                        <a href={links.social || "http://social.zengfy.test:8000"} className="hover:text-blue-600 transition">
+                        <a href={links.social || "http://social.zengfy.top:8000"} className="hover:text-blue-600 transition">
                             Zengfy Social
                         </a>
-                        <a href={links.school || "http://school.zengfy.test:8000"} className="hover:text-blue-600 transition">
+                        <a href={links.school || "http://school.zengfy.top:8000"} className="hover:text-blue-600 transition">
                             Zengfy School
                         </a>
-                        <a href={links.shop || "http://shop.zengfy.test:8000"} className="hover:text-blue-600 transition">
+                        <a href={links.shop || "http://shop.zengfy.top:8000"} className="hover:text-blue-600 transition">
                             Zengfy Shop
                         </a>
                         <a

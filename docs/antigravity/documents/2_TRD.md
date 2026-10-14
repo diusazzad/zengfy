@@ -103,7 +103,7 @@ The endpoint `GET /api/v1/ecosystem/landing` serves identical JSON metadata for 
 
 ---
 
-### 6. Zengfy Social Module Technical Architecture (`social.zengfy.test:8000`)
+### 6. Zengfy Social Module Technical Architecture (`social.zengfy.top:8000`)
 
 #### 6.1 Route Topology & Single-Module Isolation
 All bloated/crashing internal routes inside `Modules/Social/routes/web.php` and `api.php` were sanitized. Only the pure landing and public data routes are registered:
@@ -155,7 +155,7 @@ Lightweight 30-line HTML5 mount shell:
 
 ---
 
-### 7. Zengfy School Module Technical Architecture (`school.zengfy.test:8000`)
+### 7. Zengfy School Module Technical Architecture (`school.zengfy.top:8000`)
 
 #### 7.1 Route Topology & Single-Module Isolation
 All legacy/crashing routes inside `Modules/School/routes/web.php` and `api.php` were cleanly sanitized, mirroring the clean slate architecture:
@@ -206,5 +206,3 @@ All legacy/crashing routes inside `Modules/School/routes/web.php` and `api.php` 
 
 #### 7.5 Production Build Status
 - **Vite 6 + React 19 + Tailwind CSS v4:** Compiled successfully (`✓ built in 28.78s`, 2,055 modules, zero errors).
-
-

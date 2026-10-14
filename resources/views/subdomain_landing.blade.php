@@ -818,35 +818,35 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Legal Vault & Cases</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">NID Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
@@ -1408,35 +1408,35 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-amber-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
@@ -1882,35 +1882,35 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-cyan-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-cyan-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-cyan-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
@@ -2395,42 +2395,42 @@
                         <p class="text-[10px] text-indigo-400 mt-1">Journalism & Reader ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                         <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                         <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                         <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.top:7000' : 'https://hotel.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                         <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
@@ -2904,42 +2904,42 @@
                             <p class="text-[10px] text-violet-400 mt-1">Bootcamps & LMS ERP</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                             <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                             <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                             <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.top:7000' : 'https://hotel.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                             <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
@@ -3408,49 +3408,49 @@
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.test:7000' : 'https://civil.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://civil.zengfy.top:7000' : 'https://civil.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-amber-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-amber-500/10">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏗️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Civil</h3>
                             <p class="text-[10px] text-amber-400 mt-1">Engineering ERP</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                             <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                             <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                             <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.top:7000' : 'https://hotel.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-emerald-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                             <p class="text-[10px] text-gray-400 mt-1">ERP & ZengPay</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
@@ -3881,42 +3881,42 @@
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.test:7000' : 'https://hotel.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://hotel.zengfy.top:7000' : 'https://hotel.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-emerald-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-emerald-500/10">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏨</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Hotel</h3>
                             <p class="text-[10px] text-emerald-400 mt-1">ERP & ZengPay Coin</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                             <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                             <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                             <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-purple-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Social</h3>
@@ -4393,35 +4393,35 @@
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.test:7000' : 'https://rent.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://rent.zengfy.top:7000' : 'https://rent.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-purple-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-purple-500/10">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔑</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Rent</h3>
                             <p class="text-[10px] text-purple-400 mt-1">Tenant & Radius Map</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏫</span>
                             <h3 class="text-xs font-bold text-white">Zengfy School</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Academic ERP</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-amber-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">⚖️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Law</h3>
                             <p class="text-[10px] text-gray-400 mt-1">VakilChamber & Vault</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-cyan-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛒</span>
                             <h3 class="text-xs font-bold text-white">Zengfy POS</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Retail & Inventory</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Social</h3>

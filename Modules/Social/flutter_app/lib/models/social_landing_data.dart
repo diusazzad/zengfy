@@ -21,10 +21,14 @@ class SocialLandingData {
     this.isLiveApi = false,
   });
 
-  factory SocialLandingData.fromJson(Map<String, dynamic> json, {bool isLive = true}) {
+  factory SocialLandingData.fromJson(
+    Map<String, dynamic> json, {
+    bool isLive = true,
+  }) {
     final data = json['data'] as Map<String, dynamic>? ?? json;
 
-    final brandJson = (data['brand'] ?? data['platform']) as Map<String, dynamic>? ?? {};
+    final brandJson =
+        (data['brand'] ?? data['platform']) as Map<String, dynamic>? ?? {};
     final heroJson = data['hero'] as Map<String, dynamic>?;
     final statsJson = data['stats'] as Map<String, dynamic>? ?? {};
     final sosJson = data['sos_telemetry'] as Map<String, dynamic>? ?? {};
@@ -35,7 +39,9 @@ class SocialLandingData {
     streamsJson.forEach((key, list) {
       if (list is List) {
         parsedStreams[key] = list
-            .map((item) => SocialStreamPost.fromJson(item as Map<String, dynamic>))
+            .map(
+              (item) => SocialStreamPost.fromJson(item as Map<String, dynamic>),
+            )
             .toList();
       }
     });
@@ -49,7 +55,9 @@ class SocialLandingData {
         ...parsedStreams['friends'] ?? <SocialStreamPost>[],
         ...parsedStreams['emergency_sos'] ?? <SocialStreamPost>[],
       ];
-      posts = allStreamPosts.map((post) => SamplePost.fromStreamPost(post)).toList();
+      posts = allStreamPosts
+          .map((post) => SamplePost.fromStreamPost(post))
+          .toList();
     } else if (data['sample_posts'] is List) {
       posts = (data['sample_posts'] as List)
           .map((item) => SamplePost.fromJson(item as Map<String, dynamic>))
@@ -80,16 +88,14 @@ class SocialLandingData {
         name: 'Zengfy Social',
         brand: 'Zengfy.Social',
         tagline: 'Real People. Real Communities. Zero Noise.',
-        description:
-            'The next-generation sovereign social network for Bangladesh. Verified neighborhood discussions, civic emergency SOS beacons, and chronological friend timelines.',
+        description: 'The next-generation sovereign social network for Bangladesh. Verified neighborhood discussions, civic emergency SOS beacons, and chronological friend timelines.',
         version: '1.0.0',
         apiVersion: 'v1',
       ),
       hero: HeroInfo(
         badge: "🇧🇩 Bangladesh's Sovereign NID-Verified Social Network",
         title: "Real People. Real Communities. Zero Noise.",
-        subtitle:
-            "Connect with verified neighbors, monitor ward-level emergency beacons, and interact without algorithm distortion or corporate data mining.",
+        subtitle: "Connect with verified neighbors, monitor ward-level emergency beacons, and interact without algorithm distortion or corporate data mining.",
         highlights: [
           HeroHighlight(icon: "🛡️", text: "Smart NID Verified"),
           HeroHighlight(icon: "🤖", text: "Zero Bot Tolerance"),
@@ -121,8 +127,7 @@ class SocialLandingData {
             badge: 'Open Source',
             verified: true,
             time: '10m ago',
-            text:
-                'Decentralized civic tech is transforming public discourse across Bangladesh. NID verification completely eliminates anonymous bot manipulation. Pure signal, zero noise.',
+            text: 'Decentralized civic tech is transforming public discourse across Bangladesh. NID verification completely eliminates anonymous bot manipulation. Pure signal, zero noise.',
             reactions: {'❤️': 48, '🔥': 16, '💡': 12},
             commentsCount: 14,
           ),
@@ -136,8 +141,7 @@ class SocialLandingData {
             badge: 'Civic Project',
             verified: true,
             time: '25m ago',
-            text:
-                'Neighborhood rooftop solar mesh project starting this weekend. Every verified resident can track kilowatt savings directly through their ward ledger! ☀️🌱',
+            text: 'Neighborhood rooftop solar mesh project starting this weekend. Every verified resident can track kilowatt savings directly through their ward ledger! ☀️🌱',
             reactions: {'❤️': 39, '👏': 24},
             commentsCount: 8,
           ),
@@ -153,8 +157,7 @@ class SocialLandingData {
             badge: 'Civic Advisory',
             verified: true,
             time: '15m ago',
-            text:
-                'Road maintenance underway along Road 103 until 4:00 PM. Please use alternate bypass lane through Lake Drive. Safe travels to all commuters!',
+            text: 'Road maintenance underway along Road 103 until 4:00 PM. Please use alternate bypass lane through Lake Drive. Safe travels to all commuters!',
             reactions: {'👏': 52, '❤️': 19},
             commentsCount: 22,
           ),
@@ -170,8 +173,7 @@ class SocialLandingData {
             badge: 'Close Friends',
             verified: true,
             time: '1h ago',
-            text:
-                'Morning cycling ride around Dhanmondi Lake was super peaceful! Ready to plan our weekend group meetup. Who is in? 🚴‍♂️☕',
+            text: 'Morning cycling ride around Dhanmondi Lake was super peaceful! Ready to plan our weekend group meetup. Who is in? 🚴‍♂️☕',
             reactions: {'❤️': 26, '🔥': 9},
             commentsCount: 11,
           ),
@@ -187,8 +189,7 @@ class SocialLandingData {
             badge: 'Active SOS Beacon',
             verified: true,
             time: 'Active Now',
-            text:
-                'Simulated Drill: 1-Tap SOS Beacon triggered at Lake Road. 18 Verified nearby responders received push alert within 3.2 seconds. Mesh radius: 750 meters.',
+            text: 'Simulated Drill: 1-Tap SOS Beacon triggered at Lake Road. 18 Verified nearby responders received push alert within 3.2 seconds. Mesh radius: 750 meters.',
             reactions: {'🚨': 64, '🛡️': 38},
             commentsCount: 19,
           ),
@@ -199,40 +200,35 @@ class SocialLandingData {
           key: "zero_algorithms",
           title: "Zero Algorithmic Rage-Bait",
           tag: "Pure Chronology",
-          description:
-              "No foreign AI algorithms manipulating your emotions or selling your attention. Experience pure, chronological posts from real people you care about.",
+          description: "No foreign AI algorithms manipulating your emotions or selling your attention. Experience pure, chronological posts from real people you care about.",
           icon: "sparkles",
         ),
         SocialFeature(
           key: "verified_identity",
           title: "Sovereign Verified Identity",
           tag: "Zero Bot Farms",
-          description:
-              "Every citizen profile is cryptographically verified against national records. Complete elimination of anonymous troll armies, fake accounts, and astroturfing.",
+          description: "Every citizen profile is cryptographically verified against national records. Complete elimination of anonymous troll armies, fake accounts, and astroturfing.",
           icon: "badge-check",
         ),
         SocialFeature(
           key: "hyperlocal_mesh",
           title: "Hyperlocal Ward Geolocation",
           tag: "4,554 Wards",
-          description:
-              "Automatically connects you to your union or ward community for localized civic notices, road diversions, emergency SOS alerts, and neighborhood cooperation.",
+          description: "Automatically connects you to your union or ward community for localized civic notices, road diversions, emergency SOS alerts, and neighborhood cooperation.",
           icon: "globe-alt",
         ),
         SocialFeature(
           key: "encrypted_circles",
           title: "End-to-End Encrypted Circles",
           tag: "256-Bit Vault",
-          description:
-              "Private group discussions and direct citizen messaging secured with client-side zero-knowledge encryption that cannot be scraped by advertising brokers.",
+          description: "Private group discussions and direct citizen messaging secured with client-side zero-knowledge encryption that cannot be scraped by advertising brokers.",
           icon: "chat-bubble-left-right",
         ),
       ],
       samplePosts: [
         SamplePost(
           id: "w1",
-          content:
-              "Decentralized civic tech is transforming public discourse across Bangladesh. NID verification completely eliminates anonymous bot manipulation. Pure signal, zero noise.",
+          content: "Decentralized civic tech is transforming public discourse across Bangladesh. NID verification completely eliminates anonymous bot manipulation. Pure signal, zero noise.",
           wardCode: "Dhaka Division",
           likesCount: 48,
           commentsCount: 14,
@@ -251,8 +247,7 @@ class SocialLandingData {
         ),
         SamplePost(
           id: "n1",
-          content:
-              "Road maintenance underway along Road 103 until 4:00 PM. Please use alternate bypass lane through Lake Drive. Safe travels to all commuters!",
+          content: "Road maintenance underway along Road 103 until 4:00 PM. Please use alternate bypass lane through Lake Drive. Safe travels to all commuters!",
           wardCode: "Ward 19, Gulshan-2",
           likesCount: 19,
           commentsCount: 22,
@@ -272,8 +267,8 @@ class SocialLandingData {
       ],
       links: SocialLinks(
         home: "http://zengfy.test:8000/",
-        social: "http://social.zengfy.test:8000/",
-        feed: "http://social.zengfy.test:8000/",
+        social: "http://social.zengfy.top:8000/",
+        feed: "http://social.zengfy.top:8000/",
         login: "http://zengfy.test:8000/login",
         register: "http://zengfy.test:8000/register",
         account: "http://zengfy.test:8000/account",
@@ -302,8 +297,13 @@ class PlatformInfo {
   factory PlatformInfo.fromJson(Map<String, dynamic> json) {
     return PlatformInfo(
       name: json['name'] as String? ?? 'Zengfy Social',
-      brand: json['brand'] as String? ?? json['name'] as String? ?? 'Zengfy.Social',
-      tagline: json['tagline'] as String? ?? 'Real People. Real Communities. Zero Noise.',
+      brand:
+          json['brand'] as String? ??
+          json['name'] as String? ??
+          'Zengfy.Social',
+      tagline:
+          json['tagline'] as String? ??
+          'Real People. Real Communities. Zero Noise.',
       description: json['description'] as String? ?? '',
       version: json['version'] as String? ?? '1.0.0',
       apiVersion: json['api_version'] as String? ?? 'v1',
@@ -326,9 +326,11 @@ class HeroInfo {
 
   factory HeroInfo.fromJson(Map<String, dynamic> json) {
     return HeroInfo(
-      badge: json['badge'] as String? ??
+      badge:
+          json['badge'] as String? ??
           "🇧🇩 Bangladesh's Sovereign NID-Verified Social Network",
-      title: json['title'] as String? ??
+      title:
+          json['title'] as String? ??
           "Real People. Real Communities. Zero Noise.",
       subtitle: json['subtitle'] as String? ?? '',
       highlights: (json['highlights'] as List<dynamic>? ?? [])
@@ -340,9 +342,10 @@ class HeroInfo {
   factory HeroInfo.fromBrand(Map<String, dynamic> brand) {
     return HeroInfo(
       badge: "🇧🇩 Sovereign NID-Verified Network",
-      title: brand['tagline'] as String? ?? "Real People. Real Communities. Zero Noise.",
-      subtitle: brand['description'] as String? ??
-          "The next-generation sovereign social network for Bangladesh. Verified neighborhood discussions, civic emergency SOS beacons, and chronological friend timelines.",
+      title:
+          brand['tagline'] as String? ??
+          "Real People. Real Communities. Zero Noise.",
+      subtitle: brand['description'] as String? ?? "The next-generation sovereign social network for Bangladesh. Verified neighborhood discussions, civic emergency SOS beacons, and chronological friend timelines.",
       highlights: [
         HeroHighlight(icon: "🛡️", text: "Smart NID Verified"),
         HeroHighlight(icon: "🤖", text: "Zero Bot Tolerance"),
@@ -382,12 +385,14 @@ class SocialStats {
 
   factory SocialStats.fromJson(Map<String, dynamic> json) {
     return SocialStats(
-      citizensCount: (json['verified_citizens'] as num?)?.toInt() ??
+      citizensCount:
+          (json['verified_citizens'] as num?)?.toInt() ??
           (json['citizens_count'] as num?)?.toInt() ??
           1480,
       totalWards: (json['total_wards'] as num?)?.toInt() ?? 4554,
       safetyIndex: json['safety_index']?.toString() ?? '99.4%',
-      activeDistricts: (json['active_circles'] as num?)?.toInt() ??
+      activeDistricts:
+          (json['active_circles'] as num?)?.toInt() ??
           (json['active_districts'] as num?)?.toInt() ??
           1280,
     );
@@ -410,8 +415,10 @@ class SosTelemetry {
   factory SosTelemetry.fromJson(Map<String, dynamic> json) {
     return SosTelemetry(
       averageResponseTime: json['average_response_time'] as String? ?? '3.2s',
-      activeRespondersOnline: (json['active_responders_online'] as num?)?.toInt() ?? 34,
-      broadcastRadiusMeters: (json['broadcast_radius_meters'] as num?)?.toInt() ?? 750,
+      activeRespondersOnline:
+          (json['active_responders_online'] as num?)?.toInt() ?? 34,
+      broadcastRadiusMeters:
+          (json['broadcast_radius_meters'] as num?)?.toInt() ?? 750,
       status: json['status'] as String? ?? 'Active Sentinel Mesh',
     );
   }
@@ -474,7 +481,9 @@ class SocialStreamPost {
 
   factory SocialStreamPost.fromJson(Map<String, dynamic> json) {
     final rawReactions = json['reactions'] as Map<String, dynamic>? ?? {};
-    final reactions = rawReactions.map((k, v) => MapEntry(k, (v as num).toInt()));
+    final reactions = rawReactions.map(
+      (k, v) => MapEntry(k, (v as num).toInt()),
+    );
 
     return SocialStreamPost(
       id: json['id']?.toString() ?? '',
@@ -524,12 +533,20 @@ class SamplePost {
     return SamplePost(
       id: json['id'] as String? ?? '',
       content: json['content'] as String? ?? json['text'] as String? ?? '',
-      wardCode: json['ward_code'] as String? ?? json['ward'] as String? ?? 'WARD-DHAKA-19',
+      wardCode:
+          json['ward_code'] as String? ??
+          json['ward'] as String? ??
+          'WARD-DHAKA-19',
       likesCount: (json['likes_count'] as num?)?.toInt() ?? 0,
       commentsCount: (json['comments_count'] as num?)?.toInt() ?? 0,
       sharesCount: (json['shares_count'] as num?)?.toInt() ?? 0,
-      createdAt: json['created_at'] as String? ?? json['time'] as String? ?? 'Just now',
-      author: AuthorInfo.fromJson(json['author'] as Map<String, dynamic>? ?? {}),
+      createdAt:
+          json['created_at'] as String? ??
+          json['time'] as String? ??
+          'Just now',
+      author: AuthorInfo.fromJson(
+        json['author'] as Map<String, dynamic>? ?? {},
+      ),
       badge: json['badge'] as String? ?? 'Verified',
       initials: json['initials'] as String? ?? 'ZC',
     );
@@ -543,7 +560,11 @@ class SamplePost {
       id: post.id,
       content: post.text,
       wardCode: post.ward,
-      likesCount: likes > 0 ? likes : (post.reactions.values.isNotEmpty ? post.reactions.values.first : 12),
+      likesCount: likes > 0
+          ? likes
+          : (post.reactions.values.isNotEmpty
+                ? post.reactions.values.first
+                : 12),
       commentsCount: post.commentsCount,
       sharesCount: flames + claps,
       createdAt: post.time,
@@ -607,10 +628,11 @@ class SocialLinks {
   factory SocialLinks.fromJson(Map<String, dynamic> json) {
     return SocialLinks(
       home: json['home'] as String? ?? 'http://zengfy.test:8000/',
-      social: json['social'] as String? ?? 'http://social.zengfy.test:8000/',
-      feed: json['feed'] as String? ?? 'http://social.zengfy.test:8000/',
+      social: json['social'] as String? ?? 'http://social.zengfy.top:8000/',
+      feed: json['feed'] as String? ?? 'http://social.zengfy.top:8000/',
       login: json['login'] as String? ?? 'http://zengfy.test:8000/login',
-      register: json['register'] as String? ?? 'http://zengfy.test:8000/register',
+      register:
+          json['register'] as String? ?? 'http://zengfy.test:8000/register',
       account: json['account'] as String? ?? 'http://zengfy.test:8000/account',
     );
   }

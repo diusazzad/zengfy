@@ -24,21 +24,21 @@ export default function SocialNavbar({ links = {}, onNavigateSection }) {
     }, []);
 
     const apps = [
-        { name: 'Social', icon: '🌐', url: links.social || 'http://social.zengfy.test:8000/', category: 'Civic Mesh', active: true },
-        { name: 'School', icon: '🏫', url: 'http://school.zengfy.test:8000/', category: 'Academic ERP' },
-        { name: 'POS', icon: '🛒', url: 'http://pos.zengfy.test:8000/', category: 'Retail & Stock' },
-        { name: 'Law', icon: '⚖️', url: 'http://law.zengfy.test:8000/', category: 'Legal Vault' },
-        { name: 'Rent', icon: '🏠', url: 'http://rent.zengfy.test:8000/', category: 'Property Hub' },
-        { name: 'Hotel', icon: '🏨', url: 'http://hotel.zengfy.test:8000/', category: 'Hospitality' },
-        { name: 'Commerce', icon: '🛍️', url: 'http://shop.zengfy.test:8000/', category: 'Online Store' },
-        { name: 'NGO', icon: '❤️', url: 'http://ngo.zengfy.test:8000/', category: 'Charity Cloud' },
+        { name: 'Social', icon: '🌐', url: links.social || 'http://social.zengfy.top:8000/', category: 'Civic Mesh', active: true },
+        { name: 'School', icon: '🏫', url: 'http://school.zengfy.top:8000/', category: 'Academic ERP' },
+        { name: 'POS', icon: '🛒', url: 'http://pos.zengfy.top:8000/', category: 'Retail & Stock' },
+        { name: 'Law', icon: '⚖️', url: 'http://law.zengfy.top:8000/', category: 'Legal Vault' },
+        { name: 'Rent', icon: '🏠', url: 'http://rent.zengfy.top:8000/', category: 'Property Hub' },
+        { name: 'Hotel', icon: '🏨', url: 'http://hotel.zengfy.top:8000/', category: 'Hospitality' },
+        { name: 'Commerce', icon: '🛍️', url: 'http://shop.zengfy.top:8000/', category: 'Online Store' },
+        { name: 'NGO', icon: '❤️', url: 'http://ngo.zengfy.top:8000/', category: 'Charity Cloud' },
         { name: 'Account', icon: '🛡️', url: links.account || 'http://zengfy.test:8000/account', category: 'Citizen SSO' },
     ];
 
     return (
         <header role="banner" className="sticky top-0 z-50 glass-nav transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
-                
+
                 {/* Brand Logo */}
                 <a href={links.social || "/"} aria-label="Zengfy Social Home" className="flex items-center gap-3 group shrink-0">
                     <div aria-hidden="true" className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-black text-xl text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
@@ -101,7 +101,7 @@ export default function SocialNavbar({ links = {}, onNavigateSection }) {
 
                 {/* Right: Google-style 9-Dot Waffle Menu + Sign In CTA */}
                 <div className="flex items-center gap-3">
-                    
+
                     {/* 9-Dot Waffle Apps Menu Wrapper */}
                     <div className="relative" ref={waffleRef}>
                         <button

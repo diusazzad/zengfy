@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class SchoolLandingController extends Controller
 {
     /**
-     * Web Entrypoint for Zengfy School Product Landing (http://school.zengfy.test:8000/).
+     * Web Entrypoint for Zengfy School Product Landing (http://school.zengfy.top:8000/).
      * Returns the reactive White Glassmorphic React 19 app shell with initialData for SSR,
      * or returns the pure JSON payload for API requests.
      */

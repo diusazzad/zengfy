@@ -73,8 +73,8 @@ Zengfy ইকোসিস্টেমের জন্য টেক লিড **�
 | **Landing Page** | `http://zengfy.test:7000/` | ✅ PASS | `landing_page_1791336596838.png` | বেন্টো গ্রিড, নেভবার ও এসইও লেআউট নিখুঁতভাবে রেন্ডার হয়েছে। |
 | **Auth Flow** | `http://zengfy.test:7000/login` | ✅ PASS | Live Session | সফলভাবে লগইন সম্পন্ন এবং `localStorage` এ টোকেন সংরক্ষিত। |
 | **Account Hub** | `http://zengfy.test:7000/account` | ✅ PASS | `account_overview_1791337317678.png`<br>`account_security_tabs_179133769040.png` | `#react-account-root` মাউন্ট সফল; ৪টি ট্যাব, ডিভাইস সেশন ও এনআইডি স্ট্যাটাস লাইভ। |
-| **Social Landing Page** | `http://social.zengfy.test:7000/about` | ✅ PASS | `social_hero_showcase_1791338498117.png`<br>`social_bento_grid_1791338503632.png`<br>`auth_modal_filled_1791338892257.png` | ডেডিকেটেড সোশ্যাল ল্যান্ডিং পেজ, লাইভ শোকেস ও এপিআই অথেনটিকেশন মোডাল ভেরিফাইড। |
-| **Social Feed & Chat** | `http://social.zengfy.test:7000/` | ✅ PASS | `social_feed_chat_1791337434073.png`<br>`social_feed_page_1791339312851.png` | `#react-feed-root` এবং ফ্লোটিং `#react-chat-root` লাইভ চ্যাট ড্রয়ার সফলভাবে ওপেন হয়েছে। |
+| **Social Landing Page** | `http://social.zengfy.top:7000/about` | ✅ PASS | `social_hero_showcase_1791338498117.png`<br>`social_bento_grid_1791338503632.png`<br>`auth_modal_filled_1791338892257.png` | ডেডিকেটেড সোশ্যাল ল্যান্ডিং পেজ, লাইভ শোকেস ও এপিআই অথেনটিকেশন মোডাল ভেরিফাইড। |
+| **Social Feed & Chat** | `http://social.zengfy.top:7000/` | ✅ PASS | `social_feed_chat_1791337434073.png`<br>`social_feed_page_1791339312851.png` | `#react-feed-root` এবং ফ্লোটিং `#react-chat-root` লাইভ চ্যাট ড্রয়ার সফলভাবে ওপেন হয়েছে। |
 
 ---
 
@@ -98,4 +98,3 @@ Agent 1 আর্কিটেকচার ও মাউন্ট ব্রিজ
 4. **স্টাইলিং ও থিম রুলস:**
    - ডার্ক থিম প্যালেট: `#0B0F17` (পৃষ্ঠা ব্যাকগ্রাউন্ড), `#121A29` (কার্ড সারফেস), `#1E293B` (বর্ডার), `#2563EB` (প্রাইমারি অ্যাকসেন্ট), `#06B6D4` (সায়ান গ্লো)।
    - বিল্ড চেক: এডিটের পর `npm run build` দিয়ে ০ এরর নিশ্চিত করা।
-

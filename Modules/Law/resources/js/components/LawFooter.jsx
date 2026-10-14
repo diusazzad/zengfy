@@ -41,8 +41,8 @@ export default function LawFooter({ brand, ecosystem = [] }) {
               <span className="px-2.5 py-1 rounded-md bg-rose-50 text-rose-900 font-bold border border-rose-200 cursor-default">
                 🇧🇩 বাংলা
               </span>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => alert('English interface version is active in settings.')}
                 className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200 border border-slate-200 transition-colors"
               >
@@ -113,25 +113,25 @@ export default function LawFooter({ brand, ecosystem = [] }) {
                 </a>
               </li>
               <li>
-                <a href="http://social.zengfy.test:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
+                <a href="http://social.zengfy.top:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
                   <span>Zengfy Social</span>
                   <span className="text-[10px] bg-sky-100 text-sky-700 px-1.5 py-0.5 rounded font-mono">NID</span>
                 </a>
               </li>
               <li>
-                <a href="http://school.zengfy.test:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
+                <a href="http://school.zengfy.top:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
                   <span>Zengfy School</span>
                   <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded font-mono">Edu</span>
                 </a>
               </li>
               <li>
-                <a href="http://pos.zengfy.test:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
+                <a href="http://pos.zengfy.top:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
                   <span>Zengfy POS</span>
                   <span className="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-mono">Retail</span>
                 </a>
               </li>
               <li>
-                <a href="http://law.zengfy.test:8000" className="text-rose-950 font-semibold flex items-center justify-between">
+                <a href="http://law.zengfy.top:8000" className="text-rose-950 font-semibold flex items-center justify-between">
                   <span>Zengfy Law</span>
                   <span className="text-[10px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded font-bold font-mono">Live</span>
                 </a>
@@ -150,7 +150,7 @@ export default function LawFooter({ brand, ecosystem = [] }) {
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               সুপ্রিম কোর্ট ও জেলা কজলিস্ট সার্ভার সিঙ্ক: সক্রিয়
             </span>
-            <a href="http://law.zengfy.test:8000/login" className="hover:text-rose-900 font-semibold">
+            <a href="http://law.zengfy.top:8000/login" className="hover:text-rose-900 font-semibold">
               আইনজীবী লগইন (SSO)
             </a>
           </div>

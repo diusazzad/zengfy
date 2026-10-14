@@ -159,8 +159,8 @@ export const FALLBACK_SOCIAL_DATA = {
     ],
     links: {
         home: "http://zengfy.test:8000/",
-        social: "http://social.zengfy.test:8000/",
-        feed: "http://social.zengfy.test:8000/",
+        social: "http://social.zengfy.top:8000/",
+        feed: "http://social.zengfy.top:8000/",
         login: "http://zengfy.test:8000/login",
         register: "http://zengfy.test:8000/register",
         account: "http://zengfy.test:8000/account",
@@ -192,7 +192,7 @@ export async function fetchSocialLandingData() {
     // 2. Fetch from API endpoint candidates
     const endpoints = [
         '/api/v1/social/landing',
-        'http://social.zengfy.test:8000/api/v1/social/landing',
+        'http://social.zengfy.top:8000/api/v1/social/landing',
         'http://zengfy.test:8000/api/v1/social/landing',
         'http://127.0.0.1:8000/api/v1/social/landing',
     ];

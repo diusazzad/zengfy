@@ -5,9 +5,9 @@ export default function POSFooter({ links = {} }) {
     return (
         <footer role="contentinfo" className="bg-slate-900 text-white pt-16 pb-12 border-t border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800 text-left">
-                    
+
                     {/* Brand Col */}
                     <div className="md:col-span-2 space-y-4">
                         <div className="flex items-center gap-3">
@@ -34,27 +34,27 @@ export default function POSFooter({ links = {} }) {
                         </h4>
                         <ul className="space-y-2 text-xs text-slate-400">
                             <li>
-                                <a href={links.social || "http://social.zengfy.test:8000/"} className="hover:text-amber-400 transition">
+                                <a href={links.social || "http://social.zengfy.top:8000/"} className="hover:text-amber-400 transition">
                                     Zengfy Social (নাগরিক নেটওয়ার্ক)
                                 </a>
                             </li>
                             <li>
-                                <a href={links.school || "http://school.zengfy.test:8000/"} className="hover:text-amber-400 transition">
+                                <a href={links.school || "http://school.zengfy.top:8000/"} className="hover:text-amber-400 transition">
                                     Zengfy School (ক্যাম্পাস ইআরপি)
                                 </a>
                             </li>
                             <li>
-                                <a href="http://pos.zengfy.test:8000/" className="hover:text-amber-400 transition font-bold text-amber-400">
+                                <a href="http://pos.zengfy.top:8000/" className="hover:text-amber-400 transition font-bold text-amber-400">
                                     Zengfy POS (ফ্যাশন রিটেইল ইআরপি)
                                 </a>
                             </li>
                             <li>
-                                <a href="http://shop.zengfy.test:8000/" className="hover:text-amber-400 transition">
+                                <a href="http://shop.zengfy.top:8000/" className="hover:text-amber-400 transition">
                                     Zengfy Commerce (অনলাইন শপ)
                                 </a>
                             </li>
                             <li>
-                                <a href="http://law.zengfy.test:8000/" className="hover:text-amber-400 transition">
+                                <a href="http://law.zengfy.top:8000/" className="hover:text-amber-400 transition">
                                     Zengfy Law (আইনি ভল্ট)
                                 </a>
                             </li>

@@ -28,4 +28,3 @@ void main() {
       expect(find.textContaining('Zengfy'), findsWidgets);
     });
   });
-}

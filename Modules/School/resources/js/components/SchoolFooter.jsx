@@ -3,22 +3,22 @@ import { ArrowUpRight, ShieldCheck, Heart } from 'lucide-react';
 
 export default function SchoolFooter({ links = {} }) {
     const ecosystemApps = [
-        { name: 'Zengfy School', url: links.school || 'http://school.zengfy.test:8000/', desc: 'Academic ERP' },
-        { name: 'Zengfy Social', url: 'http://social.zengfy.test:8000/', desc: 'Civic Mesh' },
-        { name: 'Zengfy POS', url: 'http://pos.zengfy.test:8000/', desc: 'Retail & Stock' },
-        { name: 'Zengfy Law', url: 'http://law.zengfy.test:8000/', desc: 'Legal Vault' },
-        { name: 'Zengfy Rent', url: 'http://rent.zengfy.test:8000/', desc: 'Property Hub' },
-        { name: 'Zengfy Hotel', url: 'http://hotel.zengfy.test:8000/', desc: 'Hospitality ERP' },
-        { name: 'Zengfy Commerce', url: 'http://shop.zengfy.test:8000/', desc: 'Online Store' },
-        { name: 'Zengfy NGO', url: 'http://ngo.zengfy.test:8000/', desc: 'Charity Cloud' },
+        { name: 'Zengfy School', url: links.school || 'http://school.zengfy.top:8000/', desc: 'Academic ERP' },
+        { name: 'Zengfy Social', url: 'http://social.zengfy.top:8000/', desc: 'Civic Mesh' },
+        { name: 'Zengfy POS', url: 'http://pos.zengfy.top:8000/', desc: 'Retail & Stock' },
+        { name: 'Zengfy Law', url: 'http://law.zengfy.top:8000/', desc: 'Legal Vault' },
+        { name: 'Zengfy Rent', url: 'http://rent.zengfy.top:8000/', desc: 'Property Hub' },
+        { name: 'Zengfy Hotel', url: 'http://hotel.zengfy.top:8000/', desc: 'Hospitality ERP' },
+        { name: 'Zengfy Commerce', url: 'http://shop.zengfy.top:8000/', desc: 'Online Store' },
+        { name: 'Zengfy NGO', url: 'http://ngo.zengfy.top:8000/', desc: 'Charity Cloud' },
     ];
 
     return (
         <footer role="contentinfo" className="mt-20 border-t border-slate-200/80 bg-white/70 backdrop-blur-xl relative z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12">
-                    
+
                     {/* Brand Meta (5 cols) */}
                     <div className="md:col-span-5">
                         <div className="flex items-center gap-3">

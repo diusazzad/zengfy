@@ -9,11 +9,11 @@
     $isSubdomain = ($currentHost !== $baseDomain && $currentHost !== 'localhost' && $currentHost !== '127.0.0.1');
 
     $currentUrl = request()->fullUrl();
-    $centralLoginUrl = $isSubdomain 
-        ? "{$centralBaseUrl}/login?continue=" . urlencode($currentUrl) 
+    $centralLoginUrl = $isSubdomain
+        ? "{$centralBaseUrl}/login?continue=" . urlencode($currentUrl)
         : "{$centralBaseUrl}/login";
-    $centralRegisterUrl = $isSubdomain 
-        ? "{$centralBaseUrl}/register?continue=" . urlencode($currentUrl) 
+    $centralRegisterUrl = $isSubdomain
+        ? "{$centralBaseUrl}/register?continue=" . urlencode($currentUrl)
         : "{$centralBaseUrl}/register";
     $ecosystemHomeUrl = "{$centralBaseUrl}/";
 @endphp
@@ -66,7 +66,7 @@
                         <span class="text-blue-400 font-bold group-hover:translate-x-1 transition-transform">→</span>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.test:7000' : 'https://school.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://school.zengfy.top:7000' : 'https://school.zengfy.top' }}"
                         class="p-3 min-h-[48px] rounded-xl hover:bg-white/5 flex items-center gap-3 transition-colors">
                         <span class="text-xl">🏫</span>
                         <div>
@@ -75,7 +75,7 @@
                         </div>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.test:7000' : 'https://pos.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://pos.zengfy.top:7000' : 'https://pos.zengfy.top' }}"
                         class="p-3 min-h-[48px] rounded-xl hover:bg-white/5 flex items-center gap-3 transition-colors">
                         <span class="text-xl">🛒</span>
                         <div>
@@ -84,7 +84,7 @@
                         </div>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.test:7000' : 'https://law.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://law.zengfy.top:7000' : 'https://law.zengfy.top' }}"
                         class="p-3 min-h-[48px] rounded-xl hover:bg-white/5 flex items-center gap-3 transition-colors">
                         <span class="text-xl">⚖️</span>
                         <div>
@@ -93,7 +93,7 @@
                         </div>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.test:7000' : 'https://social.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://social.zengfy.top:7000' : 'https://social.zengfy.top' }}"
                         class="p-3 min-h-[48px] rounded-xl hover:bg-white/5 flex items-center gap-3 transition-colors">
                         <span class="text-xl">🌐</span>
                         <div>
@@ -183,7 +183,7 @@
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">Company & Team</a>
         <a @click="mobileOpen = false" href="{{ route('terms') }}"
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">Terms & Conditions</a>
-        <a @click="mobileOpen = false" href="{{ route('faq') }}" 
+        <a @click="mobileOpen = false" href="{{ route('faq') }}"
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">FAQ</a>
         <div class="pt-3 border-t border-white/10">
             <a href="{{ $centralLoginUrl }}"

@@ -49,7 +49,7 @@ To ensure rock-solid stability, zero routing conflicts, and clean progress:
 
 ---
 
-### 6. Social Module Dedicated Landing (`social.zengfy.test:8000/`)
+### 6. Social Module Dedicated Landing (`social.zengfy.top:8000/`)
 
 #### 6.1 Vision & Benchmarks
 The Social Landing is the dedicated public front door for Bangladesh's sovereign social network, benchmarking the best of:
@@ -69,11 +69,11 @@ The Social Landing is the dedicated public front door for Bangladesh's sovereign
    - Zero Algorithmic Rage-Bait, Sovereign Verified Identity (NID backed), Hyperlocal Ward Geolocation, and End-to-End Encrypted Circles.
 4. **Single-Module Route Clean Slate:**
    - Stripped away legacy half-baked internal routes in `Modules/Social/routes/web.php` and `api.php`.
-   - Dedicated clean endpoints: `GET /` on `social.zengfy.test:8000`, redirect from `zengfy.test:8000/social`, and public REST endpoint `GET /api/v1/social/landing`.
+   - Dedicated clean endpoints: `GET /` on `social.zengfy.top:8000`, redirect from `zengfy.test:8000/social`, and public REST endpoint `GET /api/v1/social/landing`.
 
 ---
 
-### 7. School Module Dedicated Landing (`school.zengfy.test:8000/`)
+### 7. School Module Dedicated Landing (`school.zengfy.top:8000/`)
 
 #### 7.1 Vision & Benchmarks
 The School Landing is the dedicated public gateway for Bangladesh's sovereign educational management ecosystem, benchmarking global leaders (Toddle, ClassDojo, Brightwheel, PowerSchool) and custom-engineered for local institutions:
@@ -104,7 +104,7 @@ The School Landing is the dedicated public gateway for Bangladesh's sovereign ed
 
 ---
 
-### 8. POS Module Dedicated Landing (`pos.zengfy.test:8000/`)
+### 8. POS Module Dedicated Landing (`pos.zengfy.top:8000/`)
 
 #### 8.1 Vision & Target Retailers
 Dedicated retail management ERP for Bangladesh's boutique fashion showrooms, shopping mall retailers (e.g. Jamuna Future Park, Bashundhara City), and apparel brands:
@@ -114,14 +114,14 @@ Dedicated retail management ERP for Bangladesh's boutique fashion showrooms, sho
 
 ---
 
-### 9. Law Module Dedicated Landing (`law.zengfy.test:8000/`)
+### 9. Law Module Dedicated Landing (`law.zengfy.top:8000/`)
 
 #### 9.1 Vision & Legal Practice
 Dedicated digital chamber and court practice platform for Bangladesh Supreme Court and 64 District Court Advocates, clerks, and law firms:
 - **Pain Points Solved:** Eliminating missed hearing dates via automated daily court Cause List scraping, 1-click Vakalatnama & Bail petition drafting, court clerk/muhuri ledger accounting, and encrypted client case vault.
 - **Core Simulator:** Interactive Cause List Sandbox with case search (`১২৮/২০২৬`), bench tracking, Vakalatnama modal preview, and client hearing reminder SMS trigger.
 - **3 Commercial Tiers:** Smart Chamber Cloud (৳2,000/mo), Lifetime Chamber License (One-time, own PC/domain), Corporate Law Firm Suite (Contact Sales).
-### 10. Civil Module Dedicated Landing (`civil.zengfy.test:8000/`)
+### 10. Civil Module Dedicated Landing (`civil.zengfy.top:8000/`)
 
 #### 10.1 Vision & Architectural Engineering
 Dedicated 3D land plot architecture, structural CAD vault, and dynamic construction costing ERP for Bangladesh civil engineering firms, architects, and developers:
@@ -130,7 +130,7 @@ Dedicated 3D land plot architecture, structural CAD vault, and dynamic construct
 - **Core Simulator:** Interactive 3D Plot & Costing Sandbox featuring sample plots (3, 5, 10 Katha), architectural presets (Modern Duplex Villa vs 7-Storey Residential Complex), multi-angle rendering (Isometric, Front Elevation, Floorplan), real-time steel/cement/brick price sliders, dynamic BOQ calculation, and downloadable formal estimate quote.
 - **3 Commercial Tiers:** Architect Studio Cloud (৳3,000/mo), Construction Firm Pro (৳6,000/mo), Mega Developer Enterprise (Contact Sales).
 
-### 11. NGO Module Dedicated Landing (`ngo.zengfy.test:8000/`)
+### 11. NGO Module Dedicated Landing (`ngo.zengfy.top:8000/`)
 
 #### 11.1 Vision & Sovereign Crowdfunding
 Dedicated transparent crowdfunding, live donation campaigns, and Shariah-compliant Zakat distribution platform for Bangladesh charity trusts, foundations, orphanages, and disaster relief programs:
@@ -138,7 +138,7 @@ Dedicated transparent crowdfunding, live donation campaigns, and Shariah-complia
 - **Core Simulator:** Interactive Live Donation & Zakat Allocation Sandbox featuring campaign switcher (Sylhet/Feni flood relief, Kurigram winter blanket drive, Orphanage educational zakat fund), dynamic preset donation buttons (৳১,০০০, ৳২,৫০০, ৳৫,০০০, ৳১০,০০০), bKash/Nagad/Expatriate USD gateways, instant progress bar animation, downloadable official tax money receipt, and allocated relief goods card with GPS tracking tag.
 - **3 Commercial Tiers:** Charity Cloud (৳1,500/mo), Lifetime Trust License (One-time, own domain), International NGO Custom Software (Contact Sales).
 
-### 12. Rent Module Dedicated Landing (`rent.zengfy.test:8000/`)
+### 12. Rent Module Dedicated Landing (`rent.zengfy.top:8000/`)
 
 #### 12.1 Vision & Disruptive Rental Mesh
 Dedicated broker-free hyperlocal rental mesh and property management ERP for Bangladesh tenants, students, bachelors, flat owners, and building caretakers:
@@ -146,7 +146,7 @@ Dedicated broker-free hyperlocal rental mesh and property management ERP for Ban
 - **Core Simulator:** Interactive Radius Rental Mesh Sandbox featuring location selection (Dhaka, Chittagong, Sylhet), 1 km vs 3 km radius toggle, interactive GPS pins (Family Flats, Bachelor Sublets, Deluxe Studios), ৳50 micro-payment unlock simulation, and unmasked owner phone number with direct call/navigation triggers.
 - **3 Commercial Tiers:** Tenant Pay-Per-Radius (৳50 1km / ৳250 3km micro-unlock), Landlord Flat Listing (৳250 one-time per flat till rented), Building Owner Landlord Cloud (৳500/mo ERP).
 
-### 13. Hotel Module Dedicated Landing (`hotel.zengfy.test:8000/`)
+### 13. Hotel Module Dedicated Landing (`hotel.zengfy.top:8000/`)
 
 #### 13.1 Vision & Hospitality ERP
 Dedicated resort, boutique hotel, and eco-cottage management ERP for Bangladesh hospitality business owners:
@@ -156,7 +156,7 @@ Dedicated resort, boutique hotel, and eco-cottage management ERP for Bangladesh 
   - Tab 2: Zero-commission direct guest booking engine with cottage/suite selector, dynamic OTA fee comparison (-15% loss vs ৳0 Zengfy cut), and 1-tap bKash/Card direct guest booking confirmation voucher with QR room pass.
 - **3 Commercial Tiers:** Mid-Tier Hotel Cloud Suite (৳2,500/mo SaaS), Lifetime Resort Ownership License (one-time, own domain), Luxury Hotel & Chain Enterprise (Contact Sales).
 
-### 14. Shop Module Dedicated Landing (`shop.zengfy.test:8000/`)
+### 14. Shop Module Dedicated Landing (`shop.zengfy.top:8000/`)
 
 #### 14.1 Vision & Anti-Fraud D2C Social Commerce
 Dedicated anti-fraud e-commerce & courier integration ERP for Bangladesh F-Commerce and D2C brands:
@@ -215,5 +215,3 @@ Dedicated client appointment booking, paid consultation scheduling, and automate
 - **3 Commercial Tiers:** Solo Professional Cloud (৳600/mo SaaS), Chamber Lifetime License (৳4,500 one-time, own domain), Enterprise Clinic & Consultancy Suite (Contact Sales).
 
 ---
-
-

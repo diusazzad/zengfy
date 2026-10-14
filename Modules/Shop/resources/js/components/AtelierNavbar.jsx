@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Grid, User, X, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 
-export default function AtelierNavbar({ 
-    brandData, 
-    bagCount, 
+export default function AtelierNavbar({
+    brandData,
+    bagCount,
     onOpenBag,
     selectedCollection,
     onSelectCollection,
@@ -14,11 +14,11 @@ export default function AtelierNavbar({
     const ecosystemApps = [
         { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.test:8000/", icon: "🏛️" },
         { name: "Zengfy Market", desc: "Marketplace", url: "http://ecommerce.zengfy.test:8000/", icon: "🛍️" },
-        { name: "Zengfy Social", desc: "Civic Network", url: "http://social.zengfy.test:8000/", icon: "🌍" },
-        { name: "Zengfy POS", desc: "Retail & Thermal", url: "http://pos.zengfy.test:8000/", icon: "⚡" },
-        { name: "Zengfy School", desc: "Campus & RFID", url: "http://school.zengfy.test:8000/", icon: "🎓" },
-        { name: "Zengfy Law", desc: "Digital Chamber", url: "http://law.zengfy.test:8000/", icon: "⚖️" },
-        { name: "Zengfy Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.test:8000/", icon: "🏨" },
+        { name: "Zengfy Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
+        { name: "Zengfy POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
+        { name: "Zengfy School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
+        { name: "Zengfy Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
+        { name: "Zengfy Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
         { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.test:8000/", icon: "🕌" },
         { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.test:8000/", icon: "📰" }
     ];
@@ -44,7 +44,7 @@ export default function AtelierNavbar({
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
                 {/* Brand Typographic Identity */}
                 <div className="flex items-center gap-3">
-                    <a href="http://shop.zengfy.test:8000/" className="group flex flex-col">
+                    <a href="http://shop.zengfy.top:8000/" className="group flex flex-col">
                         <span className="text-xl sm:text-2xl font-black tracking-widest text-slate-900 group-hover:text-slate-700 transition-colors uppercase font-mono">
                             ZENGFY ATELIER
                         </span>
@@ -73,9 +73,9 @@ export default function AtelierNavbar({
                                 </div>
                                 <div className="grid grid-cols-3 gap-2 pt-3">
                                     {ecosystemApps.map((app) => (
-                                        <a 
-                                            key={app.name} 
-                                            href={app.url} 
+                                        <a
+                                            key={app.name}
+                                            href={app.url}
                                             className="flex flex-col items-center p-2 rounded-xl hover:bg-slate-50 transition-colors text-center group"
                                         >
                                             <span className="text-2xl mb-1 group-hover:scale-110 transition-transform">{app.icon}</span>
@@ -98,8 +98,8 @@ export default function AtelierNavbar({
                                 key={c.id}
                                 onClick={() => onSelectCollection(c.id)}
                                 className={`pb-1 transition-all ${
-                                    isActive 
-                                        ? 'text-slate-950 border-b-2 border-slate-950' 
+                                    isActive
+                                        ? 'text-slate-950 border-b-2 border-slate-950'
                                         : 'text-slate-500 hover:text-slate-900'
                                 }`}
                             >
@@ -144,8 +144,8 @@ export default function AtelierNavbar({
                             key={c.id}
                             onClick={() => onSelectCollection(c.id)}
                             className={`px-3 py-1.5 rounded-full text-[11px] font-bold shrink-0 transition-all ${
-                                isActive 
-                                    ? 'bg-slate-950 text-white' 
+                                isActive
+                                    ? 'bg-slate-950 text-white'
                                     : 'bg-slate-100 text-slate-600'
                             }`}
                         >

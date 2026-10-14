@@ -61,7 +61,7 @@ export default function ShopFooter() {
               <li><a href="#journeys" className="hover:text-orange-400 transition-colors">স্টেকহোল্ডার জার্নি</a></li>
               <li><a href="#pillars" className="hover:text-orange-400 transition-colors">কুরিয়ার এপিআই সিঙ্ক</a></li>
               <li><a href="#pricing" className="hover:text-orange-400 transition-colors">লাইসেন্সিং অফার</a></li>
-              <li><a href="http://shop.zengfy.test:8000/api/v1/shop/landing" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">পাবলিক রেস্ট এপিআই (REST API)</a></li>
+              <li><a href="http://shop.zengfy.top:8000/api/v1/shop/landing" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">পাবলিক রেস্ট এপিআই (REST API)</a></li>
             </ul>
           </div>
 
@@ -72,14 +72,14 @@ export default function ShopFooter() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li><a href="http://zengfy.test:8000" className="hover:text-orange-400 transition-colors">🌐 Master Landing</a></li>
-              <li><a href="http://social.zengfy.test:8000" className="hover:text-orange-400 transition-colors">👥 Zengfy Social</a></li>
-              <li><a href="http://school.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🎓 Zengfy School ERP</a></li>
-              <li><a href="http://pos.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🛍️ Zengfy POS Retail</a></li>
-              <li><a href="http://law.zengfy.test:8000" className="hover:text-orange-400 transition-colors">⚖️ Zengfy Law</a></li>
-              <li><a href="http://civil.zengfy.test:8000" className="hover:text-orange-400 transition-colors">📐 Zengfy Civil</a></li>
-              <li><a href="http://ngo.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🤝 Zengfy NGO</a></li>
-              <li><a href="http://rent.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🔑 Zengfy Rent</a></li>
-              <li><a href="http://hotel.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🏨 Zengfy Hotel</a></li>
+              <li><a href="http://social.zengfy.top:8000" className="hover:text-orange-400 transition-colors">👥 Zengfy Social</a></li>
+              <li><a href="http://school.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🎓 Zengfy School ERP</a></li>
+              <li><a href="http://pos.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🛍️ Zengfy POS Retail</a></li>
+              <li><a href="http://law.zengfy.top:8000" className="hover:text-orange-400 transition-colors">⚖️ Zengfy Law</a></li>
+              <li><a href="http://civil.zengfy.top:8000" className="hover:text-orange-400 transition-colors">📐 Zengfy Civil</a></li>
+              <li><a href="http://ngo.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🤝 Zengfy NGO</a></li>
+              <li><a href="http://rent.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🔑 Zengfy Rent</a></li>
+              <li><a href="http://hotel.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🏨 Zengfy Hotel</a></li>
               <li><a href="http://skill.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🚀 Zengfy Skill</a></li>
               <li><a href="http://journal.zengfy.test:8000" className="hover:text-orange-400 transition-colors">✍️ Zengfy Journal</a></li>
               <li><a href="http://habit.zengfy.test:8000" className="hover:text-orange-400 transition-colors">⚡ Zengfy Habit</a></li>

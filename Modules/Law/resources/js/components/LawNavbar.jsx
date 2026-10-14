@@ -24,21 +24,21 @@ export default function LawNavbar({ links = {} }) {
     }, []);
 
     const apps = [
-        { name: 'Law', icon: '⚖️', url: links.home || 'http://law.zengfy.test:8000/', category: 'Legal Vault', active: true },
-        { name: 'Social', icon: '🌐', url: links.social || 'http://social.zengfy.test:8000/', category: 'Civic Mesh' },
-        { name: 'School', icon: '🏫', url: links.school || 'http://school.zengfy.test:8000/', category: 'Campus ERP' },
-        { name: 'POS', icon: '🛒', url: links.pos || 'http://pos.zengfy.test:8000/', category: 'Retail & Stock' },
-        { name: 'Commerce', icon: '🛍️', url: 'http://shop.zengfy.test:8000/', category: 'Online Store' },
-        { name: 'Rent', icon: '🏠', url: 'http://rent.zengfy.test:8000/', category: 'Property Hub' },
-        { name: 'Hotel', icon: '🏨', url: 'http://hotel.zengfy.test:8000/', category: 'Hospitality' },
-        { name: 'NGO', icon: '❤️', url: 'http://ngo.zengfy.test:8000/', category: 'Charity Cloud' },
+        { name: 'Law', icon: '⚖️', url: links.home || 'http://law.zengfy.top:8000/', category: 'Legal Vault', active: true },
+        { name: 'Social', icon: '🌐', url: links.social || 'http://social.zengfy.top:8000/', category: 'Civic Mesh' },
+        { name: 'School', icon: '🏫', url: links.school || 'http://school.zengfy.top:8000/', category: 'Campus ERP' },
+        { name: 'POS', icon: '🛒', url: links.pos || 'http://pos.zengfy.top:8000/', category: 'Retail & Stock' },
+        { name: 'Commerce', icon: '🛍️', url: 'http://shop.zengfy.top:8000/', category: 'Online Store' },
+        { name: 'Rent', icon: '🏠', url: 'http://rent.zengfy.top:8000/', category: 'Property Hub' },
+        { name: 'Hotel', icon: '🏨', url: 'http://hotel.zengfy.top:8000/', category: 'Hospitality' },
+        { name: 'NGO', icon: '❤️', url: 'http://ngo.zengfy.top:8000/', category: 'Charity Cloud' },
         { name: 'Account', icon: '🛡️', url: links.master_landing ? `${links.master_landing}account` : 'http://zengfy.test:8000/account', category: 'Citizen SSO' },
     ];
 
     return (
         <header role="banner" className="sticky top-0 z-50 bg-white/85 backdrop-blur-2xl border-b border-rose-950/10 shadow-xs transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
-                
+
                 {/* Brand Logo */}
                 <a href={links.home || "/"} aria-label="Zengfy Law Home" className="flex items-center gap-3 group shrink-0">
                     <div aria-hidden="true" className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#881337] via-rose-800 to-amber-600 flex items-center justify-center font-black text-xl text-white shadow-md shadow-rose-950/20 group-hover:scale-105 transition-transform">
@@ -58,7 +58,7 @@ export default function LawNavbar({ links = {} }) {
 
                 {/* Right: Google-style 9-Dot Waffle Menu + Sign In CTA */}
                 <div className="flex items-center gap-3">
-                    
+
                     {/* 9-Dot Waffle Apps Menu Wrapper */}
                     <div className="relative" ref={waffleRef}>
                         <button

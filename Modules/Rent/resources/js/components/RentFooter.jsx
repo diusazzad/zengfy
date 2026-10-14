@@ -111,37 +111,37 @@ export default function RentFooter({ brand = {} }) {
                 </a>
               </li>
               <li>
-                <a href="http://social.zengfy.test:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
+                <a href="http://social.zengfy.top:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
                   <span>Zengfy Social</span>
                   <span className="text-[10px] bg-sky-100 text-sky-700 px-1.5 py-0.5 rounded font-mono">NID</span>
                 </a>
               </li>
               <li>
-                <a href="http://school.zengfy.test:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
+                <a href="http://school.zengfy.top:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
                   <span>Zengfy School</span>
                   <span className="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded font-mono">Edu</span>
                 </a>
               </li>
               <li>
-                <a href="http://pos.zengfy.test:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
+                <a href="http://pos.zengfy.top:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
                   <span>Zengfy POS</span>
                   <span className="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-mono">Retail</span>
                 </a>
               </li>
               <li>
-                <a href="http://civil.zengfy.test:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
+                <a href="http://civil.zengfy.top:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
                   <span>Zengfy Civil</span>
                   <span className="text-[10px] bg-cyan-100 text-cyan-800 px-1.5 py-0.5 rounded font-mono">3D</span>
                 </a>
               </li>
               <li>
-                <a href="http://ngo.zengfy.test:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
+                <a href="http://ngo.zengfy.top:8000" className="text-slate-600 hover:text-indigo-700 transition-colors flex items-center justify-between">
                   <span>Zengfy NGO</span>
                   <span className="text-[10px] bg-teal-100 text-teal-800 px-1.5 py-0.5 rounded font-mono">Trust</span>
                 </a>
               </li>
               <li>
-                <a href="http://rent.zengfy.test:8000" className="text-indigo-900 font-bold flex items-center justify-between">
+                <a href="http://rent.zengfy.top:8000" className="text-indigo-900 font-bold flex items-center justify-between">
                   <span>Zengfy Rent</span>
                   <span className="text-[10px] bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded font-bold font-mono">Live</span>
                 </a>
@@ -160,7 +160,7 @@ export default function RentFooter({ brand = {} }) {
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               জিপিএস মেশ ও মাইক্রো-পেমেন্ট গেটওয়ে: সক্রিয়
             </span>
-            <a href="http://rent.zengfy.test:8000/login" className="hover:text-indigo-700 font-semibold">
+            <a href="http://rent.zengfy.top:8000/login" className="hover:text-indigo-700 font-semibold">
               লগইন (SSO)
             </a>
           </div>

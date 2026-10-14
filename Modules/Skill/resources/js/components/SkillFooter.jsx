@@ -72,10 +72,10 @@ export default function SkillFooter() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li><a href="http://zengfy.test:8000" className="hover:text-blue-400 transition-colors">Master Landing</a></li>
-              <li><a href="http://social.zengfy.test:8000" className="hover:text-blue-400 transition-colors">Zengfy Social</a></li>
-              <li><a href="http://school.zengfy.test:8000" className="hover:text-blue-400 transition-colors">Zengfy School ERP</a></li>
-              <li><a href="http://shop.zengfy.test:8000" className="hover:text-blue-400 transition-colors">Zengfy Shop D2C</a></li>
-              <li><a href="http://hotel.zengfy.test:8000" className="hover:text-blue-400 transition-colors">Zengfy Hotel ERP</a></li>
+              <li><a href="http://social.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy Social</a></li>
+              <li><a href="http://school.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy School ERP</a></li>
+              <li><a href="http://shop.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy Shop D2C</a></li>
+              <li><a href="http://hotel.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy Hotel ERP</a></li>
             </ul>
           </div>
         </div>

@@ -82,7 +82,7 @@ gantt
   - Set `<header role="banner">`, `<nav role="navigation">`, `<footer role="contentinfo">`.
   - Added accessible `<label>` for search and chat inputs, and descriptive `aria-label`s on buttons.
 
-#### Phase 6: Social Module Dedicated Landing (`social.zengfy.test:8000/`) (Completed)
+#### Phase 6: Social Module Dedicated Landing (`social.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated White Glassmorphic landing page for Zengfy Social:
   - Sanitized `Modules/Social/routes/web.php` and `api.php`, leaving only landing routes and public REST endpoints.
@@ -93,10 +93,10 @@ gantt
 - **Verification:**
   - `npm run build` compiled 2,044 modules in 10.50s with 0 errors.
   - `curl http://127.0.0.1:8000/api/v1/social/landing` returned HTTP 200 with full dynamic payload.
-  - `curl -H "Host: social.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with complete HTML and semantic landmarks.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/social` returned HTTP 302 redirecting to `http://social.zengfy.test/`.
+  - `curl -H "Host: social.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with complete HTML and semantic landmarks.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/social` returned HTTP 302 redirecting to `http://social.zengfy.top/`.
 
-#### Phase 7: Zengfy School Dedicated Landing (`school.zengfy.test:8000/`) (Completed)
+#### Phase 7: Zengfy School Dedicated Landing (`school.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated White Glassmorphic landing page for Zengfy School ERP:
   - Implemented `SchoolLandingController.php` with dual-mode `index()` and `data()`.
@@ -105,10 +105,10 @@ gantt
 - **Verification:**
   - `npm run build` compiled 2,055 modules in 11.20s with 0 errors.
   - `curl http://127.0.0.1:8000/api/v1/school/landing` returned HTTP 200.
-  - `curl -H "Host: school.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200.
+  - `curl -H "Host: school.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200.
   - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/school` returned HTTP 302 redirect.
 
-#### Phase 8: Zengfy POS & Boutique Retail ERP Landing (`pos.zengfy.test:8000/`) (Completed)
+#### Phase 8: Zengfy POS & Boutique Retail ERP Landing (`pos.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated White Glassmorphic product landing page for Zengfy POS:
   - Specifically tailored for clothing/garment, boutique & shopping mall retail (not small mudir dokan).
@@ -127,10 +127,10 @@ gantt
 - **Verification:**
   - `npm run build` compiled 2,065 modules with 0 errors.
   - `curl http://127.0.0.1:8000/api/v1/pos/landing` returned HTTP 200 with JSON payload.
-  - `curl -H "Host: pos.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with semantic landmark.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/pos` returned HTTP 302 redirecting to `http://pos.zengfy.test/`.
+  - `curl -H "Host: pos.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with semantic landmark.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/pos` returned HTTP 302 redirecting to `http://pos.zengfy.top/`.
 
-#### Phase 9: Zengfy Law Dedicated Landing (`law.zengfy.test:8000/`) (Completed)
+#### Phase 9: Zengfy Law Dedicated Landing (`law.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated White Glassmorphic product landing page for Zengfy Law chamber management:
   - Built `Modules/Law` following Nwidart module standards, enabled in `modules_statuses.json` and registered in `composer.json` PSR-4 autoload mapping.
@@ -154,11 +154,11 @@ gantt
   - Registered `'Modules/Law/resources/js/main.jsx'` inside `core/vite.config.js`.
 - **Verification:**
   - `npm run build` compiled 2,075 modules in 8.12s with exit code 0.
-  - `curl -H "Host: law.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-law-landing-root`.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/law` returned HTTP 302 redirecting to `http://law.zengfy.test/`.
+  - `curl -H "Host: law.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-law-landing-root`.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/law` returned HTTP 302 redirecting to `http://law.zengfy.top/`.
   - `curl http://127.0.0.1:8000/api/v1/law/landing` returned HTTP 200 with complete JSON payload.
 
-#### Phase 10: Zengfy Civil Dedicated Landing (`civil.zengfy.test:8000/`) (Completed)
+#### Phase 10: Zengfy Civil Dedicated Landing (`civil.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated 3D Land Architecture & Construction Costing Hub for Zengfy Civil:
   - Built `Modules/Civil` following Nwidart module structure, enabled in `modules_statuses.json` and registered in `composer.json` PSR-4 autoload mapping.
@@ -183,11 +183,11 @@ gantt
   - Registered `'Modules/Civil/resources/js/main.jsx'` inside `core/vite.config.js`.
 - **Verification:**
   - `npm run build` compiled 2,085 modules in 10.38s with exit code 0.
-  - `curl -H "Host: civil.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-civil-landing-root`.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/civil` returned HTTP 302 redirecting to `http://civil.zengfy.test/`.
+  - `curl -H "Host: civil.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-civil-landing-root`.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/civil` returned HTTP 302 redirecting to `http://civil.zengfy.top/`.
   - `curl http://127.0.0.1:8000/api/v1/civil/landing` returned HTTP 200 with complete JSON payload.
 
-#### Phase 11: Zengfy NGO Dedicated Landing (`ngo.zengfy.test:8000/`) (Completed)
+#### Phase 11: Zengfy NGO Dedicated Landing (`ngo.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated Crowdfunding & Zakat Trust Platform for Zengfy NGO:
   - Built `Modules/NGO` following Nwidart module structure, enabled in `modules_statuses.json` and registered in `composer.json` PSR-4 autoload mapping.
@@ -211,11 +211,11 @@ gantt
   - Registered `'Modules/NGO/resources/js/main.jsx'` inside `core/vite.config.js`.
 - **Verification:**
   - `npm run build` compiled 2,095 modules in 30.88s with exit code 0.
-  - `curl -H "Host: ngo.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-ngo-landing-root`.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/ngo` returned HTTP 302 redirecting to `http://ngo.zengfy.test/`.
+  - `curl -H "Host: ngo.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-ngo-landing-root`.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/ngo` returned HTTP 302 redirecting to `http://ngo.zengfy.top/`.
   - `curl http://127.0.0.1:8000/api/v1/ngo/landing` returned HTTP 200 with complete JSON payload.
 
-#### Phase 12: Zengfy Rent Dedicated Landing (`rent.zengfy.test:8000/`) (Completed)
+#### Phase 12: Zengfy Rent Dedicated Landing (`rent.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated Hyperlocal Pay-Per-Km House & Mess Rental Mesh for Zengfy Rent:
   - Built `Modules/Rent` following Nwidart module structure, enabled in `modules_statuses.json` and registered in `composer.json` PSR-4 autoload mapping.
@@ -239,14 +239,14 @@ gantt
   - Registered `'Modules/Rent/resources/js/main.jsx'` inside `core/vite.config.js`.
 - **Verification:**
   - `npm run build` compiled 2,105 modules in 37.46s with exit code 0.
-  - `curl -H "Host: rent.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-rent-landing-root`.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/rent` returned HTTP 302 redirecting to `http://rent.zengfy.test/`.
+  - `curl -H "Host: rent.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-rent-landing-root`.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/rent` returned HTTP 302 redirecting to `http://rent.zengfy.top/`.
   - `curl http://127.0.0.1:8000/api/v1/rent/landing` returned HTTP 200 with complete JSON payload.
 
 ---
 
 
-#### Phase 13: Zengfy Hotel Dedicated Landing (`hotel.zengfy.test:8000/`) (Completed)
+#### Phase 13: Zengfy Hotel Dedicated Landing (`hotel.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated Resort, Boutique Hotel & Eco-Cottage ERP Landing for Zengfy Hotel:
   - Built `Modules/Hotel` following Nwidart module structure, enabled in `modules_statuses.json` and registered in `composer.json` PSR-4 autoload mapping.
@@ -272,14 +272,14 @@ gantt
   - Registered `'Modules/Hotel/resources/js/main.jsx'` inside `core/vite.config.js`.
 - **Verification:**
   - `npm run build` compiled 2,115 modules in 10.82s with exit code 0.
-  - `curl -H "Host: hotel.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-hotel-landing-root`.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/hotel` returned HTTP 302 redirecting to `http://hotel.zengfy.test/`.
+  - `curl -H "Host: hotel.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-hotel-landing-root`.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/hotel` returned HTTP 302 redirecting to `http://hotel.zengfy.top/`.
   - `curl http://127.0.0.1:8000/api/v1/hotel/landing` returned HTTP 200 with complete JSON payload.
 
 ---
 
 
-#### Phase 14: Zengfy Shop Dedicated Landing (`shop.zengfy.test:8000/`) (Completed)
+#### Phase 14: Zengfy Shop Dedicated Landing (`shop.zengfy.top:8000/`) (Completed)
 - **Status:** Done
 - **Summary:** Delivered dedicated Anti-Fraud D2C & Social Commerce Platform for Zengfy Shop:
   - Built `Modules/Shop` following Nwidart module structure, enabled in `modules_statuses.json` and registered in `composer.json` PSR-4 autoload mapping.
@@ -306,8 +306,8 @@ gantt
   - Registered `'Modules/Shop/resources/js/main.jsx'` inside `core/vite.config.js`.
 - **Verification:**
   - `npm run build` compiled 2,125 modules in 9.49s with exit code 0.
-  - `curl -H "Host: shop.zengfy.test" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-shop-landing-root`.
-  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/shop` returned HTTP 302 redirecting to `http://shop.zengfy.test/`.
+  - `curl -H "Host: shop.zengfy.top" http://127.0.0.1:8000/` returned HTTP 200 with `<main id="main-content" role="main">` and `#react-shop-landing-root`.
+  - `curl -H "Host: zengfy.test" http://127.0.0.1:8000/shop` returned HTTP 302 redirecting to `http://shop.zengfy.top/`.
   - `curl http://127.0.0.1:8000/api/v1/shop/landing` returned HTTP 200 with complete JSON payload.
 
 ---

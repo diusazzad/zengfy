@@ -19,7 +19,7 @@ graph TD
 
     %% Interactions
     E -->|Click 9-Dot Waffle Menu| J[Opens 3x3 Apps Popover Grid]
-    J -->|Click App Card| K[Opens Target Subdomain e.g. pos.zengfy.test]
+    J -->|Click App Card| K[Opens Target Subdomain e.g. pos.zengfy.top]
     
     F -->|Click Heart/Flame Emoji| L[Instantly Increments Reaction Counter]
     F -->|Type & Submit Message| M[Message Added to Live Preview Stream]
@@ -47,7 +47,7 @@ graph TD
 #### Journey 2: Accessing Micro-SaaS Platforms via Google-Style 9-Dot Menu
 1. **Trigger:** From the header, the user clicks the 9-dot Waffle menu icon.
 2. **Popover Display:** A clean white popover appears containing a 3x3 grid of top platforms (Social, School, POS, Law, Rent, Hotel, Civil, Commerce, NGO).
-3. **Navigation:** Clicking any icon instantly launches the subdomain (e.g. `school.zengfy.test:8000`), or clicking "View all 13 platforms" smoothly scrolls down to the full bento grid.
+3. **Navigation:** Clicking any icon instantly launches the subdomain (e.g. `school.zengfy.top:8000`), or clicking "View all 13 platforms" smoothly scrolls down to the full bento grid.
 
 #### Journey 3: Filtering & Launching Platforms in the Bento Grid
 1. **Live Stats:** The user observes real-time ecosystem stats (Verified Citizens, 4,554 Wards, 540+ Institutions, 99.98% Uptime).
@@ -65,11 +65,11 @@ graph TD
 
 ---
 
-### 4. Social Module Landing Flow & Interactive Simulator Journeys (`social.zengfy.test:8000`)
+### 4. Social Module Landing Flow & Interactive Simulator Journeys (`social.zengfy.top:8000`)
 
 ```mermaid
 graph TD
-    A[Visitor Navigates to http://social.zengfy.test:8000/] --> B{Laravel SocialLandingController@index}
+    A[Visitor Navigates to http://social.zengfy.top:8000/] --> B{Laravel SocialLandingController@index}
     B --> C[Server renders landing.blade.php with initialData]
     C --> D[React 19 Mounts into #react-social-landing-root]
     
@@ -105,11 +105,11 @@ graph TD
 
 ---
 
-### 5. Zengfy School Visitor Flow (`school.zengfy.test:8000`)
+### 5. Zengfy School Visitor Flow (`school.zengfy.top:8000`)
 
 ```mermaid
 graph TD
-    A[Visitor Arrives at school.zengfy.test:8000] --> B[Hero Section: Institutional Telemetry & Emotive Headline]
+    A[Visitor Arrives at school.zengfy.top:8000] --> B[Hero Section: Institutional Telemetry & Emotive Headline]
     B --> C[Interactive RFID Gate Attendance Kiosk]
     B --> D[4 Stakeholder Role Journeys]
     B --> E[Digital Report Card Simulator]
@@ -142,5 +142,3 @@ graph TD
 2. **Real-time Recalculation:** The official transcript card updates live with NCTB letter grades (A+, A, A-), total marks out of 400, and overall GPA with Golden A+ validation.
 3. **Curriculum Adaptation:** Visitor toggles between General School (NCTB) and Madrasah Education Board to test Islamic studies subjects.
 4. **Commercial Offer Selection:** Visitor explores the 3 deployment packages (Cloud SaaS ৳২,০০০/mo, One-Time Self-Hosted, Custom Enterprise) and clicks to submit an inquiry.
-
-

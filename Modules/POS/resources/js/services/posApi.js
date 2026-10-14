@@ -269,14 +269,14 @@ export const FALLBACK_POS_DATA = {
         user: null,
     },
     links: {
-        home: "http://pos.zengfy.test:8000/",
-        login: "http://zengfy.test:8000/login?continue=http%3A%2F%2Fpos.zengfy.test%3A8000%2F",
-        register: "http://zengfy.test:8000/register?continue=http%3A%2F%2Fpos.zengfy.test%3A8000%2F",
+        home: "http://pos.zengfy.top:8000/",
+        login: "http://zengfy.test:8000/login?continue=http%3A%2F%2Fpos.zengfy.top%3A8000%2F",
+        register: "http://zengfy.test:8000/register?continue=http%3A%2F%2Fpos.zengfy.top%3A8000%2F",
         download: "https://github.com/diusazzad/zengfy/releases",
         master_landing: "http://zengfy.test:8000/",
-        social: "http://social.zengfy.test:8000/",
-        school: "http://school.zengfy.test:8000/",
-        api_docs: "http://pos.zengfy.test:8000/api/v1/pos/landing",
+        social: "http://social.zengfy.top:8000/",
+        school: "http://school.zengfy.top:8000/",
+        api_docs: "http://pos.zengfy.top:8000/api/v1/pos/landing",
     },
 };
 
@@ -303,7 +303,7 @@ export async function fetchPOSData() {
     // 2. Fetch candidates
     const endpoints = [
         "/api/v1/pos/landing",
-        "http://pos.zengfy.test:8000/api/v1/pos/landing",
+        "http://pos.zengfy.top:8000/api/v1/pos/landing",
         "http://127.0.0.1:8000/api/v1/pos/landing",
         "http://localhost:8000/api/v1/pos/landing",
     ];

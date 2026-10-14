@@ -32,7 +32,7 @@ Zengfy ইকোসিস্টেমের অথেন্টিকেশন �
      - Alpine.js দিয়ে `POST /api/v1/auth/login` ও `POST /api/v1/auth/register` কল করা।
      - রেসপন্স থেকে টোকেন (`data.data?.token || data.token`) লোকাল স্টোরেজে সংরক্ষণ এবং `credentials: 'same-origin'` নিশ্চিত করা।
   2. **স্মার্ট রিডাইরেক্ট সাপোর্ট:**
-     - `redirect_uri` বা `redirect_to` কুয়েরি প্যারামিটার সাপোর্ট করা (যেমন: `/login?redirect_uri=http://social.zengfy.test:7000/feed`)।
+     - `redirect_uri` বা `redirect_to` কুয়েরি প্যারামিটার সাপোর্ট করা (যেমন: `/login?redirect_uri=http://social.zengfy.top:7000/feed`)।
      - সফল লগইনে কাঙ্ক্ষিত সাবডোমেনে অথবা ডিফল্ট `/account` এ স্মুথ রিডাইরেক্ট।
   3. **ইউআই ও মাইক্রো-ইন্টারঅ্যাকশন:**
      - পাসওয়ার্ড শো/হাইড বাটন, লাইভ পাসওয়ার্ড স্ট্রেন্থ মিটার (Weak, Fair, Good, Sovereign 256-Bit)।
@@ -53,7 +53,7 @@ Zengfy ইকোসিস্টেমের অথেন্টিকেশন �
      - **Tab 4: Password & Access Keys:** পাসওয়ার্ড পরিবর্তনের সিকিউর ফর্ম এবং পার্সোনাল এপিআই অ্যাক্সেস টোকেন ভিউয়ার।
   2. **৯-ডট গুগল স্টাইল অ্যাপ লঞ্চার:**
      - ড্রপডাউনে Zengfy Social, School, Law, POS, Cloud Apps-এর সক্রিয় লিঙ্ক।
-     - সাবডোমেন SSO লিঙ্ক ফরম্যাট: `http://social.zengfy.test:7000/`, `http://school.zengfy.test:7000/` ইত্যাদি।
+     - সাবডোমেন SSO লিঙ্ক ফরম্যাট: `http://social.zengfy.top:7000/`, `http://school.zengfy.top:7000/` ইত্যাদি।
   3. **ব্রাউজার bfcache প্রতিরোধ ও লগআউট বাটন:**
      - লগআউট বাটনে ক্লিক করলে `/logout` রুটে স্মুথ পোস্ট/গেট কল এবং ক্লিন রিডাইরেক্ট।
 

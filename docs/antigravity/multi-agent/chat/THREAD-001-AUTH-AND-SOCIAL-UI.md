@@ -350,11 +350,11 @@
 > 
 > সাজ্জাদ ভাইয়ের নির্দেশনায় দুটি অত্যন্ত গুরুত্বপূর্ণ এন্টারপ্রাইজ আর্কিটেকচার সমাধান সফলভাবে সম্পন্ন করা হয়েছে:
 > 
-> 1. ✅ **সাবডোমেন আর্কিটেকচার অ্যাক্টিভেশন (`social.zengfy.top` / `social.zengfy.test:7000`):**
+> 1. ✅ **সাবডোমেন আর্কিটেকচার অ্যাক্টিভেশন (`social.zengfy.top` / `social.zengfy.top:7000`):**
 >    - `Modules/Social/routes/web.php`-এ ডেডিকেটেড সাবডোমেন রাউটিং কার্যকর করা হয়েছে।
->    - `social.zengfy.test:7000/` সরাসরি হাইপারলোকাল ফিড রেন্ডার করছে (HTTP 200)।
->    - `social.zengfy.test:7000/u/{handle}` সরাসরি সিটিজেন প্রোফাইল রেন্ডার করছে (HTTP 200)।
->    - মেইন ডোমেইনে `zengfy.test:7000/feed` হিট করলে অটোমেটিক `302 Redirect` দিয়ে `social.zengfy.test:7000/` এ রিডাইরেক্ট করে দেওয়া হচ্ছে।
+>    - `social.zengfy.top:7000/` সরাসরি হাইপারলোকাল ফিড রেন্ডার করছে (HTTP 200)।
+>    - `social.zengfy.top:7000/u/{handle}` সরাসরি সিটিজেন প্রোফাইল রেন্ডার করছে (HTTP 200)।
+>    - মেইন ডোমেইনে `zengfy.test:7000/feed` হিট করলে অটোমেটিক `302 Redirect` দিয়ে `social.zengfy.top:7000/` এ রিডাইরেক্ট করে দেওয়া হচ্ছে।
 >    - `config/session.php`-এ ডায়নামিক ওয়াইল্ডকার্ড কুকি ডোমেন (`.zengfy.test` ও `.zengfy.top`) সক্রিয় করায় সব সাবডোমেইনে অটোমেটিক SSO কার্যকর।
 > 2. ✅ **লগআউট ও ব্রাউজার ব্যাক-বাটন মেমোরি ক্যাশ (bfcache) ফিক্স:**
 >    - `SecurityHeadersMiddleware`-এ সুরক্ষিত পেজগুলোর জন্য `Cache-Control: no-cache, no-store, max-age=0, must-revalidate` হেডার বাধ্যতামূলক করা হয়েছে।
@@ -392,7 +392,7 @@
 >   - `Modules/Auth/resources/views/forgot-password.blade.php`
 > - **স্পেসিফিকেশন:**
 >   1. Alpine.js দিয়ে সরাসরি `POST /api/v1/auth/login` ও `POST /api/v1/auth/register` এপিআই কল নিশ্চিত করা (উভয়টিতে `credentials: 'same-origin'` ও `X-CSRF-TOKEN` সহ)।
->   2. লগইনে রেসপন্স টোকেন `localStorage.setItem('zengfy_token', token)` এ সেভ করা এবং `redirect_uri` কুয়েরি প্যারামিটার সাপোর্ট করা (যেমন: `/login?redirect_uri=http://social.zengfy.test:7000/feed`)।
+>   2. লগইনে রেসপন্স টোকেন `localStorage.setItem('zengfy_token', token)` এ সেভ করা এবং `redirect_uri` কুয়েরি প্যারামিটার সাপোর্ট করা (যেমন: `/login?redirect_uri=http://social.zengfy.top:7000/feed`)।
 >   3. রেজিস্ট্রেশনে ৪-লেভেল লাইভ পাসওয়ার্ড স্ট্রেন্থ বার ও পাসওয়ার্ড ম্যাচ ইন্ডিকেটর।
 >   4. কোনো কনসোল এরর বা আনহ্যান্ডল্ড প্রমিজ যেন না থাকে।
 > 
@@ -405,7 +405,7 @@
 >      - **Tab 2: NID & Sovereign Verification:** নাগরিক ভেরিফিকেশন স্ট্যাটাস কার্ড, ভেরিফায়েড হলে "🛡️ Sovereign Citizen" ব্লু শিল্ড ব্যাজ।
 >      - **Tab 3: Security & Active Devices:** অ্যাক্টিভ ডিভাইস সেশন কার্ডস (`AuthDevice`), ব্রাউজার ও ওএস ডিটেকশন আইকন এবং পেজ রিলোড ছাড়াই ১-ক্লিকে নির্দিষ্ট ডিভাইস অথবা "Revoke All Other Devices" অ্যাকশন।
 >      - **Tab 4: Password & Access Keys:** পাসওয়ার্ড পরিবর্তনের সিকিউর ফর্ম এবং ডেভেলপার এপিআই টোকেন ভিউয়ার।
->   2. **৯-ডট গুগল স্টাইল অ্যাপ লঞ্চার:** সাবডোমেন SSO লিঙ্ক (`social.zengfy.test:7000`, `school.zengfy.test:7000` ইত্যাদি) নিশ্চিত করা।
+>   2. **৯-ডট গুগল স্টাইল অ্যাপ লঞ্চার:** সাবডোমেন SSO লিঙ্ক (`social.zengfy.top:7000`, `school.zengfy.top:7000` ইত্যাদি) নিশ্চিত করা।
 > 
 > বিস্তারিত স্পেক দেখতে পারো এখানে:  
 > 🔗 [`docs/antigravity/multi-agent/tasks/TASK-FE-005-AUTH-AND-ACCOUNT-DASHBOARD-MODERNIZATION.md`](file:///p:/Zengfy-Ecosystem/core/docs/antigravity/multi-agent/tasks/TASK-FE-005-AUTH-AND-ACCOUNT-DASHBOARD-MODERNIZATION.md)
@@ -488,7 +488,7 @@
 > 1. ✅ **Landing Page (`http://zengfy.test:7000/`)**: নিখুঁতভাবে লোড হয়েছে (ক্যাপচার্ড: `landing_page_1791336596838.png`)।
 > 2. ✅ **Authentication Flow (`/login`)**: Alpine.js ফর্মের মাধ্যমে অথেনটিকেশন ও টোকেন স্টোরেজ ভেরিফাইড।
 > 3. ✅ **Sovereign Account Hub (`/account`)**: `#react-account-root` মাউন্ট সফল। Overview, Security & Devices, Ecosystem Apps এবং NID ভেরিফিকেশন ট্যাব রেন্ডার হচ্ছে (ক্যাপচার্ড: `account_overview_1791337317678.png` ও `account_security_tabs_179133769040.png`)।
-> 4. ✅ **Social Feed & Live Chat Drawer (`/feed` ও `social.zengfy.test:7000`)**: `#react-feed-root` কম্পোজার এবং `#react-chat-root` ফ্লোটিং বটম-রাইট ড্রয়ার বাটন ক্লিক করে এন্ড-টু-এন্ড এনক্রিপ্টেড চ্যাট উইন্ডো সফলভাবে পপআপ হয়েছে (ক্যাপচার্ড: `social_feed_chat_1791337434073.png`)।
+> 4. ✅ **Social Feed & Live Chat Drawer (`/feed` ও `social.zengfy.top:7000`)**: `#react-feed-root` কম্পোজার এবং `#react-chat-root` ফ্লোটিং বটম-রাইট ড্রয়ার বাটন ক্লিক করে এন্ড-টু-এন্ড এনক্রিপ্টেড চ্যাট উইন্ডো সফলভাবে পপআপ হয়েছে (ক্যাপচার্ড: `social_feed_chat_1791337434073.png`)।
 > 
 > ---
 > 
@@ -518,7 +518,8 @@
 > 
 > ### 📦 ডেলিভারি দেওয়া কম্পোনেন্ট ও আর্কিটেকচার সামারি:
 > 
-> 1. **🌐 সোশ্যাল নেটওয়ার্ক ও ফিড কম্পোনেন্টস (esources/js/react/components/social/):**
+> 1. **🌐 সোশ্যাল নেটওয়ার্ক ও ফিড কম্পোনেন্টস (
+esources/js/react/components/social/):**
 >    - **FeedStream.jsx**: TanStack Query (useInfiniteQuery) দিয়ে কি-সেট কার্সার পেজিনেশন যুক্ত ইনফিনিট স্ক্রোলিং ফিড (GET /api/v1/feed), ফিল্টার সুইচিং (All Feeds, My Ward, Civic Notices), লাইটবক্স প্রিভিউ মোডাল এবং স্কেলিটন লোডার।
 >    - **PostCard.jsx**: 
 >      - **অপটিমিস্টিক লাইক টগল (POST /api/v1/posts/{id}/like)**: ক্লিকের সাথে সাথেই লাইক কাউন্ট ও হার্ট স্কেলিং অ্যানিমেশন আপডেট হয় এবং কোনো এরর হলে স্বয়ংক্রিয়ভাবে রোলব্যাক হয়।
@@ -527,14 +528,16 @@
 >      - ১-ক্লিকে শেয়ার লিঙ্ক কপি অ্যাকশন।
 >    - **CreatePostModal.jsx**: প্রিমিয়াম গ্লাস মোডাল, টেক্সট ইনপুট, ওয়ার্ড ট্যাগ নির্বাচন, মাল্টিপল ফটো ড্রপজোন ও থাম্বনেইল প্রিভিউ সহ ইনস্ট্যান্ট পাবলিশ লোডার।
 > 
-> 2. **💬 রিয়েল-টাইম চ্যাট ও মেসেজিং (esources/js/react/components/chat/):**
+> 2. **💬 রিয়েল-টাইম চ্যাট ও মেসেজিং (
+esources/js/react/components/chat/):**
 >    - **ChatDrawer.jsx**: ফ্লোটিং বটম-রাইট ড্রয়ার ও উইন্ডো, আনরেড ব্যাজ কাউন্টার, মিনিমাইজ ও ফুল চ্যাট কন্ট্রোলস।
 >    - **ConversationList.jsx**: অ্যাক্টিভ চ্যাট লিস্ট, সার্চ ফিল্টার, লাস্ট মেসেজ প্রিভিউ, টাইম-অ্যাগো এবং আনরেড ব্যাজ পিল।
 >    - **MessageThread.jsx**:
 >      - সেন্ডার ও রিসিভার স্পিচ বাবলস (সেন্ডার গ্রেডিয়েন্ট ব্লু #2563EB, রিসিভার ডার্ক স্লেট #1E293B)।
 >      - **window.Echo লিসেনার (Laravel Reverb WebSockets)**: চ্যানেল chat.{conversation_id}-এ .message.sent ও .user.typing ইভেন্ট লিসেন করে পেজ রিলোড ছাড়াই লাইভ মেসেজ অ্যাপেন্ড ও টাইピング ইন্ডিকেটর প্রদর্শন।
 > 
-> 3. **🛡️ সোভ্যারেন অ্যাকাউন্ট ড্যাশবোর্ড (esources/js/react/components/account/):**
+> 3. **🛡️ সোভ্যারেন অ্যাকাউন্ট ড্যাশবোর্ড (
+esources/js/react/components/account/):**
 >    - **AccountHub.jsx**: ৪টি স্মুথ ট্যাব (Profile & Identity, NID Sovereign Status, Device Security & Sessions, App Launcher & Ecosystem)।
 >      - প্রোফাইল ইনফো ও ইনস্ট্যান্ট ক্যামেরা অবতার ফটো আপলোড (POST /account/avatar)।
 >      - পাসওয়ার্ড পরিবর্তন ও এনক্রিপ্টেড ক্রেডেনশিয়াল ম্যানেজমেন্ট।
@@ -552,7 +555,7 @@
 >    - প্রোডাকশন অ্যাসেট বিল্ড (
 pm run build) সফলভাবে সম্পন্ন (Exit Code 0)।
 > 
-> সাজ্জাদ ভাই এবং Lead Architect অনুগ্রহ করে ব্রাউজারে http://social.zengfy.test:7000/ এবং http://zengfy.test:7000/account টেস্ট করে দেখার অনুরোধ রইল। 🚀
+> সাজ্জাদ ভাই এবং Lead Architect অনুগ্রহ করে ব্রাউজারে http://social.zengfy.top:7000/ এবং http://zengfy.test:7000/account টেস্ট করে দেখার অনুরোধ রইল। 🚀
 
 ---
 
@@ -570,7 +573,7 @@ pm run build) সফলভাবে সম্পন্ন (Exit Code 0)।
 >    - ল্যান্ডিং পেজ থেকে সরাসরি `/api/v1/auth/login` এবং `/api/v1/auth/register` এপিআই-এর মাধ্যমে ইনস্ট্যান্ট লগইন/রেজিস্ট্রেশন এবং অটোমেটিক ফিডে রিডাইরেক্ট।
 > 3. ✅ **কন্ট্রোলার ও রাউট কনফিগারেশন**:
 >    - `Modules/Social/app/Http/Controllers/SocialLandingController.php` তৈরি করা হয়েছে।
->    - গেস্ট ইউজার `social.zengfy.test:7000` এ ঢুকলে ল্যান্ডিং পেজ দেখতে পাবেন এবং লগইন করার পর সরাসরি `/feed`-এ প্রবেশ করবেন।
+>    - গেস্ট ইউজার `social.zengfy.top:7000` এ ঢুকলে ল্যান্ডিং পেজ দেখতে পাবেন এবং লগইন করার পর সরাসরি `/feed`-এ প্রবেশ করবেন।
 >    - ব্রাউজার সাব-এজেন্ট দ্বারা সম্পূর্ণ ফ্লো লাইভ টেস্টেড এবং ভেরিফাইড!
 > 
 > আমাদের সম্পূর্ণ সোশ্যাল ও একাউন্ট আর্কিটেকচার এখন ১০০% প্রোডাকশন রেডি! 🚀💎

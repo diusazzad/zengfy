@@ -66,7 +66,7 @@ export default function PricingOffersSection({ pricing = [], faqs = [] }) {
 
               <div>
                 <a
-                  href={`http://zengfy.test:8000/register?continue=http%3A%2F%2Fshop.zengfy.test%3A8000%2F&tier=${tier.tier}`}
+                  href={`http://zengfy.test:8000/register?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F&tier=${tier.tier}`}
                   className={`w-full py-3.5 px-4 rounded-2xl text-xs font-bold text-center transition-all block ${
                     tier.popular
                       ? 'bg-gradient-to-r from-orange-600 to-violet-600 hover:from-orange-700 hover:to-violet-700 text-white shadow-lg shadow-orange-600/30'

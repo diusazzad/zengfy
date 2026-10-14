@@ -95,7 +95,7 @@
                             <span class="text-2xl">🏫</span>
                             <div>
                                 <p class="text-sm font-bold text-white">School ERP</p>
-                                <span class="text-[10px] text-blue-300">school.zengfy.test</span>
+                                <span class="text-[10px] text-blue-300">school.zengfy.top</span>
                             </div>
                         </div>
 
@@ -104,7 +104,7 @@
                             <span class="text-2xl">🛒</span>
                             <div>
                                 <p class="text-sm font-bold text-white">POS Retail</p>
-                                <span class="text-[10px] text-indigo-300">pos.zengfy.test</span>
+                                <span class="text-[10px] text-indigo-300">pos.zengfy.top</span>
                             </div>
                         </div>
 
@@ -113,7 +113,7 @@
                             <span class="text-2xl">⚖️</span>
                             <div>
                                 <p class="text-sm font-bold text-white">Legal Suite</p>
-                                <span class="text-[10px] text-cyan-300">law.zengfy.test</span>
+                                <span class="text-[10px] text-cyan-300">law.zengfy.top</span>
                             </div>
                         </div>
 
@@ -121,7 +121,7 @@
                             class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all flex items-center gap-3">
                             <span class="text-2xl">🌐</span>
                             <div>
-                                <span class="text-[10px] text-emerald-400">social.zengfy.test</span>
+                                <span class="text-[10px] text-emerald-400">social.zengfy.top</span>
                             </div>
                         </div>
                     </div>

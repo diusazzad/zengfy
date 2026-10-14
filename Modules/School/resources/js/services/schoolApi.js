@@ -173,13 +173,13 @@ export const FALLBACK_SCHOOL_DATA = {
     ],
     links: {
         home: "http://zengfy.test:8000/",
-        school: "http://school.zengfy.test:8000/",
-        portal: "http://school.zengfy.test:8000/",
+        school: "http://school.zengfy.top:8000/",
+        portal: "http://school.zengfy.top:8000/",
         login: "http://zengfy.test:8000/login",
         register: "http://zengfy.test:8000/register",
         account: "http://zengfy.test:8000/account",
         download: "http://zengfy.test:8000/download",
-        demo: "http://school.zengfy.test:8000/#demo-section",
+        demo: "http://school.zengfy.top:8000/#demo-section",
         api_docs: "http://zengfy.test:8000/api/v1/school/landing",
     },
 };
@@ -207,7 +207,7 @@ export async function fetchSchoolLandingData() {
     // 2. Fetch from API endpoint candidates
     const endpoints = [
         '/api/v1/school/landing',
-        'http://school.zengfy.test:8000/api/v1/school/landing',
+        'http://school.zengfy.top:8000/api/v1/school/landing',
         'http://zengfy.test:8000/api/v1/school/landing',
         'http://127.0.0.1:8000/api/v1/school/landing',
     ];
