@@ -315,7 +315,7 @@
         "পাঠকদের সাথে সরাসরি এনক্রিপ্টেড কমেন্টিং ও কিউঅ্যান্ডএ"
       ],
       "cta": "প্রো কলামিস্ট হিসেবে শুরু করুন",
-      "cta_link": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/register?tier=journal_pro&continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F"
+      "cta_link": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/register?tier=journal_pro&continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
     },
     {
       "tier": "আজীবন জার্নালিস্ট লাইসেন্স",
@@ -333,7 +333,7 @@
         "লাইফটাইম সার্বভৌম সিকিউরিটি ও কোর আপডেট"
       ],
       "cta": "আজীবন লাইসেন্স সংগ্রহ করুন",
-      "cta_link": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/register?tier=journal_lifetime&continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F"
+      "cta_link": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/register?tier=journal_lifetime&continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
     },
     {
       "tier": "মিডিয়া হাউস ও সিন্ডিকেট স্যুট",
@@ -351,7 +351,7 @@
         "আইনি পরামর্শ ও ডিজিটাল সিকিউরিটি সুরক্ষা অডিট"
       ],
       "cta": "সিন্ডিকেট টিমের সাথে যোগাযোগ করুন",
-      "cta_link": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/register?tier=journal_enterprise&continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F"
+      "cta_link": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/register?tier=journal_enterprise&continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
     }
   ],
   "faqs": [
@@ -373,12 +373,12 @@
     }
   ],
   "auth": {
-    "login_url": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/login?continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F",
-    "register_url": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/register?continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F",
+    "login_url": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/login?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F",
+    "register_url": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/register?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F",
     "releases_url": "https://github.com/diusazzad/zengfy/releases"
   },
   "links": {
-    "base": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}",
-    "journal": "{{PROTOCOL}}journal.zengfy.test{{PORT_SUFFIX}}"
+    "base": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}",
+    "journal": "{{PROTOCOL}}journal.zengfy.top{{PORT_SUFFIX}}"
   }
 }

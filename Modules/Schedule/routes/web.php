@@ -5,17 +5,17 @@ use Modules\Schedule\Http\Controllers\ScheduleLandingController;
 
 /*
 |--------------------------------------------------------------------------
-| Schedule Module Web Routes (Subdomain Architecture: schedule.zengfy.test)
+| Schedule Module Web Routes (Subdomain Architecture: schedule.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Schedule Landing Page at schedule.zengfy.test.
+| Handles the dedicated Zengfy Schedule Landing Page at schedule.zengfy.top.
 | Follows the strict single-module isolated landing architecture.
 |
 */
 
-$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+$baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-// 1. Dedicated Subdomain: schedule.zengfy.test:8000
+// 1. Dedicated Subdomain: schedule.zengfy.top:8000
 Route::domain('schedule.' . $baseDomain)->group(function () use ($baseDomain) {
     // Dedicated React 19 Royal Indigo & Electric Cyan Schedule Landing Page
     Route::get('/', [ScheduleLandingController::class, 'index'])->name('schedule.landing');
@@ -43,7 +43,7 @@ Route::domain('schedule.' . $baseDomain)->group(function () use ($baseDomain) {
     })->name('schedule.download');
 });
 
-// 2. Base Domain Forwarder (e.g. http://zengfy.test:8000/schedule -> http://schedule.zengfy.test:8000/)
+// 2. Base Domain Forwarder (e.g. http://zengfy.top:8000/schedule -> http://schedule.zengfy.top:8000/)
 Route::get('/schedule', function () use ($baseDomain) {
     $scheme = request()->getScheme();
     $port = request()->getPort();

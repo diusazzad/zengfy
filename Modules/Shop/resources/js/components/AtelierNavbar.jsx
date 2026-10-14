@@ -12,15 +12,15 @@ export default function AtelierNavbar({
     const [waffleOpen, setWaffleOpen] = useState(false);
 
     const ecosystemApps = [
-        { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.test:8000/", icon: "🏛️" },
-        { name: "Zengfy Market", desc: "Marketplace", url: "http://ecommerce.zengfy.test:8000/", icon: "🛍️" },
+        { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.top:8000/", icon: "🏛️" },
+        { name: "Zengfy Market", desc: "Marketplace", url: "http://ecommerce.zengfy.top:8000/", icon: "🛍️" },
         { name: "Zengfy Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
         { name: "Zengfy POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
         { name: "Zengfy School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
         { name: "Zengfy Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
         { name: "Zengfy Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
-        { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.test:8000/", icon: "🕌" },
-        { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.test:8000/", icon: "📰" }
+        { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.top:8000/", icon: "🕌" },
+        { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.top:8000/", icon: "📰" }
     ];
 
     return (
@@ -125,7 +125,7 @@ export default function AtelierNavbar({
                     </button>
 
                     <a
-                        href="http://auth.zengfy.test:8000/login"
+                        href="http://auth.zengfy.top:8000/login"
                         className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors flex items-center gap-1.5 text-xs font-bold"
                         title="Sign In"
                     >

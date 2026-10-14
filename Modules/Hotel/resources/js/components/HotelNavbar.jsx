@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
-  { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.test:8000', icon: '🌐' },
+  { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
   { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
   { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
   { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
@@ -10,10 +10,10 @@ const ECOSYSTEM_APPS = [
   { name: 'Zengfy NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝' },
   { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
   { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨', current: true },
-  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.test:8000', icon: '💊' },
-  { name: 'Zengfy Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.test:8000', icon: '🏥' },
-  { name: 'Zengfy Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.test:8000', icon: '🌾' },
-  { name: 'Zengfy Fleet', tag: 'GPS & Fuel Logistics', url: 'http://fleet.zengfy.test:8000', icon: '🚚' },
+  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
+  { name: 'Zengfy Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.top:8000', icon: '🏥' },
+  { name: 'Zengfy Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.top:8000', icon: '🌾' },
+  { name: 'Zengfy Fleet', tag: 'GPS & Fuel Logistics', url: 'http://fleet.zengfy.top:8000', icon: '🚚' },
 ];
 
 export default function HotelNavbar({ brand = {} }) {
@@ -65,7 +65,7 @@ export default function HotelNavbar({ brand = {} }) {
             <a href="#journeys" className="hover:text-amber-700 transition-colors">স্টেকহোল্ডার জার্নি</a>
             <a href="#pillars" className="hover:text-amber-700 transition-colors">সার্বভৌম ফিচার</a>
             <a href="#pricing" className="hover:text-amber-700 transition-colors">প্যাকেজ ও মূল্য</a>
-            <a href="http://zengfy.test:8000" className="hover:text-amber-700 transition-colors flex items-center gap-1 text-slate-500 hover:text-slate-900">
+            <a href="http://zengfy.top:8000" className="hover:text-amber-700 transition-colors flex items-center gap-1 text-slate-500 hover:text-slate-900">
               <span>ইকোসিস্টেম</span>
               <span className="text-[10px] bg-slate-100 px-1.5 py-0.5 rounded font-mono text-slate-600">১৩টি অ্যাপ</span>
             </a>
@@ -119,7 +119,7 @@ export default function HotelNavbar({ brand = {} }) {
 
             {/* Central SSO Login */}
             <a
-              href="http://zengfy.test:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
+              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
               className="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
             >
               লগইন
@@ -185,13 +185,13 @@ export default function HotelNavbar({ brand = {} }) {
             </a>
             <div className="pt-2 border-t border-slate-100 flex items-center gap-2">
               <a
-                href="http://zengfy.test:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
+                href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
                 className="flex-1 text-center py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100"
               >
                 লগইন
               </a>
               <a
-                href="http://zengfy.test:8000/register?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
+                href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
                 className="flex-1 text-center py-2 rounded-xl text-xs font-bold text-white bg-amber-600"
               >
                 রেজিস্ট্রেশন

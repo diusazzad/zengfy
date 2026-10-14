@@ -301,7 +301,7 @@
       ],
       "highlighted": true,
       "cta": "সোলো প্ল্যানে শুরু করুন",
-      "cta_link": "http://zengfy.test:8000/register?tier=schedule_solo"
+      "cta_link": "http://zengfy.top:8000/register?tier=schedule_solo"
     },
     {
       "id": "tier_lifetime",
@@ -320,7 +320,7 @@
       ],
       "highlighted": false,
       "cta": "লাইফটাইম লাইসেন্স নিন",
-      "cta_link": "http://zengfy.test:8000/register?tier=schedule_lifetime"
+      "cta_link": "http://zengfy.top:8000/register?tier=schedule_lifetime"
     },
     {
       "id": "tier_enterprise",
@@ -338,7 +338,7 @@
       ],
       "highlighted": false,
       "cta": "এন্টারপ্রাইজ টিমের সাথে যোগাযোগ করুন",
-      "cta_link": "http://zengfy.test:8000/register?tier=schedule_enterprise"
+      "cta_link": "http://zengfy.top:8000/register?tier=schedule_enterprise"
     }
   ],
   "faqs": [
@@ -360,12 +360,12 @@
     }
   ],
   "auth": {
-    "login_url": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/login?continue=http%3A%2F%2Fschedule.zengfy.test%3A8000%2F",
-    "register_url": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/register?continue=http%3A%2F%2Fschedule.zengfy.test%3A8000%2F",
+    "login_url": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/login?continue=http%3A%2F%2Fschedule.zengfy.top%3A8000%2F",
+    "register_url": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/register?continue=http%3A%2F%2Fschedule.zengfy.top%3A8000%2F",
     "releases_url": "https://github.com/diusazzad/zengfy/releases"
   },
   "links": {
-    "base": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}",
-    "schedule": "{{PROTOCOL}}schedule.zengfy.test{{PORT_SUFFIX}}"
+    "base": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}",
+    "schedule": "{{PROTOCOL}}schedule.zengfy.top{{PORT_SUFFIX}}"
   }
 }

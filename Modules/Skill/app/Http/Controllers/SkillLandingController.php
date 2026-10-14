@@ -14,7 +14,7 @@ class SkillLandingController extends Controller
      */
     protected function getSkillData(): array
     {
-        $baseDomain = config('app.base_domain', 'zengfy.test');
+        $baseDomain = config('app.base_domain', 'zengfy.top');
         $port = config('app.port', 8000);
         $protocol = request()->secure() ? 'https://' : 'http://';
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : '';
@@ -140,7 +140,7 @@ class SkillLandingController extends Controller
                     'credential_id' => 'ZG-SKL-2026-89421',
                     'nid_hash' => 'NID-V-***9812',
                     'issue_date' => '১৩ অক্টোবর, ২০২৬',
-                    'qr_verify_url' => 'http://skill.zengfy.test:8000/verify/ZG-SKL-2026-89421',
+                    'qr_verify_url' => 'http://skill.zengfy.top:8000/verify/ZG-SKL-2026-89421',
                 ],
             ],
             'journeys' => [

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const ECOSYSTEM_APPS = [
-  { name: 'Zengfy Ecosystem', tag: 'Master Sovereign', url: 'http://zengfy.test:8000', icon: '🏛️' },
+  { name: 'Zengfy Ecosystem', tag: 'Master Sovereign', url: 'http://zengfy.top:8000', icon: '🏛️' },
   { name: 'Zengfy Social', tag: 'Decentralized Feed', url: 'http://social.zengfy.top:8000', icon: '💬' },
   { name: 'Zengfy School', tag: 'Madrasa & School ERP', url: 'http://school.zengfy.top:8000', icon: '🏫' },
   { name: 'Zengfy POS', tag: 'Dokan & Inventory', url: 'http://pos.zengfy.top:8000', icon: '🏪' },
@@ -11,10 +11,10 @@ const ECOSYSTEM_APPS = [
   { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
   { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
   { name: 'Zengfy Shop', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒' },
-  { name: 'Zengfy Skill', tag: 'Post-SSC Launchpad', url: 'http://skill.zengfy.test:8000', icon: '🎓' },
-  { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.test:8000', icon: '📰' },
-  { name: 'Zengfy Habit', tag: 'Salah & Streak Mesh', url: 'http://habit.zengfy.test:8000', icon: '🌱' },
-  { name: 'Zengfy Schedule', tag: 'Appointment & Calendar', url: 'http://schedule.zengfy.test:8000', icon: '📅', current: true },
+  { name: 'Zengfy Skill', tag: 'Post-SSC Launchpad', url: 'http://skill.zengfy.top:8000', icon: '🎓' },
+  { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.top:8000', icon: '📰' },
+  { name: 'Zengfy Habit', tag: 'Salah & Streak Mesh', url: 'http://habit.zengfy.top:8000', icon: '🌱' },
+  { name: 'Zengfy Schedule', tag: 'Appointment & Calendar', url: 'http://schedule.zengfy.top:8000', icon: '📅', current: true },
 ];
 
 export default function ScheduleNavbar({ brand = {} }) {
@@ -37,7 +37,7 @@ export default function ScheduleNavbar({ brand = {} }) {
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Badge */}
           <div className="flex items-center gap-3">
-            <a href="http://schedule.zengfy.test:8000" className="flex items-center gap-2.5 group">
+            <a href="http://schedule.zengfy.top:8000" className="flex items-center gap-2.5 group">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-700 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-900/20 group-hover:scale-105 transition-all">
                 <span className="text-xl">📅</span>
               </div>
@@ -142,7 +142,7 @@ export default function ScheduleNavbar({ brand = {} }) {
 
             {/* Central SSO Login Link */}
             <a
-              href="http://zengfy.test:8000/login?continue=http%3A%2F%2Fschedule.zengfy.test%3A8000%2F"
+              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fschedule.zengfy.top%3A8000%2F"
               className="text-xs font-bold text-slate-700 hover:text-indigo-600 px-3 py-2 rounded-xl hover:bg-indigo-50 transition-colors hidden sm:inline-block"
             >
               লগইন

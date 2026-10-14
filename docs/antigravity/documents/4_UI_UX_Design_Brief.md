@@ -228,7 +228,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 15. Zengfy Skill Design System (`skill.zengfy.test:8000`)
+### 15. Zengfy Skill Design System (`skill.zengfy.top:8000`)
 - **Palette:** Electric Cobalt Blue (`#2563EB` / `#1D4ED8`), Neon Cyan (`#06B6D4` / `#0891B2`), Deep Obsidian Slate (`#0F172A`).
 - **Components:**
   1. `SkillNavbar.jsx`: Electric Cobalt badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
@@ -241,7 +241,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 16. Zengfy Journal Design System (`journal.zengfy.test:8000`)
+### 16. Zengfy Journal Design System (`journal.zengfy.top:8000`)
 - **Palette:** Editorial Obsidian (`#0F172A`), Deep Crimson Accent (`#BE123C` / `#E11D48`), Warm Newsprint Paper (`#F8FAFC` / `#FAFAFA`).
 - **Components:**
   1. `JournalNavbar.jsx`: Editorial Obsidian & Crimson badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
@@ -254,7 +254,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 17. Zengfy Habit Design System (`habit.zengfy.test:8000`)
+### 17. Zengfy Habit Design System (`habit.zengfy.top:8000`)
 - **Palette:** Vitality Emerald (`#10B981` / `#059669`), Sunrise Amber (`#F59E0B` / `#D97706`), Deep Charcoal Slate (`#0F172A`).
 - **Components:**
   1. `HabitNavbar.jsx`: Vitality Emerald badge, 13-app 9-dot Waffle launcher popover, and SSO authentication triggers.
@@ -271,7 +271,7 @@ Primary Font Family: `Plus Jakarta Sans`, sans-serif.
 
 ---
 
-### 18. Zengfy Schedule Design System (`schedule.zengfy.test:8000`)
+### 18. Zengfy Schedule Design System (`schedule.zengfy.top:8000`)
 - **Palette:** Royal Indigo (`#4F46E5` / `#6366F1`), Electric Cyan (`#06B6D4` / `#0EA5E9`), Midnight Slate (`#0F172A`), Crisp Pearl Canvas (`#FAFAFA`).
 - **Components:**
   1. `ScheduleNavbar.jsx`: Royal Indigo badge, 14-app 9-dot Waffle launcher popover, and SSO authentication triggers.

@@ -69,8 +69,8 @@ Zengfy-এর ব্র্যান্ড গাইডলাইন (`#0B0F17` �
 
 ## ✅ ৪. অ্যাকসেপ্টেন্স ক্রাইটেরিয়া (Acceptance Criteria)
 
-1. `http://zengfy.test:7000/login` ওপেন করলে স্টাইলিশ ও ফাংশনাল লগইন পেজ দেখা যাবে।
-2. `http://zengfy.test:7000/register` ওপেন করলে একইভাবে রেসপনসিভ রেজিস্ট্রেশন পেজ দেখা যাবে।
+1. `http://zengfy.top:7000/login` ওপেন করলে স্টাইলিশ ও ফাংশনাল লগইন পেজ দেখা যাবে।
+2. `http://zengfy.top:7000/register` ওপেন করলে একইভাবে রেসপনসিভ রেজিস্ট্রেশন পেজ দেখা যাবে।
 3. পাসওয়ার্ড শো/হাইড আইকন ক্লিক করলে পাসওয়ার্ড টেক্সট ও পাসওয়ার্ড টাইপের মধ্যে স্মুথলি টগল হবে।
 4. `php artisan test` কমান্ড রান করলে যাতে কোনো বিদ্যমান টেস্ট ফেল না করে (৬৯/৬৯ টেস্ট গ্রিন থাকতে হবে)।
 5. কাজ সম্পন্ন করে [`docs/antigravity/multi-agent/chat/THREAD-001-AUTH-AND-SOCIAL-UI.md`](file:///p:/Zengfy-Ecosystem/core/docs/antigravity/multi-agent/chat/THREAD-001-AUTH-AND-SOCIAL-UI.md) ফাইলে তোমার রিপোর্ট লিখবে।

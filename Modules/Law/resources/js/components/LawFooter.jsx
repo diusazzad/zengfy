@@ -107,7 +107,7 @@ export default function LawFooter({ brand, ecosystem = [] }) {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="http://zengfy.test:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
+                <a href="http://zengfy.top:8000" className="text-slate-600 hover:text-rose-900 transition-colors flex items-center justify-between">
                   <span>মাস্টার ইকোসিস্টেম</span>
                   <span className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono">Hub</span>
                 </a>

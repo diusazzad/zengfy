@@ -294,7 +294,7 @@ class AuthController extends Controller
 
         // Google-style SSO: If requested on any subdomain, forward directly to Central Base Gateway
         $currentHost = $request->getHost();
-        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
         if ($currentHost !== $baseDomain && ! in_array($currentHost, ['localhost', '127.0.0.1'])) {
             $scheme = $request->getScheme();
             $port = $request->getPort();
@@ -326,7 +326,7 @@ class AuthController extends Controller
 
         // Google-style SSO: If requested on any subdomain, forward directly to Central Base Gateway
         $currentHost = $request->getHost();
-        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
         if ($currentHost !== $baseDomain && ! in_array($currentHost, ['localhost', '127.0.0.1'])) {
             $scheme = $request->getScheme();
             $port = $request->getPort();
@@ -358,7 +358,7 @@ class AuthController extends Controller
 
         // Google-style SSO: If requested on any subdomain, forward directly to Central Base Gateway
         $currentHost = $request->getHost();
-        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
         if ($currentHost !== $baseDomain && ! in_array($currentHost, ['localhost', '127.0.0.1'])) {
             $scheme = $request->getScheme();
             $port = $request->getPort();
@@ -448,7 +448,7 @@ class AuthController extends Controller
             return true;
         }
 
-        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
         $parsed = parse_url($url);
 
         if (! isset($parsed['host'])) {
@@ -458,7 +458,7 @@ class AuthController extends Controller
         $host = strtolower($parsed['host']);
         return $host === $baseDomain
             || str_ends_with($host, '.' . $baseDomain)
-            || str_ends_with($host, '.zengfy.test')
+            || str_ends_with($host, '.zengfy.top')
             || str_ends_with($host, '.zengfy.top')
             || in_array($host, ['localhost', '127.0.0.1']);
     }

@@ -64,7 +64,7 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Auth\Middleware\Authenticate::redirectUsing(function (\Illuminate\Http\Request $request) {
             if (! $request->expectsJson()) {
                 $scheme = $request->getScheme();
-                $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+                $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
                 $port = $request->getPort();
                 $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
 

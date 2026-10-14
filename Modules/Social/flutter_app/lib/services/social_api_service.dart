@@ -12,7 +12,7 @@ class SocialApiService {
         'http://10.0.2.2:8000/api/v1/social/landing',
         'http://127.0.0.1:8000/api/v1/social/landing',
         'http://social.zengfy.top:8000/api/v1/social/landing',
-        'http://zengfy.test:8000/api/v1/social/landing',
+        'http://zengfy.top:8000/api/v1/social/landing',
       ];
     }
     return const [

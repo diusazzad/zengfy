@@ -20,14 +20,14 @@ class BruteForceLockoutTest extends TestCase
     {
         User::create([
             'name' => 'Target User',
-            'email' => 'victim@zengfy.test',
+            'email' => 'victim@zengfy.top',
             'password' => Hash::make('StrongSecret123!'),
         ]);
 
         // First 4 attempts return 401 Unauthorized
         for ($i = 1; $i <= 4; $i++) {
             $response = $this->postJson('/api/v1/auth/login', [
-                'email' => 'victim@zengfy.test',
+                'email' => 'victim@zengfy.top',
                 'password' => "wrong-guess-{$i}",
             ]);
 
@@ -44,20 +44,20 @@ class BruteForceLockoutTest extends TestCase
     {
         User::create([
             'name' => 'Target User',
-            'email' => 'victim@zengfy.test',
+            'email' => 'victim@zengfy.top',
             'password' => Hash::make('StrongSecret123!'),
         ]);
 
         for ($i = 1; $i <= 4; $i++) {
             $this->postJson('/api/v1/auth/login', [
-                'email' => 'victim@zengfy.test',
+                'email' => 'victim@zengfy.top',
                 'password' => 'wrong-pass',
             ]);
         }
 
         // 5th failed attempt triggers Tier 1 (60s cooldown, HTTP 429)
         $fifthResponse = $this->postJson('/api/v1/auth/login', [
-            'email' => 'victim@zengfy.test',
+            'email' => 'victim@zengfy.top',
             'password' => 'wrong-pass',
         ]);
 
@@ -78,21 +78,21 @@ class BruteForceLockoutTest extends TestCase
     {
         $user = User::create([
             'name' => 'Secured Account',
-            'email' => 'secure@zengfy.test',
+            'email' => 'secure@zengfy.top',
             'password' => Hash::make('MyLegitimatePassword456!'),
         ]);
 
         // Trigger 5 failed attempts
         for ($i = 1; $i <= 5; $i++) {
             $this->postJson('/api/v1/auth/login', [
-                'email' => 'secure@zengfy.test',
+                'email' => 'secure@zengfy.top',
                 'password' => 'attacker-guess',
             ]);
         }
 
         // Submit request with the CORRECT password while lockout is active
         $response = $this->postJson('/api/v1/auth/login', [
-            'email' => 'secure@zengfy.test',
+            'email' => 'secure@zengfy.top',
             'password' => 'MyLegitimatePassword456!',
         ]);
 
@@ -112,21 +112,21 @@ class BruteForceLockoutTest extends TestCase
     {
         $user = User::create([
             'name' => 'Active Citizen',
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'password' => Hash::make('Password789!'),
         ]);
 
         // 3 failed attempts
         for ($i = 1; $i <= 3; $i++) {
             $this->postJson('/api/v1/auth/login', [
-                'email' => 'citizen@zengfy.test',
+                'email' => 'citizen@zengfy.top',
                 'password' => 'mistyped-pass',
             ]);
         }
 
         // 4th attempt with correct password
         $successResponse = $this->postJson('/api/v1/auth/login', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'password' => 'Password789!',
         ]);
 
@@ -134,7 +134,7 @@ class BruteForceLockoutTest extends TestCase
 
         // A subsequent wrong password starts back from 1, NOT 4
         $nextFail = $this->postJson('/api/v1/auth/login', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'password' => 'mistyped-again',
         ]);
 
@@ -146,21 +146,21 @@ class BruteForceLockoutTest extends TestCase
     {
         User::create([
             'name' => 'Target Account',
-            'email' => 'vip@zengfy.test',
+            'email' => 'vip@zengfy.top',
             'password' => Hash::make('VipPassword123!'),
         ]);
 
         // 9 failed attempts
         for ($i = 1; $i <= 9; $i++) {
             $this->postJson('/api/v1/auth/login', [
-                'email' => 'vip@zengfy.test',
+                'email' => 'vip@zengfy.top',
                 'password' => "wrong-pass-{$i}",
             ]);
         }
 
         // 10th failed attempt triggers Tier 2 (15 minutes / 900s cooldown)
         $tenthResponse = $this->postJson('/api/v1/auth/login', [
-            'email' => 'vip@zengfy.test',
+            'email' => 'vip@zengfy.top',
             'password' => 'wrong-pass-10',
         ]);
 
@@ -183,19 +183,19 @@ class BruteForceLockoutTest extends TestCase
 
         User::create([
             'name' => 'Alert Target',
-            'email' => 'alert@zengfy.test',
+            'email' => 'alert@zengfy.top',
             'password' => Hash::make('SecretPass123!'),
         ]);
 
         for ($i = 1; $i <= 10; $i++) {
             $this->postJson('/api/v1/auth/login', [
-                'email' => 'alert@zengfy.test',
+                'email' => 'alert@zengfy.top',
                 'password' => "bad-pass-{$i}",
             ]);
         }
 
         Event::assertDispatched(AccountLockoutTriggered::class, function ($event) {
-            return $event->email === 'alert@zengfy.test'
+            return $event->email === 'alert@zengfy.top'
                 && $event->failedAttempts === 10
                 && $event->retryAfterSeconds === 900;
         });
@@ -206,7 +206,7 @@ class BruteForceLockoutTest extends TestCase
     {
         User::create([
             'name' => 'Target VIP',
-            'email' => 'founder@zengfy.test',
+            'email' => 'founder@zengfy.top',
             'password' => Hash::make('FounderSecurityKey999!'),
         ]);
 
@@ -222,7 +222,7 @@ class BruteForceLockoutTest extends TestCase
         foreach ($botIps as $index => $ip) {
             $this->withServerVariables(['REMOTE_ADDR' => $ip])
                 ->postJson('/api/v1/auth/login', [
-                    'email' => 'founder@zengfy.test',
+                    'email' => 'founder@zengfy.top',
                     'password' => "brute-force-guess-{$index}",
                 ]);
         }
@@ -230,7 +230,7 @@ class BruteForceLockoutTest extends TestCase
         // A 6th brand new bot IP attempts to attack the same account
         $newBotResponse = $this->withServerVariables(['REMOTE_ADDR' => '192.0.2.100'])
             ->postJson('/api/v1/auth/login', [
-                'email' => 'founder@zengfy.test',
+                'email' => 'founder@zengfy.top',
                 'password' => 'another-bot-guess',
             ]);
 

@@ -68,7 +68,7 @@ export default function DarazComparisonTable({ comparisonData, sellerCardData })
                             </p>
                         </div>
                         <a
-                            href={sellerCardData.merchant_portal_url || "http://auth.zengfy.test:8000/register?intent=merchant"}
+                            href={sellerCardData.merchant_portal_url || "http://auth.zengfy.top:8000/register?intent=merchant"}
                             className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm shadow-xl flex items-center gap-2 shrink-0 group transition-all"
                         >
                             <Store className="w-4 h-4" />

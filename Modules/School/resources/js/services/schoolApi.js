@@ -7,7 +7,7 @@ export const FALLBACK_SCHOOL_DATA = {
         tagline_bn: "কাগজের ঝামেলাহীন আধুনিক ক্যাম্পাস। অভিভাবকের নিশ্চিন্ত ভরসা।",
         description: "Bangladesh's next-generation sovereign school, college & madrasah management platform. Instant RFID attendance notifications, 1-click NCTB automated report cards, and transparent digital fee collection with zero paper bureaucracy.",
         version: "1.0.0",
-        base_domain: "zengfy.test",
+        base_domain: "zengfy.top",
     },
     stats: {
         institutions_count: 540,
@@ -172,15 +172,15 @@ export const FALLBACK_SCHOOL_DATA = {
         },
     ],
     links: {
-        home: "http://zengfy.test:8000/",
+        home: "http://zengfy.top:8000/",
         school: "http://school.zengfy.top:8000/",
         portal: "http://school.zengfy.top:8000/",
-        login: "http://zengfy.test:8000/login",
-        register: "http://zengfy.test:8000/register",
-        account: "http://zengfy.test:8000/account",
-        download: "http://zengfy.test:8000/download",
+        login: "http://zengfy.top:8000/login",
+        register: "http://zengfy.top:8000/register",
+        account: "http://zengfy.top:8000/account",
+        download: "http://zengfy.top:8000/download",
         demo: "http://school.zengfy.top:8000/#demo-section",
-        api_docs: "http://zengfy.test:8000/api/v1/school/landing",
+        api_docs: "http://zengfy.top:8000/api/v1/school/landing",
     },
 };
 
@@ -208,7 +208,7 @@ export async function fetchSchoolLandingData() {
     const endpoints = [
         '/api/v1/school/landing',
         'http://school.zengfy.top:8000/api/v1/school/landing',
-        'http://zengfy.test:8000/api/v1/school/landing',
+        'http://zengfy.top:8000/api/v1/school/landing',
         'http://127.0.0.1:8000/api/v1/school/landing',
     ];
 

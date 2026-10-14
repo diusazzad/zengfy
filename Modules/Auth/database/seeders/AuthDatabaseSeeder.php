@@ -14,9 +14,9 @@ class AuthDatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Super Admin / Founder Sovereign Account (handles user@test.com or admin@zengfy.test)
+        // 1. Super Admin / Founder Sovereign Account (handles user@test.com or admin@zengfy.top)
         $admin = User::where('email', 'user@test.com')
-            ->orWhere('email', 'admin@zengfy.test')
+            ->orWhere('email', 'admin@zengfy.top')
             ->orWhere('handle', 'sazzad')
             ->first();
 
@@ -24,7 +24,7 @@ class AuthDatabaseSeeder extends Seeder
             $admin->update([
                 'name' => 'Sazzad Hossain',
                 'handle' => 'sazzad',
-                'email' => 'admin@zengfy.test',
+                'email' => 'admin@zengfy.top',
                 'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
                 'user_type' => 'admin',
@@ -42,7 +42,7 @@ class AuthDatabaseSeeder extends Seeder
             $admin = User::create([
                 'name' => 'Sazzad Hossain',
                 'handle' => 'sazzad',
-                'email' => 'admin@zengfy.test',
+                'email' => 'admin@zengfy.top',
                 'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
                 'user_type' => 'admin',
@@ -77,7 +77,7 @@ class AuthDatabaseSeeder extends Seeder
         }
 
         // 2. Verified Citizen Account (Ayesha Rahman)
-        $citizen = User::where('email', 'ayesha@zengfy.test')
+        $citizen = User::where('email', 'ayesha@zengfy.top')
             ->orWhere('handle', 'ayesha')
             ->first();
 
@@ -85,7 +85,7 @@ class AuthDatabaseSeeder extends Seeder
             $citizen->update([
                 'name' => 'Ayesha Rahman',
                 'handle' => 'ayesha',
-                'email' => 'ayesha@zengfy.test',
+                'email' => 'ayesha@zengfy.top',
                 'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
                 'user_type' => 'citizen',
@@ -103,7 +103,7 @@ class AuthDatabaseSeeder extends Seeder
             $citizen = User::create([
                 'name' => 'Ayesha Rahman',
                 'handle' => 'ayesha',
-                'email' => 'ayesha@zengfy.test',
+                'email' => 'ayesha@zengfy.top',
                 'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
                 'user_type' => 'citizen',
@@ -136,7 +136,7 @@ class AuthDatabaseSeeder extends Seeder
         }
 
         // 3. School / Institutional Admin Account
-        $schoolAdmin = User::where('email', 'school@zengfy.test')
+        $schoolAdmin = User::where('email', 'school@zengfy.top')
             ->orWhere('handle', 'zengfyschool')
             ->first();
 
@@ -144,7 +144,7 @@ class AuthDatabaseSeeder extends Seeder
             $schoolAdmin->update([
                 'name' => 'Zengfy Academy Admin',
                 'handle' => 'zengfyschool',
-                'email' => 'school@zengfy.test',
+                'email' => 'school@zengfy.top',
                 'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
                 'user_type' => 'school_admin',
@@ -163,7 +163,7 @@ class AuthDatabaseSeeder extends Seeder
             $schoolAdmin = User::create([
                 'name' => 'Zengfy Academy Admin',
                 'handle' => 'zengfyschool',
-                'email' => 'school@zengfy.test',
+                'email' => 'school@zengfy.top',
                 'password' => Hash::make('Password@123'),
                 'email_verified_at' => now(),
                 'user_type' => 'school_admin',

@@ -19,7 +19,7 @@ export default function PricingOffersSection({ pricingData, faqsData }) {
       ],
       highlighted: true,
       cta: 'প্রো কলামিস্ট হিসেবে শুরু করুন',
-      cta_link: 'http://zengfy.test:8000/register?tier=journal_pro'
+      cta_link: 'http://zengfy.top:8000/register?tier=journal_pro'
     },
     {
       id: 'tier_lifetime',
@@ -38,7 +38,7 @@ export default function PricingOffersSection({ pricingData, faqsData }) {
       ],
       highlighted: false,
       cta: 'আজীবন ওনারশিপ লাইসেন্স নিন',
-      cta_link: 'http://zengfy.test:8000/register?tier=journal_lifetime'
+      cta_link: 'http://zengfy.top:8000/register?tier=journal_lifetime'
     },
     {
       id: 'tier_syndicate',
@@ -56,7 +56,7 @@ export default function PricingOffersSection({ pricingData, faqsData }) {
       ],
       highlighted: false,
       cta: 'সিন্ডিকেট টিমের সাথে যোগাযোগ করুন',
-      cta_link: 'http://zengfy.test:8000/register?tier=journal_enterprise'
+      cta_link: 'http://zengfy.top:8000/register?tier=journal_enterprise'
     }
   ];
 
@@ -155,7 +155,7 @@ export default function PricingOffersSection({ pricingData, faqsData }) {
 
               <div>
                 <a
-                  href={tier.cta_link || 'http://zengfy.test:8000/register'}
+                  href={tier.cta_link || 'http://zengfy.top:8000/register'}
                   className={`w-full py-3.5 px-4 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-200 block shadow-md ${
                     tier.highlighted
                       ? 'bg-rose-600 hover:bg-rose-500 text-white shadow-rose-900/30'

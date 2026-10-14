@@ -5,7 +5,7 @@ export const FALLBACK_SOCIAL_DATA = {
         tagline: "Real People. Real Communities. Zero Noise.",
         description: "The next-generation sovereign social network for Bangladesh. Verified neighborhood discussions, civic emergency SOS beacons, and chronological friend timelines with zero algorithm manipulation.",
         version: "1.0.0",
-        base_domain: "zengfy.test",
+        base_domain: "zengfy.top",
     },
     stats: {
         verified_citizens: 1480,
@@ -158,14 +158,14 @@ export const FALLBACK_SOCIAL_DATA = {
         },
     ],
     links: {
-        home: "http://zengfy.test:8000/",
+        home: "http://zengfy.top:8000/",
         social: "http://social.zengfy.top:8000/",
         feed: "http://social.zengfy.top:8000/",
-        login: "http://zengfy.test:8000/login",
-        register: "http://zengfy.test:8000/register",
-        account: "http://zengfy.test:8000/account",
-        download: "http://zengfy.test:8000/download",
-        api_docs: "http://zengfy.test:8000/api/v1/social/landing",
+        login: "http://zengfy.top:8000/login",
+        register: "http://zengfy.top:8000/register",
+        account: "http://zengfy.top:8000/account",
+        download: "http://zengfy.top:8000/download",
+        api_docs: "http://zengfy.top:8000/api/v1/social/landing",
     },
 };
 
@@ -193,7 +193,7 @@ export async function fetchSocialLandingData() {
     const endpoints = [
         '/api/v1/social/landing',
         'http://social.zengfy.top:8000/api/v1/social/landing',
-        'http://zengfy.test:8000/api/v1/social/landing',
+        'http://zengfy.top:8000/api/v1/social/landing',
         'http://127.0.0.1:8000/api/v1/social/landing',
     ];
 

@@ -25,7 +25,7 @@ class AccountHubTest extends TestCase
     {
         $user = User::factory()->create([
             'name' => 'Sazzad Hossain',
-            'email' => 'sazzad@zengfy.test',
+            'email' => 'sazzad@zengfy.top',
         ]);
 
         $response = $this->actingAs($user)->get('/account');

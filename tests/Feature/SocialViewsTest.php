@@ -30,7 +30,7 @@ class SocialViewsTest extends TestCase
             'id' => (string) Str::uuid(),
             'name' => 'Sazzad Hossain',
             'handle' => 'sazzad',
-            'email' => 'sazzad@zengfy.test',
+            'email' => 'sazzad@zengfy.top',
             'password' => bcrypt('Secret123!@#'),
             'ward_code' => 'WARD-DHAKA-19',
             'bio' => 'Lead Architect of Zengfy Ecosystem.',

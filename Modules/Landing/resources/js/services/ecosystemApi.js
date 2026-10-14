@@ -6,7 +6,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
         tagline: "Speak Freely. One Unified Sovereign Account.",
         description: "Bangladesh's next-generation sovereign digital infrastructure. Connect to 14 unified micro-SaaS platforms—from hyperlocal social feeds and institutional school ERP to legal vaults and retail POS—all powered by single-sign-on NID verification.",
         version: "1.0.0",
-        base_domain: "zengfy.test",
+        base_domain: "zengfy.top",
     },
     stats: {
         verified_citizens: 1480,
@@ -113,7 +113,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Fast Online Storefront with Courier & Payment Gateway.",
             desc: "Launch your branded digital shop in minutes with Steadfast/Pathao courier tracking, bKash/Nagad checkout, and inventory sync.",
             icon: "🛍️",
-            url: "http://ecommerce.zengfy.test:8000",
+            url: "http://ecommerce.zengfy.top:8000",
             badge: "Online Store",
         },
         {
@@ -123,7 +123,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Online Courses, Instructors & Skill Certifications.",
             desc: "Host live classes, video courses, student assignments, and verified certificates.",
             icon: "🎓",
-            url: "http://skill.zengfy.test:8000",
+            url: "http://skill.zengfy.top:8000",
             badge: "LMS Creator",
         },
         {
@@ -133,7 +133,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Encrypted Personal Diary, Notes & Thought Vault.",
             desc: "Keep your daily thoughts, private notes, and personal goals protected with biometric encryption.",
             icon: "📓",
-            url: "http://journal.zengfy.test:8000",
+            url: "http://journal.zengfy.top:8000",
             badge: "Private Vault",
         },
         {
@@ -143,7 +143,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Daily Routine, Habit Streaks & Focus Analytics.",
             desc: "Track your daily rituals, building discipline with streak reminders and personal performance charts.",
             icon: "⚡",
-            url: "http://habit.zengfy.test:8000",
+            url: "http://habit.zengfy.top:8000",
             badge: "Productivity",
         },
         {
@@ -153,7 +153,7 @@ export const FALLBACK_ECOSYSTEM_DATA = {
             tagline: "Client Appointment Booking & Consultation Calendar.",
             desc: "Automated calendar bookings for doctors, consultants, and coaches with SMS meeting reminders.",
             icon: "📅",
-            url: "http://schedule.zengfy.test:8000",
+            url: "http://schedule.zengfy.top:8000",
             badge: "Booking Tool",
         },
     ],
@@ -192,14 +192,14 @@ export const FALLBACK_ECOSYSTEM_DATA = {
         user: null,
     },
     links: {
-        home: "http://zengfy.test:8000/",
-        login: "http://zengfy.test:8000/login",
-        register: "http://zengfy.test:8000/register",
-        account: "http://zengfy.test:8000/account",
-        download: "http://zengfy.test:8000/download",
+        home: "http://zengfy.top:8000/",
+        login: "http://zengfy.top:8000/login",
+        register: "http://zengfy.top:8000/register",
+        account: "http://zengfy.top:8000/account",
+        download: "http://zengfy.top:8000/download",
         social: "http://social.zengfy.top:8000/",
         school: "http://school.zengfy.top:8000/",
-        api_docs: "http://zengfy.test:8000/api/v1/ecosystem/landing",
+        api_docs: "http://zengfy.top:8000/api/v1/ecosystem/landing",
     },
 };
 
@@ -226,7 +226,7 @@ export async function fetchEcosystemData() {
     // 2. Multi-URL fetch candidates
     const endpoints = [
         '/api/v1/ecosystem/landing',
-        'http://zengfy.test:8000/api/v1/ecosystem/landing',
+        'http://zengfy.top:8000/api/v1/ecosystem/landing',
         'http://127.0.0.1:8000/api/v1/ecosystem/landing',
         'http://localhost:8000/api/v1/ecosystem/landing',
     ];

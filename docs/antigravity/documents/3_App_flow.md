@@ -7,7 +7,7 @@
 
 ```mermaid
 graph TD
-    A[Visitor Navigates to http://zengfy.test:8000/] --> B{Laravel LandingController@index}
+    A[Visitor Navigates to http://zengfy.top:8000/] --> B{Laravel LandingController@index}
     B --> C[Server renders index.blade.php with initialData]
     C --> D[React 19 App Mounts into #react-ecosystem-landing-root]
     
@@ -36,7 +36,7 @@ graph TD
 ### 2. User Journey Specifications
 
 #### Journey 1: Discovering the Sovereign Ecosystem
-1. **Landing:** The user arrives at `http://zengfy.test:8000/`.
+1. **Landing:** The user arrives at `http://zengfy.top:8000/`.
 2. **First Impression:** Frosted white glass panels (`bg-white/75 backdrop-blur-2xl`) over soft pastel glow orbs create a crisp, modern aesthetic.
 3. **Hero Interaction:**
    - The user reads "Speak Freely." and sees the privacy guarantee badges.

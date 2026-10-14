@@ -61,7 +61,7 @@ export default function SkillFooter() {
               <li><a href="#journeys" className="hover:text-blue-400 transition-colors">স্টেকহোল্ডার জার্নি</a></li>
               <li><a href="#pillars" className="hover:text-blue-400 transition-colors">সার্বভৌম শিক্ষা স্তম্ভ</a></li>
               <li><a href="#pricing" className="hover:text-blue-400 transition-colors">প্রাইসিং প্যাকেজ</a></li>
-              <li><a href="http://skill.zengfy.test:8000/api/v1/skill/landing" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">পাবলিক রেস্ট এপিআই (REST API)</a></li>
+              <li><a href="http://skill.zengfy.top:8000/api/v1/skill/landing" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">পাবলিক রেস্ট এপিআই (REST API)</a></li>
             </ul>
           </div>
 
@@ -71,7 +71,7 @@ export default function SkillFooter() {
               সার্বভৌম ইকোসিস্টেম
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="http://zengfy.test:8000" className="hover:text-blue-400 transition-colors">Master Landing</a></li>
+              <li><a href="http://zengfy.top:8000" className="hover:text-blue-400 transition-colors">Master Landing</a></li>
               <li><a href="http://social.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy Social</a></li>
               <li><a href="http://school.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy School ERP</a></li>
               <li><a href="http://shop.zengfy.top:8000" className="hover:text-blue-400 transition-colors">Zengfy Shop D2C</a></li>
@@ -90,7 +90,7 @@ export default function SkillFooter() {
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               100% NID Verified Mentors
             </span>
-            <a href="http://zengfy.test:8000" className="hover:text-slate-300 transition-colors">
+            <a href="http://zengfy.top:8000" className="hover:text-slate-300 transition-colors">
               সার্বভৌম নিরাপত্তা সনদ
             </a>
           </div>

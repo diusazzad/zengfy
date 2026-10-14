@@ -20,7 +20,7 @@ class NidVerificationTest extends TestCase
     {
         $user = User::create([
             'name' => 'Kazi Nazrul',
-            'email' => 'nazrul@zengfy.test',
+            'email' => 'nazrul@zengfy.top',
             'password' => Hash::make('SecretPass123!'),
         ]);
 
@@ -67,7 +67,7 @@ class NidVerificationTest extends TestCase
     {
         $user = User::create([
             'name' => 'Lalon Shah',
-            'email' => 'lalon@zengfy.test',
+            'email' => 'lalon@zengfy.top',
             'password' => Hash::make('SecretPass123!'),
         ]);
 
@@ -99,7 +99,7 @@ class NidVerificationTest extends TestCase
     {
         $citizenA = User::create([
             'name' => 'Citizen A',
-            'email' => 'citizena@zengfy.test',
+            'email' => 'citizena@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $tokenA = $citizenA->createToken('Session A')->plainTextToken;
@@ -115,7 +115,7 @@ class NidVerificationTest extends TestCase
         // Citizen B attempts to verify the SAME NID
         $citizenB = User::create([
             'name' => 'Citizen B (Fraudulent Attempt)',
-            'email' => 'citizenb@zengfy.test',
+            'email' => 'citizenb@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $tokenB = $citizenB->createToken('Session B')->plainTextToken;
@@ -143,7 +143,7 @@ class NidVerificationTest extends TestCase
     {
         $user = User::create([
             'name' => 'Tester',
-            'email' => 'tester@zengfy.test',
+            'email' => 'tester@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $token = $user->createToken('Session')->plainTextToken;
@@ -174,7 +174,7 @@ class NidVerificationTest extends TestCase
     {
         $user = User::create([
             'name' => 'Non Existent Citizen',
-            'email' => 'fake@zengfy.test',
+            'email' => 'fake@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $token = $user->createToken('Session')->plainTextToken;
@@ -200,7 +200,7 @@ class NidVerificationTest extends TestCase
     {
         $user = User::create([
             'name' => 'Verified User',
-            'email' => 'verified@zengfy.test',
+            'email' => 'verified@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $token = $user->createToken('Session')->plainTextToken;
@@ -234,7 +234,7 @@ class NidVerificationTest extends TestCase
     {
         $user = User::create([
             'name' => 'Citizen Status Check',
-            'email' => 'status@zengfy.test',
+            'email' => 'status@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $token = $user->createToken('Session')->plainTextToken;
@@ -270,7 +270,7 @@ class NidVerificationTest extends TestCase
 
         $user = User::create([
             'name' => 'Event Citizen',
-            'email' => 'event@zengfy.test',
+            'email' => 'event@zengfy.top',
             'password' => Hash::make('Password123!'),
         ]);
         $token = $user->createToken('Session')->plainTextToken;

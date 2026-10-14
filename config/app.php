@@ -132,7 +132,7 @@ return [
     |
     */
 
-    'base_domain' => env('APP_BASE_DOMAIN', 'zengfy.test'),
+    'base_domain' => env('APP_BASE_DOMAIN', 'zengfy.top'),
 
     'url_scheme' => env('APP_URL_SCHEME', 'http'),
 

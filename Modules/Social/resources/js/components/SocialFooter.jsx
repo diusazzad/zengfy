@@ -24,10 +24,10 @@ export default function SocialFooter({ links = {} }) {
 
                     {/* Links */}
                     <div className="flex flex-wrap items-center justify-center gap-5 font-semibold text-slate-600">
-                        <a href={links.home || "http://zengfy.test:8000/"} className="hover:text-blue-600 transition">
+                        <a href={links.home || "http://zengfy.top:8000/"} className="hover:text-blue-600 transition">
                             Master Ecosystem Hub
                         </a>
-                        <a href={links.download || "http://zengfy.test:8000/download"} className="hover:text-blue-600 transition flex items-center gap-1">
+                        <a href={links.download || "http://zengfy.top:8000/download"} className="hover:text-blue-600 transition flex items-center gap-1">
                             <Smartphone aria-hidden="true" className="w-3.5 h-3.5 text-emerald-600" />
                             <span>Android APK</span>
                         </a>

@@ -25,7 +25,7 @@ class AccountController extends Controller
             ->get();
 
         // Ecosystem modules with status and launch links
-        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
         $scheme = env('APP_URL_SCHEME', 'http');
         $port = env('APP_ENV') === 'local' ? ':7000' : '';
 

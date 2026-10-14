@@ -1,7 +1,7 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
-  { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.test:8000', icon: '🌐' },
+  { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
   { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
   { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🏫' },
   { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
@@ -11,9 +11,9 @@ const ECOSYSTEM_APPS = [
   { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
   { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
   { name: 'Zengfy Shop', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒' },
-  { name: 'Zengfy Skill', tag: 'Post-SSC Launchpad', url: 'http://skill.zengfy.test:8000', icon: '🎓' },
-  { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.test:8000', icon: '📰', current: true },
-  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.test:8000', icon: '💊' },
+  { name: 'Zengfy Skill', tag: 'Post-SSC Launchpad', url: 'http://skill.zengfy.top:8000', icon: '🎓' },
+  { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.top:8000', icon: '📰', current: true },
+  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
 ];
 
 export default function JournalNavbar({ brand = {} }) {
@@ -36,7 +36,7 @@ export default function JournalNavbar({ brand = {} }) {
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Badge */}
           <div className="flex items-center gap-3">
-            <a href="http://journal.zengfy.test:8000" className="flex items-center gap-2.5 group">
+            <a href="http://journal.zengfy.top:8000" className="flex items-center gap-2.5 group">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-rose-700 to-rose-600 flex items-center justify-center text-white shadow-md shadow-rose-900/20 group-hover:scale-105 transition-all">
                 <span className="text-xl">📰</span>
               </div>
@@ -141,7 +141,7 @@ export default function JournalNavbar({ brand = {} }) {
 
             {/* Central SSO Login Link */}
             <a
-              href="http://zengfy.test:8000/login?continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F"
+              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
               className="text-xs font-bold text-slate-700 hover:text-rose-700 px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors hidden sm:inline-block"
             >
               লগইন
@@ -149,7 +149,7 @@ export default function JournalNavbar({ brand = {} }) {
 
             {/* CTA: Start Independent Column */}
             <a
-              href="http://zengfy.test:8000/register?continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F"
+              href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-slate-900 via-rose-700 to-rose-600 hover:from-slate-800 hover:to-rose-700 shadow-md shadow-rose-900/20 transform hover:-translate-y-0.5 transition-all cursor-pointer"
             >
               <span>✍️ স্বাধীন কলাম লিখুন</span>

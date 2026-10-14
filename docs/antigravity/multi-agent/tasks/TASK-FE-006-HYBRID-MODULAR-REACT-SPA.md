@@ -66,13 +66,13 @@ Zengfy ইকোসিস্টেমের জন্য টেক লিড **�
 
 ## 🔍 সফলতার মাপকাঠি ও ব্রাউজার ভেরিফিকেশন রিপোর্ট (Browser Verification Report)
 
-সাব-এজেন্ট দ্বারা লাইভ এনভায়রনমেন্টে (`http://zengfy.test:7000/`) সম্পূর্ণ ভেরিফিকেশন সফল হয়েছে:
+সাব-এজেন্ট দ্বারা লাইভ এনভায়রনমেন্টে (`http://zengfy.top:7000/`) সম্পূর্ণ ভেরিফিকেশন সফল হয়েছে:
 
 | সেকশন | ইউআরএল | স্ট্যাটাস | স্ক্রিনশট / আর্টফ্যাক্ট | ফলাফল |
 | :--- | :--- | :---: | :--- | :--- |
-| **Landing Page** | `http://zengfy.test:7000/` | ✅ PASS | `landing_page_1791336596838.png` | বেন্টো গ্রিড, নেভবার ও এসইও লেআউট নিখুঁতভাবে রেন্ডার হয়েছে। |
-| **Auth Flow** | `http://zengfy.test:7000/login` | ✅ PASS | Live Session | সফলভাবে লগইন সম্পন্ন এবং `localStorage` এ টোকেন সংরক্ষিত। |
-| **Account Hub** | `http://zengfy.test:7000/account` | ✅ PASS | `account_overview_1791337317678.png`<br>`account_security_tabs_179133769040.png` | `#react-account-root` মাউন্ট সফল; ৪টি ট্যাব, ডিভাইস সেশন ও এনআইডি স্ট্যাটাস লাইভ। |
+| **Landing Page** | `http://zengfy.top:7000/` | ✅ PASS | `landing_page_1791336596838.png` | বেন্টো গ্রিড, নেভবার ও এসইও লেআউট নিখুঁতভাবে রেন্ডার হয়েছে। |
+| **Auth Flow** | `http://zengfy.top:7000/login` | ✅ PASS | Live Session | সফলভাবে লগইন সম্পন্ন এবং `localStorage` এ টোকেন সংরক্ষিত। |
+| **Account Hub** | `http://zengfy.top:7000/account` | ✅ PASS | `account_overview_1791337317678.png`<br>`account_security_tabs_179133769040.png` | `#react-account-root` মাউন্ট সফল; ৪টি ট্যাব, ডিভাইস সেশন ও এনআইডি স্ট্যাটাস লাইভ। |
 | **Social Landing Page** | `http://social.zengfy.top:7000/about` | ✅ PASS | `social_hero_showcase_1791338498117.png`<br>`social_bento_grid_1791338503632.png`<br>`auth_modal_filled_1791338892257.png` | ডেডিকেটেড সোশ্যাল ল্যান্ডিং পেজ, লাইভ শোকেস ও এপিআই অথেনটিকেশন মোডাল ভেরিফাইড। |
 | **Social Feed & Chat** | `http://social.zengfy.top:7000/` | ✅ PASS | `social_feed_chat_1791337434073.png`<br>`social_feed_page_1791339312851.png` | `#react-feed-root` এবং ফ্লোটিং `#react-chat-root` লাইভ চ্যাট ড্রয়ার সফলভাবে ওপেন হয়েছে। |
 

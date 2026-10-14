@@ -71,7 +71,7 @@ export default function ShopFooter() {
               সার্বভৌম ইকোসিস্টেম
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="http://zengfy.test:8000" className="hover:text-orange-400 transition-colors">🌐 Master Landing</a></li>
+              <li><a href="http://zengfy.top:8000" className="hover:text-orange-400 transition-colors">🌐 Master Landing</a></li>
               <li><a href="http://social.zengfy.top:8000" className="hover:text-orange-400 transition-colors">👥 Zengfy Social</a></li>
               <li><a href="http://school.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🎓 Zengfy School ERP</a></li>
               <li><a href="http://pos.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🛍️ Zengfy POS Retail</a></li>
@@ -80,10 +80,10 @@ export default function ShopFooter() {
               <li><a href="http://ngo.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🤝 Zengfy NGO</a></li>
               <li><a href="http://rent.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🔑 Zengfy Rent</a></li>
               <li><a href="http://hotel.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🏨 Zengfy Hotel</a></li>
-              <li><a href="http://skill.zengfy.test:8000" className="hover:text-orange-400 transition-colors">🚀 Zengfy Skill</a></li>
-              <li><a href="http://journal.zengfy.test:8000" className="hover:text-orange-400 transition-colors">✍️ Zengfy Journal</a></li>
-              <li><a href="http://habit.zengfy.test:8000" className="hover:text-orange-400 transition-colors">⚡ Zengfy Habit</a></li>
-              <li><a href="http://schedule.zengfy.test:8000" className="hover:text-orange-400 transition-colors">📅 Zengfy Schedule</a></li>
+              <li><a href="http://skill.zengfy.top:8000" className="hover:text-orange-400 transition-colors">🚀 Zengfy Skill</a></li>
+              <li><a href="http://journal.zengfy.top:8000" className="hover:text-orange-400 transition-colors">✍️ Zengfy Journal</a></li>
+              <li><a href="http://habit.zengfy.top:8000" className="hover:text-orange-400 transition-colors">⚡ Zengfy Habit</a></li>
+              <li><a href="http://schedule.zengfy.top:8000" className="hover:text-orange-400 transition-colors">📅 Zengfy Schedule</a></li>
             </ul>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function ShopFooter() {
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               100% Zero Data Harvesting
             </span>
-            <a href="http://zengfy.test:8000" className="hover:text-slate-300 transition-colors">
+            <a href="http://zengfy.top:8000" className="hover:text-slate-300 transition-colors">
               সার্বভৌম নিরাপত্তা সনদ
             </a>
           </div>

@@ -78,7 +78,7 @@ export default function SchoolFooter({ links = {} }) {
                             </li>
                             <li>
                                 <a
-                                    href="http://zengfy.test:8000/download"
+                                    href="http://zengfy.top:8000/download"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-emerald-700 transition-colors inline-flex items-center gap-1"
@@ -89,7 +89,7 @@ export default function SchoolFooter({ links = {} }) {
                             </li>
                             <li>
                                 <a
-                                    href={links.login || 'http://zengfy.test:8000/login'}
+                                    href={links.login || 'http://zengfy.top:8000/login'}
                                     className="hover:text-emerald-700 transition-colors inline-flex items-center gap-1"
                                 >
                                     <span>ইউনিভার্সাল SSO লগইন</span>

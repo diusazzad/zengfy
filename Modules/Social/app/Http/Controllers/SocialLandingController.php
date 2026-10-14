@@ -36,7 +36,7 @@ class SocialLandingController extends Controller
      */
     public function data(Request $request): JsonResponse
     {
-        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
         $scheme = $request->getScheme();
         $port = $request->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";

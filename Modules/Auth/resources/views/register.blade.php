@@ -362,7 +362,7 @@
                         let redirectUrl = urlParams.get('continue') || urlParams.get('redirect_uri') || urlParams.get('redirect_to') || urlParams.get('redirect') || '/account';
                         try {
                             const parsed = new URL(redirectUrl, window.location.origin);
-                            if (parsed.hostname.endsWith('zengfy.test') || parsed.hostname.endsWith('zengfy.top') || parsed.hostname === 'localhost' || parsed.origin === window.location.origin) {
+                            if (parsed.hostname.endsWith('zengfy.top') || parsed.hostname.endsWith('zengfy.top') || parsed.hostname === 'localhost' || parsed.origin === window.location.origin) {
                                 window.location.href = redirectUrl;
                             } else {
                                 window.location.href = '/account';

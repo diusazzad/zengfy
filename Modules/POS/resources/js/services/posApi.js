@@ -7,7 +7,7 @@ export const FALLBACK_POS_DATA = {
         tagline_bn: "গার্মেন্টস, বুটিক ও শপিং মল রিটেইলের জন্য সুপারফাস্ট বারকোড পিওএস ও ইনভেন্টরি ইআরপি।",
         description: "Bangladesh's premier sovereign retail ERP tailored for boutiques, clothing showrooms, and shopping mall fashion brands. Instant color/size variant barcode billing, thermal receipt printing, automated due ledger (Baki Khata) with bKash SMS recovery, and 1-click live Zengfy Social ShopWindow.",
         version: "1.0.0",
-        base_domain: "zengfy.test",
+        base_domain: "zengfy.top",
     },
     stats: {
         active_showrooms: "1,280+",
@@ -270,10 +270,10 @@ export const FALLBACK_POS_DATA = {
     },
     links: {
         home: "http://pos.zengfy.top:8000/",
-        login: "http://zengfy.test:8000/login?continue=http%3A%2F%2Fpos.zengfy.top%3A8000%2F",
-        register: "http://zengfy.test:8000/register?continue=http%3A%2F%2Fpos.zengfy.top%3A8000%2F",
+        login: "http://zengfy.top:8000/login?continue=http%3A%2F%2Fpos.zengfy.top%3A8000%2F",
+        register: "http://zengfy.top:8000/register?continue=http%3A%2F%2Fpos.zengfy.top%3A8000%2F",
         download: "https://github.com/diusazzad/zengfy/releases",
-        master_landing: "http://zengfy.test:8000/",
+        master_landing: "http://zengfy.top:8000/",
         social: "http://social.zengfy.top:8000/",
         school: "http://school.zengfy.top:8000/",
         api_docs: "http://pos.zengfy.top:8000/api/v1/pos/landing",

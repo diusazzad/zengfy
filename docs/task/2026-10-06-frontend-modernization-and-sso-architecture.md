@@ -18,7 +18,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
                                ┌─────────────────────────────────────────────────────────────┐
                                │               Zengfy Sovereign API Gateway                   │
                                │  Laravel 11 Multi-Node Cluster + Redis + MySQL + MinIO S3   │
-                               │                (Base Domain: zengfy.test:7000)              │
+                               │                (Base Domain: zengfy.top:7000)              │
                                └──────────────────────────────┬──────────────────────────────┘
                                                               │
                                 ┌─────────────────────────────┼─────────────────────────────┐
@@ -26,13 +26,13 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
                                 ▼                             ▼                             ▼
        ┌──────────────────────────────────┐ ┌──────────────────────────────────┐ ┌──────────────────────────────────┐
        │     Central Identity Hub (SSO)   │ │      Hyperlocal Social Hub       │ │       Native Mobile Platform   │
-       │     account.zengfy.test:7000     │ │      social.zengfy.top:7000     │ │       Flutter 3.47 / Dart 3.13 │
+       │     account.zengfy.top:7000     │ │      social.zengfy.top:7000     │ │       Flutter 3.47 / Dart 3.13 │
        ├──────────────────────────────────┤ ├──────────────────────────────────┤ ├──────────────────────────────────┤
        │ Engine: Nuxt 3 (SSR Pre-rendered)│ │ Engine: Nuxt 3 (SSR + Hydration) │ │ Engine: Cross-Platform Native    │
        │ • Instant <100ms Form Rendering  │ │ • 60 FPS Infinite Virtual Scroll │ │ • 120 FPS Mobile Performance     │
        │ • Decoupled Fast Signup (0 NID)  │ │ • Night Yellow (Eye Comfort)     │ │ • Biometric & Offline Storage    │
        │ • Phone OTP + NID Citizen Badge  │ │ • OpenGraph Social Meta Previews │ │ • Ward SOS Beacon & Push Alerts  │
-       │ • Wildcard Cookie (.zengfy.test) │ │ • Dynamic Media & Reactions      │ │ • Google Play & APK Showcase     │
+       │ • Wildcard Cookie (.zengfy.top) │ │ • Dynamic Media & Reactions      │ │ • Google Play & APK Showcase     │
        └──────────────────────────────────┘ └──────────────────────────────────┘ └──────────────────────────────────┘
 ```
 
@@ -47,15 +47,15 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
 - [x] **TASK-INFRA-001: Nginx Subdomain Reverse Proxy Configuration**
   - **Objective:** Configure local Nginx (`core-proxy-1`) and production Nginx to route subdomains to their designated frontend/backend containers.
   - **Domains:**
-    - `zengfy.test:7000` ➔ Main Portal & AI Agentic Searchbar
-    - `account.zengfy.test:7000` ➔ Central SSO & Account Hub
+    - `zengfy.top:7000` ➔ Main Portal & AI Agentic Searchbar
+    - `account.zengfy.top:7000` ➔ Central SSO & Account Hub
     - `social.zengfy.top:7000` ➔ Hyperlocal Social Network
   - **Deliverable:** Verified wildcard proxy pass routing and explicit `social.{domain}` route dispatching with seamless 302 redirects.
 
 - [x] **TASK-INFRA-002: Wildcard Session Cookie & Cross-Origin Security**
-  - **Objective:** Configure centralized session sharing so logging in once at `account.zengfy.test` automatically authenticates `social.zengfy.top` and other ecosystem apps.
+  - **Objective:** Configure centralized session sharing so logging in once at `account.zengfy.top` automatically authenticates `social.zengfy.top` and other ecosystem apps.
   - **Settings:**
-    - Dynamic wildcard `SESSION_DOMAIN` (.zengfy.test / .zengfy.top) in `config/session.php`.
+    - Dynamic wildcard `SESSION_DOMAIN` (.zengfy.top / .zengfy.top) in `config/session.php`.
     - No-cache headers (`Cache-Control: no-cache, no-store, max-age=0, must-revalidate`) preventing Back-Forward Cache (bfcache) leakage.
     - Bfcache buster script on all auth & social layout blades.
 - [x] **TASK-INFRA-003: Container Performance Tuning & Docker Node/NPM Setup**
@@ -69,7 +69,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
 
 ---
 
-### 🔐 PHASE 2: Central SSO Auth & Sovereign Account Hub (`account.zengfy.test`)
+### 🔐 PHASE 2: Central SSO Auth & Sovereign Account Hub (`account.zengfy.top`)
 
 - [ ] **TASK-AUTH-001: Decoupled Fast Registration Screen**
   - **Route:** `/register`
@@ -197,7 +197,7 @@ Following our architecture review on **October 6, 2026**, Zengfy is adopting a *
 
 ## 🏁 Verification & Acceptance Criteria
 
-1. **Registration:** Visiting `http://zengfy.test:7000/register` shows only Name, Email, and Password. Signup completes in < 3 seconds without asking for NID.
-2. **Night Yellow Feed:** Visiting `http://zengfy.test:7000/feed` displays the eye-comfort warm amber palette. Clicking the toggle switch flips between Midnight and Night Yellow seamlessly.
+1. **Registration:** Visiting `http://zengfy.top:7000/register` shows only Name, Email, and Password. Signup completes in < 3 seconds without asking for NID.
+2. **Night Yellow Feed:** Visiting `http://zengfy.top:7000/feed` displays the eye-comfort warm amber palette. Clicking the toggle switch flips between Midnight and Night Yellow seamlessly.
 3. **Route Separation:** Social routes function from `Modules/Social/routes/web.php` without errors.
 4. **Flutter Ready:** `flutter --version` executes cleanly in terminal without errors.

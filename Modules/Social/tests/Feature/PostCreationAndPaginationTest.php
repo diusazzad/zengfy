@@ -36,7 +36,7 @@ class PostCreationAndPaginationTest extends TestCase
 
         return User::create(array_merge([
             'name' => "User {$counter}",
-            'email' => "user{$counter}@zengfy.test",
+            'email' => "user{$counter}@zengfy.top",
             'handle' => "user_{$counter}",
             'password' => Hash::make('Password123!'),
             'ward_code' => 'WARD-DHAKA-19',

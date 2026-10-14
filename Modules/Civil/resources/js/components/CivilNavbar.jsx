@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
-  { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.test:8000', icon: '🌐' },
+  { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
   { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
   { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
   { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
@@ -9,11 +9,11 @@ const ECOSYSTEM_APPS = [
   { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐', current: true },
   { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🏢' },
   { name: 'Zengfy Hotel', tag: 'Resort & PMS', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
-  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.test:8000', icon: '💊' },
-  { name: 'Zengfy Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.test:8000', icon: '🏥' },
-  { name: 'Zengfy Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.test:8000', icon: '🌾' },
-  { name: 'Zengfy Fleet', tag: 'GPS & Fuel Logistics', url: 'http://fleet.zengfy.test:8000', icon: '🚚' },
-  { name: 'Zengfy Books', tag: 'VAT & Accounts', url: 'http://books.zengfy.test:8000', icon: '📊' },
+  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
+  { name: 'Zengfy Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.top:8000', icon: '🏥' },
+  { name: 'Zengfy Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.top:8000', icon: '🌾' },
+  { name: 'Zengfy Fleet', tag: 'GPS & Fuel Logistics', url: 'http://fleet.zengfy.top:8000', icon: '🚚' },
+  { name: 'Zengfy Books', tag: 'VAT & Accounts', url: 'http://books.zengfy.top:8000', icon: '📊' },
 ];
 
 export default function CivilNavbar({ brand = {} }) {

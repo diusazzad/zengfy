@@ -32,7 +32,7 @@ export default function SchoolNavbar({ links = {}, onNavigateSection }) {
         { name: 'Hotel', icon: '🏨', url: 'http://hotel.zengfy.top:8000/', category: 'Hospitality' },
         { name: 'Commerce', icon: '🛍️', url: 'http://shop.zengfy.top:8000/', category: 'Online Store' },
         { name: 'NGO', icon: '❤️', url: 'http://ngo.zengfy.top:8000/', category: 'Charity Cloud' },
-        { name: 'Account', icon: '🛡️', url: links.account || 'http://zengfy.test:8000/account', category: 'Citizen SSO' },
+        { name: 'Account', icon: '🛡️', url: links.account || 'http://zengfy.top:8000/account', category: 'Citizen SSO' },
     ];
 
     return (
@@ -184,7 +184,7 @@ export default function SchoolNavbar({ links = {}, onNavigateSection }) {
 
                                 <div className="mt-3.5 pt-3 border-t border-slate-100 text-center">
                                     <a
-                                        href={links.home || 'http://zengfy.test:8000/'}
+                                        href={links.home || 'http://zengfy.top:8000/'}
                                         className="text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1.5 py-1"
                                     >
                                         <span>Explore Master Ecosystem Hub</span>
@@ -197,7 +197,7 @@ export default function SchoolNavbar({ links = {}, onNavigateSection }) {
 
                     {/* Sign In CTA */}
                     <a
-                        href={links.login || "http://zengfy.test:8000/login"}
+                        href={links.login || "http://zengfy.top:8000/login"}
                         className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-700 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 active:scale-95 transition-all"
                     >
                         <span>লগইন করুন</span>

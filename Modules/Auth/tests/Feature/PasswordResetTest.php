@@ -17,11 +17,11 @@ class PasswordResetTest extends TestCase
     public function user_can_request_password_reset_code()
     {
         $user = User::factory()->create([
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
         ]);
 
         $response = $this->postJson('/api/v1/auth/password/forgot', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
         ]);
 
         $response->assertStatus(200)
@@ -30,7 +30,7 @@ class PasswordResetTest extends TestCase
             ]);
 
         $this->assertDatabaseHas('password_reset_tokens', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
         ]);
     }
 
@@ -38,7 +38,7 @@ class PasswordResetTest extends TestCase
     public function request_reset_code_returns_404_for_unknown_email()
     {
         $response = $this->postJson('/api/v1/auth/password/forgot', [
-            'email' => 'nonexistent@zengfy.test',
+            'email' => 'nonexistent@zengfy.top',
         ]);
 
         $response->assertStatus(404);
@@ -48,13 +48,13 @@ class PasswordResetTest extends TestCase
     public function user_can_verify_code_and_reset_password()
     {
         $user = User::factory()->create([
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'password' => Hash::make('OldPassword123!'),
         ]);
 
         // Request code
         $forgotResponse = $this->postJson('/api/v1/auth/password/forgot', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
         ]);
         $forgotResponse->assertStatus(200);
 
@@ -65,14 +65,14 @@ class PasswordResetTest extends TestCase
 
         // Verify code endpoint
         $verifyResponse = $this->postJson('/api/v1/auth/password/verify-code', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'code' => $otp,
         ]);
         $verifyResponse->assertStatus(200);
 
         // Reset password endpoint
         $resetResponse = $this->postJson('/api/v1/auth/password/reset', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'code' => $otp,
             'password' => 'NewSecurePassword888!',
             'password_confirmation' => 'NewSecurePassword888!',
@@ -85,7 +85,7 @@ class PasswordResetTest extends TestCase
 
         // Verify database token is cleared
         $this->assertDatabaseMissing('password_reset_tokens', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
         ]);
 
         // Verify new password is valid
@@ -98,17 +98,17 @@ class PasswordResetTest extends TestCase
     public function reset_password_fails_with_invalid_code()
     {
         $user = User::factory()->create([
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
         ]);
 
         DB::table('password_reset_tokens')->insert([
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'token' => Hash::make('123456'),
             'created_at' => now(),
         ]);
 
         $response = $this->postJson('/api/v1/auth/password/reset', [
-            'email' => 'citizen@zengfy.test',
+            'email' => 'citizen@zengfy.top',
             'code' => '999999', // Wrong code
             'password' => 'NewSecurePassword888!',
             'password_confirmation' => 'NewSecurePassword888!',

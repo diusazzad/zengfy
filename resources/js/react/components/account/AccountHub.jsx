@@ -294,7 +294,7 @@ export default function AccountHub({
                             </div>
 
                             <p className="text-xs text-gray-400 mt-1">
-                                @{currentUser?.handle || 'citizen'} • {currentUser?.email || 'user@zengfy.test'}
+                                @{currentUser?.handle || 'citizen'} • {currentUser?.email || 'user@zengfy.top'}
                             </p>
 
                             <div className="flex items-center gap-2 mt-2 text-xs text-gray-400">

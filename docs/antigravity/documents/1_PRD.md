@@ -6,7 +6,7 @@
 ### 1. Executive Summary & Vision
 **Zengfy Ecosystem** is Bangladesh's next-generation sovereign digital infrastructure designed to unify public civic communication, institutional school ERPs, retail POS billing, and legal case vaults under a **single verified sovereign citizen identity**.
 
-The Master Landing page (`http://zengfy.test:8000/`) serves as the central command portal and entry point to the 13 sovereign micro-SaaS platforms. Designed with a **White Glassmorphic aesthetic** (`#F8FAFC` canvas, frosted glass panels, ambient glow orbs) and built directly with **React 19, Tailwind CSS v4, and Vite inside Laravel 11**, it delivers a world-class, ultra-fast, and accessible gateway.
+The Master Landing page (`http://zengfy.top:8000/`) serves as the central command portal and entry point to the 13 sovereign micro-SaaS platforms. Designed with a **White Glassmorphic aesthetic** (`#F8FAFC` canvas, frosted glass panels, ambient glow orbs) and built directly with **React 19, Tailwind CSS v4, and Vite inside Laravel 11**, it delivers a world-class, ultra-fast, and accessible gateway.
 
 ---
 
@@ -14,7 +14,7 @@ The Master Landing page (`http://zengfy.test:8000/`) serves as the central comma
 To ensure rock-solid stability, zero routing conflicts, and clean progress:
 1. **Isolated Landing Focus:** All other module routes (`Social`, `School`, `Auth`, etc.) are cleanly detached from the root registries (`routes/web.php` and `routes/api.php`) while we focus 100% on perfecting the Master Landing module.
 2. **Sequential Iteration:** Master Landing is completed first, followed next by the dedicated Social Landing, other micro-SaaS landings, and the companion Flutter mobile app.
-3. **Decoupled Pricing:** All pricing tiers and commercial checkout clutter have been removed from the master landing page. Pricing will live on its own dedicated domain (`billing.zengfy.test`) in a future phase.
+3. **Decoupled Pricing:** All pricing tiers and commercial checkout clutter have been removed from the master landing page. Pricing will live on its own dedicated domain (`billing.zengfy.top`) in a future phase.
 
 ---
 
@@ -34,7 +34,7 @@ To ensure rock-solid stability, zero routing conflicts, and clean progress:
 ---
 
 ### 4. Functional Requirements
-- **FR-1 (Clean Root Mount):** Directly accessible at `http://zengfy.test:8000/` without separate ports or decoupled servers.
+- **FR-1 (Clean Root Mount):** Directly accessible at `http://zengfy.top:8000/` without separate ports or decoupled servers.
 - **FR-2 (Dynamic API Consumption):** React 19 frontend hydrates seamlessly from SSR data injection (`data-initial-data`) and re-queries `/api/v1/ecosystem/landing` via TanStack Query.
 - **FR-3 (Interactive Hero Simulator):** Real-time interactive social chat preview allowing user reaction clicks and message submissions.
 - **FR-4 (WCAG 2.1 AA Accessibility):** Screen-reader compliant with semantic `<main id="main-content" role="main">`, `<header role="banner">`, `<footer role="contentinfo">`, "Skip to main content" link, and descriptive ARIA labels on all interactive controls.
@@ -69,7 +69,7 @@ The Social Landing is the dedicated public front door for Bangladesh's sovereign
    - Zero Algorithmic Rage-Bait, Sovereign Verified Identity (NID backed), Hyperlocal Ward Geolocation, and End-to-End Encrypted Circles.
 4. **Single-Module Route Clean Slate:**
    - Stripped away legacy half-baked internal routes in `Modules/Social/routes/web.php` and `api.php`.
-   - Dedicated clean endpoints: `GET /` on `social.zengfy.top:8000`, redirect from `zengfy.test:8000/social`, and public REST endpoint `GET /api/v1/social/landing`.
+   - Dedicated clean endpoints: `GET /` on `social.zengfy.top:8000`, redirect from `zengfy.top:8000/social`, and public REST endpoint `GET /api/v1/social/landing`.
 
 ---
 
@@ -166,7 +166,7 @@ Dedicated anti-fraud e-commerce & courier integration ERP for Bangladesh F-Comme
 
 ---
 
-### 15. Skill Module Dedicated Landing (`skill.zengfy.test:8000/`)
+### 15. Skill Module Dedicated Landing (`skill.zengfy.top:8000/`)
 
 #### 15.1 Vision & Verified Post-SSC Career Launchpad
 Dedicated verified skills platform and 90-day practical roadmap for Bangladesh SSC & HSC graduates and verified IT mentors:
@@ -176,7 +176,7 @@ Dedicated verified skills platform and 90-day practical roadmap for Bangladesh S
 
 ---
 
-### 16. Journal Module Dedicated Landing (`journal.zengfy.test:8000/`)
+### 16. Journal Module Dedicated Landing (`journal.zengfy.top:8000/`)
 
 #### 16.1 Vision & Censorship-Resistant Independent Journalism
 Dedicated sovereign editorial portal and paywall reader monetization suite for Bangladesh independent journalists, investigative reporters, and op-ed columnists:
@@ -189,7 +189,7 @@ Dedicated sovereign editorial portal and paywall reader monetization suite for B
 
 ---
 
-### 17. Habit Module Dedicated Landing (`habit.zengfy.test:8000/`)
+### 17. Habit Module Dedicated Landing (`habit.zengfy.top:8000/`)
 
 #### 17.1 Vision & 5 Daily Prayers & Habit Streak Platform
 Dedicated spiritual and lifestyle discipline tracking platform for Muslims and conscious achievers across Bangladesh:
@@ -202,7 +202,7 @@ Dedicated spiritual and lifestyle discipline tracking platform for Muslims and c
 
 ---
 
-### 18. Schedule Module Dedicated Landing (`schedule.zengfy.test:8000/`)
+### 18. Schedule Module Dedicated Landing (`schedule.zengfy.top:8000/`)
 
 #### 18.1 Vision & Client Appointment Booking & Consultation Calendar
 Dedicated client appointment booking, paid consultation scheduling, and automated SMS reminder calendar for Bangladesh professionals (doctors, lawyers, consultants, tutors, and coaches):

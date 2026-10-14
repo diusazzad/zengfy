@@ -83,7 +83,7 @@ export default function POSFooter({ links = {} }) {
                                 </a>
                             </li>
                             <li>
-                                <a href={links.master_landing || "http://zengfy.test:8000/"} className="hover:text-amber-400 transition">
+                                <a href={links.master_landing || "http://zengfy.top:8000/"} className="hover:text-amber-400 transition">
                                     মাস্টার ইকোসিস্টেম হাব
                                 </a>
                             </li>

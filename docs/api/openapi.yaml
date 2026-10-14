@@ -44,7 +44,7 @@ paths:
                 email:
                   type: string
                   format: email
-                  example: "user@zengfy.test"
+                  example: "user@zengfy.top"
                 password:
                   type: string
                   format: password
@@ -89,7 +89,7 @@ paths:
                 email:
                   type: string
                   format: email
-                  example: "user@zengfy.test"
+                  example: "user@zengfy.top"
                 password:
                   type: string
                   format: password
@@ -1738,7 +1738,7 @@ components:
                   example: "John Doe"
                 email:
                   type: string
-                  example: "user@zengfy.test"
+                  example: "user@zengfy.top"
             token:
               type: string
               example: "1|NjjqwtR22Y3ojvg48wMC3ZoLObjE4d8hU5xBDrMg1e1d3c6a"

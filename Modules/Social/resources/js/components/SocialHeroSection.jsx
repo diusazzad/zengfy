@@ -36,7 +36,7 @@ export default function SocialHeroSection({ brand = {}, stats = {}, links = {}, 
             {/* Action CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 max-w-md mx-auto">
                 <a
-                    href={links.login || "http://zengfy.test:8000/login"}
+                    href={links.login || "http://zengfy.top:8000/login"}
                     className="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/35 active:scale-95 transition-all inline-flex items-center justify-center gap-2.5 min-h-[52px]"
                 >
                     <span>Join Citizen Network</span>
@@ -44,7 +44,7 @@ export default function SocialHeroSection({ brand = {}, stats = {}, links = {}, 
                 </a>
 
                 <a
-                    href={links.download || "http://zengfy.test:8000/download"}
+                    href={links.download || "http://zengfy.top:8000/download"}
                     className="w-full sm:w-auto px-7 py-4 rounded-full glass-panel hover:bg-white text-slate-800 font-bold text-sm sm:text-base border border-white/80 transition-all inline-flex items-center justify-center gap-2.5 min-h-[52px]"
                 >
                     <Smartphone aria-hidden="true" className="w-4 h-4 text-emerald-600" />

@@ -133,7 +133,7 @@
 </head>
 
 @php
-    $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.test');
+    $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
     $scheme = request()->getScheme();
     $port = request()->getPort();
     $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";

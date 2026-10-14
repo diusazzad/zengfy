@@ -266,12 +266,12 @@ class SocialLandingData {
         ),
       ],
       links: SocialLinks(
-        home: "http://zengfy.test:8000/",
+        home: "http://zengfy.top:8000/",
         social: "http://social.zengfy.top:8000/",
         feed: "http://social.zengfy.top:8000/",
-        login: "http://zengfy.test:8000/login",
-        register: "http://zengfy.test:8000/register",
-        account: "http://zengfy.test:8000/account",
+        login: "http://zengfy.top:8000/login",
+        register: "http://zengfy.top:8000/register",
+        account: "http://zengfy.top:8000/account",
       ),
     );
   }
@@ -627,13 +627,13 @@ class SocialLinks {
 
   factory SocialLinks.fromJson(Map<String, dynamic> json) {
     return SocialLinks(
-      home: json['home'] as String? ?? 'http://zengfy.test:8000/',
+      home: json['home'] as String? ?? 'http://zengfy.top:8000/',
       social: json['social'] as String? ?? 'http://social.zengfy.top:8000/',
       feed: json['feed'] as String? ?? 'http://social.zengfy.top:8000/',
-      login: json['login'] as String? ?? 'http://zengfy.test:8000/login',
+      login: json['login'] as String? ?? 'http://zengfy.top:8000/login',
       register:
-          json['register'] as String? ?? 'http://zengfy.test:8000/register',
-      account: json['account'] as String? ?? 'http://zengfy.test:8000/account',
+          json['register'] as String? ?? 'http://zengfy.top:8000/register',
+      account: json['account'] as String? ?? 'http://zengfy.top:8000/account',
     );
   }
 }

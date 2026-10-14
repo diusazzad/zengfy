@@ -33,7 +33,7 @@ class SocialGraphTest extends TestCase
     {
         $user = User::create([
             'name' => 'Sazzad Hossain',
-            'email' => 'sazzad@zengfy.test',
+            'email' => 'sazzad@zengfy.top',
             'password' => Hash::make('Secret123!'),
         ]);
 

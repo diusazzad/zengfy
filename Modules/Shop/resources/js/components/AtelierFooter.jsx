@@ -32,8 +32,8 @@ export default function AtelierFooter({ brandData }) {
                 <div>
                     <h4 className="text-xs font-black uppercase tracking-wider text-white mb-3 font-mono">ইকোসিস্টেম হাব</h4>
                     <ul className="space-y-2">
-                        <li><a href="http://ecommerce.zengfy.test:8000/" className="text-purple-400 hover:text-purple-300 font-bold transition-colors">🛍️ Zengfy Marketplace (Daraz-Style)</a></li>
-                        <li><a href="http://zengfy.test:8000/" className="hover:text-white transition-colors">🏛️ Zengfy Core Portal</a></li>
+                        <li><a href="http://ecommerce.zengfy.top:8000/" className="text-purple-400 hover:text-purple-300 font-bold transition-colors">🛍️ Zengfy Marketplace (Daraz-Style)</a></li>
+                        <li><a href="http://zengfy.top:8000/" className="hover:text-white transition-colors">🏛️ Zengfy Core Portal</a></li>
                         <li><a href="http://social.zengfy.top:8000/" className="hover:text-white transition-colors">🌍 Zengfy Social Network</a></li>
                         <li><a href="http://pos.zengfy.top:8000/" className="hover:text-white transition-colors">⚡ Zengfy POS System</a></li>
                     </ul>

@@ -32,7 +32,7 @@ export default function LawNavbar({ links = {} }) {
         { name: 'Rent', icon: '🏠', url: 'http://rent.zengfy.top:8000/', category: 'Property Hub' },
         { name: 'Hotel', icon: '🏨', url: 'http://hotel.zengfy.top:8000/', category: 'Hospitality' },
         { name: 'NGO', icon: '❤️', url: 'http://ngo.zengfy.top:8000/', category: 'Charity Cloud' },
-        { name: 'Account', icon: '🛡️', url: links.master_landing ? `${links.master_landing}account` : 'http://zengfy.test:8000/account', category: 'Citizen SSO' },
+        { name: 'Account', icon: '🛡️', url: links.master_landing ? `${links.master_landing}account` : 'http://zengfy.top:8000/account', category: 'Citizen SSO' },
     ];
 
     return (
@@ -130,7 +130,7 @@ export default function LawNavbar({ links = {} }) {
 
                                 <div className="mt-3.5 pt-3 border-t border-slate-100 text-center">
                                     <a
-                                        href={links.master_landing || "http://zengfy.test:8000/"}
+                                        href={links.master_landing || "http://zengfy.top:8000/"}
                                         className="text-xs font-bold text-[#881337] hover:text-rose-900 transition-colors inline-flex items-center gap-1.5 py-1"
                                     >
                                         <span>Master Ecosystem Directory</span>

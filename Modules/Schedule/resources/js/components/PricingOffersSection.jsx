@@ -84,7 +84,7 @@ export default function PricingOffersSection({ pricingData, faqsData }) {
 
               <div>
                 <a
-                  href={tier.cta_link || 'http://zengfy.test:8000/register'}
+                  href={tier.cta_link || 'http://zengfy.top:8000/register'}
                   className={`w-full py-3.5 px-4 rounded-xl text-center text-xs sm:text-sm font-bold transition-all duration-200 block shadow-md cursor-pointer ${
                     tier.highlighted
                       ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-900/30'

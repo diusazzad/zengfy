@@ -14,7 +14,7 @@ class HabitLandingController extends Controller
      */
     protected function getHabitData(): array
     {
-        $baseDomain = config('app.base_domain', 'zengfy.test');
+        $baseDomain = config('app.base_domain', 'zengfy.top');
         $port = config('app.port', 8000);
         $protocol = request()->secure() ? 'https://' : 'http://';
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : '';

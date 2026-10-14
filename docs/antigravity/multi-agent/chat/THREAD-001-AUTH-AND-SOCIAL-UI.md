@@ -354,8 +354,8 @@
 >    - `Modules/Social/routes/web.php`-এ ডেডিকেটেড সাবডোমেন রাউটিং কার্যকর করা হয়েছে।
 >    - `social.zengfy.top:7000/` সরাসরি হাইপারলোকাল ফিড রেন্ডার করছে (HTTP 200)।
 >    - `social.zengfy.top:7000/u/{handle}` সরাসরি সিটিজেন প্রোফাইল রেন্ডার করছে (HTTP 200)।
->    - মেইন ডোমেইনে `zengfy.test:7000/feed` হিট করলে অটোমেটিক `302 Redirect` দিয়ে `social.zengfy.top:7000/` এ রিডাইরেক্ট করে দেওয়া হচ্ছে।
->    - `config/session.php`-এ ডায়নামিক ওয়াইল্ডকার্ড কুকি ডোমেন (`.zengfy.test` ও `.zengfy.top`) সক্রিয় করায় সব সাবডোমেইনে অটোমেটিক SSO কার্যকর।
+>    - মেইন ডোমেইনে `zengfy.top:7000/feed` হিট করলে অটোমেটিক `302 Redirect` দিয়ে `social.zengfy.top:7000/` এ রিডাইরেক্ট করে দেওয়া হচ্ছে।
+>    - `config/session.php`-এ ডায়নামিক ওয়াইল্ডকার্ড কুকি ডোমেন (`.zengfy.top` ও `.zengfy.top`) সক্রিয় করায় সব সাবডোমেইনে অটোমেটিক SSO কার্যকর।
 > 2. ✅ **লগআউট ও ব্রাউজার ব্যাক-বাটন মেমোরি ক্যাশ (bfcache) ফিক্স:**
 >    - `SecurityHeadersMiddleware`-এ সুরক্ষিত পেজগুলোর জন্য `Cache-Control: no-cache, no-store, max-age=0, must-revalidate` হেডার বাধ্যতামূলক করা হয়েছে।
 >    - লেআউট ফাইলগুলোতে জাভাস্ক্রিপ্ট `pageshow` বাস্টার যুক্ত করা হয়েছে, যাতে ব্রাউজারের ব্যাক বাটন চাপলে মেমোরি স্ন্যাপশট না দেখিয়ে ফ্রেশ রিলোড হয় এবং আন-অথেনটিকেটেড ইউজার সরাসরি `/login`-এ রিডাইরেক্ট হয়ে যায়।
@@ -374,7 +374,7 @@
 >    - সমস্ত Auth রুট এখন `Modules/Auth/routes/web.php` এবং `Modules/Auth/routes/api.php` এ কেন্দ্রীভূত।
 >    - কন্ট্রোলার ও ভিউ মেথডসমূহ `Modules/Auth/app/Http/Controllers/AuthController.php`-এ শিফট করা হয়েছে।
 >    - নতুন সেশন ভেরিফিকেশন এন্ডপয়েন্ট চালু: `GET /api/v1/auth/check`।
->    - ডেডিকেটেড সিডার প্রস্তুত: `Modules/Auth/database/seeders/AuthDatabaseSeeder.php` (সুপার অ্যাডমিন `admin@zengfy.test` ও ভেরিফায়েড সিটিজেন `ayesha@zengfy.test` সহ)।
+>    - ডেডিকেটেড সিডার প্রস্তুত: `Modules/Auth/database/seeders/AuthDatabaseSeeder.php` (সুপার অ্যাডমিন `admin@zengfy.top` ও ভেরিফায়েড সিটিজেন `ayesha@zengfy.top` সহ)।
 > 
 > ---
 > 
@@ -410,7 +410,7 @@
 > বিস্তারিত স্পেক দেখতে পারো এখানে:  
 > 🔗 [`docs/antigravity/multi-agent/tasks/TASK-FE-005-AUTH-AND-ACCOUNT-DASHBOARD-MODERNIZATION.md`](file:///p:/Zengfy-Ecosystem/core/docs/antigravity/multi-agent/tasks/TASK-FE-005-AUTH-AND-ACCOUNT-DASHBOARD-MODERNIZATION.md)
 > 
-> কাজটি সম্পন্ন করে ব্রাউজারে `http://zengfy.test:7000/login` এবং `http://zengfy.test:7000/account` টেস্ট করে এই থ্রেডে তোমার ডেলিভারি রিপোর্ট সাবমিট করো। সাজ্জাদ ভাই এবং আমি তোমার কাজের অগ্রগতি পর্যবেক্ষণ করব। শুভকামনা! 🚀
+> কাজটি সম্পন্ন করে ব্রাউজারে `http://zengfy.top:7000/login` এবং `http://zengfy.top:7000/account` টেস্ট করে এই থ্রেডে তোমার ডেলিভারি রিপোর্ট সাবমিট করো। সাজ্জাদ ভাই এবং আমি তোমার কাজের অগ্রগতি পর্যবেক্ষণ করব। শুভকামনা! 🚀
 
 ---
 
@@ -483,9 +483,9 @@
 ### 🛡️ Agent 1 (Lead Systems Architect) — 2026-10-07 07:45
 > 🔴 **লাইভ ব্রাউজার সাব-এজেন্ট ভেরিফিকেশন রিপোর্ট (Subagent Verification Completed)**:
 > 
-> সাজ্জাদ ভাইয়ের নির্দেশক্রমে ব্রাউজার সাব-এজেন্ট দিয়ে সরাসরি `http://zengfy.test:7000/`, `/login`, `/account` এবং সোশ্যাল ফিড লাইভ টেস্ট করা হয়েছে:
+> সাজ্জাদ ভাইয়ের নির্দেশক্রমে ব্রাউজার সাব-এজেন্ট দিয়ে সরাসরি `http://zengfy.top:7000/`, `/login`, `/account` এবং সোশ্যাল ফিড লাইভ টেস্ট করা হয়েছে:
 > 
-> 1. ✅ **Landing Page (`http://zengfy.test:7000/`)**: নিখুঁতভাবে লোড হয়েছে (ক্যাপচার্ড: `landing_page_1791336596838.png`)।
+> 1. ✅ **Landing Page (`http://zengfy.top:7000/`)**: নিখুঁতভাবে লোড হয়েছে (ক্যাপচার্ড: `landing_page_1791336596838.png`)।
 > 2. ✅ **Authentication Flow (`/login`)**: Alpine.js ফর্মের মাধ্যমে অথেনটিকেশন ও টোকেন স্টোরেজ ভেরিফাইড।
 > 3. ✅ **Sovereign Account Hub (`/account`)**: `#react-account-root` মাউন্ট সফল। Overview, Security & Devices, Ecosystem Apps এবং NID ভেরিফিকেশন ট্যাব রেন্ডার হচ্ছে (ক্যাপচার্ড: `account_overview_1791337317678.png` ও `account_security_tabs_179133769040.png`)।
 > 4. ✅ **Social Feed & Live Chat Drawer (`/feed` ও `social.zengfy.top:7000`)**: `#react-feed-root` কম্পোজার এবং `#react-chat-root` ফ্লোটিং বটম-রাইট ড্রয়ার বাটন ক্লিক করে এন্ড-টু-এন্ড এনক্রিপ্টেড চ্যাট উইন্ডো সফলভাবে পপআপ হয়েছে (ক্যাপচার্ড: `social_feed_chat_1791337434073.png`)।
@@ -555,7 +555,7 @@ esources/js/react/components/account/):**
 >    - প্রোডাকশন অ্যাসেট বিল্ড (
 pm run build) সফলভাবে সম্পন্ন (Exit Code 0)।
 > 
-> সাজ্জাদ ভাই এবং Lead Architect অনুগ্রহ করে ব্রাউজারে http://social.zengfy.top:7000/ এবং http://zengfy.test:7000/account টেস্ট করে দেখার অনুরোধ রইল। 🚀
+> সাজ্জাদ ভাই এবং Lead Architect অনুগ্রহ করে ব্রাউজারে http://social.zengfy.top:7000/ এবং http://zengfy.top:7000/account টেস্ট করে দেখার অনুরোধ রইল। 🚀
 
 ---
 

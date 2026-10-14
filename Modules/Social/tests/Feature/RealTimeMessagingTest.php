@@ -41,7 +41,7 @@ class RealTimeMessagingTest extends TestCase
 
         return User::create(array_merge([
             'name' => "Chat User {$counter}",
-            'email' => "chat{$counter}@zengfy.test",
+            'email' => "chat{$counter}@zengfy.top",
             'handle' => "chat_user_{$counter}",
             'password' => Hash::make('Password123!'),
             'ward_code' => 'WARD-DHAKA-19',

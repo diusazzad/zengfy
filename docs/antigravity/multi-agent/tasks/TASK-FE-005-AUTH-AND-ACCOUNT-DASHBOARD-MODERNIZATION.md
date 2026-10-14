@@ -13,7 +13,7 @@
 Zengfy ইকোসিস্টেমের অথেন্টিকেশন ও ইউজার প্রোফাইল এখন সম্পূর্ণ **মডিউলার ও API-ফার্স্ট আর্কিটেকচারে** রূপান্তরিত হয়েছে:
 - সমস্ত Auth রুট এবং কন্ট্রোলার এখন `Modules/Auth`-এর অধীনে কেন্দ্রীভূত।
 - `/api/v1/auth/login`, `/api/v1/auth/register`, `/api/v1/auth/check`, এবং `/api/v1/auth/password/*` এপিআই সক্রিয়।
-- মাল্টি-সাবডোমেন SSO সেশন কুকি (`.zengfy.test` / `.zengfy.top`) সক্রিয়।
+- মাল্টি-সাবডোমেন SSO সেশন কুকি (`.zengfy.top` / `.zengfy.top`) সক্রিয়।
 
 **Agent 2-এর দায়িত্ব হলো আইটেম ২ (Auth Gateway: Login/Register/Recovery) এবং আইটেম ৩ (Sovereign Account Dashboard) এর ফ্রন্টএন্ড UI-কে বিশ্বমানের এন্টারপ্রাইজ মানে রূপ দেওয়া।**
 
@@ -69,7 +69,7 @@ Zengfy ইকোসিস্টেমের অথেন্টিকেশন �
 ---
 
 ## ✅ অ্যাকসেপ্ট্যান্স ক্রাইটেরিয়া (Verification Checklist)
-1. `http://zengfy.test:7000/login` এবং `/register` এ কোনো কনসোল এরর নেই।
+1. `http://zengfy.top:7000/login` এবং `/register` এ কোনো কনসোল এরর নেই।
 2. `POST /api/v1/auth/login` সফল হলে টোকেন সেভ হয় এবং ইউজার সরাসরি `/account` এ প্রবেশ করে।
 3. `/account` পেজের সব ট্যাব (Profile, Security, Devices, Password) কোনো পেজ রিফ্রেশ ছাড়াই সক্রিয়ভাবে কাজ করে।
 4. ডিভাইস ডিলিট (`revoke`) করলে তা ডায়নামিক্যালি তালিকা থেকে অপসারিত হয়।

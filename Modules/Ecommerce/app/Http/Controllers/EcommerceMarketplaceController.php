@@ -42,7 +42,7 @@ class EcommerceMarketplaceController extends Controller
         }
 
         $rawJson = File::get($jsonPath);
-        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
         $hydratedJson = str_replace('{{BASE_DOMAIN}}', $baseDomain, $rawJson);
 
         return json_decode($hydratedJson, true) ?: [];

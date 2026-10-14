@@ -20,7 +20,7 @@ class SsoTicketExchangeTest extends TestCase
     {
         $user = User::create([
             'name' => 'Alice Rahman',
-            'email' => 'alice@zengfy.test',
+            'email' => 'alice@zengfy.top',
             'password' => Hash::make('SecretPass123!'),
         ]);
 
@@ -76,7 +76,7 @@ class SsoTicketExchangeTest extends TestCase
     {
         $user = User::create([
             'name' => 'Bob Builder',
-            'email' => 'bob@zengfy.test',
+            'email' => 'bob@zengfy.top',
             'password' => Hash::make('SecretPass123!'),
         ]);
 
@@ -98,7 +98,7 @@ class SsoTicketExchangeTest extends TestCase
     {
         $user = User::create([
             'name' => 'Farhan Ahmed',
-            'email' => 'farhan@zengfy.test',
+            'email' => 'farhan@zengfy.top',
             'password' => Hash::make('FarhanSecure99!'),
         ]);
 
@@ -135,7 +135,7 @@ class SsoTicketExchangeTest extends TestCase
                 'data' => [
                     'user' => [
                         'id' => $user->id,
-                        'email' => 'farhan@zengfy.test',
+                        'email' => 'farhan@zengfy.top',
                     ],
                     'subdomain' => 'school',
                     'device' => [
@@ -156,7 +156,7 @@ class SsoTicketExchangeTest extends TestCase
     {
         $user = User::create([
             'name' => 'Nasir Hossain',
-            'email' => 'nasir@zengfy.test',
+            'email' => 'nasir@zengfy.top',
             'password' => Hash::make('NasirPass123!'),
         ]);
 
@@ -194,7 +194,7 @@ class SsoTicketExchangeTest extends TestCase
     {
         $user = User::create([
             'name' => 'Tanvir Alam',
-            'email' => 'tanvir@zengfy.test',
+            'email' => 'tanvir@zengfy.top',
             'password' => Hash::make('TanvirSecure77!'),
         ]);
 
@@ -228,7 +228,7 @@ class SsoTicketExchangeTest extends TestCase
     {
         $user = User::create([
             'name' => 'Target User',
-            'email' => 'target@zengfy.test',
+            'email' => 'target@zengfy.top',
             'password' => Hash::make('TargetSecure123!'),
         ]);
 

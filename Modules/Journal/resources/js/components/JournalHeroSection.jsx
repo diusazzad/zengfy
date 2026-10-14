@@ -75,7 +75,7 @@ export default function JournalHeroSection({ stats = {} }) {
             </a>
 
             <a
-              href="http://zengfy.test:8000/register?tier=journal_pro&continue=http%3A%2F%2Fjournal.zengfy.test%3A8000%2F"
+              href="http://zengfy.top:8000/register?tier=journal_pro&continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-700 hover:text-rose-700 bg-white/90 hover:bg-rose-50/60 border border-slate-200/90 hover:border-rose-200 shadow-sm transition-all"
             >
               <span>✍️ স্বাধীন কলামিস্ট রেজিস্ট্রেশন</span>

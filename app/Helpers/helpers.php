@@ -10,7 +10,7 @@ if (!function_exists('zengfy_url')) {
      */
     function zengfy_url($subdomain = null, $path = null)
     {
-        $baseDomain = config('app.base_domain', 'zengfy.test');
+        $baseDomain = config('app.base_domain', 'zengfy.top');
         $scheme = config('app.url_scheme', 'http');
 
         $url = $scheme . '://';

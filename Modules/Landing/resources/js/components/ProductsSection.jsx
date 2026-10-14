@@ -163,7 +163,7 @@ export default function ProductsSection({ modules = [], stats = {} }) {
                             {/* Card Footer: Subdomain URL & Launch Button */}
                             <div className="pt-5 mt-6 border-t border-slate-200/60 flex items-center justify-between">
                                 <span className="text-[11px] font-mono text-slate-400 truncate max-w-[150px]">
-                                    {item.id}.zengfy.test
+                                    {item.id}.zengfy.top
                                 </span>
 
                                 <a

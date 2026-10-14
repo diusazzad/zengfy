@@ -20,15 +20,15 @@ export default function MarketplaceNavbar({
     const [catDropdownOpen, setCatDropdownOpen] = useState(false);
 
     const ecosystemApps = [
-        { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.test:8000/", icon: "🏛️" },
+        { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.top:8000/", icon: "🏛️" },
         { name: "Zengfy Shop", desc: "Clothing Brand", url: "http://shop.zengfy.top:8000/", icon: "🏷️" },
         { name: "Zengfy Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
         { name: "Zengfy POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
         { name: "Zengfy School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
         { name: "Zengfy Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
         { name: "Zengfy Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
-        { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.test:8000/", icon: "🕌" },
-        { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.test:8000/", icon: "📰" }
+        { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.top:8000/", icon: "🕌" },
+        { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.top:8000/", icon: "📰" }
     ];
 
     const defaultTrending = trendingKeywords.length > 0 ? trendingKeywords : [
@@ -57,7 +57,7 @@ export default function MarketplaceNavbar({
                             <Store className="w-3.5 h-3.5 text-[#F85606]" /> {topBarData?.seller_cta || "মার্চেন্ট জোন / দোকান খুলুন"}
                         </a>
                         <span className="hidden sm:inline text-slate-600">|</span>
-                        <a href="http://zengfy.test:8000/download" className="hidden sm:flex items-center gap-1 text-slate-300 hover:text-white transition-colors">
+                        <a href="http://zengfy.top:8000/download" className="hidden sm:flex items-center gap-1 text-slate-300 hover:text-white transition-colors">
                             <Download className="w-3 h-3 text-emerald-400" /> অ্যাপ সেভ করুন
                         </a>
                         <span className="hidden sm:inline text-slate-600">|</span>
@@ -72,7 +72,7 @@ export default function MarketplaceNavbar({
             <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-3 pb-2 flex items-center justify-between gap-4">
                 {/* Brand Logo & Name */}
                 <div className="flex items-center gap-3 shrink-0">
-                    <a href="http://ecommerce.zengfy.test:8000/" className="flex items-center gap-2 group">
+                    <a href="http://ecommerce.zengfy.top:8000/" className="flex items-center gap-2 group">
                         <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#F85606] via-orange-600 to-[#7C3AED] flex items-center justify-center text-white font-black text-2xl shadow-md shadow-orange-600/25 group-hover:scale-105 transition-transform">
                             🛍️
                         </div>
@@ -220,7 +220,7 @@ export default function MarketplaceNavbar({
 
                     {/* Central Identity SSO Sign In */}
                     <a
-                        href="http://zengfy.test:8000/login"
+                        href="http://zengfy.top:8000/login"
                         className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all"
                     >
                         <User className="w-4 h-4 text-orange-400" />

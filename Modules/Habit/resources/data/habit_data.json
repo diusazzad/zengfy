@@ -255,7 +255,7 @@
       ],
       "highlighted": false,
       "cta": "এখনই ফ্রিতে শুরু করুন",
-      "cta_link": "http://zengfy.test:8000/register?tier=habit_free"
+      "cta_link": "http://zengfy.top:8000/register?tier=habit_free"
     },
     {
       "id": "tier_family",
@@ -274,7 +274,7 @@
       ],
       "highlighted": true,
       "cta": "ফ্যামিলি লাইসেন্স নিন",
-      "cta_link": "http://zengfy.test:8000/register?tier=habit_family"
+      "cta_link": "http://zengfy.top:8000/register?tier=habit_family"
     },
     {
       "id": "tier_academy",
@@ -293,7 +293,7 @@
       ],
       "highlighted": false,
       "cta": "একাডেমি ক্লাউড শুরু করুন",
-      "cta_link": "http://zengfy.test:8000/register?tier=habit_academy"
+      "cta_link": "http://zengfy.top:8000/register?tier=habit_academy"
     }
   ],
   "faqs": [
@@ -315,12 +315,12 @@
     }
   ],
   "auth": {
-    "login_url": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/login?continue=http%3A%2F%2Fhabit.zengfy.test%3A8000%2F",
-    "register_url": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}/register?continue=http%3A%2F%2Fhabit.zengfy.test%3A8000%2F",
+    "login_url": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/login?continue=http%3A%2F%2Fhabit.zengfy.top%3A8000%2F",
+    "register_url": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}/register?continue=http%3A%2F%2Fhabit.zengfy.top%3A8000%2F",
     "releases_url": "https://github.com/diusazzad/zengfy/releases"
   },
   "links": {
-    "base": "{{PROTOCOL}}zengfy.test{{PORT_SUFFIX}}",
-    "habit": "{{PROTOCOL}}habit.zengfy.test{{PORT_SUFFIX}}"
+    "base": "{{PROTOCOL}}zengfy.top{{PORT_SUFFIX}}",
+    "habit": "{{PROTOCOL}}habit.zengfy.top{{PORT_SUFFIX}}"
   }
 }

@@ -34,7 +34,7 @@
                     <li><a href="http://pos.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">POS Retail & Inventory</a></li>
                     <li><a href="http://law.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Legal Case Management</a></li>
                     <li><a href="http://social.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Social Network Feed</a></li>
-                    <li><a href="http://ecommerce.zengfy.test:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">E-Commerce Engine</a></li>
+                    <li><a href="http://ecommerce.zengfy.top:7000" target="_blank" rel="noopener noreferrer" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">E-Commerce Engine</a></li>
                 </ul>
             </div>
 

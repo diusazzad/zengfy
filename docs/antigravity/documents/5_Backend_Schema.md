@@ -31,7 +31,7 @@ The ecosystem master landing API is hosted publicly to support both the React 19
       "tagline": "Speak Freely. One Unified Sovereign Account.",
       "description": "Bangladesh's next-generation sovereign digital infrastructure. Connect to 13 unified micro-SaaS platforms—from hyperlocal social feeds and institutional school ERP to legal vaults and retail POS—all powered by single-sign-on NID verification.",
       "version": "1.0.0",
-      "base_domain": "zengfy.test"
+      "base_domain": "zengfy.top"
     },
     "stats": {
       "verified_citizens": 1480,
@@ -138,7 +138,7 @@ The ecosystem master landing API is hosted publicly to support both the React 19
         "tagline": "Online Courses, Instructors & Skill Certifications.",
         "desc": "Host live classes, video courses, student assignments, and verified certificates.",
         "icon": "🎓",
-        "url": "http://skill.zengfy.test:8000",
+        "url": "http://skill.zengfy.top:8000",
         "badge": "LMS Creator"
       },
       {
@@ -148,7 +148,7 @@ The ecosystem master landing API is hosted publicly to support both the React 19
         "tagline": "Encrypted Personal Diary, Notes & Thought Vault.",
         "desc": "Keep your daily thoughts, private notes, and personal goals protected with biometric encryption.",
         "icon": "📓",
-        "url": "http://journal.zengfy.test:8000",
+        "url": "http://journal.zengfy.top:8000",
         "badge": "Private Vault"
       },
       {
@@ -158,7 +158,7 @@ The ecosystem master landing API is hosted publicly to support both the React 19
         "tagline": "Daily Routine, Habit Streaks & Focus Analytics.",
         "desc": "Track your daily rituals, building discipline with streak reminders and personal performance charts.",
         "icon": "⚡",
-        "url": "http://habit.zengfy.test:8000",
+        "url": "http://habit.zengfy.top:8000",
         "badge": "Productivity"
       },
       {
@@ -168,7 +168,7 @@ The ecosystem master landing API is hosted publicly to support both the React 19
         "tagline": "Client Appointment Booking & Consultation Calendar.",
         "desc": "Automated calendar bookings for doctors, consultants, and coaches with SMS meeting reminders.",
         "icon": "📅",
-        "url": "http://schedule.zengfy.test:8000",
+        "url": "http://schedule.zengfy.top:8000",
         "badge": "Booking Tool"
       }
     ],
@@ -242,14 +242,14 @@ The ecosystem master landing API is hosted publicly to support both the React 19
       "user": null
     },
     "links": {
-      "home": "http://zengfy.test:8000/",
-      "login": "http://zengfy.test:8000/login",
-      "register": "http://zengfy.test:8000/register",
-      "account": "http://zengfy.test:8000/account",
-      "download": "http://zengfy.test:8000/download",
+      "home": "http://zengfy.top:8000/",
+      "login": "http://zengfy.top:8000/login",
+      "register": "http://zengfy.top:8000/register",
+      "account": "http://zengfy.top:8000/account",
+      "download": "http://zengfy.top:8000/download",
       "social": "http://social.zengfy.top:8000/",
       "school": "http://school.zengfy.top:8000/",
-      "api_docs": "http://zengfy.test:8000/api/v1/ecosystem/landing"
+      "api_docs": "http://zengfy.top:8000/api/v1/ecosystem/landing"
     }
   }
 }
@@ -261,7 +261,7 @@ The ecosystem master landing API is hosted publicly to support both the React 19
 The Flutter mobile application consumes `GET /api/v1/ecosystem/landing` to construct native mobile UI components:
 - **Base URL:**
   - Android Emulator: `http://10.0.2.2:8000/api/v1/ecosystem/landing`
-  - Real Device / Network: `http://zengfy.test:8000/api/v1/ecosystem/landing`
+  - Real Device / Network: `http://zengfy.top:8000/api/v1/ecosystem/landing`
 - **Serialization Model:**
   ```dart
   class EcosystemResponse {
@@ -296,7 +296,7 @@ The Flutter mobile application consumes `GET /api/v1/ecosystem/landing` to const
       "tagline": "Real People. Real Communities. Zero Noise.",
       "description": "The next-generation sovereign social network for Bangladesh. Verified neighborhood discussions, civic emergency SOS beacons, and chronological friend timelines with zero algorithm manipulation and zero commercial data mining.",
       "version": "1.0.0",
-      "base_domain": "zengfy.test"
+      "base_domain": "zengfy.top"
     },
     "stats": {
       "verified_citizens": 1480,
@@ -411,14 +411,14 @@ The Flutter mobile application consumes `GET /api/v1/ecosystem/landing` to const
       "user": null
     },
     "links": {
-      "home": "http://zengfy.test:8000/",
+      "home": "http://zengfy.top:8000/",
       "social": "http://social.zengfy.top:8000/",
       "feed": "http://social.zengfy.top:8000/",
-      "login": "http://zengfy.test:8000/login",
-      "register": "http://zengfy.test:8000/register",
-      "account": "http://zengfy.test:8000/account",
-      "download": "http://zengfy.test:8000/download",
-      "api_docs": "http://zengfy.test:8000/api/v1/social/landing"
+      "login": "http://zengfy.top:8000/login",
+      "register": "http://zengfy.top:8000/register",
+      "account": "http://zengfy.top:8000/account",
+      "download": "http://zengfy.top:8000/download",
+      "api_docs": "http://zengfy.top:8000/api/v1/social/landing"
     }
   }
 }
@@ -468,7 +468,7 @@ class SocialLandingData {
       "tagline_bn": "কাগজের ঝামেলাহীন আধুনিক ক্যাম্পাস। অভিভাবকের নিশ্চিন্ত ভরসা।",
       "description": "Bangladesh's next-generation sovereign school, college & madrasah management platform. Instant RFID attendance notifications, 1-click NCTB automated report cards, and transparent digital fee collection with zero paper bureaucracy.",
       "version": "1.0.0",
-      "base_domain": "zengfy.test"
+      "base_domain": "zengfy.top"
     },
     "stats": {
       "institutions_count": 540,
@@ -573,14 +573,14 @@ class SocialLandingData {
       }
     ],
     "links": {
-      "home": "http://zengfy.test:8000/",
+      "home": "http://zengfy.top:8000/",
       "school": "http://school.zengfy.top:8000/",
       "portal": "http://school.zengfy.top:8000/",
-      "login": "http://zengfy.test:8000/login",
-      "register": "http://zengfy.test:8000/register",
-      "account": "http://zengfy.test:8000/account",
-      "download": "http://zengfy.test:8000/download",
-      "api_docs": "http://zengfy.test:8000/api/v1/school/landing"
+      "login": "http://zengfy.top:8000/login",
+      "register": "http://zengfy.top:8000/register",
+      "account": "http://zengfy.top:8000/account",
+      "download": "http://zengfy.top:8000/download",
+      "api_docs": "http://zengfy.top:8000/api/v1/school/landing"
     }
   }
 }

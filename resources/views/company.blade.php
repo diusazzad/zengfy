@@ -173,7 +173,7 @@
                             </div>
 
                             @if(str_contains($member['name'], 'Sazzad'))
-                                <a href="{{ env('APP_ENV') === 'local' ? 'http://founder.zengfy.test:7000' : 'https://founder.zengfy.top' }}" 
+                                <a href="{{ env('APP_ENV') === 'local' ? 'http://founder.zengfy.top:7000' : 'https://founder.zengfy.top' }}" 
                                    target="_blank" rel="noopener noreferrer"
                                    class="text-[11px] font-extrabold text-white bg-blue-600 hover:bg-blue-500 border border-blue-400/40 px-3.5 py-1.5 rounded-full transition-all hover:scale-105 shadow-md shadow-blue-600/30 flex items-center gap-1">
                                     <span>Founder Portfolio</span> 🚀

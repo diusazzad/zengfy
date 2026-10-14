@@ -304,7 +304,7 @@
                                     NID-verified identity layer across 15+ subdomains.
                                 </p>
                             </div>
-                            <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.test:7000' : 'https://zengfy.top' }}"
+                            <a href="{{ env('APP_ENV') === 'local' ? 'http://zengfy.top:7000' : 'https://zengfy.top' }}"
                                 target="_blank" rel="noopener noreferrer"
                                 class="mt-6 text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                                 <span>Explore ZenGfy</span> →
@@ -853,21 +853,21 @@
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.top:7000' : 'https://journal.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -922,7 +922,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                             স্টার্টার প্যাক শুরু করুন →
                         </a>
@@ -966,7 +966,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs text-center shadow-lg shadow-blue-600/30 transition-all">
                             স্মার্ট প্যাক নির্বাচন করুন →
                         </a>
@@ -1234,7 +1234,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                             যাচাইকৃত উকিল খুঁজুন →
                         </a>
@@ -1277,7 +1277,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-4 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm text-center shadow-lg shadow-amber-600/30 transition-all">
                             চেম্বার প্যাক চালু করুন →
                         </a>
@@ -1443,21 +1443,21 @@
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.top:7000' : 'https://journal.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -1753,7 +1753,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-4 px-6 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-sm text-center shadow-lg shadow-cyan-600/30 transition-all">
                             মার্চেন্ট পজ চালু করুন →
                         </a>
@@ -1917,21 +1917,21 @@
                         <p class="text-[10px] text-gray-400 mt-1">Tenant System</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.top:7000' : 'https://journal.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                         <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -2215,7 +2215,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                             রিডার পাস নিন →
                         </a>
@@ -2259,7 +2259,7 @@
                             </ul>
                         </div>
 
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="mt-8 w-full py-4 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm text-center shadow-lg shadow-indigo-600/30 transition-all">
                             সাংবাদিক ইআরপি চালু করুন →
                         </a>
@@ -2388,7 +2388,7 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.top:7000' : 'https://journal.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-indigo-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-indigo-500/10">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
@@ -2437,7 +2437,7 @@
                         <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                     </a>
 
-                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                    <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                         class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                         <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                         <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -2724,7 +2724,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                                 কোর্স বুক করুন →
                             </a>
@@ -2768,7 +2768,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-4 px-6 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm text-center shadow-lg shadow-violet-600/30 transition-all">
                                 ইন্সট্রাক্টর ইআরপি চালু করুন →
                             </a>
@@ -2897,7 +2897,7 @@
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-violet-500/40 flex flex-col items-center text-center transition-all group shadow-lg shadow-violet-500/10">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -2946,7 +2946,7 @@
                             <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
@@ -3235,7 +3235,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                                 ইঞ্জিনিয়ার সার্চ করুন →
                             </a>
@@ -3278,7 +3278,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-4 px-6 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm text-center shadow-lg shadow-amber-600/30 transition-all">
                                 সাইট ইআরপি চালু করুন →
                             </a>
@@ -3457,7 +3457,7 @@
                             <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
@@ -3752,7 +3752,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center shadow-lg shadow-emerald-600/30 transition-all">
                                 হোটেল & রেস্টুরেন্ট প্যাক চালু করুন →
                             </a>
@@ -3923,14 +3923,14 @@
                             <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -4220,7 +4220,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-3.5 px-6 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs text-center border border-white/10 transition-all">
                                 বাসা সার্চ চালু করুন →
                             </a>
@@ -4264,7 +4264,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                            <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                                 class="mt-8 w-full py-4 px-6 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm text-center shadow-lg shadow-purple-600/30 transition-all">
                                 বাসা ফাঁকা বিজ্ঞাপন দিন →
                             </a>
@@ -4428,21 +4428,21 @@
                             <p class="text-[10px] text-gray-400 mt-1">Verified Feed</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.test:7000' : 'https://ecommerce.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://ecommerce.zengfy.top:7000' : 'https://ecommerce.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-blue-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🛍️</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Shop</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Online Store Engine</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.test:7000' : 'https://journal.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://journal.zengfy.top:7000' : 'https://journal.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-slate-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📰</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Journal</h3>
                             <p class="text-[10px] text-gray-400 mt-1">Publishing Vault</p>
                         </a>
 
-                        <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.test:7000' : 'https://skill.zengfy.top' }}"
+                        <a href="{{ env('APP_ENV') === 'local' ? 'http://skill.zengfy.top:7000' : 'https://skill.zengfy.top' }}"
                             class="p-5 rounded-2xl bg-[#121A29]/70 border border-white/10 hover:border-violet-500/50 flex flex-col items-center text-center transition-all group">
                             <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">🎓</span>
                             <h3 class="text-xs font-bold text-white">Zengfy Skill</h3>
@@ -4506,7 +4506,7 @@
                     </p>
 
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                        <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                             class="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-xl shadow-blue-600/30 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                             <span>Launch {{ $module['name'] }} Portal</span>
                             <span>→</span>
@@ -4550,7 +4550,7 @@
                         <p class="text-xs text-blue-300 mt-3 font-medium">✓ {{ $module['pricing']['highlight'] }}</p>
                     </div>
 
-                    <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.test:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
+                    <a href="{{ (env('APP_ENV') === 'local' ? 'http://zengfy.top:7000/login' : 'https://zengfy.top/login') . '?continue=' . urlencode(url()->current()) }}"
                         class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/20 transition-all">
                         <span>Subscribe to {{ $module['name'] }}</span>
                         <span>→</span>

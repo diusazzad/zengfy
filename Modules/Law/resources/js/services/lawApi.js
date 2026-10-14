@@ -7,7 +7,7 @@ export const FALLBACK_LAW_DATA = {
         tagline_bn: "আইনজীবী ও ডিজিটাল চেম্বারের জন্য কজলিস্ট ট্র্যাকার, ওকালতনামা ও কেস ভল্ট।",
         description: "Bangladesh's premier sovereign legal tech platform for advocates and law chambers. Automated Supreme Court & 64 District Courts cause list tracking, 1-click Vakalatnama & bail petition drafting, court clerk fee ledgers, and 256-bit client case vaults.",
         version: "1.0.0",
-        base_domain: "zengfy.test",
+        base_domain: "zengfy.top",
     },
     stats: {
         active_advocates: "840+",
@@ -229,10 +229,10 @@ export const FALLBACK_LAW_DATA = {
     },
     links: {
         home: "http://law.zengfy.top:8000/",
-        login: "http://zengfy.test:8000/login?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
-        register: "http://zengfy.test:8000/register?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
+        login: "http://zengfy.top:8000/login?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
+        register: "http://zengfy.top:8000/register?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
         download: "https://github.com/diusazzad/zengfy/releases",
-        master_landing: "http://zengfy.test:8000/",
+        master_landing: "http://zengfy.top:8000/",
         social: "http://social.zengfy.top:8000/",
         school: "http://school.zengfy.top:8000/",
         pos: "http://pos.zengfy.top:8000/",

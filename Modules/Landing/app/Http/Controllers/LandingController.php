@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class LandingController extends Controller
 {
     /**
-     * Web Entrypoint for Zengfy Master Ecosystem Landing (http://zengfy.test:8000/).
+     * Web Entrypoint for Zengfy Master Ecosystem Landing (http://zengfy.top:8000/).
      * Returns the reactive mobile-first app shell for web browsers,
      * and returns the JSON payload for API callers.
      */
@@ -35,7 +35,7 @@ class LandingController extends Controller
      */
     public function data(Request $request): JsonResponse
     {
-        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
         $scheme = $request->getScheme();
         $port = $request->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
@@ -166,7 +166,7 @@ class LandingController extends Controller
      */
     private function getProductsData(): array
     {
-        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.test'));
+        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
         $scheme = request()->getScheme();
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";

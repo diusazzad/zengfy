@@ -258,7 +258,7 @@ export default function InteractiveFeedSimulator({ initialStreams = {}, links = 
                                     </span>
 
                                     <a
-                                        href={links.login || "http://zengfy.test:8000/login"}
+                                        href={links.login || "http://zengfy.top:8000/login"}
                                         className="text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
                                     >
                                         <span>Join Conversation</span>

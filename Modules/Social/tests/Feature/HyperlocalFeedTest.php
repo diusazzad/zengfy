@@ -34,7 +34,7 @@ class HyperlocalFeedTest extends TestCase
 
         return User::create(array_merge([
             'name' => "Hyperlocal Citizen {$counter}",
-            'email' => "citizen{$counter}@zengfy.test",
+            'email' => "citizen{$counter}@zengfy.top",
             'handle' => "citizen_{$counter}",
             'password' => Hash::make('Secret123!'),
             'ward_code' => 'WARD-DHAKA-19',

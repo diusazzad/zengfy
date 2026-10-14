@@ -5,7 +5,7 @@
 
 ### 1. Technology Stack Architecture
 - **Backend Framework:** Laravel 11 (PHP 8.3)
-- **Primary Domain & URL:** `http://zengfy.test:8000/`
+- **Primary Domain & URL:** `http://zengfy.top:8000/`
 - **Frontend Framework:** React 19 (`react` & `react-dom` `^19.3.0`) bundled via **Vite 6** (`vite` `^6.2.4`)
 - **Vite Integration Plugin:** `laravel-vite-plugin` with `@vitejs/plugin-react` (`^4.7.0`) and `@tailwindcss/vite` (`^4.1.11`)
 - **Styling Engine:** Tailwind CSS v4 with custom White Glassmorphism utilities (`app.css`)
@@ -83,7 +83,7 @@ sequenceDiagram
     participant Query as TanStack React Query
     participant API as REST /api/v1/ecosystem/landing
 
-    Visitor->>Server: GET http://zengfy.test:8000/
+    Visitor->>Server: GET http://zengfy.top:8000/
     Server-->>Visitor: HTML with data-initial-data & Pre-hydration <main> shell
     Visitor->>DOM: DOM ready, executes main.jsx
     DOM->>React: Mounts <EcosystemLandingApp />
@@ -98,7 +98,7 @@ sequenceDiagram
 ### 5. Multi-Client API Contract (Web & Flutter Mobile)
 The endpoint `GET /api/v1/ecosystem/landing` serves identical JSON metadata for both platforms:
 - **React Web:** Consumes payload in `ecosystemApi.js` for desktop and mobile web rendering.
-- **Flutter Mobile App:** Consumes payload at `http://10.0.2.2:8000/api/v1/ecosystem/landing` (Android Emulator) or `http://zengfy.test:8000/api/v1/ecosystem/landing` to construct native Flutter widgets.
+- **Flutter Mobile App:** Consumes payload at `http://10.0.2.2:8000/api/v1/ecosystem/landing` (Android Emulator) or `http://zengfy.top:8000/api/v1/ecosystem/landing` to construct native Flutter widgets.
 - **Zero Pricing:** Clutter-free module metadata containing strictly `id`, `name`, `category`, `tagline`, `desc`, `icon`, `url`, `badge`.
 
 ---
