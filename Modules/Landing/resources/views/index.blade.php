@@ -26,14 +26,8 @@
     <!-- React 19 Ecosystem Landing Application Mount Point -->
     <div id="react-ecosystem-landing-root" 
          data-initial-data="{{ json_encode($initialData ?? null, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) }}">
-        <!-- Pre-hydration Semantic Main Landmark -->
-        <main id="main-content" role="main" class="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
-            <div class="flex flex-col items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-black text-xl text-white shadow-xl shadow-blue-500/25 animate-pulse">
-                    Z
-                </div>
-                <div class="text-sm font-bold text-slate-500">Loading Zengfy Sovereign Ecosystem...</div>
-            </div>
+        <!-- Pre-hydration Semantic Main Landmark (Simple & Clean) -->
+        <main id="main-content" role="main" class="min-h-screen bg-[#F8FAFC]">
         </main>
     </div>
 </body>

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight, ShoppingBag } from 'lucide-react';
 
 export default function POSNavbar({ links = {}, onNavigateSection }) {
@@ -115,7 +115,7 @@ export default function POSNavbar({ links = {}, onNavigateSection }) {
                                                     : 'bg-slate-50/70 hover:bg-amber-50/50 border-slate-100 hover:border-amber-200/60'
                                             }`}
                                         >
-                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center text-xl group-hover:scale-110 group-hover:shadow-md transition-all">
+                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center text-xl group-hover:shadow-md transition-all">
                                                 {item.icon}
                                             </div>
                                             <span className="mt-2 text-xs font-bold text-slate-800 group-hover:text-amber-700 transition-colors truncate w-full">

@@ -179,6 +179,7 @@ class LandingController extends Controller
             [
                 'id' => 'social',
                 'name' => 'Zengfy Social',
+                'short_name' => 'Social',
                 'category' => 'Civic & Social Mesh',
                 'tagline' => 'Hyperlocal Feed, Neighborhood Groups & Civic Beacons.',
                 'desc' => 'Verified citizen discussions, ward-level emergency SOS alerts, and end-to-end encrypted community messaging without algorithms.',
@@ -189,6 +190,7 @@ class LandingController extends Controller
             [
                 'id' => 'school',
                 'name' => 'Zengfy School',
+                'short_name' => 'School',
                 'category' => 'Education & ERP',
                 'tagline' => 'Complete School, College & Madrasha ERP.',
                 'desc' => 'Manage automated student admissions, RFID attendance, online report cards, teacher payroll, and SMS notifications.',
@@ -199,6 +201,7 @@ class LandingController extends Controller
             [
                 'id' => 'pos',
                 'name' => 'Zengfy POS',
+                'short_name' => 'POS',
                 'category' => 'Retail & Commerce',
                 'tagline' => 'Fast Barcode Billing, Stock Management & Profit Analytics.',
                 'desc' => 'Modern touch POS with multi-counter billing, thermal receipt printing, low-stock alerts, and daily sales SMS for shop owners.',
@@ -209,6 +212,7 @@ class LandingController extends Controller
             [
                 'id' => 'law',
                 'name' => 'Zengfy Law',
+                'short_name' => 'Law',
                 'category' => 'Legal & Judiciary',
                 'tagline' => 'Case Management, Court Dates & Client File Vault.',
                 'desc' => 'Built specifically for lawyers & law firms: track hearing schedules, client payments, court precedents, and confidential legal documents.',
@@ -219,6 +223,7 @@ class LandingController extends Controller
             [
                 'id' => 'civil',
                 'name' => 'Zengfy Civil',
+                'short_name' => 'Civil',
                 'category' => 'Engineering & Construction',
                 'tagline' => 'Site Engineering, Material Expenses & Blueprint Vault.',
                 'desc' => 'Track construction project budgets, site contractor payments, material wastage, and structural blueprints.',
@@ -229,6 +234,7 @@ class LandingController extends Controller
             [
                 'id' => 'ngo',
                 'name' => 'Zengfy NGO',
+                'short_name' => 'NGO',
                 'category' => 'Charity & Relief',
                 'tagline' => 'Transparent Donation & Relief Distribution System.',
                 'desc' => 'Track charity donations, relief distribution to verified citizens, and manage volunteer deployment.',
@@ -239,6 +245,7 @@ class LandingController extends Controller
             [
                 'id' => 'rent',
                 'name' => 'Zengfy Rent',
+                'short_name' => 'Rent',
                 'category' => 'Real Estate & Lease',
                 'tagline' => 'Tenant NID Verification, Rent Receipt & Property Lease.',
                 'desc' => 'Instant tenant background check, automated digital rent receipts, utility billing, and vacant flat listings.',
@@ -249,6 +256,7 @@ class LandingController extends Controller
             [
                 'id' => 'hotel',
                 'name' => 'Zengfy Hotel',
+                'short_name' => 'Hotel',
                 'category' => 'Hospitality & Booking',
                 'tagline' => 'Room Booking, Guest Check-in & Housekeeping.',
                 'desc' => 'Streamline room reservations, guest ID verification, invoice printing, and housekeeping shifts.',
@@ -259,6 +267,7 @@ class LandingController extends Controller
             [
                 'id' => 'shop',
                 'name' => 'Zengfy Shop',
+                'short_name' => 'Shop',
                 'category' => 'Fashion & D2C Retail',
                 'tagline' => 'Curated D2C Apparel, Luxury Streetwear & Lookbook.',
                 'desc' => 'Exclusive apparel collections with 3D lookbook preview, authentic size guides, instant bKash checkout, and doorstep courier tracking.',
@@ -269,6 +278,7 @@ class LandingController extends Controller
             [
                 'id' => 'ecommerce',
                 'name' => 'Zengfy Commerce',
+                'short_name' => 'Commerce',
                 'category' => 'E-Commerce & Retail',
                 'tagline' => 'Fast Online Storefront with Courier & Payment Gateway.',
                 'desc' => 'Launch your branded digital shop in minutes with Steadfast/Pathao courier tracking, bKash/Nagad checkout, and inventory sync.',
@@ -279,6 +289,7 @@ class LandingController extends Controller
             [
                 'id' => 'skill',
                 'name' => 'Zengfy Skill',
+                'short_name' => 'Skill',
                 'category' => 'LMS & Certification',
                 'tagline' => 'Online Courses, Instructors & Skill Certifications.',
                 'desc' => 'Host live classes, video courses, student assignments, and verified certificates.',
@@ -289,6 +300,7 @@ class LandingController extends Controller
             [
                 'id' => 'journal',
                 'name' => 'Zengfy Journal',
+                'short_name' => 'Journal',
                 'category' => 'Personal & Productivity',
                 'tagline' => 'Encrypted Personal Diary, Notes & Thought Vault.',
                 'desc' => 'Keep your daily thoughts, private notes, and personal goals protected with biometric encryption.',
@@ -299,6 +311,7 @@ class LandingController extends Controller
             [
                 'id' => 'habit',
                 'name' => 'Zengfy Habit',
+                'short_name' => 'Habit',
                 'category' => 'Productivity & Focus',
                 'tagline' => 'Daily Routine, Habit Streaks & Focus Analytics.',
                 'desc' => 'Track your daily rituals, building discipline with streak reminders and personal performance charts.',
@@ -309,6 +322,7 @@ class LandingController extends Controller
             [
                 'id' => 'schedule',
                 'name' => 'Zengfy Schedule',
+                'short_name' => 'Schedule',
                 'category' => 'Booking & Calendar',
                 'tagline' => 'Client Appointment Booking & Consultation Calendar.',
                 'desc' => 'Automated calendar bookings for doctors, consultants, and coaches with SMS meeting reminders.',

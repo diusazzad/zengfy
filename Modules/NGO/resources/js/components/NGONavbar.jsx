@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
-  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
-  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
-  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
-  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
-  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
-  { name: 'Zengfy NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝', current: true },
-  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🏢' },
-  { name: 'Zengfy Hotel', tag: 'Resort & PMS', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
-  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
-  { name: 'Zengfy Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.top:8000', icon: '🏥' },
-  { name: 'Zengfy Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.top:8000', icon: '🌾' },
-  { name: 'Zengfy Fleet', tag: 'GPS & Fuel Logistics', url: 'http://fleet.zengfy.top:8000', icon: '🚚' },
+  { name: 'Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
+  { name: 'School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
+  { name: 'POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
+  { name: 'Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
+  { name: 'Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
+  { name: 'NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝', current: true },
+  { name: 'Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🏢' },
+  { name: 'Hotel', tag: 'Resort & PMS', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
+  { name: 'Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
+  { name: 'Hospital', tag: 'EMR & Diagnostic', url: 'http://hospital.zengfy.top:8000', icon: '🏥' },
+  { name: 'Agro', tag: 'Farm & Cold Storage', url: 'http://agro.zengfy.top:8000', icon: '🌾' },
+  { name: 'Fleet', tag: 'GPS & Fuel Logistics', url: 'http://fleet.zengfy.top:8000', icon: '🚚' },
 ];
 
 export default function NGONavbar({ brand = {} }) {

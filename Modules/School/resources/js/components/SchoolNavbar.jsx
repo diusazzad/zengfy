@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight, ChevronRight, School as SchoolIcon, Radio } from 'lucide-react';
 
 export default function SchoolNavbar({ links = {}, onNavigateSection }) {
@@ -169,7 +169,7 @@ export default function SchoolNavbar({ links = {}, onNavigateSection }) {
                                                     : 'bg-slate-50/70 hover:bg-emerald-50/60 border-slate-100 hover:border-emerald-200'
                                             }`}
                                         >
-                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/80 group-hover:border-emerald-300 flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-xs">
+                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/80 group-hover:border-emerald-300 flex items-center justify-center text-xl transition-transform shadow-xs">
                                                 {item.icon}
                                             </div>
                                             <span className="mt-2 text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors truncate w-full">

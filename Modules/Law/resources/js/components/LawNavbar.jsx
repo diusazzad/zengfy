@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight, Scale } from 'lucide-react';
 
 export default function LawNavbar({ links = {} }) {
@@ -115,7 +115,7 @@ export default function LawNavbar({ links = {} }) {
                                                     : 'bg-slate-50/70 hover:bg-rose-50/40 border-slate-100 hover:border-rose-200/60'
                                             }`}
                                         >
-                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center text-xl group-hover:scale-110 group-hover:shadow-md transition-all">
+                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center text-xl group-hover:shadow-md transition-all">
                                                 {item.icon}
                                             </div>
                                             <span className="mt-2 text-xs font-bold text-slate-800 group-hover:text-[#881337] transition-colors truncate w-full">

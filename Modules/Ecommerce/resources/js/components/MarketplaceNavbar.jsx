@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
     Search, ShoppingCart, Heart, Store, User,
     Grid, ShieldCheck, ChevronDown, Sparkles, X, Phone,
@@ -20,19 +20,19 @@ export default function MarketplaceNavbar({
     const [catDropdownOpen, setCatDropdownOpen] = useState(false);
 
     const ecosystemApps = [
-        { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.top:8000/", icon: "🏛️" },
-        { name: "Zengfy Shop", desc: "Clothing Brand", url: "http://shop.zengfy.top:8000/", icon: "🏷️" },
-        { name: "Zengfy Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
-        { name: "Zengfy POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
-        { name: "Zengfy School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
-        { name: "Zengfy Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
-        { name: "Zengfy Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
-        { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.top:8000/", icon: "🕌" },
-        { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.top:8000/", icon: "📰" }
+        { name: "Core", desc: "Master Portal", url: "http://zengfy.top:8000/", icon: "🏛️" },
+        { name: "Shop", desc: "Clothing Brand", url: "http://shop.zengfy.top:8000/", icon: "🏷️" },
+        { name: "Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
+        { name: "POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
+        { name: "School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
+        { name: "Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
+        { name: "Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
+        { name: "Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.top:8000/", icon: "🕌" },
+        { name: "Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.top:8000/", icon: "📰" }
     ];
 
     const defaultTrending = trendingKeywords.length > 0 ? trendingKeywords : [
-        "স্মার্টওয়াচ", "টি-শার্ট", "পাঞ্জাবি", "ইয়ারবাডস", "খাঁটি মধু", "অফিস চেয়ার", "গেমিং কিবোর্ড"
+        "স্মার্টওয়াচ", "টি-শার্ট", "পাঞ্জাবি", "ইয়ারবাডস", "খাঁটি মধু", "অফিস চেয়ার", "গেমিং কীবোর্ড"
     ];
 
     return (
@@ -73,7 +73,7 @@ export default function MarketplaceNavbar({
                 {/* Brand Logo & Name */}
                 <div className="flex items-center gap-3 shrink-0">
                     <a href="http://ecommerce.zengfy.top:8000/" className="flex items-center gap-2 group">
-                        <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#F85606] via-orange-600 to-[#7C3AED] flex items-center justify-center text-white font-black text-2xl shadow-md shadow-orange-600/25 group-hover:scale-105 transition-transform">
+                        <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#F85606] via-orange-600 to-[#7C3AED] flex items-center justify-center text-white font-black text-2xl shadow-md shadow-orange-600/25 transition-transform">
                             🛍️
                         </div>
                         <div className="flex flex-col">
@@ -90,7 +90,7 @@ export default function MarketplaceNavbar({
                     <div className="relative">
                         <button
                             onClick={() => setWaffleOpen(!waffleOpen)}
-                            className="p-2 text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-colors border border-transparent hover:border-orange-200"
+                            className="p-2 text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-colors border border-transparent hover:border-orange-200 cursor-pointer"
                             title="Zengfy Ecosystem Apps"
                         >
                             <Grid className="w-5 h-5" />
@@ -100,7 +100,7 @@ export default function MarketplaceNavbar({
                             <div className="absolute left-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 animate-in fade-in zoom-in-95">
                                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                                     <div className="text-xs font-black uppercase tracking-wider text-slate-500">Zengfy Sovereign Apps</div>
-                                    <button onClick={() => setWaffleOpen(false)} className="text-slate-400 hover:text-slate-700">
+                                    <button onClick={() => setWaffleOpen(false)} className="text-slate-400 hover:text-slate-700 cursor-pointer">
                                         <X className="w-4 h-4" />
                                     </button>
                                 </div>
@@ -111,7 +111,7 @@ export default function MarketplaceNavbar({
                                             href={app.url}
                                             className="flex flex-col items-center p-2 rounded-xl hover:bg-orange-50/80 transition-colors text-center group"
                                         >
-                                            <span className="text-2xl mb-1 group-hover:scale-110 transition-transform">{app.icon}</span>
+                                            <span className="text-2xl mb-1 transition-transform">{app.icon}</span>
                                             <span className="text-xs font-bold text-slate-800 line-clamp-1">{app.name}</span>
                                             <span className="text-[10px] text-slate-400 line-clamp-1">{app.desc}</span>
                                         </a>
@@ -246,7 +246,7 @@ export default function MarketplaceNavbar({
                         </a>
                         <a href="#official-stores" className="flex items-center gap-1.5 hover:text-[#F85606] transition-colors">
                             <ShieldCheck className="w-4 h-4 text-purple-600" />
-                            <span>অফিসিয়াল ব্র্যান্ড মল</span>
+                            <span>অফিসিয়াল ব্র্যান্ড মল</span>
                         </a>
                         <a href="#just-for-you" className="flex items-center gap-1.5 hover:text-[#F85606] transition-colors">
                             <Sparkles className="w-4 h-4 text-blue-600" />

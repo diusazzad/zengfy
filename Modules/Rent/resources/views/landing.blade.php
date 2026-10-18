@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
@@ -26,15 +26,7 @@
     <!-- React 19 Rent Landing Application Mount Point -->
     <div id="react-rent-landing-root" 
          data-initial-data="{{ json_encode($initialData ?? null, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) }}">
-        <!-- Pre-hydration Semantic Main Landmark -->
-        <main id="main-content" role="main" class="min-h-screen flex items-center justify-center bg-[#FAFAFA]">
-            <div class="flex flex-col items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#4338CA] via-indigo-700 to-emerald-500 flex items-center justify-center font-black text-xl text-white shadow-xl shadow-indigo-900/25 animate-pulse">
-                    🔑
-                </div>
-                <div class="text-sm font-bold text-slate-500">Loading Zengfy Sovereign Rent Mesh...</div>
-            </div>
-        </main>
+        <!-- Pre-hydration Semantic Main Landmark (Simple & Clean) -->`n        <main id="main-content" role="main" class="min-h-screen">`n        </main>
     </div>
 </body>
 </html>

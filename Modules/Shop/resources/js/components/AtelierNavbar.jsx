@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ShoppingBag, Grid, User, X, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function AtelierNavbar({
@@ -12,15 +12,15 @@ export default function AtelierNavbar({
     const [waffleOpen, setWaffleOpen] = useState(false);
 
     const ecosystemApps = [
-        { name: "Zengfy Core", desc: "Master Portal", url: "http://zengfy.top:8000/", icon: "🏛️" },
-        { name: "Zengfy Market", desc: "Marketplace", url: "http://ecommerce.zengfy.top:8000/", icon: "🛍️" },
-        { name: "Zengfy Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
-        { name: "Zengfy POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
-        { name: "Zengfy School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
-        { name: "Zengfy Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
-        { name: "Zengfy Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
-        { name: "Zengfy Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.top:8000/", icon: "🕌" },
-        { name: "Zengfy Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.top:8000/", icon: "📰" }
+        { name: "Core", desc: "Master Portal", url: "http://zengfy.top:8000/", icon: "🏛️" },
+        { name: "Market", desc: "Marketplace", url: "http://ecommerce.zengfy.top:8000/", icon: "🛍️" },
+        { name: "Social", desc: "Civic Network", url: "http://social.zengfy.top:8000/", icon: "🌍" },
+        { name: "POS", desc: "Retail & Thermal", url: "http://pos.zengfy.top:8000/", icon: "⚡" },
+        { name: "School", desc: "Campus & RFID", url: "http://school.zengfy.top:8000/", icon: "🎓" },
+        { name: "Law", desc: "Digital Chamber", url: "http://law.zengfy.top:8000/", icon: "⚖️" },
+        { name: "Hotel", desc: "Resort & Kitchen", url: "http://hotel.zengfy.top:8000/", icon: "🏨" },
+        { name: "Habit", desc: "5 Daily Salah", url: "http://habit.zengfy.top:8000/", icon: "🕌" },
+        { name: "Journal", desc: "Op-Ed & Paywall", url: "http://journal.zengfy.top:8000/", icon: "📰" }
     ];
 
     return (
@@ -57,7 +57,7 @@ export default function AtelierNavbar({
                     <div className="relative ml-2">
                         <button
                             onClick={() => setWaffleOpen(!waffleOpen)}
-                            className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
+                            className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
                             title="Zengfy Ecosystem Apps"
                         >
                             <Grid className="w-4 h-4" />
@@ -67,7 +67,7 @@ export default function AtelierNavbar({
                             <div className="absolute left-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 animate-in fade-in zoom-in-95">
                                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                                     <div className="text-xs font-black uppercase tracking-wider text-slate-500">Zengfy Sovereign Apps</div>
-                                    <button onClick={() => setWaffleOpen(false)} className="text-slate-400 hover:text-slate-700">
+                                    <button onClick={() => setWaffleOpen(false)} className="text-slate-400 hover:text-slate-700 cursor-pointer">
                                         <X className="w-4 h-4" />
                                     </button>
                                 </div>
@@ -78,7 +78,7 @@ export default function AtelierNavbar({
                                             href={app.url}
                                             className="flex flex-col items-center p-2 rounded-xl hover:bg-slate-50 transition-colors text-center group"
                                         >
-                                            <span className="text-2xl mb-1 group-hover:scale-110 transition-transform">{app.icon}</span>
+                                            <span className="text-2xl mb-1 transition-transform">{app.icon}</span>
                                             <span className="text-xs font-bold text-slate-800 line-clamp-1">{app.name}</span>
                                             <span className="text-[10px] text-slate-400 line-clamp-1">{app.desc}</span>
                                         </a>

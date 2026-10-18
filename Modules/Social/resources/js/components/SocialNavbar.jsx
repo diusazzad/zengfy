@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight, ChevronRight, Shield, Radio } from 'lucide-react';
 
 export default function SocialNavbar({ links = {}, onNavigateSection }) {
@@ -162,7 +162,7 @@ export default function SocialNavbar({ links = {}, onNavigateSection }) {
                                                     : 'bg-slate-50/70 hover:bg-blue-50/60 border-slate-100 hover:border-blue-200'
                                             }`}
                                         >
-                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/80 group-hover:border-blue-300 flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-xs">
+                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/80 group-hover:border-blue-300 flex items-center justify-center text-xl transition-transform shadow-xs">
                                                 {item.icon}
                                             </div>
                                             <span className="mt-2 text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors truncate w-full">

@@ -1,20 +1,20 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
-  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
-  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
-  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
-  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
-  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
-  { name: 'Zengfy NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝' },
-  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
-  { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
-  { name: 'Zengfy Commerce', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒', current: true },
-  { name: 'Zengfy Skill', tag: 'Career & Certs', url: 'http://skill.zengfy.top:8000', icon: '🚀' },
-  { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.top:8000', icon: '✍️' },
-  { name: 'Zengfy Habit', tag: '5 Daily Prayers', url: 'http://habit.zengfy.top:8000', icon: '⚡' },
-  { name: 'Zengfy Schedule', tag: 'Client Calendar', url: 'http://schedule.zengfy.top:8000', icon: '📅' },
+  { name: 'Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
+  { name: 'School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🎓' },
+  { name: 'POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
+  { name: 'Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
+  { name: 'Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
+  { name: 'NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝' },
+  { name: 'Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
+  { name: 'Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
+  { name: 'Commerce', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒', current: true },
+  { name: 'Skill', tag: 'Career & Certs', url: 'http://skill.zengfy.top:8000', icon: '🚀' },
+  { name: 'Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.top:8000', icon: '✍️' },
+  { name: 'Habit', tag: '5 Daily Prayers', url: 'http://habit.zengfy.top:8000', icon: '⚡' },
+  { name: 'Schedule', tag: 'Client Calendar', url: 'http://schedule.zengfy.top:8000', icon: '📅' },
 ];
 
 export default function ShopNavbar({ brand = {} }) {

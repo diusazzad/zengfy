@@ -32,7 +32,7 @@ export default function Navbar({ links = {}, modules = [], onNavigateSection }) 
                 
                 {/* Brand Logo */}
                 <a href={links.home || "/"} aria-label="Zengfy Sovereign Ecosystem Home" className="flex items-center gap-3 group shrink-0">
-                    <div aria-hidden="true" className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-black text-xl text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                    <div aria-hidden="true" className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-black text-xl text-white shadow-md shadow-blue-500/20 transition-all">
                         Z
                     </div>
                     <div className="flex flex-col">
@@ -102,11 +102,11 @@ export default function Navbar({ links = {}, modules = [], onNavigateSection }) 
                                             href={item.url}
                                             className="flex flex-col items-center p-2.5 rounded-2xl bg-slate-50/70 hover:bg-blue-50/70 border border-slate-100 hover:border-blue-200/80 transition-all text-center group"
                                         >
-                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center text-xl group-hover:scale-110 group-hover:shadow-md transition-all">
+                                            <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200/60 shadow-xs flex items-center justify-center text-xl group-hover:shadow-md transition-all">
                                                 {item.icon}
                                             </div>
                                             <span className="mt-2 text-xs font-bold text-slate-800 group-hover:text-blue-600 transition-colors truncate w-full">
-                                                {item.name}
+                                                {item.short_name || item.name.replace(/^Zengfy\s+/i, '')}
                                             </span>
                                             <span className="text-[10px] text-slate-400 truncate w-full">
                                                 {item.category.split('&')[0]}
@@ -135,7 +135,7 @@ export default function Navbar({ links = {}, modules = [], onNavigateSection }) 
                     {/* Sign In CTA */}
                     <a
                         href={links.login || "/login"}
-                        className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all"
+                        className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all"
                     >
                         <span>Sign In</span>
                         <ChevronRight className="w-4 h-4" />

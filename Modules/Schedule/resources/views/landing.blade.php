@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
@@ -26,15 +26,7 @@
     <!-- React 19 Schedule Landing Application Mount Point -->
     <div id="schedule-app" 
          data-initial-data="{{ json_encode($initialData ?? null, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) }}">
-        <!-- Pre-hydration Semantic Main Landmark -->
-        <main id="main-content" role="main" class="min-h-screen flex items-center justify-center bg-[#FAFAFA]">
-            <div class="flex flex-col items-center gap-3">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-700 via-indigo-600 to-cyan-500 flex items-center justify-center text-3xl text-white shadow-xl shadow-indigo-900/20 animate-pulse">
-                    📅
-                </div>
-                <div class="text-sm font-bold text-indigo-900">লোড হচ্ছে জেনফাই শিডিউল প্ল্যাটফর্ম...</div>
-            </div>
-        </main>
+        <!-- Pre-hydration Semantic Main Landmark (Simple & Clean) -->`n        <main id="main-content" role="main" class="min-h-screen">`n        </main>
     </div>
 </body>
 </html>

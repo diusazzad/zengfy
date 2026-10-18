@@ -2,18 +2,18 @@
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
-  { name: 'Zengfy Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
-  { name: 'Zengfy School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🏫' },
-  { name: 'Zengfy POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
-  { name: 'Zengfy Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
-  { name: 'Zengfy Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
-  { name: 'Zengfy NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝' },
-  { name: 'Zengfy Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
-  { name: 'Zengfy Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
-  { name: 'Zengfy Shop', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒' },
-  { name: 'Zengfy Skill', tag: 'Post-SSC Launchpad', url: 'http://skill.zengfy.top:8000', icon: '🎓' },
-  { name: 'Zengfy Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.top:8000', icon: '📰', current: true },
-  { name: 'Zengfy Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
+  { name: 'Social', tag: 'NID Verified', url: 'http://social.zengfy.top:8000', icon: '👥' },
+  { name: 'School', tag: 'Smart Edu ERP', url: 'http://school.zengfy.top:8000', icon: '🏫' },
+  { name: 'POS', tag: 'Garment & Retail', url: 'http://pos.zengfy.top:8000', icon: '🛍️' },
+  { name: 'Law', tag: 'Court Chamber', url: 'http://law.zengfy.top:8000', icon: '⚖️' },
+  { name: 'Civil', tag: '3D Architecture', url: 'http://civil.zengfy.top:8000', icon: '📐' },
+  { name: 'NGO', tag: 'Zakat & Trust', url: 'http://ngo.zengfy.top:8000', icon: '🤝' },
+  { name: 'Rent', tag: 'Property & Flat', url: 'http://rent.zengfy.top:8000', icon: '🔑' },
+  { name: 'Hotel', tag: 'Resort & ERP', url: 'http://hotel.zengfy.top:8000', icon: '🏨' },
+  { name: 'Shop', tag: 'D2C & Anti-Fraud', url: 'http://shop.zengfy.top:8000', icon: '🛒' },
+  { name: 'Skill', tag: 'Post-SSC Launchpad', url: 'http://skill.zengfy.top:8000', icon: '🎓' },
+  { name: 'Journal', tag: 'Sovereign Op-Ed', url: 'http://journal.zengfy.top:8000', icon: '📰', current: true },
+  { name: 'Pharmacy', tag: 'Drug & Batch', url: 'http://pharmacy.zengfy.top:8000', icon: '💊' },
 ];
 
 export default function JournalNavbar({ brand = {} }) {
