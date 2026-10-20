@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
@@ -141,7 +141,7 @@ export default function JournalNavbar({ brand = {} }) {
 
             {/* Central SSO Login Link */}
             <a
-              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
               className="text-xs font-bold text-slate-700 hover:text-rose-700 px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors hidden sm:inline-block"
             >
               লগইন
@@ -149,7 +149,7 @@ export default function JournalNavbar({ brand = {} }) {
 
             {/* CTA: Start Independent Column */}
             <a
-              href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fjournal.zengfy.top%3A8000%2F"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-slate-900 via-rose-700 to-rose-600 hover:from-slate-800 hover:to-rose-700 shadow-md shadow-rose-900/20 transform hover:-translate-y-0.5 transition-all cursor-pointer"
             >
               <span>✍️ স্বাধীন কলাম লিখুন</span>

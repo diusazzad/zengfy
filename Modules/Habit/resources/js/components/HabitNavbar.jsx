@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Ecosystem', tag: 'Master Sovereign', url: 'http://zengfy.top:8000', icon: '🏛️' },
@@ -141,7 +141,7 @@ export default function HabitNavbar({ brand = {} }) {
 
             {/* Central SSO Login Link */}
             <a
-              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fhabit.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Fhabit.zengfy.top%3A8000%2F"
               className="text-xs font-bold text-slate-700 hover:text-emerald-700 px-3 py-2 rounded-xl hover:bg-emerald-50 transition-colors hidden sm:inline-block"
             >
               লগইন

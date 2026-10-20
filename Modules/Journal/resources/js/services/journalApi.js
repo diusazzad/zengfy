@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Journal Landing Data Fetcher (0ms SSR Hydration + REST API Fallback)
  */
 

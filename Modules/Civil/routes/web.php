@@ -26,7 +26,7 @@ Route::domain('civil.' . $baseDomain)->group(function () use ($baseDomain) {
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
         $continue = request()->query('continue') ?? "{$scheme}://civil.{$baseDomain}{$portSuffix}/";
-        return redirect("{$scheme}://{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
     })->name('civil.login');
 
     Route::get('/register', function () use ($baseDomain) {
@@ -34,7 +34,7 @@ Route::domain('civil.' . $baseDomain)->group(function () use ($baseDomain) {
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
         $continue = request()->query('continue') ?? "{$scheme}://civil.{$baseDomain}{$portSuffix}/";
-        return redirect("{$scheme}://{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
     })->name('civil.register');
 
     // Android APK Direct Download

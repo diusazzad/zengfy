@@ -79,7 +79,7 @@ export default function MarketplaceFooter() {
                 <div>
                     <h4 className="text-xs font-black uppercase tracking-wider text-white mb-3">সেলার কর্নার</h4>
                     <ul className="space-y-2">
-                        <li><a href="http://auth.zengfy.top:8000/register?intent=merchant" className="text-orange-400 hover:text-orange-300 font-bold transition-colors">মার্চেন্ট অ্যাকাউন্ট খুলুন</a></li>
+                        <li><a href="http://accounts.zengfy.top:8000/register?intent=merchant" className="text-orange-400 hover:text-orange-300 font-bold transition-colors">মার্চেন্ট অ্যাকাউন্ট খুলুন</a></li>
                         <li><a href="#daraz-comparison" className="hover:text-white transition-colors">দারাজ বনাম জেনগফাই কমিশন</a></li>
                         <li><a href="#just-for-you" className="hover:text-white transition-colors">অ্যান্টি-ফ্রড কুরিয়ার গার্ড</a></li>
                         <li><a href="#just-for-you" className="hover:text-white transition-colors">সেলার সাপোর্ট কমিউনিটি</a></li>

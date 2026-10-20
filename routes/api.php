@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes (Active: Master, Social, School, POS, Law, Civil, NGO, Rent, Hotel, Shop & Skill)
+| API Routes (Active: Master, Social, School, POS, Law, Civil, NGO, Rent, Hotel, Shop, Skill, Auth)
 |--------------------------------------------------------------------------
 |
 | Public REST API endpoints consumed by React 19 Web Apps and Flutter Mobile App.
@@ -55,3 +55,6 @@ require base_path('Modules/Schedule/routes/api.php');
 
 // 15. Ecommerce Subdomain Landing API (v1)
 require base_path('Modules/Ecommerce/routes/api.php');
+
+// 16. Central Sovereign Auth & Identity API (v1)
+require base_path('Modules/Auth/routes/api.php');

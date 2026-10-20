@@ -54,10 +54,10 @@
             <div class="col-span-2 md:col-span-1 border-t border-white/5 md:border-none pt-4 md:pt-0">
                 <h3 class="text-white font-bold text-xs sm:text-sm mb-3 md:mb-4 tracking-wider uppercase">Company</h3>
                 <ul class="grid grid-cols-2 md:block gap-1 md:space-y-1.5 text-xs font-medium">
-                    <li><a href="{{ route('company') }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Company & Team</a></li>
+                    <li><a href="{{ Route::has('company') ? route('company') : '/company' }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Company & Team</a></li>
                     <li><a href="{{ route('policy.workplace') }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Workplace Policy</a></li>
-                    <li><a href="{{ route('faq') }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Frequently Asked Questions</a></li>
-                    <li><a href="{{ route('terms') }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Terms of Service & Privacy</a></li>
+                    <li><a href="{{ Route::has('faq') ? route('faq') : '/faq' }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Frequently Asked Questions</a></li>
+                    <li><a href="{{ Route::has('terms') ? route('terms') : '/terms' }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Terms of Service & Privacy</a></li>
                 </ul>
             </div>
 
@@ -78,8 +78,8 @@
             </div>
 
             <div class="flex items-center gap-6">
-                <a href="{{ route('terms') }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Privacy & Terms</a>
-                <a href="{{ route('terms') }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">NID Security Policy</a>
+                <a href="{{ Route::has('terms') ? route('terms') : '/terms' }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">Privacy & Terms</a>
+                <a href="{{ Route::has('terms') ? route('terms') : '/terms' }}" class="py-2 px-1 min-h-[36px] inline-flex items-center hover:text-white transition-colors">NID Security Policy</a>
             </div>
         </div>
 

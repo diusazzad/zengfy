@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Search, Sparkles, Filter, X } from 'lucide-react';
 import ModuleCard from './ModuleCard';
 

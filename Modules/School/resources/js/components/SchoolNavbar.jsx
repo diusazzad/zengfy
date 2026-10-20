@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight, ChevronRight, School as SchoolIcon, Radio } from 'lucide-react';
 
 export default function SchoolNavbar({ links = {}, onNavigateSection }) {
@@ -197,7 +197,7 @@ export default function SchoolNavbar({ links = {}, onNavigateSection }) {
 
                     {/* Sign In CTA */}
                     <a
-                        href={links.login || "http://zengfy.top:8000/login"}
+                        href={links.login || "http://accounts.zengfy.top:8000/login"}
                         className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-700 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 active:scale-95 transition-all"
                     >
                         <span>লগইন করুন</span>

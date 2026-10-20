@@ -104,7 +104,13 @@ export default function DesktopHeader({
                 {/* Right: SSO Action Buttons */}
                 <div className="flex items-center gap-3">
                     <a
-                        href={links.login || "/login"}
+                        href={
+                        typeof window !== 'undefined' &&
+                        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') &&
+                        links.login?.includes('zengfy.top')
+                            ? '/login'
+                            : (links.login || '/login')
+                    }
                         className="px-4 py-2 rounded-xl text-xs font-bold text-gray-300 hover:text-white hover:bg-white/[0.05] transition flex items-center gap-1.5"
                     >
                         <Lock className="w-3.5 h-3.5 text-gray-400" />
@@ -112,7 +118,13 @@ export default function DesktopHeader({
                     </a>
 
                     <a
-                        href={links.register || "/register"}
+                        href={
+                        typeof window !== 'undefined' &&
+                        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') &&
+                        links.register?.includes('zengfy.top')
+                            ? '/register'
+                            : (links.register || '/register')
+                    }
                         className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-extrabold shadow-lg shadow-blue-600/30 active:scale-95 transition-all flex items-center gap-1.5"
                     >
                         <Shield className="w-3.5 h-3.5" />

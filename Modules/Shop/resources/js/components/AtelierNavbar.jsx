@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { ShoppingBag, Grid, User, X, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function AtelierNavbar({
@@ -125,7 +125,7 @@ export default function AtelierNavbar({
                     </button>
 
                     <a
-                        href="http://auth.zengfy.top:8000/login"
+                        href="http://accounts.zengfy.top:8000/login"
                         className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors flex items-center gap-1.5 text-xs font-bold"
                         title="Sign In"
                     >

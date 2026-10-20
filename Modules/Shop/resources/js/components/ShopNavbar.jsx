@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
@@ -137,7 +137,7 @@ export default function ShopNavbar({ brand = {} }) {
 
             {/* Central SSO Login Button */}
             <a
-              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
               className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-orange-700 hover:bg-orange-50/80 border border-slate-200/80 transition-all"
             >
               লগইন / SSO
@@ -145,7 +145,7 @@ export default function ShopNavbar({ brand = {} }) {
 
             {/* Main CTA */}
             <a
-              href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
               className="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-orange-600 via-orange-500 to-violet-600 hover:from-orange-700 hover:to-violet-700 shadow-md shadow-orange-600/25 hover:shadow-lg hover:shadow-orange-600/35 transition-all transform active:scale-95"
             >
               ফ্রি ট্রায়াল শুরু করুন

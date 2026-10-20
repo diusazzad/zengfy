@@ -4,6 +4,13 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+    server: {
+        host: '0.0.0.0',
+        cors: true,
+        hmr: {
+            host: 'localhost',
+        },
+    },
     plugins: [
         laravel({
             input: [

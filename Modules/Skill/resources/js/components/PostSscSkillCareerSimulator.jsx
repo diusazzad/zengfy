@@ -425,7 +425,7 @@ export default function PostSscSkillCareerSimulator({ simulatorData = {} }) {
                   </button>
 
                   <a
-                    href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fskill.zengfy.top%3A8000%2F"
+                    href="http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fskill.zengfy.top%3A8000%2F"
                     className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-md shadow-blue-600/25 transition-all flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>ফ্রি ট্রায়াল শুরু করুন / ভর্তি কনফার্ম করুন</span>

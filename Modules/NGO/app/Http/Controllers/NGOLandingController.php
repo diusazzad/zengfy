@@ -257,8 +257,8 @@ class NGOLandingController extends Controller
             ],
             'links' => [
                 'home' => "{$protocol}ngo.{$baseDomain}{$portSuffix}/",
-                'login' => "{$protocol}{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$protocol}ngo.{$baseDomain}{$portSuffix}/"),
-                'register' => "{$protocol}{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$protocol}ngo.{$baseDomain}{$portSuffix}/"),
+                'login' => "{$protocol}accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$protocol}ngo.{$baseDomain}{$portSuffix}/"),
+                'register' => "{$protocol}accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$protocol}ngo.{$baseDomain}{$portSuffix}/"),
                 'download' => 'https://github.com/diusazzad/zengfy/releases',
                 'master_landing' => "{$protocol}{$baseDomain}{$portSuffix}/",
                 'social' => "{$protocol}social.{$baseDomain}{$portSuffix}/",

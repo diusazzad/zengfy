@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
                 $port = $request->getPort();
                 $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
 
-                $centralLogin = "{$scheme}://{$baseDomain}{$portSuffix}/login";
+                $centralLogin = "{$scheme}://accounts.{$baseDomain}{$portSuffix}/login";
                 $target = $request->fullUrl();
 
                 return "{$centralLogin}?continue=" . urlencode($target);

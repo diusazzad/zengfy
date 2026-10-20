@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight, ChevronRight, Shield, Radio } from 'lucide-react';
 
 export default function SocialNavbar({ links = {}, onNavigateSection }) {
@@ -190,7 +190,7 @@ export default function SocialNavbar({ links = {}, onNavigateSection }) {
 
                     {/* Sign In CTA */}
                     <a
-                        href={links.login || "http://zengfy.top:8000/login"}
+                        href={links.login || "http://accounts.zengfy.top:8000/login"}
                         className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all"
                     >
                         <span>Sign In</span>

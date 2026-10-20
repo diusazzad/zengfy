@@ -25,13 +25,14 @@ class AccountController extends Controller
             ->get();
 
         // Ecosystem modules with status and launch links
-        $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
-        $scheme = env('APP_URL_SCHEME', 'http');
-        $port = env('APP_ENV') === 'local' ? ':7000' : '';
+        $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
+        $scheme = $request->getScheme();
+        $port = $request->getPort();
+        $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
 
-        $homeUrl = "{$scheme}://{$baseDomain}{$port}/";
-        $socialUrl = "{$scheme}://social.{$baseDomain}{$port}/";
-        $accountUrl = "{$scheme}://{$baseDomain}{$port}/account";
+        $homeUrl = "{$scheme}://{$baseDomain}{$portSuffix}/";
+        $socialUrl = "{$scheme}://social.{$baseDomain}{$portSuffix}/";
+        $accountUrl = "{$scheme}://accounts.{$baseDomain}{$portSuffix}/";
 
         $ecosystemApps = [
             [
@@ -60,7 +61,7 @@ class AccountController extends Controller
                 'category' => 'Mobile APK',
                 'desc' => 'Native biometric scanner, ward SOS distress beacon, push alerts.',
                 'icon' => '📱',
-                'url' => "{$scheme}://{$baseDomain}{$port}/download",
+                'url' => "{$scheme}://{$baseDomain}{$portSuffix}/download",
                 'badge' => 'Alpha v1.0',
                 'badge_color' => 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
             ],
@@ -70,7 +71,7 @@ class AccountController extends Controller
                 'category' => 'Education',
                 'desc' => 'Student records, exam grading, automated SMS notifications.',
                 'icon' => '🏫',
-                'url' => "{$scheme}://school.{$baseDomain}{$port}/",
+                'url' => "{$scheme}://school.{$baseDomain}{$portSuffix}/",
                 'badge' => 'Live Demo',
                 'badge_color' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',
             ],
@@ -80,7 +81,7 @@ class AccountController extends Controller
                 'category' => 'Law Vault',
                 'desc' => 'Court hearing schedules, case diary, encrypted document vault.',
                 'icon' => '⚖️',
-                'url' => "{$scheme}://law.{$baseDomain}{$port}/",
+                'url' => "{$scheme}://law.{$baseDomain}{$portSuffix}/",
                 'badge' => 'Live Demo',
                 'badge_color' => 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
             ],
@@ -90,7 +91,7 @@ class AccountController extends Controller
                 'category' => 'Commerce',
                 'desc' => 'Multi-location inventory, barcode billing, bKash integration.',
                 'icon' => '🛒',
-                'url' => "{$scheme}://pos.{$baseDomain}{$port}/",
+                'url' => "{$scheme}://pos.{$baseDomain}{$portSuffix}/",
                 'badge' => 'Live Demo',
                 'badge_color' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
             ],

@@ -229,8 +229,8 @@ export const FALLBACK_LAW_DATA = {
     },
     links: {
         home: "http://law.zengfy.top:8000/",
-        login: "http://zengfy.top:8000/login?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
-        register: "http://zengfy.top:8000/register?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
+        login: "http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
+        register: "http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Flaw.zengfy.top%3A8000%2F",
         download: "https://github.com/diusazzad/zengfy/releases",
         master_landing: "http://zengfy.top:8000/",
         social: "http://social.zengfy.top:8000/",

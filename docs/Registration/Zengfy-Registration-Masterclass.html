@@ -1,0 +1,1488 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zengfy Sovereign Registration & Identity Engineering Masterclass</title>
+    <!-- Google Fonts: Noto Sans Bengali, Plus Jakarta Sans, Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --primary-dark: #1e40af;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 18mm 16mm 18mm 16mm;
+            @bottom-right {
+                content: counter(page);
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 9pt;
+                color: #64748b;
+            }
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 11pt;
+            line-height: 1.7;
+            color: var(--slate-800);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 30px;
+        }
+
+        /* Cover Page Styling */
+        .cover-page {
+            page-break-after: always;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        .cover-logo {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+            margin-bottom: 25px;
+        }
+
+        .cover-title {
+            font-size: 26pt;
+            font-weight: 900;
+            color: var(--slate-900);
+            line-height: 1.25;
+            margin: 0 0 16px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .cover-subtitle {
+            font-size: 13pt;
+            font-weight: 500;
+            color: var(--slate-600);
+            max-width: 650px;
+            margin: 0 0 35px 0;
+            line-height: 1.5;
+        }
+
+        .cover-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 9.5pt;
+            color: var(--slate-600);
+        }
+
+        .meta-pill {
+            background: var(--slate-100);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--slate-900);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 20pt;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        h2 {
+            font-size: 15pt;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 12.5pt;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1.1em;
+            text-align: justify;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Code & Monospace */
+        code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.88em;
+            background-color: var(--slate-100);
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        pre {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 8.5pt;
+            line-height: 1.55;
+            margin: 18px 0;
+            page-break-inside: avoid;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        pre code {
+            background: transparent;
+            color: #f8fafc;
+            padding: 0;
+            border: none;
+            font-size: inherit;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 9.5pt;
+            page-break-inside: avoid;
+        }
+
+        table th, table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        table th {
+            background-color: var(--slate-100);
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+
+        table tr:nth-child(even) {
+            background-color: #fcfdfe;
+        }
+
+        /* Quotes & Badges */
+        blockquote {
+            margin: 16px 0;
+            padding: 10px 18px;
+            border-left: 4px solid var(--primary);
+            background: var(--slate-50);
+            color: var(--slate-700);
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            font-size: 8.5pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            background: #dbeafe;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .chapter-divider {
+            border: none;
+            border-top: 1px dashed #cbd5e1;
+            margin: 40px 0;
+        }
+
+        .page-break-chapter {
+            page-break-before: always;
+            padding-top: 15px;
+        }
+
+        /* Lists */
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.4em;
+        }
+
+        /* Print specific */
+        @media print {
+            body {
+                font-size: 10pt;
+                color: #000;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            pre {
+                background-color: #1e293b !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .callout-box, .meta-pill, table th {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- কভার পেজ -->
+    <div class="cover-page">
+        <div class="cover-logo">Z</div>
+        <div class="chapter-badge">Zengfy Engineering Standards</div>
+        <h1 class="cover-title">Zengfy Sovereign Registration &amp; Identity<br>Engineering Masterclass</h1>
+        <p class="cover-subtitle">
+            এন্টারপ্রাইজ গ্রেড নিরাপদ, ব্যয়-সাশ্রয়ী (Zero-Cost Verification) এবং সার্বভৌম রেজিস্ট্রেশন সিস্টেম নির্মাণের সম্পূর্ণ হ্যান্ডবুক
+        </p>
+        
+        <div class="cover-meta">
+            <span class="meta-pill">📁 পাথ: core/docs/Registration</span>
+            <span class="meta-pill">🛡️ রুল: Day 0 Minimalist Flow (৩টি ফিল্ড)</span>
+            <span class="meta-pill">⚖️ সাইবার নিরাপত্তা আইন ২০২৩ কমপ্লায়েন্ট</span>
+            <span class="meta-pill">📅 সংস্করণ: অক্টোবর ২০২৬</span>
+        </div>
+    </div>
+
+    <!-- মূল অধ্যায়সমূহ -->
+    
+        <section class="cover-lead" id="section-0">
+            <div class="chapter-badge">মডিউল 00 / ১১</div>
+            <h1>Zengfy Sovereign Registration &amp; Identity Engineering Masterclass</h1>
+<blockquote>
+<p><strong>ডকুমেন্টেশন রুট পাথ:</strong> <code>P:\Zengfy-Ecosystem\core\docs\Registration</code><br />
+<strong>উদ্দেশ্য:</strong> এন্টারপ্রাইজ সফটওয়্যার ইঞ্জিনিয়ারিং স্ট্যান্ডার্ডে নিরাপদ, ব্যয়-সাশ্রয়ী এবং স্কেলেবল ইউজার রেজিস্ট্রেশন সিস্টেম নির্মাণ।<br />
+<strong>ইকোসিস্টেম সংস্করণ:</strong> Zengfy Core v1.0 (Day 0 Minimalist Flow)<br />
+<strong>সর্বশেষ হালনাগাদ:</strong> অক্টোবর ২০২৬</p>
+</blockquote>
+<hr />
+<h2>১. নির্বাহী সারসংক্ষেপ (Executive Summary)</h2>
+<p>একটি ডিজিটাল প্ল্যাটফর্ম বা ইকোসিস্টেমের প্রথম এবং প্রধান প্রবেশদ্বার হলো <strong>রেজিস্ট্রেশন এবং আইডেন্টিটি সিস্টেম (Registration &amp; Identity System)</strong>। অধিকাংশ প্রজেক্টে রেজিস্ট্রেশনকে শুধুমাত্র একটি সাধারণ ওয়েব ফর্ম ও ডেটাবেজ ইনসার্ট অপারেশন হিসেবে ভাবা হয়। কিন্তু বাস্তব প্রডাকশন পরিবেশে এটি সিকিউরিটি, ক্রিপ্টোগ্রাফি, সিস্টেম রেজিলিয়েন্স, আইনি কমপ্লায়েন্স এবং ইউজার এক্সপেরিয়েন্সের এক জটিল সমন্বয়।</p>
+<p><strong>Zengfy ইকোসিস্টেমের জন্য আমাদের কৌশলগত সিদ্ধান্ত:</strong></p>
+<ol>
+<li><strong>Day 0 (প্রথম দিন):</strong> অতি-সহজ ও ঘর্ষণহীন (Frictionless) রেজিস্ট্রেশন। ইউজার কেবল <strong>৩টি ফিল্ড</strong> পূরণ করবেন:
+<ul>
+<li><strong>পুরো নাম (Full Name)</strong></li>
+<li><strong>ইমেইল ঠিকানা (Email Address)</strong></li>
+<li><strong>পাসওয়ার্ড (Password)</strong><br />
+<em>(অথবা Google 1-Tap Sign-In এর মাধ্যমে ০-ফিল্ডে তাৎক্ষণিক একাউন্ট খোলা)</em>।</li>
+</ul>
+</li>
+<li><strong>জিরো-কস্ট ভেরিফিকেশন (Zero-Dollar Verification):</strong> প্রাথমিক পর্যায়ে ব্যয়বহুল SMS OTP সম্পূর্ণ পরিহার করে নিরাপদ ক্রিপ্টোগ্রাফিক ইমেইল ভেরিফিকেশন লিংক চালু রাখা।</li>
+<li><strong>প্রগ্রেসিভ প্রোফাইলিং ও ব্যাজ সিস্টেম (Progressive Profiling &amp; Badges):</strong> ফোন নাম্বার, জাতীয় পরিচয়পত্র (NID) বা উন্নত নাগরিক ভেরিফিকেশন পরবর্তী সময়ে একাউন্ট সেন্টারে (Account Center) ব্যাজ বা ট্রাস্ট টিয়ার (Trust Tier) আকারে যুক্ত হবে।</li>
+</ol>
+<hr />
+<h2>২. মাস্টারক্লাস ডকুমেন্টেশনের সূচিপত্র (Curriculum Index)</h2>
+<p>এই মাস্টারক্লাসটি মোট ১০টি গভীর মডিউল ও পূর্ণাঙ্গ কোডবেসের সমন্বয়ে গঠিত:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">ক্রম</th>
+<th style="text-align:left">ডকুমেন্টের নাম</th>
+<th style="text-align:left">মূল বিষয়বস্তু</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>01</strong></td>
+<td style="text-align:left"><a href="./01-Registration-Fundamentals-And-Theory.md"><code>01-Registration-Fundamentals-And-Theory.md</code></a></td>
+<td style="text-align:left">আইডেন্টিটি থিওরি, ৩-ফিল্ড সাইন-আপ ফিলোসফি, কনভার্সন অপটিমাইজেশন ও প্রগ্রেসিভ প্রোফাইলিং।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>02</strong></td>
+<td style="text-align:left"><a href="./02-System-Design-And-Architecture.md"><code>02-System-Design-And-Architecture.md</code></a></td>
+<td style="text-align:left">হাই-লেভেল ও লো-লেভেল আর্কিটেকচার, ডেটাবেজ স্কিমা (PostgreSQL), স্টেট মেশিন ও ইভেন্ট আর্কিটেকচার।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>03</strong></td>
+<td style="text-align:left"><a href="./03-Security-Cryptography-And-Hardening.md"><code>03-Security-Cryptography-And-Hardening.md</code></a></td>
+<td style="text-align:left">Argon2id হ্যাশিং, সল্ট ও পেপার, কনস্ট্যান্ট-টাইম চেক, OWASP ASVS গাইডলাইন ও রেট লিমিটিং।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>04</strong></td>
+<td style="text-align:left"><a href="./04-Verification-Mechanisms-Email-Vs-Phone.md"><code>04-Verification-Mechanisms-Email-Vs-Phone.md</code></a></td>
+<td style="text-align:left">ইমেইল বনাম SMS এর আর্থিক ও প্রযুক্তিগত তুলনা (টেলকো খরচ ৳০.৩০-০.৫০), SPF/DKIM/DMARC ও টোকেন মেকানিজম।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>05</strong></td>
+<td style="text-align:left"><a href="./05-Real-World-Edge-Cases-And-Production-Bugs.md"><code>05-Real-World-Edge-Cases-And-Production-Bugs.md</code></a></td>
+<td style="text-align:left">রেস কন্ডিশন, ইউনিকোড হোমোগ্রাফ আক্রমণ, প্লাস-অ্যাড্রেসিং, ডিসপোজেবল ইমেইল ফিল্টার ও নেটওয়ার্ক ফেইলিউর।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>06</strong></td>
+<td style="text-align:left"><a href="./06-Case-Studies-Industry-Analysis.md"><code>06-Case-Studies-Industry-Analysis.md</code></a></td>
+<td style="text-align:left">গুগল (Glif Flow), গিটহাব, স্ট্রাইপ এবং দেশীয় বিকাশ/নগদ/পাঠাও-এর বাস্তব কেস স্টাডি ও শিক্ষা।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>07</strong></td>
+<td style="text-align:left"><a href="./07-Zengfy-Implementation-Blueprint.md"><code>07-Zengfy-Implementation-Blueprint.md</code></a></td>
+<td style="text-align:left">Zengfy প্ল্যাটফর্মের স্পেসিফিক ব্লুপ্রিন্ট, সার্বভৌম ট্রাস্ট টিয়ার (Tier 0 থেকে Tier 3) ও মাইক্রোসার্ভিস রোডম্যাপ।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>08</strong></td>
+<td style="text-align:left"><a href="./08-IT-Company-Roles-And-Engineering-Workflow.md"><code>08-IT-Company-Roles-And-Engineering-Workflow.md</code></a></td>
+<td style="text-align:left">একটি স্বনামধন্য আইটি কোম্পানির সকল রোলের দায়িত্ব (PM, UX, CISO, Legal, Backend, QA, DevOps) ও সাইবার আইন ২০২৩।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>09</strong></td>
+<td style="text-align:left"><a href="./09-Day-0-Root-Scenario-Implementation-Guide.md"><code>09-Day-0-Root-Scenario-Implementation-Guide.md</code></a></td>
+<td style="text-align:left">ডে ০-এর পূর্ণাঙ্গ ব্যাকএন্ড কন্ট্রোলার, সার্ভিস, সিকিউর টোকেন জেনারেটর এবং টেলউইন্ড রেসপন্সিভ ইউজার ইন্টারফেস।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>10</strong></td>
+<td style="text-align:left"><a href="./10-Testing-QA-And-DevOps-Runbook.md"><code>10-Testing-QA-And-DevOps-Runbook.md</code></a></td>
+<td style="text-align:left">অটোমেটেড ইউনিট ও ইন্টিগ্রেশন টেস্ট, পেন-টেস্টিং প্ল্যান, Docker Compose এনভায়রনমেন্ট এবং ইনসিডেন্ট রানবুক।</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>৩. প্রযুক্তি স্ট্যাক (Technology Stack)</h2>
+<ul>
+<li><strong>ব্যাকএন্ড ফ্রেমওয়ার্ক:</strong> Node.js (TypeScript) / PHP (Laravel 11) এন্টারপ্রাইজ প্যাটার্ন।</li>
+<li><strong>ডেটাবেজ:</strong> PostgreSQL 16 (UUIDv7, CITEXT, Partial Indexes, Row Level Security)।</li>
+<li><strong>ক্যাশ ও রেট-লিমিটিং:</strong> Redis 7 (Leaky Bucket / Sliding Window Counter)।</li>
+<li><strong>ক্রিপ্টোগ্রাফি:</strong> Argon2id (Memory: 64MB, Iterations: 3, Parallelism: 4) ও HMAC-SHA256।</li>
+<li><strong>ফ্রন্টএন্ড:</strong> Tailwind CSS v3/v4, হ্যান্ডক্রাফটেড রেসপন্সিভ মোবাইল ইউআই, ফ্লেক্সিবল জাভাস্ক্রিপ্ট / ব্লেড কম্পোনেন্ট।</li>
+<li><strong>লোকাল মেল সার্ভার:</strong> Mailhog (লোকালে কোনো আসল ইমেইল না পাঠিয়ে ব্রাউজারে ইনবক্স ভিউ করার জন্য)।</li>
+</ul>
+<hr />
+<h2>৪. কীভাবে শুরু করবেন? (Quick Start)</h2>
+<p>আপনি যদি সম্পূর্ণ কনসেপ্ট ও বাস্তব কোড একসাথে শিখতে চান:</p>
+<ol>
+<li>প্রথমে <strong><code>01</code> থেকে <code>07</code> নম্বর মডিউল</strong> পড়ে আর্কিটেকচার, সিকিউরিটি এবং বাস্তব সমস্যার সমাধানগুলো হৃদয়াঙ্গম করুন।</li>
+<li>এরপর <strong><code>08</code> নম্বর মডিউল</strong> দেখে একটি পূর্ণাঙ্গ প্রফেশনাল সফটওয়্যার টিমের ভূমিকা এবং বাংলাদেশের সাইবার নিরাপত্তা আইন ২০২৩ ও ডেটা প্রোটেকশন বিধিমালার গাইডলাইন দেখুন।</li>
+<li>সরাসরি কোড প্র্যাকটিসের জন্য <strong><code>09</code> নম্বর মডিউল</strong> থেকে ব্যাকএন্ড সার্ভিস ও ফ্রন্টএন্ড ফর্মটি আপনার প্রজেক্টে যুক্ত করুন।</li>
+<li><strong><code>10</code> নম্বর মডিউল</strong> অনুযায়ী টেস্ট রান করুন এবং ডকার এনভায়রনমেন্টে চালিয়ে দেখুন।</li>
+</ol>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-1">
+            <div class="chapter-badge">মডিউল 01 / ১১</div>
+            <h1>মডিউল ০১: রেজিস্ট্রেশন ফান্ডামেন্টালস ও কোর থিওরি (Fundamentals &amp; Core Theory)</h1>
+<blockquote>
+<p><a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="02-System-Design-And-Architecture.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> আইডেন্টিটি, প্রমাণীকরণ ও অনুমোদনের তাত্ত্বিক পার্থক্য স্পষ্ট করা এবং কেন শুরুতে কেবল ৩টি ফিল্ড রাখা উচিত তা মনস্তাত্ত্বিক ও প্রযুক্তিগতভাবে বোঝা।</p>
+</blockquote>
+<hr />
+<h2>১. আইডেন্টিটি, প্রমাণীকরণ ও অনুমোদন (The Holy Trinity of Auth)</h2>
+<p>সফটওয়্যার ইঞ্জিনিয়ারিংয়ে প্রায়ই তিনটি ধারণাকে গুলিয়ে ফেলা হয়:</p>
+<pre><code>[ ইউজার আইডেন্টিটি (Identity) ]  ---&gt; &quot;আপনি কে?&quot; (নাম, ইমেইল, হ্যান্ডেল)
+              │
+              ▼
+[ প্রমাণীকরণ (Authentication) ]  ---&gt; &quot;আপনি কি আসলেই সেই ব্যক্তি?&quot; (পাসওয়ার্ড, ওটিপি, পাসকি)
+              │
+              ▼
+[ অনুমোদন (Authorization) ]     ---&gt; &quot;আপনার কি এই সিস্টেমে প্রবেশের অধিকার আছে?&quot; (রোল, পারমিশন)
+</code></pre>
+<ol>
+<li><strong>আইডেন্টিটি (Identity):</strong> সিস্টেমে ইউজারের একক অস্তিত্ব। এটি একটি অনন্য আইডেন্টিফায়ার (যেমন: <code>sazzad@zengfy.com</code> বা UUID)।</li>
+<li><strong>অথেনটিকেশন বা প্রমাণীকরণ (Authentication - AuthN):</strong> প্রেরিত আইডেন্টিটি সত্য কি না তা যাচাই করার প্রক্রিয়া (যেমন: সঠিক পাসওয়ার্ড প্রদান করা)।</li>
+<li><strong>অথরাইজেশন বা অনুমোদন (Authorization - AuthZ):</strong> যাচাইকৃত আইডেন্টিটিকে কোন কোন কাজ করার অনুমতি দেওয়া হয়েছে তা নির্ধারণ করা (যেমন: ইউজার কি সাধারণ নাগরিক, নাকি অ্যাডমিন?)।</li>
+</ol>
+<hr />
+<h2>২. ডে ০ ফিলোসফি: ৩টি ফিল্ড কেন? (The Day 0 Three-Field Philosophy)</h2>
+<p>বাস্তব প্রজেক্টগুলোতে অনেক সময় শুরুতেই ইউজারের কাছ থেকে অজস্র তথ্য চেয়ে বসা হয়—ফোন নাম্বার, ঠিকানা, বয়স, লিঙ্গ, এনআইডি নাম্বার ইত্যাদি। এটি প্রোডাক্ট ডেভেলপমেন্টের অন্যতম বড় ভুল।</p>
+<h3>২.১ কনভার্সন ড্রপ-অফ ম্যাথ (Conversion Drop-off Law)</h3>
+<p>ই-কমার্স ও সাস (SaaS) ইন্ডাস্ট্রির বহুল পরিচিত গবেষণা অনুযায়ী:</p>
+<ul>
+<li>রেজিস্ট্রেশন ফর্মে প্রতি ১টি অতিরিক্ত ইনপুট ফিল্ড যুক্ত করার ফলে <strong>১০% থেকে ১৫% ভিজিটর ফর্ম পূরণ না করেই পেজ বন্ধ করে চলে যায়</strong>।</li>
+<li>ফোন নাম্বারে বাধ্যতামূলক SMS OTP যুক্ত করলে নেটওয়ার্ক ডিলে এবং ইউজারের দ্বিধার কারণে সাইন-আপ ড্রপ-অফ আরও <strong>২৫% থেকে ৩৫% বৃদ্ধি পায়</strong>।</li>
+</ul>
+<pre><code>ফর্ম ফিল্ডের সংখ্যা       ইউজার কমপ্লিশন রেট (Conversion Rate)
+--------------------      -------------------------------------
+৩টি ফিল্ড (Name/Email/Pass)   ████████████████████ 85% - 92%
+৬টি ফিল্ড (+Phone, DOB, Gen)  ███████████ 45% - 52%
+১০+ ফিল্ড (+NID, Address)     █████ 15% - 22%  (মারাত্মক বিপর্যয়!)
+</code></pre>
+<h3>২.২ ডে ০ রেজিস্ট্রেশনের গোল্ডেন ফিল্ড ত্রয়ী</h3>
+<p>Zengfy প্ল্যাটফর্মে প্রথম দিনে আমরা শুধু তিনটি মৌলিক ফিল্ড নিচ্ছি:</p>
+<ol>
+<li><strong>Full Name (সম্পূর্ণ নাম):</strong> ইউজারের মানবীয় পরিচিতি ও কমিউনিকেশন অ্যাড্রেসের জন্য।</li>
+<li><strong>Email Address (ইমেইল ঠিকানা):</strong> গ্লোবাল ইউনিক আইডেন্টিফায়ার, পাসওয়ার্ড রিকভারি চ্যানেল এবং ফ্রিতে ভেরিফিকেশন পাঠানোর মাধ্যম।</li>
+<li><strong>Password (পাসওয়ার্ড):</strong> প্রাথমিক প্রমাণীকরণ মেকানিজম (কমপক্ষে ৮ অক্ষর, মিশ্র ক্যারেক্টার)।</li>
+</ol>
+<div class="callout-box" style="border-left: 4px solid #10b981; background-color: #ecfdf5; padding: 14px 18px; margin: 20px 0; border-radius: 8px;">
+            <div style="font-weight: 700; color: #1e293b; margin-bottom: 6px; font-size: 0.9em; display: flex; items-center; gap: 8px;">
+                <span>⚡</span> <span>TIP (টিপস)</span>
+            </div>
+            <div style="color: #334155; font-size: 0.95em; line-height: 1.6;">গুগল ওয়ান-ট্যাপ (Google 1-Tap) সাইন-ইন চালু থাকলে এই ৩টি ফিল্ডও ইউজারের টাইপ করতে হয় না; সিঙ্গেল ক্লিকে ০-ফিল্ডে একাউন্ট তৈরি হয়ে যায়।</div>
+        </div>
+<hr />
+<h2>৩. প্রগ্রেসিভ প্রোফাইলিং (Progressive Profiling &amp; Trust Tiers)</h2>
+<p>ইউজারের সব তথ্য প্রথম দিনে না নিয়ে কখন নেওয়া হবে? সমাধান হলো <strong>প্রগ্রেসিভ প্রোফাইলিং</strong>।</p>
+<p>ইউজার যখন সিস্টেমে তার অ্যাক্টিভিটি বাড়াবেন এবং উন্নত ফিচারের সুবিধা নিতে চাইবেন, তখন ধাপে ধাপে অতিরিক্ত তথ্য চাওয়া হবে:</p>
+<ol>
+<li><strong>টিয়ার ১ (বেসিক মেম্বার):</strong> ৩-ফিল্ড রেজিস্ট্রেশন সম্পন্ন। ইউজার কনটেন্ট পড়তে পারবেন, পাবলিক পোস্ট দেখতে পারবেন।</li>
+<li><strong>টিয়ার ২ (ভেরিফাইড ইমেইল মেম্বার):</strong> ইমেইল লিংক ক্লিক করেছেন। এখন ইউজার কমেন্ট করতে পারবেন এবং সোশ্যাল ফিডে অংশ নিতে পারবেন।</li>
+<li><strong>টিয়ার ৩ (কমিউনিটি মেম্বার):</strong> একাউন্ট সেন্টারে গিয়ে ফোন নাম্বার যুক্ত করেছেন। হাইপারলোকাল গ্রুপ তৈরি করতে পারবেন।</li>
+<li><strong>টিয়ার ৪ (সার্বভৌম নাগরিক মেম্বার):</strong> এনআইডি বা স্মার্টকার্ড ভেরিফিকেশন সম্পন্ন। অফিশিয়াল ভোট ও সিভিক ডিসিশনে অংশ নিতে পারবেন।</li>
+</ol>
+<pre><code class="language-mermaid">flowchart LR
+    A[&quot;Day 0 Sign-Up
+(Name + Email + Pass)&quot;] --&gt; B[&quot;Tier 1: Guest/Basic
+(Browse, Read)&quot;]
+    B --&gt; C[&quot;Email Click
+(Link Token)&quot;]
+    C --&gt; D[&quot;Tier 2: Verified Citizen
+(Post, Comment)&quot;]
+    D --&gt; E[&quot;Account Center
+(Add Phone/NID Badges)&quot;]
+    E --&gt; F[&quot;Tier 3: Sovereign Civic
+(Vote, Official Beacons)&quot;]
+</code></pre>
+<p>এই পদ্ধতির ফলে রেজিস্ট্রেশনের দিনে কোনো ইউজার আটকে থাকেন না, প্ল্যাটফর্মের গ্রোথ দ্রুত গতিতে বাড়ে, এবং ডেটাবেজে ভুয়া ইউজারের অপ্রয়োজনীয় জটলা তৈরি হয় না।</p>
+<hr />
+<blockquote>
+<p><a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="02-System-Design-And-Architecture.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-2">
+            <div class="chapter-badge">মডিউল 02 / ১১</div>
+            <h1>মডিউল ০২: সিস্টেম ডিজাইন ও সফটওয়্যার আর্কিটেকচার (System Design &amp; Architecture)</h1>
+<blockquote>
+<p><a href="01-Registration-Fundamentals-And-Theory.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="03-Security-Cryptography-And-Hardening.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> রেজিস্ট্রেশন সাবসিস্টেমের হাই-লেভেল এবং লো-লেভেল আর্কিটেকচার ডিজাইন করা, স্টেট মেশিন মডেলিং এবং রিলেশনাল ডেটাবেজের অপ্টিমাইজড স্কিমা প্রস্তুত করা।</p>
+</blockquote>
+<hr />
+<h2>১. হাই-লেভেল সিস্টেম আর্কিটেকচার (High-Level Architecture)</h2>
+<p>একটি এন্টারপ্রাইজ গ্রেড রেজিস্ট্রেশন সিস্টেমের ব্লক আর্কিটেকচার:</p>
+<pre><code>[ ইউজার ডিভাইস (মোবাইল / ব্রাউজার) ]
+              │ HTTPS (TLS 1.3)
+              ▼
+    [ Cloudflare / WAF ]  ─── (DDoS প্রটেকশন, বোট ম্যানেজমেন্ট ও আইপি জিও-ব্লকিং)
+              │
+              ▼
+   [ Nginx Reverse Proxy / Load Balancer ]
+              │
+              ▼
+   [ Zengfy Core Auth API Service ]
+       │            │             │
+       ▼            ▼             ▼
+ [ Redis Cache ]  [ PostgreSQL ]  [ Async Queue (BullMQ/RabbitMQ) ]
+  (রেট লিমিট ও     (মাস্টার DB,      │
+   আইডেমপোটেন্সি)   ট্রানজেকশন)      ▼
+                           [ Email Worker Service ]
+                                   │ SMTP (TLS)
+                                   ▼
+                            [ Mail Provider / Postfix ]
+                                   │
+                                   ▼
+                           [ ইউজার ইনবক্স ]
+</code></pre>
+<h3>কেন অ্যাসিঙ্ক্রোনাস ইমেইল কিউ (Async Email Queue) অপরিহার্য?</h3>
+<p>রেজিস্ট্রেশন রিকোয়েস্ট আসার পর ব্যাকএন্ডে কখনোই সরাসরি সিঙ্ক্রোনাসলি (Synchronously) SMTP সার্ভারের সাথে সংযোগ তৈরি করে ইমেইল পাঠানো উচিত নয়। কারণ:</p>
+<ul>
+<li>SMTP হ্যান্ডশেক এবং ইমেইল ডেলিভারিতে ১ থেকে ৩ সেকেন্ড সময় লাগতে পারে।</li>
+<li>কোনো কারণে SMTP প্রোভাইডার ডাউন থাকলে বা রেসপন্স করতে দেরি হলে পুরো রেজিস্ট্রেশন API টাইম-আউট হয়ে যাবে।</li>
+<li>সঠিক আর্কিটেকচার হলো: ডেটাবেজে ইউজার ডাটা এবং ভেরিফিকেশন টোকেন লিখে তাৎক্ষণিকভাবে কিউ-তে একটি ইভেন্ট পুশ করা (<code>UserRegisteredEvent</code>) এবং ইউজারকে সাথে সাথে <code>201 Created</code> রেসপন্স দেওয়া। ব্যাকগ্রাউন্ডে ওয়ার্কার প্রসেস সেই কিউ থেকে ইমেইল পাঠাবে।</li>
+</ul>
+<hr />
+<h2>২. ডেটাবেজ স্কিমা ডিজাইন (PostgreSQL Relational Schema)</h2>
+<p>আমরা ইন্ডাস্ট্রি-স্ট্যান্ডার্ড PostgreSQL 16 এর সুবিধাগুলো ব্যবহার করে অপ্টিমাইজড স্কিমা ডিজাইন করেছি:</p>
+<pre><code class="language-sql">-- ১. UUID এক্সটেনশন ও CITEXT (কেস-ইনসেনসিটিভ টেক্সট) এক্সটেনশন চালু করা
+CREATE EXTENSION IF NOT EXISTS &quot;uuid-ossp&quot;;
+CREATE EXTENSION IF NOT EXISTS &quot;citext&quot;;
+
+-- ২. ইউজার স্ট্যাটাস এনুমারেটর (State Machine Enum)
+CREATE TYPE user_account_status AS ENUM (
+    'PENDING_VERIFICATION',
+    'ACTIVE',
+    'SUSPENDED',
+    'DEACTIVATED'
+);
+
+-- ৩. কোর ইউজার টেবিল (Users Table)
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    full_name VARCHAR(100) NOT NULL,
+    email CITEXT UNIQUE NOT NULL, -- স্বয়ংক্রিয় কেস-ইনসেনসিটিভ (যেমন: User@Domain.com == user@domain.com)
+    password_hash VARCHAR(255) NOT NULL,
+    status user_account_status NOT NULL DEFAULT 'PENDING_VERIFICATION',
+    email_verified_at TIMESTAMPTZ NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMPTZ NULL -- সফট ডিলিট সাপোর্ট
+);
+
+-- ইনডেক্সিং অপ্টিমাইজেশন
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_users_status ON users(status);
+CREATE INDEX idx_users_created_at ON users(created_at);
+
+-- ৪. ইমেইল ভেরিফিকেশন টোকেন টেবিল (Tokens Table)
+CREATE TABLE email_verification_tokens (
+    id BIGSERIAL PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    token_hash VARCHAR(64) NOT NULL, -- প্লেইনটেক্সট টোকেন কখনোই DB-তে থাকে না, কেবল SHA-256 হ্যাশ সংরক্ষিত হয়
+    expires_at TIMESTAMPTZ NOT NULL,
+    consumed_at TIMESTAMPTZ NULL, -- একবার ব্যবহার হলে টাইমস্ট্যাম্প বসবে
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_tokens_lookup ON email_verification_tokens(token_hash, consumed_at, expires_at);
+
+-- ৫. অডিট লগ টেবিল (Security &amp; Compliance)
+CREATE TABLE user_registration_logs (
+    id BIGSERIAL PRIMARY KEY,
+    user_id UUID REFERENCES users(id) ON DELETE SET NULL,
+    ip_address INET NOT NULL,
+    user_agent TEXT NOT NULL,
+    registration_source VARCHAR(50) DEFAULT 'WEB_DIRECT',
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+</code></pre>
+<hr />
+<h2>৩. স্টেট মেশিন ও লাইফসাইকেল (State Machine Model)</h2>
+<p>ইউজারের একাউন্ট বিভিন্ন দশার মধ্য দিয়ে যায়। এটিকে স্টেট মেশিন হিসেবে হ্যান্ডেল করলে অনাকাঙ্ক্ষিত বাগ ও সিকিউরিটি হোল প্রতিরোধ করা যায়:</p>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; PENDING_VERIFICATION : রেজিস্ট্রেশন সম্পন্ন (Day 0)
+    PENDING_VERIFICATION --&gt; ACTIVE : ইমেইল ভেরিফিকেশন লিংক ক্লিক
+    PENDING_VERIFICATION --&gt; DELETED : ২৪ ঘণ্টার মধ্যে ভেরিফাই না করলে পার্জ (Purge)
+    ACTIVE --&gt; SUSPENDED : পলিসি ভায়োলেশন / সিকিউরিটি লক
+    SUSPENDED --&gt; ACTIVE : সাপোর্ট বা আপিল রিভিউ সফল
+    ACTIVE --&gt; DEACTIVATED : ইউজার নিজেই একাউন্ট ডিলিট অনুরোধ করলে
+</code></pre>
+<h3>স্টেট ট্রানজিশন রুলস:</h3>
+<ol>
+<li><code>PENDING_VERIFICATION</code>: ইউজার লগইন করতে পারবেন, কিন্তু স্পর্শকাতর কর্মকাণ্ড (পোস্ট করা, টাকা লেনদেন, নোটিফিকেশন সাবস্ক্রিপশন) ব্লক থাকবে।</li>
+<li><code>ACTIVE</code>: সম্পূর্ণ অনুমোদিত সাধারণ মেম্বার।</li>
+<li><code>SUSPENDED</code>: কোনো স্প্যাম আক্রমণ বা ব্রুট-ফোর্স প্রচেষ্টার কারণে স্বয়ংক্রিয়ভাবে লক করা হয়েছে।</li>
+</ol>
+<hr />
+<blockquote>
+<p><a href="01-Registration-Fundamentals-And-Theory.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="03-Security-Cryptography-And-Hardening.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-3">
+            <div class="chapter-badge">মডিউল 03 / ১১</div>
+            <h1>মডিউল ০৩: সিকিউরিটি, ক্রিপ্টোগ্রাফি ও হার্ডেনিং (Security &amp; Hardening)</h1>
+<blockquote>
+<p><a href="02-System-Design-And-Architecture.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="04-Verification-Mechanisms-Email-Vs-Phone.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> পাসওয়ার্ড হ্যাশিংয়ের আধুনিক স্ট্যান্ডার্ড (Argon2id বনাম Bcrypt), টাইমিং অ্যাটাক প্রিভেনশন, সল্ট ও সিক্রেট পেপার এবং রেট লিমিটিং মেকানিজম বাস্তবায়ন করা।</p>
+</blockquote>
+<hr />
+<h2>১. পাসওয়ার্ড হ্যাশিং অ্যালগরিদম: কেন Argon2id সেরা?</h2>
+<p>অনেক ডেভেলপার এখনও MD5, SHA-1 বা সাধারণ SHA-256 দিয়ে পাসওয়ার্ড হ্যাশ করার মতো মারাত্মক ভুল করেন। SHA ফ্যামিলি ডিজাইন করা হয়েছিল ডেটা ইন্টিগ্রিটি ও অতি দ্রুত হ্যাশ গণনার জন্য। আধুনিক GPU প্রতি সেকেন্ডে <strong>কোটি কোটি SHA-256 হ্যাশ</strong> ব্রুট-ফোর্স করতে পারে!</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">অ্যালগরিদম</th>
+<th style="text-align:center">মেমোরি হার্ডনেস</th>
+<th style="text-align:center">GPU/ASIC রেজিস্ট্যান্স</th>
+<th style="text-align:center">সাইড-চ্যানেল সুরক্ষা</th>
+<th style="text-align:center">প্রডাকশন সুপারিশ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>MD5 / SHA-256</strong></td>
+<td style="text-align:center">একদম নেই</td>
+<td style="text-align:center">০% (অত্যন্ত দুর্বল)</td>
+<td style="text-align:center">নেই</td>
+<td style="text-align:center">❌ সম্পূর্ণ নিষিদ্ধ</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Bcrypt</strong></td>
+<td style="text-align:center">খুব কম (৪ KB)</td>
+<td style="text-align:center">মাঝারি (CPU-bound)</td>
+<td style="text-align:center">ভালো</td>
+<td style="text-align:center">⚠️ গ্রহণযোগ্য (তবে ৭২ বাইট লিমিট আছে)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Argon2id</strong></td>
+<td style="text-align:center">সর্বোচ্চ (কনফিগারযোগ্য)</td>
+<td style="text-align:center"><strong>সর্বোচ্চ (Memory-hard)</strong></td>
+<td style="text-align:center"><strong>সর্বোচ্চ (Hybrid resistance)</strong></td>
+<td style="text-align:center">✅ <strong>স্বর্ণমান (Gold Standard)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>Argon2id প্যারামিটার কনফিগারেশন (OWASP সুপারিশকৃত):</h3>
+<ul>
+<li><strong>Memory Cost ($m$):</strong> <code>65536</code> KiB (64 MB)</li>
+<li><strong>Time Cost ($t$):</strong> <code>3</code> Iterations</li>
+<li><strong>Parallelism ($p$):</strong> <code>4</code> Threads</li>
+</ul>
+<pre><code class="language-javascript">// Node.js এ argon2id হ্যাশিংয়ের প্রডাকশন এক্সাম্পল
+import argon2 from 'argon2';
+
+export async function hashPassword(plainPassword) {
+    return await argon2.hash(plainPassword, {
+        type: argon2.argon2id,
+        memoryCost: 65536, // 64 MB
+        timeCost: 3,
+        parallelism: 4
+    });
+}
+
+export async function verifyPassword(hash, plainPassword) {
+    return await argon2.verify(hash, plainPassword);
+}
+</code></pre>
+<hr />
+<h2>২. ক্রিপ্টোগ্রাফিক সল্ট (Salt) এবং সার্ভার পেপার (Pepper)</h2>
+<ol>
+<li><strong>সল্ট (Salt):</strong> প্রতিটি ইউজারের জন্য স্বয়ংক্রিয়ভাবে তৈরি হওয়া অনন্য র‍্যান্ডম বাইটস (Argon2id ও Bcrypt স্বয়ংক্রিয়ভাবে হ্যাশের ভেতর সল্ট সংরক্ষণ করে)। এটি রেইনবো টেবিল অ্যাটাক সম্পূর্ণ ধ্বংস করে।</li>
+<li><strong>সার্ভার পেপার (Pepper):</strong> একটি গোপন মাস্টার কি (Secret Key) যা ডেটাবেজে <strong>কখনোই থাকে না</strong>। এটি অ্যাপ্লিকেশনের এনভায়রনমেন্ট ভেরিয়েবলে (<code>APP_PEPPER</code>) অথবা ক্লাউড HSM/KMS-এ সংরক্ষিত থাকে।
+<ul>
+<li>পাসওয়ার্ড হ্যাশ করার আগে পেপার দিয়ে HMAC তৈরি করা হয়:
+$$	ext{Pre-Hash} = 	ext{HMAC-SHA256}(	ext{Password}, 	ext{APP_PEPPER})$$</li>
+<li>এরপর প্রি-হ্যাশকে Argon2id দিয়ে হ্যাশ করা হয়।</li>
+<li><strong>ফলাফল:</strong> হ্যাকার যদি ডেটাবেজ ডাম্প সম্পূর্ণ চুরিও করে নেয়, সার্ভার পেপার ছাড়া একটি পাসওয়ার্ডও ক্র্যাক করতে পারবে না।</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>৩. টাইমিং অ্যাটাক প্রিভেনশন (Timing-Safe Comparison)</h2>
+<p>সাধারণ স্ট্রিং কম্প্যারিজন (<code>string1 === string2</code>) প্রথম অমিল পাওয়ার সাথে সাথেই এক্সিকিউশন বন্ধ করে দেয়। হ্যাকাররা মাইক্রোসেকেন্ড নিখুঁতভাবে পরিমাপ করে টোকেন অনুমান করতে পারে (Side-Channel Timing Attack)।</p>
+<p>ক্রিপ্টোগ্রাফিক টোকেন ও সিগনেচার মেলানোর সময় সর্বদা <strong>কনস্ট্যান্ট-টাইম কম্প্যারিজন</strong> ব্যবহার করতে হবে:</p>
+<pre><code class="language-javascript">import crypto from 'crypto';
+
+// ক্ষতিকর পদ্ধতি:
+// if (userProvidedToken === dbToken) { ... } // ❌ টাইমিং অ্যাটাকে আক্রান্ত হতে পারে!
+
+// নিরাপদ পদ্ধতি:
+const isMatch = crypto.timingSafeEqual(
+    Buffer.from(userProvidedHash, 'hex'),
+    Buffer.from(storedHash, 'hex')
+); // ✅ সর্বদা সমান সময় নেয়
+</code></pre>
+<hr />
+<h2>৪. ব্রুট-ফোর্স ও রেজিস্ট্রেশন ফ্লাড প্রতিরোধে রেট লিমিটিং (Rate Limiting)</h2>
+<p>বোট ও হ্যাকাররা বটনেট দিয়ে হাজার হাজার ভুয়া একাউন্ট তৈরি করে সিস্টেম ক্র্যাশ করাতে পারে। Redis-ভিত্তিক <strong>Sliding Window Counter</strong> অ্যালগরিদম দিয়ে আমরা রেজিস্ট্রেশন সুরক্ষিত রাখব:</p>
+<pre><code>[ ক্লায়েন্ট আইপি ] ───► [ Redis Sliding Window ]
+                              │
+                    ┌─────────┴─────────┐
+                    ▼                   ▼
+            (অনুরোধ &lt; ৫/মিনিট)    (অনুরোধ &gt;= ৫/মিনিট)
+                    │                   │
+                    ▼                   ▼
+              [ অনুমোদন ]      [ 429 Too Many Requests ]
+                               &quot;দয়া করে একটু পর চেষ্টা করুন।&quot;
+</code></pre>
+<ul>
+<li><strong>আইপি ভিত্তিক লিমিট:</strong> প্রতি আইপি থেকে সর্বোচ্চ ৫টি রেজিস্ট্রেশন প্রতি ১০ মিনিটে।</li>
+<li><strong>সাবনেট লিমিট:</strong> একই <code>/24</code> IPv4 রেঞ্জ থেকে সর্বোচ্চ ২০টি রিকোয়েস্ট প্রতি ঘণ্টায়।</li>
+</ul>
+<hr />
+<blockquote>
+<p><a href="02-System-Design-And-Architecture.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="04-Verification-Mechanisms-Email-Vs-Phone.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-4">
+            <div class="chapter-badge">মডিউল 04 / ১১</div>
+            <h1>মডিউল ০৪: ভেরিফিকেশন মেকানিজম – ইমেইল বনাম ফোন (Email vs Phone OTP)</h1>
+<blockquote>
+<p><a href="03-Security-Cryptography-And-Hardening.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="05-Real-World-Edge-Cases-And-Production-Bugs.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> আর্থিক ও প্রযুক্তিগত দৃষ্টিকোণ থেকে ইমেইল ভেরিফিকেশন বনাম SMS OTP-এর গভীর বিশ্লেষণ এবং নিরাপদ টোকেন লাইফসাইকেল নিশ্চিত করা।</p>
+</blockquote>
+<hr />
+<h2>১. আর্থিক ও অপারেশনাল সমীকরণ: কেন আমরা শুরুতে SMS বাদ দিচ্ছি?</h2>
+<p>একটি স্টার্টআপ বা ডেভেলপার প্রজেক্টের শুরুতে ফোন নাম্বার বাধ্যতামূলক করা সবচেয়ে বড় ভুলগুলোর একটি। আসুন বাস্তব আর্থিক চিত্রটি বিশ্লেষণ করি:</p>
+<h3>১.১ বাংলাদেশে SMS গেটওয়ের বাস্তব খরচ (SMS Cost Math)</h3>
+<p>বাংলাদেশে অনুমোদিত টেলকো অ্যাগ্রিগেটরদের (যেমন: SSL Wireless, Infobip, BulkSMSBD, Grameenphone/Robi Business) বর্তমান খরচ:</p>
+<ul>
+<li><strong>প্রতি SMS রেট:</strong> ৳০.৩০ থেকে ৳০.৫৫ (ভ্যাট ও ট্যাক্সসহ)।</li>
+<li><strong>মাসিক ন্যূনতম পোর্টাল বা সার্ভিস ফি:</strong> ৳২,০০০ থেকে ৳৫,০০০।</li>
+<li><strong>টেলকো মাস্কিং (Sender ID Approval):</strong> BTRC ক্লিয়ারেন্স ও কর্পোরেট ডকুমেন্টে ১-২ মাস সময় এবং সেটআপ ফি।</li>
+</ul>
+<pre><code>রেজিস্ট্রেশন সংখ্যা       মাসিক SMS খরচ (গড়ে ৳০.৪৫/OTP)
+--------------------      ---------------------------------
+১,০০০ ইউজার               ৳৪৫০
+১০,০০০ ইউজার              ৳৪,৫০০
+৫০,০০০ ইউজার              ৳২২,৫০০
+১,০০,০০০ ইউজার            ৳৪৫,০০০ - ৳৫৫,০০০ প্রতি মাসে!
+</code></pre>
+<div class="callout-box" style="border-left: 4px solid #f59e0b; background-color: #fffbeb; padding: 14px 18px; margin: 20px 0; border-radius: 8px;">
+            <div style="font-weight: 700; color: #1e293b; margin-bottom: 6px; font-size: 0.9em; display: flex; items-center; gap: 8px;">
+                <span>⚠️</span> <span>WARNING (সতর্কবার্তা)</span>
+            </div>
+            <div style="color: #334155; font-size: 0.95em; line-height: 1.6;">বোট বা ক্ষতিকর আক্রমণকারীরা যদি আপনার রেজিস্ট্রেশন ফর্মে &quot;SMS Bombing&quot; স্ক্রিপ্ট চালায়, তবে আপনার ক্রেডিট কার্ড বা অ্যাকাউন্টের কয়েক লাখ টাকা মাত্র কয়েক ঘণ্টায় নিঃশেষ হয়ে যেতে পারে!</div>
+        </div>
+<h3>১.২ ইমেইল ভেরিফিকেশনের জিরো-কস্ট সুবিধা</h3>
+<ul>
+<li><strong>সেলফ-হোস্টেড SMTP (Postfix / Haraka / Docker Mailserver):</strong> খরচ <strong>৳০ (সম্পূর্ণ ফ্রি)</strong>।</li>
+<li><strong>ক্লাউড ট্রানজ্যাকশনাল মেইল সার্ভিস (AWS SES / Resend / Brevo / Mailgun):</strong>
+<ul>
+<li>AWS SES: প্রতি ১,০০০ ইমেইলে মাত্র $০.১০ (১০ সেন্ট ~ ৳১২)।</li>
+<li>Resend / Brevo: প্রতি মাসে ৩,০০০ থেকে ৯,০০০ ফ্রি ট্রানজ্যাকশনাল ইমেইল দেয়।</li>
+</ul>
+</li>
+<li><strong>উপসংহার:</strong> ডে ০-তে ইমেইল ভেরিফিকেশন বেছে নেওয়ার ফলে প্রাথমিক অপারেশনাল খরচ শূন্যের কোঠায় নেমে আসে, প্ল্যাটফর্ম সুরক্ষিত থাকে এবং কোনো আর্থিক রক্তক্ষরণ ছাড়াই লক্ষাধিক ইউজার অনবোর্ড করা সম্ভব হয়।</li>
+</ul>
+<hr />
+<h2>২. ইমেইল ডেলিভারেবিলিটি ট্রায়াঙ্গেল (SPF, DKIM, DMARC)</h2>
+<p>ইমেইল যাতে ইউজারের স্প্যাম ফোল্ডারে না গিয়ে সরাসরি <strong>ইনবক্সে</strong> পৌঁছায়, সেজন্য তিনটি DNS রেকর্ড সঠিকভাবে কনফিগার করতে হয়:</p>
+<pre><code>          [ ডোমেন ও ডিএনএস (DNS) ]
+            ╱        │        ╲
+           ╱         │         ╲
+   [ SPF রেকর্ড ] [ DKIM কি ] [ DMARC পলিসি ]
+   &quot;কোন সার্ভার     &quot;ক্রিপ্টো        &quot;মেইল না মিললে
+    মেইল পাঠাবে&quot;     ডিজিটাল সাইন&quot;    কী ব্যবস্থা নেবে&quot;
+</code></pre>
+<ol>
+<li><strong>SPF (Sender Policy Framework):</strong> ডিএনএস টিএক্সটি (TXT) রেকর্ড যা বিশ্বকে জানায় কোন কোন আইপি এড্রেস আপনার ডোমেইন থেকে বৈধভাবে মেইল পাঠাতে পারে।<br />
+<em>উদাহরণ:</em> <code>v=spf1 ip4:185.120.45.10 include:_spf.zengfy.com ~all</code></li>
+<li><strong>DKIM (DomainKeys Identified Mail):</strong> প্রতিটি পাঠানো ইমেইলের হেডারে প্রাইভেট কি দিয়ে ক্রিপ্টোগ্রাফিক সাইন থাকে। প্রাপক মেইল সার্ভার পাবলিক কি দিয়ে যাচাই করে যে পথিমধ্যে মেইলটি কেউ বদল করেছে কি না।</li>
+<li><strong>DMARC (Domain-based Message Authentication, Reporting, and Conformance):</strong> রিসিভারকে নির্দেশ দেয় যদি SPF বা DKIM ফেইল করে, তবে মেইলটি রিজেক্ট বা কোয়ারেন্টাইন করতে হবে।</li>
+</ol>
+<hr />
+<h2>৩. স্টেটলেস ক্রিপ্টোগ্রাফিক ভেরিফিকেশন লিংক আর্কিটেকচার</h2>
+<p>ইউজারকে পাঠানো ভেরিফিকেশন লিংকের আর্কিটেকচার অত্যন্ত গুরুত্বপূর্ণ:</p>
+<pre><code>https://zengfy.top/verify-email?id=UUID&amp;expires=1792323553&amp;signature=HMAC_SHA256
+</code></pre>
+<h3>কেন প্লেইনটেক্সট টোকেন ডেটাবেজে রাখা নিষেধ?</h3>
+<p>অনেক ডেভেলপার ডেটাবেজে <code>verify_token</code> কলামে প্লেইনটেক্সট স্ট্রিং রেখে দেন। কোনো দুর্বলতার কারণে ডেটাবেজ লিক হলে আক্রমণকারী সকলের টোকেন পেয়ে ভুয়া ভেরিফিকেশন করে ফেলতে পারে।</p>
+<p><strong>সঠিক ডিজাইন:</strong></p>
+<ol>
+<li>ইউজারের জন্য একটি ক্রিপ্টোগ্রাফিক হাই-এনট্রপি র‍্যান্ডম টোকেন তৈরি করুন:<pre><code class="language-javascript">const rawToken = crypto.randomBytes(32).toString('hex'); // ৬৪ অক্ষরের নিরাপদ টোকেন
+</code></pre>
+</li>
+<li>ডেটাবেজে শুধুমাত্র এর <strong>SHA-256 হ্যাশ</strong> সংরক্ষণ করুন:<pre><code class="language-javascript">const tokenHash = crypto.createHash('sha256').update(rawToken).digest('hex');
+// DB-তে tokenHash সেভ হবে, rawToken কখনোই DB-তে যাবে না!
+</code></pre>
+</li>
+<li>ইউজারকে লিংকে <code>rawToken</code> পাঠানো হবে। যখন ইউজার ক্লিক করবেন, ব্যাকএন্ড আবার সেটিকে SHA-256 হ্যাশ করে ডেটাবেজের সাথে মিলাবে।</li>
+<li>টোকেনের মেয়াদ থাকবে সর্বোচ্চ <strong>২৪ ঘণ্টা</strong> এবং একবার ভেরিফাই হলে টোকেনটি সাথে সাথে এক্সপায়ার (<code>consumed_at = NOW()</code>) হয়ে যাবে।</li>
+</ol>
+<hr />
+<blockquote>
+<p><a href="03-Security-Cryptography-And-Hardening.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="05-Real-World-Edge-Cases-And-Production-Bugs.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-5">
+            <div class="chapter-badge">মডিউল 05 / ১১</div>
+            <h1>মডিউল ০৫: রিয়েল-ওয়ার্ল্ড এজ কেস ও প্রডাকশন বাগস (Edge Cases &amp; Production Bugs)</h1>
+<blockquote>
+<p><a href="04-Verification-Mechanisms-Email-Vs-Phone.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="06-Case-Studies-Industry-Analysis.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> প্রডাকশনে লাখ লাখ ইউজার রেজিস্ট্রেশন করার সময় যেসব মারাত্মক বাগ ও ট্র্যাপের সম্মুখীন হতে হয়, সেগুলোর কার্যকর ইঞ্জিনিয়ারিং সমাধান জানা।</p>
+</blockquote>
+<hr />
+<h2>১. কনকারেন্সি এবং রেস কন্ডিশন (Double Submit Race Condition)</h2>
+<p>ধরা যাক, একজন ইউজার রেজিস্ট্রেশন ফর্মে সাবমিট বাটনে দ্রুত দুইবার ক্লিক করলেন (Double-click)।</p>
+<pre><code>থ্রেড ১ ───► [ ইমেইল কি আছে? ] ──► (না, নেই) ──► [ ইউজার ইনসার্ট ] ──► (সফল)
+                  ▲
+থ্রেড ২ ──────────┘ একই মিলি-সেকেন্ডে চেক করে দেখল &quot;নেই&quot;! ──► [ ডুপ্লিকেট ইনসার্ট! ]
+</code></pre>
+<h3>সমাধান:</h3>
+<ol>
+<li><strong>ফ্রন্টএন্ড স্তরে:</strong> বাটনে ক্লিক করার সাথে সাথে বাটন <code>disabled</code> করা এবং লোডিং স্পিনার দেখানো।</li>
+<li><strong>ডেটাবেজ স্তরে:</strong> <code>email</code> কলামের উপর বাধ্যতামূলক <code>UNIQUE CONSTRAINT</code> থাকা আবশ্যক।</li>
+<li><strong>সফটওয়্যার কোড স্তরে:</strong> ডেটাবেজের ইউনিক কি ভায়োলেশন এরর কোড (<code>23505</code> PostgreSQL-এ) ক্যাচ করে সুন্দরভাবে ক্লায়েন্টকে জানানো: &quot;এই ইমেইলটি দিয়ে ইতোমধ্যে অ্যাকাউন্ট তৈরি করা হয়েছে।&quot;</li>
+</ol>
+<hr />
+<h2>২. ইউনিকোড ও আন্তর্জাতিকীকরণ সমস্যা (Unicode Homograph Attacks)</h2>
+<p>আক্রমণকারীরা একই দেখতে কিন্তু ভিন্ন ক্যারেক্টার দিয়ে ক্ষতিকর ডোমেইন বা ইমেইল স্পুফ করতে পারে।</p>
+<ul>
+<li>ল্যাটিন ইংরেজি অক্ষর <code>a</code> (ASCII <code>0x61</code>)</li>
+<li>সিরিলিক রাশিয়ান অক্ষর <code>а</code> (Unicode <code>U+0430</code>)</li>
+</ul>
+<p>উভয় অক্ষর দেখতে হুবহু একই রকম (<code>a</code>), কিন্তু কম্পিউটারের জন্য দুটি সম্পূর্ণ ভিন্ন ক্যারেক্টার!</p>
+<h3>সমাধান:</h3>
+<p>ইমেইল এবং নাম ডেটাবেজে সেভ করার পূর্বে অবশ্যই <strong>Unicode NFKC Normalization</strong> চালাতে হবে:</p>
+<pre><code class="language-javascript">const cleanEmail = rawEmail.trim().toLowerCase().normalize('NFKC');
+</code></pre>
+<hr />
+<h2>৩. প্লাস-ট্যাগিং ও ডট-ইনসেনসিটিভিটি (Plus-Addressing &amp; Dot-Tricks)</h2>
+<p>গুগল জিমেইল অ্যাকাউন্টে একটি বিশেষ সুবিধা আছে:</p>
+<ul>
+<li><code>sazzad.zengfy@gmail.com</code></li>
+<li><code>s.a.z.z.a.d.zengfy@gmail.com</code></li>
+<li><code>sazzad.zengfy+freecredit@gmail.com</code></li>
+</ul>
+<p>গুগলের কাছে এই তিনটি ঠিকানাই এক। কিন্তু সাধারণ ব্যাকএন্ড এদের তিনটি ভিন্ন ইমেইল হিসেবে গণ্য করে। এর ফলে অসাধু ইউজাররা ট্রায়াল ক্রেডিট বা ফ্রি কুপন অপব্যবহার করার জন্য শত শত একাউন্ট খুলে ফেলে।</p>
+<h3>সমাধান:</h3>
+<p>রেজিস্ট্রেশনের সময় একটি ক্যানোনিক্যাল ইমেইল (Canonical Email) প্রসেসিং ফাংশন ব্যবহার করা:</p>
+<pre><code class="language-javascript">export function canonicalizeEmail(email) {
+    let [localPart, domain] = email.trim().toLowerCase().split('@');
+    if (domain === 'gmail.com' || domain === 'googlemail.com') {
+        localPart = localPart.replace(/\./g, ''); // সব ডট মুছে ফেলা
+        localPart = localPart.split('+')[0];      // প্লাস এবং তার পরের সব অক্ষর বাদ দেওয়া
+    }
+    return `${localPart}@${domain}`;
+}
+</code></pre>
+<hr />
+<h2>৪. ডিসপোজেবল টেম্পোরারি ইমেইল প্রতিরোধ (Disposable Email Filtering)</h2>
+<p>অনেকে <code>10minutemail</code>, <code>temp-mail.org</code>, <code>guerrillamail</code> এর মতো ক্ষতিকর অস্থায়ী মেইল সার্ভিস দিয়ে ভুয়া একাউন্ট খুলে স্প্যামিং করে।</p>
+<h3>সমাধান:</h3>
+<p>রেজিস্ট্রেশন ভ্যালিডেশনের সময় একটি ওপেন-সোর্স ডিসপোজেবল ডোমেইন ব্ল্যাকলিস্ট দিয়ে চেক করতে হবে:</p>
+<pre><code class="language-javascript">const DISPOSABLE_DOMAINS = new Set([
+    'tempmail.com', '10minutemail.com', 'mailinator.com', 
+    'guerrillamail.com', 'sharklasers.com', 'yopmail.com'
+]);
+
+export function isDisposableEmail(domain) {
+    return DISPOSABLE_DOMAINS.has(domain.toLowerCase());
+}
+</code></pre>
+<hr />
+<blockquote>
+<p><a href="04-Verification-Mechanisms-Email-Vs-Phone.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="06-Case-Studies-Industry-Analysis.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-6">
+            <div class="chapter-badge">মডিউল 06 / ১১</div>
+            <h1>মডিউল ০৬: ইন্ডাস্ট্রি কেস স্টাডি ও বাস্তব বিশ্লেষণ (Industry Case Studies)</h1>
+<blockquote>
+<p><a href="05-Real-World-Edge-Cases-And-Production-Bugs.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="07-Zengfy-Implementation-Blueprint.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> গুগল, গিটহাব, স্ট্রাইপ এবং দেশীয় বিকাশ/নগদের সফল সিস্টেমগুলোর বাস্তব বিশ্লেষণ থেকে শিক্ষা নেওয়া।</p>
+</blockquote>
+<hr />
+<h2>১. কেস স্টাডি ০১: গুগল অ্যাকাউন্টস (Google Glif Flow)</h2>
+<p>গুগলের লগইন ও সাইন-আপ ইউআরএলটি লক্ষ্য করুন:</p>
+<pre><code>https://accounts.google.com/v3/signin/identifier?flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin&amp;dsh=S-31283317:1792323553
+</code></pre>
+<h3>পেছনের ইঞ্জিনিয়ারিং কৌশল:</h3>
+<ol>
+<li><strong>Identifier-First Architecture:</strong> গুগল কখনো একই স্ক্রিনে ইমেইল ও পাসওয়ার্ড একসাথে চায় না। প্রথমে চায় আইডেন্টিফায়ার (ইমেইল বা ফোন)। এর সুবিধা:
+<ul>
+<li>আইডেন্টিফায়ার টাইপ করার পর ব্যাকএন্ড সিদ্ধান্ত নেয় ইউজারকে পাসওয়ার্ড চাওয়া হবে, নাকি সিকিউরিটি কি (FIDO2 WebAuthn), নাকি পাসকি (Passkey), নাকি SSO রিডাইরেক্ট দেওয়া হবে।</li>
+</ul>
+</li>
+<li><strong>Glif Web Sign-In:</strong> এটি গুগলের আধুনিক একক অথেনটিকেশন ফ্রেমওয়ার্ক। এটি ব্যাকএন্ড স্টেট মেশিনের সাথে কানেক্টেড।</li>
+<li><strong><code>dsh</code> ও সেশন সিগনেচার:</strong> কোনো ইউজার একই পেজে ১০ মিনিট বসে থাকলে বা রিফ্রেশ করলে সেশনের ডেটা যাতে টেম্পার না হয়, সেজন্য স্টেট প্যারামিটার এনকোড করা থাকে।</li>
+</ol>
+<hr />
+<h2>২. কেস স্টাডি ০২: গিটহাব (GitHub)</h2>
+<p>গিটহাবের নতুন রেজিস্ট্রেশন ফ্লোটি সম্পূর্ণ মিনিমালিস্ট এবং টার্মিনাল স্টাইল:</p>
+<ol>
+<li>প্রথমে শুধুমাত্র <strong>ইমেইল</strong> চাওয়া হয়।</li>
+<li>এরপর ডায়নামিক মসৃণ অ্যানিমেশনে <strong>পাসওয়ার্ড</strong> ফিল্ড নেমে আসে।</li>
+<li>এরপর <strong>ইউজারনেম</strong> চাওয়া হয়।</li>
+<li>এরপর সাথে সাথে একাউন্ট তৈরি হয়ে যায় এবং ইনবক্সে ৬-সংখ্যার কোড পাঠিয়ে ভেরিফাই করতে বলা হয়।</li>
+<li><strong>ফলাফল:</strong> গিটহাবে একজন ডেভেলপার মাত্র ৩০ সেকেন্ডের মধ্যে একাউন্ট তৈরি করে প্রথম রিপোজিটরি ক্লোন করতে পারেন।</li>
+</ol>
+<hr />
+<h2>৩. কেস স্টাডি ০৩: স্ট্রাইপ (Stripe - Global FinTech Standard)</h2>
+<p>বিশ্ববিখ্যাত পেমেন্ট গেটওয়ে স্ট্রাইপ বিলিয়ন ডলার লেনদেন পরিচালনা করে। কিন্তু তাদের রেজিস্ট্রেশন ফর্মটি দেখুন:</p>
+<ul>
+<li>শুধুমাত্র <strong>Email, Full Name, Password এবং Country</strong>।</li>
+<li>কোনো ট্রেড লাইসেন্স বা ব্যাংক স্টেটমেন্ট রেজিস্ট্রেশন ফর্মে চাওয়া হয় না!</li>
+<li>ইউজার সাইন-আপ করে ড্যাশবোর্ডে ঢোকেন, টেস্ট মোডে API কোড চালান। যখন তিনি আসল টাকা তুলতে যাবেন, তখন তিনি <strong>প্রগ্রেসিভ KYC</strong> পূরণ করেন।</li>
+</ul>
+<hr />
+<h2>৪. কেস স্টাডি ০৪: বাংলাদেশের প্রযুক্তি ক্ষেত্র (বিকাশ, নগদ, পাঠাও)</h2>
+<p>অনেকে প্রশ্ন করেন: &quot;বিকাশ বা নগদ তো প্রথমেই ফোন নাম্বার ও এনআইডি চায়, আমরা কেন করব না?&quot;</p>
+<h3>বাস্তব কারণ ও পার্থক্য:</h3>
+<ol>
+<li><strong>MFS রেগুলেশন:</strong> বিকাশ ও নগদ বাংলাদেশ ব্যাংকের কড়া রেগুলেশনের (AML/CFT আইন) আওতায় মোবাইল ফাইন্যান্সিয়াল সার্ভিস পরিচালনা করে। আইন অনুযায়ী তাদের প্রথম কদমেই জাতীয় পরিচয়পত্র (NID) ভেরিফিকেশন বাধ্যতামূলক।</li>
+<li><strong>ভিন্ন বিজনেস মডেল:</strong> Zengfy কোনো ব্যাংক নয়। Zengfy হলো সিভিক ও সোশ্যাল টেকনোলজি প্ল্যাটফর্ম।</li>
+<li>সামাজিক ও প্রযুক্তিগত প্ল্যাটফর্মে যদি প্রথমেই এনআইডি বা ফোন চাওয়া হয়, তবে ৯৫% ইউজার অনবোর্ড হওয়ার আগেই প্ল্যাটফর্ম ছেড়ে চলে যাবে। তাই আমাদের মডেল হবে: <strong>Day 0 তে ৩টি ফিল্ড এবং পরবর্তীতে স্বপ্রণোদিত সিভিক ব্যাজ প্রদান</strong>।</li>
+</ol>
+<hr />
+<blockquote>
+<p><a href="05-Real-World-Edge-Cases-And-Production-Bugs.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="07-Zengfy-Implementation-Blueprint.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-7">
+            <div class="chapter-badge">মডিউল 07 / ১১</div>
+            <h1>মডিউল ০৭: Zengfy ইমপ্লিমেন্টেশন ব্লুপ্রিন্ট (Zengfy Sovereign Blueprint)</h1>
+<blockquote>
+<p><a href="06-Case-Studies-Industry-Analysis.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="08-IT-Company-Roles-And-Engineering-Workflow.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> Zengfy ইকোসিস্টেমের স্পেসিফিক রিকোয়ারমেন্ট অনুযায়ী রেজিস্ট্রেশন সিস্টেমের বাস্তবায়ন রোডম্যাপ এবং সার্বভৌম ট্রাস্ট ব্যাজ আর্কিটেকচার চূড়ান্ত করা।</p>
+</blockquote>
+<hr />
+<h2>১. সার্বভৌম ট্রাস্ট টিয়ার মডেল (Zengfy Trust Tiers)</h2>
+<p>Zengfy ইকোসিস্টেমে সিটিজেনদের আস্থা ও অধিকারের ৪টি স্তর থাকবে:</p>
+<pre><code>[ Tier 3: Sovereign Civic Citizen ] ◄── এনআইডি বা লোকাল ওয়ার্ড ভেরিফিকেশন (ভোট ও আইন)
+                ▲
+[ Tier 2: Community Verified ]      ◄── ফোন নাম্বার যুক্ত ও ২ জন ভেরিফাইড নাগরিকের অনুমোদন
+                ▲
+[ Tier 1: Email Verified Member ]   ◄── ইমেইল ভেরিফিকেশন লিংক সম্পন্ন (পোস্ট, কমেন্ট)
+                ▲
+[ Tier 0: Guest / Unverified ]       ◄── ৩-ফিল্ড সাইন-আপ সম্পন্ন (শুধু রিড এক্সেস)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">টিয়ার</th>
+<th style="text-align:left">নাম</th>
+<th style="text-align:left">শর্ত</th>
+<th style="text-align:left">অর্জিত অধিকার ও সুযোগ-সুবিধা</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Tier 0</strong></td>
+<td style="text-align:left">Guest Citizen</td>
+<td style="text-align:left">নাম, ইমেইল, পাসওয়ার্ড দিয়ে সাইন-আপ</td>
+<td style="text-align:left">প্ল্যাটফর্ম ভিজিট করা, কনটেন্ট পড়া, ডিরেক্টরি সার্চ করা।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Tier 1</strong></td>
+<td style="text-align:left">Verified Citizen</td>
+<td style="text-align:left">ইমেইল ভেরিফিকেশন সম্পন্ন</td>
+<td style="text-align:left">সোশ্যাল ফিডে পোস্ট করা, কমেন্ট করা, কমিউনিটি নোটিফিকেশন পাওয়া।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Tier 2</strong></td>
+<td style="text-align:left">Community Anchor</td>
+<td style="text-align:left">একাউন্ট সেন্টারে ফোন নাম্বার ভেরিফাই</td>
+<td style="text-align:left">লোকাল নেইবারহুড গ্রুপ তৈরি করা, সিভিক বিপদে অ্যালার্ট ইস্যু করা।</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Tier 3</strong></td>
+<td style="text-align:left">Sovereign Leader</td>
+<td style="text-align:left">এনআইডি / স্মার্ট কার্ড ডিজিটাল প্রুফ</td>
+<td style="text-align:left">অফিসিয়াল সিভিক ভোট প্রদান, নীতি নির্ধারণ ও ডিজিটাল পিটিশন তৈরি।</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>২. মডুলার আর্কিটেকচার রোডম্যাপ</h2>
+<p>রেজিস্ট্রেশন মডিউলটি Zengfy Core-এ একটি সম্পূর্ণ পৃথক এবং স্বাধীন মডিউল (<code>AuthModule</code>) হিসেবে পরিচালিত হবে:</p>
+<pre><code>P:\Zengfy-Ecosystem\core├── modules│   └── auth│       ├── controllers\    # RegistrationController, VerificationController
+│       ├── services\       # RegistrationService, TokenService, PasswordHasher
+│       ├── validators\     # RegisterRequestValidator
+│       ├── models\         # User, EmailVerificationToken
+│       └── views\          # responsive-registration.blade.php / react-form.tsx
+</code></pre>
+<p>এই ডিকাপল্ড আর্কিটেকচারের ফলে ভবিষ্যতে যখন Zengfy Social, Zengfy Law বা অন্যান্য সিভিক মডিউল যুক্ত হবে, তারা সেন্ট্রাল অথেনটিকেশন সার্ভিসের সাথে একক সাইন-অন (Single Sign-On - SSO) প্রটোকলে যুক্ত হতে পারবে।</p>
+<hr />
+<blockquote>
+<p><a href="06-Case-Studies-Industry-Analysis.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="08-IT-Company-Roles-And-Engineering-Workflow.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-8">
+            <div class="chapter-badge">মডিউল 08 / ১১</div>
+            <h1>মডিউল ০৮: আইটি কোম্পানির ভূমিকা ও টিম ওয়ার্কফ্লো (IT Company Roles &amp; Legal Workflow)</h1>
+<blockquote>
+<p><a href="07-Zengfy-Implementation-Blueprint.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="09-Day-0-Root-Scenario-Implementation-Guide.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> একটি পূর্ণাঙ্গ প্রফেশনাল সফটওয়্যার কোম্পানিতে রেজিস্ট্রেশন ফিচার বাস্তবায়নের সময় কার কী দায়িত্ব এবং বাংলাদেশের সাইবার নিরাপত্তা ও ডেটা সুরক্ষা আইনের কমপ্লায়েন্স নিশ্চিত করা।</p>
+</blockquote>
+<hr />
+<h2>১. আইটি কোম্পানির বিভিন্ন রোল ও দায়িত্ব (RACI Matrix)</h2>
+<p>একটি পরিপক্ক ইঞ্জিনিয়ারিং সংস্থায় রেজিস্ট্রেশন কেবল ডেভেলপারের কাজ নয়। প্রতিটি রোলের নির্দিষ্ট সীমানা থাকে:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">পদবী (Role)</th>
+<th style="text-align:left">মূল দায়িত্ব ও কাজের পরিধি</th>
+<th style="text-align:left">সফলতার মানদণ্ড (KPI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>১. প্রোডাক্ট ম্যানেজার (PM)</strong></td>
+<td style="text-align:left">বিজনেসের চাহিদা বোঝা, ৩-ফিল্ড সাইন-আপের পিআরডি (PRD) ও ইউজার স্টোরি লেখা।</td>
+<td style="text-align:left">কনভার্সন রেট ৯০%+ রাখা এবং সাইন-আপ ড্রপ-অফ হ্রাস।</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>২. ইউআই/ইউএক্স ডিজাইনার</strong></td>
+<td style="text-align:left">ফর্ম ডিজাইন, মোবাইল স্ক্রিনে স্পর্শের সুবিধা (Touch Target 48px), পাসওয়ার্ড স্ট্রেন্থ মিটার ও ত্রুটির মেসেজ।</td>
+<td style="text-align:left">SUS স্কোর ৮৫+, ফর্ম পূরণের গড় সময় &lt; ৪৫ সেকেন্ড।</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>৩. লিগ্যাল ও সিআইএসও (Legal &amp; CISO)</strong></td>
+<td style="text-align:left">বাংলাদেশের সাইবার নিরাপত্তা আইন ২০২৩, প্রাইভেসি পলিসি ও ডেটা কনসেন্ট অডিট।</td>
+<td style="text-align:left">জিরো লিগ্যাল লায়াবিলিটি, GDPR ও দেশীয় আইনের ১০০% কমপ্লায়েন্স।</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>৪. ব্যাকএন্ড আর্কিটেক্ট</strong></td>
+<td style="text-align:left">ডেটাবেজ স্কিমা, ট্রানজ্যাকশন, Argon2id হ্যাশিং, রেট লিমিটিং ও কিউ আর্কিটেকচার।</td>
+<td style="text-align:left">API লেটেন্সি &lt; ৫০ms, জিরো রেস কন্ডিশন।</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>৫. ফ্রন্টএন্ড ইঞ্জিনিয়ার</strong></td>
+<td style="text-align:left">রেসপনসিভ টেলউইন্ড ফর্ম, ক্লায়েন্ট-সাইড ভ্যালিডেশন, অ্যাক্সেসিবিলিটি (ARIA)।</td>
+<td style="text-align:left">লাইটহাউস স্কোর ৯৫+, মোবাইল লোড টাইম &lt; ১ সেকেন্ড।</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>৬. কিউএ ইঞ্জিনিয়ার (QA)</strong></td>
+<td style="text-align:left">পজিটিভ/নেগেটিভ টেস্ট কেস, বাউন্ডারি টেস্ট, সিকিউরিটি পেন-টেস্টিং।</td>
+<td style="text-align:left">জিরো ক্রিটিক্যাল বাগ প্রডাকশন রিলিজের পূর্বে।</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>৭. ডেভঅপস ও এসআরই (DevOps)</strong></td>
+<td style="text-align:left">ডকারাইজেশন, সিআই/সিডি পাইপলাইন, ক্লাউডফ্লেয়ার ডব্লিউএএফ রুলস ও মনিটরিং।</td>
+<td style="text-align:left">৯৯.৯৯% আপটাইম, স্বয়ংক্রিয় ডেব ফ্ল্যাগ অ্যালার্ট।</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>২. আইনি ফ্রেমওয়ার্ক: বাংলাদেশের সাইবার নিরাপত্তা আইন ২০২৩ ও ডেটা সুরক্ষা</h2>
+<p>বাংলাদেশে যে কোনো অনলাইন প্ল্যাটফর্ম পরিচালনার ক্ষেত্রে স্থানীয় আইনের সুস্পষ্ট জ্ঞান থাকা আবশ্যক:</p>
+<h3>২.১ সাইবার নিরাপত্তা আইন ২০২৩ (Cyber Security Act 2023) এর গুরুত্বপূর্ণ ধারা</h3>
+<ol>
+<li><strong>নাগরিক তথ্যের গোপনীয়তা:</strong> ইউজারের ব্যক্তিগত তথ্য (নাম, ইমেইল, পাসওয়ার্ড) যথাযথ নিরাপত্তা ব্যবস্থা ছাড়া সংরক্ষণ করা দণ্ডনীয় অপরাধ।</li>
+<li><strong>অবৈধ অনুপ্রবেশ ও ব্রুট-ফোর্স প্রতিরোধ:</strong> সিস্টেমে ব্রুট-ফোর্স বা হ্যাকিংয়ের কোনো চেষ্টা হলে তার আইপি ও অডিট লগ অন্তত <strong>৬ মাস থেকে ১ বছর</strong> সংরক্ষণ করে রাখা প্রয়োজন, যাতে আইনি তদন্তে সহায়তা দেওয়া যায়।</li>
+<li><strong>অনুমতিহীন তথ্য আদান-প্রদান নিষিদ্ধ:</strong> রেজিস্ট্রেশন ফর্মে স্পষ্টভাবে একটি চেকবক্স বা টার্মস অফ সার্ভিস ডিসক্লেমার থাকতে হবে:<br />
+<em>&quot;রেজিস্ট্রেশন বাটনে ক্লিক করার মাধ্যমে আপনি আমাদের ব্যবহারের শর্তাবলী এবং গোপনীয়তা নীতিতে সম্মতি দিচ্ছেন।&quot;</em></li>
+</ol>
+<h3>২.২ ডেটা মিনিমাইজেশন প্রিন্সিপাল (Data Minimization)</h3>
+<p>বিশ্বব্যাপী প্রাইভেসি আইনের মূল ভিত্তি হলো: <strong>&quot;আপনার প্রজেক্টের কাজের জন্য যতটুকু তথ্য না হলেই নয়, ঠিক ততটুকুই সংগ্রহ করুন।&quot;</strong></p>
+<ul>
+<li>যেহেতু প্রথম দিন আমাদের ফোন নাম্বার বা এনআইডির কোনো প্রয়োজন নেই, তাই তা সংগ্রহ না করাই আইনি দিক থেকে সবচেয়ে নিরাপদ।</li>
+<li>যত কম সংবেদনশীল তথ্য সিস্টেমে থাকবে, ডেটা ব্রিচ বা ফাঁসের ঝুঁকি তত কম থাকবে।</li>
+</ul>
+<hr />
+<blockquote>
+<p><a href="07-Zengfy-Implementation-Blueprint.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="09-Day-0-Root-Scenario-Implementation-Guide.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-9">
+            <div class="chapter-badge">মডিউল 09 / ১১</div>
+            <h1>মডিউল ০৯: ডে ০ রুট সিনারিও ইমপ্লিমেন্টেশন গাইড (Step-by-Step Code Guide)</h1>
+<blockquote>
+<p><a href="08-IT-Company-Roles-And-Engineering-Workflow.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="10-Testing-QA-And-DevOps-Runbook.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> ডে ০-এর জন্য প্রয়োজনীয় ৩টি ফিল্ডের (Full Name, Email, Password) ব্যাকএন্ড আর্কিটেকচার, ক্রিপ্টোগ্রাফিক ভেরিফিকেশন সার্ভিস এবং প্রিমিয়াম মোবাইল-ফ্রেন্ডলি ফ্রন্টএন্ড কোড তৈরি করা।</p>
+</blockquote>
+<hr />
+<h2>১. ব্যাকএন্ড সার্ভিস লেয়ার (Node.js / Express / TypeScript)</h2>
+<p>আমরা ক্লিন আর্কিটেকচার বজায় রেখে কোড লিখব।</p>
+<h3>১.১ ভ্যালিডেশন রুলস (<code>validators/register.validator.ts</code>)</h3>
+<pre><code class="language-typescript">import { z } from 'zod';
+
+// ডিসপোজেবল ডোমেইন তালিকা
+const BLACKLISTED_DOMAINS = ['10minutemail.com', 'tempmail.com', 'mailinator.com', 'yopmail.com'];
+
+export const RegisterSchema = z.object({
+  fullName: z
+    .string()
+    .min(2, { message: 'নাম কমপক্ষে ২ অক্ষরের হতে হবে।' })
+    .max(100, { message: 'নাম ১০০ অক্ষরের বেশি হতে পারবে না।' })
+    .trim(),
+  email: z
+    .string()
+    .email({ message: 'একটি বৈধ ইমেইল ঠিকানা প্রদান করুন।' })
+    .trim()
+    .toLowerCase()
+    .refine((email) =&gt; {
+      const domain = email.split('@')[1];
+      return !BLACKLISTED_DOMAINS.includes(domain);
+    }, { message: 'অস্থায়ী বা ডিসপোজেবল ইমেইল দিয়ে একাউন্ট খোলা যাবে না।' }),
+  password: z
+    .string()
+    .min(8, { message: 'পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।' })
+    .regex(/[A-Z]/, { message: 'পাসওয়ার্ডে অন্তত একটি বড় হাতের অক্ষর (A-Z) থাকতে হবে।' })
+    .regex(/[0-9]/, { message: 'পাসওয়ার্ডে অন্তত একটি সংখ্যা (0-9) থাকতে হবে।' })
+});
+</code></pre>
+<h3>১.২ রেজিস্ট্রেশন সার্ভিস (<code>services/auth.service.ts</code>)</h3>
+<pre><code class="language-typescript">import argon2 from 'argon2';
+import crypto from 'crypto';
+import { db } from '../config/database';
+
+export class AuthService {
+  /**
+   * ডে ০ মিনিমালিস্ট রেজিস্ট্রেশন প্রসেস
+   */
+  async registerUser(data: { fullName: string; email: string; password: string }) {
+    return await db.transaction(async (trx) =&gt; {
+      // ১. ইমেইল পূর্বে ব্যবহৃত হয়েছে কি না চেক
+      const existing = await trx('users').where({ email: data.email }).first();
+      if (existing) {
+        throw new Error('এই ইমেইল দিয়ে ইতোমধ্যে একাউন্ট খোলা হয়েছে।');
+      }
+
+      // ২. আধুনিক Argon2id দিয়ে পাসওয়ার্ড হ্যাশ করা
+      const passwordHash = await argon2.hash(data.password, {
+        type: argon2.argon2id,
+        memoryCost: 65536, // 64 MB
+        timeCost: 3,
+        parallelism: 4
+      });
+
+      // ৩. ইউজার টেবিলে ডাটা ইনসার্ট করা
+      const [newUser] = await trx('users')
+        .insert({
+          full_name: data.fullName,
+          email: data.email,
+          password_hash: passwordHash,
+          status: 'PENDING_VERIFICATION'
+        })
+        .returning(['id', 'full_name', 'email']);
+
+      // ৪. ক্রিপ্টোগ্রাফিক হাই-এনট্রপি ভেরিফিকেশন টোকেন তৈরি
+      const rawToken = crypto.randomBytes(32).toString('hex');
+      const tokenHash = crypto.createHash('sha256').update(rawToken).digest('hex');
+
+      // ২৪ ঘণ্টার মেয়াদ নির্ধারণ
+      const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+      // ৫. হ্যাশ সংরক্ষণ
+      await trx('email_verification_tokens').insert({
+        user_id: newUser.id,
+        token_hash: tokenHash,
+        expires_at: expiresAt
+      });
+
+      // ৬. সিকিউর ভেরিফিকেশন ইউআরএল তৈরি (ইউজারের জন্য)
+      const verifyUrl = `${process.env.APP_URL}/api/v1/auth/verify-email?token=${rawToken}&amp;userId=${newUser.id}`;
+
+      // ৭. ব্যাকগ্রাউন্ড কিউ-তে ইমেইল পাঠানোর ইভেন্ট পুশ করা
+      await emailQueue.add('SendVerificationEmail', {
+        to: newUser.email,
+        name: newUser.full_name,
+        verifyUrl: verifyUrl
+      });
+
+      return {
+        success: true,
+        message: 'রেজিস্ট্রেশন সফল হয়েছে! দয়া করে আপনার ইমেইল চেক করে একাউন্ট ভেরিফাই করুন।',
+        user: { id: newUser.id, email: newUser.email }
+      };
+    });
+  }
+
+  /**
+   * ইমেইল ভেরিফিকেশন টোকেন হ্যান্ডলার
+   */
+  async verifyEmailToken(userId: string, rawToken: string) {
+    const tokenHash = crypto.createHash('sha256').update(rawToken).digest('hex');
+
+    const tokenRecord = await db('email_verification_tokens')
+      .where({
+        user_id: userId,
+        token_hash: tokenHash,
+        consumed_at: null
+      })
+      .andWhere('expires_at', '&gt;', new Date())
+      .first();
+
+    if (!tokenRecord) {
+      throw new Error('ভেরিফিকেশন লিংকটি ভুল অথবা এর মেয়াদ শেষ হয়ে গেছে।');
+    }
+
+    await db.transaction(async (trx) =&gt; {
+      // টোকেন কনজিউম করা
+      await trx('email_verification_tokens')
+        .where({ id: tokenRecord.id })
+        .update({ consumed_at: new Date() });
+
+      // ইউজারকে সক্রিয় করা
+      await trx('users')
+        .where({ id: userId })
+        .update({
+          status: 'ACTIVE',
+          email_verified_at: new Date()
+        });
+    });
+
+    return { success: true, message: 'অভিনন্দন! আপনার ইমেইল সফলভাবে ভেরিফাইড হয়েছে।' };
+  }
+}
+</code></pre>
+<hr />
+<h2>২. ফ্রন্টএন্ড ফর্ম ইমপ্লিমেন্টেশন (Tailwind CSS + Mobile Responsive)</h2>
+<p>মোবাইল স্ক্রিনে যাতে এক ফোঁটাও স্ক্রল না করে এক ক্লিকে সাইন-আপ করা যায়, তার জন্য একটি প্রিমিয়াম ফর্ম:</p>
+<pre><code class="language-html">&lt;div class=&quot;min-h-screen bg-slate-50 flex items-center justify-center p-4 sm:p-6 font-sans&quot;&gt;
+  &lt;div class=&quot;w-full max-w-md bg-white rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-8&quot;&gt;
+    
+    &lt;!-- হেডার --&gt;
+    &lt;div class=&quot;text-center mb-6&quot;&gt;
+      &lt;div class=&quot;w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-md&quot;&gt;
+        &lt;span class=&quot;text-white text-2xl font-black&quot;&gt;Z&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;h2 class=&quot;text-2xl font-black text-slate-900 tracking-tight&quot;&gt;নতুন একাউন্ট খুলুন&lt;/h2&gt;
+      &lt;p class=&quot;text-xs text-slate-500 mt-1 font-medium&quot;&gt;Zengfy Sovereign প্ল্যাটফর্মে আপনাকে স্বাগতম&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- গুগল ওয়ান-ট্যাপ অলটারনেটিভ বাটন --&gt;
+    &lt;button type=&quot;button&quot; class=&quot;w-full flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold transition-all shadow-xs mb-5&quot;&gt;
+      &lt;svg class=&quot;w-4 h-4&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;#4285F4&quot; d=&quot;M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z&quot;/&gt;&lt;path fill=&quot;#34A853&quot; d=&quot;M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z&quot;/&gt;&lt;path fill=&quot;#FBBC05&quot; d=&quot;M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z&quot;/&gt;&lt;path fill=&quot;#EA4335&quot; d=&quot;M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z&quot;/&gt;&lt;/svg&gt;
+      Google দিয়ে সরাসরি শুরু করুন
+    &lt;/button&gt;
+
+    &lt;div class=&quot;relative flex items-center justify-center my-4&quot;&gt;
+      &lt;div class=&quot;border-t border-slate-200 w-full&quot;&gt;&lt;/div&gt;
+      &lt;span class=&quot;bg-white px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider&quot;&gt;অথবা ইমেইল দিয়ে&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;!-- ফর্ম (কেবল ৩টি ফিল্ড) --&gt;
+    &lt;form id=&quot;regForm&quot; class=&quot;space-y-4&quot;&gt;
+      &lt;!-- ফিল্ড ১: পুরো নাম --&gt;
+      &lt;div&gt;
+        &lt;label for=&quot;fullName&quot; class=&quot;block text-xs font-bold text-slate-700 mb-1&quot;&gt;পুরো নাম (Full Name)&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;fullName&quot; name=&quot;fullName&quot; required placeholder=&quot;মোঃ সাজ্জাদ হোসেন&quot;
+               class=&quot;w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- ফিল্ড ২: ইমেইল ঠিকানা --&gt;
+      &lt;div&gt;
+        &lt;label for=&quot;email&quot; class=&quot;block text-xs font-bold text-slate-700 mb-1&quot;&gt;ইমেইল ঠিকানা (Email Address)&lt;/label&gt;
+        &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required placeholder=&quot;name@example.com&quot;
+               class=&quot;w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;!-- ফিল্ড ৩: পাসওয়ার্ড --&gt;
+      &lt;div&gt;
+        &lt;label for=&quot;password&quot; class=&quot;block text-xs font-bold text-slate-700 mb-1&quot;&gt;পাসওয়ার্ড (Password)&lt;/label&gt;
+        &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required placeholder=&quot;কমপক্ষে ৮ অক্ষর (A-Z ও সংখ্যা)&quot;
+               class=&quot;w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all&quot;&gt;
+        &lt;!-- লাইভ পাসওয়ার্ড স্ট্রেন্থ বার --&gt;
+        &lt;div class=&quot;w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden&quot;&gt;
+          &lt;div id=&quot;strengthBar&quot; class=&quot;h-full w-1/4 bg-red-500 transition-all duration-300&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- সাবমিট বাটন --&gt;
+      &lt;button type=&quot;submit&quot; id=&quot;submitBtn&quot;
+              class=&quot;w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white text-xs font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2&quot;&gt;
+        &lt;span&gt;একাউন্ট তৈরি করুন&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;!-- টার্মস ও লিগ্যাল নোটিশ --&gt;
+      &lt;p class=&quot;text-[10px] text-center text-slate-400 mt-4 leading-relaxed&quot;&gt;
+        রেজিস্ট্রেশন সম্পন্ন করার মাধ্যমে আপনি আমাদের &lt;a href=&quot;#&quot; class=&quot;text-blue-600 underline&quot;&gt;ব্যবহারের শর্তাবলী&lt;/a&gt; এবং &lt;a href=&quot;#&quot; class=&quot;text-blue-600 underline&quot;&gt;গোপনীয়তা নীতি&lt;/a&gt; মেনে নিচ্ছেন।
+      &lt;/p&gt;
+    &lt;/form&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<blockquote>
+<p><a href="08-IT-Company-Roles-And-Engineering-Workflow.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a> | <a href="10-Testing-QA-And-DevOps-Runbook.md">পরবর্তী মডিউল ➡️</a></p>
+</blockquote>
+
+        </section>
+        
+<hr class='chapter-divider' />
+
+        <section class="page-break-chapter" id="section-10">
+            <div class="chapter-badge">মডিউল 10 / ১১</div>
+            <h1>মডিউল ১০: টেস্টিং, কিউএ ও ডেভঅপস রানবুক (Testing, QA &amp; DevOps Runbook)</h1>
+<blockquote>
+<p><a href="09-Day-0-Root-Scenario-Implementation-Guide.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a></p>
+</blockquote>
+<blockquote>
+<p><strong>লক্ষ্য:</strong> অটোমেটেড ইউনিট টেস্ট, সিকিউরিটি পেন-টেস্টিং, লোকাল ডকার এনভায়রনমেন্ট এবং প্রডাকশন ইনসিডেন্ট রেসপন্স প্রস্তুত করা।</p>
+</blockquote>
+<hr />
+<h2>১. অটোমেটেড ইন্টিগ্রেশন টেস্ট কেসেস (Jest / Vitest)</h2>
+<pre><code class="language-typescript">import request from 'supertest';
+import { app } from '../app';
+import { db } from '../config/database';
+
+describe('Auth Registration Integration Tests', () =&gt; {
+  beforeEach(async () =&gt; {
+    await db('email_verification_tokens').truncate();
+    await db('users').del();
+  });
+
+  test('পজিটিভ টেস্ট: বৈধ ৩টি ফিল্ড দিলে সফলভাবে 201 Created হবে', async () =&gt; {
+    const res = await request(app)
+      .post('/api/v1/auth/register')
+      .send({
+        fullName: 'সাজ্জাদ হোসেন',
+        email: 'sazzad@zengfy.com',
+        password: 'Password123'
+      });
+
+    expect(res.status).toBe(201);
+    expect(res.body.success).toBe(true);
+    expect(res.body.user.email).toBe('sazzad@zengfy.com');
+  });
+
+  test('নেগেটিভ টেস্ট: পূর্বে ব্যবহৃত ইমেইল দিলে 400 এরর দেবে', async () =&gt; {
+    await request(app).post('/api/v1/auth/register').send({
+      fullName: 'ইউজার ১',
+      email: 'duplicate@zengfy.com',
+      password: 'Password123'
+    });
+
+    const res = await request(app).post('/api/v1/auth/register').send({
+      fullName: 'ইউজার ২',
+      email: 'duplicate@zengfy.com',
+      password: 'Password123'
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.message).toContain('ইতোমধ্যে একাউন্ট খোলা হয়েছে');
+  });
+
+  test('সিকিউরিটি টেস্ট: ডিসপোজেবল ইমেইল স্বয়ংক্রিয়ভাবে ব্লক করবে', async () =&gt; {
+    const res = await request(app).post('/api/v1/auth/register').send({
+      fullName: 'বোট ইউজার',
+      email: 'spammer@10minutemail.com',
+      password: 'Password123'
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.message).toContain('ডিসপোজেবল ইমেইল');
+  });
+});
+</code></pre>
+<hr />
+<h2>২. সম্পূর্ণ লোকাল ডকার ডেভেলপমেন্ট পরিবেশ (<code>docker-compose.yml</code>)</h2>
+<p>বিনা খরচে এবং কোনো আসল ইমেইল না পাঠিয়ে নিজের কম্পিউটারে ইমেইল ভিউ ও টেস্টিং করার জন্য Mailhog সহ ডকার সেটআপ:</p>
+<pre><code class="language-yaml">version: '3.8'
+
+services:
+  # ১. পোস্টগ্রেস ডেটাবেজ
+  postgres:
+    image: postgres:16-alpine
+    container_name: zengfy-postgres
+    environment:
+      POSTGRES_DB: zengfy_core
+      POSTGRES_USER: zengfy_user
+      POSTGRES_PASSWORD: secret_password
+    ports:
+      - &quot;5432:5432&quot;
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # ২. রেডিস (রেট লিমিট ও ক্যাশিং)
+  redis:
+    image: redis:7-alpine
+    container_name: zengfy-redis
+    ports:
+      - &quot;6379:6379&quot;
+
+  # ৩. মেইলহগ (ফ্রি লোকাল SMTP সার্ভার)
+  # এটি কোনো আসল মেইল পাঠায় না, ব্রাউজারে http://localhost:8025 এ সুন্দর ইনবক্স ভিউ দেয়!
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: zengfy-mailhog
+    ports:
+      - &quot;1025:1025&quot; # SMTP পোর্ট
+      - &quot;8025:8025&quot; # ব্রাউজার ওয়েব UI পোর্ট
+
+volumes:
+  pgdata:
+</code></pre>
+<hr />
+<h2>৩. ইনসিডেন্ট রেসপন্স ও ট্রাবলশুটিং রানবুক (DevOps SRE Guide)</h2>
+<h3>সমস্যা ১: ইউজারের কাছে ভেরিফিকেশন ইমেইল পৌঁছাচ্ছে না</h3>
+<ol>
+<li><strong>চেক ১:</strong> Redis কিউ-তে কোনো জব জমে আছে কি না দেখুন: <code>redis-cli llen bull:emailQueue:wait</code></li>
+<li><strong>চেক ২:</strong> ডোমেইনের SPF ও DKIM ভ্যালিডেশন চেক করুন: <code>dig txt zengfy.top +short</code></li>
+<li><strong>চেক ৩:</strong> ইমেইল লগ দেখতে মেলারের কনটেইনার লগ চালান: <code>docker logs zengfy-mailhog</code></li>
+</ol>
+<h3>সমস্যা ২: রেজিস্ট্রেশনে বোট অ্যাটাক বা হঠাৎ স্পাইক</h3>
+<ol>
+<li>Cloudflare WAF-এ গিয়ে <code>/api/v1/auth/register</code> রুটের জন্য &quot;Under Attack Mode&quot; চালু করুন।</li>
+<li>Redis স্লাইডিং উইন্ডো লিমিট সাময়িকভাবে ৫ থেকে নামিয়ে ২-এ সেট করুন।</li>
+</ol>
+<hr />
+<blockquote>
+<p><a href="09-Day-0-Root-Scenario-Implementation-Guide.md">⬅️ পূর্ববর্তী মডিউল</a> | <a href="./README.md">📖 মূল সূচিপত্র (README)</a></p>
+</blockquote>
+
+        </section>
+        
+
+</div>
+
+</body>
+</html>

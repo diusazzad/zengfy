@@ -305,8 +305,8 @@ class HotelLandingController extends Controller
             ],
             'links' => [
                 'home' => "{$protocol}hotel.{$baseDomain}{$portSuffix}/",
-                'login' => "{$protocol}{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$protocol}hotel.{$baseDomain}{$portSuffix}/"),
-                'register' => "{$protocol}{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$protocol}hotel.{$baseDomain}{$portSuffix}/"),
+                'login' => "{$protocol}accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$protocol}hotel.{$baseDomain}{$portSuffix}/"),
+                'register' => "{$protocol}accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$protocol}hotel.{$baseDomain}{$portSuffix}/"),
                 'download' => 'https://github.com/diusazzad/zengfy/releases',
                 'master_landing' => "{$protocol}{$baseDomain}{$portSuffix}/",
                 'social' => "{$protocol}social.{$baseDomain}{$portSuffix}/",

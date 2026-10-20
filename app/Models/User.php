@@ -51,6 +51,7 @@ class User extends Authenticatable
         'nid_number',
         'nid_hash',
         'date_of_birth',
+        'gender',
         'nid_verified_at',
         'verified_badge',
     ];
@@ -147,7 +148,7 @@ class User extends Authenticatable
      */
     public function devices()
     {
-        return $this->hasMany(\Modules\Auth\Models\UserDevice::class);
+        return $this->hasMany(\Modules\Auth\Models\AuthDevice::class);
     }
 
     /**

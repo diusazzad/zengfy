@@ -4,6 +4,7 @@ import { QueryProvider } from './providers/QueryProvider';
 import FeedStream from './components/social/FeedStream';
 import AccountHub from './components/account/AccountHub';
 import ChatDrawer from './components/chat/ChatDrawer';
+import AuthHub from './components/auth/AuthHub';
 
 // Safe DOM initialization
 function initReactRoots() {
@@ -78,6 +79,24 @@ function initReactRoots() {
             <React.StrictMode>
                 <QueryProvider>
                     <ChatDrawer />
+                </QueryProvider>
+            </React.StrictMode>
+        );
+    }
+
+    // 4. Sovereign Auth Hub (Registration & Login UI Suite)
+    const authRootEl = document.getElementById('react-auth-root');
+    if (authRootEl && !authRootEl.dataset.reactMounted) {
+        authRootEl.dataset.reactMounted = 'true';
+        const initialMode = authRootEl.dataset.initialMode || 'register';
+        const fallback = document.getElementById('blade-auth-fallback');
+        if (fallback) fallback.style.display = 'none';
+
+        const root = createRoot(authRootEl);
+        root.render(
+            <React.StrictMode>
+                <QueryProvider>
+                    <AuthHub initialMode={initialMode} />
                 </QueryProvider>
             </React.StrictMode>
         );

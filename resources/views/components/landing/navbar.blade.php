@@ -1,21 +1,28 @@
 <!-- resources/views/components/landing/navbar.blade.php -->
 @php
     $baseDomain = env('APP_BASE_DOMAIN', 'zengfy.top');
+    $currentHost = request()->getHost();
+    $isLocal = in_array($currentHost, ['localhost', '127.0.0.1']) || str_ends_with($currentHost, '.local') || str_ends_with($currentHost, '.test');
     $scheme = request()->getScheme();
     $port = request()->getPort();
     $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
-    $centralBaseUrl = "{$scheme}://{$baseDomain}{$portSuffix}";
-    $currentHost = request()->getHost();
-    $isSubdomain = ($currentHost !== $baseDomain && $currentHost !== 'localhost' && $currentHost !== '127.0.0.1');
 
+    $centralBaseUrl = $isLocal 
+        ? "{$scheme}://{$currentHost}{$portSuffix}" 
+        : "{$scheme}://{$baseDomain}{$portSuffix}";
+
+    $isSubdomain = ($currentHost !== $baseDomain && !$isLocal);
     $currentUrl = request()->fullUrl();
-    $centralLoginUrl = $isSubdomain
-        ? "{$centralBaseUrl}/login?continue=" . urlencode($currentUrl)
-        : "{$centralBaseUrl}/login";
-    $centralRegisterUrl = $isSubdomain
-        ? "{$centralBaseUrl}/register?continue=" . urlencode($currentUrl)
-        : "{$centralBaseUrl}/register";
-    $ecosystemHomeUrl = "{$centralBaseUrl}/";
+
+    $centralLoginUrl = $isLocal
+        ? "/login"
+        : ($isSubdomain ? "{$centralBaseUrl}/login?continue=" . urlencode($currentUrl) : "{$centralBaseUrl}/login");
+
+    $centralRegisterUrl = $isLocal
+        ? "/register"
+        : ($isSubdomain ? "{$centralBaseUrl}/register?continue=" . urlencode($currentUrl) : "{$centralBaseUrl}/register");
+
+    $ecosystemHomeUrl = $isLocal ? "/" : "{$centralBaseUrl}/";
 @endphp
 <nav x-data="{ mobileOpen: false, productsOpen: false, solutionsOpen: false }" id="main-navbar"
     class="fixed top-0 left-0 right-0 z-50 bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
@@ -38,7 +45,7 @@
 
             <!-- Products Mega Menu Dropdown -->
             <div class="relative" @mouseenter="productsOpen = true" @mouseleave="productsOpen = false">
-                <a href="{{ route('products') }}"
+                <a href="{{ Route::has('products') ? route('products') : '/products' }}"
                     class="inline-flex items-center gap-1.5 hover:text-white transition-colors duration-200 py-2.5 px-3 min-h-[44px] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                     <span>Products</span>
                     <svg class="w-4 h-4 transition-transform duration-200"
@@ -57,7 +64,7 @@
                     x-transition:leave-end="opacity-0 translate-y-2 scale-95"
                     class="absolute top-full left-0 w-[540px] bg-[#0E1420] border border-white/10 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-2 backdrop-blur-2xl z-50">
 
-                    <a href="{{ route('products') }}"
+                    <a href="{{ Route::has('products') ? route('products') : '/products' }}"
                         class="col-span-2 p-3 min-h-[48px] rounded-xl bg-blue-600/10 border border-blue-500/20 hover:bg-blue-600/20 flex items-center justify-between group">
                         <div>
                             <p class="text-xs font-bold text-blue-400 uppercase tracking-wider">Explore All 10+ Apps</p>
@@ -105,19 +112,19 @@
             </div>
 
             <!-- Pricing Route Link -->
-            <a href="{{ route('pricing') }}"
+            <a href="{{ Route::has('pricing') ? route('pricing') : '/pricing' }}"
                 class="hover:text-white transition-colors duration-200 py-2.5 px-3 min-h-[44px] inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 Pricing
             </a>
 
             <!-- Company Route Link -->
-            <a href="{{ route('company') }}"
+            <a href="{{ Route::has('company') ? route('company') : '/company' }}"
                 class="hover:text-white transition-colors duration-200 py-2.5 px-3 min-h-[44px] inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 Company & Team
             </a>
 
             <!-- Terms & Conditions Route Link -->
-            <a href="{{ route('terms') }}"
+            <a href="{{ Route::has('terms') ? route('terms') : '/terms' }}"
                 class="hover:text-white transition-colors duration-200 py-2.5 px-3 min-h-[44px] inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 Terms & Conditions
             </a>
@@ -130,7 +137,7 @@
             </a>
 
             <!-- FAQ Link -->
-            <a href="{{ route('faq') }}"
+            <a href="{{ Route::has('faq') ? route('faq') : '/faq' }}"
                 class="hover:text-white transition-colors duration-200 py-2.5 px-3 min-h-[44px] inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 FAQ
             </a>
@@ -175,15 +182,15 @@
         class="hidden md:hidden bg-[#0B0F17] border-b border-white/10 px-4 sm:px-6 py-5 space-y-2 text-sm font-semibold text-gray-300 transition-all">
         <a @click="mobileOpen = false" href="/download"
             class="flex items-center text-cyan-400 font-bold py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">📱 Download Android APK →</a>
-        <a @click="mobileOpen = false" href="{{ route('products') }}"
+        <a @click="mobileOpen = false" href="{{ Route::has('products') ? route('products') : '/products' }}"
             class="flex items-center text-blue-400 font-bold py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">Browse All Products →</a>
-        <a @click="mobileOpen = false" href="{{ route('pricing') }}"
+        <a @click="mobileOpen = false" href="{{ Route::has('pricing') ? route('pricing') : '/pricing' }}"
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">Pricing Plans</a>
-        <a @click="mobileOpen = false" href="{{ route('company') }}"
+        <a @click="mobileOpen = false" href="{{ Route::has('company') ? route('company') : '/company' }}"
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">Company & Team</a>
-        <a @click="mobileOpen = false" href="{{ route('terms') }}"
+        <a @click="mobileOpen = false" href="{{ Route::has('terms') ? route('terms') : '/terms' }}"
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">Terms & Conditions</a>
-        <a @click="mobileOpen = false" href="{{ route('faq') }}"
+        <a @click="mobileOpen = false" href="{{ Route::has('faq') ? route('faq') : '/faq' }}"
             class="flex items-center hover:text-white py-3 px-3 min-h-[48px] rounded-xl hover:bg-white/5">FAQ</a>
         <div class="pt-3 border-t border-white/10">
             <a href="{{ $centralLoginUrl }}"

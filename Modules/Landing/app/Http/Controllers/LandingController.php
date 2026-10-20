@@ -36,9 +36,12 @@ class LandingController extends Controller
     public function data(Request $request): JsonResponse
     {
         $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
+        $currentHost = $request->getHost();
+        $isLocal = in_array($currentHost, ['localhost', '127.0.0.1']) || str_ends_with($currentHost, '.local') || str_ends_with($currentHost, '.test');
         $scheme = $request->getScheme();
         $port = $request->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
+        $centralHost = $isLocal ? "{$currentHost}{$portSuffix}" : "{$baseDomain}{$portSuffix}";
 
         // Dynamic Ecosystem Statistics
         $totalCitizens = User::count();
@@ -146,16 +149,18 @@ class LandingController extends Controller
                     ] : null,
                 ],
                 'links' => [
-                    'home' => "{$scheme}://{$baseDomain}{$portSuffix}/",
-                    'login' => "{$scheme}://{$baseDomain}{$portSuffix}/login",
-                    'register' => "{$scheme}://{$baseDomain}{$portSuffix}/register",
-                    'account' => "{$scheme}://{$baseDomain}{$portSuffix}/account",
-                    'download' => "{$scheme}://{$baseDomain}{$portSuffix}/download",
+                    'home' => $isLocal ? '/' : "{$scheme}://{$centralHost}/",
+                    'login' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$scheme}://{$baseDomain}{$portSuffix}/"),
+                    'register' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$scheme}://{$baseDomain}{$portSuffix}/"),
+                    'account' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/",
+                    'dashboard' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/dashboard",
+                    'logout' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/logout",
+                    'download' => $isLocal ? '/download' : "{$scheme}://{$centralHost}/download",
                     'social' => "{$scheme}://social.{$baseDomain}{$portSuffix}/",
                     'school' => "{$scheme}://school.{$baseDomain}{$portSuffix}/",
                     'shop' => "{$scheme}://shop.{$baseDomain}{$portSuffix}/",
                     'ecommerce' => "{$scheme}://ecommerce.{$baseDomain}{$portSuffix}/",
-                    'api_docs' => "{$scheme}://{$baseDomain}{$portSuffix}/api/v1/ecosystem/landing",
+                    'api_docs' => $isLocal ? '/api/v1/ecosystem/landing' : "{$scheme}://{$centralHost}/api/v1/ecosystem/landing",
                 ],
             ],
         ]);

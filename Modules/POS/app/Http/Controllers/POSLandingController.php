@@ -318,8 +318,8 @@ class POSLandingController extends Controller
                 ],
                 'links' => [
                     'home' => "{$scheme}://pos.{$baseDomain}{$portSuffix}/",
-                    'login' => "{$scheme}://{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$scheme}://pos.{$baseDomain}{$portSuffix}/"),
-                    'register' => "{$scheme}://{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$scheme}://pos.{$baseDomain}{$portSuffix}/"),
+                    'login' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$scheme}://pos.{$baseDomain}{$portSuffix}/"),
+                    'register' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$scheme}://pos.{$baseDomain}{$portSuffix}/"),
                     'download' => "https://github.com/diusazzad/zengfy/releases",
                     'master_landing' => "{$scheme}://{$baseDomain}{$portSuffix}/",
                     'social' => "{$scheme}://social.{$baseDomain}{$portSuffix}/",

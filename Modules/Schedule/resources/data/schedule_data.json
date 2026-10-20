@@ -301,7 +301,7 @@
       ],
       "highlighted": true,
       "cta": "সোলো প্ল্যানে শুরু করুন",
-      "cta_link": "http://zengfy.top:8000/register?tier=schedule_solo"
+      "cta_link": "http://accounts.zengfy.top:8000/register?tier=schedule_solo"
     },
     {
       "id": "tier_lifetime",
@@ -320,7 +320,7 @@
       ],
       "highlighted": false,
       "cta": "লাইফটাইম লাইসেন্স নিন",
-      "cta_link": "http://zengfy.top:8000/register?tier=schedule_lifetime"
+      "cta_link": "http://accounts.zengfy.top:8000/register?tier=schedule_lifetime"
     },
     {
       "id": "tier_enterprise",
@@ -338,7 +338,7 @@
       ],
       "highlighted": false,
       "cta": "এন্টারপ্রাইজ টিমের সাথে যোগাযোগ করুন",
-      "cta_link": "http://zengfy.top:8000/register?tier=schedule_enterprise"
+      "cta_link": "http://accounts.zengfy.top:8000/register?tier=schedule_enterprise"
     }
   ],
   "faqs": [

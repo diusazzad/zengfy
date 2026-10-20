@@ -206,14 +206,16 @@ export const FALLBACK_ECOSYSTEM_DATA = {
         user: null,
     },
     links: {
-        home: "http://zengfy.top:8000/",
-        login: "http://zengfy.top:8000/login",
-        register: "http://zengfy.top:8000/register",
-        account: "http://zengfy.top:8000/account",
-        download: "http://zengfy.top:8000/download",
+        home: "/",
+        login: "http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Fzengfy.top%3A8000%2F",
+        register: "http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fzengfy.top%3A8000%2F",
+        account: "http://accounts.zengfy.top:8000/",
+        dashboard: "http://accounts.zengfy.top:8000/dashboard",
+        logout: "http://accounts.zengfy.top:8000/logout",
+        download: "/download",
         social: "http://social.zengfy.top:8000/",
         school: "http://school.zengfy.top:8000/",
-        api_docs: "http://zengfy.top:8000/api/v1/ecosystem/landing",
+        api_docs: "/api/v1/ecosystem/landing",
     },
 };
 
@@ -248,6 +250,7 @@ export async function fetchEcosystemData() {
     for (const url of endpoints) {
         try {
             const res = await fetch(url, {
+                credentials: 'same-origin',
                 headers: {
                     'Accept': 'application/json',
                 },

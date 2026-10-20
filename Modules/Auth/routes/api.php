@@ -36,6 +36,15 @@ Route::prefix('v1/auth')->middleware([
         ->middleware(['throttle:30,1'])
         ->name('api.v1.auth.sso.exchange');
 
+    // Email OTP Verification & Resend
+    Route::post('/email/verify-otp', [AuthController::class, 'verifyEmailOtp'])
+        ->middleware(['throttle:15,1'])
+        ->name('api.v1.auth.email.verify-otp');
+
+    Route::post('/email/resend-otp', [AuthController::class, 'resendEmailOtp'])
+        ->middleware(['throttle:6,1'])
+        ->name('api.v1.auth.email.resend-otp');
+
     // Password Reset & Recovery
     Route::post('/password/forgot', [PasswordResetController::class, 'forgotPassword'])
         ->middleware(['throttle:6,1'])

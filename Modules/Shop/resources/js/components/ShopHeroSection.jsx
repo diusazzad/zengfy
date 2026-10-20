@@ -75,7 +75,7 @@ export default function ShopHeroSection({ stats = {} }) {
             </a>
 
             <a
-              href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fshop.zengfy.top%3A8000%2F"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-700 hover:text-orange-700 bg-white/90 hover:bg-orange-50/60 border border-slate-200/90 hover:border-orange-200 shadow-sm transition-all"
             >
               <span>🚀 ১৪ দিনের ফ্রি ট্রায়াল</span>

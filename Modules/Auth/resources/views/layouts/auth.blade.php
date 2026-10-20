@@ -127,9 +127,9 @@
                 <span class="font-medium">Protected by 256-Bit SSL Encryption & Sovereign Vault</span>
             </div>
             <div class="flex items-center gap-4 text-slate-500">
-                <a href="{{ route('terms') }}" class="hover:text-slate-800 transition-colors py-2 px-2 min-h-[44px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">Terms of Service</a>
+                <a href="{{ Route::has('terms') ? route('terms') : '/terms' }}" class="hover:text-slate-800 transition-colors py-2 px-2 min-h-[44px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">Terms of Service</a>
                 <span>&bull;</span>
-                <a href="{{ route('faq') }}" class="hover:text-slate-800 transition-colors py-2 px-2 min-h-[44px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">Help & FAQ</a>
+                <a href="{{ Route::has('faq') ? route('faq') : '/faq' }}" class="hover:text-slate-800 transition-colors py-2 px-2 min-h-[44px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg">Help & FAQ</a>
                 <span>&bull;</span>
                 <span>&copy; {{ date('Y') }} Zengfy Inc.</span>
             </div>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
     Search, ShoppingCart, Heart, Store, User,
     Grid, ShieldCheck, ChevronDown, Sparkles, X, Phone,
@@ -220,7 +220,7 @@ export default function MarketplaceNavbar({
 
                     {/* Central Identity SSO Sign In */}
                     <a
-                        href="http://zengfy.top:8000/login"
+                        href="http://accounts.zengfy.top:8000/login"
                         className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all"
                     >
                         <User className="w-4 h-4 text-orange-400" />

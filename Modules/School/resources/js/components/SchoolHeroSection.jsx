@@ -62,7 +62,7 @@ export default function SchoolHeroSection({
                 </button>
 
                 <a
-                    href={links.register || "http://zengfy.top:8000/register"}
+                    href={links.register || "http://accounts.zengfy.top:8000/register"}
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200/80 text-emerald-800 font-bold text-sm sm:text-base transition-all"
                 >
                     <span>ফ্রি ট্রায়াল শুরু করুন</span>

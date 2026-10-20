@@ -36,7 +36,7 @@ export default function SocialHeroSection({ brand = {}, stats = {}, links = {}, 
             {/* Action CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 max-w-md mx-auto">
                 <a
-                    href={links.login || "http://zengfy.top:8000/login"}
+                    href={links.login || "http://accounts.zengfy.top:8000/login"}
                     className="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/35 active:scale-95 transition-all inline-flex items-center justify-center gap-2.5 min-h-[52px]"
                 >
                     <span>Join Citizen Network</span>

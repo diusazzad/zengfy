@@ -277,8 +277,8 @@ class LawLandingController extends Controller
                 ],
                 'links' => [
                     'home' => "{$scheme}://law.{$baseDomain}{$portSuffix}/",
-                    'login' => "{$scheme}://{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$scheme}://law.{$baseDomain}{$portSuffix}/"),
-                    'register' => "{$scheme}://{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$scheme}://law.{$baseDomain}{$portSuffix}/"),
+                    'login' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$scheme}://law.{$baseDomain}{$portSuffix}/"),
+                    'register' => "{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$scheme}://law.{$baseDomain}{$portSuffix}/"),
                     'download' => "https://github.com/diusazzad/zengfy/releases",
                     'master_landing' => "{$scheme}://{$baseDomain}{$portSuffix}/",
                     'social' => "{$scheme}://social.{$baseDomain}{$portSuffix}/",

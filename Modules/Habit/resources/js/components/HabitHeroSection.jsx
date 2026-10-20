@@ -38,7 +38,7 @@ export default function HabitHeroSection({ brandData, statsData }) {
           </a>
 
           <a
-            href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fhabit.zengfy.top%3A8000%2F"
+            href="http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fhabit.zengfy.top%3A8000%2F"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm sm:text-base border border-slate-200 shadow-xs hover:border-slate-300 transition-all cursor-pointer"
           >
             <span>⭕ পরিবার ও হালাকা রিং খুলুন</span>

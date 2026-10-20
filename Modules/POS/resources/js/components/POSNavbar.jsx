@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight, ShoppingBag } from 'lucide-react';
 
 export default function POSNavbar({ links = {}, onNavigateSection }) {

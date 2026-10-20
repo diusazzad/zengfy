@@ -4,6 +4,8 @@
 @section('meta_description', 'Sign in to access all Zengfy ecosystem products: Social, School, Law, POS, and more.')
 
 @section('content')
+<div id="react-auth-root" data-initial-mode="login"></div>
+<div id="blade-auth-fallback">
 <div x-data="loginForm()" class="relative">
 
     <!-- Ambient Soft Glow Behind Glass Card -->
@@ -202,9 +204,11 @@
 
     </div>
 </div>
+</div>
 @endsection
 
 @push('scripts')
+@vite(['resources/js/react/main.jsx'])
 <script>
     function loginForm() {
         return {

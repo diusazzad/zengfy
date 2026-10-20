@@ -27,7 +27,7 @@ Route::domain('law.' . $baseDomain)->group(function () use ($baseDomain) {
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
         $continue = request()->query('continue') ?? "{$scheme}://law.{$baseDomain}{$portSuffix}/";
-        return redirect("{$scheme}://{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
     })->name('law.login');
 
     Route::get('/register', function () use ($baseDomain) {
@@ -35,7 +35,7 @@ Route::domain('law.' . $baseDomain)->group(function () use ($baseDomain) {
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
         $continue = request()->query('continue') ?? "{$scheme}://law.{$baseDomain}{$portSuffix}/";
-        return redirect("{$scheme}://{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
     })->name('law.register');
 
     // Android APK Direct Download

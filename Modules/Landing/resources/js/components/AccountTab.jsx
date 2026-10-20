@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { User, ShieldCheck, Lock, ExternalLink, ArrowRight, Laptop, Smartphone } from 'lucide-react';
 
 export default function AccountTab({ auth = {}, links = {} }) {
@@ -67,14 +67,14 @@ export default function AccountTab({ auth = {}, links = {} }) {
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                             <a
-                                href={links.login || "/login"}
+                                href={links.login || "http://accounts.zengfy.top:8000/login"}
                                 className="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-lg shadow-blue-600/30 transition"
                             >
                                 Sign In with SSO
                             </a>
 
                             <a
-                                href={links.register || "/register"}
+                                href={links.register || "http://accounts.zengfy.top:8000/register"}
                                 className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-gray-200 text-xs font-bold transition"
                             >
                                 Register Citizen ID

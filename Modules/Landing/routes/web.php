@@ -20,11 +20,4 @@ Route::get('/download', function () {
     return redirect()->away('https://github.com/diusazzad/zengfy/releases');
 })->name('download.app');
 
-// Central Identity Redirects
-Route::get('/login', function () {
-    return redirect()->route('welcome');
-})->name('login');
-
-Route::get('/register', function () {
-    return redirect()->route('welcome');
-})->name('register');
+// Central login & register handled by Modules/Auth

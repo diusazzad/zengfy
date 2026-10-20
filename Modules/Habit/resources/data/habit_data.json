@@ -255,7 +255,7 @@
       ],
       "highlighted": false,
       "cta": "এখনই ফ্রিতে শুরু করুন",
-      "cta_link": "http://zengfy.top:8000/register?tier=habit_free"
+      "cta_link": "http://accounts.zengfy.top:8000/register?tier=habit_free"
     },
     {
       "id": "tier_family",
@@ -274,7 +274,7 @@
       ],
       "highlighted": true,
       "cta": "ফ্যামিলি লাইসেন্স নিন",
-      "cta_link": "http://zengfy.top:8000/register?tier=habit_family"
+      "cta_link": "http://accounts.zengfy.top:8000/register?tier=habit_family"
     },
     {
       "id": "tier_academy",
@@ -293,7 +293,7 @@
       ],
       "highlighted": false,
       "cta": "একাডেমি ক্লাউড শুরু করুন",
-      "cta_link": "http://zengfy.top:8000/register?tier=habit_academy"
+      "cta_link": "http://accounts.zengfy.top:8000/register?tier=habit_academy"
     }
   ],
   "faqs": [

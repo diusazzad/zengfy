@@ -19,6 +19,7 @@ export default function EcosystemLandingApp() {
     const modules = data.modules || [];
     const features = data.features || [];
     const links = data.links || {};
+    const auth = data.auth || {};
 
     const handleNavigateSection = (sectionId) => {
         if (sectionId === 'hero') {
@@ -59,6 +60,7 @@ export default function EcosystemLandingApp() {
             <Navbar
                 links={links}
                 modules={modules}
+                auth={auth}
                 onNavigateSection={handleNavigateSection}
             />
 

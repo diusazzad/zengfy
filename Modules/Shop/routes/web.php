@@ -25,7 +25,7 @@ Route::domain('shop.' . $baseDomain)->group(function () use ($baseDomain) {
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
         $continue = request()->query('continue') ?? "{$scheme}://shop.{$baseDomain}{$portSuffix}/";
-        return redirect("{$scheme}://{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
     })->name('shop.login');
 
     Route::get('/register', function () use ($baseDomain) {
@@ -33,7 +33,7 @@ Route::domain('shop.' . $baseDomain)->group(function () use ($baseDomain) {
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
         $continue = request()->query('continue') ?? "{$scheme}://shop.{$baseDomain}{$portSuffix}/";
-        return redirect("{$scheme}://{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
     })->name('shop.register');
 
     // Direct Lookbook / Size Guide Route

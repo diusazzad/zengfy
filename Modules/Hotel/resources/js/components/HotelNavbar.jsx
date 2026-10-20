@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const ECOSYSTEM_APPS = [
   { name: 'Master Ecosystem', tag: 'Sovereign Hub', url: 'http://zengfy.top:8000', icon: '🌐' },
@@ -119,7 +119,7 @@ export default function HotelNavbar({ brand = {} }) {
 
             {/* Central SSO Login */}
             <a
-              href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
+              href="http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
               className="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
             >
               লগইন
@@ -185,13 +185,13 @@ export default function HotelNavbar({ brand = {} }) {
             </a>
             <div className="pt-2 border-t border-slate-100 flex items-center gap-2">
               <a
-                href="http://zengfy.top:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
+                href="http://accounts.zengfy.top:8000/login?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
                 className="flex-1 text-center py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100"
               >
                 লগইন
               </a>
               <a
-                href="http://zengfy.top:8000/register?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
+                href="http://accounts.zengfy.top:8000/register?continue=http%3A%2F%2Fhotel.zengfy.top%3A8000%2F"
                 className="flex-1 text-center py-2 rounded-xl text-xs font-bold text-white bg-amber-600"
               >
                 রেজিস্ট্রেশন

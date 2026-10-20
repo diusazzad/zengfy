@@ -324,8 +324,8 @@ class SkillLandingController extends Controller
             ],
             'links' => [
                 'home' => "{$protocol}skill.{$baseDomain}{$portSuffix}/",
-                'login' => "{$protocol}{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$protocol}skill.{$baseDomain}{$portSuffix}/"),
-                'register' => "{$protocol}{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$protocol}skill.{$baseDomain}{$portSuffix}/"),
+                'login' => "{$protocol}accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode("{$protocol}skill.{$baseDomain}{$portSuffix}/"),
+                'register' => "{$protocol}accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode("{$protocol}skill.{$baseDomain}{$portSuffix}/"),
                 'download' => 'https://github.com/diusazzad/zengfy/releases',
                 'master_landing' => "{$protocol}{$baseDomain}{$portSuffix}/",
                 'social' => "{$protocol}social.{$baseDomain}{$portSuffix}/",

@@ -50,7 +50,7 @@ require base_path('Modules/Shop/routes/web.php');
 // 10. Skill Subdomain Landing Module (skill.zengfy.top:8000)
 require base_path('Modules/Skill/routes/web.php');
 
-// 11. Ecosystem Master Landing Module (zengfy.top:8000)
+// 11. Journal Subdomain Landing Module (journal.zengfy.top:8000)
 require base_path('Modules/Journal/routes/web.php');
 
 // 12. Habit Subdomain Landing Module (habit.zengfy.top:8000)
@@ -62,4 +62,15 @@ require base_path('Modules/Schedule/routes/web.php');
 // 14. Ecommerce Subdomain Landing Module (ecommerce.zengfy.top:8000)
 require base_path('Modules/Ecommerce/routes/web.php');
 
+// 15. Central Sovereign Auth & Identity Module
+require base_path('Modules/Auth/routes/web.php');
+
 require base_path('Modules/Landing/routes/web.php');
+
+// 16. Ecosystem Informational & Legal Pages
+Route::view('/terms', 'terms')->name('terms');
+Route::view('/faq', 'faq')->name('faq');
+Route::view('/pricing', 'pricing')->name('pricing');
+Route::view('/company', 'company')->name('company');
+Route::view('/products', 'products')->name('products');
+Route::view('/services', 'services')->name('services');

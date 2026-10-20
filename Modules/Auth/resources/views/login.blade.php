@@ -4,6 +4,8 @@
 @section('meta_description', 'Sign in to access all Zengfy ecosystem products: Social, School, Law, POS, and more.')
 
 @section('content')
+<div id="react-auth-root" data-initial-mode="login"></div>
+<div id="blade-auth-fallback">
 <div x-data="loginForm()" class="relative">
 
     <!-- Ambient Soft Glow Behind Glass Card -->
@@ -15,7 +17,7 @@
         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500"></div>
 
         <!-- Header (Google-style Contextual SSO) -->
-        <div class="text-center mb-7 relative z-10">
+        <div class="text-center mb-6 relative z-10">
             @if(!empty($targetAppName) && $targetAppName !== 'Zengfy Sovereign Hub' && $targetAppName !== 'Zengfy Ecosystem')
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3.5 shadow-xs">
                     <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
@@ -27,8 +29,8 @@
                     <span>Zengfy Central Identity & SSO</span>
                 </div>
             @endif
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Welcome Back</h1>
-            <p class="text-sm text-slate-500 mt-1.5">Sign in to access your unified digital ecosystem</p>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">লগইন করুন</h1>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1.5">আপনার সেন্ট্রাল সার্বভৌম অ্যাকাউন্ট দিয়ে প্রবেশ করুন</p>
         </div>
 
         <!-- Error Notification Banner -->
@@ -61,14 +63,13 @@
             <span x-text="successMessage" class="leading-relaxed"></span>
         </div>
 
-        <!-- Login Form -->
-        <form @submit.prevent="submitLogin" class="space-y-4 relative z-10">
-            @csrf
-
-            <!-- Email Field -->
+        <!-- ========================================================================= -->
+        <!-- STEP 1: ONLY EMAIL FIELD (Google-style Identifier-First)                  -->
+        <!-- ========================================================================= -->
+        <form x-show="step === 'email'" @submit.prevent="nextStep" class="space-y-4 relative z-10" x-transition:enter="transition ease-out duration-200">
             <div>
                 <label for="login-email" class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wider">
-                    Email Address
+                    ইমেইল ঠিকানা (Email Address)
                 </label>
                 <div class="relative">
                     <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
@@ -88,16 +89,50 @@
                         class="glass-input w-full pl-11 pr-4 py-3 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none transition-all duration-200"
                     />
                 </div>
+                <p class="text-[11px] text-slate-400 mt-1.5">প্রথমে আপনার ইমেইল প্রদান করুন, এরপর পাসওয়ার্ডের ধাপ আসবে</p>
+            </div>
+
+            <!-- Next Step Button -->
+            <button 
+                type="submit" 
+                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:via-indigo-700 hover:to-cyan-700 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-lg shadow-blue-500/25 transition-all duration-300 transform active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2 mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                <span>পরবর্তী (Next)</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+        </form>
+
+        <!-- ========================================================================= -->
+        <!-- STEP 2: ONLY PASSWORD FIELD (After email is validated)                    -->
+        <!-- ========================================================================= -->
+        <form x-show="step === 'password'" x-cloak @submit.prevent="submitLogin" class="space-y-4 relative z-10" x-transition:enter="transition ease-out duration-200">
+            @csrf
+
+            <!-- User Identifier Badge / Change Email Pill -->
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 mb-3">
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0">
+                        <span x-text="email.charAt(0).toUpperCase()">U</span>
+                    </div>
+                    <span x-text="email" class="text-xs font-semibold text-slate-800 truncate"></span>
+                </div>
+                <button 
+                    type="button" 
+                    @click="prevStep" 
+                    class="text-xs font-bold text-blue-600 hover:text-blue-700 px-2 py-1 rounded-md hover:bg-blue-50 transition-colors shrink-0">
+                    পরিবর্তন
+                </button>
             </div>
 
             <!-- Password Field -->
             <div>
                 <div class="flex items-center justify-between mb-1.5">
                     <label for="login-password" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                        Password
+                        পাসওয়ার্ড (Password)
                     </label>
-                    <a href="{{ route('password.request') }}" class="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors py-1.5 px-2 -mr-2 min-h-[36px] inline-flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                        Forgot Password?
+                    <a href="{{ route('password.request') }}" class="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors py-1 px-1 rounded-md">
+                        পাসওয়ার্ড ভুলে গেছেন?
                     </a>
                 </div>
                 <div class="relative">
@@ -116,12 +151,12 @@
                         placeholder="••••••••••••"
                         class="glass-input w-full pl-11 pr-12 py-3 rounded-xl text-slate-900 placeholder-slate-400 text-sm focus:outline-none transition-all duration-200"
                     />
-                    <!-- Toggle Password Visibility Icon (Accessible 44px touch target) -->
+                    <!-- Toggle Password Visibility Icon -->
                     <button 
                         type="button" 
                         @click="showPassword = !showPassword" 
                         aria-label="Toggle password visibility"
-                        class="absolute inset-y-0 right-0 pr-3.5 pl-2 flex items-center justify-center min-w-[44px] min-h-[44px] text-slate-400 hover:text-slate-600 transition-colors cursor-pointer rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                        class="absolute inset-y-0 right-0 pr-3.5 pl-2 flex items-center justify-center min-w-[44px] min-h-[44px] text-slate-400 hover:text-slate-600 transition-colors cursor-pointer rounded-r-xl focus-visible:outline-none">
                         <svg x-show="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -135,37 +170,45 @@
 
             <!-- Remember Me -->
             <div class="flex items-center justify-between pt-1">
-                <label class="flex items-center gap-2.5 cursor-pointer py-1.5 min-h-[36px]">
+                <label class="flex items-center gap-2.5 cursor-pointer py-1 min-h-[32px]">
                     <input 
                         type="checkbox" 
                         x-model="remember"
                         class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer"
                     />
-                    <span class="text-xs text-slate-600 font-medium">Remember this device</span>
+                    <span class="text-xs text-slate-600 font-medium">এই ডিভাইসে মনে রাখুন</span>
                 </label>
             </div>
 
-            <!-- Submit Button with Loading State (Accessible 48px touch target) -->
-            <button 
-                type="submit" 
-                :disabled="loading" 
-                class="w-full relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:via-indigo-700 hover:to-cyan-700 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-lg shadow-blue-500/25 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                
-                <span x-show="!loading" class="flex items-center gap-2">
-                    <span>Sign In to Zengfy</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </span>
+            <!-- Action Buttons: Back & Sign In -->
+            <div class="flex items-center gap-3 pt-2">
+                <button 
+                    type="button" 
+                    @click="prevStep"
+                    class="py-3.5 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm transition-all duration-200 cursor-pointer">
+                    পূর্ববর্তী
+                </button>
+                <button 
+                    type="submit" 
+                    :disabled="loading" 
+                    class="flex-1 relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:via-indigo-700 hover:to-cyan-700 text-white font-bold py-3.5 px-4 min-h-[48px] text-sm shadow-lg shadow-blue-500/25 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                    
+                    <span x-show="!loading" class="flex items-center gap-2">
+                        <span>লগইন করুন</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </span>
 
-                <span x-show="loading" x-cloak class="flex items-center gap-2">
-                    <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-                    </svg>
-                    <span>Authenticating Sovereign ID...</span>
-                </span>
-            </button>
+                    <span x-show="loading" x-cloak class="flex items-center gap-2">
+                        <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                        </svg>
+                        <span>যাচাই করা হচ্ছে...</span>
+                    </span>
+                </button>
+            </div>
         </form>
 
         <!-- Divider -->
@@ -174,14 +217,14 @@
                 <div class="w-full border-t border-slate-200"></div>
             </div>
             <div class="relative flex justify-center text-xs uppercase">
-                <span class="bg-white px-3 text-slate-400 font-semibold tracking-wider">New to Zengfy?</span>
+                <span class="bg-white px-3 text-slate-400 font-semibold tracking-wider">নতুন অ্যাকাউন্ট প্রয়োজন?</span>
             </div>
         </div>
 
-        <!-- Registration Link (Accessible 48px touch target) -->
+        <!-- Registration Link -->
         <a href="{{ route('register', request()->query()) }}" 
            class="w-full flex items-center justify-center py-3.5 px-4 min-h-[48px] rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm transition-all duration-200 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-            Create Sovereign Account
+            নতুন সার্বভৌম অ্যাকাউন্ট তৈরি করুন
         </a>
 
         <!-- Ecosystem Trust Highlights -->
@@ -202,12 +245,15 @@
 
     </div>
 </div>
+</div>
 @endsection
 
 @push('scripts')
+@vite(['resources/js/react/main.jsx'])
 <script>
     function loginForm() {
         return {
+            step: 'email',
             email: '',
             password: '',
             remember: true,
@@ -216,9 +262,40 @@
             errorMessage: '',
             successMessage: '',
 
+            nextStep() {
+                this.errorMessage = '';
+                const trimmed = this.email.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!trimmed || !emailRegex.test(trimmed)) {
+                    this.errorMessage = 'অনুগ্রহ করে একটি সঠিক ইমেইল ঠিকানা দিন (যেমন: user@example.com)';
+                    return;
+                }
+                this.email = trimmed;
+                this.step = 'password';
+                this.$nextTick(() => {
+                    const passInput = document.getElementById('login-password');
+                    if (passInput) passInput.focus();
+                });
+            },
+
+            prevStep() {
+                this.errorMessage = '';
+                this.step = 'email';
+                this.$nextTick(() => {
+                    const emailInput = document.getElementById('login-email');
+                    if (emailInput) emailInput.focus();
+                });
+            },
+
             async submitLogin() {
                 this.errorMessage = '';
                 this.successMessage = '';
+
+                if (!this.password) {
+                    this.errorMessage = 'অনুগ্রহ করে আপনার পাসওয়ার্ড প্রদান করুন';
+                    return;
+                }
+
                 this.loading = true;
 
                 try {
@@ -242,11 +319,11 @@
 
                     if (!response.ok) {
                         if (response.status === 429) {
-                            this.errorMessage = data.message || 'Too many attempts. You have been temporarily rate-limited for security.';
+                            this.errorMessage = data.message || 'অতিরিক্ত প্রচেষ্টার কারণে সাময়িকভাবে ব্লক করা হয়েছে। কিছুক্ষণ পর চেষ্টা করুন।';
                         } else if (response.status === 423) {
-                            this.errorMessage = data.message || 'Your account is temporarily locked due to repeated failed attempts.';
+                            this.errorMessage = data.message || 'বারবার ভুল চেষ্টার কারণে আপনার অ্যাকাউন্ট সাময়িক লক করা হয়েছে।';
                         } else {
-                            this.errorMessage = data.message || 'Invalid credentials. Please verify your email and password.';
+                            this.errorMessage = data.message || 'ভুল ইমেইল বা পাসওয়ার্ড। অনুগ্রহ করে আবার পরীক্ষা করুন।';
                         }
                         this.loading = false;
                         return;
@@ -258,25 +335,25 @@
                         localStorage.setItem('zengfy_token', token);
                     }
 
-                    this.successMessage = 'Access granted! Loading your sovereign dashboard...';
+                    this.successMessage = 'অনুমোদন সফল! ড্যাশবোর্ডে নিয়ে যাওয়া হচ্ছে...';
                     
                     setTimeout(() => {
                         const urlParams = new URLSearchParams(window.location.search);
-                        let redirectUrl = urlParams.get('continue') || urlParams.get('redirect_uri') || urlParams.get('redirect_to') || urlParams.get('redirect') || '/account';
+                        let redirectUrl = urlParams.get('continue') || urlParams.get('redirect_uri') || urlParams.get('redirect_to') || urlParams.get('redirect') || '/';
                         try {
                             const parsed = new URL(redirectUrl, window.location.origin);
-                            if (parsed.hostname.endsWith('zengfy.top') || parsed.hostname.endsWith('zengfy.top') || parsed.hostname === 'localhost' || parsed.origin === window.location.origin) {
+                            if (parsed.hostname.endsWith('zengfy.top') || parsed.hostname === 'localhost' || parsed.origin === window.location.origin) {
                                 window.location.href = redirectUrl;
                             } else {
-                                window.location.href = '/account';
+                                window.location.href = '/';
                             }
                         } catch (e) {
-                            window.location.href = '/account';
+                            window.location.href = '/';
                         }
                     }, 500);
 
                 } catch (error) {
-                    this.errorMessage = 'Network error: Unable to connect to Zengfy Auth Gateway.';
+                    this.errorMessage = 'সার্ভারের সাথে সংযোগ স্থাপন করা সম্ভব হয়নি। ইন্টারনেট সংযোগ পরীক্ষা করুন।';
                     this.loading = false;
                 }
             }

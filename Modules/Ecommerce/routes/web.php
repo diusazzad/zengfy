@@ -24,14 +24,16 @@ Route::domain('ecommerce.' . $baseDomain)->group(function () use ($baseDomain) {
         $scheme = request()->getScheme();
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : '';
-        return redirect()->away("{$scheme}://auth.{$baseDomain}{$portSuffix}/login?return_to=" . urlencode(url()->current()));
+        $destination = "{$scheme}://ecommerce.{$baseDomain}{$portSuffix}/";
+        return redirect()->away("{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode($destination));
     })->name('ecommerce.login');
 
     Route::get('/register', function () use ($baseDomain) {
         $scheme = request()->getScheme();
         $port = request()->getPort();
         $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : '';
-        return redirect()->away("{$scheme}://auth.{$baseDomain}{$portSuffix}/register?intent=merchant&return_to=" . urlencode(url()->current()));
+        $destination = "{$scheme}://ecommerce.{$baseDomain}{$portSuffix}/";
+        return redirect()->away("{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?intent=merchant&continue=" . urlencode($destination));
     })->name('ecommerce.register');
 });
 
