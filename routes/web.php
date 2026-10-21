@@ -65,6 +65,9 @@ require base_path('Modules/Ecommerce/routes/web.php');
 // 15. Central Sovereign Auth & Identity Module
 require base_path('Modules/Auth/routes/web.php');
 
+// 15.1 Central Sovereign Accounts & Security Hub
+require base_path('Modules/Accounts/routes/web.php');
+
 require base_path('Modules/Landing/routes/web.php');
 
 // 16. Ecosystem Informational & Legal Pages

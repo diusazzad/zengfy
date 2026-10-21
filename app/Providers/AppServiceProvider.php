@@ -41,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
         if (is_dir(base_path('Modules/Social/resources/views'))) {
             \Illuminate\Support\Facades\View::addNamespace('social', base_path('Modules/Social/resources/views'));
         }
+        if (is_dir(base_path('Modules/Accounts/resources/views'))) {
+            \Illuminate\Support\Facades\View::addNamespace('accounts', base_path('Modules/Accounts/resources/views'));
+        }
 
         // Automatically discover and load migrations from all domain Modules
         $modulesPath = base_path('Modules');

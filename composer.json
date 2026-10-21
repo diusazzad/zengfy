@@ -80,7 +80,9 @@
             "Modules\\Journal\\Database\\Factories\\": "Modules/Journal/database/factories/",
             "Modules\\Journal\\Database\\Seeders\\": "Modules/Journal/database/seeders/",
             "Modules\\Habit\\": "Modules/Habit/app/",
-            "Modules\\Schedule\\": "Modules/Schedule/app/"
+            "Modules\\Schedule\\": "Modules/Schedule/app/",
+            "Modules\\Accounts\\": "Modules/Accounts/app/",
+            "Modules\\Accounts\\Database\\Seeders\\": "Modules/Accounts/database/seeders/"
         },
         "files": [
             "app/Helpers/helpers.php"

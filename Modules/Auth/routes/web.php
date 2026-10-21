@@ -27,27 +27,7 @@ Route::domain('accounts.' . $baseDomain)->group(function () {
         Route::match(['GET', 'POST'], '/logout', 'webLogout')->name('accounts.logout');
     });
 
-    Route::controller(AccountController::class)->middleware(['auth'])->group(function () {
-        Route::get('/', 'dashboard')->name('accounts.home');
-        Route::get('/account', 'dashboard')->name('accounts.account');
-        Route::get('/dashboard', 'dashboard')->name('accounts.dashboard');
-
-        // Canonical route names matching resources/views/account/dashboard.blade.php
-        Route::post('/account/profile', 'updateProfile')->name('account.profile');
-        Route::post('/account/avatar', 'updateAvatar')->name('account.avatar');
-        Route::delete('/account/avatar', 'removeAvatar')->name('account.avatar.remove');
-        Route::post('/account/password', 'changePassword')->name('account.password');
-        Route::post('/account/device/{id}/revoke', 'revokeDevice')->name('account.device.revoke');
-        Route::post('/account/devices/revoke-all', 'revokeAllOtherDevices')->name('account.devices.revoke-all');
-
-        // Legacy / Namespaced aliases for accounts.*
-        Route::post('/accounts/profile', 'updateProfile')->name('accounts.account.profile');
-        Route::post('/accounts/avatar', 'updateAvatar')->name('accounts.account.avatar');
-        Route::delete('/accounts/avatar', 'removeAvatar')->name('accounts.account.avatar.remove');
-        Route::post('/accounts/password', 'changePassword')->name('accounts.account.password');
-        Route::post('/accounts/device/{id}/revoke', 'revokeDevice')->name('accounts.device.revoke');
-        Route::post('/accounts/devices/revoke-all', 'revokeAllOtherDevices')->name('accounts.devices.revoke-all');
-    });
+    
 });
 
 // 2. Global / Root Fallback Routes (Directs anyone hitting /login on zengfy.top to accounts.zengfy.top)

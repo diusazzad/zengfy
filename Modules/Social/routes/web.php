@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Modules\Social\Http\Controllers\SocialLandingController;
 
@@ -8,9 +10,9 @@ use Modules\Social\Http\Controllers\SocialLandingController;
 | Social Module Web Routes (Subdomain Architecture: social.zengfy.top)
 |--------------------------------------------------------------------------
 |
-| Handles the dedicated Zengfy Social Landing Page at social.zengfy.top.
-| All complex unauthenticated sub-routes have been cleanly pruned
-| in accordance with the single-module clean landing plan.
+| Handles the dedicated Zengfy Social Subdomain at social.zengfy.top.
+| Automatically routes authenticated citizens directly to their Social Feed,
+| while guest visitors are presented with the Social Showcase Landing Page.
 |
 */
 
@@ -18,8 +20,31 @@ $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
 // 1. Dedicated Subdomain: social.zengfy.top:8000
 Route::domain('social.' . $baseDomain)->group(function () use ($baseDomain) {
-    // Dedicated React 19 White Glassmorphic Social Landing Page
-    Route::get('/', [SocialLandingController::class, 'index'])->name('social.landing');
+    // Intelligent Root: If logged in -> Feed; If guest -> Landing Page
+    Route::get('/', function () {
+        if (Auth::guard('web')->check()) {
+            return app(PageController::class)->showFeed();
+        }
+        return app(SocialLandingController::class)->index(request());
+    })->name('social.home');
+
+    // Explicit Feed Route (Protected)
+    Route::get('/feed', function () use ($baseDomain) {
+        if (!Auth::guard('web')->check()) {
+            $scheme = request()->getScheme();
+            $port = request()->getPort();
+            $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
+            $continue = request()->fullUrl();
+            return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/login?continue=" . urlencode($continue));
+        }
+        return app(PageController::class)->showFeed();
+    })->name('social.feed');
+
+    // Explicit Landing Showcase Page
+    Route::get('/landing', [SocialLandingController::class, 'index'])->name('social.landing');
+
+    // Citizen Profile Route
+    Route::get('/profile/{handle}', [PageController::class, 'showProfile'])->name('social.profile');
 
     // Central Identity Single Sign-On Forwarders
     Route::get('/login', function () use ($baseDomain) {

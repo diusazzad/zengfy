@@ -15,5 +15,6 @@
     "Skill": true,
     "Journal": true,
     "Habit": true,
-    "Schedule": true
+    "Schedule": true,
+    "Accounts": true
 }
