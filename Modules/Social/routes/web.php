@@ -63,6 +63,15 @@ Route::domain('social.' . $baseDomain)->group(function () use ($baseDomain) {
         return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/register?continue=" . urlencode($continue));
     })->name('social.register');
 
+    // Central Sovereign Logout Forwarder (Single Sign-Out)
+    Route::match(['GET', 'POST'], '/logout', function () use ($baseDomain) {
+        $scheme = request()->getScheme();
+        $port = request()->getPort();
+        $portSuffix = ($port && !in_array($port, [80, 443])) ? ":{$port}" : "";
+        $continue = request()->query('continue') ?? "{$scheme}://social.{$baseDomain}{$portSuffix}/";
+        return redirect("{$scheme}://accounts.{$baseDomain}{$portSuffix}/logout?continue=" . urlencode($continue));
+    })->name('social.logout');
+
     // Android APK Direct Download
     Route::get('/download', function () {
         return redirect()->away('https://github.com/diusazzad/zengfy/releases');

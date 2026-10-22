@@ -138,7 +138,8 @@
          data-user='@json($userData ?? [])'
          data-devices='@json($activeDevices ?? [])'
          data-apps='@json($ecosystemApps ?? [])'
-         data-settings='@json($settings ?? [])'></div>
+         data-settings='@json($settings ?? [])'
+         data-billing='@json($billingData ?? [])'></div>
 
     <!-- Blade Server-Rendered Shell (Instant First Paint & SEO) -->
     <div id="blade-account-fallback" class="min-h-screen flex flex-col justify-between">
@@ -380,6 +381,15 @@
                     :class="activeTab === 'devices' ? 'bg-blue-50 text-blue-700 font-bold' : 'text-slate-600 hover:bg-slate-100/80'">
                     <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     <span>ডিভাইস ও সেশন (Devices)</span>
+                </button>
+
+                <button 
+                    type="button" 
+                    @click="activeTab = 'billing'" 
+                    class="w-full flex items-center gap-3.5 px-4 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all text-left cursor-pointer"
+                    :class="activeTab === 'billing' ? 'bg-blue-50 text-blue-700 font-bold' : 'text-slate-600 hover:bg-slate-100/80'">
+                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                    <span>পেমেন্ট ও সাবস্ক্রিপশন (Billing)</span>
                 </button>
             </nav>
 
@@ -731,6 +741,119 @@
                                     কোনো অতিরিক্ত সক্রিয় সেশন পাওয়া যায়নি।
                                 </div>
                             @endforelse
+                        </div>
+                    </div>
+                </div>
+
+                            <!-- ========================================================================= -->
+                <!-- TAB 6: BILLING & SUBSCRIPTIONS (Google / Odoo Multi-Product Model)        -->
+                <!-- ========================================================================= -->
+                <div x-show="activeTab === 'billing'" x-transition class="space-y-6">
+                    <!-- Billing Header Summary -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5">
+                            <span class="text-xs text-slate-500 font-medium">ডিফল্ট পেমেন্ট মেথড</span>
+                            <div class="mt-2 flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded text-[11px] font-black bg-pink-100 text-pink-700">bKash</span>
+                                <span class="text-sm font-bold text-slate-800">0171***429</span>
+                            </div>
+                        </div>
+                        <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5">
+                            <span class="text-xs text-slate-500 font-medium">সক্রিয় সাবস্ক্রিপশন</span>
+                            <div class="mt-2 flex items-center gap-2">
+                                <span class="text-xl font-extrabold text-blue-600">৩টি</span>
+                                <span class="text-xs text-slate-400">(Social, School, Law)</span>
+                            </div>
+                        </div>
+                        <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5">
+                            <span class="text-xs text-slate-500 font-medium">Zengfy ওয়ালেট ব্যালেন্স</span>
+                            <div class="mt-2 text-xl font-extrabold text-emerald-600">৳ ২৫০.০০</div>
+                        </div>
+                    </div>
+
+                    <!-- Subscriptions Cards -->
+                    <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-6">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                            <div>
+                                <h2 class="text-lg font-bold text-slate-900">আপনার সক্রিয় সাবস্ক্রিপশনসমূহ</h2>
+                                <p class="text-xs text-slate-500 mt-0.5">Zengfy ইকোসিস্টেমের বিভিন্ন মডিউলের সাবস্ক্রিপশন ও অটো-রিনিউয়াল</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            @foreach($billingData['subscriptions'] ?? [] as $sub)
+                                <div class="rounded-2xl border border-slate-200/80 p-5 flex flex-col justify-between hover:border-slate-300 transition-all">
+                                    <div>
+                                        <div class="flex items-start justify-between gap-2 mb-2">
+                                            <div>
+                                                <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">{{ $sub['module_name'] }}</span>
+                                                <h3 class="text-sm font-bold text-slate-900 mt-0.5">{{ $sub['plan_name'] }}</h3>
+                                            </div>
+                                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full {{ $sub['status'] === 'active' ? 'bg-emerald-50 text-emerald-600 border border-emerald-200' : 'bg-amber-50 text-amber-700 border border-amber-200' }}">
+                                                {{ $sub['status_label'] }}
+                                            </span>
+                                        </div>
+                                        <div class="text-xl font-black text-slate-900 my-2">
+                                            {{ $sub['price'] }} <span class="text-xs font-normal text-slate-400">/ {{ $sub['interval'] }}</span>
+                                        </div>
+                                        <ul class="text-xs text-slate-600 space-y-1.5 mt-3 mb-4">
+                                            @foreach($sub['features'] ?? [] as $feat)
+                                                <li class="flex items-center gap-2">
+                                                    <svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                                    <span>{{ $feat }}</span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                                        <span class="text-slate-400 text-[11px]">পরবর্তী বিলিং: {{ $sub['next_billing'] }}</span>
+                                        <button type="button" class="font-bold text-blue-600 hover:underline">ম্যানেজ প্ল্যান</button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- Invoices History -->
+                    <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-6">
+                        <h3 class="text-base font-bold text-slate-900 mb-1">বিলিং হিস্ট্রি ও অফিসিয়াল চালান (Invoices)</h3>
+                        <p class="text-xs text-slate-500 mb-4">সরকারি মূসক/ভ্যাট সহ সকল পরিশোধিত ইনভয়েস</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead>
+                                    <tr class="border-b border-slate-200 text-slate-400 uppercase text-[10px] tracking-wider">
+                                        <th class="py-2.5 px-3">ইনভয়েস নং</th>
+                                        <th class="py-2.5 px-3">প্রোডাক্ট / সার্ভিস</th>
+                                        <th class="py-2.5 px-3">তারিখ</th>
+                                        <th class="py-2.5 px-3">পদ্ধতি</th>
+                                        <th class="py-2.5 px-3">পরিমাণ</th>
+                                        <th class="py-2.5 px-3">স্ট্যাটাস</th>
+                                        <th class="py-2.5 px-3 text-right">ডাউনলোড</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    @foreach($billingData['invoices'] ?? [] as $inv)
+                                        <tr class="hover:bg-slate-50/70 transition-colors">
+                                            <td class="py-3 px-3 font-mono font-bold text-slate-800">{{ $inv['invoice_no'] }}</td>
+                                            <td class="py-3 px-3 text-slate-700 font-medium">{{ $inv['product'] }}</td>
+                                            <td class="py-3 px-3 text-slate-500">{{ $inv['date'] }}</td>
+                                            <td class="py-3 px-3 text-slate-600">{{ $inv['method'] }}</td>
+                                            <td class="py-3 px-3 font-bold text-slate-900">{{ $inv['amount'] }}</td>
+                                            <td class="py-3 px-3">
+                                                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200">
+                                                    {{ $inv['status_label'] }}
+                                                </span>
+                                            </td>
+                                            <td class="py-3 px-3 text-right">
+                                                <a href="#" onclick="alert('ইনভয়েস PDF প্রস্তুত করা হচ্ছে...'); return false;" class="text-blue-600 hover:text-blue-700 font-bold hover:underline">
+                                                    PDF
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

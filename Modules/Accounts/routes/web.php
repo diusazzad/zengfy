@@ -15,7 +15,7 @@ use Modules\Accounts\Http\Controllers\AccountsDashboardController;
 
 $baseDomain = config('app.base_domain', env('APP_BASE_DOMAIN', 'zengfy.top'));
 
-Route::domain('accounts.' . $baseDomain)->middleware(['web', 'auth'])->group(function () {
+Route::domain('accounts.' . $baseDomain)->middleware(['web', 'auth'])->group(function () use ($baseDomain) {
     Route::controller(AccountsDashboardController::class)->group(function () {
         // Dashboard Home
         Route::get('/', 'dashboard')->name('accounts.home');
@@ -34,6 +34,9 @@ Route::domain('accounts.' . $baseDomain)->middleware(['web', 'auth'])->group(fun
         // Device Session Management
         Route::post('/account/device/{id}/revoke', 'revokeDevice')->name('account.device.revoke');
         Route::post('/account/devices/revoke-all', 'revokeAllOtherDevices')->name('account.devices.revoke-all');
+
+        // Central Billing & Subscriptions
+        Route::post('/account/billing/subscribe', 'simulateSubscribe')->name('account.billing.subscribe');
 
         // Backward compatibility aliases
         Route::post('/accounts/profile', 'updateProfile')->name('accounts.account.profile');

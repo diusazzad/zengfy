@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import SocialLandingApp from './SocialLandingApp';
+import SocialApp from '../../../../resources/js/react/components/social/SocialApp';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -17,11 +17,21 @@ export function initSocialLanding() {
     const landingRootEl = document.getElementById('react-social-landing-root');
     if (landingRootEl && !landingRootEl.dataset.reactMounted) {
         landingRootEl.dataset.reactMounted = 'true';
+        let initialUser = null;
+        try {
+            if (landingRootEl.dataset.initialData) {
+                const parsed = JSON.parse(landingRootEl.dataset.initialData);
+                initialUser = parsed?.auth?.user || null;
+            }
+        } catch (e) {
+            console.warn('[Zengfy Social] Failed to parse initialData:', e);
+        }
+
         const root = createRoot(landingRootEl);
         root.render(
             <React.StrictMode>
                 <QueryClientProvider client={queryClient}>
-                    <SocialLandingApp />
+                    <SocialApp initialUser={initialUser} />
                 </QueryClientProvider>
             </React.StrictMode>
         );

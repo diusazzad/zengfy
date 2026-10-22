@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { QueryProvider } from './providers/QueryProvider';
+import SocialApp from './components/social/SocialApp';
 import FeedStream from './components/social/FeedStream';
 import AccountHub from './components/account/AccountHub';
 import ChatDrawer from './components/chat/ChatDrawer';
@@ -12,6 +13,15 @@ function initReactRoots() {
     const feedRootEl = document.getElementById('react-feed-root');
     if (feedRootEl && !feedRootEl.dataset.reactMounted) {
         feedRootEl.dataset.reactMounted = 'true';
+        let initialUser = null;
+        try {
+            if (feedRootEl.dataset.user) {
+                initialUser = JSON.parse(feedRootEl.dataset.user);
+            }
+        } catch (e) {
+            console.warn('[Zengfy Social] Failed to parse initialUser:', e);
+        }
+
         const fallback = document.getElementById('blade-feed-fallback');
         if (fallback) fallback.style.display = 'none';
 
@@ -19,7 +29,7 @@ function initReactRoots() {
         root.render(
             <React.StrictMode>
                 <QueryProvider>
-                    <FeedStream />
+                    <SocialApp initialUser={initialUser} />
                 </QueryProvider>
             </React.StrictMode>
         );
@@ -32,6 +42,7 @@ function initReactRoots() {
         let initialUser = null;
         let initialDevices = [];
         let initialApps = [];
+        let initialBilling = null;
 
         try {
             if (accountRootEl.dataset.user) {
@@ -42,6 +53,9 @@ function initReactRoots() {
             }
             if (accountRootEl.dataset.apps) {
                 initialApps = JSON.parse(accountRootEl.dataset.apps);
+            }
+            if (accountRootEl.dataset.billing) {
+                initialBilling = JSON.parse(accountRootEl.dataset.billing);
             }
         } catch (e) {
             console.warn('[Zengfy React] Failed to parse SSR JSON dataset:', e);
@@ -58,6 +72,7 @@ function initReactRoots() {
                         initialUser={initialUser}
                         initialDevices={initialDevices}
                         initialApps={initialApps}
+                        initialBilling={initialBilling}
                     />
                 </QueryProvider>
             </React.StrictMode>

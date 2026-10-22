@@ -3,9 +3,11 @@ import {
     User, Shield, ShieldCheck, Key, Lock, Globe, Camera, 
     CheckCircle2, Loader2, AlertCircle, ExternalLink, ArrowRight, 
     Smartphone, Laptop, Building2, Scale, ShoppingBag, Sparkles,
-    Sliders, HelpCircle, LogOut, ChevronRight
+    Sliders, HelpCircle, LogOut, ChevronRight, CreditCard
 } from 'lucide-react';
 import ActiveDevices from './ActiveDevices';
+
+import BillingManager from './BillingManager';
 import { apiRequest } from '../../lib/api';
 import { cn } from '../../utils/cn';
 
@@ -13,6 +15,7 @@ export default function AccountHub({
     initialUser = null,
     initialDevices = [],
     initialApps = [],
+    initialBilling = null,
     homeUrl = '/',
     socialUrl = '/feed',
 }) {
@@ -319,6 +322,11 @@ export default function AccountHub({
                         { id: 'security', label: 'নিরাপত্তা ও ২FA (Security)', icon: ShieldCheck },
                         { id: 'privacy', label: 'তথ্য ও গোপনীয়তা (Data & privacy)', icon: Sliders },
                         { id: 'devices', label: 'ডিভাইস ও সেশন (Devices)', icon: Smartphone },
+                        {
+                            id: 'billing',
+                            label: 'পেà¦®à§à¦¿à¦ ণ়à¦à§à¦¯ ভ্à¦ºà¦¿à¦ªà§à¦¶à¦¿ ভনà¦½ (Billing)',
+                            icon: CreditCard,
+                        },
                     ].map((tab) => {
                         const Icon = tab.icon;
                         const isActive = activeTab === tab.id;
@@ -420,7 +428,7 @@ export default function AccountHub({
                             </div>
 
                             {/* 2-Column Clean Preview Cards (Fake / Ready for expansion) */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                                 <div className="rounded-3xl bg-white border border-slate-200 p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
                                     <div>
                                         <div className="flex items-center gap-3 mb-3">
@@ -626,6 +634,13 @@ export default function AccountHub({
                     {activeTab === 'devices' && (
                         <div className="rounded-3xl bg-white border border-slate-200 shadow-xs p-6 animate-in fade-in">
                             <ActiveDevices initialDevices={initialDevices} />
+                        </div>
+                    )}
+
+                    {/* 6. BILLING TAB */}
+                    {activeTab === 'billing' && (
+                        <div className="animate-in fade-in">
+                            <BillingManager initialBilling={initialBilling} />
                         </div>
                     )}
 

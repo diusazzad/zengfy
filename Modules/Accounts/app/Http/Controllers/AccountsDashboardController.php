@@ -161,7 +161,7 @@ class AccountsDashboardController extends Controller
                 'id' => 'ecommerce',
                 'name' => 'Ecommerce',
                 'category' => 'Online Store',
-                'desc' => 'অনলাইন শপ, কার্ট ও পেমেন্ট গেটওয়ে',
+                'desc' => 'অনলাইন শপ, কার্ট ও পেমেন্ট গেটওয়ে',
                 'icon' => 'shopping-bag',
                 'icon_bg' => 'bg-rose-50 text-rose-600',
                 'url' => "{$scheme}://ecommerce.{$baseDomain}{$portSuffix}/",
@@ -181,7 +181,7 @@ class AccountsDashboardController extends Controller
                 'id' => 'rent',
                 'name' => 'Rent Portal',
                 'category' => 'Property',
-                'desc' => 'বাড়ি ও ফ্ল্যাট ভাড়া ম্যানেজমেন্ট',
+                'desc' => 'বাড়ি ও ফ্ল্যাট ভাড়া ম্যানেজমেন্ট',
                 'icon' => 'home',
                 'icon_bg' => 'bg-teal-50 text-teal-600',
                 'url' => "{$scheme}://rent.{$baseDomain}{$portSuffix}/",
@@ -201,11 +201,118 @@ class AccountsDashboardController extends Controller
                 'id' => 'mobile',
                 'name' => 'Android App',
                 'category' => 'Mobile APK',
-                'desc' => 'বায়োমেট্রিক স্ক্যান ও পুশ অ্যালার্ট',
+                'desc' => 'বায়োমেট্রিক স্ক্যান ও পুশ অ্যালার্ট',
                 'icon' => 'smartphone',
                 'icon_bg' => 'bg-sky-50 text-sky-600',
                 'url' => "{$scheme}://{$baseDomain}{$portSuffix}/download",
                 'badge' => 'v1.0 APK',
+            ],
+        ];
+
+        // 6. Central Billing & Subscription Dataset (Google/Odoo Style Demo Hub)
+        $billingData = [
+            'wallet_balance' => 250.00,
+            'primary_payment_method' => [
+                'type' => 'bkash',
+                'name' => 'bKash Wallet',
+                'account_number' => '0171***429',
+                'is_default' => true,
+            ],
+            'saved_methods' => [
+                ['id' => 'pm_1', 'type' => 'bkash', 'name' => 'bKash Wallet', 'masked' => '0171***429', 'is_default' => true],
+                ['id' => 'pm_2', 'type' => 'nagad', 'name' => 'Nagad Account', 'masked' => '0182***812', 'is_default' => false],
+                ['id' => 'pm_3', 'type' => 'visa', 'name' => 'City Bank Visa Debit', 'masked' => '**** **** **** 4892', 'is_default' => false],
+            ],
+            'subscriptions' => [
+                [
+                    'id' => 'sub_social_badge',
+                    'module' => 'social',
+                    'module_name' => 'Zengfy Social',
+                    'plan_name' => 'ভেরিফাইড সিটিজেন ব্লু ব্যাজ (NID Verified)',
+                    'price' => '৳ ৫০',
+                    'interval' => 'মাসিক',
+                    'status' => 'active',
+                    'status_label' => 'সক্রিয় (Active)',
+                    'status_color' => 'emerald',
+                    'badge' => 'Verified Citizen',
+                    'next_billing' => '২০ নভেম্বর, ২০২৬',
+                    'features' => [
+                        'ব্লু টিক ভেরিফাইড প্রোফাইল ও ট্রাস্ট ব্যাজ',
+                        'হাইপারলোকাল ওয়ার্ড পোলে সরাসরি ভোটাধিকার',
+                        'সোশ্যাল ফিডে প্রায়োরিটি অ্যালগরিদম প্লেসমেন্ট',
+                    ],
+                    'auto_renew' => true,
+                ],
+                [
+                    'id' => 'sub_school_pro',
+                    'module' => 'school',
+                    'module_name' => 'Zengfy School ERP',
+                    'tenant_name' => 'ধানমন্ডি মডেল স্কুল ও কলেজ (Tenant)',
+                    'plan_name' => 'School Pro ERP (৫০০+ শিক্ষার্থী)',
+                    'price' => '৳ ১,৫০০',
+                    'interval' => 'মাসিক',
+                    'status' => 'active',
+                    'status_label' => 'সক্রিয় (Active)',
+                    'status_color' => 'emerald',
+                    'next_billing' => '০১ নভেম্বর, ২০২৬',
+                    'features' => [
+                        'ডিজিটাল স্মার্ট হাজিরা ও স্বয়ংক্রিয় এসএমএস গেটওয়ে',
+                        'অনলাইন ফি ও টিউশন কালেকশন রসিদ প্রিন্ট',
+                        'টার্ম ফাইনাল গ্রেডিং ও ডিজিটাল মার্কশিট জেনারেটর',
+                    ],
+                    'auto_renew' => true,
+                ],
+                [
+                    'id' => 'sub_law_trial',
+                    'module' => 'law',
+                    'module_name' => 'Zengfy Legal Practice',
+                    'tenant_name' => 'হোসাইন & অ্যাসোসিয়েটস ল চেম্বার',
+                    'plan_name' => 'Law Vault & Case Diary (১৪ দিনের ফ্রি ট্রায়াল)',
+                    'price' => '৳ ১,০০০',
+                    'interval' => 'মাসিক',
+                    'status' => 'trialing',
+                    'status_label' => 'ফ্রি ট্রায়াল (৪ দিন বাকি)',
+                    'status_color' => 'amber',
+                    'next_billing' => '২৫ অক্টোবর, ২০২৬ (ট্রায়াল সমাপ্ত)',
+                    'features' => [
+                        'স্মার্ট কেস ডায়রি ও দৈনিক আদালতের কার্যতালিকা (Cause List)',
+                        'ক্লায়েন্ট ফি ভল্ট ও আইনি ড্রাফট ডকুমেন্ট',
+                        'কনফিডেনশিয়াল এনক্রিপ্টেড কেস আর্কাইভ',
+                    ],
+                    'auto_renew' => false,
+                ],
+            ],
+            'invoices' => [
+                [
+                    'id' => 'inv_104',
+                    'invoice_no' => 'ZENG-INV-2026-104',
+                    'product' => 'Zengfy School ERP Pro Plan',
+                    'date' => '১০ অক্টোবর, ২০২৬',
+                    'amount' => '৳ ১,৫০০.০০',
+                    'method' => 'bKash (TrxID: 9X48194)',
+                    'status' => 'paid',
+                    'status_label' => 'পরিশোধিত (Paid)',
+                ],
+                [
+                    'id' => 'inv_089',
+                    'invoice_no' => 'ZENG-INV-2026-089',
+                    'product' => 'Social Verified Citizen Badge',
+                    'date' => '১৫ সেপ্টেম্বর, ২০২৬',
+                    'amount' => '৳ ৫০.০০',
+                    'method' => 'Nagad (TrxID: NG83018)',
+                    'status' => 'paid',
+                    'status_label' => 'পরিশোধিত (Paid)',
+                ],
+                [
+                    'id' => 'inv_042',
+                    'invoice_no' => 'ZENG-INV-2026-042',
+                    'product' => 'SMS Gateway Credit Pack (500 SMS)',
+                    'date' => '০১ সেপ্টেম্বর, ২০২৬',
+                    'amount' => '৳ ১২৫.০০',
+                    'method' => 'bKash (TrxID: 8B90184)',
+                    'status' => 'paid',
+                    'status_label' => 'পরিশোধিত (Paid)',
+                ],
             ],
         ];
 
@@ -236,6 +343,7 @@ class AccountsDashboardController extends Controller
                 'devices' => $activeDevices,
                 'ecosystem_apps' => $ecosystemApps,
                 'profile_completion' => $profileCompletion,
+                'billing' => $billingData,
             ]);
         }
 
@@ -248,10 +356,26 @@ class AccountsDashboardController extends Controller
             'securityLogs',
             'profileCompletion',
             'ecosystemApps',
+            'billingData',
             'homeUrl',
             'socialUrl',
             'accountUrl'
         ));
+    }
+
+    /**
+     * Simulate Subscription Payment or Renewal (Demo).
+     */
+    public function simulateSubscribe(Request $request)
+    {
+        $planId = $request->input('plan_id', 'sub_social_badge');
+        $gateway = $request->input('gateway', 'bkash');
+
+        return response()->json([
+            'success' => true,
+            'message' => 'পেমেন্ট সফলভাবে সম্পন্ন হয়েছে! আপনার সাবস্ক্রিপশন সক্রিয় করা হয়েছে।',
+            'transaction_id' => 'TRX-' . strtoupper(bin2hex(random_bytes(4))) . '-' . strtoupper($gateway),
+        ]);
     }
 
     /**
@@ -398,10 +522,10 @@ class AccountsDashboardController extends Controller
             if ($request->wantsJson() || $request->ajax()) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'বর্তমান পাসওয়ার্ডটি সঠিক নয়।',
+                    'message' => 'বর্তমান পাসওয়ার্ডটি সঠিক নয়।',
                 ], 422);
             }
-            return redirect()->back()->withErrors(['current_password' => 'বর্তমান পাসওয়ার্ডটি সঠিক নয়।']);
+            return redirect()->back()->withErrors(['current_password' => 'বর্তমান পাসওয়ার্ডটি সঠিক নয়।']);
         }
 
         $user->update(['password' => Hash::make($request->password)]);
@@ -418,11 +542,11 @@ class AccountsDashboardController extends Controller
         if ($request->wantsJson() || $request->ajax()) {
             return response()->json([
                 'success' => true,
-                'message' => 'পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে।',
+                'message' => 'পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে।',
             ]);
         }
 
-        return redirect()->back()->with('success', 'পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে।');
+        return redirect()->back()->with('success', 'পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে।');
     }
 
     /**
