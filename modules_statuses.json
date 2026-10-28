@@ -1,0 +1,20 @@
+{
+    "Auth": true,
+    "Law": true,
+    "School": true,
+    "Organization": true,
+    "Social": true,
+    "Landing": true,
+    "POS": true,
+    "Civil": true,
+    "NGO": true,
+    "Rent": true,
+    "Hotel": true,
+    "Shop": true,
+    "Ecommerce": true,
+    "Skill": true,
+    "Journal": true,
+    "Habit": true,
+    "Schedule": true,
+    "Accounts": true
+}

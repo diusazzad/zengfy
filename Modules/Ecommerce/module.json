@@ -1,0 +1,11 @@
+{
+    "name": "Ecommerce",
+    "alias": "ecommerce",
+    "description": "Zengfy Simple Multi-Vendor Marketplace (Daraz-Style with Anti-Fraud & Smart Escrow)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Ecommerce\\Providers\\EcommerceServiceProvider"
+    ],
+    "files": []
+}

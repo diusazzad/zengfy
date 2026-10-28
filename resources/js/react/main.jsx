@@ -1,0 +1,125 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { QueryProvider } from './providers/QueryProvider';
+import SocialApp from './components/social/SocialApp';
+import FeedStream from './components/social/FeedStream';
+import AccountHub from './components/account/AccountHub';
+import ChatDrawer from './components/chat/ChatDrawer';
+import AuthHub from './components/auth/AuthHub';
+
+// Safe DOM initialization
+function initReactRoots() {
+    // 1. Social Feed Root Mount
+    const feedRootEl = document.getElementById('react-feed-root');
+    if (feedRootEl && !feedRootEl.dataset.reactMounted) {
+        feedRootEl.dataset.reactMounted = 'true';
+        let initialUser = null;
+        try {
+            if (feedRootEl.dataset.user) {
+                initialUser = JSON.parse(feedRootEl.dataset.user);
+            }
+        } catch (e) {
+            console.warn('[Zengfy Social] Failed to parse initialUser:', e);
+        }
+
+        const fallback = document.getElementById('blade-feed-fallback');
+        if (fallback) fallback.style.display = 'none';
+
+        const root = createRoot(feedRootEl);
+        root.render(
+            <React.StrictMode>
+                <QueryProvider>
+                    <SocialApp initialUser={initialUser} />
+                </QueryProvider>
+            </React.StrictMode>
+        );
+    }
+
+    // 2. Sovereign Account Hub Root Mount
+    const accountRootEl = document.getElementById('react-account-root');
+    if (accountRootEl && !accountRootEl.dataset.reactMounted) {
+        accountRootEl.dataset.reactMounted = 'true';
+        let initialUser = null;
+        let initialDevices = [];
+        let initialApps = [];
+        let initialBilling = null;
+
+        try {
+            if (accountRootEl.dataset.user) {
+                initialUser = JSON.parse(accountRootEl.dataset.user);
+            }
+            if (accountRootEl.dataset.devices) {
+                initialDevices = JSON.parse(accountRootEl.dataset.devices);
+            }
+            if (accountRootEl.dataset.apps) {
+                initialApps = JSON.parse(accountRootEl.dataset.apps);
+            }
+            if (accountRootEl.dataset.billing) {
+                initialBilling = JSON.parse(accountRootEl.dataset.billing);
+            }
+        } catch (e) {
+            console.warn('[Zengfy React] Failed to parse SSR JSON dataset:', e);
+        }
+
+        const fallback = document.getElementById('blade-account-fallback');
+        if (fallback) fallback.style.display = 'none';
+
+        const root = createRoot(accountRootEl);
+        root.render(
+            <React.StrictMode>
+                <QueryProvider>
+                    <AccountHub 
+                        initialUser={initialUser}
+                        initialDevices={initialDevices}
+                        initialApps={initialApps}
+                        initialBilling={initialBilling}
+                    />
+                </QueryProvider>
+            </React.StrictMode>
+        );
+    }
+
+    // 3. Floating Real-time Chat Drawer Root Mount
+    let chatRootEl = document.getElementById('react-chat-root');
+    if (!chatRootEl && (feedRootEl || accountRootEl || document.querySelector('[data-realtime="true"]'))) {
+        chatRootEl = document.createElement('div');
+        chatRootEl.id = 'react-chat-root';
+        document.body.appendChild(chatRootEl);
+    }
+
+    if (chatRootEl && !chatRootEl.dataset.reactMounted) {
+        chatRootEl.dataset.reactMounted = 'true';
+        const root = createRoot(chatRootEl);
+        root.render(
+            <React.StrictMode>
+                <QueryProvider>
+                    <ChatDrawer />
+                </QueryProvider>
+            </React.StrictMode>
+        );
+    }
+
+    // 4. Sovereign Auth Hub (Registration & Login UI Suite)
+    const authRootEl = document.getElementById('react-auth-root');
+    if (authRootEl && !authRootEl.dataset.reactMounted) {
+        authRootEl.dataset.reactMounted = 'true';
+        const initialMode = authRootEl.dataset.initialMode || 'register';
+        const fallback = document.getElementById('blade-auth-fallback');
+        if (fallback) fallback.style.display = 'none';
+
+        const root = createRoot(authRootEl);
+        root.render(
+            <React.StrictMode>
+                <QueryProvider>
+                    <AuthHub initialMode={initialMode} />
+                </QueryProvider>
+            </React.StrictMode>
+        );
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReactRoots);
+} else {
+    initReactRoots();
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Accounts",
+    "alias": "accounts",
+    "description": "Zengfy Central Sovereign Identity, Profile Management, Security & 2FA Hub",
+    "keywords": ["accounts", "auth", "sso", "profile", "security"],
+    "priority": 1,
+    "providers": [],
+    "files": []
+}

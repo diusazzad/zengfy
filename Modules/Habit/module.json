@@ -1,0 +1,11 @@
+{
+    "name": "Habit",
+    "alias": "habit",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Habit\\Providers\\HabitServiceProvider"
+    ],
+    "files": []
+}

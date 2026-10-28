@@ -1,0 +1,14 @@
+{
+  "Modules/Auth/resources/assets/js/app.js": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "Modules/Auth/resources/assets/js/app.js",
+    "isEntry": true
+  },
+  "Modules/Auth/resources/assets/sass/app.scss": {
+    "file": "assets/app-DP2rzg_V.js",
+    "name": "app",
+    "src": "Modules/Auth/resources/assets/sass/app.scss",
+    "isEntry": true
+  }
+}

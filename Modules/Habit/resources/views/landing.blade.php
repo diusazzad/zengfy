@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zengfy Habit | 5 Daily Prayers & Daily Micro-Habit Consistency Platform</title>
+    <meta name="description" content="5 Daily Prayers (৫ ওয়াক্ত সালাত) & Daily Micro-Habit Streak Platform. 100% ad-free, private, offline-first habit consistency engine with family & study circle accountability rings.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Vite Assets (React 19 Fast Refresh + Tailwind CSS) -->
+    @viteReactRefresh
+    @vite(['resources/css/app.css', 'Modules/Habit/resources/js/main.jsx'])
+</head>
+<body class="bg-[#FAFAF9] text-slate-900 antialiased selection:bg-[#10B981] selection:text-white min-h-screen">
+    <!-- Accessible Skip to Main Content Link (WCAG 2.1 AA) -->
+    <a href="#main-content" 
+       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#065F46] focus:text-white focus:rounded-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 font-bold text-sm">
+        Skip to main content / মূল কন্টেন্টে যান
+    </a>
+
+    <!-- React 19 Habit Landing Application Mount Point -->
+    <div id="habit-app" 
+         data-initial-data="{{ json_encode($initialData ?? null, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) }}">
+        <!-- Pre-hydration Semantic Main Landmark (Simple & Clean) -->`n        <main id="main-content" role="main" class="min-h-screen">`n        </main>
+    </div>
+</body>
+</html>

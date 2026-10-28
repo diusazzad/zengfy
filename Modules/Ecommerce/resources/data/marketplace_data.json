@@ -1,0 +1,374 @@
+{
+  "platform": {
+    "name": "Zengfy Marketplace",
+    "tagline": "প্রতারণাহীন কেনাকাটা • জিরো রিটার্ন লস",
+    "subdomain": "ecommerce.{{BASE_DOMAIN}}:8000",
+    "theme": {
+      "primary": "#7C3AED",
+      "accent": "#EA580C",
+      "daraz_orange": "#F85606",
+      "badge": "NID-Verified Multi-Vendor Hub"
+    },
+    "stats": [
+      { "label": "ভেরিফায়েড মার্চেন্ট", "value": "১,৪৫০+", "icon": "Store" },
+      { "label": "কমিশন রেট", "value": "মাত্র ৩.৫%", "icon": "Percent" },
+      { "label": "রিটার্ন প্রোটেকশন", "value": "১০০%", "icon": "ShieldCheck" },
+      { "label": "দ্রুত পে-আউট", "value": "২৪ ঘণ্টার মধ্যে", "icon": "Zap" }
+    ]
+  },
+  "top_bar": {
+    "announcement": "🇧🇩 দারাজের চেয়ে ৫০% কম কমিশনে NID-ভেরিফায়েড সেলারদের পণ্য | সারা দেশে ক্যাশ অন ডেলিভারি",
+    "seller_cta": "মার্চেন্ট জোন / দোকান খুলুন",
+    "helpline": "০৯৬৭৮-১১২২৩৩",
+    "track_order_url": "/track-order"
+  },
+  "trending_keywords": [
+    "স্মার্টওয়াচ",
+    "টি-শার্ট",
+    "পাঞ্জাবি",
+    "ইয়ারবাডস",
+    "খাঁটি মধু",
+    "অফিস চেয়ার",
+    "গেমিং কিবোর্ড",
+    "লেদার ওয়ালেট"
+  ],
+  "trust_guarantees": [
+    {
+      "id": "cod",
+      "title": "ক্যাশ অন ডেলিভারি",
+      "subtitle": "সারা দেশে ৬৪ জেলায় পণ্য হাতে পেয়ে টাকা দিন",
+      "icon": "Truck"
+    },
+    {
+      "id": "authentic",
+      "title": "১০০% আসল পণ্য",
+      "subtitle": "NID-ভেরিফায়েড ব্র্যান্ড ও সরাসরি মার্চেন্ট ওয়্যারহাউস",
+      "icon": "ShieldCheck"
+    },
+    {
+      "id": "return",
+      "title": "৭ দিনের ফ্রি রিটার্ন",
+      "subtitle": "পছন্দ না হলে কোনো ঝামেলা ছাড়াই সম্পূর্ণ রিফান্ড",
+      "icon": "RotateCcw"
+    },
+    {
+      "id": "delivery",
+      "title": "২৪-৭২ ঘণ্টায় ডেলিভারি",
+      "subtitle": "পাঠাও, রেডেক্স ও স্টিডফাস্ট এক্সপ্রেস ট্র্যাকিং",
+      "icon": "Zap"
+    },
+    {
+      "id": "secure_pay",
+      "title": "নিরাপদ এসক্রো পেমেন্ট",
+      "subtitle": "বিকাশ, নগদ বা কার্ডে শতভাগ সুরক্ষিত লেনদেন",
+      "icon": "Lock"
+    }
+  ],
+  "hero_banners": [
+    {
+      "id": "banner-1",
+      "title": "মেগা টেক ও গ্যাজেট উৎসব",
+      "subtitle": "অরিজিনাল স্মার্টওয়াচ, ইয়ারবাডস ও চার্জারে সর্বোচ্চ ৬০% পর্যন্ত মেগা ছাড়",
+      "badge": "ফ্ল্যাশ ডিল লাইভ",
+      "cta": "এখনই কিনুন",
+      "bg_gradient": "from-[#F85606] via-orange-600 to-purple-950",
+      "accent_color": "#EA580C"
+    },
+    {
+      "id": "banner-2",
+      "title": "দারাজের চেয়ে ৫০% কম কমিশন",
+      "subtitle": "মার্চেন্টদের জন্য সুখবর: জিরো রিটার্ন লস ও ২৪ ঘণ্টায় সরাসরি বিকাশ/ব্যাংক পে-আউট",
+      "badge": "সেলার স্পেশাল",
+      "cta": "৩ মিনিটে সেলার হন",
+      "bg_gradient": "from-purple-950 via-indigo-900 to-slate-950",
+      "accent_color": "#7C3AED"
+    },
+    {
+      "id": "banner-3",
+      "title": "খাঁটি দেশীয় অর্গানিক ও হস্তশিল্প",
+      "subtitle": "বগুড়া, সিলেট ও সুন্দরবনের ভেরিফায়েড খামারি ও কারিগরদের সরাসরি পণ্য",
+      "badge": "১০০% পিওর",
+      "cta": "কালেকশন দেখুন",
+      "bg_gradient": "from-emerald-950 via-teal-900 to-slate-900",
+      "accent_color": "#10B981"
+    }
+  ],
+  "categories": [
+    { "id": "gadgets", "name": "টেক ও গ্যাজেট", "icon": "Smartphone", "count": "৩,৪০০+ আইটেম", "slug": "gadgets" },
+    { "id": "mens-fashion", "name": "মেনস ফ্যাশন", "icon": "Shirt", "count": "২,১০০+ আইটেম", "slug": "mens-fashion" },
+    { "id": "womens-fashion", "name": "ওমেনস ফ্যাশন", "icon": "ShoppingBag", "count": "২,৮০০+ আইটেম", "slug": "womens-fashion" },
+    { "id": "home-living", "name": "হোম ও লিভিং", "icon": "Home", "count": "১,২০০+ আইটেম", "slug": "home-living" },
+    { "id": "groceries", "name": "অর্গানিক গ্রোসারি", "icon": "Apple", "count": "৮৫০+ আইটেম", "slug": "groceries" },
+    { "id": "beauty", "name": "বিউটি ও হেলথ", "icon": "Sparkles", "count": "১,৫০০+ আইটেম", "slug": "beauty" },
+    { "id": "kids", "name": "কিডস ও বেবি", "icon": "Smile", "count": "৯২০+ আইটেম", "slug": "kids" },
+    { "id": "books", "name": "বই ও স্টেশনারি", "icon": "BookOpen", "count": "১,১০০+ আইটেম", "slug": "books" }
+  ],
+  "official_stores": [
+    {
+      "id": "os-1",
+      "name": "Xiaomi Official Store",
+      "tagline": "স্মার্টফোন, ওয়াচ ও ইকোসিস্টেম",
+      "badge": "100% Authentic",
+      "followers": "৪৫.২k",
+      "logo": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=200&auto=format&fit=crop&q=80",
+      "banner": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "os-2",
+      "name": "Apex Footwear Ltd",
+      "tagline": "অরিজিনাল লেদার জুতো ও স্যান্ডেল",
+      "badge": "Brand Flagship",
+      "followers": "৩৮.৭k",
+      "logo": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&auto=format&fit=crop&q=80",
+      "banner": "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "os-3",
+      "name": "Walton Plaza Official",
+      "tagline": "হোম অ্যাপ্লায়েন্স ও টেলিভিশন",
+      "badge": "Made in BD",
+      "followers": "৬২.৪k",
+      "logo": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=200&auto=format&fit=crop&q=80",
+      "banner": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "os-4",
+      "name": "Unilever Bangladesh Store",
+      "tagline": "বিউটি, হাইজিন ও পারসোনাল কেয়ার",
+      "badge": "Verified FMCG",
+      "followers": "৫১.৮k",
+      "logo": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop&q=80",
+      "banner": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&auto=format&fit=crop&q=80"
+    }
+  ],
+  "flash_sale": {
+    "title": "মেগা ফ্ল্যাশ সেল (On Sale Now)",
+    "ends_in_seconds": 29840,
+    "items": [
+      {
+        "id": "fs-1",
+        "title": "T900 Ultra 2 Smartwatch (HD Full Touch)",
+        "category": "টেক ও গ্যাজেট",
+        "price": 1350,
+        "original_price": 2400,
+        "discount_pct": 44,
+        "sold_count": 86,
+        "stock_total": 100,
+        "rating": 4.8,
+        "reviews": 114,
+        "seller": {
+          "name": "TechZone BD",
+          "location": "এলিফ্যান্ট রোড, ঢাকা",
+          "verified": true
+        },
+        "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        "id": "fs-2",
+        "title": "ANC Dual Mic Wireless Gaming Earbuds",
+        "category": "টেক ও গ্যাজেট",
+        "price": 1890,
+        "original_price": 3200,
+        "discount_pct": 41,
+        "sold_count": 64,
+        "stock_total": 80,
+        "rating": 4.9,
+        "reviews": 89,
+        "seller": {
+          "name": "Gadget Planet",
+          "location": "ধানমন্ডি, ঢাকা",
+          "verified": true
+        },
+        "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        "id": "fs-3",
+        "title": "সরিষার খাঁটি কোল্ড-প্রেসড তেল (৫ লিটার জার)",
+        "category": "অর্গানিক গ্রোসারি",
+        "price": 1200,
+        "original_price": 1650,
+        "discount_pct": 27,
+        "sold_count": 48,
+        "stock_total": 50,
+        "rating": 5.0,
+        "reviews": 62,
+        "seller": {
+          "name": "প্রকৃতি সম্ভার",
+          "location": "শিবগঞ্জ, বগুড়া",
+          "verified": true
+        },
+        "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&auto=format&fit=crop&q=80"
+      },
+      {
+        "id": "fs-4",
+        "title": "সুপারফাস্ট 65W GaN Multi-Port Charger",
+        "category": "টেক ও গ্যাজেট",
+        "price": 1450,
+        "original_price": 2300,
+        "discount_pct": 37,
+        "sold_count": 91,
+        "stock_total": 100,
+        "rating": 4.8,
+        "reviews": 140,
+        "seller": {
+          "name": "PowerLink BD",
+          "location": "মতিঝিল, ঢাকা",
+          "verified": true
+        },
+        "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80"
+      }
+    ]
+  },
+  "recommended_feed": [
+    {
+      "id": "rf-1",
+      "title": "প্রিমিয়াম সেমি-ফিটেড সুতি পাঞ্জাবি (ঈদ কালেকশন)",
+      "category": "মেনস ফ্যাশন",
+      "price": 1850,
+      "original_price": 2600,
+      "discount_pct": 29,
+      "rating": 4.9,
+      "reviews": 78,
+      "seller": {
+        "name": "Heritage Weave",
+        "location": "জিন্দাবাজার, সিলেট",
+        "verified": true,
+        "response_rate": "১০০%"
+      },
+      "badge": "বেস্ট সেলার",
+      "delivery": "ফ্রি ডেলিভারি",
+      "image": "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "rf-2",
+      "title": "Wireless Ergonomic Vertical Mouse (Silent Click)",
+      "category": "টেক ও গ্যাজেট",
+      "price": 950,
+      "original_price": 1500,
+      "discount_pct": 36,
+      "rating": 4.7,
+      "reviews": 115,
+      "seller": {
+        "name": "TechZone BD",
+        "location": "এলিফ্যান্ট রোড, ঢাকা",
+        "verified": true,
+        "response_rate": "৯৮%"
+      },
+      "badge": "টপ রেটেড",
+      "delivery": "২৪ ঘণ্টায় ডেলিভারি",
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "rf-3",
+      "title": "হাতে তৈরি খাঁটি চামড়ার স্লিম ট্র্যাভেল ওয়ালেট",
+      "category": "মেনস ফ্যাশন",
+      "price": 850,
+      "original_price": 1350,
+      "discount_pct": 37,
+      "rating": 4.8,
+      "reviews": 92,
+      "seller": {
+        "name": "Bengal Leather Craft",
+        "location": "হাজারীবাগ, ঢাকা",
+        "verified": true,
+        "response_rate": "৯৯%"
+      },
+      "badge": "খাঁটি চামড়া",
+      "delivery": "ক্যাশ অন ডেলিভারি",
+      "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "rf-4",
+      "title": "সুন্দরবনের প্রাকৃতিক চাকভাঙা খলিশা ফুলের মধু (১ কেজি)",
+      "category": "অর্গানিক গ্রোসারি",
+      "price": 1100,
+      "original_price": 1450,
+      "discount_pct": 24,
+      "rating": 5.0,
+      "reviews": 156,
+      "seller": {
+        "name": "প্রকৃতি সম্ভার",
+        "location": "শিবগঞ্জ, বগুড়া",
+        "verified": true,
+        "response_rate": "১০০%"
+      },
+      "badge": "১০০% খাঁটি",
+      "delivery": "ফ্রি ডেলিভারি",
+      "image": "https://images.unsplash.com/photo-1587049352847-4a222e784d38?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "rf-5",
+      "title": "Ergonomic High-Back Breathable Mesh Office Chair",
+      "category": "হোম ও লিভিং",
+      "price": 4500,
+      "original_price": 6800,
+      "discount_pct": 34,
+      "rating": 4.8,
+      "reviews": 64,
+      "seller": {
+        "name": "Modern Space Furnishings",
+        "location": "মিরপুর-১০, ঢাকা",
+        "verified": true,
+        "response_rate": "৯৫%"
+      },
+      "badge": "ওয়ারেন্টিসহ",
+      "delivery": "ইনস্টলেশন সাপোর্ট",
+      "image": "https://images.unsplash.com/photo-1580481077195-c3a821a58875?w=600&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "rf-6",
+      "title": "RGB Mechanical Hot-Swappable Gaming Keyboard (Red Switch)",
+      "category": "টেক ও গ্যাজেট",
+      "price": 2850,
+      "original_price": 4200,
+      "discount_pct": 32,
+      "rating": 4.9,
+      "reviews": 182,
+      "seller": {
+        "name": "Gadget Planet",
+        "location": "ধানমন্ডি, ঢাকা",
+        "verified": true,
+        "response_rate": "৯৮%"
+      },
+      "badge": "গেমিং প্রো",
+      "delivery": "২৪ ঘণ্টায় ডেলিভারি",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80"
+    }
+  ],
+  "daraz_comparison": {
+    "title": "কেন হাজারো মার্চেন্ট দারাজ ছেড়ে জেনগফাই মার্কেটপ্লেসে আসছে?",
+    "subtitle": "স্বচ্ছ কমিশন, নিরাপদ কুরিয়ার এবং দ্রুততম পে-আউট",
+    "metrics": [
+      {
+        "feature": "মার্চেন্ট কমিশন রেট",
+        "daraz": "১৫% থেকে ২২% পর্যন্ত অতিরিক্ত চার্জ",
+        "zengfy": "মাত্র ৩.৫% ফ্লাট কমিশন (৫০% কম খরচ)",
+        "winner": "zengfy"
+      },
+      {
+        "feature": "ভুয়া পার্সেল রিটার্ন প্রটেকশন (RTO)",
+        "daraz": "মার্চেন্টের পকেট থেকে কুরিয়ার লস কাটে",
+        "zengfy": "অটো অ্যান্টি-ফ্রড গার্ড + অগ্রিম কুরিয়ার চার্জ আদায়",
+        "winner": "zengfy"
+      },
+      {
+        "feature": "মার্চেন্ট পে-আউট সময়কাল",
+        "daraz": "১৪ থেকে ২১ দিন টাকা আটকে রাখে",
+        "zengfy": "২৪ ঘণ্টার মধ্যে সরাসরি বিকাশ বা ব্যাংক অ্যাকাউন্টে",
+        "winner": "zengfy"
+      },
+      {
+        "feature": "সেলার ও বায়ার ভেরিফিকেশন",
+        "daraz": "ভুয়া সেলার ও ফেক রিভিউর ছড়াছড়ি",
+        "zengfy": "১০০% জাতীয় পরিচয়পত্র (NID) ভেরিফাইড মার্চেন্ট",
+        "winner": "zengfy"
+      }
+    ]
+  },
+  "seller_cta_card": {
+    "title": "আপনি কি কোনো পণ্যের মার্চেন্ট বা আমদানিকারক?",
+    "subtitle": "মাত্র ৩ মিনিটে আপনার ভেরিফায়েড অনলাইন স্টোর খুলুন। প্রথম ৩০ দিনের জন্য জিরো কমিশন ও ১০০% ফ্রি প্রমোশনাল ব্যানার।",
+    "button_text": "ফ্রি সেলার স্টোর খুলুন",
+    "merchant_portal_url": "https://auth.{{BASE_DOMAIN}}:8000/register?intent=merchant"
+  }
+}

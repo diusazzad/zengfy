@@ -1,0 +1,1805 @@
+openapi: 3.1.0
+info:
+  title: Zengfy Unified Platform API
+  description: Official OpenAPI 3.1 specification for the Zengfy Core Identity and Ecosystem Platform.
+  version: 1.0.0
+  contact:
+    name: Zengfy Engineering
+    url: https://zengfy.top
+servers:
+  - url: http://localhost:7000/api/v1
+    description: Local Multi-Container Docker Cluster (Nginx Load Balancer)
+  - url: https://zengfy.top/api/v1
+    description: Production Environment
+
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user identity
+      description: Creates a new user with UUID primary key. Requires X-Idempotency-Key header for duplicate protection. Rate limited to 5 requests/min.
+      tags:
+        - Authentication & Identity
+      parameters:
+        - name: X-Idempotency-Key
+          in: header
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: Unique client-generated UUID for idempotency replay protection.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+                - password
+              properties:
+                name:
+                  type: string
+                  example: "John Doe"
+                email:
+                  type: string
+                  format: email
+                  example: "user@zengfy.top"
+                password:
+                  type: string
+                  format: password
+                  minLength: 8
+                  example: "SecretP@ss123"
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSuccessResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/login:
+    post:
+      summary: Authenticate identity and generate device session token
+      description: Validates user credentials, records client device fingerprint, and returns a scoped Sanctum Bearer token.
+      tags:
+        - Authentication & Identity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: "user@zengfy.top"
+                password:
+                  type: string
+                  format: password
+                  example: "SecretP@ss123"
+                device_name:
+                  type: string
+                  example: "Chrome Windows / Samsung S24"
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSuccessResponse'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/me:
+    get:
+      summary: Get currently authenticated user and active device details
+      tags:
+        - Authentication & Identity
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Authenticated user details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileResponse'
+        '401':
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/logout:
+    post:
+      summary: Revoke current session token
+      tags:
+        - Authentication & Identity
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully logged out from current device
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleSuccessResponse'
+
+  /auth/logout-all:
+    post:
+      summary: Revoke all active sessions across all devices (Logout Everywhere)
+      tags:
+        - Authentication & Identity
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully revoked all device sessions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleSuccessResponse'
+
+  /auth/sso/ticket:
+    post:
+      summary: Generate single-use cryptographic SSO ticket for ecosystem subdomain
+      description: Issues a 60-second single-use ticket for seamless cross-subdomain authentication (e.g. school.zengfy.top).
+      tags:
+        - Single Sign-On (SSO)
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - target_subdomain
+              properties:
+                target_subdomain:
+                  type: string
+                  enum: [school, pos, law, social, hotel, rent, civil, ngo, journal, skill, emergency]
+                  example: "school"
+      responses:
+        '200':
+          description: SSO ticket generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "SSO ticket generated successfully"
+                  data:
+                    type: object
+                    properties:
+                      ticket:
+                        type: string
+                        example: "sso_tkt_7f3b890123456789abcdef..."
+                      target_subdomain:
+                        type: string
+                        example: "school"
+                      expires_in:
+                        type: integer
+                        example: 60
+                      redirect_url:
+                        type: string
+                        example: "https://school.zengfy.top/auth/sso/callback?ticket=sso_tkt_..."
+                  meta:
+                    $ref: '#/components/schemas/MetaEnvelope'
+        '401':
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid or unwhitelisted subdomain
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/sso/exchange:
+    post:
+      summary: Exchange single-use SSO ticket for a scoped session token
+      description: Consumes the ticket atomically (replay defense) and returns an authenticated session for the target subdomain.
+      tags:
+        - Single Sign-On (SSO)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ticket
+                - subdomain
+              properties:
+                ticket:
+                  type: string
+                  example: "sso_tkt_7f3b890123456789abcdef..."
+                subdomain:
+                  type: string
+                  example: "school"
+                device_name:
+                  type: string
+                  example: "Chrome on macOS (School)"
+      responses:
+        '200':
+          description: SSO session established successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSuccessResponse'
+        '401':
+          description: Invalid or expired ticket
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Ticket domain mismatch (spoofing attempt)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/nid/verify:
+    post:
+      summary: Verify citizen National ID and apply AES-256 PII encryption & blue badge
+      description: Validates Smart NID or Legacy NID against the Election Commission registry, encrypts sensitive data, checks blind index, and issues verified blue badge.
+      tags:
+        - National ID (NID) Verification
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nid_number
+                - date_of_birth
+              properties:
+                nid_number:
+                  type: string
+                  example: "1234567890"
+                date_of_birth:
+                  type: string
+                  format: date
+                  example: "1995-08-15"
+      responses:
+        '200':
+          description: National ID verified successfully. Blue badge issued.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "National ID verified successfully. Blue badge issued."
+                  data:
+                    type: object
+                    properties:
+                      nid_verified:
+                        type: boolean
+                        example: true
+                      verified_badge:
+                        type: boolean
+                        example: true
+                      masked_nid:
+                        type: string
+                        example: "******7890"
+                      nid_verified_at:
+                        type: string
+                        format: date-time
+                      citizen_name:
+                        type: string
+                        example: "Citizen 7890"
+                      status:
+                        type: string
+                        example: "VERIFIED"
+                  meta:
+                    $ref: '#/components/schemas/MetaEnvelope'
+        '400':
+          description: Account already verified
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: NID already linked to another account (blind index duplicate detection)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid NID format or record not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/nid/status:
+    get:
+      summary: Retrieve current citizen NID verification status and masked identifier
+      tags:
+        - National ID (NID) Verification
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Current verification status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "NID verification status retrieved successfully"
+                  data:
+                    type: object
+                    properties:
+                      nid_verified:
+                        type: boolean
+                        example: true
+                      verified_badge:
+                        type: boolean
+                        example: true
+                      masked_nid:
+                        type: string
+                        example: "******7890"
+                      nid_verified_at:
+                        type: string
+                        format: date-time
+                      date_of_birth:
+                        type: string
+                        example: "1995-08-15"
+                  meta:
+                    $ref: '#/components/schemas/MetaEnvelope'
+
+  /organizations:
+    get:
+      summary: List all organizations the authenticated user belongs to
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User organizations retrieved successfully
+    post:
+      summary: Provision a new organization and assign caller as active owner
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - slug
+              properties:
+                name:
+                  type: string
+                  example: "Dhaka Residential Model College"
+                slug:
+                  type: string
+                  example: "drmc-dhaka"
+                domain_type:
+                  type: string
+                  enum: [school, law_firm, retail_pos, clinic, enterprise]
+                  example: "school"
+                settings:
+                  type: object
+      responses:
+        '201':
+          description: Organization provisioned successfully
+
+  /organizations/{organization}:
+    get:
+      summary: Retrieve organization details (requires active membership)
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization details retrieved
+        '403':
+          description: Tenant access denied (not a member)
+        '404':
+          description: Organization not found
+
+  /organizations/{organization}/members:
+    get:
+      summary: List all members of the organization
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Members list
+    post:
+      summary: Invite/add a member to the organization (owner or admin only)
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user_id
+              properties:
+                user_id:
+                  type: string
+                  format: uuid
+                role:
+                  type: string
+                  enum: [owner, admin, member, guest]
+                  default: member
+      responses:
+        '201':
+          description: Member added successfully
+        '403':
+          description: Insufficient permissions (caller not owner/admin)
+
+  /organizations/{organization}/departments:
+    get:
+      summary: List departments for the active tenant (auto-scoped by Global TenantScope)
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Departments list scoped strictly to active tenant
+    post:
+      summary: Create a department for the active tenant (auto-stamped with tenant ID)
+      tags:
+        - Multi-Tenant Organizations
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: "Faculty of Science"
+                code:
+                  type: string
+                  example: "SCI-01"
+      responses:
+        '201':
+          description: Department created and auto-stamped
+
+  /permissions:
+    get:
+      summary: List all available system capabilities and permissions grouped by module
+      tags:
+        - Granular RBAC
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Permissions catalog retrieved successfully
+
+  /organizations/{organization}/roles:
+    get:
+      summary: List all roles accessible to this tenant (system templates + custom tenant roles)
+      tags:
+        - Granular RBAC
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tenant roles retrieved successfully
+    post:
+      summary: Create a custom tenant role and bind granular permissions (requires roles.manage)
+      tags:
+        - Granular RBAC
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - slug
+              properties:
+                name:
+                  type: string
+                  example: "Academic Incharge"
+                slug:
+                  type: string
+                  example: "academic-incharge"
+                description:
+                  type: string
+                  example: "Coordinates curriculum and exam reviews"
+                permissions:
+                  type: array
+                  items:
+                    type: string
+                  example: ["attendance.mark", "exam.grade"]
+      responses:
+        '201':
+          description: Custom role created successfully
+        '403':
+          description: Forbidden (caller lacks roles.manage permission)
+
+  /organizations/{organization}/members/{membership}/roles:
+    post:
+      summary: Assign a role to an organization member (requires roles.manage)
+      tags:
+        - Granular RBAC
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: membership
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - role_id
+              properties:
+                role_id:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Role assigned to member successfully
+        '403':
+          description: Forbidden (insufficient permissions)
+
+  /organizations/{organization}/members/{membership}/roles/{role}:
+    delete:
+      summary: Revoke a role from an organization member (requires roles.manage)
+      tags:
+        - Granular RBAC
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: membership
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: role
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Role revoked from member successfully
+        '403':
+          description: Forbidden (insufficient permissions)
+
+  /profile:
+    put:
+      summary: Update authenticated citizen profile, handle, bio, and hyperlocal ward info
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Sazzad Hossain"
+                handle:
+                  type: string
+                  example: "sazzad_eng"
+                bio:
+                  type: string
+                  example: "Senior Systems Engineer building Zengfy 10M-Scale Ecosystem"
+                ward_code:
+                  type: string
+                  example: "WARD-19"
+                thana_code:
+                  type: string
+                  example: "Dhanmondi"
+                district_code:
+                  type: string
+                  example: "Dhaka"
+      responses:
+        '200':
+          description: Profile updated successfully
+
+  /users/{identifier}/profile:
+    get:
+      summary: Retrieve citizen public profile with $O(1)$ cached counters and relationship state
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          description: UUID or @handle
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Profile retrieved successfully
+
+  /users/{id}/follow:
+    post:
+      summary: Follow a citizen or entity (atomic counter increment)
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Followed user successfully
+    delete:
+      summary: Unfollow a citizen or entity (atomic counter decrement)
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Unfollowed user successfully
+
+  /users/{id}/followers:
+    get:
+      summary: List followers with cursor pagination
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Followers list
+
+  /users/{id}/following:
+    get:
+      summary: List followed users with cursor pagination
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Following list
+
+  /users/{id}/friend-request:
+    post:
+      summary: Send a bidirectional friend request
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Friend request sent successfully
+
+  /friend-requests:
+    get:
+      summary: List pending incoming friend requests
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Pending friend requests list
+
+  /friend-requests/{id}/accept:
+    post:
+      summary: Accept a pending friend request
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Friend request accepted
+
+  /friend-requests/{id}/decline:
+    post:
+      summary: Decline a pending friend request
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Friend request declined
+
+  /users/{id}/friends:
+    get:
+      summary: List mutual friends
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Mutual friends list
+    delete:
+      summary: Remove mutual friendship
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Friend removed successfully
+
+  /media/presign:
+    post:
+      summary: Generate direct presigned S3/MinIO upload URL
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - file_name
+                - mime_type
+                - file_size_bytes
+              properties:
+                file_name:
+                  type: string
+                  example: "beach_photo.jpg"
+                mime_type:
+                  type: string
+                  example: "image/jpeg"
+                file_size_bytes:
+                  type: integer
+                  example: 524288
+      responses:
+        '200':
+          description: Presigned upload URL generated
+
+  /posts:
+    post:
+      summary: Create a new social post with optional media attachments
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: "Sunset at Cox's Bazar beach!"
+                visibility:
+                  type: string
+                  enum: [public, friends_only, private]
+                  default: public
+                post_type:
+                  type: string
+                  enum: [standard, announcement, poll, hyperlocal_notice]
+                  default: standard
+                ward_code:
+                  type: string
+                  example: "WARD-DHAKA-19"
+                media:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - url
+                    properties:
+                      url:
+                        type: string
+                        format: uri
+                      storage_path:
+                        type: string
+                      media_type:
+                        type: string
+                        enum: [image, video, document]
+                      mime_type:
+                        type: string
+                      file_size_bytes:
+                        type: integer
+      responses:
+        '201':
+          description: Post created successfully
+
+  /posts/{id}:
+    get:
+      summary: Retrieve a single post if accessible to viewer
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Post retrieved successfully
+        '404':
+          description: Post not found or unauthorized
+    delete:
+      summary: Delete post (owner only)
+      tags:
+        - Consumer Social Media
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Post deleted successfully
+
+  /feed:
+    get:
+      summary: Keyset cursor-paginated timeline feed
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Encoded keyset cursor string from previous response
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 15
+      responses:
+        '200':
+          description: Paginated feed with next_cursor metadata
+
+  /feed/hyperlocal/{wardCode}:
+    get:
+      summary: Hyperlocal community feed geofenced by ward code
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: wardCode
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "WARD-DHAKA-19"
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Hyperlocal posts for designated ward
+
+  /users/{identifier}/posts:
+    get:
+      summary: Retrieve public/friends posts of a specific user with cursor pagination
+      tags:
+        - Consumer Social Media
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          schema:
+            type: string
+            description: User UUID or unique @handle
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User posts list
+
+  /conversations/direct:
+    post:
+      summary: Open or initialize 1-on-1 direct conversation with a citizen
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - target_user_id
+              properties:
+                target_user_id:
+                  type: string
+                  format: uuid
+      responses:
+        '200':
+          description: Conversation opened
+
+  /conversations:
+    get:
+      summary: List user conversations with unread badge counters and latest message preview
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Conversation threads list
+
+  /conversations/{id}/messages:
+    get:
+      summary: Retrieve conversation messages with keyset cursor pagination
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated chat message history
+    post:
+      summary: Send a real-time message and broadcast via WebSocket (Laravel Reverb)
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - body
+              properties:
+                body:
+                  type: string
+                  example: "Assalamu Alaikum! Are you coming?"
+                message_type:
+                  type: string
+                  enum: [text, image, sos_alert, system]
+                  default: text
+      responses:
+        '201':
+          description: Message created and broadcasted
+
+  /conversations/{id}/typing:
+    post:
+      summary: Broadcast live typing indicator to conversation channel
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - is_typing
+              properties:
+                is_typing:
+                  type: boolean
+      responses:
+        '200':
+          description: Typing indicator dispatched
+
+  /conversations/{id}/read:
+    post:
+      summary: Mark conversation messages as read and clear unread counter
+      tags:
+        - Real-Time Messaging & WebSockets
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Conversation marked as read
+
+  /emergency/sos:
+    post:
+      summary: Trigger Emergency SOS distress signal (<500ms SLA broadcast)
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - latitude
+                - longitude
+              properties:
+                latitude:
+                  type: number
+                  format: float
+                  example: 23.7925
+                longitude:
+                  type: number
+                  format: float
+                  example: 90.4078
+                accuracy:
+                  type: number
+                  format: float
+                  example: 12.5
+                ward_code:
+                  type: string
+                  example: "WARD-DHAKA-19"
+                distress_type:
+                  type: string
+                  enum: [general, medical, harassment, accident, fire]
+                  default: general
+                battery_level:
+                  type: integer
+                  example: 85
+                notes:
+                  type: string
+                  example: "Need immediate medical help at Gulshan-2 circle"
+      responses:
+        '201':
+          description: Distress signal triggered and broadcasted to ward & radius channels
+
+  /emergency/sos/{id}/resolve:
+    post:
+      summary: Resolve or cancel an active emergency distress signal
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [resolved, cancelled, false_alarm]
+                  default: resolved
+                resolution_notes:
+                  type: string
+      responses:
+        '200':
+          description: Distress signal resolved
+
+  /emergency/active:
+    get:
+      summary: Get active emergency distress signals (with optional ward filter)
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: ward_code
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Active emergency alerts list
+
+  /emergency/contacts:
+    get:
+      summary: List citizen trusted emergency contacts
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Emergency contacts list
+    post:
+      summary: Add a new trusted emergency contact
+      tags:
+        - Emergency SOS & Danger Alert
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - contact_name
+                - contact_phone
+              properties:
+                contact_name:
+                  type: string
+                  example: "Fahim Ahmed"
+                contact_phone:
+                  type: string
+                  example: "+8801711223344"
+                relationship:
+                  type: string
+                  example: "Brother"
+                is_trusted:
+                  type: boolean
+                  default: true
+      responses:
+        '201':
+          description: Emergency contact added
+
+  /organizations/{organization}/school/academic-years:
+    get:
+      summary: List all academic years for the school workspace
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Academic years list
+    post:
+      summary: Create a new academic year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - start_date
+                - end_date
+              properties:
+                name:
+                  type: string
+                  example: "Academic Year 2026-2027"
+                code:
+                  type: string
+                  example: "AY-2026"
+                start_date:
+                  type: string
+                  format: date
+                  example: "2026-01-01"
+                end_date:
+                  type: string
+                  format: date
+                  example: "2026-12-31"
+                is_current:
+                  type: boolean
+                  default: false
+      responses:
+        '201':
+          description: Academic year created successfully
+
+  /organizations/{organization}/school/academic-years/{academicYear}/set-current:
+    post:
+      summary: Atomically designate an academic year as the current active year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academicYear
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Academic year set as current
+
+  /organizations/{organization}/school/academic-years/{academicYear}/rollover:
+    post:
+      summary: Rollover academic year, archive old term, and clone classes/sections/subjects
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academicYear
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - start_date
+                - end_date
+              properties:
+                name:
+                  type: string
+                  example: "Academic Year 2027"
+                code:
+                  type: string
+                  example: "AY-2027"
+                start_date:
+                  type: string
+                  format: date
+                  example: "2027-01-01"
+                end_date:
+                  type: string
+                  format: date
+                  example: "2027-12-31"
+                clone_structure:
+                  type: boolean
+                  default: true
+      responses:
+        '201':
+          description: Academic year rollover completed
+
+  /organizations/{organization}/school/classes:
+    get:
+      summary: List classes (optionally filtered by academic year)
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academic_year_id
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Classes list
+    post:
+      summary: Create a class under an academic year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - academic_year_id
+                - name
+              properties:
+                academic_year_id:
+                  type: string
+                  format: uuid
+                name:
+                  type: string
+                  example: "Class 10"
+                numeric_grade:
+                  type: integer
+                  example: 10
+                code:
+                  type: string
+                  example: "CLS-10"
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Class created successfully
+
+  /organizations/{organization}/school/classes/{class}:
+    get:
+      summary: Retrieve class details with its sections and subjects
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: class
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Class details
+
+  /organizations/{organization}/school/classes/{class}/sections:
+    post:
+      summary: Add a section to a class
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: class
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: "Section Padma"
+                capacity:
+                  type: integer
+                  default: 40
+                  example: 45
+                room_number:
+                  type: string
+                  example: "Room 304"
+      responses:
+        '201':
+          description: Section created successfully
+
+  /organizations/{organization}/school/classes/{class}/subjects:
+    post:
+      summary: Add a subject to a class
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: class
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: "Higher Mathematics"
+                code:
+                  type: string
+                  example: "HMATH-101"
+                type:
+                  type: string
+                  enum: [core, elective, optional]
+                  default: core
+                credits:
+                  type: number
+                  format: float
+                  default: 3.0
+                pass_marks:
+                  type: integer
+                  default: 33
+                total_marks:
+                  type: integer
+                  default: 100
+      responses:
+        '201':
+          description: Subject created successfully
+
+  /organizations/{organization}/school/structure:
+    get:
+      summary: Get complete academic hierarchy tree for current or specified year
+      tags:
+        - School ERP - Academic Architecture
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: academic_year_id
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Complete academic structure tree
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Sanctum
+
+  schemas:
+    MetaEnvelope:
+      type: object
+      properties:
+        request_id:
+          type: string
+          example: "req-9a8f-22b"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2026-09-23T07:45:00Z"
+        error_code:
+          type: string
+          nullable: true
+          example: "VALIDATION_ERROR"
+
+    AuthSuccessResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: "Operation successful"
+        data:
+          type: object
+          properties:
+            user:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                  example: "01921f00-34a1-7b01-8b01-9a8b7c6d5e4f"
+                name:
+                  type: string
+                  example: "John Doe"
+                email:
+                  type: string
+                  example: "user@zengfy.top"
+            token:
+              type: string
+              example: "1|NjjqwtR22Y3ojvg48wMC3ZoLObjE4d8hU5xBDrMg1e1d3c6a"
+            device:
+              type: object
+              properties:
+                device_name:
+                  type: string
+                  example: "Chrome Windows"
+                last_active_at:
+                  type: string
+                  format: date-time
+        meta:
+          $ref: '#/components/schemas/MetaEnvelope'
+
+    UserProfileResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            user:
+              type: object
+            active_devices:
+              type: array
+              items:
+                type: object
+        meta:
+          $ref: '#/components/schemas/MetaEnvelope'
+
+    SimpleSuccessResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: "Operation successful"
+        data:
+          type: object
+          nullable: true
+        meta:
+          $ref: '#/components/schemas/MetaEnvelope'
+
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: "Validation failed"
+        errors:
+          type: object
+          nullable: true
+        meta:
+          $ref: '#/components/schemas/MetaEnvelope'

@@ -1,0 +1,11 @@
+{
+    "name": "Civil",
+    "alias": "civil",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Civil\\Providers\\CivilServiceProvider"
+    ],
+    "files": []
+}
